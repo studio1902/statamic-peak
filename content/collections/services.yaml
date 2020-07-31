@@ -1,0 +1,14 @@
+title: Services
+template: default
+layout: layout
+mount: a7d612aa-e3e1-4235-bfa8-7b577177c947
+revisions: false
+route: 'services/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+structure:
+  root: false
+  max_depth: 1
+  tree: {  }

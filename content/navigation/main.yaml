@@ -1,0 +1,14 @@
+title: Main
+max_depth: 1
+root: true
+tree:
+  -
+    entry: home
+  -
+    entry: a7d612aa-e3e1-4235-bfa8-7b577177c947
+  -
+    entry: 7e657375-1033-4215-ba00-0b07e91ffd8f
+  -
+    entry: ba1f8a66-8ba7-4572-bf08-3ca6150f2db7
+  -
+    entry: e873118a-eb35-48cf-91fe-87dc9be9fbce

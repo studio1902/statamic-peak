@@ -1,0 +1,14 @@
+title: 'Error messages'
+sections:
+  404:
+    display: '404'
+    fields:
+      -
+        import: error_messages
+        prefix: '404_'
+  301:
+    display: '301'
+    fields:
+      -
+        import: error_messages
+        prefix: '301_'

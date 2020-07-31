@@ -1,0 +1,14 @@
+title: Projects
+fields:
+  -
+    handle: projects
+    field:
+      mode: default
+      type: entries
+      localizable: false
+      listable: hidden
+      display: Projects
+      instructions: 'Select the projects you want to link to.'
+      validate: required
+      collections:
+        - projects

@@ -1,0 +1,13 @@
+title: Pages
+template: default
+layout: layout
+revisions: false
+route: '{parent_uri}/{slug}'
+sort_dir: asc
+structure:
+  root: true
+  tree:
+    -
+      entry: home
+    -
+      entry: a7d612aa-e3e1-4235-bfa8-7b577177c947

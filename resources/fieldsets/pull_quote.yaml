@@ -1,0 +1,20 @@
+title: 'Pull quote'
+fields:
+  -
+    handle: quote
+    field:
+      type: textarea
+      localizable: true
+      listable: hidden
+      display: Quote
+      instructions: 'The quote you want to highlight.'
+      validate: required
+  -
+    handle: author
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Author
+      instructions: 'The optional author of the quote that will be displayed with it.'

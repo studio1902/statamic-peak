@@ -1,0 +1,2 @@
+import 'Modernizr';
+import 'alpinejs';

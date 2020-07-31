@@ -1,0 +1,14 @@
+name: 'Rob de Kort'
+super: true
+id: d608ffb5-b4f0-4e02-beba-9a5ad04becd8
+password_hash: $2y$10$5WogOYdsU4u7SxTcuoiHlOArokP3DatnaIOStcd4.DMktxEad0CHu
+preferences:
+  favorites:
+    -
+      name: 'Pagina''s ‹ Collecties'
+      url: collections/pages
+  collections:
+    service:
+      columns:
+        - title
+  start_page: dashboard

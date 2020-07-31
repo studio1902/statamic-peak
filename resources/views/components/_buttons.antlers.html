@@ -1,0 +1,16 @@
+{{ if buttons }}
+    {{# Use different markup as a set in an article (bard) #}}
+    {{ if type == 'buttons' }}
+        <div class="col-span-12 md:col-span-8 md:col-start-3 xl:col-span-6 xl:col-start-4 inline-flex justify-start items-center flex-wrap space-x-4">
+            {{ buttons }}
+                {{ partial:components/button }}
+            {{ /buttons }}
+        </div>
+    {{ else }}
+        <div class="inline-flex flex-col md:flex-row justify-start md:items-center flex-wrap space-y-8 md:space-y-0 md:space-x-8">
+            {{ buttons }}
+                {{ partial:components/button }}
+            {{ /buttons }}
+        </div>
+    {{ /if }}
+{{ /if }}

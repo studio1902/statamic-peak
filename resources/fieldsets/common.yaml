@@ -1,0 +1,82 @@
+title: 'Common reusable fields'
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
+      validate: required
+  -
+    handle: slug
+    field:
+      generate: true
+      type: slug
+      localizable: true
+      listable: hidden
+      display: Slug
+      validate: required
+  -
+    handle: text
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: true
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: true
+      listable: hidden
+      display: Text
+      validate: required
+  -
+    handle: text_plain
+    field:
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: true
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: true
+      listable: hidden
+      display: Text
+      validate: required
+  -
+    handle: size
+    field:
+      options:
+        sm: SM
+        md: MD
+        lg: LG
+        xl: XL
+      type: button_group
+      localizable: true
+      default: md
+      listable: hidden
+      display: Formaat
+      validate: required

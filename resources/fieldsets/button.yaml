@@ -1,0 +1,22 @@
+title: Button
+fields:
+  -
+    handle: label
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Label
+      instructions: 'The text inside the button.'
+      validate: required
+      width: 33
+  -
+    handle: link
+    field:
+      type: link
+      localizable: true
+      display: Link
+      instructions: 'Where do you want to link to?'
+      validate: required
+      width: 66

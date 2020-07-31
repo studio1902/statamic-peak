@@ -1,0 +1,9 @@
+<nav class="w-full py-4">
+    <ul class="flex space-x-8">
+        {{ nav:main max_depth="1" include_home="true" }}
+            <li class="leading-none">
+                <a class="{{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}" href="{{ url }}">{{ title }}</a>
+            </li>
+        {{ /nav:main }}
+    </ul>
+</nav>

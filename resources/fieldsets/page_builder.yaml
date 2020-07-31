@@ -1,0 +1,23 @@
+title: 'Page builder'
+fields:
+  -
+    handle: replicator
+    field:
+      type: replicator
+      localizable: false
+      listable: false
+      display: 'Page builder'
+      instructions: 'Build your page by using various predefined content models.'
+      sets:
+        article:
+          display: Article
+          instructions: 'Long form content, can be expaned with media like figures, video, quotes or tables.'
+          fields:
+            -
+              import: article
+        services:
+          display: Services
+          instructions: 'Show specific services.'
+          fields:
+            -
+              import: services

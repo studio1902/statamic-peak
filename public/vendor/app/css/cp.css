@@ -1,0 +1,16 @@
+/* .outside .logo svg {
+    display: none;
+}
+.outside .logo {
+    background-image: url('/visuals/logo.svg');
+    background-size: auto 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 65px;
+    margin-top: 70px;
+    margin-bottom: 20px;
+
+    * {
+        fill: black;
+    }
+} */

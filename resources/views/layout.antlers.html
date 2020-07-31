@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{# Replace the following line with the SEO Pro or Aardvark SEO tag. #}}
+        <title>{{ title }} | {{ site:name }}</title>
+        <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
+        {{# Generate your favicons here https://realfavicongenerator.net #}}
+    </head>
+    <body class="min-h-screen bg-light">
+        {{ partial:layout/header }}
+        {{ template_content }}
+        {{ partial:layout/footer }}
+        <script src="{{ mix src='/js/site.js' }}"></script>
+    </body>
+</html>
