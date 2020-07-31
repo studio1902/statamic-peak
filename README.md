@@ -2,8 +2,21 @@
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
+ Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS. Peak features a block rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away without having to copy / paste all the basics every time.
+
 ## Features
-- 
+- [Tailwind](https://tailwindcss.com) as a CSS framework.
+- Tailwind Custom Forms (with configuration).
+- Tailwind Typography (with configuration).
+- A custom Tailwind config file with added components and utilities used by Peak. 
+- [AlpineJS](https://github.com/alpinejs/alpine/) as a JS framework.
+- A block builder (replicator) with basic templates for your scaffolding your content. Easily extendible to your clients needs. 
+- An article block (bard) with some default sets like a figure, pull quote and an embedded video set. Easily extendible.
+- A button system for adding buttons to your site.
+- Sane default configuration.
+- The [Responsive Images](https://github.com/spatie/statamic-responsive-images) addon by Spatie to make using images in your templates a breeze.
+- Asset compilation with Laravel Mix.
+- Modernizr support (webp detection as a default).
 
 ## Quick Start
 
@@ -38,8 +51,8 @@ npm run production
 
 **4. Do your thing!**
 
-If you're using [Laravel Valet](https://laravel.com/docs/valet) (or similar), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Open up the source code, follow along with the [Statamic 3 docs](https://statamic.dev), and enjoy!
+If you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
 ## Contributing
 
-Contributions are always welcome, no matter how large or small.
+Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect.
