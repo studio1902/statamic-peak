@@ -12,10 +12,12 @@ module.exports = {
     }
   },  
   theme: {
+    // These overwrite the default Tailwind colors.
     colors: {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
+      // Greys
       neutral: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -27,6 +29,7 @@ module.exports = {
         800: '#2d3748',
         900: '#1a202c',
       },
+      // Client primary color, currently indigo.
       primary: {
         100: '#ebf4ff',
         200: '#c3dafe',
@@ -38,18 +41,61 @@ module.exports = {
         800: '#434190',
         900: '#3c366b',
       },
+      // Error styling colors: red
+      error: {
+        50: '#FDF2F2',
+        100: '#FCE8E8',
+        200: '#FBD5D5',
+        300: '#F8B4B3',
+        400: '#F88080',
+        500: '#F05252',
+        600: '#E02423',
+        700: '#C81F1D',
+        800: '#9B1D1C',
+        900: '#771D1D',
+      },
+      // Notice styling colors: yellow
+      notice: {
+        50: '#FDFDEA',
+        100: '#FDF5B2',
+        200: '#FCE96B',
+        300: '#FACA16',
+        400: '#E3A009',
+        500: '#C27805',
+        600: '#9F580B',
+        700: '#8E4B10',
+        800: '#723A14',
+        900: '#643112',
+      },
+      // Success styling colors: green
+      success: {
+        50: '#F3FAF7',
+        100: '#DEF7EC',
+        200: '#BBF0DA',
+        300: '#84E1BC',
+        400: '#30C48D',
+        500: '#0D9F6E',
+        600: '#047A55',
+        700: '#036C4E',
+        800: '#06543F',
+        900: '#024737',
+      },
     },
     extend: {
       padding: {
+        // Used to generate responsive video embeds.
         'video': '56.25%',
       },
       screens: {
+        // Add a slightly wider breakpoint.
         '2xl': '1440px',
       },
       zIndex: {
+        // Z-index stuff behind parent.
         'behind': '-1',
       },
     },
+    // Overwrite default prose styling https://github.com/tailwindcss/typography.
     typography: (theme) => ({
       default: {
         css: {
@@ -94,6 +140,7 @@ module.exports = {
         }
       }
     }),
+    // Overwrite default form styling: https://github.com/tailwindlabs/tailwindcss-custom-forms
     customForms: theme => ({
       default: {
         input: {
@@ -123,6 +170,7 @@ module.exports = {
     require('@tailwindcss/custom-forms'),
     plugin(function({ addBase, theme }) {
       addBase({
+        // Used to hide alpine elements before being rendered.
         '[x-cloak]': { 
           display: 'none'
         },
