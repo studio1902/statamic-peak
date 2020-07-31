@@ -4,6 +4,9 @@
 
  Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS. Peak features a block rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away without having to copy / paste all the basics every time.
 
+## Work in progress
+Statamic Peak is work in progress. I'm currently ripping all the goodies from all the sites I made and bundling them together in this starter kit for v3. I still need to add and document. 
+
 ## Features
 - [Tailwind](https://tailwindcss.com) as a CSS framework.
 - Tailwind Custom Forms (with configuration).
