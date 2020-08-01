@@ -1,14 +1,16 @@
 <p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/peak-logo.svg" width="130" alt="Statamic Logo" /></p>
 <h1 align="center">
-  Statamic Peak
+  Statamic Starter Kit: Peak
 </h1>
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
- Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS. Peak features a block rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away without having to copy / paste all the basics every time.
+ Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a block builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away.
+
+ I will continuously update the kit with new stuff I've used or learned while building my own sites. I would love it if you want to participate and discuss how to make stuff better. 
 
 ## Work in progress
-Statamic Peak is work in progress. I'm currently ripping all the goodies from all the sites I made and bundling them together in this starter kit for v3. I still need to add and remove stuff and document everything. 
+Statamic Peak is work in progress. I'm currently ripping all the goodies from all the sites I made and bundling them together with inline documentation.
 
 ## Features
 - [Tailwind](https://tailwindcss.com) as a CSS framework.
@@ -59,6 +61,23 @@ npm run production
 **4. Build!**
 
 If you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
+
+## Stuff to know
+
+**1. Block builder**
+
+**2. Bard**
+
+**3. Typography partials**
+
+**3. Tailwind Custom Forms and Tailwind Typography**
+
+**4. Upcoming features**
+
+* Form and email template
+* Inline CSS snippets
+
+
 
 ## Contributing
 
