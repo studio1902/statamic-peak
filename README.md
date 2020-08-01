@@ -1,4 +1,7 @@
-# Statamic Peak
+<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/peak-logo.svg" width="130" alt="Statamic Logo" /></p>
+<h1 align="center">
+  Statamic Peak
+</h1>
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
