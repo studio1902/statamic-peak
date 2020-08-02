@@ -65,17 +65,24 @@ If you're using [Laravel Valet](https://laravel.com/docs/valet), your site shoul
 
 **1. Block builder**
 
+WIP
+
 **2. Bard**
+
+WIP
 
 **3. Typography partials**
 
+WIP
+
 **3. Tailwind Custom Forms and Tailwind Typography**
+
+WIP
 
 **4. Upcoming features**
 
 * Form and email template
 * Inline CSS snippets
-
 
 
 ## Contributing
