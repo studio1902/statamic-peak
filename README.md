@@ -3,15 +3,29 @@
   Statamic Starter Kit
 </h1>
 
-**Statamic Peak is work in progress and in pre-release.**
-
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
  Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a block builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away.
 
- I will continuously update the kit with new stuff I've used or learned while building my own sites. I would love it if you want to participate and discuss how to make stuff better. 
+ I will continuously update the kit with new stuff I've used or learned while building my own sites. If you enjoy Peak I would love it for yo to participate and discuss how to make stuff better.
+
+ ## Index
+ 
+ | --- | --- |
+| [`Features`](#features) | All Peak's current features. |
+| [`Installation`](#installation) | How to install Statamic with Peak. |
+| [`Block builder`](#block-builder) | |
+| [`Bard`](#bard) |  |
+| [`Typography`](#typography) |  |
+| [`Responsive images`](#responsive-images) |  |
+| [`Statamic login screen`](#statamic-login-screen) |  |
+| [`Multilingual fields and localization`](#multilingual-fields) |  |
+| [`Upcoming features`](#upcoming-features) |  |
+| [`Contributing`](#contributing) |  |
 
 ## Features
+### `features`
+
 - [Tailwind](https://tailwindcss.com) as a CSS framework.
 - Tailwind Custom Forms (with configuration).
 - Tailwind Typography (with configuration).
@@ -24,9 +38,9 @@
 - The [Responsive Images](https://github.com/spatie/statamic-responsive-images) addon by Spatie to make using images in your templates a breeze.
 - Asset compilation with Laravel Mix.
 - Modernizr support (webp detection as a default).
-- Inline documentation for all the various parts.
 
-## Quick Start
+## Installation
+### `installation`
 
 **1. Create a new site** cloning the repo and removing the origin repo.
 
@@ -61,40 +75,60 @@ npm run production
 
 If you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
-## Stuff to know
-
-**1. Block builder**
-
-WIP
-
-**2. Bard**
+## Block builder
+### `block-builder`
 
 WIP
+```html
+<html>
+```
 
-**3. Typography partials**
+## Bard
+### `bard`
 
 WIP
+```html
+<html>
+```
 
-**3. Tailwind Custom Forms and Tailwind Typography**
+## Typography
+### `typography`
 
 WIP
+```html
+<html>
+```
 
-**4. Statamic login screen**
+## Responsive images
+### `responsive-images`
 
 The Rad Mode on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
 
 If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
 
-**5. Multilingual CMS and fields** 
+## Statamic login screen
+### `statamic-login-screen`
+
+The Rad Mode on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
+
+If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
+
+
+## Multilingual fields and localization
+### `multilingual-fields`
 
 It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
 
-**6. Upcoming features**
+## Upcoming features
+### `upcoming-features`
 
-* Form and email template.
-* Inline CSS snippet for background images.
-
+* Unstyled mobile nav with toggle.
+* More common (unstyled) content blocks like: link blocks and a call to action.
+* Basic contact form with themable e-mail template.
+* Partial for pagination.
+* Partial for responsive background images.
 
 ## Contributing
+### `contributing`
 
 Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect.

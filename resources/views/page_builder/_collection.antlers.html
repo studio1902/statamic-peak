@@ -1,11 +1,14 @@
 <section class="fluid-container">
-    <ul>
-        {{ services }}
-            <li class="">
+    {{ if set:title }}
+        {{ partial:typography/h2 class="mb-4" content="{set:title}" }}
+    {{ /if }}
+    <ul class="list-inside list-disc">
+        {{ set:collection }}
+            <li>
                 <a class="text-primary-600 underline" href="{{ url }}">
                     {{ title }}
                 </a>
             </li>
-        {{ /services }}
+        {{ /set:collection }}
     </ul>
 </section>
