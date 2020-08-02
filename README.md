@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/peak-logo.svg" width="130" alt="Statamic Logo" /></p>
+<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/peak-logo.svg?v=2" width="130" alt="Statamic Logo" /></p>
 <h1 align="center">
   Statamic Starter Kit: Peak
 </h1>
