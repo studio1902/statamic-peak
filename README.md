@@ -1,6 +1,6 @@
-<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/peak-logo-v2.svg" width="130" alt="Statamic Logo" /></p>
+<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="130" alt="Statamic Logo" /></p>
 <h1 align="center">
-  Statamic Starter Kit: Peak
+  Statamic Starter Kit
 </h1>
 
 **Statamic Peak is work in progress and in pre-pre-pre-release. Feel free to check it out.**
