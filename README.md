@@ -3,7 +3,7 @@
   Statamic Starter Kit: Peak
 </h1>
 
-Statamic Peak is work in progress and in pre-pre-pre-release. Feel free to check it out.
+**Statamic Peak is work in progress and in pre-pre-pre-release. Feel free to check it out.**
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
