@@ -1,4 +1,12 @@
-const _ = require('lodash')
+//--------------------------------------------------------------------------
+// Tailwind configuration
+//--------------------------------------------------------------------------
+//
+// Use this file to completely define the current sites design system by
+// adding and extending to Tailwinds default utility classes.
+//
+
+const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
@@ -12,7 +20,13 @@ module.exports = {
     }
   },  
   theme: {
-    // These overwrite the default Tailwind colors.
+    //--------------------------------------------------------------------------
+    // Color configuration
+    //--------------------------------------------------------------------------
+    //
+    // Here you may register all of the colors you need for this project.
+    // These colors overwrite all the default Tailwind colors.
+    //
     colors: {
       transparent: 'transparent',
       black:   '#000',
@@ -81,7 +95,34 @@ module.exports = {
         900: '#024737',
       },
     },
+    //--------------------------------------------------------------------------
+    // Extend configuration
+    //--------------------------------------------------------------------------
+    //
+    // Here you may extend Tailwinds utility classes. Some defaults are 
+    // provided.
+    //
     extend: {
+      fontFamily: {
+        mono: [
+          // Use a custom mono font for this site by changing 'Anonymous' to the 
+          // font name you want and uncommenting the following line.
+          // 'Anonymous',
+          ...defaultTheme.fontFamily.mono,
+        ],
+        sans: [
+          // Use a custom sans serif font for this site by changing 'Gaultier' to the 
+          // font name you want and uncommenting the following line.
+          // 'Gaultier',
+          ...defaultTheme.fontFamily.sans,
+        ],
+        serif: [
+          // Use a custom serif font for this site by changing 'Lavigne' to the 
+          // font name you want and uncommenting the following line.
+          // 'Lavigne',
+          ...defaultTheme.fontFamily.serif,
+        ],
+      },
       padding: {
         // Used to generate responsive video embeds.
         'video': '56.25%',
@@ -91,11 +132,18 @@ module.exports = {
         '2xl': '1440px',
       },
       zIndex: {
-        // Z-index stuff behind parent.
+        // Z-index stuff behind it's parent.
         'behind': '-1',
       },
     },
-    // Overwrite default prose styling https://github.com/tailwindcss/typography.
+    //--------------------------------------------------------------------------
+    // Tailwind Typography configuration
+    //--------------------------------------------------------------------------
+    //
+    // Here you may overwrite the default Tailwind Typography (or prosé) styles.
+    // Some defaults are provided.
+    // More info: https://github.com/tailwindcss/typography.
+    //
     typography: (theme) => ({
       default: {
         css: {
@@ -140,7 +188,14 @@ module.exports = {
         }
       }
     }),
-    // Overwrite default form styling: https://github.com/tailwindlabs/tailwindcss-custom-forms
+    //--------------------------------------------------------------------------
+    // Tailwind Custom Forms configuration
+    //--------------------------------------------------------------------------
+    //
+    // Here you may overwrite the default Tailwind Custom Forms styles.
+    // Some defaults are provided.
+    // More info: https://github.com/tailwindlabs/tailwindcss-custom-forms.
+    //
     customForms: theme => ({
       default: {
         input: {
@@ -163,11 +218,34 @@ module.exports = {
       },
     })
   },
+  //--------------------------------------------------------------------------
+  // Tailwind variants configuration
+  //--------------------------------------------------------------------------
+  //
+  // Here you may extend the variants Tailwind generates.
+  // Some often used group-hover variants are added here.
+  // More info: https://tailwindcss.com/docs/configuration/#app
+  //
   variants: {
+    boxShadow: ['responsive', 'hover', 'focus', 'group-hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    scale: ['responsive', 'hover', 'focus', 'group-hover'],
+    skew: ['responsive', 'hover', 'focus', 'group-hover'],
+    rotate: ['responsive', 'hover', 'focus', 'group-hover'],
+    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    translate: ['responsive', 'hover', 'focus', 'group-hover'],
   },
   plugins: [
     require('@tailwindcss/typography'),
     require('@tailwindcss/custom-forms'),
+    //--------------------------------------------------------------------------
+    // Tailwind custom Peak plugins
+    //--------------------------------------------------------------------------
+    //
+    // Here we define base styles used by Peak. You may overwrite those to
+    // reflect your sites brand or add more.
+    //
     plugin(function({ addBase, theme }) {
       addBase({
         // Used to hide alpine elements before being rendered.
@@ -176,24 +254,58 @@ module.exports = {
         },
         'html': {
           fontDisplay: 'swap',
-          color: theme('colors.black'),
+          color: theme('colors.neutral.800'),
           fontSize: '16px',
+          // Fluid typography from 1 rem to 1.15 rem. 
           'font-size': 'clamp(1rem, 2vw, 1.15rem)',
+          //--------------------------------------------------------------------------
+          // Set sans, serif or mono stack with optional custom font as default.
+          //--------------------------------------------------------------------------
+          // fontFamily: theme('fontFamily.mono').join(', '),
           fontFamily: theme('fontFamily.sans').join(', '),
+          // fontFamily: theme('fontFamily.serif').join(', '),
         },
         '::selection': {
-          backgroundColor: theme('colors.black'),
+          backgroundColor: theme('colors.primary.600'),
           color: theme('colors.white'),
         },
         '::-moz-selection': {
-          backgroundColor: theme('colors.black'),
+          backgroundColor: theme('colors.primary.600'),
           color: theme('colors.white'),
         },
       })
     }),
 
+    //--------------------------------------------------------------------------
+    // Tailwind custom utilities
+    //--------------------------------------------------------------------------
+    //
+    // Here we define custom utilities not provided by Tailwind.
+    //
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
+        // Useful for reversing flex or grid layouts.
+        '.rtl': {
+          direction: 'rtl',
+        },
+        // Useful for reversing content in a reversed flex or grid layout to the
+        // normal reading direction.
+        '.ltr': {
+          direction: 'ltr',
+        },
+      }
+      addUtilities(newUtilities, variants('fluidContainer'))
+    }),
+
+    //--------------------------------------------------------------------------
+    // Tailwind custom components
+    //--------------------------------------------------------------------------
+    //
+    // Here we define custom components used by Peak.
+    //
+    plugin(function({ addComponents, theme }) {
+      const components = {
+        // The main wrapper for all sections on our website. Has a max width and is centered. 
         '.fluid-container': {
           width: '100%',
           maxWidth: theme('screens.2xl'),
@@ -201,45 +313,37 @@ module.exports = {
           marginRight: 'auto',
           'padding-left': theme('padding.8'),
           'padding-right': theme('padding.8'),
+          // Use safe-area-inset together with default padding for Apple devices with a notch.
           paddingLeft: 'calc(env(safe-area-inset-left) + ' + theme('padding.8') + ')',
           paddingRight: 'calc(env(safe-area-inset-right) + ' + theme('padding.8') + ')',
         },
-        [`@media (min-width: ${theme('screens.lg')})`]: {
-          '.fluid-container': {
-            'padding-left': theme('padding.12'),
-            'padding-right': theme('padding.12'),
-          },
-        },
-      }
-      addUtilities(newUtilities, variants('fluidContainer'))
-    }),
-
-    plugin(function({ addComponents, theme }) {
-      const components = {
+        // Disable scroll e.g. when a modal is open. Should be used on the <body>
         '.no-scroll': {
           height: '100%',
           overflow: 'hidden',
         },
+        // The outer grid where all our blocks are a child of. Spreads out all blocks vertically
+        // with a uniform space between them.
         '.outer-grid': {
           width: '100%',
           display: 'grid',
           rowGap: theme('spacing.12'),
           paddingTop: theme('spacing.12'),
           paddingBottom: theme('spacing.12'),
+          // If the last child of the outer grid is full width (e.g. when it has a full width 
+          // colored background), give it negative margin bottom to get it flush to your 
+          // sites footer.
           '& > *:last-child:has(.w-full)': {
             marginBottom: theme('spacing.12') * -1,
           },
         },
-        '.rtl': {
-          direction: 'rtl',
-        },
-        '.ltr': {
-          direction: 'ltr',
-        },
+        // Sizing utilities for sets in our bard (long form content).
+        // On small devices they're full width.
         '.size-sm, .size-md, .size-lg, .size-xl': {
           gridColumn: 'span 12 / span 12',
         },
         [`@media (min-width: ${theme('screens.md')})`]: {
+          // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
             rowGap: theme('spacing.16'),
             paddingTop: theme('spacing.16'),
@@ -248,6 +352,9 @@ module.exports = {
               marginBottom: theme('spacing.16') * -1,
             },
           },
+          // Sizing utilities for sets in our bard (long form content).
+          // On larger devices they go from small to extra large.
+          // (E.g. an image wider then text in an article.)
           '.size-sm': {
             gridColumn: 'span 4 / span 4',
             gridColumnStart: '3',
@@ -266,6 +373,12 @@ module.exports = {
           },
         },
         [`@media (min-width: ${theme('screens.lg')})`]: {
+          // Larger horizontal padding on larger screens.
+          '.fluid-container': {
+            'padding-left': theme('padding.12'),
+            'padding-right': theme('padding.12'),
+          },
+          // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
             rowGap: theme('spacing.24'),
             paddingTop: theme('spacing.24'),
@@ -274,6 +387,8 @@ module.exports = {
               marginBottom: theme('spacing.24') * -1,
             },
           },
+          // Sizing utilities for sets in our bard (long form content).
+          // On larger devices they go from small to extra large.
           '.size-sm': {
             gridColumn: 'span 4 / span 4',
             gridColumnStart: '4',
