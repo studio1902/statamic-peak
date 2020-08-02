@@ -1,4 +1,10 @@
-<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="130" alt="Statamic Logo" /></p>
+<p align="center">
+  <picture>
+      <source srcset="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo-inverted.svg" media="(prefers-color-scheme: dark)">
+      <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="160" alt="Statamic Logo" />
+  </picture>
+</p>
+
 <h1 align="center">
   Statamic Starter Kit
 </h1>
