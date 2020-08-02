@@ -79,7 +79,13 @@ WIP
 
 WIP
 
-**4. Upcoming features**
+**4. Statamic login screen**
+
+The Rad Mode on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
+
+If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
+
+**5. Upcoming features**
 
 * Form and email template
 * Inline CSS snippets
