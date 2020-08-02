@@ -78,5 +78,4 @@ fields:
       localizable: true
       default: md
       listable: hidden
-      display: Formaat
-      validate: required
+      display: Size

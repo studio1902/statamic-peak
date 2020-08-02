@@ -11,9 +11,8 @@ fields:
       listable: hidden
       display: 'Youtube URL'
       instructions: "The URL of the YouTube video you'd like to embed."
-      validate: required
   -
-    handle: formaat
+    handle: size
     field: common.size
     config:
       width: 50

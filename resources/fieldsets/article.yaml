@@ -11,6 +11,7 @@ fields:
         - italic
         - unorderedlist
         - orderedlist
+        - quote
         - removeformat
         - anchor
       save_html: false

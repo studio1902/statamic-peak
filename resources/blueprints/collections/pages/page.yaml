@@ -4,18 +4,8 @@ sections:
     display: Main
     fields:
       -
-        handle: section_entry
-        field:
-          type: section
-          instructions: 'This entries content.'
-          localizable: false
-          listable: false
-          display: Entry
-      -
         handle: title
         field: common.title
-        config:
-          instructions: 'The entry''s title.'
       -
         import: page_builder
   sidebar:
@@ -32,5 +22,3 @@ sections:
       -
         handle: slug
         field: common.slug
-        config:
-          instructions: 'The entry''s slug (last URL part).'
