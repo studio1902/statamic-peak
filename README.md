@@ -85,10 +85,14 @@ The Rad Mode on the login screen is disabled by default to give the login screen
 
 If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
 
-**5. Upcoming features**
+**5. Multilingual CMS and fields** 
 
-* Form and email template
-* Inline CSS snippets
+It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
+
+**6. Upcoming features**
+
+* Form and email template.
+* Inline CSS snippet for background images.
 
 
 ## Contributing
