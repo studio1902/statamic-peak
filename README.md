@@ -1,16 +1,15 @@
-<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/peak-logo.svg?v=2" width="130" alt="Statamic Logo" /></p>
+<p align="center"><img src="https://cdn.studio1902.nl/assets/statamic-peak/peak-logo.svg" width="130" alt="Statamic Logo" /></p>
 <h1 align="center">
   Statamic Starter Kit: Peak
 </h1>
+
+Statamic Peak is work in progress and in pre-pre-pre-release. Feel free to check it out.
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
  Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a block builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away.
 
  I will continuously update the kit with new stuff I've used or learned while building my own sites. I would love it if you want to participate and discuss how to make stuff better. 
-
-## Work in progress
-Statamic Peak is work in progress. I'm currently ripping all the goodies from all the sites I made and bundling them together with inline documentation.
 
 ## Features
 - [Tailwind](https://tailwindcss.com) as a CSS framework.
