@@ -15,9 +15,9 @@ fields:
           fields:
             -
               import: article
-        services:
-          display: Services
-          instructions: 'Show specific services.'
+        collection:
+          display: Collection
+          instructions: 'Show collection entries.'
           fields:
             -
-              import: services
+              import: collection

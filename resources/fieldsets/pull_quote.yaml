@@ -8,7 +8,6 @@ fields:
       listable: hidden
       display: Quote
       instructions: 'The quote you want to highlight.'
-      validate: required
   -
     handle: author
     field:

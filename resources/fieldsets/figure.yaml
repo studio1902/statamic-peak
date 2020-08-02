@@ -14,9 +14,8 @@ fields:
       listable: hidden
       display: Image
       instructions: 'The image you want to add.'
-      validate: required
   -
-    handle: formaat
+    handle: size
     field: common.size
     config:
       width: 50

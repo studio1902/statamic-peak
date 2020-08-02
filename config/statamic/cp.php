@@ -44,11 +44,6 @@ return [
             'collection' => 'pages',
             'width' => 50
         ],
-        [
-            'type' => 'collection',
-            'collection' => 'services',
-            'width' => 50
-        ],
     ],
 
     /*

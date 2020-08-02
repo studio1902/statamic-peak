@@ -16,7 +16,10 @@ mix.postCss('resources/css/site.css', 'public/css/site.css', [
 
 mix.browserSync({
     proxy: process.env.APP_URL,
-    files: ['public/themes/**/**/*.(html|css|js)', 'site/content/**/**/*.(md|yaml)'],
+    files: [
+        'resources/views/**/*.html', 
+        'public/**/*.(css|js)', 
+    ],
     notify: false
 });
 

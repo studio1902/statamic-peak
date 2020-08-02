@@ -152,10 +152,13 @@ module.exports = {
             color: theme('colors.neutral.800'),
           },
           a: {
-            color: theme('colors.primary.400'),
+            color: theme('colors.primary.600'),
             '&:hover': {
-              color: theme('colors.primary.600'),
+              color: theme('colors.primary.800'),
             },
+          },
+          'a.no-underline': {
+            textDecoration: 'none',
           },
           'h1, h2, h3, h4': {
             scrollMarginTop: theme('spacing.36'), 
@@ -165,7 +168,14 @@ module.exports = {
             borderColor: theme('colors.primary.200'),
           },
           hr: {
-            borderColor: theme('colors.neutral.100'),
+            borderColor: theme('colors.neutral.100'), 
+          },
+          'figure, img, picture, video, code': {
+            marginTop: 0,
+            marginBottom: 0,
+          },
+          'figure figcaption': {
+            color: 'inherit',
           },
           'ul > li::before': { 
             backgroundColor: theme('colors.neutral.500'),

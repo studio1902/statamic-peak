@@ -1,0 +1,12 @@
+title: Collection entries
+fields:
+  -
+    handle: collection
+    field:
+      mode: default
+      type: entries
+      localizable: false
+      listable: hidden
+      display: Collection
+      instructions: 'Select the entries you want to link to.'
+      validate: required
