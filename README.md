@@ -18,10 +18,11 @@ I will continuously update the kit with new stuff I've used or learned while bui
 | [`Buttons`](#buttons) | CONTENT MISSING |
 | [`Typography`](#typography) | CONTENT MISSING |
 | [`Responsive images`](#responsive-images) | CONTENT MISSING |
-| [`Statamic login screen`](#statamic-login-screen) | CONTENT MISSING |
-| [`Multilingual fields and localization`](#multilingual-fields) | CONTENT MISSING |
-| [`Upcoming features`](#upcoming-features) | CONTENT MISSING |
-| [`Contributing`](#contributing) | CONTENT MISSING |
+| [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen |
+| [`Multilingual fields and localization`](#multilingual-fields) | Field localization |
+| [`Upcoming features`](#upcoming-features) | What's planned |
+| [`Contributing`](#contributing) | Please do! |
+| [`License`](#license) | MIT |
 
 ## Features
 <span id="features"></span>
