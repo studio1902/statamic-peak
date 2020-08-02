@@ -5,24 +5,23 @@
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
-Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a block builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away.
+Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away.
 
 I will continuously update the kit with new stuff I've used or learned while building my own sites. If you enjoy Peak I would love it for yo to participate and discuss how to make stuff better.
-
-## Index
 
 | Title | Description |
 | --- | --- |
 | [`Features`](#features) | All Peak's current features. |
 | [`Installation`](#installation) | How to install Statamic with Peak. |
-| [`Block builder`](#block-builder) | |
-| [`Bard`](#bard) |  |
-| [`Typography`](#typography) |  |
-| [`Responsive images`](#responsive-images) |  |
-| [`Statamic login screen`](#statamic-login-screen) |  |
-| [`Multilingual fields and localization`](#multilingual-fields) |  |
-| [`Upcoming features`](#upcoming-features) |  |
-| [`Contributing`](#contributing) |  |
+| [`Page builder`](#page-builder) | CONTENT MISSING |
+| [`Bard`](#bard) | CONTENT MISSING |
+| [`Buttons`](#buttons) | CONTENT MISSING |
+| [`Typography`](#typography) | CONTENT MISSING |
+| [`Responsive images`](#responsive-images) | CONTENT MISSING |
+| [`Statamic login screen`](#statamic-login-screen) | CONTENT MISSING |
+| [`Multilingual fields and localization`](#multilingual-fields) | CONTENT MISSING |
+| [`Upcoming features`](#upcoming-features) | CONTENT MISSING |
+| [`Contributing`](#contributing) | CONTENT MISSING |
 
 ## Features
 <span id="features"></span>
@@ -44,8 +43,7 @@ I will continuously update the kit with new stuff I've used or learned while bui
 <span id="installation"></span>
 
 **1. Create a new site** cloning the repo and removing the origin repo.
-
-```
+```bash
 git clone git@github.com:studio1902/statamic-peak.git my-site
 cd my-site
 rm -rf .git
@@ -54,58 +52,52 @@ cp .env.example .env && php artisan key:generate
 ```
 
 **2. Make a new user** – you'll want it to be a `super` so you have access to everything.
-
-```
+```bash
 php please make:user
 ```
 
 **3. Compile the fontend assets** 
-
 The [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself.
-
-```
+```bash
 npm i && npm run watch
 ```
-
 To compile for production run this (on your server). It will purge all unnecessary utility classes and greatly reduce file size:
-```
+```bash
 npm run production
 ```
 
 **4. Build!**
-
 If you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
-## Block builder
-<span id="block-builder"></span>
+## Page builder
+<span id="page-builder"></span>
 
-WIP
-```html
+Well you could make different templates for all your page types. The idea is to make pages as modular as possible. If a page has something unqiue: add a partial and a block to the page builder.
+
+CONTENT MISSING
+<!-- ```html
 <html>
-```
+``` -->
 
 ## Bard
 <span id="bard"></span>
 
-WIP
-```html
-<html>
-```
+CONTENT MISSING
+
+## Buttons
+<span id="buttons"></span>
+
+CONTENT MISSING
 
 ## Typography
 <span id="typography"></span>
 
-WIP
-```html
-<html>
-```
+CONTENT MISSING
 
 ## Responsive images
 <span id="responsive-images"></span>
 
-The Rad Mode on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
-
-If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
+CONTENT MISSING
 
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
@@ -129,6 +121,11 @@ It is currently not possible in Statamic to translate field labels and descripti
 * Partial for responsive background images.
 
 ## Contributing
-### `contributing`
+<span id="contributing"></span>
 
 Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect.
+
+## License
+<span id="license"></span>
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has it's own license.
