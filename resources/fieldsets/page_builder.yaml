@@ -1,7 +1,7 @@
 title: 'Page builder'
 fields:
   -
-    handle: replicator
+    handle: page_builder
     field:
       type: replicator
       localizable: false
