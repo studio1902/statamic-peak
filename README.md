@@ -23,6 +23,8 @@ I will continuously update the kit with new stuff I've used or learned while bui
 | [`Globals`](#globals) | CONTENT MISSING |
 | [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen |
 | [`Multilingual fields and localization`](#multilingual-fields) | Field localization |
+| [`Modernizr`](#modernizr) | CONTENT MISSING |
+| [`Configuration changes`](#configuration-changes) | CONTENT MISSING |
 | [`Upcoming features`](#upcoming-features) | What's planned |
 | [`Contributing`](#contributing) | Please do! |
 | [`License`](#license) | MIT |
@@ -131,6 +133,16 @@ If you want to use another logo on the login screen. For example the current sit
 
 It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
 
+## Modernizr
+<span id="modernizr"></span>
+
+CONTENT MISSING
+
+## Configuration changes
+<span id="configuration-changes"></span>
+
+CONTENT MISSING
+
 ## Upcoming features
 <span id="upcoming-features"></span>
 
@@ -162,6 +174,8 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 | [`Globals`](#globals) | CONTENT MISSING |
 | [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen |
 | [`Multilingual fields and localization`](#multilingual-fields) | Field localization |
+| [`Modernizr`](#modernizr) | CONTENT MISSING |
+| [`Configuration changes`](#configuration-changes) | CONTENT MISSING |
 | [`Upcoming features`](#upcoming-features) | What's planned |
 | [`Contributing`](#contributing) | Please do! |
 | [`License`](#license) | MIT |
