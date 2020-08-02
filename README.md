@@ -1,10 +1,6 @@
 <p align="center">
-  <picture>
-      <source srcset="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo-inverted.svg" media="(prefers-color-scheme: dark)">
-      <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="160" alt="Statamic Logo" />
-  </picture>
+  <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="160" alt="Statamic Logo" />
 </p>
-
 <h1 align="center">
   Statamic Starter Kit
 </h1>
@@ -19,11 +15,12 @@ I will continuously update the kit with new stuff I've used or learned while bui
 | --- | --- |
 | [`Features`](#features) | All Peak's current features. |
 | [`Installation`](#installation) | How to install Statamic with Peak. |
-| [`Page builder`](#page-builder) | CONTENT MISSING |
-| [`Bard`](#bard) | CONTENT MISSING |
-| [`Buttons`](#buttons) | CONTENT MISSING |
+| [`Page builder`](#page-builder) | How to use and extend the page builder. |
+| [`Bard`](#bard) | How to use Bard as a block for long form content. |
 | [`Typography`](#typography) | CONTENT MISSING |
+| [`Buttons`](#buttons) | CONTENT MISSING |
 | [`Responsive images`](#responsive-images) | CONTENT MISSING |
+| [`Globals`](#globals) | CONTENT MISSING |
 | [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen |
 | [`Multilingual fields and localization`](#multilingual-fields) | Field localization |
 | [`Upcoming features`](#upcoming-features) | What's planned |
@@ -79,17 +76,28 @@ If you're using [Laravel Valet](https://laravel.com/docs/valet), your site shoul
 ## Page builder
 <span id="page-builder"></span>
 
-Well you could make different templates for all your page types. The idea is to make pages as modular as possible. If a page has something unqiue: add a partial and a block to the page builder.
+While you could make different templates for all your page types. The idea is to make pages as modular as possible. Every unique element of your website could be a partial and a dedicated button in the page builder. 
 
-CONTENT MISSING
-<!-- ```html
-<html>
-``` -->
+If the layout of a page is totally different - or you really want to - you can always opt for using templates.
+
+### Adding blocks
+Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) to the fieldset. In `resources/views/default.antlers.html` you can see the blocks being loaded. Antlers will look in the `resources/views/page_builder/` folder for partials with the handle of your block. 
+
+If you for example add a fieldset to the `page_builder.yaml` with the handle `call_to_action` make sure you add a `_call_to_action.antlers.html` file to the `resources/views/page_builder` folder.
+
+| Note: blocks are scoped under `block` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ block:field_name }}`
 
 ## Bard
 <span id="bard"></span>
 
-CONTENT MISSING
+For long form content you can use the `Article` content block. This is a [Bard fieldtype](https://statamic.dev/fieldtypes/bard#content) with multiple sets of fields that are regularly used in longer articles. 
+
+### Adding sets
+Edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the article. In `resources/views/page_builder/_article.antlers.html` you can see the sets being loaded. Antlers will look in the `resources/views/components/` folder for partials with the handle of your set. 
+
+If you for example add a fieldset to the `article.yaml` with the handle `table` make sure you add a `_table.antlers.html` file to the `resources/views/components` folder.
+
+| Note: sets are scoped under `set` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ set:field_name }}`
 
 ## Buttons
 <span id="buttons"></span>
@@ -103,6 +111,11 @@ CONTENT MISSING
 
 ## Responsive images
 <span id="responsive-images"></span>
+
+CONTENT MISSING
+
+## Globals
+<span id="globals"></span>
 
 CONTENT MISSING
 
@@ -136,3 +149,23 @@ Contributions and discussions are always welcome, no matter how large or small. 
 <span id="license"></span>
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has it's own license.
+
+| Title | Description |
+| --- | --- |
+| [`Features`](#features) | All Peak's current features. |
+| [`Installation`](#installation) | How to install Statamic with Peak. |
+| [`Page builder`](#page-builder) | How to use and extend the page builder. |
+| [`Bard`](#bard) | How to use Bard as a block for long form content. |
+| [`Typography`](#typography) | CONTENT MISSING |
+| [`Buttons`](#buttons) | CONTENT MISSING |
+| [`Responsive images`](#responsive-images) | CONTENT MISSING |
+| [`Globals`](#globals) | CONTENT MISSING |
+| [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen |
+| [`Multilingual fields and localization`](#multilingual-fields) | Field localization |
+| [`Upcoming features`](#upcoming-features) | What's planned |
+| [`Contributing`](#contributing) | Please do! |
+| [`License`](#license) | MIT |
+
+<!-- ```html
+<html>
+``` -->

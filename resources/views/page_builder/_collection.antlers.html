@@ -1,14 +1,14 @@
 <section class="fluid-container">
-    {{ if set:title }}
-        {{ partial:typography/h2 class="mb-4" content="{set:title}" }}
+    {{ if block:title }}
+        {{ partial:typography/h2 class="mb-4" content="{block:title}" }}
     {{ /if }}
     <ul class="list-inside list-disc">
-        {{ set:collection }}
+        {{ block:collection }}
             <li>
                 <a class="text-primary-600 underline" href="{{ url }}">
                     {{ title }}
                 </a>
             </li>
-        {{ /set:collection }}
+        {{ /block:collection }}
     </ul>
 </section>
