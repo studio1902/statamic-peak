@@ -7,9 +7,9 @@
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
-Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your client site straight away. Peak is easy to extend or edit to fit your clients website needs. 
+Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your clients' site straight away. Peak is easy to extend or edit to fit your clients' website needs. 
 
-I made Peak to make it easy to start new projects as they share so much of the same principles. I hope Peak will help others to get started or learn a few new tricks. Wether you're new to Statamic and would like some examples, or wether you're a veteran: I hope you will like Peak and would would love it for you to participate and discuss on how to make stuff better. Let's make this a common effort! I will continuously update the kit with new stuff I've used or learned while building my own sites. 
+I made Peak to make it easy to start new projects as they share so much of the same principles. I hope Peak will help others to get started or learn a few new tricks. Whether you're new to Statamic and would like some examples, or whether you're a veteran: I hope you will like Peak and would love it for you to participate and discuss on how to make stuff better. Let's make this a common effort! I will continuously update the kit with new stuff I've used or learned while building my own sites. 
 
 | Title | Description |
 | --- | --- |
