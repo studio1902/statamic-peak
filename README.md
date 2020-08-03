@@ -90,7 +90,7 @@ If you're using [Laravel Valet](https://laravel.com/docs/valet), your site shoul
 ## Tailwind config
 <span id="tailwind-config"></span>
 
-Peak comes with `tailwind.config.js` which dictates how Tailwind should be compiled. Everything is configured in a single Javascript file. This makes it very easy to define you're unique design system for each website you're building. The file is fully documented.
+Peak comes with `tailwind.config.js` which dictates how Tailwind should be compiled. Everything is configured in a single Javascript file. This makes it very easy to define your unique design system for each website you're building. The file is fully documented.
 
 The config file also includes the [Tailwind Custom Forms](https://tailwindcss-custom-forms.netlify.app) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file already includes some basic configuration. The plugins are easy to remove if you don't plan on using them.
 
@@ -106,7 +106,7 @@ Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) 
 
 If you for example add a fieldset to the `page_builder.yaml` with the handle `call_to_action` make sure you add a `_call_to_action.antlers.html` file to the `resources/views/page_builder` folder.
 
-| Note: blocks are scoped under `block` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ block:field_name }}`
+> Note: blocks are scoped under `block` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ block:field_name }}`
 
 ## Bard
 <span id="bard"></span>
@@ -118,7 +118,7 @@ Edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the 
 
 If you for example add a fieldset to the `article.yaml` with the handle `table` make sure you add a `_table.antlers.html` file to the `resources/views/components` folder.
 
-| Note: sets are scoped under `set` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ set:field_name }}`
+> Note: sets are scoped under `set` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ set:field_name }}`
 
 ### Sizing utilities
 An article goes into a CSS Grid with 12 columns. By default all sets get the class `size-md`. As you can see in `tailwind.config.js` on mobile this means those elements span 12 columns. On larger screens however they just span 6 columns (centered). There are other sizing utilities as well:
@@ -130,7 +130,7 @@ An article goes into a CSS Grid with 12 columns. By default all sets get the cla
 
 You can use the sizing utilities to let an image for example break out of it's content. In sets like `figure` and `video` the user can pick their own size using the `size` field in `resources/fieldsets/common.yaml`. 
 
-| Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
+> Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
 
 ## Buttons
 <span id="buttons"></span>
