@@ -199,12 +199,7 @@ Peak changes the default Statamic config. The following is different:
 ## Upcoming features
 <span id="upcoming-features"></span>
 
-* Unstyled multi-level responsive nav.
-* More common (unstyled) content blocks like: link blocks and a call to action.
-* Basic contact form with themable e-mail template.
-* Partial for the social media global.
-* Partial for pagination.
-* Partial for responsive background images.
+Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aissue+is%3Aopen+is%3Aenhancement) for upcoming features.
 
 ## Contributing
 <span id="contributing"></span>
