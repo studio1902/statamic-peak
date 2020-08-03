@@ -13,11 +13,11 @@ return [
     */
 
     'devices' => [
-        'xs' => ['width' => 320, 'height' => 667],
-        'sm' => ['width' => 480, 'height' => 786],
+        'sm' => ['width' => 640, 'height' => 786],
         'md' => ['width' => 768, 'height' => 1024],
-        'lg' => ['width' => 1280, 'height' => 800],
-        'xl' => ['width' => 1440, 'height' => 900],
+        'lg' => ['width' => 1024, 'height' => 800],
+        'xl' => ['width' => 1280, 'height' => 900],
+        '2xl' => ['width' => 1440, 'height' => 900],
     ],
 
     /*

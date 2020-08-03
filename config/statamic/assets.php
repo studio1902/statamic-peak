@@ -66,7 +66,9 @@ return [
         |
         */
 
-        'presets' => [],
+        'presets' => [
+            // 'small' => ['w' => 200, 'h' => 200, 'q' => 75, 'fit' => 'crop'],
+        ],
 
     ],
 

@@ -71,13 +71,6 @@ return [
             'visibility' => 'public',
         ],
 
-        'icons' => [
-            'driver' => 'local',
-            'root' => public_path('icons'),
-            'url' => '/icons',
-            'visibility' => 'public',
-        ],
-
     ],
 
     /*
