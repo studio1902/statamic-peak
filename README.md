@@ -21,7 +21,7 @@ I made Peak to make it easy to start new projects as they share so much of the s
 | [`Bard`](#bard) | How to use Bard as a block for long form content. |
 | [`Typography`](#typography) | Typography partials and Tailwind Typography. |
 | [`Buttons`](#buttons) | How to work with buttons. |
-| [`Responsive images`](#responsive-images) | Easily responsive images to your site. |
+| [`Responsive images`](#responsive-images) | Easily add responsive images to your site. |
 | [`Globals`](#globals) | Global sets for site wide configuration. |
 | [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen. |
 | [`Multilingual fields and localization`](#multilingual-fields) | Field localization. |
@@ -39,13 +39,13 @@ I made Peak to make it easy to start new projects as they share so much of the s
 - Tailwind Typography (with configuration).
 - A custom Tailwind config file with added components and utilities used by Peak. 
 - [AlpineJS](https://github.com/alpinejs/alpine/) as a JS framework.
-- A block builder (replicator) with basic templates for your scaffolding your content. Easily extendible to your clients needs. 
+- A block builder (replicator) with basic templates for scaffolding your content. Easily extendable  to fit your clients' needs. 
 - An article block (bard) with some default sets like a figure, pull quote and an embedded video set. Easily extendible.
 - A button system for adding buttons to your site.
 - Sane default configuration.
 - The [Responsive Images](https://github.com/spatie/statamic-responsive-images) addon by Spatie to make using images in your templates a breeze.
 - Asset compilation with Laravel Mix.
-- Modernizr support (webp detection as a default).
+- Modernizr support (WebP detection as a default).
 
 ## Knowledge assumptions
 <span id="knowledge-assumptions"></span>
@@ -97,14 +97,14 @@ The config file also includes the [Tailwind Custom Forms](https://tailwindcss-cu
 ## Page builder
 <span id="page-builder"></span>
 
-While you could make different templates for all your page types. The idea is to make pages as modular as possible. Every unique element of your website could be a partial and a dedicated button in the page builder. 
+While you could make different templates for all your page types, the idea is to make pages as modular as possible. Every unique element of your website could be a partial and a dedicated button in the page builder. 
 
 If the layout of a page is totally different - or you really want to - you can always opt for using templates.
 
 ### Adding blocks
 Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) to the fieldset. In `resources/views/default.antlers.html` you can see the blocks being loaded. Antlers will look in the `resources/views/page_builder/` folder for partials with the handle of your block. 
 
-If you for example add a fieldset to the `page_builder.yaml` with the handle `call_to_action` make sure you add a `_call_to_action.antlers.html` file to the `resources/views/page_builder` folder.
+For example if you add a fieldset to the `page_builder.yaml` with the handle `call_to_action` make sure you add a `_call_to_action.antlers.html` file to the `resources/views/page_builder` folder.
 
 > Note: blocks are scoped under `block` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ block:field_name }}`
 
@@ -116,7 +116,7 @@ For long form content you can use the `Article` content block. This is a [Bard f
 ### Adding sets
 Edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the article. In `resources/views/page_builder/_article.antlers.html` you can see the sets being loaded. Antlers will look in the `resources/views/components/` folder for partials with the handle of your set. 
 
-If you for example add a fieldset to the `article.yaml` with the handle `table` make sure you add a `_table.antlers.html` file to the `resources/views/components` folder.
+For example if you add a fieldset to the `article.yaml` with the handle `table` make sure you add a `_table.antlers.html` file to the `resources/views/components` folder.
 
 > Note: sets are scoped under `set` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ set:field_name }}`
 
@@ -128,7 +128,7 @@ An article goes into a CSS Grid with 12 columns. By default all sets get the cla
 * *size-lg*: 12 columns on mobile, 8 columns from medium screens up
 * *size-xl*: 12 columns on mobile, 10 columns from medium screens up
 
-You can use the sizing utilities to let an image for example break out of it's content. In sets like `figure` and `video` the user can pick their own size using the `size` field in `resources/fieldsets/common.yaml`. 
+For example use the sizing utilities to let an image break out of it's content. In sets like `figure` and `video` the user can pick their own size using the `size` field in `resources/fieldsets/common.yaml`. 
 
 > Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
 
@@ -157,17 +157,17 @@ Peak comes with a few defaults that are easy to style. Feel free to add more par
 ## Responsive images
 <span id="responsive-images"></span>
 
-Peak comes with Spaties Responsive Images package for Statamic. This package will generate multiple sizes for your assets and will provide browser with instructions on which versions to use depending on the screen size and the way the image is rendered. Adding responsive images to your site *couldn't* be easier. Check out their [documentation](https://github.com/spatie/statamic-responsive-images).
+Peak comes with Spaties Responsive Images package for Statamic. This package will generate multiple sizes for your assets and will provide the browser with instructions on which versions to use depending on the screen size and the way the image is rendered. Adding responsive images to your site *couldn't* be easier. Check out their [documentation](https://github.com/spatie/statamic-responsive-images).
 
 ## Globals
 <span id="globals"></span>
 
-Peak currently comes with two global sets you often need. One to edit content on error pages like the 404 page and one to add social media accounts to your website. There's already a basic 404 template in place (`resources/views/errors/404.antlers.html`) to display those messages. 
+Peak currently comes with two global sets you often need, one to edit content on error pages like the 404 page and one to add social media accounts to your website. There's already a basic 404 template in place (`resources/views/errors/404.antlers.html`) to display those messages. 
 
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
 
-The Rad Mode on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
+The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
 
 If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
 
@@ -179,7 +179,7 @@ It is currently not possible in Statamic to translate field labels and descripti
 ## Modernizr
 <span id="modernizr"></span>
 
-Peak comes with Modernizr support. By default the only feature detect that's added is webp. It will add a `webp` class or a `no-webp` class to the `<html>` tag. If you want to add more feature detects you can edit `modernizr.config.js`.
+Peak comes with Modernizr support. By default the only feature detect that's added is WebP. It will add a `webp` class or a `no-webp` class to the `<html>` tag. If you want to add more feature detects you can edit `modernizr.config.js`.
 
 ## Configuration changes
 <span id="configuration-changes"></span>
@@ -216,4 +216,4 @@ Contributions and discussions are always welcome, no matter how large or small. 
 ## License
 <span id="license"></span>
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has it's own license.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has its' own license.
