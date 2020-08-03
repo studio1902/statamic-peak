@@ -17,7 +17,7 @@ return [
 
         'default' => [
             'name' => config('app.name'),
-            'locale' => 'nl_NL',
+            'locale' => 'en_US',
             'url' => '/',
         ]
 

@@ -1,6 +1,6 @@
 <section class="fluid-container">
     {{ if block:title }}
-        {{ partial:typography/h2 class="mb-4" content="{block:title}" }}
+        {{ partial:typography/h2 class="mb-4" :content="block:title" }}
     {{ /if }}
     <ul class="list-inside list-disc">
         {{ block:collection }}
