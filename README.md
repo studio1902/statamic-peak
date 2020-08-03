@@ -75,9 +75,9 @@ php please make:user
 ```
 
 **3. Compile the fontend assets** 
-The [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself.
+The [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file as it's being used for Browsersync in `webpack.mix.js`.
 ```bash
-npm i && npm run watch
+npm i && npm run watch (or npm run dev)
 ```
 To compile for production run this (on your server). It will purge all unnecessary utility classes and greatly reduce file size:
 ```bash
