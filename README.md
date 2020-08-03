@@ -188,10 +188,8 @@ Peak changes the default Statamic config. The following is different:
 
 | File | Default | Peak |
 | --- | --- | --- |
-| `config/app.php` | `'timezone' => 'UTC'` | `'timezone' => 'CET'` |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
-| `config/statamic/cp.php` | `'date_format' -> 'Y-m-d'` | `'date_format' -> 'd-m-Y'` |
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
