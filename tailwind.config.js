@@ -287,27 +287,6 @@ module.exports = {
     }),
 
     //--------------------------------------------------------------------------
-    // Tailwind custom utilities
-    //--------------------------------------------------------------------------
-    //
-    // Here we define custom utilities not provided by Tailwind.
-    //
-    plugin(function({ addUtilities, theme, variants }) {
-      const newUtilities = {
-        // Useful for reversing flex or grid layouts.
-        '.rtl': {
-          direction: 'rtl',
-        },
-        // Useful for reversing content in a reversed flex or grid layout to the
-        // normal reading direction.
-        '.ltr': {
-          direction: 'ltr',
-        },
-      }
-      addUtilities(newUtilities, variants('fluidContainer'))
-    }),
-
-    //--------------------------------------------------------------------------
     // Tailwind custom components
     //--------------------------------------------------------------------------
     //
@@ -347,11 +326,7 @@ module.exports = {
             marginBottom: theme('spacing.12') * -1,
           },
         },
-        // Sizing utilities for sets in our bard (long form content).
-        // On small devices they're full width.
-        '.size-sm, .size-md, .size-lg, .size-xl': {
-          gridColumn: 'span 12 / span 12',
-        },
+        
         [`@media (min-width: ${theme('screens.md')})`]: {
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
@@ -362,6 +337,41 @@ module.exports = {
               marginBottom: theme('spacing.16') * -1,
             },
           },
+        },
+        [`@media (min-width: ${theme('screens.lg')})`]: {
+          // Larger horizontal padding on larger screens.
+          '.fluid-container': {
+            'padding-left': theme('padding.12'),
+            'padding-right': theme('padding.12'),
+          },
+          // Larger vertical spacing between blocks on larger screens.
+          '.outer-grid': {
+            rowGap: theme('spacing.24'),
+            paddingTop: theme('spacing.24'),
+            paddingBottom: theme('spacing.24'),
+            '& > *:last-child:has(.w-full)': {
+              marginBottom: theme('spacing.24') * -1,
+            },
+          },
+        },
+      }
+      addComponents(components)
+    }),
+
+    //--------------------------------------------------------------------------
+    // Tailwind custom utilities
+    //--------------------------------------------------------------------------
+    //
+    // Here we define custom utilities not provided by Tailwind.
+    //
+    plugin(function({ addUtilities, theme, variants }) {
+      const newUtilities = {
+        // Sizing utilities for sets in our bard (long form content).
+        // On small devices they're full width.
+        '.size-sm, .size-md, .size-lg, .size-xl': {
+          gridColumn: 'span 12 / span 12',
+        },
+        [`@media (min-width: ${theme('screens.md')})`]: {
           // Sizing utilities for sets in our bard (long form content).
           // On larger devices they go from small to extra large.
           // (E.g. an image wider then text in an article.)
@@ -383,20 +393,6 @@ module.exports = {
           },
         },
         [`@media (min-width: ${theme('screens.lg')})`]: {
-          // Larger horizontal padding on larger screens.
-          '.fluid-container': {
-            'padding-left': theme('padding.12'),
-            'padding-right': theme('padding.12'),
-          },
-          // Larger vertical spacing between blocks on larger screens.
-          '.outer-grid': {
-            rowGap: theme('spacing.24'),
-            paddingTop: theme('spacing.24'),
-            paddingBottom: theme('spacing.24'),
-            '& > *:last-child:has(.w-full)': {
-              marginBottom: theme('spacing.24') * -1,
-            },
-          },
           // Sizing utilities for sets in our bard (long form content).
           // On larger devices they go from small to extra large.
           '.size-sm': {
@@ -417,7 +413,7 @@ module.exports = {
           },
         },
       }
-      addComponents(components)
+      addUtilities(newUtilities)
     }),
   ]
 }
