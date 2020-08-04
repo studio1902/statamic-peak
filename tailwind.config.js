@@ -131,6 +131,10 @@ module.exports = {
         // Add a slightly wider breakpoint.
         '2xl': '1440px',
       },
+      spacing: {
+        // Used for the mobile navigation toggle.
+        'safe': 'calc(env(safe-area-inset-bottom, 0rem) + 2rem)',
+      },
       zIndex: {
         // Z-index stuff behind it's parent.
         'behind': '-1',
@@ -300,11 +304,9 @@ module.exports = {
           maxWidth: theme('screens.2xl'),
           marginLeft: 'auto',
           marginRight: 'auto',
-          'padding-left': theme('padding.8'),
-          'padding-right': theme('padding.8'),
           // Use safe-area-inset together with default padding for Apple devices with a notch.
-          paddingLeft: 'calc(env(safe-area-inset-left) + ' + theme('padding.8') + ')',
-          paddingRight: 'calc(env(safe-area-inset-right) + ' + theme('padding.8') + ')',
+          paddingLeft: 'calc(env(safe-area-inset-left, 0rem) + ' + theme('padding.8') + ')',
+          paddingRight: 'calc(env(safe-area-inset-right, 0rem) + ' + theme('padding.8') + ')',
         },
         // Disable scroll e.g. when a modal is open. Should be used on the <body>
         '.no-scroll': {
@@ -341,8 +343,9 @@ module.exports = {
         [`@media (min-width: ${theme('screens.lg')})`]: {
           // Larger horizontal padding on larger screens.
           '.fluid-container': {
-            'padding-left': theme('padding.12'),
-            'padding-right': theme('padding.12'),
+            // Use safe-area-inset together with default padding for Apple devices with a notch.
+            paddingLeft: 'calc(env(safe-area-inset-left, 0rem) + ' + theme('padding.12') + ')',
+            paddingRight: 'calc(env(safe-area-inset-right, 0rem) + ' + theme('padding.12') + ')',
           },
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
