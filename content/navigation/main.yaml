@@ -1,14 +1,21 @@
 title: Main
-max_depth: 1
+collections:
+  - pages
+max_depth: 2
 root: true
 tree:
   -
     entry: home
   -
-    entry: a7d612aa-e3e1-4235-bfa8-7b577177c947
+    entry: 6b995156-142b-43d6-be4e-6c260ea90d37
+    children:
+      -
+        entry: 5c526dbf-9dd7-4c52-98d8-54e00ebddfb6
+      -
+        entry: 20f6a148-63b8-47a8-9b0e-d57095d78c21
   -
-    entry: 7e657375-1033-4215-ba00-0b07e91ffd8f
+    entry: a8c9179c-26d0-4707-a6b2-8fdd268299f7
   -
-    entry: ba1f8a66-8ba7-4572-bf08-3ca6150f2db7
+    entry: 16100de1-6dd4-4a9f-ac3c-90f12f4aeb6e
   -
-    entry: e873118a-eb35-48cf-91fe-87dc9be9fbce
+    entry: 500913a8-ec53-4e35-952c-6bc7181d414c

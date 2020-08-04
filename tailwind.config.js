@@ -43,17 +43,17 @@ module.exports = {
         800: '#2d3748',
         900: '#1a202c',
       },
-      // Client primary color, currently indigo.
+      // Client primary color, currently blue.
       primary: {
-        100: '#ebf4ff',
-        200: '#c3dafe',
-        300: '#a3bffa',
-        400: '#7f9cf5',
-        500: '#667eea',
-        600: '#5a67d8',
-        700: '#4c51bf',
-        800: '#434190',
-        900: '#3c366b',
+        100: '#ebf8ff',
+        200: '#bee3f8',
+        300: '#90cdf4',
+        400: '#63b3ed',
+        500: '#4299e1',
+        600: '#3182ce',
+        700: '#2b6cb0',
+        800: '#2c5282',
+        900: '#2a4365',
       },
       // Error styling colors: red
       error: {
