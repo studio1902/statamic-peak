@@ -17,6 +17,7 @@ I made Peak to make it easy to start new projects as they share so much of the s
 | [`Knowledge assumptions`](#knowledge-assumptions) | Stuff you should know when using Statamic Peak. |
 | [`Installation`](#installation) | How to install Statamic with Peak. |
 | [`Tailwind config`](#tailwind-config) | How Tailwind is configured. |
+| [`Navigation`](#navigation) | How the included navigation works. |
 | [`Page builder`](#page-builder) | How to use and extend the page builder. |
 | [`Bard`](#bard) | How to use Bard as a block for long form content. |
 | [`Typography`](#typography) | Typography partials and Tailwind Typography. |
@@ -39,10 +40,10 @@ I made Peak to make it easy to start new projects as they share so much of the s
 - Tailwind Typography (with configuration).
 - A custom Tailwind config file with added components and utilities used by Peak. 
 - [AlpineJS](https://github.com/alpinejs/alpine/) as a JS framework.
+- Unstyled multi-level responsive navigation.
 - A block builder (replicator) with basic templates for scaffolding your content. Easily extendable  to fit your clients' needs. 
 - An article block (bard) with some default sets like a figure, pull quote and an embedded video set. Easily extendible.
 - A button system for adding buttons to your site.
-- Sane default configuration.
 - The [Responsive Images](https://github.com/spatie/statamic-responsive-images) addon by Spatie to make using images in your templates a breeze.
 - Asset compilation with Laravel Mix.
 - Modernizr support (WebP detection as a default).
@@ -74,7 +75,7 @@ cp .env.example .env && php artisan key:generate
 php please make:user
 ```
 
-**3. Compile the fontend assets** - The [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file as it's being used for Browsersync in `webpack.mix.js`.
+**3. Compile the fontend assets** - the [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file as it's being used for Browsersync in `webpack.mix.js`.
 ```bash
 npm i && npm run watch (or npm run dev)
 ```
@@ -83,8 +84,7 @@ To compile for production run this (on your server). It will purge all unnecessa
 npm run production
 ```
 
-**4. Build!**
-If you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
+**4. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
 ## Tailwind config
 <span id="tailwind-config"></span>
@@ -92,6 +92,11 @@ If you're using [Laravel Valet](https://laravel.com/docs/valet), your site shoul
 Peak comes with `tailwind.config.js` which dictates how Tailwind should be compiled. Everything is configured in a single Javascript file. This makes it very easy to define your unique design system for each website you're building. The file is fully documented.
 
 The config file also includes the [Tailwind Custom Forms](https://tailwindcss-custom-forms.netlify.app) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file already includes some basic configuration. The plugins are easy to remove if you don't plan on using them.
+
+## Navigation
+<span id="navigation"></span>
+
+Peak includes a basic unstyled responsive navigation with two levels. Open `resources/views/navigation/_main.antlers.html` to make changes. There is a desktop version that only shows on `md` screens and up as well as a mobile version that shows on smaller screens. AlpineJS takes care of the interactivity. The state of the mobile navigation toggle is defined on the `<body>` tag in `resources/views/layout.antlers.html`.
 
 ## Page builder
 <span id="page-builder"></span>

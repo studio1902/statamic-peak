@@ -9,7 +9,11 @@
         <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
         {{# Generate your favicons here https://realfavicongenerator.net #}}
     </head>
-    <body class="min-h-screen bg-light">
+    <body 
+        class="min-h-screen bg-light" 
+        x-data="{ mobileNavOpen: false }" 
+        :class="{ 'no-scroll': mobileNavOpen }"
+    >
         {{ partial:layout/header }}
         {{ template_content }}
         {{ partial:layout/footer }}
