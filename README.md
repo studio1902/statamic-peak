@@ -60,7 +60,7 @@ Before using Peak make sure you're familiar with:
 ## Installation
 <span id="installation"></span>
 
-**1. Create a new site** cloning the repo and removing the origin repo.
+**1. Create a new site** - cloning the repo and removing the origin repo.
 ```bash
 git clone git@github.com:studio1902/statamic-peak.git my-site
 cd my-site
@@ -74,8 +74,7 @@ cp .env.example .env && php artisan key:generate
 php please make:user
 ```
 
-**3. Compile the fontend assets** 
-The [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file as it's being used for Browsersync in `webpack.mix.js`.
+**3. Compile the fontend assets** - The [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file as it's being used for Browsersync in `webpack.mix.js`.
 ```bash
 npm i && npm run watch (or npm run dev)
 ```
