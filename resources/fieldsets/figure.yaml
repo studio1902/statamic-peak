@@ -19,7 +19,7 @@ fields:
     field: common.size
     config:
       width: 50
-      instructions: 'The size in which the video should be displayed.'
+      instructions: 'The size in which the image should be displayed.'
   -
     handle: caption
     field:
@@ -28,4 +28,4 @@ fields:
       localizable: true
       listable: hidden
       display: Caption
-      instructions: 'An optional caption that will be displayed under the video.'
+      instructions: 'An optional caption that will be displayed under the image.'
