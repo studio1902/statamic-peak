@@ -6,6 +6,7 @@
 // adding and extending to Tailwinds default utility classes.
 //
 
+const _ = require('lodash')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
@@ -287,7 +288,40 @@ module.exports = {
           backgroundColor: theme('colors.primary.600'),
           color: theme('colors.white'),
         },
+        //--------------------------------------------------------------------------
+        // Display screen breakpoints in debug environment.
+        //--------------------------------------------------------------------------
+        'body.debug::before': {
+          display: 'block',
+          position: 'fixed',
+          zIndex: '99',
+          bottom: theme('spacing.1'),
+          right: theme('spacing.1'),
+          padding: theme('spacing.2'),
+          borderRadius: theme('borderRadius.full'),
+          backgroundColor: theme('colors.notice.300'),
+          boxShadow: theme('boxShadow.default'),
+          fontSize: theme('fontSize.xs'),
+          color: theme('colors.notice.800'),
+          textTransform: 'uppercase',
+          fontWeight: theme('fontWeight.bold'),
+          content: '"-"',
+          pointerEvents: 'none',
+        },
       })
+    }),
+
+    plugin(function({ addBase, theme}) {
+      const breakpoints = _.map(theme('screens'), (value, key) => {
+        return {
+          [`@media (min-width: ${value})`]: {
+            'body.debug::before': {
+              content: `"${key}"`,
+            }
+          }
+        }
+      })
+      addBase(breakpoints)
     }),
 
     //--------------------------------------------------------------------------
@@ -328,7 +362,6 @@ module.exports = {
             marginBottom: theme('spacing.12') * -1,
           },
         },
-        
         [`@media (min-width: ${theme('screens.md')})`]: {
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
