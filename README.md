@@ -93,6 +93,8 @@ Peak comes with `tailwind.config.js` which dictates how Tailwind should be compi
 
 The config file also includes the [Tailwind Custom Forms](https://tailwindcss-custom-forms.netlify.app) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file already includes some basic configuration. The plugins are easy to remove if you don't plan on using them.
 
+When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
+
 ## Navigation
 <span id="navigation"></span>
 
