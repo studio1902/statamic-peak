@@ -2,5 +2,11 @@
 <footer class="w-full py-4">
     <div class="fluid-container text-xs">
         © 2020 {{ unless (now | format:Y) == '2020' }} - {{ now | format:Y }}{{ /unless }} Studio 1902
+        {{ if social_media:social_media }}
+            - 
+            {{ social_media:social_media }}
+                <a href="{{ url }}" target="_blank">{{ type | title }}</a>
+            {{ /social_media:social_media }}
+        {{ /if }}
     </div>
 </footer>
