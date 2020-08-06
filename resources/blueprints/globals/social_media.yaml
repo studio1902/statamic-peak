@@ -12,37 +12,31 @@ sections:
               fields:
                 -
                   import: social_media
-                  prefix: facebook_
             instagram:
               display: Instagram
               fields:
                 -
                   import: social_media
-                  prefix: instagram_
             linkedin:
               display: LinkedIn
               fields:
                 -
                   import: social_media
-                  prefix: linkedin_
             twitter:
               display: Twitter
               fields:
                 -
                   import: social_media
-                  prefix: twitter_
             vimeo:
               display: Vimeo
               fields:
                 -
                   import: social_media
-                  prefix: vimeo_
             youtube:
               display: YouTube
               fields:
                 -
                   import: social_media
-                  prefix: youtube_
           type: replicator
           localizable: false
           listable: hidden
