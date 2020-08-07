@@ -22,6 +22,7 @@ I made Peak to make it easy to start new projects as they share so much of the s
 | [`Bard`](#bard) | How to use Bard as a block for long form content. |
 | [`Typography`](#typography) | Typography partials and Tailwind Typography. |
 | [`Buttons`](#buttons) | How to work with buttons. |
+| [`Pagination`](#pagination) | How to work with pagination. |
 | [`Responsive images`](#responsive-images) | Easily add responsive images to your site. |
 | [`Globals`](#globals) | Global sets for site wide configuration. |
 | [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen. |
@@ -142,6 +143,13 @@ For example use the sizing utilities to let an image break out of it's content. 
 <span id="buttons"></span>
 
 The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_buttons.antlers.html` go together. The button fieldset is a set in Bard but can also be called from other fieldsets where you want to include buttons. Just call the buttons partial in your template and one or multiple buttons will be rendered. 
+
+## Pagination
+<span id="pagination"></span>
+
+When you're working with the collection tag and want to use [pagination](https://statamic.dev/tags/collection#pagination), just add the pagination partial using `partial:components/pagination` to automagically add pagination buttons. They're easily editable in  `resources/views/components/_pagination.antlers.html`. 
+
+> Note: the strings being used in the partial are translatable and can be edited in `resources/lang/en/site.php` }}`
 
 ## Typography
 <span id="typography"></span>
