@@ -1,0 +1,17 @@
+{{ if paginate.total_pages > 1 }}
+    {{ paginate }}
+        <nav class="md:px-8 flex justify-center space-x-4">
+            {{ if prev_page }}
+                <a class="text-primary-600" href="{{ prev_page }}">&laquo; {{ trans:site.previous }}</a>
+            {{ else }}
+                <span>&laquo; {{ trans:site.previous }}</span>
+            {{ /if }}
+            <span class="">{{ current_page }} {{ trans:site.of }} {{ total_pages }}</span>
+            {{ if next_page }}
+                <a class="text-primary-600" href="{{ next_page }}">{{ trans:site.next }} &raquo;</a>
+            {{ else }}
+                <span>{{ trans:site.next }} &raquo;</span>
+            {{ /if }}
+        </nav>
+    {{ /paginate }}
+{{ /if }}
