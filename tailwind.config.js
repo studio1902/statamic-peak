@@ -26,13 +26,14 @@ module.exports = {
     //--------------------------------------------------------------------------
     //
     // Here you may register all of the colors you need for this project.
-    // These colors overwrite all the default Tailwind colors.
+    // These colors overwrite all the default Tailwind colors. If you don't want
+    // this you should remove this part and extend color instead.
     //
     colors: {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
-      // Greys
+      // Grays (default TW gray)
       neutral: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -56,7 +57,7 @@ module.exports = {
         800: '#2c5282',
         900: '#2a4365',
       },
-      // Error styling colors: red
+      // Error styling colors: red (TW Red)
       error: {
         50: '#FDF2F2',
         100: '#FCE8E8',
@@ -69,7 +70,7 @@ module.exports = {
         800: '#9B1D1C',
         900: '#771D1D',
       },
-      // Notice styling colors: yellow
+      // Notice styling colors: yellow (TW Yellow)
       notice: {
         50: '#FDFDEA',
         100: '#FDF5B2',
@@ -82,7 +83,7 @@ module.exports = {
         800: '#723A14',
         900: '#643112',
       },
-      // Success styling colors: green
+      // Success styling colors: green (TW Green)
       success: {
         50: '#F3FAF7',
         100: '#DEF7EC',
