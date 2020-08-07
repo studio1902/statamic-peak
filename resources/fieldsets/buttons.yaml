@@ -6,7 +6,7 @@ fields:
       fields:
         -
           import: button
-      mode: table
+      mode: stacked
       add_row: 'Add button'
       reorderable: true
       type: grid
