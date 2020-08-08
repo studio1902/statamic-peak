@@ -297,7 +297,7 @@ module.exports = {
           position: 'fixed',
           zIndex: '99',
           top: theme('spacing.1'),
-          left: theme('spacing.1'),
+          right: theme('spacing.1'),
           padding: theme('spacing.1'),
           border: '1px',
           borderStyle: 'solid',
