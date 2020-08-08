@@ -1,7 +1,19 @@
-title: 'Social media'
 sections:
-  main:
-    display: Main
+  error_messages:
+    display: 'Error messages'
+    fields:
+      -
+        handle: 404_error
+        field:
+          type: section
+          localizable: false
+          listable: hidden
+          display: '404 error'
+      -
+        import: error_message
+        prefix: '404_'
+  social_media:
+    display: 'Social Media'
     fields:
       -
         handle: social_media
@@ -40,5 +52,4 @@ sections:
           type: replicator
           localizable: false
           listable: hidden
-          instructions: 'Add your various social media profiles.'
           display: 'Social media'

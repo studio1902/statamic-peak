@@ -1,6 +1,0 @@
-title: 'Error messages'
-data:
-  404_title: 'Page not found'
-  404_text: 'Unfortunately, the page you requested doesn''t exist (anymore).'
-  301_title: '301'
-  301_text: '301'
