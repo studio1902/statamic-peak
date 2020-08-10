@@ -23,7 +23,7 @@ I made Peak to make it easy to start new projects as they share so much of the s
 | [`Typography`](#typography) | Typography partials and Tailwind Typography. |
 | [`Buttons`](#buttons) | How to work with buttons. |
 | [`Pagination`](#pagination) | How to work with pagination. |
-| [`Responsive images`](#responsive-images) | Easily add responsive images to your site. |
+| [`Assets`](#assets) | Easily add responsive assets to your site. |
 | [`Globals`](#globals) | Global sets for site wide configuration. |
 | [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen. |
 | [`Multilingual fields and localization`](#multilingual-fields) | Field localization. |
@@ -168,10 +168,14 @@ This will render the title with the styling defined in `typography/h1`. This way
 
 Peak comes with a few defaults that are easy to style. Feel free to add more partials for your current website.
 
-## Responsive images
-<span id="responsive-images"></span>
+## Assets
+<span id="assets"></span>
 
+### Images
 Peak comes with Spaties Responsive Images package for Statamic. This package will generate multiple sizes for your assets and will provide the browser with instructions on which versions to use depending on the screen size and the way the image is rendered. Adding responsive images to your site *couldn't* be easier. Check out their [documentation](https://github.com/spatie/statamic-responsive-images).
+
+### Background images
+Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use `{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}`. The predefined sizes used in `resources/views/snippets/_background_image.antlers.html` are defined in `config/statamic/assets.php`.
 
 ## Globals
 <span id="globals"></span>
@@ -203,6 +207,7 @@ Peak changes the default Statamic config. The following is different:
 | File | Default | Peak |
 | --- | --- | --- |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
+| `config/statamic/assets.php` | `'presets' => [],` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
