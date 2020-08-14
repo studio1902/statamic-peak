@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+
+        body { margin: 0; padding: 0; min-width: 100% !important; -webkit-font-smoothing: antialiased; }
+        img { height: auto; }
+        a { color: #FF7E38; text-decoration: none; }
+        .fix { display: block; }
+        .content { width: 100%; max-width: 600px; }
+        .innerpadding { padding: 30px 30px 30px 30px; }
+        .innerpaddingextra { padding: 30px 38px 30px 38px; }
+        .h1, .h2, .bodycopy, th, td { font-family: sans-serif; }
+        .h1 { margin-bottom: 18px; font-size: 28px; line-height: 38px; font-weight: bold; color: #526660; }
+        .h2 { margin-bottom: 18px; font-size: 22px; line-height: 30px; font-weight: bold; color: #526660; }
+        .bodycopy { margin-bottom: 24px; font-size: 16px; line-height: 24px; color: #526660; }
+        th { background-color: #FF7E38; margin: 0; padding: 5px 8px 5px 8px; font-size: 10px; line-height: 18px; color: #ffffff; }
+        td { margin: 0; font-size: 12px; line-height: 18px; color: #526660; }
+        td, tr, th { border: none; padding: 0; }
+        ul { padding-left: 20px; list-style: circle; }
+        li { padding: 0; margin-bottom: 15px; color: #ffffff; }
+        .image { height: 350px; width: auto; overflow: hidden; }
+        .price { font-weight: bold; }
+        .footercopy { margin: 0; padding: 0; font-size: 10px; line-height: 18px; color: #ffffff; }
+        .footercopy a { color: #ffffff; text-decoration: none; }
+        .footer-link { text-align: center;}
+        .footer-link a { color: #FF7E38; font-size: 12px; }
+        .title-before-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 10px; }
+        .title-before { height: 10px; width: auto; }
+        .button { display: inline-block; border: 2px solid #FF7E38; color: #FF7E38; padding: 15px 30px; font-size: 16px; font-weight: bold; transition: all .2s ease-in-out; }
+        .button:hover { background-color: #FF7E38; color: #ffffff; }
+        table { height: 100%; }
+        /*@media only screen and (min-device-width: 801px) {
+        .content {width: 700px !important;}
+        }*/
+        @media only screen and (max-width: 700px) {
+            .footertable { width: 100% !important; margin-bottom: 0px !important; }
+            .footertable td { width: 100% !important; float: left !important; clear: both !important; margin-bottom: 15px !important; text-align: center !important; }
+            .footer.innerpadding { padding-bottom: 0px !important; }
+        }
+    </style>
+</head>
+
+<body bgcolor="#FFFFFF" style="margin: 0;padding: 0;-webkit-font-smoothing: antialiased;min-width: 100% !important;">
+    <table width="100%" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="height: 100%;">
+        <tr style="border: none;padding: 0;">
+            <td style="font-family: sans-serif;margin: 0;font-size: 12px;line-height: 18px;color: #526660;border: none;padding: 0;">
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                <td>
+                <![endif]-->
+                <table bgcolor="#FFFFFF" class="content" align="center" cellpadding="0" cellspacing="0" border="0" style="height: 100%;width: 100%;max-width: 600px;">
+                    <tr style="border: none;padding: 0;">
+                        <td colspan="2" align="center" class="innerpadding" style="font-family: sans-serif;margin: 0;font-size: 12px;line-height: 18px;color: #526660;border: none;padding: 30px 30px 30px 30px;">
+                            <a href="https://waltec.info" style="color: #FF7E38;text-decoration: none;">
+                                <a href="https://waltec.info" style="color: #FF7E38;text-decoration: none;">
+                                    <img class="fix" style="display:block;height:auto;" width="150px" height="auto" src="https://cdn.studio1902.nl/assets/waltec.info/email/logo.png" alt="Logo Waltec">
+                                </a>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr style="border: none;padding: 0;">
+                        <td colspan="2" class="innerpadding" style="font-family: sans-serif;margin: 0;font-size: 12px;line-height: 18px;color: #526660;border: none;padding: 30px 30px 30px 30px;">
+                            <h1 style="font-family: sans-serif; margin-bottom: 18px; font-size: 28px; line-height: 38px; font-weight: bold; color: #526660;">{{ trans:theme.form_mail_title }} {{ trans:theme.form_mail_from }}</h1>
+                            <p style="font-family: sans-serif; margin-bottom: 24px; font-size: 16px; line-height: 24px; color: #526660;">
+                                {{ trans:theme.form_mail_greeting }},<br>
+                                <br>
+                                {{ trans:theme.form_mail_body_owner }}  <br>
+                                <br>
+                                <strong>{{ trans:theme.form_name }}:</strong> {{ name }}<br>
+                                <strong>{{ trans:theme.form_email }}:</strong> {{ email }}<br>
+                                {{ if phone_number }}
+                                    <strong>{{ trans:theme.form_phone_number }}:</strong> {{ phone_number }}<br>
+                                {{ /if }}
+                                <strong>{{ trans:theme.form_message }}:</strong><br><br>
+                                <i>{{ message | nl2br }}</i><br>
+                                <br>
+                                {{ trans:theme.form_mail_closing }},<br>
+                                {{ trans:theme.form_mail_from }}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
