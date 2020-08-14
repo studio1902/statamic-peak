@@ -8,7 +8,6 @@ fields:
       localizable: true
       listable: hidden
       display: Title
-      validate: required
   -
     handle: slug
     field:
@@ -17,9 +16,8 @@ fields:
       localizable: true
       listable: hidden
       display: Slug
-      validate: required
   -
-    handle: text
+    handle: text_rich
     field:
       buttons:
         - h2
@@ -42,9 +40,8 @@ fields:
       localizable: true
       listable: hidden
       display: Text
-      validate: required
   -
-    handle: text_plain
+    handle: text_basic
     field:
       buttons:
         - bold
@@ -65,7 +62,13 @@ fields:
       localizable: true
       listable: hidden
       display: Text
-      validate: required
+  -
+    handle: text_plain
+    field:
+      type: textarea
+      localizable: true
+      listable: hidden
+      display: Text
   -
     handle: size
     field:

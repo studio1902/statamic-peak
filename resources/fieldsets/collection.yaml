@@ -2,12 +2,8 @@ title: Collection entries
 fields:
   -
     handle: title
-    field:
-      input_type: text
-      type: text
-      localizable: true
-      listable: hidden
-      display: Title
+    field: common.title
+    config:
       instructions: 'The title you want to display above the collection entries.'
   -
     handle: collection
