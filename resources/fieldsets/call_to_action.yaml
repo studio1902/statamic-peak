@@ -1,0 +1,15 @@
+title: 'Call to action'
+fields:
+  -
+    handle: title
+    field: common.title
+    config:
+      instructions: 'The title you want to display above the text.'
+  -
+    handle: text
+    field: common.text_plain
+    config:
+      instructions: 'The text you want to display above the buttons.'
+  -
+    handle: buttons
+    import: buttons
