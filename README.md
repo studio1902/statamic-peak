@@ -41,7 +41,7 @@ I made Peak to make it easy to start new projects as they share so much of the s
 - Tailwind Typography (with configuration).
 - A custom Tailwind config file with added components and utilities used by Peak. 
 - [AlpineJS](https://github.com/alpinejs/alpine/) as a JS framework.
-- Unstyled multi-level responsive navigation.
+- Unstyled multi-level responsive navigation and optional breadcrumbs.
 - A block builder (replicator) with basic templates for scaffolding your content. Easily extendable  to fit your clients' needs. 
 - An article block (bard) with some default sets like a figure, pull quote and an embedded video set. Easily extendible.
 - A button system for adding buttons to your site.
@@ -100,6 +100,8 @@ When your app environment is `local`, Peak will add a breakpoint notice to your 
 <span id="navigation"></span>
 
 Peak includes basic unstyled responsive navigation with two levels. Open `resources/views/navigation/_main.antlers.html` to make changes. There's a desktop version that only shows on `md` screens and up as well as a mobile version that shows on smaller screens. AlpineJS takes care of the interactivity. The state of the mobile navigation toggle is defined on the `<body>` tag in `resources/views/layout.antlers.html`.
+
+Peak also includes an optional breadcrumbs partial you can find in `resources/views/navigation/_breadcrumbs.antlers.html`. 
 
 ## Page builder
 <span id="page-builder"></span>
