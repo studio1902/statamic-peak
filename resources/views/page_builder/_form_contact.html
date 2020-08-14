@@ -1,0 +1,104 @@
+{{# The contact form content block. #}}
+<section class="fluid-container grid md:grid-cols-12 row-gap-8 md:gap-8">
+    <div class="col-start-3 col-span-8">
+        {{ if block:title }}
+            {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ form:create in="form_contact" attr="class:flex flex-wrap|x-ref:form|x-data:sending()|@submit.prevent:sendForm()" }}
+    <div class="w-full flex flex-col space-y-6">
+        <div class="flex flex-col">
+            <label class="text-light font-bold" for="name">{{ trans:theme.form_name }} <sup class="text-light">*</sup></label>
+            <template x-if="errors.name">
+                {{ partial src="components/notification" type="error" class="my-2 shadow" attribute="x-text='errors.name'" }}
+            </template>
+            <input class="form-input mt-2 w-full" type="text" id="name" name="name" value="{{ old:name }}" x-bind:class="{ 'form-input-error': errors.name }"/>
+        </div>
+
+        <div class="flex flex-col">
+            <label class="text-light font-bold" for="email">{{ trans:theme.form_email }}<sup class="text-light">*</sup></label>
+            <template x-if="errors.email">
+                {{ partial src="components/notification" type="error" class="my-2 shadow" attribute="x-text='errors.email'" }}
+            </template>
+            <input class="form-input mt-2 w-full" id="email" type="text" name="email" value="{{ old:email }}" x-bind:class="{ 'form-input-error': errors.name }"/>
+        </div>
+
+        <div class="flex flex-col">
+            <label class="text-light font-bold" for="phone_number">{{ trans:theme.form_phone_number }}</label>
+            <input class="form-input mt-2 w-full" id="phone_number" type="tel" name="phone_number" value="{{ old:phone_number }}"/>
+        </div>
+
+        <div class="hidden">
+            <label class="text-light font-bold" for="fax">{{ trans:theme.form_fax }}<sup class="text-light">*</sup></label>
+            <input class="form-input mt-2 w-full" id="fax" type="fax" name="fax"/>
+        </div>
+
+        <div class="flex flex-col">
+            <label class="text-light font-bold" for="message">{{ trans:theme.form_message }}<sup class="text-light">*</sup></label>
+            <template x-if="errors.message">
+                {{ partial src="components/notification" type="error" class="my-2 shadow" attribute="x-text='errors.message'" }}
+            </template>
+            <textarea class="form-input mt-2 w-full h-32" id="message" name="message" x-bind:class="{ 'form-input-error': errors.name }">{{ old:message }}</textarea>
+        </div>
+
+        <div>
+            <button class="appearance-none flex flex-initial items-center space-x-4 p-5 bg-transparent border border-light text-light uppercase tracking-widest leading-none no-underline hover:text-primary hover:bg-light hover:shadow-xl transform hover:-translate-y-px transition-all duration-200 ease-out select-none space-x-4" x-bind:class="{ 'sending' : sending }" x-bind:disabled="sending"
+            >
+                <span>{{ trans:theme.form_send }}</span>
+                <svg class="fill-current w-6 h-6"  viewBox="0 0 18 15">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3951 15L18 7.5L10.3951 0L9.64088 0.743615L15.9431 6.96107L0 6.96107V8.04081L15.9431 8.04081L9.64088 14.2564L10.3951 15Z" aria-hidden="true"/>
+                </svg>
+            </button>
+            <template x-if="success">
+                {{ partial src="components/notification" type="success" class="mt-6 shadow" content="{trans:theme.form_success}" }}
+            </template>
+        </div>
+    </div>
+
+{{ /form:create }}
+    
+{{ dynamic_token }}
+
+<script>
+    const form = document.getElementById('form');
+    function sending() {
+        return {
+            error: false,
+            errors: [],
+            sending: false,
+            success: false,
+            sendForm() {
+                this.sending = true;
+                fetch(this.$refs.form.action, {
+                    headers: {
+                        'X-Requested-With' : 'XMLHttpRequest'
+                    },
+                    method: 'POST',
+                    body: new FormData(this.$refs.form)})
+                .then(res => res.json())
+                .then(json => {
+                    if (json['success']) {
+                        this.errors = [];
+                        this.success = true;
+                        this.error = false;
+                        this.sending = false;
+                        this.$refs.form.reset();
+                    }
+                    if (json['field_errors']) {
+                        this.sending = false;
+                        this.error = true;
+                        this.errors = json['field_errors']
+                    }
+                })
+                .catch(err => {
+                    err.text().then( errorMessage => {
+                        this.sending = false;
+                        console.log('errorMessage')
+                      })
+                })
+            }
+        }
+    }
+</script>
