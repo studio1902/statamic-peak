@@ -1,15 +1,17 @@
 {{# The collection content block with optional title. #}}
-<section class="fluid-container">
-    {{ if block:title }}
-        {{ partial:typography/h2 class="mb-4" :content="block:title" }}
-    {{ /if }}
-    <ul class="list-inside list-disc">
-        {{ block:collection }}
-            <li>
-                <a class="text-primary-600 underline" href="{{ url }}">
-                    {{ title }}
-                </a>
-            </li>
-        {{ /block:collection }}
-    </ul>
+<section class="fluid-container grid md:grid-cols-12 row-gap-8 md:gap-8">
+    <div class="col-start-3 col-span-8">
+        {{ if block:title }}
+            {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        {{ /if }}
+        <ul class="list-inside list-disc">
+            {{ block:collection }}
+                <li>
+                    <a class="text-primary-600 underline" href="{{ url }}">
+                        {{ title }}
+                    </a>
+                </li>
+            {{ /block:collection }}
+        </ul>
+    </div>
 </section>
