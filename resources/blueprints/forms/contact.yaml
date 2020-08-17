@@ -19,3 +19,4 @@ sections:
         field:
           display: Message
           type: textarea
+          validate: required
