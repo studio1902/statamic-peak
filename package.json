@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "@tailwindcss/typography": "^0.2.0",
-    "alpinejs": "^2.5.0",
+    "alpinejs": "^2.6.0",
     "tailwindcss": "^1.6.2"
   },
   "devDependencies": {
