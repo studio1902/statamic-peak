@@ -215,21 +215,13 @@ module.exports = {
     customForms: theme => ({
       default: {
         input: {
-          backgroundColor: theme('colors.primary'),
-          borderColor: 'transparent',
-          borderRadius: 'none',
-          color: theme('colors.light'),
-          fontSize: '1rem',
-          padding: '1rem',
-          '&:focus': {
-            border: '1px solid rgba(255, 255, 255, .7)',
-            boxShadow: '0 0 0 3px rgba(255, 255, 255, .5);',
-          },
+          borderColor: theme('colors.neutral.300'),
+          color: theme('colors.neutral.800'),
         },
       },
       error: {
         'input, textarea': {
-          borderColor: theme('colors.red.700'),
+          borderColor: theme('colors.error.700'),
         },
       },
     })
