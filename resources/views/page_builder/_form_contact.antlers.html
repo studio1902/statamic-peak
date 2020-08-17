@@ -1,0 +1,102 @@
+{{# The contact form content block. #}}
+<section class="fluid-container grid md:grid-cols-12 row-gap-8 md:gap-8">
+    <div class="col-start-3 col-span-8">
+        {{ if block:title }}
+            {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        {{ /if }}
+        {{ if block:text }}
+            {{ partial:typography/paragraph :content="block:text" }}
+        {{ /if }}
+
+        {{ form:create in="contact" 
+            id="form"
+            class="flex flex-wrap" 
+            x-ref="form" 
+            x-data="sending()" 
+            @submit.prevent="sendForm()" 
+        }}
+            <div class="w-full flex flex-col space-y-6">
+                <div class="flex flex-col space-y-4">
+                    <label class="font-bold" for="name">{{ trans:site.form_name }} <sup class="text-notice-400">*</sup></label>
+                    <template x-if="errors.name">
+                        {{ partial src="components/notification" type="error" attribute="x-text='errors.name'" }}
+                    </template>
+                    <input class="form-input w-full" type="text" id="name" name="name" value="{{ old:name }}" x-bind:class="{ 'form-input-error': errors.name }"/>
+                </div>
+
+                <div class="flex flex-col space-y-4">
+                    <label class="font-bold" for="email">{{ trans:site.form_email }} <sup class="text-notice-400">*</sup></label>
+                    <template x-if="errors.email">
+                        {{ partial src="components/notification" type="error" attribute="x-text='errors.email'" }}
+                    </template>
+                    <input class="form-input w-full" id="email" type="text" name="email" value="{{ old:email }}" x-bind:class="{ 'form-input-error': errors.name }"/>
+                </div>
+
+                <div class="hidden">
+                    <label class="font-bold" for="fax">{{ trans:site.form_fax }} <sup class="text-notice-400">*</sup></label>
+                    <input class="form-input w-full" id="fax" type="fax" name="fax"/>
+                </div>
+
+                <div class="flex flex-col space-y-4">
+                    <label class="font-bold" for="message_body">{{ trans:site.form_message }} <sup class="text-notice-400">*</sup></label>
+                    <template x-if="errors.message_body">
+                        {{ partial src="components/notification" type="error" attribute="x-text='errors.message_body'" }}
+                    </template>
+                    <textarea class="form-input w-full h-32" id="message_body" name="message_body" x-bind:class="{ 'form-input-error': errors.message_body }">{{ old:message_body }}</textarea>
+                </div>
+                <div class="flex justify-end" x-bind:class="{ 'animate-pulse cursor-default' : sending }">
+                    {{ partial:components/button tag="button" label="{ trans:site.form_send }" attribute="x-bind:disabled='sending'" }}
+                </div>
+                <template x-if="success">
+                    {{ partial src="components/notification" type="success" class="mt-6" content="{trans:site.form_success}" }}
+                </template>
+            </div>
+        {{ /form:create }}
+
+        {{ dynamic_token }}
+
+        <script>
+            const form = document.getElementById('form');
+            function sending() {
+                return {
+                    error: false,
+                    errors: [],
+                    sending: false,
+                    success: false,
+                    sendForm() {
+                        this.sending = true;
+                        fetch(this.$refs.form.action, {
+                            headers: {
+                                'X-Requested-With' : 'XMLHttpRequest'
+                            },
+                            method: 'POST',
+                            body: new FormData(this.$refs.form)})
+                        .then(res => res.json())
+                        .then(json => {
+                            if (json['success']) {
+                                this.errors = [];
+                                this.success = true;
+                                this.error = false;
+                                this.sending = false;
+                                this.$refs.form.reset();
+                            }
+                            if (json['error']) {
+                                this.sending = false;
+                                this.error = true;
+                                this.success = false;
+                                this.errors = json['error'];
+                            }
+                        })
+                        .catch(err => {
+                            err.text().then( errorMessage => {
+                                this.sending = false
+                                console.log('errorMessage')
+                            })
+                        })
+                    }
+                }
+            }
+        </script>
+
+    </div>
+</section>
