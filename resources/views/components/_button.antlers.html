@@ -1,9 +1,6 @@
 {{# A single button. Faux is used when a button is displayed inside a link (for example in link blocks). #}}
-{{ unless faux }}
-    <a
-{{ else }} 
-    <span
-{{ /unless }} 
+<{{ tag or 'a' }}
+        {{ attribute }}
         class="inline-flex items-center py-3 px-4 border-2 border-primary-600 font-bold leading-none uppercase tracking-widest text-sm text-primary-600 no-underline select-none whitespace-no-wrap"
         {{ unless faux }}
             href="{{ link }}"
@@ -13,8 +10,4 @@
         {{ /unless }}
     >
         {{ label }}
-{{ unless faux }}
-    </a>
-{{ else }}
-    </span>
-{{ /unless }}
+</{{ tag or 'a' }}>
