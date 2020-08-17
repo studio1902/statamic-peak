@@ -37,7 +37,7 @@
                                 <strong>{{ trans:site.form_name }}:</strong> {{ name }}<br>
                                 <strong>{{ trans:site.form_email }}:</strong> {{ email }}<br>
                                 <strong>{{ trans:site.form_message }}:</strong><br><br>
-                                <i>{{ message }}</i><br>
+                                <i>{{ message_body | nl2br }}</i><br>
                                 <br>
                                 {{ trans:site.form_mail_closing }},<br>
                                 {{ trans:site.form_mail_from }}

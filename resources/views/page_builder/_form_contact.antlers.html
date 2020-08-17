@@ -38,11 +38,11 @@
                 </div>
 
                 <div class="flex flex-col space-y-4">
-                    <label class="font-bold" for="message">{{ trans:site.form_message }} <sup class="text-notice-400">*</sup></label>
-                    <template x-if="errors.message">
-                        {{ partial src="components/notification" type="error" attribute="x-text='errors.message'" }}
+                    <label class="font-bold" for="message_body">{{ trans:site.form_message }} <sup class="text-notice-400">*</sup></label>
+                    <template x-if="errors.message_body">
+                        {{ partial src="components/notification" type="error" attribute="x-text='errors.message_body'" }}
                     </template>
-                    <textarea class="form-input w-full h-32" id="message" name="message" x-bind:class="{ 'form-input-error': errors.name }">{{ old:message }}</textarea>
+                    <textarea class="form-input w-full h-32" id="message_body" name="message_body" x-bind:class="{ 'form-input-error': errors.message_body }">{{ old:message_body }}</textarea>
                 </div>
                 <div class="flex justify-end" x-bind:class="{ 'animate-pulse cursor-default' : sending }">
                     {{ partial:components/button tag="button" label="{ trans:site.form_send }" attribute="x-bind:disabled='sending'" }}
