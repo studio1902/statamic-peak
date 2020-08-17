@@ -13,16 +13,16 @@ I made Peak to make it easy to start new projects as they share so much of the s
 
 | Title | Description |
 | --- | --- |
-| [`Features`](#features) | All Peak's current features. |
 | [`Knowledge assumptions`](#knowledge-assumptions) | Stuff you should know when using Statamic Peak. |
 | [`Installation`](#installation) | How to install Statamic with Peak. |
 | [`Tailwind config`](#tailwind-config) | How Tailwind is configured. |
 | [`Navigation`](#navigation) | How the included navigation works. |
 | [`Page builder`](#page-builder) | How to use and extend the page builder. |
 | [`Bard`](#bard) | How to use Bard as a block for long form content. |
-| [`Typography`](#typography) | Typography partials and Tailwind Typography. |
+| [`Contact form`](#contact-form) | How to use the default contact form. |
 | [`Buttons`](#buttons) | How to work with buttons. |
 | [`Pagination`](#pagination) | How to work with pagination. |
+| [`Typography`](#typography) | Typography partials and Tailwind Typography. |
 | [`Assets`](#assets) | Easily add responsive assets to your site. |
 | [`Globals`](#globals) | Global sets for site wide configuration. |
 | [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen. |
@@ -33,21 +33,6 @@ I made Peak to make it easy to start new projects as they share so much of the s
 | [`Contributing`](#contributing) | Please do! |
 | [`License`](#license) | MIT |
 
-## Features
-<span id="features"></span>
-
-- [Tailwind](https://tailwindcss.com) as a CSS framework.
-- Tailwind Custom Forms (with configuration).
-- Tailwind Typography (with configuration).
-- A custom Tailwind config file with added components and utilities used by Peak. 
-- [AlpineJS](https://github.com/alpinejs/alpine/) as a JS framework.
-- Unstyled multi-level responsive navigation and optional breadcrumbs.
-- A block builder (replicator) with basic templates for scaffolding your content. Easily extendable  to fit your clients' needs. 
-- An article block (bard) with some default sets like a figure, pull quote and an embedded video set. Easily extendible.
-- A button system for adding buttons to your site.
-- The [Responsive Images](https://github.com/spatie/statamic-responsive-images) addon by Spatie to make using images in your templates a breeze.
-- Asset compilation with Laravel Mix.
-- Modernizr support (WebP detection as a default).
 
 ## Knowledge assumptions
 <span id="knowledge-assumptions"></span>
@@ -87,7 +72,7 @@ npm run production
 
 **4. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
-## Tailwind config
+## Tailwind configuration
 <span id="tailwind-config"></span>
 
 Peak comes with `tailwind.config.js` which dictates how Tailwind should be compiled. Everything is configured in a single Javascript file. This makes it very easy to define your unique design system for each website you're building. The file is fully documented. Read the Tailwind docs on [theme configuration](https://tailwindcss.com/docs/theme/) for more information.
@@ -145,6 +130,23 @@ An article goes into a CSS Grid with 12 columns. By default all sets get the cla
 For example use the sizing utilities to let an image break out of it's content. In sets like `figure` and `video` the user can pick their own size using the `size` field in `resources/fieldsets/common.yaml`. 
 
 > Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
+
+## Contact form
+<span id="contact-form"></span>
+
+Peak ships with a default basic contact form you can edit using the following files:
+
+* `resources/forms/contact.yaml` The contact form configuration.
+* `resources/blueprints/forms/contact.yaml` The forms blueprint defining all the fields.
+* `resources/views/page_builder/_form_contact.antlers.html` The forms template file.
+* `resources/views/email/contact_owner.html` The forms email template that goes out to the site owner. The `_text.html` version contains the text template.
+* `resources/views/email/contact_sender.html` The forms email template that goes out to the sender of the form. The `_text.html` version contains the text template.
+
+Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`.
+
+The forms sending is done with AJAX and uses Alpine to display the various notifications. 
+
+> Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
 
 ## Buttons
 <span id="buttons"></span>
