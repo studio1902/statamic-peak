@@ -1,17 +1,14 @@
-{{ trans:theme.form_mail_title }} {{ trans:theme.form_mail_from }}
+{{ trans:site.form_mail_title }} {{ trans:site.form_mail_from }}
 ===================
-{{ trans:theme.form_mail_greeting }},
+{{ trans:site.form_mail_greeting }},
 
-{{ trans:theme.form_mail_body_owner }}
+{{ trans:site.form_mail_body_owner }}
 
-{{ trans:theme.form_name }}: {{ name }}
-{{ trans:theme.form_email }}: {{ email }}
-{{ if phone_number }}
-    {{ trans:theme.form_phone_number }}: {{ phone_number }}
-{{ /if }}
-{{ trans:theme.form_message }}:
+{{ trans:site.form_name }}: {{ name }}
+{{ trans:site.form_email }}: {{ email }}
+{{ trans:site.form_message }}:
 
 {{ message | nl2br }}
 
-{{ trans:theme.form_mail_closing }},
-{{ trans:theme.form_mail_from }}
+{{ trans:site.form_mail_closing }},
+{{ trans:site.form_mail_from }}
