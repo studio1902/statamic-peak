@@ -1,0 +1,22 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          display: Name
+          type: text
+          validate: required
+      -
+        handle: email
+        field:
+          display: "E-mail address"
+          type: text
+          validate: required|email
+      -
+        handle: message_body
+        field:
+          display: Message
+          type: textarea
+          validate: required

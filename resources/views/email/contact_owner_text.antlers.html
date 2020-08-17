@@ -1,0 +1,14 @@
+{{ trans:site.form_mail_title }} {{ trans:site.form_mail_from }}
+===================
+{{ trans:site.form_mail_greeting }},
+
+{{ trans:site.form_mail_body_owner }}
+
+{{ trans:site.form_name }}: {{ name }}
+{{ trans:site.form_email }}: {{ email }}
+{{ trans:site.form_message }}:
+
+{{ message_body | nl2br }}
+
+{{ trans:site.form_mail_closing }},
+{{ trans:site.form_mail_from }}

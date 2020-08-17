@@ -27,6 +27,12 @@ fields:
           fields:
             -
               import: collection
+        form_contact:
+          display: Contact form
+          instructions: 'Show a contact form.'
+          fields:
+            -
+              import: form_contact
         link_blocks:
           display: Link blocks
           instructions: 'Show link blocks.'
