@@ -3610,16 +3610,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v3.0.0-beta.43",
+            "version": "v3.0.0-beta.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "ea374e84b6a3f940763109ab80b175a24af604d5"
+                "reference": "e47a352c511872038822e060e690b96585e03ed0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/ea374e84b6a3f940763109ab80b175a24af604d5",
-                "reference": "ea374e84b6a3f940763109ab80b175a24af604d5",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/e47a352c511872038822e060e690b96585e03ed0",
+                "reference": "e47a352c511872038822e060e690b96585e03ed0",
                 "shasum": ""
             },
             "require": {
@@ -3681,7 +3681,7 @@
                 "laravel",
                 "statamic"
             ],
-            "time": "2020-08-04T18:39:44+00:00"
+            "time": "2020-08-14T19:32:59+00:00"
         },
         {
             "name": "statamic/stringy",
@@ -7588,16 +7588,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.2.0",
+            "version": "5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "3170448f5769fe19f456173d833734e0ff1b84df"
+                "reference": "d870572532cd70bc3fab58f2e23ad423c8404c44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/3170448f5769fe19f456173d833734e0ff1b84df",
-                "reference": "3170448f5769fe19f456173d833734e0ff1b84df",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/d870572532cd70bc3fab58f2e23ad423c8404c44",
+                "reference": "d870572532cd70bc3fab58f2e23ad423c8404c44",
                 "shasum": ""
             },
             "require": {
@@ -7636,7 +7636,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2020-07-20T20:05:34+00:00"
+            "time": "2020-08-15T11:14:08+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -7996,6 +7996,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
