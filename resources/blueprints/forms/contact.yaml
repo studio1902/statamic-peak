@@ -15,7 +15,7 @@ sections:
           type: text
           validate: required|email
       -
-        handle: message
+        handle: message_body
         field:
           display: Message
           type: textarea
