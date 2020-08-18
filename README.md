@@ -240,7 +240,7 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
-| `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` |
+| `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` for [contact form](#contact-form) |
 
 ## Upcoming features
 <span id="upcoming-features"></span>
