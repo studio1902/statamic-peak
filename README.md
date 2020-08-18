@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="160" alt="Statamic Logo" />
+  <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="160" alt="Statamic Peak Logo" />
 </p>
 <h1 align="center">
   Statamic Starter Kit
@@ -9,7 +9,7 @@
 
 Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your clients' site straight away. Peak is easy to extend or edit to fit your clients' website needs. 
 
-I made Peak to make it easy to start new projects as they share so much of the same principles. I hope Peak will help others to get started or learn a few new tricks. Whether you're new to Statamic and would like some examples, or whether you're a veteran: I hope you will like Peak and would love it for you to participate and discuss on how to make stuff better. Let's make this a common effort! I will continuously update the kit with new stuff I've used or learned while building my own sites. 
+The aim of Peak is to make it easy to start new projects as they often share much of the same principles. Whether you're new to Statamic or a veteran, there will be something interesting in here for you. Feel free to participate and discuss on how to make Peak better.
 
 | Title | Description |
 | --- | --- |
@@ -29,7 +29,6 @@ I made Peak to make it easy to start new projects as they share so much of the s
 | [`Multilingual fields and localization`](#multilingual-fields) | Field localization. |
 | [`Modernizr`](#modernizr) | How to use Modernizr with Peak. |
 | [`Configuration changes`](#configuration-changes) | Differences with the default Statamic config. |
-| [`Screenshots`](#screenshots) | Some screenshots about what Peak does. |
 | [`Upcoming features`](#upcoming-features) | What's planned for the future. |
 | [`Contributing`](#contributing) | Please do! |
 | [`License`](#license) | MIT |
@@ -57,12 +56,14 @@ composer install
 cp .env.example .env && php artisan key:generate
 ```
 
-**2. Make a new user** – you'll want it to be a `super` so you have access to everything.
+**2. Edit .env file** - make sure you edited the `.env` file with at least the correct values for `APP_NAME`, `APP_URL` and the local mail configuration. 
+
+**3. Make a new user** – you'll want it to be a `super` so you have access to everything.
 ```bash
 php please make:user
 ```
 
-**3. Compile the fontend assets** - the [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file as it's being used for Browsersync in `webpack.mix.js`.
+**4. Compile the fontend assets** - the [TailwindCSS](https://tailwindcss.com/) compiled assets aren't included in this repo. You need to compile it yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file (`APP_URL`) as it's being used for Browsersync in `webpack.mix.js`.
 ```bash
 npm i && npm run watch (or npm run dev)
 ```
@@ -71,7 +72,7 @@ To compile for production run this (on your server). It will purge all unnecessa
 npm run production
 ```
 
-**4. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
+**5. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
 ## Tailwind configuration
 <span id="tailwind-config"></span>
@@ -96,17 +97,22 @@ While you could make different templates for all your page types, the idea is to
 
 If the layout of a page is totally different - or you really want to - you can always opt for using templates.
 
+[Screenshot page builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-builder-01.png)
+
 ### Adding blocks
 Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) to the fieldset. In `resources/views/default.antlers.html` you can see the blocks being loaded. Antlers will look in the `resources/views/page_builder/` folder for partials with the handle of your block. Peak ships with the following blocks:
 
 * Article ([`long form content`](#bard))
 * Call to action (title, text and a button)
 * Collection (title and links to other entries)
+* [Contact form](#contact-form)
 * Link blocks (blocks with a title and text that link to other entries)
 
 For example if you add a fieldset to the `page_builder.yaml` with the handle `call_to_action` make sure you add a `_call_to_action.antlers.html` file to the `resources/views/page_builder` folder.
 
 > Note: blocks are scoped under `block` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ block:field_name }}`
+
+[Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-01.png) | [Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-02.png)
 
 ## Bard
 <span id="bard"></span>
@@ -132,6 +138,8 @@ For example use the sizing utilities to let an image break out of it's content. 
 
 > Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
 
+[Screenshot Bard Sets](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-01.png) | [Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
+
 ## Contact form
 <span id="contact-form"></span>
 
@@ -149,10 +157,14 @@ The forms sending is done with AJAX and uses Alpine to display the various notif
 
 > Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
 
+[Screenshot Contact form Page Builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-01.png) | [Screenshot Contact form error handling](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-02.png) | [Screenshot Contact form mail to owner](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-03.png) | [Screenshot Contact form mail to sender](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-04.png)
+
 ## Buttons
 <span id="buttons"></span>
 
 The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_buttons.antlers.html` go together. The button fieldset is a set in Bard but can also be called from other fieldsets where you want to include buttons. Just call the buttons partial in your template and one or multiple buttons will be rendered. 
+
+[Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
 
 ## Pagination
 <span id="pagination"></span>
@@ -192,6 +204,8 @@ Peak comes with a background image snippet you can use to apply responsive image
 
 Peak currently comes with two global sets you often need, one to edit content on error pages like the 404 page and one to add social media accounts to your website. There's already a basic 404 template in place (`resources/views/errors/404.antlers.html`) to display those messages. 
 
+[Screenshot Globals Errors](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-01.png) | [Screenshot Globals Social Media](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-02.png)
+
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
 
@@ -216,6 +230,9 @@ Peak changes the default Statamic config. The following is different:
 
 | File | Default | Peak |
 | --- | --- | --- |
+| `app/Http/Controllers/DynamicToken.php` | - | New Controller for [contact form](#contact-form) |
+| `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
+| `app/Tags/DynamicToken.php` | - | New Tag for [contact form](#contact-form) |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
 | `config/statamic/assets.php` | `'presets' => [],` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
@@ -223,21 +240,7 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
-
-## Screenshots
-<span id="screenshots"></span>
-
-* [Page builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-builder-01.png)
-* [Link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-01.png)
-* [Link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-02.png)
-* [Bard](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-01.png)
-* [Bard](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
-* [Globals](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-01.png)
-* [Globals](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-02.png)
-* [Contact form](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-01.png)
-* [Contact form](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-02.png)
-* [Contact form](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-03.png)
-* [Contact form](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-04.png)
+| `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` |
 
 ## Upcoming features
 <span id="upcoming-features"></span>

@@ -8,6 +8,7 @@
             {{ partial:typography/paragraph :content="block:text" }}
         {{ /if }}
 
+        {{# Create a contact form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
         {{ form:create in="contact" 
             id="form"
             class="flex flex-wrap" 
@@ -18,20 +19,25 @@
             <div class="w-full flex flex-col space-y-6">
                 <div class="flex flex-col space-y-4">
                     <label class="font-bold" for="name">{{ trans:site.form_name }} <sup class="text-notice-400">*</sup></label>
+                    {{# Load notification when there is a validation error with the name field. #}}
                     <template x-if="errors.name">
                         {{ partial src="components/notification" type="error" attribute="x-text='errors.name'" }}
                     </template>
+                    {{# Bind `form-input-error` class when there is a validation error with the name field. #}}
                     <input class="form-input w-full" type="text" id="name" name="name" value="{{ old:name }}" x-bind:class="{ 'form-input-error': errors.name }"/>
                 </div>
 
                 <div class="flex flex-col space-y-4">
                     <label class="font-bold" for="email">{{ trans:site.form_email }} <sup class="text-notice-400">*</sup></label>
+                    {{# Load notification when there is a validation error with the email field. #}}
                     <template x-if="errors.email">
                         {{ partial src="components/notification" type="error" attribute="x-text='errors.email'" }}
                     </template>
+                    {{# Bind `form-input-error` class when there is a validation error with the email field. #}}
                     <input class="form-input w-full" id="email" type="text" name="email" value="{{ old:email }}" x-bind:class="{ 'form-input-error': errors.name }"/>
                 </div>
 
+                {{# Honeypot spam protection. #}}
                 <div class="hidden">
                     <label class="font-bold" for="fax">{{ trans:site.form_fax }} <sup class="text-notice-400">*</sup></label>
                     <input class="form-input w-full" id="fax" type="fax" name="fax"/>
@@ -39,13 +45,16 @@
 
                 <div class="flex flex-col space-y-4">
                     <label class="font-bold" for="message_body">{{ trans:site.form_message }} <sup class="text-notice-400">*</sup></label>
+                    {{# Load notification when there is a validation error with the message_body field. #}}
                     <template x-if="errors.message_body">
                         {{ partial src="components/notification" type="error" attribute="x-text='errors.message_body'" }}
                     </template>
+                    {{# Bind `form-input-error` class when there is a validation error with the message_body field. #}}
                     <textarea class="form-input w-full h-32" id="message_body" name="message_body" x-bind:class="{ 'form-input-error': errors.message_body }">{{ old:message_body }}</textarea>
                 </div>
-                <div class="flex justify-end" x-bind:class="{ 'animate-pulse cursor-default' : sending }">
-                    {{ partial:components/button tag="button" label="{ trans:site.form_send }" attribute="x-bind:disabled='sending'" }}
+                {{# Pulse button and disable upon sending. #}}
+                <div class="flex justify-end">
+                    {{ partial:components/button tag="button" label="{ trans:site.form_send }" attribute='x-bind:disabled="sending" x-bind:class="&#123;&#39;opacity-25 cursor-default&#39;: sending&#125;"' }}
                 </div>
                 <template x-if="success">
                     {{ partial src="components/notification" type="success" class="mt-6" content="{trans:site.form_success}" }}
@@ -53,8 +62,10 @@
             </div>
         {{ /form:create }}
 
+        {{# Load dynamic token JS to dynamically fetch and refresh a CSRF token. #}}
         {{ dynamic_token }}
 
+        {{# The form script handling validation and submission via AJAX with `fetch()`. #}}
         <script>
             const form = document.getElementById('form');
             function sending() {
