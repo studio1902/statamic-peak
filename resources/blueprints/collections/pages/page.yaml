@@ -6,8 +6,15 @@ sections:
       -
         handle: title
         field: common.title
+        config:
+          required: true
       -
         import: page_builder
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
   sidebar:
     display: Sidebar
     fields:
@@ -22,3 +29,13 @@ sections:
       -
         handle: slug
         field: common.slug
+        config:
+          required: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
