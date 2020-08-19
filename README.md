@@ -11,28 +11,38 @@ Statamic Peak is an opinionated starter kit for all your Statamic sites. It's de
 
 The aim of Peak is to make it easy to start new projects as they often share much of the same principles. Whether you're new to Statamic or a veteran, there will be something interesting in here for you. Feel free to participate and discuss on how to make Peak better.
 
-| Title | Description |
-| --- | --- |
-| [`Knowledge assumptions`](#knowledge-assumptions) | Stuff you should know when using Statamic Peak. |
-| [`Installation`](#installation) | How to install Statamic with Peak. |
-| [`Tailwind config`](#tailwind-config) | How Tailwind is configured. |
-| [`Navigation`](#navigation) | How the included navigation works. |
-| [`Page builder`](#page-builder) | How to use and extend the page builder. |
-| [`Bard`](#bard) | How to use Bard as a block for long form content. |
-| [`Contact form`](#contact-form) | How to use the default contact form. |
-| [`Buttons`](#buttons) | How to work with buttons. |
-| [`Pagination`](#pagination) | How to work with pagination. |
-| [`Typography`](#typography) | Typography partials and Tailwind Typography. |
-| [`Assets`](#assets) | Easily add responsive assets to your site. |
-| [`Globals`](#globals) | Global sets for site wide configuration. |
-| [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen. |
-| [`Multilingual fields and localization`](#multilingual-fields) | Field localization. |
-| [`Modernizr`](#modernizr) | How to use Modernizr with Peak. |
-| [`Configuration changes`](#configuration-changes) | Differences with the default Statamic config. |
-| [`Upcoming features`](#upcoming-features) | What's planned for the future. |
-| [`Contributing`](#contributing) | Please do! |
-| [`License`](#license) | MIT |
+### Getting started
 
+* [`Knowledge assumptions`](#knowledge-assumptions) | Stuff you should know when using Statamic Peak.
+* [`Installation`](#installation) | How to install Statamic with Peak. |
+* [`Tailwind config`](#tailwind-config) | How Tailwind is configured. |
+
+### Features
+
+* [`Assets`](#assets) | Easily add responsive assets to your site. |
+* [`Bard`](#bard) | How to use Bard as a block for long form content. |
+* [`Buttons`](#buttons) | How to work with buttons. |
+* [`Contact form`](#contact-form) | How to use the default contact form. |
+* [`Globals`](#globals) | Global sets for site wide configuration. |
+* [`Navigation`](#navigation) | How the included navigation works. |
+* [`Page builder`](#page-builder) | How to use and extend the page builder. |
+* [`Pagination`](#pagination) | How to work with pagination. |
+* [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen. |
+* [`Typography`](#typography) | Typography partials and Tailwind Typography. |
+
+### Other
+
+* [`Configuration changes`](#configuration-changes) | Differences with the default Statamic config. |
+* [`Modernizr`](#modernizr) | How to use Modernizr with Peak. |
+* [`Multilingual fields and localization`](#multilingual-fields) | Field localization. |
+* [`Upcoming features`](#upcoming-features) | What's planned for the future. |
+
+### Contibuting and license
+
+* [`Contributing`](#contributing) | Please do! |
+* [`License`](#license) | MIT |
+
+# Getting started
 
 ## Knowledge assumptions
 <span id="knowledge-assumptions"></span>
@@ -83,6 +93,78 @@ The config file also includes the [Tailwind Custom Forms](https://tailwindcss-cu
 
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
+
+# Features
+
+## Assets
+<span id="assets"></span>
+
+### Images
+Peak comes with Spaties Responsive Images package for Statamic. This package will generate multiple sizes for your assets and will provide the browser with instructions on which versions to use depending on the screen size and the way the image is rendered. Adding responsive images to your site *couldn't* be easier. Check out their [documentation](https://github.com/spatie/statamic-responsive-images).
+
+### Background images
+Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use `{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}`. The predefined sizes used in `resources/views/snippets/_background_image.antlers.html` are defined in `config/statamic/assets.php`.
+
+## Bard
+<span id="bard"></span>
+
+For long form content you can use the `Article` content block. This is a [Bard fieldtype](https://statamic.dev/fieldtypes/bard#content) with multiple sets of fields that are regularly used in longer articles. 
+
+### Adding sets
+Edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the article. In `resources/views/page_builder/_article.antlers.html` you can see the sets being loaded. Antlers will look in the `resources/views/components/` folder for partials with the handle of your set. 
+
+For example if you add a fieldset to the `article.yaml` with the handle `table` make sure you add a `_table.antlers.html` file to the `resources/views/components` folder.
+
+> Note: sets are scoped under `set` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ set:field_name }}`
+
+### Sizing utilities
+An article goes into a CSS Grid with 12 columns. By default all sets get the class `size-md`. As you can see in `tailwind.config.js` on mobile this means those elements span 12 columns. On larger screens however they just span 6 columns (centered). There are other sizing utilities as well:
+
+* *size-sm*: 12 columns on mobile, 4 columns from medium screens up
+* *size-md*: 12 columns on mobile, 6 columns from medium screens up
+* *size-lg*: 12 columns on mobile, 8 columns from medium screens up
+* *size-xl*: 12 columns on mobile, 10 columns from medium screens up
+
+For example use the sizing utilities to let an image break out of it's content. In sets like `figure` and `video` the user can pick their own size using the `size` field in `resources/fieldsets/common.yaml`. 
+
+> Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
+
+[Screenshot Bard Sets](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-01.png) | [Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
+
+
+## Buttons
+<span id="buttons"></span>
+
+The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_buttons.antlers.html` go together. The button fieldset is a set in Bard but can also be called from other fieldsets where you want to include buttons. Just call the buttons partial in your template and one or multiple buttons will be rendered. 
+
+[Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
+
+## Contact form
+<span id="contact-form"></span>
+
+Peak ships with a default basic contact form you can edit using the following files:
+
+* `resources/forms/contact.yaml` The contact form configuration.
+* `resources/blueprints/forms/contact.yaml` The forms blueprint defining all the fields.
+* `resources/views/page_builder/_form_contact.antlers.html` The forms template file.
+* `resources/views/email/contact_owner.html` The forms email template that goes out to the site owner. The `_text.html` version contains the text template.
+* `resources/views/email/contact_sender.html` The forms email template that goes out to the sender of the form. The `_text.html` version contains the text template.
+
+Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`.
+
+The forms sending is done with AJAX and uses Alpine to display the various notifications. 
+
+> Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
+
+[Screenshot Contact form Page Builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-01.png) | [Screenshot Contact form error handling](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-02.png) | [Screenshot Contact form mail to owner](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-03.png) | [Screenshot Contact form mail to sender](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-04.png)
+
+## Globals
+<span id="globals"></span>
+
+Peak currently comes with two global sets you often need, one to edit content on error pages like the 404 page and one to add social media accounts to your website. There's already a basic 404 template in place (`resources/views/errors/404.antlers.html`) to display those messages. 
+
+[Screenshot Globals Errors](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-01.png) | [Screenshot Globals Social Media](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-02.png)
+
 ## Navigation
 <span id="navigation"></span>
 
@@ -114,64 +196,19 @@ For example if you add a fieldset to the `page_builder.yaml` with the handle `ca
 
 [Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-01.png) | [Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-02.png)
 
-## Bard
-<span id="bard"></span>
-
-For long form content you can use the `Article` content block. This is a [Bard fieldtype](https://statamic.dev/fieldtypes/bard#content) with multiple sets of fields that are regularly used in longer articles. 
-
-### Adding sets
-Edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the article. In `resources/views/page_builder/_article.antlers.html` you can see the sets being loaded. Antlers will look in the `resources/views/components/` folder for partials with the handle of your set. 
-
-For example if you add a fieldset to the `article.yaml` with the handle `table` make sure you add a `_table.antlers.html` file to the `resources/views/components` folder.
-
-> Note: sets are scoped under `set` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ set:field_name }}`
-
-### Sizing utilities
-An article goes into a CSS Grid with 12 columns. By default all sets get the class `size-md`. As you can see in `tailwind.config.js` on mobile this means those elements span 12 columns. On larger screens however they just span 6 columns (centered). There are other sizing utilities as well:
-
-* *size-sm*: 12 columns on mobile, 4 columns from medium screens up
-* *size-md*: 12 columns on mobile, 6 columns from medium screens up
-* *size-lg*: 12 columns on mobile, 8 columns from medium screens up
-* *size-xl*: 12 columns on mobile, 10 columns from medium screens up
-
-For example use the sizing utilities to let an image break out of it's content. In sets like `figure` and `video` the user can pick their own size using the `size` field in `resources/fieldsets/common.yaml`. 
-
-> Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
-
-[Screenshot Bard Sets](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-01.png) | [Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
-
-## Contact form
-<span id="contact-form"></span>
-
-Peak ships with a default basic contact form you can edit using the following files:
-
-* `resources/forms/contact.yaml` The contact form configuration.
-* `resources/blueprints/forms/contact.yaml` The forms blueprint defining all the fields.
-* `resources/views/page_builder/_form_contact.antlers.html` The forms template file.
-* `resources/views/email/contact_owner.html` The forms email template that goes out to the site owner. The `_text.html` version contains the text template.
-* `resources/views/email/contact_sender.html` The forms email template that goes out to the sender of the form. The `_text.html` version contains the text template.
-
-Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`.
-
-The forms sending is done with AJAX and uses Alpine to display the various notifications. 
-
-> Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
-
-[Screenshot Contact form Page Builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-01.png) | [Screenshot Contact form error handling](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-02.png) | [Screenshot Contact form mail to owner](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-03.png) | [Screenshot Contact form mail to sender](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-04.png)
-
-## Buttons
-<span id="buttons"></span>
-
-The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_buttons.antlers.html` go together. The button fieldset is a set in Bard but can also be called from other fieldsets where you want to include buttons. Just call the buttons partial in your template and one or multiple buttons will be rendered. 
-
-[Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
-
 ## Pagination
 <span id="pagination"></span>
 
 When you're working with the collection tag and want to use [pagination](https://statamic.dev/tags/collection#pagination), just add the pagination partial using `partial:components/pagination` to automagically add pagination buttons. They're easily editable in  `resources/views/components/_pagination.antlers.html`. 
 
 > Note: the strings used in the partial are translatable and can be edited in `resources/lang/en/site.php`.
+
+## Statamic login screen
+<span id="statamic-login-screen"></span>
+
+The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
+
+If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
 
 ## Typography
 <span id="typography"></span>
@@ -190,38 +227,7 @@ This will render the title with the styling defined in `typography/h1`. This way
 
 Peak comes with a few defaults that are easy to style. Feel free to add more partials for your current website.
 
-## Assets
-<span id="assets"></span>
-
-### Images
-Peak comes with Spaties Responsive Images package for Statamic. This package will generate multiple sizes for your assets and will provide the browser with instructions on which versions to use depending on the screen size and the way the image is rendered. Adding responsive images to your site *couldn't* be easier. Check out their [documentation](https://github.com/spatie/statamic-responsive-images).
-
-### Background images
-Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use `{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}`. The predefined sizes used in `resources/views/snippets/_background_image.antlers.html` are defined in `config/statamic/assets.php`.
-
-## Globals
-<span id="globals"></span>
-
-Peak currently comes with two global sets you often need, one to edit content on error pages like the 404 page and one to add social media accounts to your website. There's already a basic 404 template in place (`resources/views/errors/404.antlers.html`) to display those messages. 
-
-[Screenshot Globals Errors](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-01.png) | [Screenshot Globals Social Media](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-02.png)
-
-## Statamic login screen
-<span id="statamic-login-screen"></span>
-
-The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
-
-If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
-
-## Multilingual fields and localization
-<span id="multilingual-fields"></span>
-
-It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
-
-## Modernizr
-<span id="modernizr"></span>
-
-Peak comes with Modernizr support. By default the only feature detect that's added is WebP. It will add a `webp` class or a `no-webp` class to the `<html>` tag. If you want to add more feature detects you can edit `modernizr.config.js`.
+# Other
 
 ## Configuration changes
 <span id="configuration-changes"></span>
@@ -242,10 +248,22 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
 | `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` for [contact form](#contact-form) |
 
+## Modernizr
+<span id="modernizr"></span>
+
+Peak comes with Modernizr support. By default the only feature detect that's added is WebP. It will add a `webp` class or a `no-webp` class to the `<html>` tag. If you want to add more feature detects you can edit `modernizr.config.js`.
+
+## Multilingual fields and localization
+<span id="multilingual-fields"></span>
+
+It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
+
 ## Upcoming features
 <span id="upcoming-features"></span>
 
 Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aissue+is%3Aopen+is%3Aenhancement) for upcoming features.
+
+# Contibuting and license
 
 ## Contributing
 <span id="contributing"></span>
