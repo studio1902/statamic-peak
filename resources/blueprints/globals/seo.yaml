@@ -1,0 +1,40 @@
+sections:
+  basic:
+    display: Basic
+    fields:
+      -
+        handle: section_title
+        field:
+          type: section
+          instructions: 'The website title'
+          localizable: false
+          listable: false
+          display: Title
+      -
+        handle: title_separator
+        field:
+          options:
+            ' | ': '|'
+            ' - ': '-'
+            ' / ': '/'
+            ' :: ': '::'
+            ' > ': '>'
+          clearable: false
+          multiple: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          instructions: 'Select the character to separate the page title and site title.'
+          localizable: false
+          width: 33
+          listable: hidden
+          display: Separator
+      -
+        handle: site_name
+        field: common.title
+        config:
+          display: 'Website title'
+          instructions: 'The title for the website. Defaults to Laravel''s App Name.'
+          width: 66
