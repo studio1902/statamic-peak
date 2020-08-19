@@ -60,16 +60,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.9.0",
+            "version": "0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "b69d0daabbb830b1dac93d757cdc5dab253574c2"
+                "reference": "283a40c901101e66de7061bd359252c013dcc43c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/b69d0daabbb830b1dac93d757cdc5dab253574c2",
-                "reference": "b69d0daabbb830b1dac93d757cdc5dab253574c2",
+                "url": "https://api.github.com/repos/brick/math/zipball/283a40c901101e66de7061bd359252c013dcc43c",
+                "reference": "283a40c901101e66de7061bd359252c013dcc43c",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-18T09:40:56+00:00"
+            "time": "2020-08-18T23:57:15+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -407,16 +407,16 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51"
+                "reference": "ebd27a9866ae8254e873866f795491f02418c5a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51",
-                "reference": "fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/ebd27a9866ae8254e873866f795491f02418c5a5",
+                "reference": "ebd27a9866ae8254e873866f795491f02418c5a5",
                 "shasum": ""
             },
             "require": {
@@ -461,7 +461,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-04T11:16:35+00:00"
+            "time": "2020-08-19T10:27:58+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3610,16 +3610,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v3.0.0-beta.46",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "c8dec99946129590f4e3d2ab7a90a8babe46de1c"
+                "reference": "b9a41ffab70664c88656b2c497bf2991d1d42cec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/c8dec99946129590f4e3d2ab7a90a8babe46de1c",
-                "reference": "c8dec99946129590f4e3d2ab7a90a8babe46de1c",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/b9a41ffab70664c88656b2c497bf2991d1d42cec",
+                "reference": "b9a41ffab70664c88656b2c497bf2991d1d42cec",
                 "shasum": ""
             },
             "require": {
@@ -3681,7 +3681,7 @@
                 "laravel",
                 "statamic"
             ],
-            "time": "2020-08-19T00:35:39+00:00"
+            "time": "2020-08-19T17:19:43+00:00"
         },
         {
             "name": "statamic/stringy",
