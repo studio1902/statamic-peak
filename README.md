@@ -207,7 +207,7 @@ When you're working with the collection tag and want to use [pagination](https:/
 ## SEO
 <span id="seo"></span>
 
-Peak includes basic bare bones SEO support that's easy to expand on or replace with a professional addon like [Aardvark SEO]() or [SEO Pro](). Currently you can edit site settings in globals:
+Peak includes basic bare bones SEO support that's easy to expand on or replace with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). Currently you can edit site settings in globals:
 * Site title
 * Page titel separator
 
