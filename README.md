@@ -13,34 +13,34 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 ### Getting started
 
-* [`Knowledge assumptions`](#knowledge-assumptions) | Stuff you should know when using Statamic Peak.
-* [`Installation`](#installation) | How to install Statamic with Peak. |
-* [`Tailwind config`](#tailwind-config) | How Tailwind is configured. |
+* [Knowledge assumptions](#knowledge-assumptions)
+* [Installation](#installation)
+* [Tailwind config](#tailwind-config)
 
 ### Features
 
-* [`Assets`](#assets) | Easily add responsive assets to your site. |
-* [`Bard`](#bard) | How to use Bard as a block for long form content. |
-* [`Buttons`](#buttons) | How to work with buttons. |
-* [`Contact form`](#contact-form) | How to use the default contact form. |
-* [`Globals`](#globals) | Global sets for site wide configuration. |
-* [`Navigation`](#navigation) | How the included navigation works. |
-* [`Page builder`](#page-builder) | How to use and extend the page builder. |
-* [`Pagination`](#pagination) | How to work with pagination. |
-* [`Statamic login screen`](#statamic-login-screen) | How to customize the CP login screen. |
-* [`Typography`](#typography) | Typography partials and Tailwind Typography. |
+* [Assets](#assets)
+* [Bard](#bard)
+* [Buttons](#buttons)
+* [Contact form](#contact-form)
+* [Globals](#globals)
+* [Navigation](#navigation)
+* [Page builder](#page-builder)
+* [Pagination](#pagination)
+* [Statamic login screen](#statamic-login-screen)
+* [Typography](#typography)
 
 ### Other
 
-* [`Configuration changes`](#configuration-changes) | Differences with the default Statamic config. |
-* [`Modernizr`](#modernizr) | How to use Modernizr with Peak. |
-* [`Multilingual fields and localization`](#multilingual-fields) | Field localization. |
-* [`Upcoming features`](#upcoming-features) | What's planned for the future. |
+* [Configuration changes](#configuration-changes)
+* [Modernizr](#modernizr)
+* [Multilingual fields and localization](#multilingual-fields)
+* [Upcoming features](#upcoming-features)
 
 ### Contibuting and license
 
-* [`Contributing`](#contributing) | Please do! |
-* [`License`](#license) | MIT |
+* [Contributing](#contributing)
+* [License](#license)
 
 # Getting started
 
