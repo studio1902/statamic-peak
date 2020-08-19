@@ -27,6 +27,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Navigation](#navigation)
 * [Page builder](#page-builder)
 * [Pagination](#pagination)
+* [SEO](#seo)
 * [Statamic login screen](#statamic-login-screen)
 * [Typography](#typography)
 
@@ -202,6 +203,29 @@ For example if you add a fieldset to the `page_builder.yaml` with the handle `ca
 When you're working with the collection tag and want to use [pagination](https://statamic.dev/tags/collection#pagination), just add the pagination partial using `partial:components/pagination` to automagically add pagination buttons. They're easily editable in  `resources/views/components/_pagination.antlers.html`. 
 
 > Note: the strings used in the partial are translatable and can be edited in `resources/lang/en/site.php`.
+
+## SEO
+<span id="seo"></span>
+
+Peak includes basic bare bones SEO support that's easy to expand on or replace with a professional addon like [Aardvark SEO]() or [SEO Pro](). Currently you can edit site settings in globals:
+* Site title
+* Page titel separator
+
+On an entry basis you can edit the following:
+* Entry title
+* Entry description
+* noindex
+
+If you plan on using an addon. Do the following:
+* Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
+* Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
+* Delete the SEO global `content/globals/seo.yaml`.
+
+And optionally to erase all traces:
+* Delete the SEO global blueprint `resources/blueprints/globals/seo.yaml`.
+* Delete the SEO fieldset `resources/fieldsets/seo.yaml`.
+* Delete the SEO partial `resources/views/snippets/_seo.antlers.html`.
+
 
 ## Statamic login screen
 <span id="statamic-login-screen"></span>

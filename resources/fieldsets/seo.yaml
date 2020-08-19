@@ -1,0 +1,22 @@
+title: SEO
+fields:
+  -
+    handle: seo_title
+    field: common.title
+    config:
+      character_limit: 70
+      instructions: 'This entries SEO title, defaults to title. Max 70 characters including the site name.'
+  -
+    handle: seo_description
+    field: common.text_plain
+    config:
+      character_limit: '160'
+      instructions: 'This entries SEO description. Max 160 characters.'
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      instructions: 'Don''t index this entry.'
+      localizable: false
+      listable: hidden
+      display: No-index
