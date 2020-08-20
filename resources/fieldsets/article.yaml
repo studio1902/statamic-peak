@@ -26,6 +26,7 @@ fields:
       localizable: true
       listable: hidden
       display: Article
+      replicator_preview: false
       validate: required
       sets:
         figure:

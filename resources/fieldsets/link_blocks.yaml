@@ -5,6 +5,8 @@ fields:
     field: common.title
     config:
       instructions: 'The title you want to display above the collection entries.'
+      validate:
+        - required
   -
     handle: link_blocks
     field:
@@ -12,9 +14,15 @@ fields:
         -
           handle: title
           field: common.title
+          config:
+            validate:
+              - required
         -
           handle: text
           field: common.text_plain
+          config:
+            validate:
+              - required
         -
           import: button
       mode: stacked
@@ -26,3 +34,4 @@ fields:
       localizable: false
       listable: hidden
       display: 'Link blocks'
+      replicator_preview: false
