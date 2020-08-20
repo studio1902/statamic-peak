@@ -5,6 +5,8 @@ fields:
     field: common.title
     config:
       instructions: 'The title you want to display above the collection entries.'
+      validate:
+        - required
   -
     handle: collection
     field:

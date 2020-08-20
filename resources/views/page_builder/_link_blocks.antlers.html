@@ -1,9 +1,7 @@
 {{# The link blocks content block. #}}
 <section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
     <div class="col-start-3 col-span-8 text-center">
-        {{ if block:title }}
-            {{ partial:typography/h2 :content="block:title" }}
-        {{ /if }}
+        {{ partial:typography/h2 :content="block:title" }}
     </div>
     {{ block:link_blocks }}
         <a 
@@ -16,18 +14,12 @@
             {{ /if }}
         >
             <div>
-                {{ if title }}
-                    <span id="{{ title | slugify }}">
-                        {{ partial src="typography/h2" class="mb-2" :content="title" }}
-                    </span>
-                {{ /if }}
-                {{ if text }}
-                    {{ partial:typography/paragraph class="mb-4" :content="text" }}
-                {{ /if }}
+                <span id="{{ title | slugify }}">
+                    {{ partial src="typography/h2" class="mb-2" :content="title" }}
+                </span>
+                {{ partial:typography/paragraph class="mb-4" :content="text" }}
             </div>
-            {{ if label }}
-                {{ partial:components/button tag="span" }}
-            {{ /if }}
+            {{ partial:components/button tag="span" }}
         </a>
     {{ /block:link_blocks }}
 </section>

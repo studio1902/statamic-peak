@@ -5,11 +5,14 @@ fields:
     field: common.title
     config:
       instructions: 'The title you want to display above the text.'
+      validate:
+        - required
   -
     handle: text
     field: common.text_plain
     config:
       instructions: 'The text you want to display above the buttons.'
+      validate:
+        - required
   -
-    handle: buttons
     import: buttons

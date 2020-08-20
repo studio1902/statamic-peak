@@ -1,12 +1,8 @@
 {{# The call to action content block. #}}
 <section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
     <div class="col-start-3 col-span-8">
-        {{ if block:title }}
-            {{ partial:typography/h2 class="mb-4" :content="block:title" }}
-        {{ /if }}
-        {{ if block:text }}
-            {{ partial:typography/paragraph class="mb-4" :content="block:text" }}
-        {{ /if }}
+        {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        {{ partial:typography/paragraph class="mb-4" :content="block:text" }}
         {{ if block:buttons }}
             {{ partial:components/buttons }}
         {{ /if }}
