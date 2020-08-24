@@ -8,10 +8,7 @@
             class="flex flex-col justify-between items-start col-span-12 {{ if total_results == 1 }}md:col-span-8 md:col-start-3{{ elseif total_results == 2 }}md:col-span-6{{ elseif total_results > 2 }}md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0{{ /if }} bg-white shadow p-6 no-underline" 
             aria-labelledby="{{ title | slugify }}" 
             draggable="false"
-            href="{{ link }}"
-            {{ if not link | is_local_url }} 
-                rel="noopener" target="_blank"
-            {{ /if }}
+            {{ partial:components/button_attributes }}
         >
             <div>
                 <span id="{{ title | slugify }}">
@@ -19,7 +16,7 @@
                 </span>
                 {{ partial:typography/paragraph class="mb-4" :content="text" }}
             </div>
-            {{ partial:components/button tag="span" }}
+            {{ partial:components/button tag="span" faux="true" }}
         </a>
     {{ /block:link_blocks }}
 </section>
