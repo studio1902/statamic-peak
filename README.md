@@ -94,14 +94,20 @@ The config file also includes the [Tailwind Custom Forms](https://tailwindcss-cu
 
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
-
 # Features
 
 ## Assets
 <span id="assets"></span>
 
 ### Images
-Peak comes with Spaties Responsive Images package for Statamic. This package will generate multiple sizes for your assets and will provide the browser with instructions on which versions to use depending on the screen size and the way the image is rendered. Adding responsive images to your site *couldn't* be easier. Check out their [documentation](https://github.com/spatie/statamic-responsive-images).
+Peak comes a picture partial that will add responsive sourcesets to your images. The variants generated are defined in `config/statamic/assets.php` and cover most use cases. In `resources/views/components/_figure.antlers.html` you can see an example of how to include the picture partial. It accepts the following arguments:
+
+* `image`: *asset*, the actual image variable.
+* `class`: *string*, optional css classes that should be applied to the image.
+* `cover`: *boolean*, true means the image should cover the containing element.
+* `sizes`: *string*, the sizes attribute that informs the browser how the image should be rendered.
+
+See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information.
 
 ### Background images
 Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use `{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}`. The predefined sizes used in `resources/views/snippets/_background_image.antlers.html` are defined in `config/statamic/assets.php`.
