@@ -67,10 +67,12 @@ return [
         */
 
         'presets' => [
+            'xs-webp' => ['w' => 320, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
             'sm-webp' => ['w' => 480, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
             'md-webp' => ['w' => 768, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
             'lg-webp' => ['w' => 1280, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
             'xl-webp' => ['w' => 1440, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
+            'xs' => ['w' => 320, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],
             'sm' => ['w' => 480, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],
             'md' => ['w' => 768, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],
             'lg' => ['w' => 1280, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],

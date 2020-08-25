@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0690a671f6684ab4925ae6daa9676203",
+    "content-hash": "7e6e1b61361eb4eebfaa6bdb9280b6b9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3569,44 +3569,6 @@
                 "spatie"
             ],
             "time": "2020-02-16T19:18:04+00:00"
-        },
-        {
-            "name": "spatie/statamic-responsive-images",
-            "version": "v1.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/statamic-responsive-images.git",
-                "reference": "c2436ffde2155394e301150a9ac8f978ba4168df"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/statamic-responsive-images/zipball/c2436ffde2155394e301150a9ac8f978ba4168df",
-                "reference": "c2436ffde2155394e301150a9ac8f978ba4168df",
-                "shasum": ""
-            },
-            "type": "statamic-addon",
-            "extra": {
-                "statamic": {
-                    "name": "Responsive Images",
-                    "description": "Responsive Images for Statamic 3"
-                },
-                "laravel": {
-                    "providers": [
-                        "Spatie\\ResponsiveImages\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\ResponsiveImages\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Responsive Images for Statamic 3",
-            "time": "2020-08-07T07:21:02+00:00"
         },
         {
             "name": "statamic/cms",
