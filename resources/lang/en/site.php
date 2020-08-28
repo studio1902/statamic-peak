@@ -18,7 +18,7 @@ return [
     'form_mail_body_sender'             => 'Thanks for your message. We will contact you as soon as possible.',
     'form_mail_body_owner'              => 'A contact form has been sent.',
     'form_mail_closing'                 => 'Kind regards',
-    'form_mail_from'                    => env('APP_NAME'),
-    'form_mail_url'                     => env('APP_URL'),
+    'form_mail_from'                    => config('app.name'),
+    'form_mail_url'                     => config('app.url'),
     'form_mail_logo'                    => 'https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/statamic-peak-logo.svg',
 ];

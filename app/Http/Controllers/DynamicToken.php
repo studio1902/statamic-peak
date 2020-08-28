@@ -14,10 +14,10 @@ class DynamicToken extends Controller
     public function getRefresh(Request $request)
     {
         // Determine if the request is actually coming from our own website on non local enviroments.
-        if (env('APP_ENV') != 'local')
+        if (config('app.env') != 'local')
         {
             $referer = request()->headers->get('referer');
-            $startWithAppUrl = starts_with($referer, env('APP_URL'));
+            $startWithAppUrl = starts_with($referer, config('app.url'));
             if (empty($referer) || !$startWithAppUrl) {
                 abort(404);
             }
