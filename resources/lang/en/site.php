@@ -20,5 +20,5 @@ return [
     'form_mail_closing'                 => 'Kind regards',
     'form_mail_from'                    => config('app.name'),
     'form_mail_url'                     => config('app.url'),
-    'form_mail_logo'                    => 'https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/statamic-peak-logo.svg',
+    'form_mail_logo'                    => 'https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/statamic-peak-logo.png',
 ];
