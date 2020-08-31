@@ -10,7 +10,7 @@
         {{# Generate your favicons here https://realfavicongenerator.net #}}
     </head>
     <body 
-        class="min-h-screen bg-light {{ environment == 'local' ? 'debug' : '' }}" 
+        class="min-h-screen bg-white {{ environment == 'local' ? 'debug' : '' }}" 
         x-data="{ mobileNavOpen: false }" 
         :class="{ 'no-scroll': mobileNavOpen }"
     >
