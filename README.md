@@ -272,6 +272,7 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
 | `config/statamic/assets.php` | `'presets' => [],` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
+| `config/statamic/cp.php` | `'link_to_docs' => true` | `'link_to_docs' => false` |
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
