@@ -36,7 +36,9 @@
                 {{ /if }}
                 src="{{ glide:url preset='lg' }}"
                 alt="{{ alt }}"
-                loading="lazy"
+                {{ if lazy }}
+                    loading="lazy"
+                {{ /if }}
             >
         {{ /if }}
     {{ /asset }}
