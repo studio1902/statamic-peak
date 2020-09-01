@@ -2,15 +2,15 @@
     {{ paginate }}
         <nav class="md:px-8 flex justify-center space-x-4">
             {{ if prev_page }}
-                <a class="text-primary-600" href="{{ prev_page }}">&laquo; {{ trans:site.previous }}</a>
+                <a class="text-primary-600" href="{{ prev_page }}">&laquo; {{ trans:strings.previous }}</a>
             {{ else }}
-                <span>&laquo; {{ trans:site.previous }}</span>
+                <span>&laquo; {{ trans:strings.previous }}</span>
             {{ /if }}
-            <span class="">{{ current_page }} {{ trans:site.of }} {{ total_pages }}</span>
+            <span class="">{{ current_page }} {{ trans:strings.of }} {{ total_pages }}</span>
             {{ if next_page }}
-                <a class="text-primary-600" href="{{ next_page }}">{{ trans:site.next }} &raquo;</a>
+                <a class="text-primary-600" href="{{ next_page }}">{{ trans:strings.next }} &raquo;</a>
             {{ else }}
-                <span>{{ trans:site.next }} &raquo;</span>
+                <span>{{ trans:strings.next }} &raquo;</span>
             {{ /if }}
         </nav>
     {{ /paginate }}
