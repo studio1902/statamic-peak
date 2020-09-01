@@ -14,7 +14,7 @@
         }}
             <div class="w-full flex flex-col space-y-6">
                 <div class="flex flex-col space-y-4">
-                    <label class="font-bold" for="name">{{ trans:site.form_name }} <sup class="text-notice-400">*</sup></label>
+                    <label class="font-bold" for="name">{{ trans:strings.form_name }} <sup class="text-notice-400">*</sup></label>
                     {{# Load notification when there is a validation error with the name field. #}}
                     <template x-if="errors.name">
                         {{ partial src="components/notification" type="error" attribute="x-text='errors.name'" }}
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="flex flex-col space-y-4">
-                    <label class="font-bold" for="email">{{ trans:site.form_email }} <sup class="text-notice-400">*</sup></label>
+                    <label class="font-bold" for="email">{{ trans:strings.form_email }} <sup class="text-notice-400">*</sup></label>
                     {{# Load notification when there is a validation error with the email field. #}}
                     <template x-if="errors.email">
                         {{ partial src="components/notification" type="error" attribute="x-text='errors.email'" }}
@@ -35,12 +35,12 @@
 
                 {{# Honeypot spam protection. #}}
                 <div class="hidden">
-                    <label class="font-bold" for="fax">{{ trans:site.form_fax }} <sup class="text-notice-400">*</sup></label>
+                    <label class="font-bold" for="fax">{{ trans:strings.form_fax }} <sup class="text-notice-400">*</sup></label>
                     <input class="form-input w-full" id="fax" type="fax" name="fax"/>
                 </div>
 
                 <div class="flex flex-col space-y-4">
-                    <label class="font-bold" for="message_body">{{ trans:site.form_message }} <sup class="text-notice-400">*</sup></label>
+                    <label class="font-bold" for="message_body">{{ trans:strings.form_message }} <sup class="text-notice-400">*</sup></label>
                     {{# Load notification when there is a validation error with the message_body field. #}}
                     <template x-if="errors.message_body">
                         {{ partial src="components/notification" type="error" attribute="x-text='errors.message_body'" }}
@@ -50,10 +50,10 @@
                 </div>
                 {{# Pulse button and disable upon sending. #}}
                 <div class="flex justify-end">
-                    {{ partial:components/button tag="button" label="{ trans:site.form_send }" attribute='x-bind:disabled="sending" x-bind:class="&#123;&#39;opacity-25 cursor-default&#39;: sending&#125;"' }}
+                    {{ partial:components/button tag="button" label="{ trans:strings.form_send }" attribute='x-bind:disabled="sending" x-bind:class="&#123;&#39;opacity-25 cursor-default&#39;: sending&#125;"' }}
                 </div>
                 <template x-if="success">
-                    {{ partial src="components/notification" type="success" class="mt-6" content="{trans:site.form_success}" }}
+                    {{ partial src="components/notification" type="success" class="mt-6" content="{trans:strings.form_success}" }}
                 </template>
             </div>
         {{ /form:create }}
