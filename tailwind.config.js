@@ -263,6 +263,10 @@ module.exports = {
         '[x-cloak]': { 
           display: 'none'
         },
+        // Default color transition on links.
+        'a': {
+          transition: 'color .2s ease-in-out',
+        },
         'html': {
           fontDisplay: 'swap',
           color: theme('colors.neutral.800'),
