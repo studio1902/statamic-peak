@@ -17,6 +17,18 @@ fields:
       listable: hidden
       display: Slug
   -
+    handle: image
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      type: assets
+      localizable: true
+      listable: hidden
+      display: Image
+  -
     handle: text_rich
     field:
       buttons:
@@ -33,7 +45,7 @@ fields:
       link_noopener: false
       link_noreferrer: false
       target_blank: false
-      reading_time: true
+      reading_time: false
       fullscreen: true
       allow_source: true
       type: bard
@@ -55,7 +67,7 @@ fields:
       link_noopener: false
       link_noreferrer: false
       target_blank: false
-      reading_time: true
+      reading_time: false
       fullscreen: true
       allow_source: true
       type: bard
