@@ -1,6 +1,6 @@
 sections:
-  basic:
-    display: Basic
+  page_titles:
+    display: 'Page titles'
     fields:
       -
         handle: section_title
@@ -36,6 +36,9 @@ sections:
           display: 'Website title'
           instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
           width: 66
+  json-ld:
+    display: JSON-ld
+    fields:
       -
         handle: section_schema
         field:
@@ -99,3 +102,21 @@ sections:
             json_ld_type: 'equals custom'
           validate:
             - 'required_if:json_ld_type,custom'
+  social:
+    display: Social
+    fields:
+      -
+        handle: section_og
+        field:
+          type: section
+          instructions: 'Open Graph meta tags'
+          listable: false
+          display: 'Social'
+      -
+          handle: og_image
+          field: common.image
+          config:
+            listable: hidden
+            display: 'Social image'
+            instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px'
+            width: 50
