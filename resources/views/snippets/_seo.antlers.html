@@ -1,20 +1,30 @@
 {{# The SEO partial rendered in the <head> of your page. You don't need to use this file if you plan on using an addon for SEO. #}}
+
+{{# Page title #}}
 <title>
     {{ seo_title ? seo_title : title }}
     {{ seo:title_separator ? seo:title_separator : " &#124; " }}
     {{ seo:site_name ? seo:site_name : site:name }}
 </title>
+
+{{# Page description #}}
 {{ if seo_description }}
     <meta name="description" content="{{ seo_description }}">
 {{ /if }}
+
+{{# No index #}}
 {{ if seo_noindex }}
     <meta name="robots" content="noindex">
 {{ /if }}
+
+{{# hreflang tags #}}
 {{ locales }}
     {{ unless locale.key == current }}
         <link rel="alternate" hreflang="{{ locale:full replace="_|-" }}" href="{{ permalink }}">
     {{ /unless}}
 {{ /locales }}
+
+{{# Knowledge graph JSON-ld #}}
 {{ unless seo:json_ld_type == 'none' }}
     <script type="application/ld+json" id="schema">
         {{ if seo:json_ld_type == 'organization'  }}
@@ -35,3 +45,23 @@
         {{ /if }}
     </script>
 {{ /unless }}
+
+{{# Open Graph #}}
+<meta property="og:site_name" content="{{ seo:site_name ? seo:site_name : site:name }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="{{ site:locale }}">
+{{ if og_title }}
+    <meta property="og:title" content="{{ og_title }}">
+{{ else }}
+    <meta property="og:title" content="{{ seo_title ? seo_title : title }}">
+{{ /if }}
+{{ if og_description }}
+    <meta property="og:description" content="{{ og_description }}">
+{{ elseif seo_description }}
+    <meta property="og:description" content="{{ seo_description }}">
+{{ /if }}
+{{ if og_image }}
+    <meta property="og:image" content="{{ permalink }}{{ og_image }}">
+{{ elseif seo:og_image }}
+    <meta property="og:image" content="{{ permalink }}{{ seo:og_image }}">
+{{ /if }}

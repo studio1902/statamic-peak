@@ -1,19 +1,20 @@
 title: SEO
 fields:
   -
+    handle: section_basic
+    field:
+      type: section
+      instructions: 'Basic SEO settings'
+      listable: false
+      display: Basic
+  -
     handle: seo_title
     field: common.title
     config:
       character_limit: 70
-      instructions: 'This entries SEO title, defaults to title. Max 70 characters including the site name.'
+      instructions: 'This entries title, defaults to title. Max 70 characters including the site name.'
       listable: false
-  -
-    handle: seo_description
-    field: common.text_plain
-    config:
-      character_limit: '160'
-      instructions: 'This entries SEO description. Max 160 characters.'
-      listable: false
+      width: 66
   -
     handle: seo_noindex
     field:
@@ -21,4 +22,43 @@ fields:
       instructions: 'Don''t index this entry.'
       localizable: false
       listable: false
+      width: 33
       display: No-index
+  -
+    handle: seo_description
+    field: common.text_plain
+    config:
+      character_limit: '160'
+      instructions: 'This entries meta description. Max 160 characters.'
+      listable: false
+  -
+    handle: section_og
+    field:
+      type: section
+      instructions: 'Open Graph meta tags for social sharing'
+      listable: false
+      display: Open Graph
+  -
+    handle: og_title
+    field: common.title
+    display: 'Social title'
+    config:
+      display: 'Social title'
+      instructions: 'This entries OG title, defaults to custom SEO title and title.'
+      listable: false
+  -
+    handle: og_description
+    field: common.text_plain
+    config:
+      display: 'Social description'
+      instructions: 'This entries OG description, defaults to meta description.'
+      listable: false
+      width: 100
+  -
+    handle: og_image
+    field: common.image
+    config:
+      listable: hidden
+      display: 'Social image'
+      instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px'
+      width: 50
