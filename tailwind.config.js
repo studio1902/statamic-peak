@@ -259,6 +259,13 @@ module.exports = {
     //
     plugin(function({ addBase, theme }) {
       addBase({
+        ':root': {
+          // Fluid typography from 1 rem to 1.15 rem with fallback to 16px. 
+          fontSize: '16px',
+          'font-size': 'clamp(1rem, 1.6vw, 1.2rem)',
+          // Safari resize fix. 
+          minHeight: '0vw',
+        },
         // Used to hide alpine elements before being rendered.
         '[x-cloak]': { 
           display: 'none'
