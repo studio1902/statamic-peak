@@ -14,6 +14,17 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
   },
+  //--------------------------------------------------------------------------
+  // Dark mode (experimental)
+  //--------------------------------------------------------------------------
+  //
+  // Uncomment the following to use experimental dark mode support.
+  // More info: https://github.com/tailwindlabs/tailwindcss/pull/2279
+  //
+  // dark: 'media', // or 'class'
+  // experimental {
+  //   darkModeVariant: true,
+  // },
   purge: {
     content: [
       './resources/views/**/*.html',
