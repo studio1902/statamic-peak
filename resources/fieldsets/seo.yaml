@@ -14,6 +14,7 @@ fields:
       character_limit: 70
       instructions: 'This entries title, defaults to title. Max 70 characters including the site name.'
       listable: false
+      display: 'Page title'
       width: 66
   -
     handle: seo_noindex
@@ -28,8 +29,17 @@ fields:
     handle: seo_description
     field: common.text_plain
     config:
+      display: 'Meta description'
       character_limit: '160'
       instructions: 'This entries meta description. Max 160 characters.'
+      listable: false
+  -
+    handle: seo_canonical
+    field: common.entry
+    config:
+      display: 'Canonical URL'
+      width: 66
+      instructions: 'If this is an entry with duplicate content. Enter the original URL for this content.'
       listable: false
   -
     handle: section_og
@@ -61,4 +71,4 @@ fields:
       listable: hidden
       display: 'Social image'
       instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px'
-      width: 50
+      width: 66

@@ -24,6 +24,11 @@
     {{ /unless}}
 {{ /locales }}
 
+{{# Canonical URL #}}
+{{ if seo_canonical }}
+    <link rel="canonical" href="{{ config:app:url }}{{ seo_canonical | url }}">
+{{ /if }}
+
 {{# Knowledge graph JSON-ld #}}
 {{ unless seo:json_ld_type == 'none' }}
     <script type="application/ld+json" id="schema">
