@@ -72,3 +72,18 @@ fields:
       display: 'Social image'
       instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px'
       width: 66
+  -
+    handle: section_schema
+    field:
+      type: section
+      instructions: 'Custom JSON-ld schema objects.'
+      listable: false
+      display: 'JSON-ld Schema'
+  -
+    handle: schema_jsonld
+    field: common.text_plain
+    config:
+      display: 'JSON-ld schema'
+      instructions: 'Custom JSON-ld objects. Will be wrapped in the appropriate script tag.'
+      listable: false
+      width: 100

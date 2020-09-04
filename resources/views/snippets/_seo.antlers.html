@@ -30,7 +30,7 @@
 {{ /if }}
 
 {{# Knowledge graph JSON-ld #}}
-{{ unless seo:json_ld_type == 'none' }}
+{{ if seo:json_ld_type && seo:json_ld_type != 'none' or schema_jsonld  }}
     <script type="application/ld+json" id="schema">
         {{ if seo:json_ld_type == 'organization'  }}
             {
@@ -48,8 +48,10 @@
         {{ elseif seo:json_ld_type == 'custom' }}
             {{ seo:json_ld }}
         {{ /if }}
+
+        {{ schema_jsonld ?= schema_jsonld }}
     </script>
-{{ /unless }}
+{{ /if }}
 
 {{# Open Graph #}}
 <meta property="og:site_name" content="{{ seo:site_name ? seo:site_name : site:name }}">
