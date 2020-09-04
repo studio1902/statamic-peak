@@ -29,6 +29,14 @@ fields:
       listable: hidden
       display: Image
   -
+      handle: entry
+      field:
+        max_items: 1
+        mode: default
+        type: entries
+        listable: false
+        display: Entry
+  -
     handle: text_rich
     field:
       buttons:
