@@ -10,3 +10,28 @@
 {{ if seo_noindex }}
     <meta name="robots" content="noindex">
 {{ /if }}
+{{ locales }}
+    {{ unless locale.key == current }}
+        <link rel="alternate" hreflang="{{ locale:full replace="_|-" }}" href="{{ permalink }}">
+    {{ /unless}}
+{{ /locales }}
+{{ unless seo:json_ld_type == 'none' }}
+    <script type="application/ld+json" id="schema">
+        {{ if seo:json_ld_type == 'organization'  }}
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "name": "{{ seo:organization_name }}",
+                "logo": "{{ permalink }}{{ seo:organization_logo }}",
+            }
+        {{ elseif seo:json_ld_type == 'person' }}
+            {
+                "@context": "http://schema.org",
+                "@type": "Person",
+                "name": "{{ seo:person_name }}",
+            }
+        {{ elseif seo:json_ld_type == 'custom' }}
+            {{ seo:json_ld }}
+        {{ /if }}
+    </script>
+{{ /unless }}
