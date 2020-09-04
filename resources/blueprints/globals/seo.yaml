@@ -7,7 +7,6 @@ sections:
         field:
           type: section
           instructions: 'The website title'
-          localizable: false
           listable: false
           display: Title
       -
@@ -16,7 +15,7 @@ sections:
           options:
             ' | ': '|'
             ' - ': '-'
-            ' / ': '/'
+            ' / ': /
             ' :: ': '::'
             ' > ': '>'
           clearable: false
@@ -27,7 +26,6 @@ sections:
           cast_booleans: false
           type: select
           instructions: 'Select the character to separate the page title and site title.'
-          localizable: false
           width: 33
           listable: hidden
           display: Separator
@@ -36,5 +34,68 @@ sections:
         field: common.title
         config:
           display: 'Website title'
-          instructions: 'The title for the website. Defaults to Laravel''s App Name.'
+          instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
           width: 66
+      -
+        handle: section_schema
+        field:
+          type: section
+          instructions: 'JSON-LD Schema'
+          listable: false
+          display: 'Knowledge graph data'
+      -
+        handle: json_ld_type
+        field:
+          options:
+            none: None
+            organization: Organization
+            person: Person
+            custom: Custom
+          default: none
+          type: button_group
+          instructions: 'The type of data to be added on each page.'
+          listable: false
+          display: Type
+      -
+        handle: organization_name
+        field: common.title
+        config:
+          listable: hidden
+          display: 'Organization name'
+          width: 66
+          if:
+            json_ld_type: 'equals organization'
+          validate:
+            - 'required_if:json_ld_type,organization'
+      -
+        handle: organization_logo
+        field: common.image
+        config:
+          listable: hidden
+          display: 'Organization logo'
+          width: 33
+          if:
+            json_ld_type: 'equals organization'
+      -
+        handle: person_name
+        field: common.title
+        config:
+          listable: hidden
+          display: 'Person name'
+          width: 66
+          if:
+            json_ld_type: 'equals person'
+          validate:
+            - 'required_if:json_ld_type,person'
+      -
+        handle: json_ld
+        field:
+          type: textarea
+          instructions: 'Add custom JSON-LD to be included on each page. This can include stuff like business hours and contact data.'
+          localizable: true
+          listable: false
+          display: JSON-LD
+          if:
+            json_ld_type: 'equals custom'
+          validate:
+            - 'required_if:json_ld_type,custom'
