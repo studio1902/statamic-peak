@@ -107,7 +107,7 @@ sections:
         handle: section_breadcrumbs
         field:
           type: section
-          instructions: 'JSON-LD Breadcrumbs'
+          instructions: 'JSON-ld Breadcrumbs'
           listable: false
           display: Breadcrumbs
       -
