@@ -229,6 +229,10 @@ Peak includes full SEO support that's easy to expand on since it's al built with
 * Add knowledge graph data (organization, person or custom).
 * Add JSON-ld breadcrumbs.
 
+[Screenshot global](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-01.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-02.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-03.png)
+
+### Disable SEO features
+
 If you plan on using an addon for SEO and Peak's built in features, do the following:
 * Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
 * Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
