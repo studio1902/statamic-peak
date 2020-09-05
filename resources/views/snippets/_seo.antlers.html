@@ -53,6 +53,26 @@
     </script>
 {{ /if }}
 
+{{# Breadcrumbs JSON-ld #}}
+{{ if seo:breadcrumbs && segment_1 }}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {{ nav:breadcrumbs }}
+                    {
+                        "@type": "ListItem",
+                        "position": {{ count }},
+                        "name": "{{ title }}",
+                        "item": "{{ permalink }}{{ url }}"
+                    } {{ unless last}},{{ /unless}}
+                {{ /nav:breadcrumbs }}
+            ]
+        }
+    </script>
+{{ /if }}
+
 {{# Open Graph #}}
 <meta property="og:site_name" content="{{ seo:site_name ? seo:site_name : site:name }}">
 <meta property="og:type" content="website">
