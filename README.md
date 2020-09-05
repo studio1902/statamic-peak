@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png" width="160" alt="Statamic Peak Logo" />
+  <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png?v=2" width="160" alt="Statamic Peak Logo" />
 </p>
 <h1 align="center">
   Statamic Starter Kit
