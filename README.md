@@ -213,21 +213,29 @@ When you're working with the collection tag and want to use [pagination](https:/
 ## SEO
 <span id="seo"></span>
 
-Peak includes basic bare bones SEO support that's easy to expand on or replace with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). Currently you can edit site settings in globals:
-* Site title
-* Page titel separator
+Peak includes full SEO support that's easy to expand on since it's al built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
 
-On an entry basis you can edit the following:
-* Entry title
-* Entry description
-* noindex
+### SEO features
+* Edit the title.
+* Edit the website title and separator.
+* Edit the meta description.
+* Add a canonical URL.
+* Add Open Graph data and image.
+* Add a default Open Graph image.
+* Auto generated sitemap.xml, customize which collections are included and per entry frequenty en priority settings.
+* Turn on no-index for an entry, also have it excluded in the sitemap.
+* Add custom JSON-ld schema objects.
+* Auto add hreflang tags.
+* Add knowledge graph data (organization, person or custom).
+* Add JSON-ld breadcrumbs.
 
-If you plan on using an addon. Do the following:
+If you plan on using an addon for SEO and Peak's built in features, do the following:
 * Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
 * Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
 * Delete the SEO global `content/globals/seo.yaml`.
 
 And optionally to erase all traces:
+* Delete the SEO sitemap view `resources/views/sitemap/sitemap.antlers.html`
 * Delete the SEO global blueprint `resources/blueprints/globals/seo.yaml`.
 * Delete the SEO fieldset `resources/fieldsets/seo.yaml`.
 * Delete the SEO partial `resources/views/snippets/_seo.antlers.html`.
