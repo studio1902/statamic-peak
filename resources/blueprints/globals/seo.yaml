@@ -103,6 +103,20 @@ sections:
             json_ld_type: 'equals custom'
           validate:
             - 'required_if:json_ld_type,custom'
+      -
+        handle: section_breadcrumbs
+        field:
+          type: section
+          instructions: 'JSON-LD Breadcrumbs'
+          listable: false
+          display: Breadcrumbs
+      -
+        handle: breadcrumbs
+        field:
+          type: toggle
+          instructions: 'Add JSON-ld breadcrumbs to each entry.'
+          listable: false
+          display: Breadcrumbs
   social:
     display: Social
     fields:
