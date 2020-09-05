@@ -76,6 +76,7 @@ sections:
         config:
           listable: hidden
           display: 'Organization logo'
+          instructions: 'Minimum 112px x 112px, will be focal cropped to a square.'
           width: 33
           if:
             json_ld_type: 'equals organization'
@@ -111,12 +112,31 @@ sections:
           type: section
           instructions: 'Open Graph meta tags'
           listable: false
-          display: 'Social'
+          display: Social
       -
-          handle: og_image
-          field: common.image
-          config:
-            listable: hidden
-            display: 'Social image'
-            instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px'
-            width: 50
+        handle: og_image
+        field: common.image
+        config:
+          listable: hidden
+          display: 'Social image'
+          instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px'
+          width: 50
+  sitemap:
+    display: Sitemap
+    fields:
+      -
+        handle: section_siteamp
+        field:
+          type: section
+          instructions: 'Configure the sitemap.xml'
+          listable: false
+          display: Sitemap
+      -
+        handle: sitemap_collections
+        field:
+          mode: select
+          type: collections
+          instructions: 'Select which collections to include in the sitemap.xml.'
+          listable: hidden
+          default: pages
+          display: Collections
