@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 // ]);
 
 Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');
+Route::statamic('/sitemap.xml', 'sitemap/sitemap', ['layout' => null, 'content_type' => 'application/xml']); 

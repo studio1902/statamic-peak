@@ -11,17 +11,16 @@ fields:
     handle: seo_title
     field: common.title
     config:
-      character_limit: 70
-      instructions: 'This entries title, defaults to title. Max 70 characters including the site name.'
       listable: false
       display: 'Page title'
+      character_limit: 70
+      instructions: 'This entries title, defaults to title. Max 70 characters including the site name.'
       width: 66
   -
     handle: seo_noindex
     field:
       type: toggle
-      instructions: 'Don''t index this entry.'
-      localizable: false
+      instructions: 'Don''t index this entry and exclude it from the sitemap.xml.'
       listable: false
       width: 33
       display: No-index
@@ -29,40 +28,39 @@ fields:
     handle: seo_description
     field: common.text_plain
     config:
+      listable: false
       display: 'Meta description'
       character_limit: '160'
       instructions: 'This entries meta description. Max 160 characters.'
-      listable: false
   -
     handle: seo_canonical
     field: common.entry
     config:
+      listable: false
       display: 'Canonical URL'
       width: 66
       instructions: 'If this is an entry with duplicate content. Enter the original URL for this content.'
-      listable: false
   -
     handle: section_og
     field:
       type: section
       instructions: 'Open Graph meta tags for social sharing'
       listable: false
-      display: Open Graph
+      display: 'Open Graph'
   -
     handle: og_title
     field: common.title
-    display: 'Social title'
     config:
+      listable: false
       display: 'Social title'
       instructions: 'This entries OG title, defaults to custom SEO title and title.'
-      listable: false
   -
     handle: og_description
     field: common.text_plain
     config:
+      listable: false
       display: 'Social description'
       instructions: 'This entries OG description, defaults to meta description.'
-      listable: false
       width: 100
   -
     handle: og_image
@@ -70,20 +68,59 @@ fields:
     config:
       listable: hidden
       display: 'Social image'
-      instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px'
+      instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px. The image will be focal cropped to this dimension.'
       width: 66
+  -
+    handle: section_sitemap
+    field:
+      type: section
+      instructions: 'Sitemap configuration'
+      listable: false
+      display: Sitemap
+  -
+    handle: sitemap_change_frequenty
+    field:
+      options:
+        always: Always
+        hourly: Hourly
+        daily: Daily
+        weekly: Weekly
+        monthly: Monthly
+        yearly: Yearly
+        never: Never
+      clearable: false
+      multiple: false
+      searchable: true
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      instructions: 'How often to instruct search engines to crawl.'
+      width: 50
+      default: weekly
+      listable: false
+      display: 'Change frequenty'
+  -
+    handle: sitemap_priority
+    field:
+      type: text
+      display: Priority
+      default: 0.5
+      instructions: 'Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites, it only lets the search engines know which pages you deem most important for the crawlers.'
+      width: 50
+      listable: false
   -
     handle: section_schema
     field:
       type: section
-      instructions: 'Custom JSON-ld schema objects.'
+      instructions: 'Custom JSON-ld schema objects'
       listable: false
       display: 'JSON-ld Schema'
   -
     handle: schema_jsonld
     field: common.text_plain
     config:
+      listable: false
       display: 'JSON-ld schema'
       instructions: 'Custom JSON-ld objects. Will be wrapped in the appropriate script tag.'
-      listable: false
       width: 100

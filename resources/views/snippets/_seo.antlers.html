@@ -37,7 +37,7 @@
                 "@context": "http://schema.org",
                 "@type": "Organization",
                 "name": "{{ seo:organization_name }}",
-                "logo": "{{ permalink }}{{ seo:organization_logo }}",
+                "logo": "{{ permalink }}{{ glide:seo:organization_logo width='336' height='336' fit='crop_focal' }}",
             }
         {{ elseif seo:json_ld_type == 'person' }}
             {
@@ -68,7 +68,7 @@
     <meta property="og:description" content="{{ seo_description }}">
 {{ /if }}
 {{ if og_image }}
-    <meta property="og:image" content="{{ permalink }}{{ og_image }}">
+    <meta property="og:image" content="{{ permalink }}{{ glide:og_image width='1200' height='600' fit='crop_focal' }}">
 {{ elseif seo:og_image }}
-    <meta property="og:image" content="{{ permalink }}{{ seo:og_image }}">
+    <meta property="og:image" content="{{ permalink }}{{ glide:seo:og_image width='1200' height='600' fit='crop_focal' }}">
 {{ /if }}
