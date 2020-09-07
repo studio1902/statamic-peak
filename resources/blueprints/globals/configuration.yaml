@@ -1,4 +1,13 @@
 sections:
+  general:
+    display: General
+    fields:
+      -
+        handle: section_general
+        field:
+          type: section
+          listable: hidden
+          display: 'General configuration'
   error_messages:
     display: 'Error messages'
     fields:
@@ -12,44 +21,3 @@ sections:
       -
         import: error_message
         prefix: '404_'
-  social_media:
-    display: 'Social Media'
-    fields:
-      -
-        handle: social_media
-        field:
-          sets:
-            facebook:
-              display: Facebook
-              fields:
-                -
-                  import: social_media
-            instagram:
-              display: Instagram
-              fields:
-                -
-                  import: social_media
-            linkedin:
-              display: LinkedIn
-              fields:
-                -
-                  import: social_media
-            twitter:
-              display: Twitter
-              fields:
-                -
-                  import: social_media
-            vimeo:
-              display: Vimeo
-              fields:
-                -
-                  import: social_media
-            youtube:
-              display: YouTube
-              fields:
-                -
-                  import: social_media
-          type: replicator
-          localizable: false
-          listable: hidden
-          display: 'Social media'
