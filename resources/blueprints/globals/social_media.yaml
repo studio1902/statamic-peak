@@ -1,0 +1,77 @@
+sections:
+  social_media:
+    display: 'Social Media'
+    fields:
+      -
+        handle: section_social
+        field:
+          type: section
+          listable: hidden
+          display: 'Social media links'
+      -
+        handle: social_media
+        field:
+          sets:
+            facebook:
+              display: Facebook
+              fields:
+                -
+                  handle: url
+                  field: common.title
+                  config:
+                    prepend: 'https://www.facebook.com/'
+                    display: URL
+                    validate: required
+            instagram:
+              display: Instagram
+              fields:
+                -
+                  handle: url
+                  field: common.title
+                  config:
+                    prepend: 'https://www.instagram.com/'
+                    display: URL
+                    validate: required
+            linkedin:
+              display: LinkedIn
+              fields:
+                -
+                  handle: url
+                  field: common.title
+                  config:
+                    prepend: 'https://www.linkedin.com/'
+                    display: URL
+                    validate: required
+            twitter:
+              display: Twitter
+              fields:
+                -
+                  handle: url
+                  field: common.title
+                  config:
+                    prepend: 'https://www.twitter.com/'
+                    display: URL
+                    validate: required
+            vimeo:
+              display: Vimeo
+              fields:
+                -
+                  handle: url
+                  field: common.title
+                  config:
+                    prepend: 'https://www.videmo.com/'
+                    display: URL
+                    validate: required
+            youtube:
+              display: YouTube
+              fields:
+                -
+                  handle: url
+                  field: common.title
+                  config:
+                    prepend: 'https://www.youtube.com/'
+                    display: URL
+                    validate: required
+          type: replicator
+          listable: hidden
+          display: 'Social media'
