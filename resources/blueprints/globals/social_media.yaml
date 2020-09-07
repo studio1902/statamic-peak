@@ -22,6 +22,11 @@ sections:
                     prepend: 'https://www.facebook.com/'
                     display: URL
                     validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.facebook.com/'
             instagram:
               display: Instagram
               fields:
@@ -32,6 +37,11 @@ sections:
                     prepend: 'https://www.instagram.com/'
                     display: URL
                     validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.instagram.com/'
             linkedin:
               display: LinkedIn
               fields:
@@ -42,6 +52,11 @@ sections:
                     prepend: 'https://www.linkedin.com/'
                     display: URL
                     validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.linkedin.com/'
             twitter:
               display: Twitter
               fields:
@@ -52,6 +67,11 @@ sections:
                     prepend: 'https://www.twitter.com/'
                     display: URL
                     validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.twitter.com/'
             vimeo:
               display: Vimeo
               fields:
@@ -59,9 +79,14 @@ sections:
                   handle: url
                   field: common.title
                   config:
-                    prepend: 'https://www.videmo.com/'
+                    prepend: 'https://www.vimeo.com/'
                     display: URL
                     validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.vimeo.com/'
             youtube:
               display: YouTube
               fields:
@@ -72,6 +97,11 @@ sections:
                     prepend: 'https://www.youtube.com/'
                     display: URL
                     validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.youtube.com/'
           type: replicator
           listable: hidden
           display: 'Social media'
