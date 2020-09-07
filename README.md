@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="160" alt="Statamic Peak Logo" />
+  <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png?v=2" width="160" alt="Statamic Peak Logo" />
 </p>
 <h1 align="center">
   Statamic Starter Kit
@@ -213,7 +213,7 @@ When you're working with the collection tag and want to use [pagination](https:/
 ## SEO
 <span id="seo"></span>
 
-Peak includes full SEO support that's easy to expand on since it's al built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
+Peak includes full SEO support. It's easy to expand on since it's al built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
 
 ### SEO features
 * Edit the title.
@@ -225,9 +225,9 @@ Peak includes full SEO support that's easy to expand on since it's al built with
 * Auto generated sitemap.xml, customize which collections are included and per entry frequenty en priority settings.
 * Turn on no-index for an entry, also have it excluded in the sitemap.
 * Add custom JSON-ld schema objects.
-* Auto add hreflang tags.
+* Auto generated hreflang tags on localized sites.
 * Add knowledge graph data (organization, person or custom).
-* Add JSON-ld breadcrumbs.
+* Auto generated optional JSON-ld breadcrumbs.
 
 [Screenshot global](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-01.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-02.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-03.png)
 
