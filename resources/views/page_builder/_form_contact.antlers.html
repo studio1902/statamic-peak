@@ -24,7 +24,7 @@
                         <label class="font-bold" for="{{ handle }}">{{ trans key="{display}" }} {{ if validate | contains:required }}<sup class="text-notice-400">*</sup>{{ /if }}</label>
                         {{# Load notification when there is a validation error with the name field. #}}
                         <template x-if="errors.{{ handle }}">
-                            {{ partial src="components/notification" type="error" attribute="x-text='errors.{{ handle }}'" }}
+                            {{ partial src="components/notification" type="error" attribute="x-text='errors.{handle}'" }}
                         </template>
                         {{ field }}
                     </div>
