@@ -1,15 +1,16 @@
 {{# This is the text email that goes to the owner of the site when a contact form has been submitted. #}}
-{{ trans:strings.form_mail_title }} {{ trans:strings.form_mail_from }}
-===================
-{{ trans:strings.form_mail_greeting }},
+{{ trans:strings.form_mail_body_owner }} ({{ trans:strings.form_mail_title }})
 
-{{ trans:strings.form_mail_body_owner }}
+-
+{{ fields }}
+{{ if handle != 'message' }}
+{{ trans key="{display}" }}: {{ value }}
+{{ else }}
+{{ trans key="{display}" }}:
 
-{{ trans:strings.form_name }}: {{ name }}
-{{ trans:strings.form_email }}: {{ email }}
-{{ trans:strings.form_message }}:
-
-{{ message_body | nl2br }}
-
-{{ trans:strings.form_mail_closing }},
+{{ value }}
+{{ /if }}
+{{ /fields }}
+-
+{{ trans:strings.form_mail_submitted }} {{ now | timezone | format:r }}
 {{ trans:strings.form_mail_from }}

@@ -1,0 +1,8 @@
+{{# Bind `form-input-error` class when there is a validation error with the field. #}}
+<textarea class="form-input w-full h-32" :class="{ 'form-input-error': errors.{{ handle }} }"
+    id="{{ handle }}" 
+    name="{{ handle }}" 
+    rows="5"
+    {{# Uncomment the following line if you want to use native browser validation first. #}}
+    {{# {{ validate | contains:required ?= "required" }} #}}
+>{{ old }}</textarea>
