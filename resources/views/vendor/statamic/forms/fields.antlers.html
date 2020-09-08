@@ -1,0 +1,16 @@
+{{# Honeypot spam protection. #}}
+<div class="hidden">
+    <label class="font-bold" for="fax">{{ trans:strings.form_honeypot }} <sup class="text-notice-400">*</sup></label>
+    <input class="form-input w-full" id="fax" type="fax" name="fax"/>
+</div>
+
+{{ fields }}
+    <div class="flex flex-col space-y-4">
+        <label class="font-bold" for="{{ handle }}">{{ trans key="{display}" }} {{ if validate | contains:required }}<sup class="text-notice-400">*</sup>{{ /if }}</label>
+        {{# Load notification when there is a validation error with the name field. #}}
+        <template x-if="errors.{{ handle }}">
+            {{ partial src="components/notification" type="error" attribute="x-text='errors.{{ handle }}'" }}
+        </template>
+        {{ field }}
+    </div>
+{{ /fields }}
