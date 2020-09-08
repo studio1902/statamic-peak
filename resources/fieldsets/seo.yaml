@@ -78,7 +78,7 @@ fields:
       listable: false
       display: Sitemap
   -
-    handle: sitemap_change_frequenty
+    handle: sitemap_change_frequency
     field:
       options:
         always: Always
@@ -99,7 +99,7 @@ fields:
       width: 50
       default: weekly
       listable: false
-      display: 'Change frequenty'
+      display: 'Change frequency'
   -
     handle: sitemap_priority
     field:
