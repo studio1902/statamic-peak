@@ -2,50 +2,100 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <style type="text/css">
-        /*@media only screen and (min-device-width: 801px) {
-        .content {width: 700px !important;}
-        }*/
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style media="screen" type="text/css">
+        @media only screen and (max-width: 640px) {
+            h1 { font-size: 22px; font-weight: 700; margin: 22px 0 5px; }
+        }
     </style>
 </head>
-
-<body bgcolor="#f7fafc" style="margin: 0;padding: 0;-webkit-font-smoothing: antialiased;min-width: 100% !important;">
-    <table width="100%" bgcolor="#f7fafc" border="0" cellpadding="0" cellspacing="0" style="margin-top: 2rem; height: 100%;">
-        <tr style="border: none;padding: 0;">
-            <td style="font-family: sans-serif;margin: 0;font-size: 12px;line-height: 18px;color: #2d3748;border: none;padding: 0;">
-                <!--[if (gte mso 9)|(IE)]>
-                <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                <td>
-                <![endif]-->
-                <table bgcolor="#FFFFFF" class="content" align="center" cellpadding="0" cellspacing="0" border="0" style="height: 100%;width: 100%; border-radius: 8px;box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); max-width: 600px;">
-                    <tr style="border: none;padding: 0;">
-                        <td colspan="2" align="center" class="innerpadding" style="font-family: sans-serif;margin: 0;font-size: 12px;line-height: 18px;color: #2d3748;border: none;padding: 30px 30px 30px 30px;">
-                            <a href="{{ trans:strings.form_mail_url }}" style="color: #3182ce;text-decoration: none;">
-                                <img class="fix" style="display:block;height:auto;" width="150px" height="auto" src="{{ trans:strings.form_mail_logo }}" alt="Logo {{ trans:strings.form_mail_from }}">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr style="border: none;padding: 0;">
-                        <td colspan="2" class="innerpadding" style="font-family: sans-serif;margin: 0;font-size: 12px;line-height: 18px;color: #2d3748;border: none;padding: 30px 30px 30px 30px;">
-                            <h1 style="font-family: sans-serif; margin-bottom: 18px; font-size: 28px; line-height: 38px; font-weight: bold; color: #2d3748;">{{ trans:strings.form_mail_title }} {{ trans:strings.form_mail_from }}</h1>
-                            <p style="font-family: sans-serif; margin-bottom: 24px; font-size: 16px; line-height: 24px; color: #2d3748;">                                
-                                {{ trans:strings.form_mail_greeting }} {{ name }},<br>
-                                <br>
-                                {{ trans:strings.form_mail_body_sender }}<br>
-                                <br>
-                                {{ trans:strings.form_mail_closing }},<br>
-                                {{ trans:strings.form_mail_from }}
-                            </p>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" bgcolor="#ffffff" style='background-color:#fff; font-family:"Open Sans", sans-serif; font-size:16px; height:100%; line-height:1.45; margin:0; padding:0; width:100%' height="100%" width="100%">
+    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#f9f9f8" style="width:100%; background-color:#f9f9f8; margin:0 auto" width="100%">
+        <tr>
+            <td valign="top" align="center" style="vertical-align:top">
+                <!-- email wrapper -->
+                <table cellpadding="0" cellspacing="0" border="0" style="width:100%; margin:22px auto; max-width:616px" width="100%">
+                    <tr>
+                        <td style="vertical-align:top" valign="top">
+                            <!-- header -->
+                            <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                <tr>
+                                    <td align="center" style="vertical-align:top; color:#1A202C; padding:22px" valign="top">
+                                        <div>
+                                            <img src="{{ trans:strings.form_mail_logo }}" alt="" width="150px" height="auto" style="max-width:100%; margin-bottom:22px">
+                                        </div>
+                                        <p style='font-weight:700; margin-bottom:11px; font-family:"Poppins", sans-serif; margin:0; text-transform:uppercase'>{{ trans:strings.form_mail_from }}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- /header -->
+                            <!-- main wrapper -->
+                            <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                <tr>
+                                    <td style="vertical-align:top; padding:22px" valign="top">
+                                        <!-- content wrapper -->
+                                        <table cellpadding="0" cellspacing="0" border="0" style="width:100%; background-color:#fff" width="100%" bgcolor="#ffffff">
+                                            <tr>
+                                                <td align="center" style="vertical-align:top" valign="top">
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="vertical-align:top; padding:22px; border-bottom:22px solid #f9f9f8;" valign="top">
+                                                                    <p>{{ trans:strings.form_mail_greeting }} {{ first_name or name }},</p>
+                                                                    <p>{{ trans:strings.form_mail_body_sender }}</p>
+                                                                    <p>{{ trans:strings.form_mail_closing }},</p>
+                                                                    <p>{{ trans:strings.form_mail_from }}</p>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width:100%; text-align:left" width="100%" align="left">
+                                                        <tr>
+                                                            <td style='vertical-align:top; font-family:"Source Code Pro", monospace; padding:11px' valign="top">
+                                                                <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                                                    {{ fields }}
+                                                                        {{ if value }}
+                                                                            <tr>
+                                                                                <td style='vertical-align:top; font-family:"Source Code Pro", monospace; padding:11px; border-bottom:#e3e3da 1px solid; font-size:14px' valign="top">
+                                                                                    <strong>{{ trans key="{display}" }}:</strong><br>
+                                                                                    <pre style="white-space:pre-line; font-family:inherit; margin:0">{{ value }}</pre>
+                                                                                </td>
+                                                                            </tr>
+                                                                        {{ /if }}
+                                                                    {{ /fields }}
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr align="center" style="padding:0 0 22px">
+                                                            <td style='vertical-align:top; font-family:"Source Code Pro", monospace; padding:11px' valign="top">
+                                                                <span style="color:#918f8d; font-size:12px">{{ trans:strings.form_mail_submitted }} {{ now | timezone | format:r }}.</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- /content wrapper -->
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- /main wrapper -->
+                            <!-- footer -->
+                            <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
+                                <tr>
+                                    <td align="center" style="vertical-align:top; padding:22px; text-align:center; color:#918f8d; font-size:12px" valign="top">
+                                        <a href="{{ trans:strings.form_mail_url }}" style="color:#918f8d; text-decoration:underline; font-size:12px">{{ trans:strings.form_mail_from }}</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- /footer -->
                         </td>
                     </tr>
                 </table>
-            <!--[if (gte mso 9)|(IE)]>
-            </td>
-            </tr>
-            </table>
-            <![endif]-->
+                <!-- /email wrapper -->
             </td>
         </tr>
     </table>
