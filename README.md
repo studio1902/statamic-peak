@@ -157,7 +157,7 @@ Peak ships with a default basic contact form you can edit using the following fi
 * `resources/views/email/contact_owner.html` The forms email template that goes out to the site owner. The `_text.html` version contains the text template.
 * `resources/views/email/contact_sender.html` The forms email template that goes out to the sender of the form. The `_text.html` version contains the text template.
 
-Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`.
+Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`, and the form's field labels are localized and defined in `resources/lang/en.json`.
 
 The forms sending is done with AJAX and uses Alpine to display the various notifications. 
 
