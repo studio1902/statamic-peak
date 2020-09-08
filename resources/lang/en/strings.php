@@ -6,6 +6,7 @@ return [
     'next'                              => 'next',
 
     // Contact form
+    'form_honeypot'                     => 'Fax',
     'form_mail_body_owner'              => 'A contact form has been sent.',
     'form_mail_body_sender'             => 'Thanks for your message. We will contact you as soon as possible.',
     'form_mail_closing'                 => 'Kind regards',
