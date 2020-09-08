@@ -3,10 +3,10 @@
 
 -
 {{ fields }}
-{{ if display != 'Message' }}
-{{ display }}: {{ value }}
+{{ if handle != 'message' }}
+{{ trans key="{display}" }}: {{ value }}
 {{ else }}
-{{ display }}:
+{{ trans key="{display}" }}:
 
 {{ value }}
 {{ /if }}
