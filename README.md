@@ -222,7 +222,7 @@ Peak includes full SEO support. It's easy to expand on since it's al built with 
 * Add a canonical URL.
 * Add Open Graph data and image.
 * Add a default Open Graph image.
-* Auto generated sitemap.xml, customize which collections are included and per entry frequenty en priority settings.
+* Auto generated sitemap.xml, customize which collections are included and per entry frequency and priority settings.
 * Turn on no-index for an entry, also have it excluded in the sitemap.
 * Add custom JSON-ld schema objects.
 * Auto generated hreflang tags on localized sites.
