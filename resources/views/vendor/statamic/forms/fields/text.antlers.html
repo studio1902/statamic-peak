@@ -3,6 +3,7 @@
     id="{{ handle }}" 
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}" 
-    {{ validate | contains:required ?= "required" }}
+    {{# Uncomment the following line if you want to use native browser validation first. #}}
+    {{# {{ validate | contains:required ?= "required" }} #}}
     {{ if old }}value="{{ old }}"{{ /if }}
 />
