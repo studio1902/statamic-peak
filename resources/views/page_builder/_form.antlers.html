@@ -4,8 +4,8 @@
         {{ partial:typography/h2 class="mb-4" :content="block:title" }}
         {{ partial:typography/paragraph :content="block:text" }}
 
-        {{# Create a contact form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
-        {{ form:create in="contact" 
+        {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
+        {{ form:create in="{ form:handle }" 
             id="form"
             class="flex flex-wrap" 
             x-ref="form" 
