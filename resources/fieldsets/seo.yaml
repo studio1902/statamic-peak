@@ -13,7 +13,7 @@ fields:
       input_type: text
       type: text
       localizable: true
-      listable: false
+      listable: hidden
       display: 'Page title'
       character_limit: 70
       instructions: 'This entries title, defaults to title. Max 70 characters including the site name.'
@@ -23,14 +23,14 @@ fields:
     field:
       type: toggle
       instructions: 'Don''t index this entry and exclude it from the sitemap.xml.'
-      listable: false
+      listable: hidden
       width: 33
       display: No-index
   -
     handle: seo_description
     field: common.text_plain
     config:
-      listable: false
+      listable: hidden
       display: 'Meta description'
       character_limit: '160'
       instructions: 'This entries meta description. Max 160 characters.'
@@ -38,7 +38,7 @@ fields:
     handle: seo_canonical
     field: common.entry
     config:
-      listable: false
+      listable: hidden
       display: 'Canonical URL'
       width: 66
       instructions: 'If this is an entry with duplicate content. Enter the original URL for this content.'
@@ -55,14 +55,14 @@ fields:
       input_type: text
       type: text
       localizable: true
-      listable: false
+      listable: hidden
       display: 'Social title'
       instructions: 'This entries OG title, defaults to custom SEO title and title.'
   -
     handle: og_description
     field: common.text_plain
     config:
-      listable: false
+      listable: hidden
       display: 'Social description'
       instructions: 'This entries OG description, defaults to meta description.'
       width: 100
@@ -102,7 +102,7 @@ fields:
       instructions: 'How often to instruct search engines to crawl.'
       width: 50
       default: weekly
-      listable: false
+      listable: hidden
       display: 'Change frequency'
   -
     handle: sitemap_priority
@@ -112,7 +112,7 @@ fields:
       default: 0.5
       instructions: 'Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites, it only lets the search engines know which pages you deem most important for the crawlers.'
       width: 50
-      listable: false
+      listable: hidden
   -
     handle: section_schema
     field:
