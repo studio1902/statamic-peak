@@ -1,22 +1,6 @@
 title: 'Common reusable fields'
 fields:
   -
-    handle: title
-    field:
-      input_type: text
-      type: text
-      localizable: true
-      listable: hidden
-      display: Title
-  -
-    handle: slug
-    field:
-      generate: true
-      type: slug
-      localizable: true
-      listable: hidden
-      display: Slug
-  -
     handle: image
     field:
       mode: grid

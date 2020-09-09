@@ -5,8 +5,12 @@ sections:
     fields:
       -
         handle: title
-        field: common.title
-        config:
+        field:
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          display: Title
           required: true
       -
         import: page_builder
@@ -28,8 +32,12 @@ sections:
           display: Meta
       -
         handle: slug
-        field: common.slug
-        config:
+        field:
+          generate: true
+          type: slug
+          localizable: true
+          listable: hidden
+          display: Slug
           required: true
       -
         handle: parent

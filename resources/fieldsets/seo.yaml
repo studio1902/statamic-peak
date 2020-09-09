@@ -9,8 +9,10 @@ fields:
       display: Basic
   -
     handle: seo_title
-    field: common.title
-    config:
+    field:
+      input_type: text
+      type: text
+      localizable: true
       listable: false
       display: 'Page title'
       character_limit: 70
@@ -49,8 +51,10 @@ fields:
       display: 'Open Graph'
   -
     handle: og_title
-    field: common.title
-    config:
+    field:
+      input_type: text
+      type: text
+      localizable: true
       listable: false
       display: 'Social title'
       instructions: 'This entries OG title, defaults to custom SEO title and title.'

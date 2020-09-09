@@ -2,8 +2,12 @@ title: 'Call to action'
 fields:
   -
     handle: title
-    field: common.title
-    config:
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
       instructions: 'The title you want to display above the text.'
       validate:
         - required
