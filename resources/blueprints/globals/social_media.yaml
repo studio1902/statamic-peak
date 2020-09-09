@@ -17,8 +17,11 @@ sections:
               fields:
                 -
                   handle: url
-                  field: common.title
-                  config:
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
                     prepend: 'https://www.facebook.com/'
                     display: URL
                     validate: required
@@ -32,8 +35,11 @@ sections:
               fields:
                 -
                   handle: url
-                  field: common.title
-                  config:
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
                     prepend: 'https://www.instagram.com/'
                     display: URL
                     validate: required
@@ -47,8 +53,11 @@ sections:
               fields:
                 -
                   handle: url
-                  field: common.title
-                  config:
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
                     prepend: 'https://www.linkedin.com/'
                     display: URL
                     validate: required
@@ -62,8 +71,11 @@ sections:
               fields:
                 -
                   handle: url
-                  field: common.title
-                  config:
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
                     prepend: 'https://www.twitter.com/'
                     display: URL
                     validate: required
@@ -77,8 +89,11 @@ sections:
               fields:
                 -
                   handle: url
-                  field: common.title
-                  config:
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
                     prepend: 'https://www.vimeo.com/'
                     display: URL
                     validate: required
@@ -92,8 +107,11 @@ sections:
               fields:
                 -
                   handle: url
-                  field: common.title
-                  config:
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
                     prepend: 'https://www.youtube.com/'
                     display: URL
                     validate: required

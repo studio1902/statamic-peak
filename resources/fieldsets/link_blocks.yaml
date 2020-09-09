@@ -2,8 +2,12 @@ title: 'Link blocks'
 fields:
   -
     handle: title
-    field: common.title
-    config:
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
       instructions: 'The title you want to display above the collection entries.'
       validate:
         - required
@@ -13,8 +17,12 @@ fields:
       fields:
         -
           handle: title
-          field: common.title
-          config:
+          field:
+            input_type: text
+            type: text
+            localizable: true
+            listable: hidden
+            display: Title
             validate:
               - required
         -
