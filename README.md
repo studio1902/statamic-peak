@@ -228,6 +228,7 @@ Peak includes full SEO support. It's easy to expand on since it's al built with 
 * Auto generated hreflang tags on localized sites.
 * Add knowledge graph data (organization, person or custom).
 * Auto generated optional JSON-ld breadcrumbs.
+* Add trackers: Google Analytics, Google Tag Manager, Site Verification or Fathom.
 
 [Screenshot global](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-01.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-02.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-03.png)
 
@@ -235,6 +236,7 @@ Peak includes full SEO support. It's easy to expand on since it's al built with 
 
 If you plan on using an addon for SEO and Peak's built in features, do the following:
 * Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
+* Remove `{{ yield:google_tag_manager }}` from `resources/views/layout.antlers.html`.
 * Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
 * Delete the SEO global `content/globals/seo.yaml`.
 

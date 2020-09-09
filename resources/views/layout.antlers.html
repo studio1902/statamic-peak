@@ -14,6 +14,7 @@
         x-data="{ mobileNavOpen: false }" 
         :class="{ 'no-scroll': mobileNavOpen }"
     >
+        {{ yield:google_tag_manager }}
         {{ partial:layout/header }}
         {{ template_content }}
         {{ partial:layout/footer }}

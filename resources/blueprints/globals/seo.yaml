@@ -139,7 +139,7 @@ sections:
     display: Sitemap
     fields:
       -
-        handle: section_siteamp
+        handle: section_sitemap
         field:
           type: section
           instructions: 'Configure the sitemap.xml'
@@ -154,3 +154,90 @@ sections:
           listable: hidden
           default: pages
           display: Collections
+  trackers:
+    display: Trackers
+    fields:
+      -
+        handle: section_trackers
+        field:
+          type: section
+          instructions: 'Configure trackers and analytics.'
+          listable: false
+          display: Trackers
+      -
+        handle: use_google_site_verification
+        field:
+          type: toggle
+          instructions: 'Add a google-site-verification meta tag to your head.'
+          listable: false
+          display: 'Google site verification'
+      -
+        handle: google_site_verification
+        field: common.title
+        config:
+          width: 66
+          display: 'Verification key'
+          validate:
+            - 'required_if:use_google_site_verification,true'
+          if:
+            use_google_site_verification: 'equals true'
+      -
+        handle: use_google_analytics
+        field:
+          type: toggle
+          instructions: 'Add Google Analytics tracking code to your head (privacy concern).'
+          listable: false
+          display: 'Google Analytics'
+      -
+        handle: google_analytics
+        field: common.title
+        config:
+          width: 66
+          display: 'Tracking ID'
+          validate:
+            - 'required_if:use_google_analytics,true'
+          if:
+            use_google_analytics: 'equals true'
+      -
+        handle: anonymize_ip
+        field:
+          type: toggle
+          width: 33
+          listable: false
+          display: "Anonymize IP's"
+          if:
+            use_google_analytics: 'equals true'
+      -
+        handle: use_google_tag_manager
+        field:
+          type: toggle
+          instructions: 'Add Google Tag Manager tracking code to your head (privacy concern).'
+          listable: false
+          display: 'Google Tag Manager'
+      -
+        handle: google_tag_manager
+        field: common.title
+        config:
+          width: 66
+          display: 'Tracking ID'
+          validate:
+            - 'required_if:use_google_tag_manager,true'
+          if:
+            use_google_tag_manager: 'equals true'
+      -
+        handle: use_fathom
+        field:
+          type: toggle
+          instructions: 'Add Fathom tracking code to your head.'
+          listable: false
+          display: Fathom
+      -
+        handle: fathom
+        field: common.title
+        config:
+          width: 66
+          display: 'Site ID'
+          validate:
+            - 'required_if:use_fathom,true'
+          if:
+            use_fathom: 'equals true'
