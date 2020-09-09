@@ -8,18 +8,13 @@
 
 -
 {{ fields }}
-{{ if handle != 'message' }}
-{{ trans key="{display}" }}: {{ value }}
-{{ else }}
 {{ trans key="{display}" }}:
-
 {{ if (value | is_array) }}
-    {{ value }}
-        {{ value }}
-    {{ /value }}
+{{ value }}
+{{ value }}
+{{ /value }}
 {{ else }}
 {{ value }}
-{{ /if }}
 {{ /if }}
 {{ /fields }}
 -
