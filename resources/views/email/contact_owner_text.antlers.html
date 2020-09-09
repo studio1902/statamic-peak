@@ -8,7 +8,13 @@
 {{ else }}
 {{ trans key="{display}" }}:
 
+{{ if (value | is_array) }}
+    {{ value }}
+        {{ value }}
+    {{ /value }}
+{{ else }}
 {{ value }}
+{{ /if }}
 {{ /if }}
 {{ /fields }}
 -
