@@ -22,7 +22,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Assets](#assets)
 * [Bard](#bard)
 * [Buttons](#buttons)
-* [Contact form](#contact-form)
+* [Forms](#forms)
 * [Globals](#globals)
 * [Navigation](#navigation)
 * [Page builder](#page-builder)
@@ -146,16 +146,16 @@ The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_bu
 
 [Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
 
-## Contact form
-<span id="contact-form"></span>
+## Forms
+<span id="forms"></span>
 
-Peak ships with a default basic contact form you can edit using the following files:
+Peak renders forms and mail templates dynamically so you can add as many forms as you'd like, just by creating them in the CP. Peak ships with a default basic contact form you can edit using the following files:
 
 * `resources/forms/contact.yaml` The contact form configuration.
 * `resources/blueprints/forms/contact.yaml` The forms blueprint defining all the fields.
-* `resources/views/page_builder/_form_contact.antlers.html` The forms template file.
-* `resources/views/email/contact_owner.html` The forms email template that goes out to the site owner. The `_text.html` version contains the text template.
-* `resources/views/email/contact_sender.html` The forms email template that goes out to the sender of the form. The `_text.html` version contains the text template.
+* `resources/views/page_builder/_form.antlers.html` The forms template file.
+* `resources/views/email/form_owner.html` The forms email template that goes out to the site owner. The `_text.html` version contains the text template.
+* `resources/views/email/form_sender.html` The forms email template that goes out to the sender of the form. The `_text.html` version contains the text template.
 
 Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`, and the form's field labels are localized and defined in `resources/lang/en.json`.
 
@@ -163,7 +163,7 @@ The forms sending is done with AJAX and uses Alpine to display the various notif
 
 > Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
 
-[Screenshot Contact form Page Builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-01.png) | [Screenshot Contact form error handling](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-02.png) | [Screenshot Contact form mail to owner](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-03.png) | [Screenshot Contact form mail to sender](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-contact-form-04.png)
+[Screenshot Form Page Builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-01.png) | [Screenshot Form error handling](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-02.png) | [Screenshot Form mail to owner](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-03.png) | [Screenshot Form mail to sender](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-04.png)
 
 ## Globals
 <span id="globals"></span>
@@ -194,7 +194,7 @@ Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) 
 * Article ([`long form content`](#bard))
 * Call to action (title, text and a button)
 * Collection (title and links to other entries)
-* [Contact form](#contact-form)
+* [Forms](#forms)
 * Link blocks (blocks with a title and text that link to other entries)
 
 For example if you add a fieldset to the `page_builder.yaml` with the handle `call_to_action` make sure you add a `_call_to_action.antlers.html` file to the `resources/views/page_builder` folder.
@@ -278,9 +278,9 @@ Peak changes the default Statamic config. The following is different:
 
 | File | Default | Peak |
 | --- | --- | --- |
-| `app/Http/Controllers/DynamicToken.php` | - | New Controller for [contact form](#contact-form) |
+| `app/Http/Controllers/DynamicToken.php` | - | New Controller for [forms](#forms) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
-| `app/Tags/DynamicToken.php` | - | New Tag for [contact form](#contact-form) |
+| `app/Tags/DynamicToken.php` | - | New Tag for [forms](#forms) |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
 | `config/statamic/assets.php` | `'presets' => [],` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
@@ -289,7 +289,7 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
-| `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` for [contact form](#contact-form) |
+| `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` for [forms](#forms) |
 
 ## Modernizr
 <span id="modernizr"></span>
