@@ -6,12 +6,12 @@ email:
     from: info@site.com
     reply_to: '{{ email }}'
     subject: 'Contact form received'
-    html: email/contact_owner
-    text: email/contact_owner_text
+    html: email/form_owner
+    text: email/form_owner_text
   -
     to: '{{ email }}'
     from: info@site.com
     reply_to: info@site.com
     subject: 'Contact form sent'
-    html: email/contact_sender
-    text: email/contact_sender_text
+    html: email/form_sender
+    text: email/form_sender_text
