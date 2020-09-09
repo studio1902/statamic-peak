@@ -61,7 +61,7 @@
                                                                             <tr>
                                                                                 <td style='vertical-align:top; font-family:"Source Code Pro", monospace; padding:11px; border-bottom:#e3e3da 1px solid; font-size:14px' valign="top">
                                                                                     <strong>{{ trans key="{display}" }}:</strong><br>
-                                                                                    <pre style="white-space:pre-line; font-family:inherit; margin:0">{{ value }}</pre>
+                                                                                    <pre style="white-space:pre-line; font-family:inherit; margin:0">{{ if (value | is_array) }}<ul>{{ value }}<li>{{ value }}</li>{{ /value }}</ul>{{ else }}{{ value }}{{ /if }}</pre>
                                                                                 </td>
                                                                             </tr>
                                                                         {{ /if }}
