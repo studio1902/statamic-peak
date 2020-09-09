@@ -1,9 +1,8 @@
-{{ foreach:options as="value|label" }}
-    <label>
-        <input type="radio" name="{{ handle }}" value="{{ value }}" {{ old === value ?= "checked" }}>
-        {{ label }}
-    </label>
-    {{ unless inline }}
-        <br>
-    {{ /unless }}
-{{ /foreach:options }}
+<div class="flex {{ inline ? 'space-x-4' : 'flex-col space-y-4' }}">
+    {{ foreach:options as="value|label" }}
+        <label class="inline-flex items-center">
+            <input class="form-radio mr-2" type="radio" name="{{ handle }}" value="{{ value }}" {{ old === value ?= "checked" }}>
+            {{ label }}
+        </label>
+    {{ /foreach:options }}
+</div>

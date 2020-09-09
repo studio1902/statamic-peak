@@ -1,9 +1,8 @@
-{{ foreach:options as="value|label" }}
-    <label>
-        <input type="checkbox" name="{{ handle }}[]" value="{{ value }}" {{ if (old | in_array:value) }}checked{{ /if }}>
-        {{ label }}
-    </label>
-    {{ unless inline }}
-        <br>
-    {{ /unless }}
-{{ /foreach:options }}
+<div class="flex {{ inline ? 'space-x-4' : 'flex-col space-y-4' }}">
+    {{ foreach:options as="value|label" }}
+        <label class="inline-flex items-center">
+            <input class="form-checkbox mr-2" type="checkbox" name="{{ handle }}[]" value="{{ value }}" {{ if (old | in_array:value) }}checked{{ /if }}>
+            {{ label }}
+        </label>
+    {{ /foreach:options }}
+</div>
