@@ -25,9 +25,9 @@
                                 <tr>
                                     <td align="center" style="vertical-align:top; color:#1A202C; padding:22px" valign="top">
                                         <div>
-                                            <img src="{{ trans:strings.form_mail_logo }}" alt="" width="150px" height="auto" style="max-width:100%; margin-bottom:22px">
+                                            <img src="{{ trans:strings.form_mail_logo locale="{locale}" }}" alt="" width="150px" height="auto" style="max-width:100%; margin-bottom:22px">
                                         </div>
-                                        <p style='font-weight:700; margin-bottom:11px; font-family:"Poppins", sans-serif; margin:0; text-transform:uppercase'>{{ trans:strings.form_mail_from }}</p>
+                                        <p style='font-weight:700; margin-bottom:11px; font-family:"Poppins", sans-serif; margin:0; text-transform:uppercase'>{{ trans:strings.form_mail_from locale="{locale}" }}</p>
                                     </td>
                                 </tr>
                             </table>
@@ -44,10 +44,10 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td style="vertical-align:top; padding:22px; border-bottom:22px solid #f9f9f8;" valign="top">
-                                                                    <p>{{ trans:strings.form_mail_greeting }} {{ first_name or name }},</p>
-                                                                    <p>{{ trans:strings.form_mail_body_sender }}</p>
-                                                                    <p>{{ trans:strings.form_mail_closing }},</p>
-                                                                    <p>{{ trans:strings.form_mail_from }}</p>
+                                                                    <p>{{ trans:strings.form_mail_greeting locale="{locale}" }} {{ first_name or name }},</p>
+                                                                    <p>{{ trans:strings.form_mail_body_sender locale="{locale}" }}</p>
+                                                                    <p>{{ trans:strings.form_mail_closing locale="{locale}" }},</p>
+                                                                    <p>{{ trans:strings.form_mail_from locale="{locale}" }}</p>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -60,7 +60,7 @@
                                                                         {{ if value }}
                                                                             <tr>
                                                                                 <td style='vertical-align:top; font-family:"Source Code Pro", monospace; padding:11px; border-bottom:#e3e3da 1px solid; font-size:14px' valign="top">
-                                                                                    <strong>{{ trans key="{display}" }}:</strong><br>
+                                                                                    <strong>{{ trans key="{display}" locale="{locale}" }}:</strong><br>
                                                                                     <pre style="white-space:pre-line; font-family:inherit; margin:0">{{ if (value | is_array) }}<ul>{{ value }}<li>{{ value }}</li>{{ /value }}</ul>{{ else }}{{ value }}{{ /if }}</pre>
                                                                                 </td>
                                                                             </tr>
@@ -71,7 +71,7 @@
                                                         </tr>
                                                         <tr align="center" style="padding:0 0 22px">
                                                             <td style='vertical-align:top; font-family:"Source Code Pro", monospace; padding:11px' valign="top">
-                                                                <span style="color:#918f8d; font-size:12px">{{ trans:strings.form_mail_submitted }} {{ now | timezone | format:r }}.</span>
+                                                                <span style="color:#918f8d; font-size:12px">{{ trans:strings.form_mail_submitted locale="{locale}" }} {{ now | timezone | format:r }}.</span>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -87,7 +87,7 @@
                             <table cellpadding="0" cellspacing="0" border="0" style="width:100%" width="100%">
                                 <tr>
                                     <td align="center" style="vertical-align:top; padding:22px; text-align:center; color:#918f8d; font-size:12px" valign="top">
-                                        <a href="{{ trans:strings.form_mail_url }}" style="color:#918f8d; text-decoration:underline; font-size:12px">{{ trans:strings.form_mail_from }}</a>
+                                        <a href="{{ trans:strings.form_mail_url locale="{locale}" }}" style="color:#918f8d; text-decoration:underline; font-size:12px">{{ trans:strings.form_mail_from locale="{locale}" }}</a>
                                     </td>
                                 </tr>
                             </table>
