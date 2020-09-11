@@ -16,7 +16,7 @@
                 {{# Honeypot spam protection. #}}
                 <div class="hidden">
                     <label class="font-bold" for="fax">{{ trans:strings.form_honeypot }} <sup class="text-notice-400">*</sup></label>
-                    <input class="form-input w-full" id="fax" type="fax" name="fax"/>
+                    <input class="form-input w-full" id="fax" type="fax" name="fax" tabindex="-1" autocomplete="off"/>
                 </div>
 
                 {{ fields }}
