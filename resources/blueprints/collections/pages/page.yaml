@@ -6,12 +6,14 @@ sections:
       -
         handle: title
         field:
-          input_type: text
           type: text
-          localizable: true
-          listable: hidden
-          display: Title
           required: true
+          input_type: text
+          localizable: true
+          listable: true
+          display: Title
+          validate:
+            - required
       -
         import: page_builder
   seo:
@@ -27,18 +29,19 @@ sections:
         field:
           type: section
           instructions: 'This entry''s meta data.'
-          localizable: false
           listable: false
           display: Meta
       -
         handle: slug
         field:
-          generate: true
           type: slug
+          required: true
           localizable: true
+          generate: true
           listable: hidden
           display: Slug
-          required: true
+          validate:
+            - required
       -
         handle: parent
         field:
@@ -47,3 +50,4 @@ sections:
             - pages
           max_items: 1
           listable: false
+          localizable: true
