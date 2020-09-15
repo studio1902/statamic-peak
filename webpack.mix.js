@@ -20,6 +20,8 @@ mix.browserSync({
         'resources/views/**/*.html', 
         'public/**/*.(css|js)', 
     ],
+    // Option to open in non default OS browser.
+    // browser: "firefox",
     notify: false
 });
 
