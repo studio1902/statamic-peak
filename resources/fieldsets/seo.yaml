@@ -5,7 +5,6 @@ fields:
     field:
       type: section
       instructions: 'Basic SEO settings'
-      listable: false
       display: Basic
   -
     handle: seo_title
@@ -54,7 +53,6 @@ fields:
     field:
       type: section
       instructions: 'Open Graph meta tags for social sharing'
-      listable: false
       display: 'Open Graph'
   -
     handle: og_title
@@ -86,7 +84,6 @@ fields:
     field:
       type: section
       instructions: 'Sitemap configuration'
-      listable: false
       display: Sitemap
   -
     handle: sitemap_change_frequency
@@ -125,7 +122,6 @@ fields:
     field:
       type: section
       instructions: 'Custom JSON-ld schema objects'
-      listable: false
       display: 'JSON-ld Schema'
   -
     handle: schema_jsonld

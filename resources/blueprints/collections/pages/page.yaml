@@ -29,7 +29,6 @@ sections:
         field:
           type: section
           instructions: 'This entry''s meta data.'
-          listable: false
           display: Meta
       -
         handle: slug

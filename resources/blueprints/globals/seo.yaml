@@ -7,7 +7,6 @@ sections:
         field:
           type: section
           instructions: 'The website title'
-          listable: false
           display: Title
       -
         handle: title_separator
@@ -47,7 +46,6 @@ sections:
         field:
           type: section
           instructions: 'JSON-LD Schema'
-          listable: false
           display: 'Knowledge graph data'
       -
         handle: json_ld_type
@@ -115,7 +113,6 @@ sections:
         field:
           type: section
           instructions: 'JSON-ld Breadcrumbs'
-          listable: false
           display: Breadcrumbs
       -
         handle: breadcrumbs
@@ -132,7 +129,6 @@ sections:
         field:
           type: section
           instructions: 'Open Graph meta tags'
-          listable: false
           display: Social
       -
         handle: og_image
@@ -150,7 +146,6 @@ sections:
         field:
           type: section
           instructions: 'Configure the sitemap.xml'
-          listable: false
           display: Sitemap
       -
         handle: sitemap_collections
@@ -169,7 +164,6 @@ sections:
         field:
           type: section
           instructions: 'Configure trackers and analytics.'
-          listable: false
           display: Trackers
       -
         handle: use_google_site_verification
