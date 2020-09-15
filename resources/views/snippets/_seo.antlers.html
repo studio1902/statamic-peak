@@ -12,8 +12,12 @@
     <meta name="description" content="{{ seo_description }}">
 {{ /if }}
 
-{{# No index #}}
-{{ if seo_noindex }}
+{{# No index and no follow #}}
+{{ if seo_noindex & seo_nofollow }}
+    <meta name="robots" content="noindex, nofollow">
+{{ elseif seo_nofollow }}
+    <meta name="robots" content="nofollow">
+{{ elseif seo_noindex }}
     <meta name="robots" content="noindex">
 {{ /if }}
 

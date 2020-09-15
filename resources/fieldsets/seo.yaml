@@ -17,15 +17,6 @@ fields:
       display: 'Page title'
       character_limit: 70
       instructions: 'This entries title, defaults to title. Max 70 characters including the site name.'
-      width: 66
-  -
-    handle: seo_noindex
-    field:
-      type: toggle
-      instructions: 'Don''t index this entry and exclude it from the sitemap.xml.'
-      listable: hidden
-      width: 33
-      display: No-index
   -
     handle: seo_description
     field: common.text_plain
@@ -34,6 +25,22 @@ fields:
       display: 'Meta description'
       character_limit: '160'
       instructions: 'This entries meta description. Max 160 characters.'
+  -
+    handle: seo_noindex
+    field:
+      type: toggle
+      instructions: 'Instruct crawlers not to index this entry, also excludes it from the sitemap.xml.'
+      listable: hidden
+      width: 50
+      display: No-index
+  -
+    handle: seo_nofollow
+    field:
+      type: toggle
+      instructions: 'Instruct crawlers not to follow links on this page.'
+      listable: hidden
+      width: 50
+      display: No-follow
   -
     handle: seo_canonical
     field: common.entry
