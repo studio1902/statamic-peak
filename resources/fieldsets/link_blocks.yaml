@@ -1,0 +1,45 @@
+title: 'Link blocks'
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
+      instructions: 'The title you want to display above the collection entries.'
+      validate:
+        - required
+  -
+    handle: link_blocks
+    field:
+      fields:
+        -
+          handle: title
+          field:
+            input_type: text
+            type: text
+            localizable: true
+            listable: hidden
+            display: Title
+            validate:
+              - required
+        -
+          handle: text
+          field: common.text_plain
+          config:
+            validate:
+              - required
+        -
+          import: button
+      mode: stacked
+      min_rows: 1
+      add_row: 'Add link block'
+      reorderable: true
+      type: grid
+      instructions: 'Add one or more link blocks with a title, text and a button.'
+      localizable: false
+      listable: hidden
+      display: 'Link blocks'
+      replicator_preview: false

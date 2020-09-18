@@ -1,0 +1,25 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          display: Name
+          type: text
+          validate: required
+          localizable: true
+      -
+        handle: email
+        field:
+          display: "E-mail address"
+          type: text
+          validate: required|email
+          localizable: true
+      -
+        handle: message_body
+        field:
+          display: Message
+          type: textarea
+          validate: required
+          localizable: true

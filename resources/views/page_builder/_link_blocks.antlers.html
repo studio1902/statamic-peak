@@ -1,0 +1,25 @@
+{{# The link blocks content block. #}}
+<section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
+    <div class="md:col-start-3 md:col-span-8 text-center">
+        {{ partial:typography/h2 :content="block:title" }}
+    </div>
+    {{ block:link_blocks }}
+        <a 
+            class="flex flex-col justify-between items-start md:col-span-12 {{ if total_results == 1 }}md:col-span-8 md:col-start-3{{ elseif total_results == 2 }}md:col-span-6{{ elseif total_results > 2 }}md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0{{ /if }} bg-white shadow p-6 no-underline" 
+            aria-labelledby="{{ title | slugify }}" 
+            draggable="false"
+            href="{{ link }}"
+            {{ if not link | is_local_url }} 
+                rel="noopener" target="_blank"
+            {{ /if }}
+        >
+            <div>
+                <span id="{{ title | slugify }}">
+                    {{ partial src="typography/h2" class="mb-2" :content="title" }}
+                </span>
+                {{ partial:typography/paragraph class="mb-4" :content="text" }}
+            </div>
+            {{ partial:components/button tag="span" }}
+        </a>
+    {{ /block:link_blocks }}
+</section>

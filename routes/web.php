@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 // Route::statamic('example', 'example-view', [
 //    'title' => 'Example'
 // ]);
+
+Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');
+Route::statamic('/sitemap.xml', 'sitemap/sitemap', ['layout' => null, 'content_type' => 'application/xml']); 

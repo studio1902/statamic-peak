@@ -1,0 +1,23 @@
+sections:
+  general:
+    display: General
+    fields:
+      -
+        handle: section_general
+        field:
+          type: section
+          listable: hidden
+          display: 'General configuration'
+  error_messages:
+    display: 'Error messages'
+    fields:
+      -
+        handle: 404_error
+        field:
+          type: section
+          localizable: false
+          listable: hidden
+          display: '404 error'
+      -
+        import: error_message
+        prefix: '404_'

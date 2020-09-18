@@ -2,24 +2,17 @@ title: Figure
 fields:
   -
     handle: image
-    field:
-      mode: grid
-      container: assets
-      restrict: false
-      allow_uploads: true
-      max_files: 1
-      type: assets
-      localizable: false
+    field: common.image
+    config:
       width: 50
-      listable: hidden
-      display: Image
       instructions: 'The image you want to add.'
+      validate: required
   -
     handle: size
     field: common.size
     config:
       width: 50
-      instructions: 'The size in which the video should be displayed.'
+      instructions: 'The size in which the image should be displayed.'
   -
     handle: caption
     field:
@@ -28,4 +21,4 @@ fields:
       localizable: true
       listable: hidden
       display: Caption
-      instructions: 'An optional caption that will be displayed under the video.'
+      instructions: 'An optional caption that will be displayed under the image.'

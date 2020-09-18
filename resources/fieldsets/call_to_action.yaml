@@ -1,0 +1,22 @@
+title: 'Call to action'
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
+      instructions: 'The title you want to display above the text.'
+      validate:
+        - required
+  -
+    handle: text
+    field: common.text_plain
+    config:
+      instructions: 'The text you want to display above the buttons.'
+      validate:
+        - required
+  -
+    import: buttons

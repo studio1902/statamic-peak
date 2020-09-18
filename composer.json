@@ -10,8 +10,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "spatie/statamic-responsive-images": "^1.2",
-        "statamic/cms": "3.0.*@beta"
+        "statamic/cms": "3.0.8"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

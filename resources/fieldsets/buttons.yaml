@@ -6,7 +6,7 @@ fields:
       fields:
         -
           import: button
-      mode: table
+      mode: stacked
       add_row: 'Add button'
       reorderable: true
       type: grid
@@ -14,3 +14,4 @@ fields:
       listable: hidden
       display: Buttons
       instructions: 'Add one or more buttons.'
+      replicator_preview: false

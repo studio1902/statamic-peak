@@ -1,0 +1,10 @@
+{{# The call to action content block. #}}
+<section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
+    <div class="md:col-start-3 md:col-span-8">
+        {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        {{ partial:typography/paragraph class="mb-4" :content="block:text" }}
+        {{ if block:buttons }}
+            {{ partial:components/buttons }}
+        {{ /if }}
+    </div>
+</section>
