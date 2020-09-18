@@ -1,25 +1,27 @@
 title: 'Common reusable fields'
 fields:
   -
-    handle: title
+    handle: image
     field:
-      input_type: text
-      type: text
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      type: assets
       localizable: true
       listable: hidden
-      display: Title
-      validate: required
+      display: Image
   -
-    handle: slug
-    field:
-      generate: true
-      type: slug
-      localizable: true
-      listable: hidden
-      display: Slug
-      validate: required
+      handle: entry
+      field:
+        max_items: 1
+        mode: default
+        type: entries
+        listable: false
+        display: Entry
   -
-    handle: text
+    handle: text_rich
     field:
       buttons:
         - h2
@@ -35,16 +37,15 @@ fields:
       link_noopener: false
       link_noreferrer: false
       target_blank: false
-      reading_time: true
+      reading_time: false
       fullscreen: true
       allow_source: true
       type: bard
       localizable: true
       listable: hidden
       display: Text
-      validate: required
   -
-    handle: text_plain
+    handle: text_basic
     field:
       buttons:
         - bold
@@ -58,14 +59,20 @@ fields:
       link_noopener: false
       link_noreferrer: false
       target_blank: false
-      reading_time: true
+      reading_time: false
       fullscreen: true
       allow_source: true
       type: bard
       localizable: true
       listable: hidden
       display: Text
-      validate: required
+  -
+    handle: text_plain
+    field:
+      type: textarea
+      localizable: true
+      listable: hidden
+      display: Text
   -
     handle: size
     field:

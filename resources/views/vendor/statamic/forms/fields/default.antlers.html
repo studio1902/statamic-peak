@@ -1,0 +1,8 @@
+Bind `form-input-error` class when there is a validation error with the field.
+<input class="form-input w-full" :class="{ 'form-input-error': errors.{{ handle }} }"
+    id="{{ handle }}" 
+    name="{{ handle }}"
+    type="{{ input_type ?? 'text' }}" 
+    {{# {{ validate | contains:required ?= "required" }} #}}
+    {{ if old }}value="{{ old }}"{{ /if }}
+/>

@@ -1,0 +1,30 @@
+title: Form
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
+      instructions: 'The title you want to display above the form.'
+      validate:
+        - required
+  -
+    handle: text
+    field: common.text_plain
+    config:
+      instructions: 'The text you want to display above the form.'
+      validate:
+        - required
+  -
+    handle: form
+    field:
+      max_items: 1
+      type: form
+      listable: hidden
+      instructions: 'Which form should be displayed.'
+      display: Form
+      validate:
+        - required

@@ -9,8 +9,10 @@ fields:
       listable: hidden
       display: Label
       instructions: 'The text inside the button.'
-      validate: required
+      validate:
+        - required
       width: 33
+      replicator_preview: false
   -
     handle: link
     field:
@@ -18,5 +20,8 @@ fields:
       localizable: true
       display: Link
       instructions: 'Where do you want to link to?'
-      validate: required
+      validate:
+        - required
       width: 66
+      listable: hidden
+      replicator_preview: false

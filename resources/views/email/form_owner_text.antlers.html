@@ -1,0 +1,17 @@
+{{# This is the text email that goes to the owner of the site when a contact form has been submitted. #}}
+{{ trans:strings.form_mail_body_owner locale="{locale}" }} ({{ trans:strings.form_mail_title locale="{locale}" }})
+
+-
+{{ fields }}
+{{ trans key="{display}" locale="{locale}" }}:
+{{ if (value | is_array) }}
+{{ value }}
+{{ value }}
+{{ /value }}
+{{ else }}
+{{ value }}
+{{ /if }}
+{{ /fields }}
+-
+{{ trans:strings.form_mail_submitted locale="{locale}" }} {{ now | timezone | format:r }}
+{{ trans:strings.form_mail_from locale="{locale}" }}

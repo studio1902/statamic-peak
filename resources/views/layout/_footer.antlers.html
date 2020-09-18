@@ -1,6 +1,12 @@
 {{# The sites footer rendered on each page. #}}
 <footer class="w-full py-4">
     <div class="fluid-container text-xs">
-        © 2020 {{ unless (now | format:Y) == '2020' }} - {{ now | format:Y }}{{ /unless }} Studio 1902
+        © 2020 {{ unless (now | format:Y) == '2020' }} - {{ now | format:Y }}{{ /unless }} {{ config:app:name }}
+        {{ if social_media:social_media }}
+            - 
+            {{ social_media:social_media }}
+                <a href="{{ prefix }}{{ url }}" target="_blank">{{ type | title }}</a>
+            {{ /social_media:social_media }}
+        {{ /if }}
     </div>
 </footer>

@@ -9,6 +9,8 @@ fields:
       listable: hidden
       display: Title
       instructions: 'The title you want to display above the collection entries.'
+      validate:
+        - required
   -
     handle: collection
     field:

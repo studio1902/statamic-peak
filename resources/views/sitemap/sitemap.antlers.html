@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {{ seo:sitemap_collections }}
+        {{ collection from="{handle}" seo_noindex:isnt="true" }}
+            <url>
+                <loc>{{ permalink }}</loc>
+                <lastmod>{{ updated_at format="Y-m-d"}}</lastmod>
+                <changefreq>{{ sitemap_change_frequency ? sitemap_change_frequency : 'weekly' }}</changefreq>
+                <priority>{{ sitemap_priority ? sitemap_priority : '0.5' }}</priority>
+            </url>
+        {{ /collection }}
+    {{ /seo:sitemap_collections }} 
+</urlset>

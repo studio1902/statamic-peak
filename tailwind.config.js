@@ -6,10 +6,27 @@
 // adding and extending to Tailwinds default utility classes.
 //
 
+const _ = require('lodash')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  future: {
+    extendedSpacingScale: true,
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+  },
+  //--------------------------------------------------------------------------
+  // Dark mode (experimental)
+  //--------------------------------------------------------------------------
+  //
+  // Uncomment the following to use experimental dark mode support.
+  // More info: https://github.com/tailwindlabs/tailwindcss/pull/2279
+  //
+  // dark: 'media', // or 'class'
+  // experimental {
+  //   darkModeVariant: true,
+  // },
   purge: {
     content: [
       './resources/views/**/*.html',
@@ -25,13 +42,14 @@ module.exports = {
     //--------------------------------------------------------------------------
     //
     // Here you may register all of the colors you need for this project.
-    // These colors overwrite all the default Tailwind colors.
+    // These colors overwrite all the default Tailwind colors. If you don't want
+    // this you should remove this part and extend color instead.
     //
     colors: {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
-      // Greys
+      // Grays (default TW gray)
       neutral: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -55,7 +73,7 @@ module.exports = {
         800: '#2c5282',
         900: '#2a4365',
       },
-      // Error styling colors: red
+      // Error styling colors: red (TW Red)
       error: {
         50: '#FDF2F2',
         100: '#FCE8E8',
@@ -68,7 +86,7 @@ module.exports = {
         800: '#9B1D1C',
         900: '#771D1D',
       },
-      // Notice styling colors: yellow
+      // Notice styling colors: yellow (TW Yellow)
       notice: {
         50: '#FDFDEA',
         100: '#FDF5B2',
@@ -81,7 +99,7 @@ module.exports = {
         800: '#723A14',
         900: '#643112',
       },
-      // Success styling colors: green
+      // Success styling colors: green (TW Green)
       success: {
         50: '#F3FAF7',
         100: '#DEF7EC',
@@ -213,21 +231,13 @@ module.exports = {
     customForms: theme => ({
       default: {
         input: {
-          backgroundColor: theme('colors.primary'),
-          borderColor: 'transparent',
-          borderRadius: 'none',
-          color: theme('colors.light'),
-          fontSize: '1rem',
-          padding: '1rem',
-          '&:focus': {
-            border: '1px solid rgba(255, 255, 255, .7)',
-            boxShadow: '0 0 0 3px rgba(255, 255, 255, .5);',
-          },
+          borderColor: theme('colors.neutral.300'),
+          color: theme('colors.neutral.800'),
         },
       },
       error: {
         'input, textarea': {
-          borderColor: theme('colors.red.700'),
+          borderColor: theme('colors.error.700'),
         },
       },
     })
@@ -262,9 +272,20 @@ module.exports = {
     //
     plugin(function({ addBase, theme }) {
       addBase({
+        ':root': {
+          // Fluid typography from 1 rem to 1.15 rem with fallback to 16px. 
+          fontSize: '16px',
+          'font-size': 'clamp(1rem, 1.6vw, 1.2rem)',
+          // Safari resize fix. 
+          minHeight: '0vw',
+        },
         // Used to hide alpine elements before being rendered.
         '[x-cloak]': { 
           display: 'none'
+        },
+        // Default color transition on links.
+        'a': {
+          transition: 'color .2s ease-in-out',
         },
         'html': {
           fontDisplay: 'swap',
@@ -287,7 +308,42 @@ module.exports = {
           backgroundColor: theme('colors.primary.600'),
           color: theme('colors.white'),
         },
+        //--------------------------------------------------------------------------
+        // Display screen breakpoints in debug environment.
+        //--------------------------------------------------------------------------
+        'body.debug::before': {
+          display: 'block',
+          position: 'fixed',
+          zIndex: '99',
+          top: theme('spacing.1'),
+          right: theme('spacing.1'),
+          padding: theme('spacing.1'),
+          border: '1px',
+          borderStyle: 'solid',
+          borderColor: theme('colors.notice.300'),
+          borderRadius: theme('borderRadius.full'),
+          backgroundColor: theme('colors.notice.200'),
+          fontSize: '.5rem',
+          color: theme('colors.notice.900'),
+          textTransform: 'uppercase',
+          fontWeight: theme('fontWeight.bold'),
+          content: '"-"',
+          pointerEvents: 'none',
+        },
       })
+    }),
+
+    plugin(function({ addBase, theme}) {
+      const breakpoints = _.map(theme('screens'), (value, key) => {
+        return {
+          [`@media (min-width: ${value})`]: {
+            'body.debug::before': {
+              content: `"${key}"`,
+            }
+          }
+        }
+      })
+      addBase(breakpoints)
     }),
 
     //--------------------------------------------------------------------------
@@ -328,7 +384,6 @@ module.exports = {
             marginBottom: theme('spacing.12') * -1,
           },
         },
-        
         [`@media (min-width: ${theme('screens.md')})`]: {
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {

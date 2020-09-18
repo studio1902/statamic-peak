@@ -26,15 +26,18 @@ fields:
       localizable: true
       listable: hidden
       display: Article
-      validate: required
+      replicator_preview: false
+      always_show_set_button: true
+      validate:
+        - required
       sets:
         figure:
-          display: 'Figure'
+          display: Figure
           fields:
             -
               import: figure
         buttons:
-          display: 'Buttons'
+          display: Buttons
           fields:
             -
               import: buttons
@@ -44,7 +47,7 @@ fields:
             -
               import: pull_quote
         video:
-          display: 'Video'
+          display: Video
           fields:
             -
               import: video

@@ -1,8 +1,13 @@
-title: 'Social media'
 sections:
-  main:
-    display: Main
+  social_media:
+    display: 'Social Media'
     fields:
+      -
+        handle: section_social
+        field:
+          type: section
+          listable: hidden
+          display: 'Social media links'
       -
         handle: social_media
         field:
@@ -11,40 +16,110 @@ sections:
               display: Facebook
               fields:
                 -
-                  import: social_media
-                  prefix: facebook_
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.facebook.com/'
+                    display: URL
+                    validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.facebook.com/'
             instagram:
               display: Instagram
               fields:
                 -
-                  import: social_media
-                  prefix: instagram_
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.instagram.com/'
+                    display: URL
+                    validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.instagram.com/'
             linkedin:
               display: LinkedIn
               fields:
                 -
-                  import: social_media
-                  prefix: linkedin_
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.linkedin.com/'
+                    display: URL
+                    validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.linkedin.com/'
             twitter:
               display: Twitter
               fields:
                 -
-                  import: social_media
-                  prefix: twitter_
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.twitter.com/'
+                    display: URL
+                    validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.twitter.com/'
             vimeo:
               display: Vimeo
               fields:
                 -
-                  import: social_media
-                  prefix: vimeo_
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.vimeo.com/'
+                    display: URL
+                    validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.vimeo.com/'
             youtube:
               display: YouTube
               fields:
                 -
-                  import: social_media
-                  prefix: youtube_
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.youtube.com/'
+                    display: URL
+                    validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.youtube.com/'
           type: replicator
-          localizable: false
           listable: hidden
-          instructions: 'Add your various social media profiles.'
           display: 'Social media'
