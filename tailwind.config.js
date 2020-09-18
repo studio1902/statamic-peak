@@ -438,7 +438,7 @@ module.exports = {
             gridColumnStart: '3',
           },
           '.size-md': {
-            gridColumn: 'span 6 / span 6',
+            gridColumn: 'span 8 / span 8',
             gridColumnStart: '3',
           },
           '.size-lg': {
