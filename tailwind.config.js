@@ -281,7 +281,7 @@ module.exports = {
         },
         // Used to hide alpine elements before being rendered.
         '[x-cloak]': { 
-          display: 'none'
+          display: 'none !important'
         },
         // Default color transition on links.
         'a': {
