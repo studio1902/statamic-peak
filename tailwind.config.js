@@ -290,9 +290,6 @@ module.exports = {
         'html': {
           fontDisplay: 'swap',
           color: theme('colors.neutral.800'),
-          fontSize: '16px',
-          // Fluid typography from 1 rem to 1.15 rem. 
-          'font-size': 'clamp(1rem, 2vw, 1.15rem)',
           //--------------------------------------------------------------------------
           // Set sans, serif or mono stack with optional custom font as default.
           //--------------------------------------------------------------------------
