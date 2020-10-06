@@ -2,13 +2,13 @@
     {{ paginate }}
         <nav class="md:px-8 flex justify-center space-x-4">
             {{ if prev_page }}
-                <a class="text-primary-600" href="{{ prev_page }}">&laquo; {{ trans:strings.previous }}</a>
+                <a class="text-primary-600" rel="prev" href="{{ prev_page }}">&laquo; {{ trans:strings.previous }}</a>
             {{ else }}
                 <span>&laquo; {{ trans:strings.previous }}</span>
             {{ /if }}
             <span class="">{{ current_page }} {{ trans:strings.of }} {{ total_pages }}</span>
             {{ if next_page }}
-                <a class="text-primary-600" href="{{ next_page }}">{{ trans:strings.next }} &raquo;</a>
+                <a class="text-primary-600" rel="next" href="{{ next_page }}">{{ trans:strings.next }} &raquo;</a>
             {{ else }}
                 <span>{{ trans:strings.next }} &raquo;</span>
             {{ /if }}
