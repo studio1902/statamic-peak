@@ -45,6 +45,8 @@ module.exports = {
     // These colors overwrite all the default Tailwind colors. If you don't want
     // this you should remove this part and extend color instead.
     //
+    // You can also create your own colors on https://javisperez.github.io/tailwindcolorshades/#/
+    //
     colors: {
       transparent: 'transparent',
       black:   '#000',
