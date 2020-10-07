@@ -5,7 +5,7 @@
         {{ if social_media:social_media }}
             - 
             {{ social_media:social_media }}
-                <a href="{{ prefix }}{{ url }}" rel="noopener" target="_blank">{{ type | title }}</a>
+                <a href="{{ prefix }}{{ url }}" rel="noopener" aria-label="{{ type | title }}" target="_blank">{{ type | title }}</a>
             {{ /social_media:social_media }}
         {{ /if }}
     </div>
