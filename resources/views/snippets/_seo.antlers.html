@@ -32,6 +32,7 @@
 {{ if seo_canonical }}
     <link rel="canonical" href="{{ config:app:url }}{{ seo_canonical | url }}">
 {{ /if }}
+{{ yield:pagination }}
 
 {{# Knowledge graph JSON-ld #}}
 {{ if seo:json_ld_type && seo:json_ld_type != 'none' or schema_jsonld  }}
