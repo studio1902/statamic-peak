@@ -2,7 +2,11 @@
     {{ paginate }}
         {{ section:pagination }}
             {{ if prev_page }}
-                <link rel="prev" href="{{ prev_page }}">
+                {{ if current_page == 2 }}
+                    <link rel="prev" href="{{ prev_page | substr:0:-7 }}">
+                {{ else }}
+                    <link rel="prev" href="{{ prev_page }}">
+                {{ /if }}
             {{ /if }}
             {{ if next_page }}
                 <link rel="next" href="{{ next_page }}">
