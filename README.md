@@ -240,6 +240,7 @@ If you plan on using an addon for SEO and Peak's built in features, do the follo
 * Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
 * Remove `{{ yield:google_tag_manager }}` from `resources/views/layout.antlers.html`.
 * Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
+* Remove the whole `{{ section:pagination }}{{ /section:pagination }}` from `resources/views/components/_pagination.antlers.html`.
 * Delete the SEO global `content/globals/seo.yaml`.
 
 And optionally to erase all traces:
