@@ -46,6 +46,7 @@ fields:
     config:
       listable: hidden
       display: 'Canonical URL'
+      localizable: true
       width: 66
       instructions: 'If this is an entry with duplicate content. Enter the original URL for this content.'
   -
