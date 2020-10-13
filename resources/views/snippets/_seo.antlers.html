@@ -29,8 +29,12 @@
 {{ /locales }}
 
 {{# Canonical URL #}}
-{{ if seo_canonical }}
-    <link rel="canonical" href="{{ config:app:url }}{{ seo_canonical | url }}">
+{{ if seo_canonical_type == 'current' }}
+    <link rel="canonical" href="{{ config:app:url }}{{ seo_canonical_current | url }}">
+{{ elseif seo_canonical_type == 'external' }}
+    <link rel="canonical" href="{{ seo_canonical_external }}">
+{{ elseif seo_canonical_type == 'entry' }}
+    <link rel="canonical" href="{{ permalink }}">
 {{ /if }}
 {{ yield:pagination }}
 
