@@ -12,8 +12,10 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   future: {
+    defaultLineHeights: true,
     extendedSpacingScale: true,
     purgeLayersByDefault: true,
+    standardFontWeights: true,
     removeDeprecatedGapUtilities: true,
   },
   //--------------------------------------------------------------------------
