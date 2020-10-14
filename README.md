@@ -13,6 +13,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 ### Getting started
 
+* [Browser support](#browser-support)
 * [Knowledge assumptions](#knowledge-assumptions)
 * [Installation](#installation)
 * [Tailwind config](#tailwind-config)
@@ -44,6 +45,10 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [License](#license)
 
 # Getting started
+
+## Browser support
+<span id="browser-support"></span>
+Peak makes extensive use of CSS Grid so it doesn't support IE11. 
 
 ## Knowledge assumptions
 <span id="knowledge-assumptions"></span>
