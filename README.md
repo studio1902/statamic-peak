@@ -299,7 +299,11 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
-| `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` for [forms](#forms) |
+| `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm). 
+| `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token. 
+
+<span id="warm"></span>
+Running `php artisan warm` after your deployments will visit all urls and warm up the static cache.
 
 ## Modernizr
 <span id="modernizr"></span>
