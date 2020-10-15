@@ -35,6 +35,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 ### Other
 
 * [Configuration changes](#configuration-changes)
+* [Deployment script](#deployment-script)
 * [Modernizr](#modernizr)
 * [Multilingual fields and localization](#multilingual-fields)
 * [Upcoming features](#upcoming-features)
@@ -304,6 +305,23 @@ Peak changes the default Statamic config. The following is different:
 
 <span id="warm"></span>
 Running `php artisan warm` after your deployments will visit all urls and warm up the static cache.
+
+## Deployment script
+<span id="deployment-script"></span>
+You could use the following deployment script together with Peak to make sure everything runs smoothly after a deploy.
+
+```bash
+# Clear the Laravel application cache.
+php artisan cache:clear
+# Clear and refresh the Laravel config cache.
+php artisan config:cache
+# Warm the Statamic stache.
+php please stache:warm
+# Clear the Statamic static cache (if you use this).
+php please static:clear
+# Warm the Statamic static cache (if you use this).
+php artisan warm
+```
 
 ## Modernizr
 <span id="modernizr"></span>
