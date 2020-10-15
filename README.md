@@ -259,7 +259,7 @@ And optionally to erase all traces:
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
 
-The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
+The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a less fun, but more businessy look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
 
 If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
 
