@@ -39,6 +39,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Modernizr](#modernizr)
 * [Multilingual fields and localization](#multilingual-fields)
 * [Upcoming features](#upcoming-features)
+* [Warm all caches](#warm-all-caches)
 
 ### Contibuting and license
 
@@ -289,6 +290,7 @@ Peak changes the default Statamic config. The following is different:
 
 | File | Default | Peak |
 | --- | --- | --- |
+| `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to [warm all caches](#warm-all-caches)  
 | `app/Http/Controllers/DynamicToken.php` | - | New Controller for [forms](#forms) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
 | `app/Tags/DynamicToken.php` | - | New Tag for [forms](#forms) |
@@ -300,28 +302,20 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
-| `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm). 
+| `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
 | `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token. 
 
-<span id="warm"></span>
-Running `php artisan warm` after your deployments will visit all urls and warm up the static cache.
-
 ## Deployment script
-<span id="deployment-script"></span>
-You could use the following deployment script together with Peak to make sure everything runs smoothly after a deploy.
+ <span id="deployment-script"></span>
+ You could use the following deployment script together with Peak to make sure everything runs smoothly after a deploy.
 
-```bash
-# Clear the Laravel application cache.
-php artisan cache:clear
-# Clear and refresh the Laravel config cache.
-php artisan config:cache
-# Warm the Statamic stache.
-php please stache:warm
-# Clear the Statamic static cache (if you use this).
-php please static:clear
-# Warm the Statamic static cache (if you use this).
-php artisan warm
-```
+ ```bash
+ php artisan cache:clear # Clear the Laravel application cache.
+ php artisan config:cache # Clear and refresh the Laravel config cache.
+ php artisan statamic:stache:warm # Warm the Statamic stache.
+ php artisan statamic:static:clear # Clear the Statamic static cache (if you use this).
+ php artisan warm # Warm the Statamic static cache (if you use this).
+ ```
 
 ## Modernizr
 <span id="modernizr"></span>
@@ -337,6 +331,12 @@ It is currently not possible in Statamic to translate field labels and descripti
 <span id="upcoming-features"></span>
 
 Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aissue+is%3Aopen+is%3Aenhancement) and [pull requests](https://github.com/studio1902/statamic-peak/pulls) for upcoming features.
+
+## Warm all caches
+<span id="warm-all-caches"></span>
+Running `php artisan warm` after your deployments will visit all urls and warm up the static cache. This is a custom command and is defined in `routes/console.php`.
+
+Triggering `php artisan schedule:run` with a cronjob on a server will hourly clear and warm all caches. Edit `app/console/Kernel.php` if you don't want this hourly but for example daily. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 
 # Contibuting and license
 
