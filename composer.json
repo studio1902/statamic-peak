@@ -1,6 +1,6 @@
 {
-    "name": "statamic/statamic",
-    "description": "Statamic",
+    "name": "studio1902/statamic-peak",
+    "description": "Statamic Peak",
     "keywords": ["statamic", "cms", "flat file", "laravel"],
     "type": "project",
     "require": {
