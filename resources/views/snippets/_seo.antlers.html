@@ -39,7 +39,7 @@
 {{ yield:pagination }}
 
 {{# Knowledge graph JSON-ld #}}
-{{ if seo:json_ld_type && seo:json_ld_type != 'none' or schema_jsonld  }}
+{{ if seo:json_ld_type && seo:json_ld_type != 'none' }}
     <script type="application/ld+json" id="schema">
         {{ if seo:json_ld_type == 'organization'  }}
             {
@@ -57,9 +57,11 @@
         {{ elseif seo:json_ld_type == 'custom' }}
             {{ seo:json_ld }}
         {{ /if }}
-
-        {{ schema_jsonld ?= schema_jsonld }}
     </script>
+{{ /if }}
+
+{{ if schema_jsonld  }}
+    <script type="application/ld+json">{{ schema_jsonld }}</script>
 {{ /if }}
 
 {{# Breadcrumbs JSON-ld #}}
