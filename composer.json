@@ -53,6 +53,7 @@
             "@php artisan statamic:install --ansi"
         ],
         "post-root-package-install": [
+            "npm i && npm run dev",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
