@@ -58,8 +58,7 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
             "npm install",
-            "npm run dev",
-            "php please make:user"
+            "npm run dev"
         ]
     }
 }
