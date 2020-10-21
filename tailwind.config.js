@@ -425,6 +425,10 @@ module.exports = {
     //
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
+        // Break words only when needed.
+        '.break-decent': {
+          wordBreak: 'break-word',
+        },
         // Sizing utilities for sets in our bard (long form content).
         // On small devices they're full width.
         '.size-sm, .size-md, .size-lg, .size-xl': {
