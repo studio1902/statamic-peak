@@ -29,12 +29,17 @@
 {{ /locales }}
 
 {{# Canonical URL #}}
-{{ if seo_canonical }}
-    <link rel="canonical" href="{{ config:app:url }}{{ seo_canonical | url }}">
+{{ if seo_canonical_type == 'current' }}
+    <link rel="canonical" href="{{ config:app:url }}{{ seo_canonical_current | url }}">
+{{ elseif seo_canonical_type == 'external' }}
+    <link rel="canonical" href="{{ seo_canonical_external }}">
+{{ elseif seo_canonical_type == 'entry' }}
+    <link rel="canonical" href="{{ permalink }}">
 {{ /if }}
+{{ yield:pagination }}
 
 {{# Knowledge graph JSON-ld #}}
-{{ if seo:json_ld_type && seo:json_ld_type != 'none' or schema_jsonld  }}
+{{ if seo:json_ld_type && seo:json_ld_type != 'none' }}
     <script type="application/ld+json" id="schema">
         {{ if seo:json_ld_type == 'organization'  }}
             {
@@ -52,9 +57,11 @@
         {{ elseif seo:json_ld_type == 'custom' }}
             {{ seo:json_ld }}
         {{ /if }}
-
-        {{ schema_jsonld ?= schema_jsonld }}
     </script>
+{{ /if }}
+
+{{ if schema_jsonld  }}
+    <script type="application/ld+json">{{ schema_jsonld }}</script>
 {{ /if }}
 
 {{# Breadcrumbs JSON-ld #}}
@@ -70,7 +77,7 @@
                         "position": {{ count }},
                         "name": "{{ title }}",
                         "item": "{{ permalink }}{{ url }}"
-                    } {{ unless last}},{{ /u nless}}
+                    } {{ unless last}},{{ /unless}}
                 {{ /nav:breadcrumbs }}
             ]
         }

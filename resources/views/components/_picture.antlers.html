@@ -1,45 +1,47 @@
-<picture>
-    {{ asset :url="image" }}
-        {{ if extension == 'svg' || extension == 'gif' }}
-            <img class="{{ class }}" src="{{ url }}" alt="{{ alt }}" />
-        {{ else }}
-            <source
-                srcset="
-                    {{ glide:url preset='xs-webp' }} 320w,
-                    {{ glide:url preset='sm-webp' }} 480w,
-                    {{ glide:url preset='md-webp' }} 768w,
-                    {{ glide:url preset='lg-webp' }} 1280w,
-                    {{ glide:url preset='xl-webp' }} 1440w"
-                sizes="{{ sizes }}"
-                type="image/webp"
-            >
-            <source
-                srcset="
-                    {{ glide:url preset='xs' }} 320w,
-                    {{ glide:url preset='sm' }} 480w,
-                    {{ glide:url preset='md' }} 768w,
-                    {{ glide:url preset='lg' }} 1280w,
-                    {{ glide:url preset='xl' }} 1440w"
-                sizes="{{ sizes }}"
-                {{ if extension == 'png' }}
-                    type="image/png"
-                {{ else }}
-                    type="image/jpeg"
-                {{ /if }}
-            >
-            <img
-                {{ if cover }} 
-                    class="object-cover {{ class }}" 
-                    style="object-position: {{ focus | background_position }}"
-                {{ else }}
-                    class="{{ class }}"
-                {{ /if }}
-                src="{{ glide:url preset='lg' }}"
-                alt="{{ alt }}"
-                {{ if lazy }}
-                    loading="lazy"
-                {{ /if }}
-            >
-        {{ /if }}
-    {{ /asset }}
-</picture>
+{{ if image }}
+    <picture>
+        {{ asset :url="image" }}
+            {{ if extension == 'svg' || extension == 'gif' }}
+                <img class="{{ class }}" src="{{ url }}" alt="{{ alt }}" />
+            {{ else }}
+                <source
+                    srcset="
+                        {{ glide:url preset='xs-webp' }} 320w,
+                        {{ glide:url preset='sm-webp' }} 480w,
+                        {{ glide:url preset='md-webp' }} 768w,
+                        {{ glide:url preset='lg-webp' }} 1280w,
+                        {{ glide:url preset='xl-webp' }} 1440w"
+                    sizes="{{ sizes }}"
+                    type="image/webp"
+                >
+                <source
+                    srcset="
+                        {{ glide:url preset='xs' }} 320w,
+                        {{ glide:url preset='sm' }} 480w,
+                        {{ glide:url preset='md' }} 768w,
+                        {{ glide:url preset='lg' }} 1280w,
+                        {{ glide:url preset='xl' }} 1440w"
+                    sizes="{{ sizes }}"
+                    {{ if extension == 'png' }}
+                        type="image/png"
+                    {{ else }}
+                        type="image/jpeg"
+                    {{ /if }}
+                >
+                <img
+                    {{ if cover }} 
+                        class="object-cover {{ class }}" 
+                        style="object-position: {{ focus | background_position }}"
+                    {{ else }}
+                        class="{{ class }}"
+                    {{ /if }}
+                    src="{{ glide:url preset='lg' }}"
+                    alt="{{ alt }}"
+                    {{ if lazy }}
+                        loading="lazy"
+                    {{ /if }}
+                >
+            {{ /if }}
+        {{ /asset }}
+    </picture>
+{{ /if }}

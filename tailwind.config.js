@@ -12,8 +12,10 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   future: {
+    defaultLineHeights: true,
     extendedSpacingScale: true,
     purgeLayersByDefault: true,
+    standardFontWeights: true,
     removeDeprecatedGapUtilities: true,
   },
   //--------------------------------------------------------------------------
@@ -44,6 +46,8 @@ module.exports = {
     // Here you may register all of the colors you need for this project.
     // These colors overwrite all the default Tailwind colors. If you don't want
     // this you should remove this part and extend color instead.
+    //
+    // You can also create your own colors on https://javisperez.github.io/tailwindcolorshades/#/
     //
     colors: {
       transparent: 'transparent',
@@ -281,7 +285,7 @@ module.exports = {
         },
         // Used to hide alpine elements before being rendered.
         '[x-cloak]': { 
-          display: 'none'
+          display: 'none !important'
         },
         // Default color transition on links.
         'a': {
@@ -290,9 +294,6 @@ module.exports = {
         'html': {
           fontDisplay: 'swap',
           color: theme('colors.neutral.800'),
-          fontSize: '16px',
-          // Fluid typography from 1 rem to 1.15 rem. 
-          'font-size': 'clamp(1rem, 2vw, 1.15rem)',
           //--------------------------------------------------------------------------
           // Set sans, serif or mono stack with optional custom font as default.
           //--------------------------------------------------------------------------
@@ -424,6 +425,10 @@ module.exports = {
     //
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
+        // Break words only when needed.
+        '.break-decent': {
+          wordBreak: 'break-word',
+        },
         // Sizing utilities for sets in our bard (long form content).
         // On small devices they're full width.
         '.size-sm, .size-md, .size-lg, .size-xl': {
@@ -438,7 +443,7 @@ module.exports = {
             gridColumnStart: '3',
           },
           '.size-md': {
-            gridColumn: 'span 6 / span 6',
+            gridColumn: 'span 8 / span 8',
             gridColumnStart: '3',
           },
           '.size-lg': {
