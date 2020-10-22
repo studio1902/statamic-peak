@@ -1,5 +1,17 @@
 {{ if paginate.total_pages > 1 }}
     {{ paginate }}
+        {{ section:pagination }}
+            {{ if prev_page }}
+                {{ if current_page == 2 }}
+                    <link rel="prev" href="{{ prev_page | substr:0:-7 }}">
+                {{ else }}
+                    <link rel="prev" href="{{ prev_page }}">
+                {{ /if }}
+            {{ /if }}
+            {{ if next_page }}
+                <link rel="next" href="{{ next_page }}">
+            {{ /if }}
+        {{ /section:pagination }}
         <nav class="md:px-8 flex justify-center space-x-4">
             {{ if prev_page }}
                 <a class="text-primary-600" href="{{ prev_page }}">&laquo; {{ trans:strings.previous }}</a>

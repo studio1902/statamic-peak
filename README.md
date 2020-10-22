@@ -13,6 +13,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 ### Getting started
 
+* [Browser support](#browser-support)
 * [Knowledge assumptions](#knowledge-assumptions)
 * [Installation](#installation)
 * [Tailwind config](#tailwind-config)
@@ -34,9 +35,11 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 ### Other
 
 * [Configuration changes](#configuration-changes)
+* [Deployment script](#deployment-script)
 * [Modernizr](#modernizr)
 * [Multilingual fields and localization](#multilingual-fields)
 * [Upcoming features](#upcoming-features)
+* [Warm all caches](#warm-all-caches)
 
 ### Contibuting and license
 
@@ -44,6 +47,10 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [License](#license)
 
 # Getting started
+
+## Browser support
+<span id="browser-support"></span>
+Peak makes extensive use of CSS Grid so it doesn't support IE11. 
 
 ## Knowledge assumptions
 <span id="knowledge-assumptions"></span>
@@ -208,6 +215,8 @@ For example if you add a fieldset to the `page_builder.yaml` with the handle `ca
 
 When you're working with the collection tag and want to use [pagination](https://statamic.dev/tags/collection#pagination), just add the pagination partial using `partial:components/pagination` to automagically add pagination buttons. They're easily editable in  `resources/views/components/_pagination.antlers.html`. 
 
+The pagination partial automatically adds linktags to your documents head with `rel="next"` and `rel="prev"`.
+
 > Note: the strings used in the partial are translatable and can be edited in `resources/lang/en/site.php`.
 
 ## SEO
@@ -238,6 +247,7 @@ If you plan on using an addon for SEO and Peak's built in features, do the follo
 * Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
 * Remove `{{ yield:google_tag_manager }}` from `resources/views/layout.antlers.html`.
 * Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
+* Remove the whole `{{ section:pagination }}{{ /section:pagination }}` from `resources/views/components/_pagination.antlers.html`.
 * Delete the SEO global `content/globals/seo.yaml`.
 
 And optionally to erase all traces:
@@ -250,7 +260,7 @@ And optionally to erase all traces:
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
 
-The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a more professional look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
+The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a less fun, but more businessy look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
 
 If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
 
@@ -280,6 +290,7 @@ Peak changes the default Statamic config. The following is different:
 
 | File | Default | Peak |
 | --- | --- | --- |
+| `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to [warm all caches](#warm-all-caches)  
 | `app/Http/Controllers/DynamicToken.php` | - | New Controller for [forms](#forms) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
 | `app/Tags/DynamicToken.php` | - | New Tag for [forms](#forms) |
@@ -291,7 +302,20 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
-| `routes/web.php` |  | `Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');` for [forms](#forms) |
+| `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
+| `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token. 
+
+## Deployment script
+ <span id="deployment-script"></span>
+ You could use the following deployment script together with Peak to make sure everything runs smoothly after a deploy.
+
+ ```bash
+ php artisan cache:clear # Clear the Laravel application cache.
+ php artisan config:cache # Clear and refresh the Laravel config cache.
+ php artisan statamic:stache:warm # Warm the Statamic stache.
+ php artisan statamic:static:clear # Clear the Statamic static cache (if you use this).
+ php artisan warm # Warm the Statamic static cache (if you use this / only available in Peak).
+ ```
 
 ## Modernizr
 <span id="modernizr"></span>
@@ -307,6 +331,12 @@ It is currently not possible in Statamic to translate field labels and descripti
 <span id="upcoming-features"></span>
 
 Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aissue+is%3Aopen+is%3Aenhancement) and [pull requests](https://github.com/studio1902/statamic-peak/pulls) for upcoming features.
+
+## Warm all caches
+<span id="warm-all-caches"></span>
+Running `php artisan warm` after your deployments will visit all urls and warm up the static cache. This is a custom command and is defined in `routes/console.php`. 
+
+Triggering `php artisan schedule:run` with a cronjob on a server will hourly clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this hourly but for example daily. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 
 # Contibuting and license
 

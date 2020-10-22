@@ -24,8 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('cache:clear')->hourly();
+        $schedule->command('config:cache')->hourly();
+        $schedule->command('statamic:stache:warm')->hourly();
+        $schedule->command('statamic:static:clear')->hourly();
+        $schedule->command('warm')->hourly();
     }
 
     /**
