@@ -290,7 +290,8 @@ Peak changes the default Statamic config. The following is different:
 
 | File | Default | Peak |
 | --- | --- | --- |
-| `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to [warm all caches](#warm-all-caches)  
+| `.env.example` |  | Add more default Statamic and Redis settings by default.  
+| `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to [warm all caches](#warm-all-caches).
 | `app/Http/Controllers/DynamicToken.php` | - | New Controller for [forms](#forms) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
 | `app/Tags/DynamicToken.php` | - | New Tag for [forms](#forms) |
@@ -299,7 +300,9 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
 | `config/statamic/cp.php` | `'link_to_docs' => true` | `'link_to_docs' => false` |
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
+| `config/statamic/git.php` |  | Add `[BOT]` to git commit message. |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
+| `config/statamic/stache.php` | `'watcher' => true` | `'watcher' => env('STATAMIC_STACHE_WATCHER', true)` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
 | `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
