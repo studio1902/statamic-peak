@@ -7,7 +7,7 @@
 // More info: https://github.com/tailwindcss/typography.
 //
 
-const plugin = require('tailwindcss/plugin');
+const plugin = require('tailwindcss/plugin')
 
 module.exports = { 
   theme: {

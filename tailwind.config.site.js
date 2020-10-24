@@ -7,19 +7,13 @@
 //
 
 const defaultTheme = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   theme: {
-    //--------------------------------------------------------------------------
-    // Color configuration
-    //--------------------------------------------------------------------------
-    //
-    // Here you may register all of the colors you need for this project.
+    // Here you may register all of the colors you need for this project. 
     // These colors overwrite all the default Tailwind colors. If you don't want
     // this you should remove this part and extend color instead.
-    //
-    // You can also create your own colors on https://javisperez.github.io/tailwindcolorshades/#/
-    //
     colors: {
       transparent: 'transparent',
       black:   '#000',
@@ -88,13 +82,6 @@ module.exports = {
         900: '#024737',
       },
     },
-    //--------------------------------------------------------------------------
-    // Extend configuration
-    //--------------------------------------------------------------------------
-    //
-    // Here you may extend Tailwinds utility classes. Some defaults are 
-    // provided.
-    //
     extend: {
       fontFamily: {
         mono: [
@@ -117,5 +104,33 @@ module.exports = {
         ],
       }
     }
-  }
+  },
+  plugins: [
+    plugin(function({ addBase, theme }) {
+      addBase({
+        // Default color transition on links.
+        'a': {
+          transition: 'color .2s ease-in-out',
+        },
+        'html': {
+            fontDisplay: 'swap',
+            color: theme('colors.neutral.800'),
+            //--------------------------------------------------------------------------
+            // Set sans, serif or mono stack with optional custom font as default.
+            //--------------------------------------------------------------------------
+            // fontFamily: theme('fontFamily.mono').join(', '),
+            fontFamily: theme('fontFamily.sans').join(', '),
+            // fontFamily: theme('fontFamily.serif').join(', '),
+        },
+        '::selection': {
+            backgroundColor: theme('colors.primary.600'),
+            color: theme('colors.white'),
+        },
+        '::-moz-selection': {
+            backgroundColor: theme('colors.primary.600'),
+            color: theme('colors.white'),
+        },
+      })
+    }),
+  ]
 }
