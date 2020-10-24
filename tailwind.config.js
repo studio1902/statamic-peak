@@ -14,11 +14,10 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   presets: [
     require('tailwindcss/defaultConfig'),
-    require('./tailwind.peak.config.js'),
     require('./tailwind.typography.config.js'),
     require('./tailwind.forms.config.js'),
-    require('./tailwind.site.config.js')
-
+    require('./tailwind.peak.config.js'),
+    require('./tailwind.site.config.js'),
   ],
   future: {
     defaultLineHeights: true,
