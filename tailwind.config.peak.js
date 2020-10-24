@@ -6,7 +6,8 @@
 // may overwrite those to reflect your sites brand or add more.
 //
 
-const plugin = require('tailwindcss/plugin');
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   theme: {
     extend: {
@@ -42,31 +43,7 @@ module.exports = {
         '[x-cloak]': { 
           display: 'none !important'
         },
-        // Default color transition on links.
-        'a': {
-          transition: 'color .2s ease-in-out',
-        },
-        'html': {
-          fontDisplay: 'swap',
-          color: theme('colors.neutral.800'),
-          //--------------------------------------------------------------------------
-          // Set sans, serif or mono stack with optional custom font as default.
-          //--------------------------------------------------------------------------
-          // fontFamily: theme('fontFamily.mono').join(', '),
-          fontFamily: theme('fontFamily.sans').join(', '),
-          // fontFamily: theme('fontFamily.serif').join(', '),
-        },
-        '::selection': {
-          backgroundColor: theme('colors.primary.600'),
-          color: theme('colors.white'),
-        },
-        '::-moz-selection': {
-          backgroundColor: theme('colors.primary.600'),
-          color: theme('colors.white'),
-        },
-        //--------------------------------------------------------------------------
         // Display screen breakpoints in debug environment.
-        //--------------------------------------------------------------------------
         'body.debug::before': {
           display: 'block',
           position: 'fixed',

@@ -14,10 +14,10 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   presets: [
     require('tailwindcss/defaultConfig'),
-    require('./tailwind.typography.config.js'),
-    require('./tailwind.forms.config.js'),
-    require('./tailwind.peak.config.js'),
-    require('./tailwind.site.config.js'),
+    require('./tailwind.config.typography.js'),
+    require('./tailwind.config.forms.js'),
+    require('./tailwind.config.peak.js'),
+    require('./tailwind.config.site.js'),
   ],
   future: {
     defaultLineHeights: true,
@@ -26,13 +26,6 @@ module.exports = {
     standardFontWeights: true,
     removeDeprecatedGapUtilities: true,
   },
-  //--------------------------------------------------------------------------
-  // Dark mode (experimental)
-  //--------------------------------------------------------------------------
-  //
-  // Uncomment the following to use experimental dark mode support.
-  // More info: https://github.com/tailwindlabs/tailwindcss/pull/2279
-  //
   // dark: 'media', // or 'class'
   // experimental {
   //   darkModeVariant: true,
@@ -46,14 +39,6 @@ module.exports = {
       whitelist: ['size-sm', 'size-md', 'size-lg', 'size-xl']
     }
   },  
-  //--------------------------------------------------------------------------
-  // Tailwind variants configuration
-  //--------------------------------------------------------------------------
-  //
-  // Here you may extend the variants Tailwind generates.
-  // Some often used group-hover variants are added here.
-  // More info: https://tailwindcss.com/docs/configuration/#app
-  //
   variants: {
     boxShadow: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
