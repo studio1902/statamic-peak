@@ -1,13 +1,34 @@
+//--------------------------------------------------------------------------
+// Tailwind custom Peak configuration
+//--------------------------------------------------------------------------
+//
+// Here we define base styles, components and utilities used by Peak. You
+// may overwrite those to reflect your sites brand or add more.
+//
+
 const plugin = require('tailwindcss/plugin');
 module.exports = {
+  theme: {
+    extend: {
+      padding: {
+        // Used to generate responsive video embeds.
+        'video': '56.25%',
+      },
+      screens: {
+        // Add a slightly wider breakpoint.
+        '2xl': '1440px',
+      },
+      spacing: {
+        // Used for the mobile navigation toggle.
+        'safe': 'calc(env(safe-area-inset-bottom, 0rem) + 2rem)',
+      },
+      zIndex: {
+        // Z-index stuff behind it's parent.
+        'behind': '-1',
+      },
+    },
+  },
   plugins: [
-    //--------------------------------------------------------------------------
-    // Tailwind custom Peak plugins
-    //--------------------------------------------------------------------------
-    //
-    // Here we define base styles used by Peak. You may overwrite those to
-    // reflect your sites brand or add more.
-    //
     plugin(function({ addBase, theme }) {
       addBase({
         ':root': {
@@ -81,12 +102,6 @@ module.exports = {
       addBase(breakpoints)
     }),
 
-    //--------------------------------------------------------------------------
-    // Tailwind custom components
-    //--------------------------------------------------------------------------
-    //
-    // Here we define custom components used by Peak.
-    //
     plugin(function({ addComponents, theme }) {
       const components = {
         // The main wrapper for all sections on our website. Has a max width and is centered. 
@@ -151,12 +166,6 @@ module.exports = {
       addComponents(components)
     }),
 
-    //--------------------------------------------------------------------------
-    // Tailwind custom utilities
-    //--------------------------------------------------------------------------
-    //
-    // Here we define custom utilities not provided by Tailwind.
-    //
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
         // Break words only when needed.
