@@ -2,8 +2,7 @@
 // Tailwind custom Peak configuration
 //--------------------------------------------------------------------------
 //
-// Here we define base styles, components and utilities used by Peak. You
-// may overwrite those to reflect your sites brand or add more.
+// Here we define base styles, components and utilities used by Peak. 
 //
 
 const plugin = require('tailwindcss/plugin')
@@ -66,6 +65,7 @@ module.exports = {
       })
     }),
 
+    // Render screen names in the breakpoint display.
     plugin(function({ addBase, theme}) {
       const breakpoints = _.map(theme('screens'), (value, key) => {
         return {
@@ -96,8 +96,8 @@ module.exports = {
           height: '100%',
           overflow: 'hidden',
         },
-        // The outer grid where all our blocks are a child of. Spreads out all blocks vertically
-        // with a uniform space between them.
+        // The outer grid where all block builder blocks are a child of. Spreads out all blocks 
+        // vertically with a uniform space between them.
         '.outer-grid': {
           width: '100%',
           display: 'grid',

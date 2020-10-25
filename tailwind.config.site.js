@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     // Here you may register all of the colors you need for this project. 
     // These colors overwrite all the default Tailwind colors. If you don't want
-    // this you should remove this part and extend color instead.
+    // this you should remove this part and extend colors instead.
     colors: {
       transparent: 'transparent',
       black:   '#000',
@@ -131,6 +131,21 @@ module.exports = {
             color: theme('colors.white'),
         },
       })
+    }),
+
+    // Custom components for this particular site.
+    plugin(function({ addComponents, theme }) {
+      const components = {
+        
+      }
+      addComponents(components)
+    }),
+
+    // Custom utilities for this particular site.
+    plugin(function({ addUtilities, theme, variants }) {
+      const newUtilities = {
+      }
+      addUtilities(newUtilities)
     }),
   ]
 }

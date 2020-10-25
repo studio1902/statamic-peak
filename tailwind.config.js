@@ -2,9 +2,9 @@
 // Tailwind configuration
 //--------------------------------------------------------------------------
 //
-// Use this file to completely define the current sites design system by
-// adding and extending to Tailwinds default utility classes. Various 
-// aspects are split up in to multiple files.
+// Use the Tailwind configuration to completely define the current sites 
+// design system by adding and extending to Tailwinds default utility 
+// classes. Various aspects of the config are split inmultiple files.
 //
 
 const _ = require('lodash')
@@ -12,6 +12,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
+  // The various configurable Tailwind configuration files.
   presets: [
     require('tailwindcss/defaultConfig'),
     require('./tailwind.config.typography.js'),
@@ -19,6 +20,7 @@ module.exports = {
     require('./tailwind.config.peak.js'),
     require('./tailwind.config.site.js'),
   ],
+  // Opt in to future Tailwind features.
   future: {
     defaultLineHeights: true,
     extendedSpacingScale: true,
@@ -26,10 +28,12 @@ module.exports = {
     standardFontWeights: true,
     removeDeprecatedGapUtilities: true,
   },
-  // dark: 'media', // or 'class'
-  // experimental {
-  //   darkModeVariant: true,
-  // },
+  // Dark mode
+  dark: 'media', // or 'class'
+  experimental: {
+    darkModeVariant: false,
+  },
+  // Configure Purge CSS.
   purge: {
     content: [
       './resources/views/**/*.html',
@@ -38,7 +42,8 @@ module.exports = {
     options: {
       whitelist: ['size-sm', 'size-md', 'size-lg', 'size-xl']
     }
-  },  
+  },
+  // Define all variants available.
   variants: {
     boxShadow: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
