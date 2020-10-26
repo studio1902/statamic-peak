@@ -9,52 +9,6 @@ const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   theme: {
-    // Here we define the default colors available. You should extend 
-    // these in tailwind.config.site.js for the current project colors.
-    colors: {
-      transparent: 'transparent',
-      black:   '#000',
-      white:  '#fff',
-      // Error styling colors: red (TW Red)
-      error: {
-        50: '#FDF2F2',
-        100: '#FCE8E8',
-        200: '#FBD5D5',
-        300: '#F8B4B3',
-        400: '#F88080',
-        500: '#F05252',
-        600: '#E02423',
-        700: '#C81F1D',
-        800: '#9B1D1C',
-        900: '#771D1D',
-      },
-      // Notice styling colors: yellow (TW Yellow)
-      notice: {
-        50: '#FDFDEA',
-        100: '#FDF5B2',
-        200: '#FCE96B',
-        300: '#FACA16',
-        400: '#E3A009',
-        500: '#C27805',
-        600: '#9F580B',
-        700: '#8E4B10',
-        800: '#723A14',
-        900: '#643112',
-      },
-      // Success styling colors: green (TW Green)
-      success: {
-        50: '#F3FAF7',
-        100: '#DEF7EC',
-        200: '#BBF0DA',
-        300: '#84E1BC',
-        400: '#30C48D',
-        500: '#0D9F6E',
-        600: '#047A55',
-        700: '#036C4E',
-        800: '#06543F',
-        900: '#024737',
-      },
-    },
     extend: {
       padding: {
         // Used to generate responsive video embeds.
