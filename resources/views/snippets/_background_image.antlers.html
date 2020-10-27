@@ -3,9 +3,7 @@
     {{ asset url="{image}" }}
         .{{ class }} {
             background-image: url("{{ glide:url preset='md' }}");
-            {{ if focus }}
-                background-position: {{ focus_css }};
-            {{ /if }}
+            background-position: {{ focus_css or 'center' }};
         }
         .webp .{{ class }} {
             background-image: url("{{ glide:url preset='md-webp' }}");
