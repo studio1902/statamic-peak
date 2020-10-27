@@ -100,7 +100,7 @@ return [
 
     'commands' => [
         'git add {{ paths }}',
-        'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }}"',
+        'git -c "user.name={{ name }}" -c "user.email={{ email }}" commit -m "{{ message }} [BOT]"',
     ],
 
     /*
