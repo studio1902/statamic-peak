@@ -5,7 +5,7 @@ mix.js('resources/js/site.js', 'public/js/site.js')
     .modernizr({
         Modernizr: 'modernizr.config.js'
     })
-    .sourceMaps()
+    .sourceMaps(false)
 
 mix.postCss('resources/css/site.css', 'public/css/site.css', [
     require('postcss-import'),

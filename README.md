@@ -95,9 +95,16 @@ npm run production
 ## Tailwind configuration
 <span id="tailwind-config"></span>
 
-Peak comes with `tailwind.config.js` which dictates how Tailwind should be compiled. Everything is configured in a single Javascript file. This makes it very easy to define your unique design system for each website you're building. The file is fully documented. Read the Tailwind docs on [theme configuration](https://tailwindcss.com/docs/theme/) for more information.
+Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsable for various parts of your website. Next to the default config, it uses the following configuration files:
 
-The config file also includes the [Tailwind Custom Forms](https://tailwindcss-custom-forms.netlify.app) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file already includes some basic configuration. The plugins are easy to remove if you don't plan on using them.
+1. `tailwind.config.typography.js`: the Tailwind typography configuration for customizing the `prose` class.
+2. `tailwind.config.forms.js`: the Tailwind forms configuration for customizing the form classes.
+3. `tailwind.config.peak.js`: all Peak's configuration, utilities and components.
+4. `tailwind.config.site.js`: your site's configuration. This file would typically include all custom styles and config for the project you're currently working on.
+
+All configuration files are fully documented. Read the Tailwind docs on [theme configuration](https://tailwindcss.com/docs/theme/) for more information.
+
+Read up on the [Tailwind Custom Forms](https://tailwindcss-custom-forms.netlify.app) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the configu files already include some basic customization. The plugins are easy to remove if you don't plan on using them.
 
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
@@ -290,7 +297,8 @@ Peak changes the default Statamic config. The following is different:
 
 | File | Default | Peak |
 | --- | --- | --- |
-| `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to [warm all caches](#warm-all-caches)  
+| `.env.example` |  | Add more default Statamic and Redis settings by default.  
+| `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to [warm all caches](#warm-all-caches).
 | `app/Http/Controllers/DynamicToken.php` | - | New Controller for [forms](#forms) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
 | `app/Tags/DynamicToken.php` | - | New Tag for [forms](#forms) |
@@ -299,7 +307,9 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
 | `config/statamic/cp.php` | `'link_to_docs' => true` | `'link_to_docs' => false` |
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
+| `config/statamic/git.php` |  | Add `[BOT]` to git commit message. |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
+| `config/statamic/stache.php` | `'watcher' => true` | `'watcher' => env('STATAMIC_STACHE_WATCHER', true)` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
 | `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
