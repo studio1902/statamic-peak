@@ -7,7 +7,7 @@
 {{ elseif link_type == 'tel' }}
     href="tel:{{ tel }}"
 {{ elseif link_type == 'asset' }}
-    href="{{ asset }}"
+    href="{{ asset }}" download
 {{ /if }}
 {{ if target_blank }} 
     rel="noopener" target="_blank"
