@@ -1,6 +1,6 @@
 # Release Notes
 
-## HEAD 1.10.0 (2020-10-30)
+## HEAD
 
 ### What's new
 - Completely reworked buttons to support internal linking, external linking, linking to phone numbers, e-mail addresses and downloadable assets. The button fieldset uses the just fixed conditional logic in available in Statamic.
