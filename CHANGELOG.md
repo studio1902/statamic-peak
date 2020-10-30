@@ -12,4 +12,4 @@
 ## 1.9.2 (2020-10-26)
 
 ### What's improved
-[Improved] Only output SEO tracker code on production environment.
+- Only output SEO tracker code on production environment.
