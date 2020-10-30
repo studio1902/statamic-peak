@@ -15,10 +15,7 @@
             {{ /if }}"
             aria-labelledby="{{ title | slugify }}" 
             draggable="false"
-            href="{{ link }}"
-            {{ if not link | is_local_url }} 
-                rel="noopener" target="_blank"
-            {{ /if }}
+            {{ partial:components/button_attributes }}
         >
             <div>
                 <span id="{{ title | slugify }}">
@@ -26,7 +23,7 @@
                 </span>
                 {{ partial:typography/paragraph class="mb-4" :content="text" }}
             </div>
-            {{ partial:components/button tag="span" }}
+            {{ partial:components/button tag="span" faux="true" }}
         </a>
     {{ /block:link_blocks }}
 </section>
