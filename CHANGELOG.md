@@ -7,7 +7,8 @@
 
 ### What's improved
 - Default to position center for background images which saves us a conditional check (thanks @philipboomy).
-
+- Remove localization workaround in mail templates that's not needed anymore since Statamic 3.0.18.
+- Actually use alt attribute in mail templates.
 
 ## 1.9.2 (2020-10-26)
 
