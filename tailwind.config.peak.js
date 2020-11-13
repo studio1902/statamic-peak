@@ -10,10 +10,6 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   theme: {
     extend: {
-      padding: {
-        // Used to generate responsive video embeds.
-        'video': '56.25%',
-      },
       spacing: {
         // Used for the mobile navigation toggle.
         'safe': 'calc(env(safe-area-inset-bottom, 0rem) + 2rem)',
@@ -25,6 +21,8 @@ module.exports = {
     },
   },
   plugins: [
+    // Use Tailwinds aspect-ratio plugin for embedded media: https://github.com/tailwindlabs/tailwindcss-aspect-ratio.
+    require('@tailwindcss/aspect-ratio'),
     plugin(function({ addBase, theme }) {
       addBase({
         ':root': {
