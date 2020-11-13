@@ -1,6 +1,13 @@
 # Release Notes
 
-## HEAD
+## 1.11.0 (2020-11-13)
+
+### What's improved
+- [Breaking] Use Tailwind's aspect ratio plugin for media embeds: https://github.com/tailwindlabs/tailwindcss-aspect-ratio
+- [Breaking] Remove Peak's custom breakpoint.
+- [Breaking] Add config to use Tailwinds new experimental breakpoint: https://github.com/tailwindlabs/tailwindcss/pull/2468/files
+
+## 1.10.0 (2020-11-2)
 
 ### What's new
 - Completely reworked buttons to support internal linking, external linking, linking to phone numbers, e-mail addresses and downloadable assets. The button fieldset uses the just fixed conditional logic in available in Statamic.
