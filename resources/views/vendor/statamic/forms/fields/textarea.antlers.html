@@ -1,5 +1,5 @@
 {{# Bind `form-input-error` class when there is a validation error with the field. #}}
-<textarea class="form-input w-full h-32" :class="{ 'form-input-error': errors.{{ handle }} }"
+<textarea class="w-full h-32" :class="{ 'form-input-error': errors.{{ handle }} }"
     id="{{ handle }}" 
     name="{{ handle }}" 
     rows="5"

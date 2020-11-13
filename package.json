@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.1.4",
-    "@tailwindcss/custom-forms": "^0.2.1",
+    "@tailwindcss/forms": "^0.1.4",
     "@tailwindcss/typography": "^0.2.0",
     "alpinejs": "^2.7.0",
     "tailwindcss": "^1.9.2"
