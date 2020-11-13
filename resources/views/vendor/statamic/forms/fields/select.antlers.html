@@ -1,5 +1,5 @@
 {{# Bind `form-input-error` class when there is a validation error with the field. #}}
-<select class="{{ multiple ? 'form-multiselect' : 'form-select' }} w-full" name="{{ handle }}{{ multiple ?= "[]" }}" {{ multiple ?= "multiple" }} :class="{ 'form-input-error': errors.{{ handle }} }">
+<select class="w-full" name="{{ handle }}{{ multiple ?= "[]" }}" {{ multiple ?= "multiple" }} :class="{ 'form-input-error': errors.{{ handle }} }">
     {{ unless multiple }}
         <option value>{{ trans key="Please select..." }}</option>
     {{ /unless }}
