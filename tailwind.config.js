@@ -32,6 +32,8 @@ module.exports = {
   dark: 'media', // or 'class'
   experimental: {
     darkModeVariant: false,
+    // Add extra breakpoint.
+    additionalBreakpoint: false,
   },
   // Configure Purge CSS.
   purge: {
