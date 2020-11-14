@@ -98,13 +98,12 @@ npm run production
 Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsable for various parts of your website. Next to the default config, it uses the following configuration files:
 
 1. `tailwind.config.typography.js`: the Tailwind typography configuration for customizing the `prose` class.
-2. `tailwind.config.forms.js`: the Tailwind forms configuration for customizing the form classes.
-3. `tailwind.config.peak.js`: all Peak's configuration, utilities and components.
-4. `tailwind.config.site.js`: your site's configuration. This file would typically include all custom styles and config for the project you're currently working on.
+2. `tailwind.config.peak.js`: all Peak's configuration, utilities and components.
+3. `tailwind.config.site.js`: your site's configuration. This file would typically include all custom styles and config for the project you're currently working on.
 
 All configuration files are fully documented. Read the Tailwind docs on [theme configuration](https://tailwindcss.com/docs/theme/) for more information.
 
-Read up on the [Tailwind Custom Forms](https://tailwindcss-custom-forms.netlify.app) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the configu files already include some basic customization. The plugins are easy to remove if you don't plan on using them.
+Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file for typography already include some basic customization. The plugins are easy to remove if you don't plan on using them.
 
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
