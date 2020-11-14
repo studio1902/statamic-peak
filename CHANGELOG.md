@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.12.0 (2020-11-14)
+
+### What's improved
+- [Breaking] Ditch the old and use the new Tailwind form plugin. No more specificity and config, just use utility classes in your partials: https://github.com/tailwindlabs/tailwindcss-forms
+
 ## 1.11.0 (2020-11-13)
 
 ### What's improved
