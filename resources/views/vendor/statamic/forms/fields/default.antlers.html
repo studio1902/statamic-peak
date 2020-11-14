@@ -1,8 +1,9 @@
-Bind `form-input-error` class when there is a validation error with the field.
-<input class="form-input w-full" :class="{ 'form-input-error': errors.{{ handle }} }"
+{{# Bind custom error classses when there is a validation error with the field. #}}
+<input class="w-full focus:border-primary-600 focus:shadow-outline" :class="{ 'border-error-600 focus:border-error-600': errors.{{ handle }} }"
     id="{{ handle }}" 
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}" 
+    {{# Uncomment the following line if you want to use native browser validation first. #}}
     {{# {{ validate | contains:required ?= "required" }} #}}
     {{ if old }}value="{{ old }}"{{ /if }}
 />
