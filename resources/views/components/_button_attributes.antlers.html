@@ -1,0 +1,20 @@
+{{ if link_type == 'entry' }}
+    href="{{ entry:url }}"
+{{ elseif link_type == 'url' }}
+    href="{{ url }}"
+{{ elseif link_type == 'email' }}
+    href="mailto:{{ email }}"
+{{ elseif link_type == 'tel' }}
+    href="tel:{{ tel }}"
+{{ elseif link_type == 'asset' }}
+    href="{{ asset }}" download
+{{ /if }}
+{{ if target_blank }} 
+    rel="noopener" target="_blank"
+{{ /if }}
+{{ if attr_title }}
+    title="{{ attr_title }}"
+{{ /if }}
+{{ if attr_aria }}
+    aria-label="{{ attr_aria }}"
+{{ /if }}
