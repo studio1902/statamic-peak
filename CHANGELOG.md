@@ -1,0 +1,29 @@
+# Release Notes
+
+## 1.12.0 (2020-11-14)
+
+### What's improved
+- [Breaking] Ditch the old and use the new Tailwind form plugin. No more specificity and config, just use utility classes in your partials: https://github.com/tailwindlabs/tailwindcss-forms
+
+## 1.11.0 (2020-11-13)
+
+### What's improved
+- [Breaking] Use Tailwind's aspect ratio plugin for media embeds: https://github.com/tailwindlabs/tailwindcss-aspect-ratio
+- [Breaking] Remove Peak's custom breakpoint.
+- [Breaking] Add config to use Tailwinds new experimental breakpoint: https://github.com/tailwindlabs/tailwindcss/pull/2468/files
+
+## 1.10.0 (2020-11-2)
+
+### What's new
+- Completely reworked buttons to support internal linking, external linking, linking to phone numbers, e-mail addresses and downloadable assets. The button fieldset uses the just fixed conditional logic in available in Statamic.
+
+### What's improved
+- Default to position center for background images which saves us a conditional check (thanks @philipboomy).
+- Remove localization workaround in mail templates that's not needed anymore since Statamic 3.0.18.
+- Actually use the alt attribute in mail templates.
+- Collapse page builder replicator sets by default.
+
+## 1.9.2 (2020-10-26)
+
+### What's improved
+- Only output SEO tracker code on production environment.
