@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.12.1 (2020-11-16)
+
+### What's improved
+- Don't init an alpine component on the body for the mobile navigation logic. Move it to where it's actually being used (thanks @philipboomy).
+
 ## 1.12.0 (2020-11-14)
 
 ### What's improved
