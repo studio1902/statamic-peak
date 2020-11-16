@@ -29,6 +29,10 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "download-dist": {
+            "url": "https://github.com/studio1902/statamic-peak/releases/download/{$version}/dist.tar.gz",
+            "path": "dist"
         }
     },
     "autoload": {
@@ -57,13 +61,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi",
+            "@php artisan key:generate --ansi"
         ]
-    },
-    "extra": {
-        "download-dist": {
-            "url": "https://github.com/studio1902/statamic-peak/releases/download/{$version}/dist.tar.gz",
-            "path": "dist"
-        }
     }
 }
