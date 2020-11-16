@@ -10,6 +10,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
+        "pixelfear/composer-dist-plugin": "^0.1",
         "statamic/cms": "3.0.*"
     },
     "require-dev": {
@@ -57,8 +58,12 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
-            "npm install",
-            "npm run dev"
         ]
+    },
+    "extra": {
+        "download-dist": {
+            "url": "https://github.com/studio1902/statamic-peak/releases/download/{$version}/dist.tar.gz",
+            "path": "dist"
+        }
     }
 }
