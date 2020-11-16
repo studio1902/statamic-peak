@@ -32,7 +32,7 @@
         },
         "download-dist": {
             "url": "https://github.com/studio1902/statamic-peak/releases/download/{$version}/dist.tar.gz",
-            "path": "dist"
+            "path": "resources/dist"
         }
     },
     "autoload": {
