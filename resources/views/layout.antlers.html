@@ -11,8 +11,6 @@
     </head>
     <body 
         class="min-h-screen bg-white {{ environment == 'local' ? 'debug' : '' }}" 
-        x-data="{ mobileNavOpen: false }" 
-        :class="{ 'no-scroll': mobileNavOpen }"
     >
         {{ yield:google_tag_manager }}
         {{ partial:layout/header }}
