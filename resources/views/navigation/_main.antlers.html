@@ -55,7 +55,7 @@
 </nav>
 
 {{# The mobile navigation. Hidden from md and up #}}
-<nav class="md:hidden">
+<nav class="md:hidden" x-data="{ mobileNavOpen: false }">
     <button
         @click.prevent="mobileNavOpen = !mobileNavOpen, mobileNavOpen ? document.body.classList.add('no-scroll') : document.body.classList.remove('no-scroll')"
         class="fixed z-20 w-16 h-16 flex justify-center items-center right-0 bottom-0 mb-safe mr-8 bg-primary-500 text-white text-xs text-uppercase tracking-widest font-bold"
