@@ -1,5 +1,5 @@
 {{# Bind custom error classses when there is a validation error with the field. #}}
-<select class="w-full focus:border-primary-600 focus:shadow-outline" name="{{ handle }}{{ multiple ?= "[]" }}" {{ multiple ?= "multiple" }} :class="{ 'border-error-600 focus:border-error-600': errors.{{ handle }} }">
+<select class="w-full focus:border-primary-600 focus:ring" name="{{ handle }}{{ multiple ?= "[]" }}" {{ multiple ?= "multiple" }} :class="{ 'border-error-600 focus:border-error-600': errors.{{ handle }} }">
     {{ unless multiple }}
         <option value>{{ trans key="Please select..." }}</option>
     {{ /unless }}
