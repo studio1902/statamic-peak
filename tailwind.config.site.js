@@ -20,6 +20,7 @@ module.exports = {
       // Grays (currently default TW blue gray).
       neutral: colors.blueGray,
       // Client primary color (currently default TW blue).
+      // This is the color set you usually change for each project with brand color shades.
       primary: colors.blue,
       // Error styling colors (currently default TW Red).
       error: colors.red,
