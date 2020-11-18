@@ -38,15 +38,13 @@ module.exports = {
       safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl']
     }
   },
-  // Define all variants available.
+  // Extend variants.
   variants: {
-    boxShadow: ['responsive', 'hover', 'focus', 'group-hover'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
-    scale: ['responsive', 'hover', 'focus', 'group-hover'],
-    skew: ['responsive', 'hover', 'focus', 'group-hover'],
-    rotate: ['responsive', 'hover', 'focus', 'group-hover'],
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    translate: ['responsive', 'hover', 'focus', 'group-hover'],
+    extend: {
+      scale: ['group-hover'],
+      skew: ['group-hover'],
+      rotate: ['group-hover'],
+      translate: ['group-hover'],
+    }
   }
 }
