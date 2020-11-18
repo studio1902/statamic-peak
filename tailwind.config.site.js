@@ -117,9 +117,9 @@ module.exports = {
             //--------------------------------------------------------------------------
             // Set sans, serif or mono stack with optional custom font as default.
             //--------------------------------------------------------------------------
-            // fontFamily: theme('fontFamily.mono').join(', '),
-            fontFamily: theme('fontFamily.sans').join(', '),
-            // fontFamily: theme('fontFamily.serif').join(', '),
+            // fontFamily: theme('fontFamily.mono'),
+            fontFamily: theme('fontFamily.sans'),
+            // fontFamily: theme('fontFamily.serif'),
         },
         '::selection': {
             backgroundColor: theme('colors.primary.600'),

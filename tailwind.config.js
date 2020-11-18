@@ -20,13 +20,7 @@ module.exports = {
     require('./tailwind.config.site.js'),
   ],
   // Opt in to future Tailwind features.
-  future: {
-    defaultLineHeights: true,
-    extendedSpacingScale: true,
-    purgeLayersByDefault: true,
-    standardFontWeights: true,
-    removeDeprecatedGapUtilities: true,
-  },
+  future: {  },
   // Dark mode
   dark: 'media', // or 'class'
   experimental: {
@@ -41,7 +35,7 @@ module.exports = {
       './resources/js/**/*.js',
     ],
     options: {
-      whitelist: ['size-sm', 'size-md', 'size-lg', 'size-xl']
+      safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl']
     }
   },
   // Define all variants available.
