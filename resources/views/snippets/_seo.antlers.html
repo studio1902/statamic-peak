@@ -36,6 +36,8 @@
 {{ elseif seo_canonical_type == 'entry' }}
     <link rel="canonical" href="{{ permalink }}">
 {{ /if }}
+
+{{# Auto add pagination link's when using resources/views/components/_pagination.antlers.html. #}}    
 {{ yield:pagination }}
 
 {{# Knowledge graph JSON-ld #}}
