@@ -1,5 +1,5 @@
 {{# Bind custom error classses when there is a validation error with the field. #}}
-<textarea class="w-full h-32 focus:border-primary-600 focus:shadow-outline " :class="{ 'border-error-600 focus:border-error-600': errors.{{ handle }} }"
+<textarea class="w-full h-32 focus:border-primary-600 focus:ring " :class="{ 'border-error-600 focus:border-error-600': errors.{{ handle }} }"
     id="{{ handle }}" 
     name="{{ handle }}" 
     rows="5"
