@@ -1,5 +1,17 @@
 # Release Notes
 
+## 1.13.0 (2020-11-19)
+
+### What's new
+- Upgraded to Tailwind 2.
+- Applied the Tailwind 2 migration guide.
+- Now importing Tailwind color sets.
+- Extend variants instead of overwriting them.
+- Use default transition duration and easing.
+
+### What's improved
+- The common asset fieldset now uses list mode to render assets in the CP.
+
 ## 1.12.1 (2020-11-16)
 
 ### What's improved
