@@ -3,7 +3,7 @@ fields:
   -
     handle: image
     field:
-      mode: grid
+      mode: list
       container: assets
       restrict: false
       allow_uploads: true
