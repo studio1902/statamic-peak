@@ -15,7 +15,7 @@ module.exports = {
   // The various configurable Tailwind configuration files.
   presets: [
     require('tailwindcss/defaultConfig'),
-    require('./tailwind.config.typography.js'),
+    // require('./tailwind.config.typography.js'),
     require('./tailwind.config.peak.js'),
     require('./tailwind.config.site.js'),
   ],
