@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Don't let the site be indexed when not in production. Thanks Frederik!
+
 ## 1.13.0 (2020-11-19)
 
 ### What's new
