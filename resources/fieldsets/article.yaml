@@ -46,6 +46,11 @@ fields:
           fields:
             -
               import: pull_quote
+        table:
+          display: 'Table'
+          fields:
+            -
+              import: table
         video:
           display: Video
           fields:
