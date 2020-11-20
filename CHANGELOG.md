@@ -1,14 +1,18 @@
 # Release Notes
 
-## Unreleased
+## 1.14.0 (2020-11-20)
 
 ### What's new
+- A Table set for Bard.
 - A new and bigger asset preset.
 
 ### What's improved
 - Hide contact form success message after 2500secs. Thanks Frederik!
 - Don't let the site be indexed when not in production. Thanks Frederik!
-- Improve basic form styling.
+- Improve default form styling.
+- Fix Tailwind prose classes not compiling. 
+- Only apply prose class to `resources/views/components/_text.antlers.html` so bard sets don't inherit prose styles.
+- Update bard sets styling with margin y. 
 
 ## 1.13.0 (2020-11-19)
 

@@ -38,27 +38,11 @@ module.exports = {
             hr: {
               borderColor: theme('colors.neutral.100'), 
             },
-            'figure, img, picture, video, code': {
-              marginTop: 0,
-              marginBottom: 0,
-            },
-            'figure figcaption': {
-              color: 'inherit',
-            },
             'ul > li::before': { 
               backgroundColor: theme('colors.neutral.500'),
             },
             'ol > li::before': { 
               color: theme('colors.neutral.500'),
-            },
-            'figure figcaption': {
-              color: theme('colors.neutral.500'),
-            },
-            thead: {
-              borderBottomColor: theme('colors.neutral.200'),
-            },
-            'tbody tr': {
-              borderBottomColor: theme('colors.neutral.100'),
             },
             pre: {
               whiteSpace: 'pre-wrap',
