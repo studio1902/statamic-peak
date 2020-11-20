@@ -3,7 +3,9 @@
 ## Unreleased
 
 ### What's improved
+- Hide contact form success message after 2500secs. Thanks Frederik!
 - Don't let the site be indexed when not in production. Thanks Frederik!
+- Improve basic form styling.
 
 ## 1.13.0 (2020-11-19)
 
