@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### What's new
+- A new and bigger asset preset.
+
 ### What's improved
 - Hide contact form success message after 2500secs. Thanks Frederik!
 - Don't let the site be indexed when not in production. Thanks Frederik!
