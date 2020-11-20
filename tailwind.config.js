@@ -45,6 +45,7 @@ module.exports = {
       skew: ['group-hover'],
       rotate: ['group-hover'],
       translate: ['group-hover'],
+      // typography: ["dark"],
     }
   }
 }
