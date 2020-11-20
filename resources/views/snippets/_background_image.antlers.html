@@ -62,5 +62,32 @@
                 background-image:  url("{{ glide:url preset='xl-webp' }}");
             }
         }
+
+        @media only screen and (min-width: 1280px) {
+            .no-webp .{{ class }} { 
+                background-image:  url("{{ glide:url preset='xl' }}");
+            }
+            .webp .{{ class }} { 
+                background-image:  url("{{ glide:url preset='xl-webp' }}");
+            }
+        }
+
+        @media only screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
+            .no-webp .{{ class }} { 
+                background-image:  url("{{ glide:url preset='2xl' }}");
+            }
+            .webp .{{ class }} { 
+                background-image:  url("{{ glide:url preset='2xl-webp' }}");
+            }
+        }
+
+        @media only screen and (min-width: 1440px) {
+            .no-webp .{{ class }} { 
+                background-image:  url("{{ glide:url preset='2xl' }}");
+            }
+            .webp .{{ class }} { 
+                background-image:  url("{{ glide:url preset='2xl-webp' }}");
+            }
+        }
     {{ /asset }}
 </style>
