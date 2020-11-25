@@ -30,6 +30,7 @@ php artisan config:cache
 php artisan statamic:stache:warm
 php artisan statamic:static:clear
 php artisan warm
+php artisan statamic:assets:generate-presets
 
 ( flock -w 10 9 || exit 1
     echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9>/tmp/fpmlock
