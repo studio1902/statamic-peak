@@ -10,6 +10,13 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   theme: {
     extend: {
+      keyframes: (theme) => ({
+        // Add a highlight animation for the highlight utility.
+        'highlight': {
+          'from': { boxShadow: 'inset 4px 4px ' + theme('colors.error.600') + ', inset -4px -4px ' + theme('colors.error.600') },
+          'to': { boxShadow: 'inset 8px 8px ' + theme('colors.error.600') + ', inset -8px -8px ' + theme('colors.error.600') },
+        },
+      }),
       spacing: {
         // Used for the mobile navigation toggle.
         'safe': 'calc(env(safe-area-inset-bottom, 0rem) + 2rem)',
@@ -141,6 +148,10 @@ module.exports = {
 
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
+        // Add a ? utility to quickly highlight an element. 
+        '.\?': {
+          'animation': 'highlight 0.5s ease-in-out alternate infinite',
+        },
         // Break words only when needed.
         '.break-decent': {
           wordBreak: 'break-word',

@@ -107,6 +107,8 @@ Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-form
 
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
+You can use a helper utility by adding the class `?` to quickly identify elements on screen. Original idea by [Gavin Joyce](https://github.com/GavinJoyce/tailwindcss-question-mark).
+
 # Features
 
 ## Assets

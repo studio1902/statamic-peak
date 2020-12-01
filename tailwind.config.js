@@ -35,7 +35,12 @@ module.exports = {
       './resources/js/**/*.js',
     ],
     options: {
-      safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl']
+      // Always remove the following classes during purging.
+      blocklist: ['?',],
+      // Remove unused keyframes during purging.
+      keyframes: true,
+      // Always keep the following classes during purging.
+      safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl'],
     }
   },
   // Extend variants.
