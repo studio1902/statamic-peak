@@ -1,5 +1,14 @@
 # Release Notes
 
+## 1.14.1 (2020-12-01)
+
+### What's new
+- Added a helper utility by adding the class `?` to quickly identify elements on screen. Original idea by [Gavin Joyce](https://github.com/GavinJoyce/tailwindcss-question-mark).
+- Added the `php artisan statamic:assets:generate-preset` to the deploy script part of the README.example.md.
+
+### What's improved
+- Link to the new Tailwind Typography repo in the inline docs.
+
 ## 1.14.0 (2020-11-20)
 
 ### What's new
