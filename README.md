@@ -232,7 +232,7 @@ The pagination partial automatically adds linktags to your documents head with `
 ## SEO
 <span id="seo"></span>
 
-Peak includes full SEO support. It's easy to expand on since it's al built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
+Peak includes full SEO support. It's easy to expand on since it's all built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
 
 ### SEO features
 * Edit the title.
