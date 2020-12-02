@@ -352,7 +352,7 @@ Running `php artisan warm` after your deployments will visit all urls and warm u
 
 Triggering `php artisan schedule:run` with a cronjob on a server will hourly clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this hourly but for example daily. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 
-# Contibuting and license
+# Contributing and license
 
 ## Contributing
 <span id="contributing"></span>
