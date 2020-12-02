@@ -95,7 +95,7 @@ npm run production
 ## Tailwind configuration
 <span id="tailwind-config"></span>
 
-Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsable for various parts of your website. Next to the default config, it uses the following configuration files:
+Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsible for various parts of your website. Next to the default config, it uses the following configuration files:
 
 1. `tailwind.config.typography.js`: the Tailwind typography configuration for customizing the `prose` class.
 2. `tailwind.config.peak.js`: all Peak's configuration, utilities and components.
