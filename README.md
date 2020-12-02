@@ -95,7 +95,7 @@ npm run production
 ## Tailwind configuration
 <span id="tailwind-config"></span>
 
-Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsable for various parts of your website. Next to the default config, it uses the following configuration files:
+Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsible for various parts of your website. Next to the default config, it uses the following configuration files:
 
 1. `tailwind.config.typography.js`: the Tailwind typography configuration for customizing the `prose` class.
 2. `tailwind.config.peak.js`: all Peak's configuration, utilities and components.
@@ -232,7 +232,7 @@ The pagination partial automatically adds linktags to your documents head with `
 ## SEO
 <span id="seo"></span>
 
-Peak includes full SEO support. It's easy to expand on since it's al built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
+Peak includes full SEO support. It's easy to expand on since it's all built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
 
 ### SEO features
 * Edit the title.
@@ -352,7 +352,7 @@ Running `php artisan warm` after your deployments will visit all urls and warm u
 
 Triggering `php artisan schedule:run` with a cronjob on a server will hourly clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this hourly but for example daily. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 
-# Contibuting and license
+# Contributing and license
 
 ## Contributing
 <span id="contributing"></span>
