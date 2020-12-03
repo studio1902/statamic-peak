@@ -8,6 +8,14 @@
 
 ## Environment file contents
 
+### Development
+
+```env
+Dump your .env values here with senstive data removed.
+```
+
+### Production
+
 ```env
 Dump your .env values here with senstive data removed.
 ```
