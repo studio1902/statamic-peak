@@ -5,6 +5,7 @@
 // Here we define base styles, components and utilities used by Peak. 
 //
 
+const _ = require('lodash')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {

@@ -7,7 +7,6 @@
 // classes. Various aspects of the config are split inmultiple files.
 //
 
-const _ = require('lodash')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
