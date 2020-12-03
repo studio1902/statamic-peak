@@ -1,5 +1,12 @@
 # Release Notes
 
+## 1.14.2 (2020-12-03)
+
+### What's improved
+- Use `config:app:name` for the logo aria-label.
+- Tpyo's removed from the README. Thanks Jelle!
+- Updated the example README with a space for both the production and the development env vars.
+
 ## 1.14.1 (2020-12-01)
 
 ### What's new
