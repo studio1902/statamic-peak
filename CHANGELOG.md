@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.14.3 (2020-12-03)
+
+### What's improved
+- Fixed a bug in the Tailwind config that prevented the VS Code Intellisense plugin from working. 
+
 ## 1.14.2 (2020-12-03)
 
 ### What's improved
