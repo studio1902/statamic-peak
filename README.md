@@ -65,6 +65,11 @@ Before using Peak make sure you're familiar with:
 ## Installation
 <span id="installation"></span>
 
+### Installation via the CLI
+The easiest way to install Statamic together with Peak is to use the [official CLI](https://github.com/statamic/cli). Install the CLI by running `composer global require statamic/cli` and for each project just run `statamic new my-site` and pick Peak as a starter kit. Alternatively you can skip this manual selection by running: `statamic new my-site --starter="statamic/starter-kit-cool-writings"`.
+
+### Manual installation.
+
 **1. Create a new site** - cloning the repo and removing the origin repo.
 ```bash
 git clone git@github.com:studio1902/statamic-peak.git my-site
