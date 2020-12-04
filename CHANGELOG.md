@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Remove deprecated `scrolling-touch` utility from `resources/views/navigation/_main.antlers.html`.
+
 ## 1.14.3 (2020-12-03)
 
 ### What's improved
