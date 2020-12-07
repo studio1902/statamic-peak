@@ -41,7 +41,7 @@
     <link rel="canonical" href="{{ permalink }}">
 {{ /if }}
 
-{{# Auto add pagination link's when using resources/views/components/_pagination.antlers.html. #}}    
+{{# Auto add pagination link's when using resources/views/components/_pagination.antlers.html. #}}
 {{ yield:pagination }}
 
 {{# Knowledge graph JSON-ld #}}
@@ -144,5 +144,9 @@
 
     {{ if seo:use_fathom }}
         <script src="https://cdn.usefathom.com/script.js" site="{{ seo:fathom }}" defer></script>
+    {{ /if }}
+
+    {{ if seo:use_cloudflare_web_analytics }}
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ seo:cloudflare_web_analytics }}"}'></script>
     {{ /if }}
 {{ /if }}
