@@ -2,14 +2,12 @@ sections:
   page_titles:
     display: 'Page titles'
     fields:
-      -
-        handle: section_title
+      - handle: section_title
         field:
           type: section
           instructions: 'The website title'
           display: Title
-      -
-        handle: title_separator
+      - handle: title_separator
         field:
           options:
             ' | ': '|'
@@ -28,8 +26,7 @@ sections:
           width: 33
           listable: hidden
           display: Separator
-      -
-        handle: site_name
+      - handle: site_name
         field:
           input_type: text
           type: text
@@ -41,14 +38,12 @@ sections:
   json-ld:
     display: JSON-ld
     fields:
-      -
-        handle: section_schema
+      - handle: section_schema
         field:
           type: section
           instructions: 'JSON-LD Schema'
           display: 'Knowledge graph data'
-      -
-        handle: json_ld_type
+      - handle: json_ld_type
         field:
           options:
             none: None
@@ -60,8 +55,7 @@ sections:
           instructions: 'The type of data to be added on each page.'
           listable: false
           display: Type
-      -
-        handle: organization_name
+      - handle: organization_name
         field:
           input_type: text
           type: text
@@ -73,8 +67,7 @@ sections:
             json_ld_type: 'equals organization'
           validate:
             - 'required_if:json_ld_type,organization'
-      -
-        handle: organization_logo
+      - handle: organization_logo
         field: common.image
         config:
           listable: hidden
@@ -83,8 +76,7 @@ sections:
           width: 33
           if:
             json_ld_type: 'equals organization'
-      -
-        handle: person_name
+      - handle: person_name
         field:
           listable: hidden
           display: 'Person name'
@@ -96,8 +88,7 @@ sections:
             json_ld_type: 'equals person'
           validate:
             - 'required_if:json_ld_type,person'
-      -
-        handle: json_ld
+      - handle: json_ld
         field:
           type: textarea
           instructions: 'Add custom JSON-LD to be included on each page. This can include stuff like business hours and contact data.'
@@ -108,14 +99,12 @@ sections:
             json_ld_type: 'equals custom'
           validate:
             - 'required_if:json_ld_type,custom'
-      -
-        handle: section_breadcrumbs
+      - handle: section_breadcrumbs
         field:
           type: section
           instructions: 'JSON-ld Breadcrumbs'
           display: Breadcrumbs
-      -
-        handle: breadcrumbs
+      - handle: breadcrumbs
         field:
           type: toggle
           instructions: 'Add JSON-ld breadcrumbs to each entry.'
@@ -124,14 +113,12 @@ sections:
   social:
     display: Social
     fields:
-      -
-        handle: section_og
+      - handle: section_og
         field:
           type: section
           instructions: 'Open Graph meta tags'
           display: Social
-      -
-        handle: og_image
+      - handle: og_image
         field: common.image
         config:
           listable: hidden
@@ -141,14 +128,12 @@ sections:
   sitemap:
     display: Sitemap
     fields:
-      -
-        handle: section_sitemap
+      - handle: section_sitemap
         field:
           type: section
           instructions: 'Configure the sitemap.xml'
           display: Sitemap
-      -
-        handle: sitemap_collections
+      - handle: sitemap_collections
         field:
           mode: select
           type: collections
@@ -159,21 +144,18 @@ sections:
   trackers:
     display: Trackers
     fields:
-      -
-        handle: section_trackers
+      - handle: section_trackers
         field:
           type: section
           instructions: 'Configure trackers and analytics.'
           display: Trackers
-      -
-        handle: use_google_site_verification
+      - handle: use_google_site_verification
         field:
           type: toggle
           instructions: 'Add a google-site-verification meta tag to your head.'
           listable: false
           display: 'Google site verification'
-      -
-        handle: google_site_verification
+      - handle: google_site_verification
         field:
           input_type: text
           type: text
@@ -185,15 +167,13 @@ sections:
             - 'required_if:use_google_site_verification,true'
           if:
             use_google_site_verification: 'equals true'
-      -
-        handle: use_google_analytics
+      - handle: use_google_analytics
         field:
           type: toggle
           instructions: 'Add Google Analytics tracking code to your head (privacy concern).'
           listable: false
           display: 'Google Analytics'
-      -
-        handle: google_analytics
+      - handle: google_analytics
         field:
           width: 66
           display: 'Tracking ID'
@@ -205,8 +185,7 @@ sections:
             - 'required_if:use_google_analytics,true'
           if:
             use_google_analytics: 'equals true'
-      -
-        handle: anonymize_ip
+      - handle: anonymize_ip
         field:
           type: toggle
           width: 33
@@ -214,15 +193,13 @@ sections:
           display: "Anonymize IP's"
           if:
             use_google_analytics: 'equals true'
-      -
-        handle: use_google_tag_manager
+      - handle: use_google_tag_manager
         field:
           type: toggle
           instructions: 'Add Google Tag Manager tracking code to your head (privacy concern).'
           listable: false
           display: 'Google Tag Manager'
-      -
-        handle: google_tag_manager
+      - handle: google_tag_manager
         field:
           input_type: text
           type: text
@@ -234,15 +211,13 @@ sections:
             - 'required_if:use_google_tag_manager,true'
           if:
             use_google_tag_manager: 'equals true'
-      -
-        handle: use_fathom
+      - handle: use_fathom
         field:
           type: toggle
           instructions: 'Add Fathom tracking code to your head.'
           listable: false
           display: Fathom
-      -
-        handle: fathom
+      - handle: fathom
         field:
           width: 66
           display: 'Site ID'
@@ -254,3 +229,21 @@ sections:
             - 'required_if:use_fathom,true'
           if:
             use_fathom: 'equals true'
+      - handle: use_cloudflare_web_analytics
+        field:
+          type: toggle
+          instructions: 'Add Cloudflare tracking code to your head.'
+          listable: false
+          display: Cloudflare Web Analytics
+      - handle: cloudflare_web_analytics
+        field:
+          width: 66
+          display: 'Beacon ID'
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          validate:
+            - 'required_if:use_cloudflare_web_analytics,true'
+          if:
+            use_cloudflare_web_analytics: 'equals true'
