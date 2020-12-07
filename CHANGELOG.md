@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### What's new
+- Add Cloudflare Web Analytics Tracker. Thanks Vaggelis!
+
 ### What's improved
 - Remove deprecated `scrolling-touch` utility from `resources/views/navigation/_main.antlers.html`.
 
