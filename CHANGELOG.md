@@ -1,8 +1,10 @@
 # Release Notes
 
-## Unreleased
+## 1.15.0 (2020-12-10)
 
 ### What's new
+- Use and implement `focus-visible` Polyfill: https://github.com/studio1902/statamic-peak#focus-visible 
+- Use and implement the `motion-safe` variant: https://github.com/studio1902/statamic-peak#reduced-motion
 - Add Cloudflare Web Analytics Tracker. Thanks Vaggelis!
 
 ### What's improved

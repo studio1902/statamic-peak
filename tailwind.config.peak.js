@@ -46,6 +46,10 @@ module.exports = {
         '[x-cloak]': { 
           display: 'none !important'
         },
+        // Implement the focus-visible polyfill: https://github.com/WICG/focus-visible
+        '.js-focus-visible :focus:not(.focus-visible)': {
+          outline: 'none',
+        },
         // Display screen breakpoints in debug environment.
         'body.debug::before': {
           display: 'block',
