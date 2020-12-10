@@ -129,6 +129,8 @@ Peak comes a picture partial that will add responsive sourcesets to your images.
 * `cover`: *boolean*, true means the image should cover the containing element.
 * `sizes`: *string*, the sizes attribute that informs the browser how the image should be rendered.
 
+The following example renders an image and object-fills it's wrapping container: `{{ partial:components/picture :image="image" cover="true" class="w-full h-full" sizes="(min-width: 768px) 35vw, 90vw" }}`
+
 See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information.
 
 ### Background images
