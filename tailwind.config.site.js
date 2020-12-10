@@ -50,14 +50,14 @@ module.exports = {
           // 'Lavigne',
           ...defaultTheme.fontFamily.serif,
         ],
-      }
-    },
-    // Set default transition durations and easing when using the transition utilities.
-    transitionDuration: {
-      DEFAULT: '200ms',
-    },
-    transitionTimingFunction: {
-      DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      // Set default transition durations and easing when using the transition utilities.
+      transitionDuration: {
+        DEFAULT: '300ms',
+      },
+      transitionTimingFunction: {
+        DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
     },
   },
   plugins: [
