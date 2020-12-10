@@ -11,6 +11,7 @@ mix.postCss('resources/css/site.css', 'public/css/site.css', [
     require('postcss-import'),
     require('tailwindcss'),
     require('postcss-nested'),
+    require('postcss-focus-visible'),
     require('autoprefixer'),
 ]);  
 

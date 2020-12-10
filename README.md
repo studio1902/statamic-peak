@@ -36,8 +36,10 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 * [Configuration changes](#configuration-changes)
 * [Deployment script](#deployment-script)
+* [Focus-visible](#focus-visible)
 * [Modernizr](#modernizr)
 * [Multilingual fields and localization](#multilingual-fields)
+* [Reduced motion](#reduced-motion)
 * [Upcoming features](#upcoming-features)
 * [Warm all caches](#warm-all-caches)
 
@@ -336,6 +338,13 @@ Peak changes the default Statamic config. The following is different:
  php artisan statamic:assets:generate-presets # Generate all asset presets.
  ```
 
+## Focus-visible
+<span id="focus-visible"></span>
+
+Focus-visible solves a lot of issues regarding a11y and styling. To use focus-visible today we need polyfills (for Safari). One in [Javascript](https://github.com/WICG/focus-visible) and one in [PostCSS](https://github.com/csstools/postcss-focus-visible). With focus-visible we can make sure the browser only shows an outline when the user navigates with a keyboard. This means no more outlines in Chrome when you click styled buttons. 
+
+You can take this even further by using the [Tailwind Ring utilties](https://tailwindcss.com/docs/ring-width) together with the `focus-visible:` variant to customize and brand your focus styles. Peak has the `focus-visible:` variant enabled by default for the `ringWidth` utility. You can disable this in `tailwind.config.js`.
+
 ## Modernizr
 <span id="modernizr"></span>
 
@@ -345,6 +354,11 @@ Peak comes with Modernizr support. By default the only feature detect that's add
 <span id="multilingual-fields"></span>
 
 It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
+
+## Reduced motion
+<span id="reduced-motion"></span>
+
+The default anchor styles configured in `tailwind.config.site.js` respects users that prefer less motion. Other transition utilities used in Peaks' templates are prefixed with the `motion-safe:` variant by default. Motion-safe variants are enabled for all animation and transition utilities. You can disable this in `tailwind.config.js`. Read more on [how motion safe works](https://tailwindcss.com/docs/hover-focus-and-other-states#motion-safe).
 
 ## Upcoming features
 <span id="upcoming-features"></span>

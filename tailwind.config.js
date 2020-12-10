@@ -45,10 +45,13 @@ module.exports = {
   // Extend variants.
   variants: {
     extend: {
-      scale: ['group-hover'],
-      skew: ['group-hover'],
-      rotate: ['group-hover'],
-      translate: ['group-hover'],
+      animation: ['motion-safe'],
+      ringWidth: ['focus-visible'],
+      rotate: ['group-hover', 'motion-safe'],
+      scale: ['group-hover', 'motion-safe'],
+      skew: ['group-hover', 'motion-safe'],
+      transitionProperty: ['motion-safe'],
+      translate: ['group-hover', 'motion-safe'],
       // typography: ["dark"],
     }
   }

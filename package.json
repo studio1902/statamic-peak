@@ -11,7 +11,8 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
-    "alpinejs": "^2.7.3"
+    "alpinejs": "^2.7.3",
+    "focus-visible": "^5.2.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.0",
@@ -25,6 +26,7 @@
     "laravel-mix": "^5.0.9",
     "laravel-mix-modernizr": "^1.0.1",
     "postcss": "^7.0.35",
+    "postcss-focus-visible": "^5.0.0",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.3",
     "resolve-url-loader": "^3.1.2",
