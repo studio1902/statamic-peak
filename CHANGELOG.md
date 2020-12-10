@@ -5,6 +5,7 @@
 ### What's improved
 - Don't overwrite default transition duration but extend it.
 - Change default transition length to 300ms.
+- Add `motion-safe` variant for `transitionDuration`.
 
 ## 1.15.0 (2020-12-10)
 
