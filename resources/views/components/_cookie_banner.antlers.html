@@ -1,0 +1,24 @@
+<div 
+    x-data="{ open: true }"
+    x-show="open"
+    class="fixed inset-x-0 bottom-0 bg-primary-900"
+>
+    <div class="fluid-container py-4">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="">
+            <p class="ml-3 font-medium text-primary-100 truncate">
+                {{ trans:strings.cookie_explanation }}
+            </p>
+            </div>
+            <div class="">
+            <button 
+                @click="open = false, window.alpine.setCookie('cookie_consent', true, 365)"
+                type="button" 
+                class="text-primary-100"
+            >
+                {{ trans:strings.cookie_accept }}
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -141,14 +141,14 @@ sections:
           listable: hidden
           default: pages
           display: Collections
-  trackers:
-    display: Trackers
+  privacy:
+    display: Privacy
     fields:
-      - handle: section_trackers
+      - handle: section_verification
         field:
           type: section
-          instructions: 'Configure trackers and analytics.'
-          display: Trackers
+          instructions: 'Configure site verifications.'
+          display: Site verifications
       - handle: use_google_site_verification
         field:
           type: toggle
@@ -167,6 +167,11 @@ sections:
             - 'required_if:use_google_site_verification,true'
           if:
             use_google_site_verification: 'equals true'
+      - handle: section_trackers
+        field:
+          type: section
+          instructions: 'Configure trackers and analytics.'
+          display: Trackers
       - handle: use_google_analytics
         field:
           type: toggle
@@ -247,3 +252,14 @@ sections:
             - 'required_if:use_cloudflare_web_analytics,true'
           if:
             use_cloudflare_web_analytics: 'equals true'
+      - handle: section_cookie_banner
+        field:
+          type: section
+          instructions: 'Enable and configure the cookie banner.'
+          display: Cookie banner
+      - handle: use_cookie_banner
+        field:
+          type: toggle
+          instructions: 'Enable the cookie banner. Google Analytics and Google Tag Manager will be conditonally loaded based on the users consent. If you use Google Analytics with Anonomyze IP''s enabled it will be excempt from needing consent.'
+          listable: false
+          display: 'Cookie banner'

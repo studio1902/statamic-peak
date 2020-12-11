@@ -1,5 +1,9 @@
 <?php
 return [
+    // Cookie banner
+    'cookie_explanation'                => 'Wanna be tracked by big corporations to fill their pockets?',
+    'cookie_accept'                     => 'Yes please!',
+
     // Pagination
     'of'                                => 'of',
     'previous'                          => 'previous',

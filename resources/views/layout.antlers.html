@@ -13,6 +13,7 @@
         class="min-h-screen bg-white {{ environment == 'local' ? 'debug' : '' }}" 
     >
         {{ yield:google_tag_manager }}
+        {{ yield:cookie_banner }}
         {{ partial:layout/header }}
         {{ template_content }}
         {{ partial:layout/footer }}
