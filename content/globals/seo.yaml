@@ -5,8 +5,11 @@ data:
   sitemap_collections:
     - pages
   use_google_site_verification: false
-  use_google_analytics: false
+  use_google_analytics: true
+  google_analytics: ANALYTICS
   anonymize_ip: false
-  use_google_tag_manager: false
+  use_google_tag_manager: true
+  google_tag_manager: GTM
   use_fathom: false
   use_cloudflare_web_analytics: false
+  use_cookie_banner: true

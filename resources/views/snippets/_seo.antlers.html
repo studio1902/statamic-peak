@@ -147,6 +147,10 @@
     {{ /if }}
 
     {{ if seo:use_cloudflare_web_analytics }}
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ seo:cloudflare_web_analytics }}"}'></script>
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ seo:cloudflare_web_analytics }}"}'></script>
     {{ /if }}
 {{ /if }}
+        
+{{ section:cookie_banner }}
+    {{ partial:components/cookie_banner }}
+{{ /section:cookie_banner }}
