@@ -1,8 +1,9 @@
 # Release Notes
 
-## Unreleased
+## 1.15.1 (2020-12-13)
 
 ### What's improved
+- Don't purge `.js-focus-visible` otherwise focus-visible won't work on production.
 - Don't overwrite default transition duration but extend it.
 - Change default transition length to 300ms.
 - Add `motion-safe` variant for `transitionDuration`.
