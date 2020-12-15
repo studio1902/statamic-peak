@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.15.2 (2020-12-15)
+
+### What's improved
+- Return of the `last` variant for `margin` as this is used in `resources/views/typography/_paragraph.antlers.html`.
+
 ## 1.15.1 (2020-12-13)
 
 ### What's improved
