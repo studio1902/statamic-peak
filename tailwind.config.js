@@ -46,6 +46,7 @@ module.exports = {
   variants: {
     extend: {
       animation: ['motion-safe'],
+      margin: ['last'],
       ringWidth: ['focus-visible'],
       rotate: ['group-hover', 'motion-safe'],
       scale: ['group-hover', 'motion-safe'],
