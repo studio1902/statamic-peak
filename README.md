@@ -37,6 +37,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Configuration changes](#configuration-changes)
 * [Deployment script](#deployment-script)
 * [Focus-visible](#focus-visible)
+* [Lighthouse](#lighthouse)
 * [Modernizr](#modernizr)
 * [Multilingual fields and localization](#multilingual-fields)
 * [Reduced motion](#reduced-motion)
@@ -346,6 +347,11 @@ Peak changes the default Statamic config. The following is different:
 Focus-visible solves a lot of issues regarding a11y and styling. To use focus-visible today we need polyfills (for Safari). One in [Javascript](https://github.com/WICG/focus-visible) and one in [PostCSS](https://github.com/csstools/postcss-focus-visible). With focus-visible we can make sure the browser only shows an outline when the user navigates with a keyboard. This means no more outlines in Chrome when you click styled buttons. 
 
 You can take this even further by using the [Tailwind Ring utilties](https://tailwindcss.com/docs/ring-width) together with the `focus-visible:` variant to customize and brand your focus styles. Peak has the `focus-visible:` variant enabled by default for the `ringWidth` utility. You can disable this in `tailwind.config.js`.
+
+## Lighthouse
+<span id="lighthouse"></span>
+
+A performant website is extremely important for a11y and search engine ranking. Using Peak's best practices regarding caching, responsive images, ARIA use and SEO it's not hard to optimize your site for a perfect Lighthouse score.
 
 ## Modernizr
 <span id="modernizr"></span>
