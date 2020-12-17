@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's new
+- Updated `README.example.md` with NGINX config for static resource caching.
+
 ## 1.15.2 (2020-12-15)
 
 ### What's improved
