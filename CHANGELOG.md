@@ -1,9 +1,10 @@
 # Release Notes
 
-## Unreleased
+## 1.15.3 (2020-12-20)
 
 ### What's new
 - Updated `README.example.md` with NGINX config for static resource caching.
+- Updated composer.json to support PHP8.
 
 ## 1.15.2 (2020-12-15)
 
