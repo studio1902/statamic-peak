@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.15.4 (2020-12-28)
+
+### What's improved
+- Include `package-lock.json` for now to prevent compilation errors. Compatibility for Laravel Mix 6 is in the works but the `laravel-mix-modernizr` plugin isn't compatible yet. Keep an eye out on: https://github.com/studio1902/statamic-peak/tree/feature/laravel-mix-6
+
 ## 1.15.3 (2020-12-20)
 
 ### What's new
