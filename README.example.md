@@ -20,6 +20,16 @@ Dump your .env values here with senstive data removed.
 Dump your .env values here with senstive data removed.
 ```
 
+## NGINX config
+
+Add the following to your NGINX config to enable static resource caching:
+
+```
+location ~* ^/(assets|img|themes)/.+\.(jpe?g|webp|gif|png|css|js|ico|xml|svg|woff|woff2?)(\?|$) {
+    expires 30d;
+}
+```
+
 ## Deploy script
 
 ```bash

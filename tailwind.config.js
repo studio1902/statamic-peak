@@ -39,13 +39,14 @@ module.exports = {
       // Remove unused keyframes during purging.
       keyframes: true,
       // Always keep the following classes during purging.
-      safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl'],
+      safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl', 'js-focus-visible'],
     }
   },
   // Extend variants.
   variants: {
     extend: {
       animation: ['motion-safe'],
+      margin: ['last'],
       ringWidth: ['focus-visible'],
       rotate: ['group-hover', 'motion-safe'],
       scale: ['group-hover', 'motion-safe'],

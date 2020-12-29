@@ -1,8 +1,33 @@
 # Release Notes
 
-## Unreleased
+## 1.16.0 (2020-12-29)
 
 ### What's improved
+- Upgrade to Laravel Mix 6.
+
+### What's gone
+- Modernzr integration for WebP detection (previously used in the background image snippet).
+
+## 1.15.4 (2020-12-28)
+
+### What's improved
+- Include `package-lock.json` for now to prevent compilation errors. Compatibility for Laravel Mix 6 is in the works but the `laravel-mix-modernizr` plugin isn't compatible yet. Keep an eye out on: https://github.com/studio1902/statamic-peak/tree/feature/laravel-mix-6
+
+## 1.15.3 (2020-12-20)
+
+### What's new
+- Updated `README.example.md` with NGINX config for static resource caching.
+- Updated composer.json to support PHP8.
+
+## 1.15.2 (2020-12-15)
+
+### What's improved
+- Return of the `last` variant for `margin` as this is used in `resources/views/typography/_paragraph.antlers.html`.
+
+## 1.15.1 (2020-12-13)
+
+### What's improved
+- Don't purge `.js-focus-visible` otherwise focus-visible won't work on production.
 - Don't overwrite default transition duration but extend it.
 - Change default transition length to 300ms.
 - Add `motion-safe` variant for `transitionDuration`.
