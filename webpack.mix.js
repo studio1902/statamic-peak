@@ -1,7 +1,7 @@
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
 
 mix.js('resources/js/site.js', 'public/js/site.js')
-    .sourceMaps(false);
+    .sourceMaps(false)
 
 mix.postCss('resources/css/site.css', 'public/css/site.css', [
     require('postcss-import'),
@@ -9,7 +9,7 @@ mix.postCss('resources/css/site.css', 'public/css/site.css', [
     require('postcss-nested'),
     require('postcss-focus-visible'),
     require('autoprefixer'),
-]);  
+])
 
 mix.browserSync({
     proxy: process.env.APP_URL,
@@ -20,6 +20,6 @@ mix.browserSync({
     // Option to open in non default OS browser.
     // browser: "firefox",
     notify: false
-});
+})
 
-mix.version();
+mix.version()

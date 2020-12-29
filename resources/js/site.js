@@ -1,2 +1,2 @@
-import 'alpinejs';
-import 'focus-visible';
+import 'alpinejs'
+import 'focus-visible'
