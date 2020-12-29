@@ -5,87 +5,33 @@
             background-image: url("{{ glide:url preset='md' }}");
             background-position: {{ focus_css or 'center' }};
         }
-        .webp .{{ class }} {
-            background-image: url("{{ glide:url preset='md-webp' }}");
-        }
 
         @media only screen and (min-width: 320px) {
-            .no-webp .{{ class }} {
-                background-image:  url("{{ glide:url preset='sm' }}");
-            }
-            .webp .{{ class }} {
+            .{{ class }} {
                 background-image:  url("{{ glide:url preset='sm-webp' }}");
             }
         }
 
-        @media only screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
-            .no-webp .{{ class }} {
-                background-image:  url("{{ glide:url preset='md' }}");
-            }
-            .webp .{{ class }} {
+        @media only screen and (min-width: 480px), only screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+            .{{ class }} {
                 background-image:  url("{{ glide:url preset='md-webp' }}");
             }
         }
 
-        @media only screen and (min-width: 480px) {
-            .no-webp .{{ class }} {
-                background-image:  url("{{ glide:url preset='md' }}");
-            }
-            .webp .{{ class }} {
-                background-image:  url("{{ glide:url preset='md-webp' }}");
-            }
-        }
-
-        @media only screen and (min-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-            .no-webp .{{ class }} {
-                background-image:  url("{{ glide:url preset='lg' }}");
-            }
-            .webp .{{ class }} {
+        @media only screen and (min-width: 768px), only screen and (min-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+            .{{ class }} {
                 background-image:  url("{{ glide:url preset='lg-webp' }}");
             }
         }
 
-        @media only screen and (min-width: 768px) {
-            .no-webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='lg' }}");
-            }
-            .webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='lg-webp' }}");
-            }
-        }
-
-        @media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-            .no-webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='xl' }}");
-            }
-            .webp .{{ class }} { 
+        @media only screen and (min-width: 1280px), only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+            .{{ class }} { 
                 background-image:  url("{{ glide:url preset='xl-webp' }}");
             }
         }
 
-        @media only screen and (min-width: 1280px) {
-            .no-webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='xl' }}");
-            }
-            .webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='xl-webp' }}");
-            }
-        }
-
-        @media only screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
-            .no-webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='2xl' }}");
-            }
-            .webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='2xl-webp' }}");
-            }
-        }
-
-        @media only screen and (min-width: 1440px) {
-            .no-webp .{{ class }} { 
-                background-image:  url("{{ glide:url preset='2xl' }}");
-            }
-            .webp .{{ class }} { 
+        @media only screen and (min-width: 1440px), only screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) {
+            .{{ class }} { 
                 background-image:  url("{{ glide:url preset='2xl-webp' }}");
             }
         }
