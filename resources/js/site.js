@@ -1,6 +1,5 @@
 import 'alpinejs';
 import 'focus-visible';
-import 'Modernizr';
 
 // Set cookies with Alpine (used by the cookie banner).
 window.alpine = {
