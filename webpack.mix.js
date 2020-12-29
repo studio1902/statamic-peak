@@ -1,13 +1,6 @@
 const mix = require('laravel-mix');
-require('laravel-mix-modernizr');
 
 mix.js('resources/js/site.js', 'public/js/site.js')
-    .options({
-        legacyNodePolyfills: true
-    })
-    .modernizr({
-        Modernizr: 'modernizr.config.js'
-    })
     .sourceMaps(false);
 
 mix.postCss('resources/css/site.css', 'public/css/site.css', [
