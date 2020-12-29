@@ -37,6 +37,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Configuration changes](#configuration-changes)
 * [Deployment script](#deployment-script)
 * [Focus-visible](#focus-visible)
+* [Lighthouse](#lighthouse)
 * [Modernizr](#modernizr)
 * [Multilingual fields and localization](#multilingual-fields)
 * [Reduced motion](#reduced-motion)
@@ -68,7 +69,7 @@ Before using Peak make sure you're familiar with:
 <span id="installation"></span>
 
 ### Installation via the CLI
-The easiest way to install Statamic together with Peak is to use the [official CLI](https://github.com/statamic/cli). Install the CLI by running `composer global require statamic/cli` and for each project just run `statamic new my-site` and pick Peak as a starter kit. Alternatively you can skip this manual selection by running: `statamic new my-site --starter="statamic/starter-kit-cool-writings"`.
+The easiest way to install Statamic together with Peak is to use the [official CLI](https://github.com/statamic/cli). Install the CLI by running `composer global require statamic/cli` and for each project just run `statamic new my-site` and pick Peak as a starter kit. Alternatively you can skip this manual selection by running: `statamic new my-site --starter="studio1902/statamic-peak"`.
 
 ### Manual installation.
 
@@ -347,10 +348,10 @@ Focus-visible solves a lot of issues regarding a11y and styling. To use focus-vi
 
 You can take this even further by using the [Tailwind Ring utilties](https://tailwindcss.com/docs/ring-width) together with the `focus-visible:` variant to customize and brand your focus styles. Peak has the `focus-visible:` variant enabled by default for the `ringWidth` utility. You can disable this in `tailwind.config.js`.
 
-## Modernizr
-<span id="modernizr"></span>
+## Lighthouse
+<span id="lighthouse"></span>
 
-Peak comes with Modernizr support. By default the only feature detect that's added is WebP. It will add a `webp` class or a `no-webp` class to the `<html>` tag. If you want to add more feature detects you can edit `modernizr.config.js`.
+A performant website is extremely important for a11y and search engine ranking. Using Peak's best practices regarding caching, responsive images, ARIA use and SEO it's not hard to optimize your site for a perfect Lighthouse score.
 
 ## Multilingual fields and localization
 <span id="multilingual-fields"></span>
