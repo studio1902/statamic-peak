@@ -353,11 +353,6 @@ You can take this even further by using the [Tailwind Ring utilties](https://tai
 
 A performant website is extremely important for a11y and search engine ranking. Using Peak's best practices regarding caching, responsive images, ARIA use and SEO it's not hard to optimize your site for a perfect Lighthouse score.
 
-## Modernizr
-<span id="modernizr"></span>
-
-Peak comes with Modernizr support. By default the only feature detect that's added is WebP. It will add a `webp` class or a `no-webp` class to the `<html>` tag. If you want to add more feature detects you can edit `modernizr.config.js`.
-
 ## Multilingual fields and localization
 <span id="multilingual-fields"></span>
 
