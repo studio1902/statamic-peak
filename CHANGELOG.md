@@ -1,5 +1,13 @@
 # Release Notes
 
+## 1.16.0 (2020-12-29)
+
+### What's improved
+- Upgrade to Laravel Mix 6.
+
+### What's gone
+- Modernzr integration for WebP detection (previously used in the background image snippet).
+
 ## 1.15.4 (2020-12-28)
 
 ### What's improved
