@@ -30,6 +30,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Navigation](#navigation)
 * [Page builder](#page-builder)
 * [Pagination](#pagination)
+* [Search](#search)
 * [SEO](#seo)
 * [Statamic login screen](#statamic-login-screen)
 * [Typography](#typography)
@@ -241,6 +242,19 @@ The pagination partial automatically adds linktags to your documents head with `
 
 > Note: the strings used in the partial are translatable and can be edited in `resources/lang/en/site.php`.
 
+## Search
+<span id="search"></span>
+
+Statamic comes with great search functionality out of the box. If you want to use this you have to do some configuration and templating work. Peak comes with basic search support you can easily customize to suit your needs. To enable default search do the following:
+
+* Uncomment the search partial in `views/navigation/_main.antlers.html`.
+* Uncomment the search results route  in `routes/web.php`.
+* Add fields you want indexed to the index in `config/statamic/search.php`. The `page_builder` field is added by default.
+* Update the search index by running `php please search:update --all`.
+* Make sure you add the update command to your [deployment script](#deployment-script).
+
+> Note: the strings used in search form and result templates are translatable and can be edited in `resources/lang/en/site.php`.
+
 ## SEO
 <span id="seo"></span>
 
@@ -327,11 +341,13 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
 | `config/statamic/git.php` |  | Add `[BOT]` to git commit message. |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
+| `config/statamic/search.php` | `title` in search index | `title`, and `page_builder` in search index |
 | `config/statamic/stache.php` | `'watcher' => true` | `'watcher' => env('STATAMIC_STACHE_WATCHER', true)` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
 | `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
-| `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token. 
+| `routes/web.php` |  | Routes for the search [functionality](#search). Commented by default.
+| `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token.  
 
 ## Deployment script
  <span id="deployment-script"></span>
@@ -341,6 +357,7 @@ Peak changes the default Statamic config. The following is different:
  php artisan cache:clear # Clear the Laravel application cache.
  php artisan config:cache # Clear and refresh the Laravel config cache.
  php artisan statamic:stache:warm # Warm the Statamic stache.
+ php please search:update --all # Update the search index.
  php artisan statamic:static:clear # Clear the Statamic static cache (if you use this).
  php artisan warm # Warm the Statamic static cache (if you use this / only available in Peak).
  php artisan statamic:assets:generate-presets # Generate all asset presets.

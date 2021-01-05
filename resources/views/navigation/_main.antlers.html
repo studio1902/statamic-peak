@@ -2,7 +2,7 @@
 
 {{# The desktop navigation. Hidden on smaller screen. Shown from md and up. #}}
 <nav class="hidden md:block">
-    <ul class="flex space-x-8">
+    <ul class="flex items-center space-x-8">
         {{ nav:main max_depth="2" include_home="true" }}
             <li
                 {{ if children }}
@@ -51,6 +51,10 @@
                 {{ /if }}
             </li>
         {{ /nav:main }}
+
+        {{# Uncomment the following line to add a search form. Also enable the route in `routes/web.php` and update the search index in `config/statamic/search.php`. #}}
+        {{# {{ partial:components/search_form }} #}}
+
     </ul>
 </nav>
 
