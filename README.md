@@ -280,6 +280,7 @@ And optionally to erase all traces:
 * Delete the SEO global blueprint `resources/blueprints/globals/seo.yaml`.
 * Delete the SEO fieldset `resources/fieldsets/seo.yaml`.
 * Delete the SEO partial `resources/views/snippets/_seo.antlers.html`.
+* Delete the Cookie Banner fieldset: `resources/views/components/_cookie_banner.antlers.html`.
 
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
