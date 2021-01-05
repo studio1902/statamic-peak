@@ -1,13 +1,15 @@
 <?php
 return [
     // Cookie banner
-    'cookie_explanation'                => 'Wanna be tracked by big corporations to fill their pockets?',
-    'cookie_accept'                     => 'Yes please!',
+    'cookie_accept'                     => 'I accept',
+    'cookie_deny'                       => 'I decline',
+    'cookie_explanation'                => 'This site uses tracking cookies used for marketing and statistics.',
+    'cookie_learn_more'                 => 'Learn more',
 
     // Pagination
+    'next'                              => 'next',
     'of'                                => 'of',
     'previous'                          => 'previous',
-    'next'                              => 'next',
 
     // Contact form
     'form_honeypot'                     => 'Fax',
