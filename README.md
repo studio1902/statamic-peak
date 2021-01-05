@@ -262,6 +262,8 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 * Add trackers: Google Analytics, Google Tag Manager, Site Verification or Fathom.
 * Use a Cookie Consent Notification. Make sure you listen to `cookie_consent` to be `true` in GTM.
 
+> Note: tracking and cookie consent by default only work on the production `environment`.
+
 [Screenshot global](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-01.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-02.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-03.png)
 
 ### Disable SEO features
