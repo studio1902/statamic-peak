@@ -319,7 +319,7 @@ sections:
         handle: link_privacy_statement
         field:
           type: toggle
-          instructions: 'Link to a privacy statement or cookie policy from the cookie notificaiton.'
+          instructions: 'Link to a privacy statement or cookie policy from the cookie notification.'
           listable: false
           display: 'Link to PDF'
           width: 50
