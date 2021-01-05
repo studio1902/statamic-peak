@@ -11,7 +11,7 @@
     5. rename `yield:google_tag_manager` to `yield:seo_body` in `resources/views/layout.antlers.html`
     6. add `resources/components/_cookie_banner.antlers.html`
 
-> Note: tracking and cookie consent by default only work on the production `environment`.
+> Note: tracking and cookie consent by default only work on the `production` environment.
 
 ## 1.16.0 (2020-12-29)
 
