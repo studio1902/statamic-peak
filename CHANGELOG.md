@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Updated and added (missing) inline documentation.
+
 ## 1.17.1 (2021-01-05)
 
 ### What's improved
