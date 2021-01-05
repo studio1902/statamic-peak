@@ -1,5 +1,16 @@
 # Release Notes
 
+## 1.17.0 (2021-01-05)
+
+### What's new
+- **Breaking**: Added an optional cookie notification banner. This changes some SEO field handles and the SEO yield name. If you're updating manually make sure you:
+    1. overwrite `resources/blueprints/seo.yaml`
+    2. overwrite `resources/views/snippets_seo.antlers.html`
+    3. merge `resources/lang/en/strings.php`
+    4. merge `resources/js/site.js`
+    5. rename `yield:google_tag_manager` to `yield:seo_body` in `resources/views/layout.antlers.html`
+    6. add `resources/components/_cookie_banner.antlers.html`
+
 ## 1.16.0 (2020-12-29)
 
 ### What's improved
