@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.17.1 (2021-01-05)
+
+### What's improved
+- You can now either link to an asset (PDF) or entry from the cookie banner regarding more information about your privacy policy.
+
 ## 1.17.0 (2021-01-05)
 
 ### What's new

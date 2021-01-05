@@ -318,28 +318,41 @@ sections:
       -
         handle: link_privacy_statement
         field:
-          type: toggle
+          options:
+            none: None
+            entry: Entry
+            pdf: PDF
+          default: none
+          type: button_group
           instructions: 'Link to a privacy statement or cookie policy from the cookie notification.'
           listable: false
-          display: 'Link to PDF'
+          display: Link to more information
           width: 50
           if:
             tracker_type: 'equals gtm'
             use_cookie_banner: 'equals true'
       -
-        handle: privacy_statement
-        field:
-          mode: grid
-          restrict: false
-          allow_uploads: true
-          max_files: 1
-          type: assets
-          instructions: 'The PDF you want to link.'
-          localizable: true
-          listable: false
+        handle: privacy_statement_asset
+        field: common.image
+        config:
+          listable: hidden
+          display: 'Privacy statement (PDF)'
+          instructions: 'The PDF you want to link to.'
           width: 50
-          display: Privacy statement (PDF)
           if:
             tracker_type: 'equals gtm'
             use_cookie_banner: 'equals true'
-            link_privacy_statement: 'equals true'
+            link_privacy_statement: 'equals pdf'
+      -
+        handle: privacy_statement_entry
+        field: common.entry
+        config:
+          listable: hidden
+          display: 'Privacy statement (entry)'
+          localizable: true
+          width: 50
+          instructions: 'The entry you want to link to.'
+          if:
+            tracker_type: 'equals gtm'
+            use_cookie_banner: 'equals true'
+            link_privacy_statement: 'equals entry'
