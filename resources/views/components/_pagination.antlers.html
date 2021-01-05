@@ -1,3 +1,4 @@
+{{# Renders pagination results. Include in a result set using `{{ partial:components/pagination }}`. Auto adds pagination links to `resources/views/snippets/_seo.antlers.html`. #}}
 {{ if paginate.total_pages > 1 }}
     {{ paginate }}
         {{ section:pagination }}
