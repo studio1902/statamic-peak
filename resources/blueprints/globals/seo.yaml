@@ -2,12 +2,14 @@ sections:
   page_titles:
     display: 'Page titles'
     fields:
-      - handle: section_title
+      -
+        handle: section_title
         field:
           type: section
           instructions: 'The website title'
           display: Title
-      - handle: title_separator
+      -
+        handle: title_separator
         field:
           options:
             ' | ': '|'
@@ -26,7 +28,8 @@ sections:
           width: 33
           listable: hidden
           display: Separator
-      - handle: site_name
+      -
+        handle: site_name
         field:
           input_type: text
           type: text
@@ -38,12 +41,14 @@ sections:
   json-ld:
     display: JSON-ld
     fields:
-      - handle: section_schema
+      -
+        handle: section_schema
         field:
           type: section
           instructions: 'JSON-LD Schema'
           display: 'Knowledge graph data'
-      - handle: json_ld_type
+      -
+        handle: json_ld_type
         field:
           options:
             none: None
@@ -55,7 +60,8 @@ sections:
           instructions: 'The type of data to be added on each page.'
           listable: false
           display: Type
-      - handle: organization_name
+      -
+        handle: organization_name
         field:
           input_type: text
           type: text
@@ -67,7 +73,8 @@ sections:
             json_ld_type: 'equals organization'
           validate:
             - 'required_if:json_ld_type,organization'
-      - handle: organization_logo
+      -
+        handle: organization_logo
         field: common.image
         config:
           listable: hidden
@@ -76,7 +83,8 @@ sections:
           width: 33
           if:
             json_ld_type: 'equals organization'
-      - handle: person_name
+      -
+        handle: person_name
         field:
           listable: hidden
           display: 'Person name'
@@ -88,7 +96,8 @@ sections:
             json_ld_type: 'equals person'
           validate:
             - 'required_if:json_ld_type,person'
-      - handle: json_ld
+      -
+        handle: json_ld
         field:
           type: textarea
           instructions: 'Add custom JSON-LD to be included on each page. This can include stuff like business hours and contact data.'
@@ -99,12 +108,14 @@ sections:
             json_ld_type: 'equals custom'
           validate:
             - 'required_if:json_ld_type,custom'
-      - handle: section_breadcrumbs
+      -
+        handle: section_breadcrumbs
         field:
           type: section
           instructions: 'JSON-ld Breadcrumbs'
           display: Breadcrumbs
-      - handle: breadcrumbs
+      -
+        handle: breadcrumbs
         field:
           type: toggle
           instructions: 'Add JSON-ld breadcrumbs to each entry.'
@@ -113,12 +124,14 @@ sections:
   social:
     display: Social
     fields:
-      - handle: section_og
+      -
+        handle: section_og
         field:
           type: section
           instructions: 'Open Graph meta tags'
           display: Social
-      - handle: og_image
+      -
+        handle: og_image
         field: common.image
         config:
           listable: hidden
@@ -128,12 +141,14 @@ sections:
   sitemap:
     display: Sitemap
     fields:
-      - handle: section_sitemap
+      -
+        handle: section_sitemap
         field:
           type: section
           instructions: 'Configure the sitemap.xml'
           display: Sitemap
-      - handle: sitemap_collections
+      -
+        handle: sitemap_collections
         field:
           mode: select
           type: collections
@@ -144,18 +159,21 @@ sections:
   trackers:
     display: Trackers
     fields:
-      - handle: section_trackers
+      -
+        handle: section_verification
         field:
           type: section
-          instructions: 'Configure trackers and analytics.'
-          display: Trackers
-      - handle: use_google_site_verification
+          instructions: 'Configure site verifications.'
+          display: 'Site verifications'
+      -
+        handle: use_google_site_verification
         field:
           type: toggle
           instructions: 'Add a google-site-verification meta tag to your head.'
           listable: false
           display: 'Google site verification'
-      - handle: google_site_verification
+      -
+        handle: google_site_verification
         field:
           input_type: text
           type: text
@@ -167,57 +185,21 @@ sections:
             - 'required_if:use_google_site_verification,true'
           if:
             use_google_site_verification: 'equals true'
-      - handle: use_google_analytics
+      -
+        handle: section_privacy_trackers
         field:
-          type: toggle
-          instructions: 'Add Google Analytics tracking code to your head (privacy concern).'
-          listable: false
-          display: 'Google Analytics'
-      - handle: google_analytics
-        field:
-          width: 66
-          display: 'Tracking ID'
-          input_type: text
-          type: text
-          localizable: true
-          listable: hidden
-          validate:
-            - 'required_if:use_google_analytics,true'
-          if:
-            use_google_analytics: 'equals true'
-      - handle: anonymize_ip
-        field:
-          type: toggle
-          width: 33
-          listable: false
-          display: "Anonymize IP's"
-          if:
-            use_google_analytics: 'equals true'
-      - handle: use_google_tag_manager
-        field:
-          type: toggle
-          instructions: 'Add Google Tag Manager tracking code to your head (privacy concern).'
-          listable: false
-          display: 'Google Tag Manager'
-      - handle: google_tag_manager
-        field:
-          input_type: text
-          type: text
-          localizable: true
-          listable: hidden
-          width: 66
-          display: 'Tracking ID'
-          validate:
-            - 'required_if:use_google_tag_manager,true'
-          if:
-            use_google_tag_manager: 'equals true'
-      - handle: use_fathom
+          type: section
+          instructions: 'Configure privacty friendly trackers that don''t require a cookie notification.'
+          display: Privacy Friendly Trackers
+      -
+        handle: use_fathom
         field:
           type: toggle
           instructions: 'Add Fathom tracking code to your head.'
           listable: false
           display: Fathom
-      - handle: fathom
+      -
+        handle: fathom
         field:
           width: 66
           display: 'Site ID'
@@ -229,13 +211,15 @@ sections:
             - 'required_if:use_fathom,true'
           if:
             use_fathom: 'equals true'
-      - handle: use_cloudflare_web_analytics
+      -
+        handle: use_cloudflare_web_analytics
         field:
           type: toggle
           instructions: 'Add Cloudflare tracking code to your head.'
           listable: false
-          display: Cloudflare Web Analytics
-      - handle: cloudflare_web_analytics
+          display: 'Cloudflare Web Analytics'
+      -
+        handle: cloudflare_web_analytics
         field:
           width: 66
           display: 'Beacon ID'
@@ -247,3 +231,115 @@ sections:
             - 'required_if:use_cloudflare_web_analytics,true'
           if:
             use_cloudflare_web_analytics: 'equals true'
+      -
+        handle: section_google_trackers
+        field:
+          type: section
+          instructions: 'Configure Google trackers and an optional cookie notification.'
+          display: Google Trackers
+      -
+        handle: tracker_type
+        field:
+          options:
+            none: None
+            gtag: Google Analytics
+            gtm: Google Tag Manager
+          default: none
+          type: button_group
+          instructions: 'The type of Google Tracker you want added on each page.'
+          listable: false
+          display: Google Tracker type
+      -
+        handle: google_analytics
+        field:
+          width: 66
+          display: 'Tracking ID'
+          input_type: text
+          type: text
+          localizable: true
+          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent. Use Google Tag Manager to load the Analytics tracking scripts.*'
+          listable: hidden
+          validate:
+            - 'required_if:tracker_type,gtag'
+          if:
+            tracker_type: 'equals gtag'
+      -
+        handle: anonymize_ip
+        field:
+          type: toggle
+          width: 33
+          listable: false
+          default: true
+          display: 'Anonymize IP''s'
+          instructions: 'Enable this to be excempt from needing cookie consent.'
+          if:
+            tracker_type: 'equals gtag'
+      -
+        handle: google_tag_manager
+        field:
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          width: 66
+          display: 'Tracking ID'
+          instructions: 'The GTM tracking ID.'
+          validate:
+            - 'required_if:tracker_type,gtm'
+          if:
+            tracker_type: 'equals gtm'
+      -
+        handle: use_cookie_banner
+        field:
+          type: toggle
+          instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM and set GTM to only function when the cookie `cookie_consent` is set to `true`.'
+          listable: false
+          display: 'Cookie banner'
+          width: 50
+          if:
+            tracker_type: 'equals gtm'
+      -
+        handle: cookie_expiration_days
+        field:
+          input_type: number
+          prepend: After
+          append: days
+          antlers: false
+          display: 'Expire cookie consent'
+          type: text
+          icon: text
+          instructions: 'After how many days the cookie consent cookie should expire and users need to consent again.'
+          listable: hidden
+          width: 50
+          default: 365
+          if:
+            tracker_type: 'equals gtm'
+            use_cookie_banner: 'equals true'
+      -
+        handle: link_privacy_statement
+        field:
+          type: toggle
+          instructions: 'Link to a privacy statement or cookie policy from the cookie notificaiton.'
+          listable: false
+          display: 'Link to PDF'
+          width: 50
+          if:
+            tracker_type: 'equals gtm'
+            use_cookie_banner: 'equals true'
+      -
+        handle: privacy_statement
+        field:
+          mode: grid
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          type: assets
+          instructions: 'The PDF you want to link.'
+          localizable: true
+          listable: false
+          width: 50
+          display: Privacy statement (PDF)
+          if:
+            tracker_type: 'equals gtm'
+            use_cookie_banner: 'equals true'
+            link_privacy_statement: 'equals true'

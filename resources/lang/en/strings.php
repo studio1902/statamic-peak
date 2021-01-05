@@ -1,9 +1,15 @@
 <?php
 return [
+    // Cookie banner
+    'cookie_accept'                     => 'I accept',
+    'cookie_deny'                       => 'I decline',
+    'cookie_explanation'                => 'This site uses tracking cookies used for marketing and statistics.',
+    'cookie_learn_more'                 => 'Learn more',
+
     // Pagination
+    'next'                              => 'next',
     'of'                                => 'of',
     'previous'                          => 'previous',
-    'next'                              => 'next',
 
     // Contact form
     'form_honeypot'                     => 'Fax',

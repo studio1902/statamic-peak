@@ -5,8 +5,6 @@ data:
   sitemap_collections:
     - pages
   use_google_site_verification: false
-  use_google_analytics: false
-  anonymize_ip: false
-  use_google_tag_manager: false
   use_fathom: false
   use_cloudflare_web_analytics: false
+  tracker_type: none
