@@ -260,6 +260,7 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 * Add knowledge graph data (organization, person or custom).
 * Auto generated optional JSON-ld breadcrumbs.
 * Add trackers: Google Analytics, Google Tag Manager, Site Verification or Fathom.
+* Use a Cookie Consent Notification. Make sure you listen to `cookie_consent` to be `true` in GTM.
 
 [Screenshot global](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-01.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-02.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-03.png)
 
@@ -267,7 +268,7 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 
 If you plan on using an addon for SEO and Peak's built in features, do the following:
 * Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
-* Remove `{{ yield:google_tag_manager }}` from `resources/views/layout.antlers.html`.
+* Remove `{{ yield:seo_body }}` from `resources/views/layout.antlers.html`.
 * Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
 * Remove the whole `{{ section:pagination }}{{ /section:pagination }}` from `resources/views/components/_pagination.antlers.html`.
 * Delete the SEO global `content/globals/seo.yaml`.
@@ -277,7 +278,6 @@ And optionally to erase all traces:
 * Delete the SEO global blueprint `resources/blueprints/globals/seo.yaml`.
 * Delete the SEO fieldset `resources/fieldsets/seo.yaml`.
 * Delete the SEO partial `resources/views/snippets/_seo.antlers.html`.
-
 
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
