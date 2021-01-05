@@ -39,4 +39,3 @@ jobs:
           asset_path: ./dist.tar.gz
           asset_name: dist.tar.gz
           asset_content_type: application/tar+gz
- No newline at end of file
