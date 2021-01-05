@@ -46,6 +46,7 @@ npm run production
 php artisan cache:clear
 php artisan config:cache
 php artisan statamic:stache:warm
+php please search:update --all
 php artisan statamic:static:clear
 php artisan warm
 php artisan statamic:assets:generate-presets
