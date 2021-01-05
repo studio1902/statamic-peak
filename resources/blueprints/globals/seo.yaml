@@ -257,7 +257,7 @@ sections:
           input_type: text
           type: text
           localizable: true
-          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent. Use Google Tag Manager to load the Analytics tracking scripts.*'
+          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent in the EU. You should then use Google Tag Manager to load the Analytics tracking scripts and enable the Cookie Banner.*'
           listable: hidden
           validate:
             - 'required_if:tracker_type,gtag'
