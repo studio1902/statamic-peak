@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.17.0 (2021-01-05)
+## 1.17.0 (2021-01-05) 
 
 ### What's new
 - **Breaking**: Added an optional cookie notification banner. This changes some SEO field handles and the SEO yield name. If you're updating manually make sure you:
