@@ -1,0 +1,44 @@
+{{# The search template showing search results, if you enable the search form partial in `views/navigation/_main.antlers.html` and the route in `routes/web.php`. #}}
+<main class="outer-grid">    
+    <section class="fluid-container grid grid-cols-12 gap-y-6">
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            {{ partial:typography/h1 class="mb-2" content="{trans:strings.search_results_for} &quot;{get:q}&quot;" }}
+        </div>
+
+        {{ search:results }}
+            {{ if no_results }}
+                <article class="col-span-12 md:col-span-8 md:col-start-3">
+                    {{ partial:typography/paragraph content="{trans:strings.search_no_results}" }}
+                </article>
+            {{ else }}
+                <article class="col-span-12 md:col-span-8 md:col-start-3">
+                    <a class="flex flex-col" href="{{ url }}">
+                        <span class="text-neutral-500">{{ permalink }}</span>
+                        
+                        {{ partial:typography/h2 class="mt-0" color="text-primary-600" :content="title" }}
+                    </a>
+                    <p>
+                        {{# Sow the SEO meta description if available. #}}
+                        {{ if seo_description }}
+                            {{ seo_description }}
+
+                        {{# Fall back to the bard field. #}}
+                        {{ elseif page_builder }}
+                            {{ page_builder limit="1" }}
+                                {{ if bard }}
+                                    {{ bard where="type:text" limit="1" }}
+                                        {{ text | strip_tags | safe_truncate:180:... }}
+                                    {{ /bard }}
+
+                                {{# Or a field called `text`. #}}
+                                {{ elseif text }}
+                                    {{ text safe_truncate="180|..." }}
+                                {{ /if }}
+                            {{ /page_builder }}
+                        {{ /if }}
+                    </p>
+                </article>
+            {{ /if }}
+        {{ /search:results }}
+    </section>
+</main>

@@ -24,4 +24,9 @@ return [
     'form_mail_url'                     => config('app.url'),
     'form_send'                         => 'Send message',
     'form_success'                      => 'Thank you, we received your message and will contact you as soon as possible.',
+
+    // Search
+    'search'                            => 'Search',
+    'search_no_results'                 => 'No results found',
+    'search_results_for'                => 'Results for',
 ];
