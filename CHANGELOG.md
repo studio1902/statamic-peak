@@ -1,6 +1,9 @@
 # Release Notes
 
-## Unreleased
+## 1.18.0 (2021-01-05)
+
+### What's new
+- Search functionality. Disabled by default. See the readme for more details on how to [enable and extend search](https://github.com/studio1902/statamic-peak#search). 
 
 ### What's improved
 - Updated and added (missing) inline documentation.
