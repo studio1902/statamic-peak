@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.18.1 (2021-01-06)
+
+### What's improved
+- Prevent cookie banner from showing when GTM is off.
+- Style.
+
 ## 1.18.0 (2021-01-05)
 
 ### What's new
