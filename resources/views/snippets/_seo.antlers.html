@@ -123,9 +123,9 @@
     {{ section:seo_body }}
         {{ if seo:tracker_type == 'gtm' }}
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ seo:google_tag_manager }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        {{ /if }}
-        {{ if seo:use_cookie_banner }}
-            {{ partial:components/cookie_banner }}
+            {{ if seo:use_cookie_banner }}
+                {{ partial:components/cookie_banner }}
+            {{ /if }}
         {{ /if }}
     {{ /section:seo_body }}
 
