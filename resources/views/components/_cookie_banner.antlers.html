@@ -8,6 +8,7 @@
     <div class="fluid-container flex flex-col md:flex-row md:items-center justify-between flex-wrap py-4 space-y-4 md:space-y-0 md:space-x-4">
         <p class="text-sm font-bold text-primary-50">
             {{ trans:strings.cookie_explanation }}
+            
             {{ if seo:link_privacy_statement == 'entry' }}
                 <a class="underline" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
             {{ elseif seo:link_privacy_statement == 'pdf' }}
@@ -22,6 +23,7 @@
             >
                 {{ trans:strings.cookie_deny }}
             </button>
+
             <button 
                 @click="open = false, window.setCookie('cookie_consent', true, {{ seo:cookie_expiration_days }})"
                 type="button" 
