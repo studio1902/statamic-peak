@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.18.2 (2021-01-07)
+
+### What's improved
+- Fix CSS selector and value so the negative margin bottom actually works on last childs with a class of `w-full` in the `outer-grid`. Thank you [Manuel](https://github.com/mnlmaier).
+
 ## 1.18.1 (2021-01-06)
 
 ### What's improved
