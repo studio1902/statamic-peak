@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.18.4 (2021-01-08)
+
+### What's improved
+- The page builder replicator is now localizable by default. Thanks [Manuel](https://github.com/mnlmaier).
+- Update DynamicToken route to be compatible with Laravel 8. Thanks [Duncan](https://github.com/damcclean).
+
 ## 1.18.3 (2021-01-08)
 
 ### What's improved
