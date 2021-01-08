@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- The page builder replicator is now localizable by default. Thanks [Manuel](https://github.com/mnlmaier).
+
 ## 1.18.3 (2021-01-08)
 
 ### What's improved
