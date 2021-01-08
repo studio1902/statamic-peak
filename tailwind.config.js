@@ -18,15 +18,8 @@ module.exports = {
     require('./tailwind.config.peak.js'),
     require('./tailwind.config.site.js'),
   ],
-  // Opt in to future Tailwind features.
-  future: {  },
   // Dark mode
-  dark: 'media', // or 'class'
-  experimental: {
-    darkModeVariant: false,
-    // Add extra breakpoint.
-    additionalBreakpoint: false,
-  },
+  darkMode: 'media', // or 'class'
   // Configure Purge CSS.
   purge: {
     content: [
