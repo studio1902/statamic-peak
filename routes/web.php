@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DynamicToken;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Dynamic Token route for posting a form with Ajax.
-Route::get('/!/DynamicToken/refresh', 'DynamicToken@getRefresh');
+Route::get('/!/DynamicToken/refresh', [DynamicToken::class, 'getRefresh']);
 
 // The Sitemap route to the sitemap.xml
 Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
