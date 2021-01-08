@@ -7,7 +7,23 @@
         {{# Replace the following line with the SEO Pro or Aardvark SEO tag if you want to use an addon for SEO. Also remove the seo section in you page blueprint.#}}
         {{ partial:snippets/seo }}
         <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
-        {{# Generate your favicons here https://realfavicongenerator.net #}}
+
+        {{# SVG of any size, main icon #}}
+        <link rel="icon" href="favicon.svg">
+        {{# Single color Safari icon, on transparent bg #}}
+        <link rel=”mask-icon” href=”mask-icon.svg” color=”#000000">
+        {{# iOS touch icons. 180x180 #}}
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        {{# manifest.json for lighthouse one 512x512 #}}
+        {{# 
+        {
+            "icons": [
+                { "src": "/512.png", "type": "image/png", "sizes": "512x512" }
+            ]
+        } 
+        #}}
+        {{# Theme color for android chrome browser color #}}
+        <meta name="theme-color" content="#ffffff">
     </head>
     <body 
         class="min-h-screen bg-white {{ environment == 'local' ? 'debug' : '' }}" 
