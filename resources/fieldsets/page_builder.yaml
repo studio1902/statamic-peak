@@ -4,7 +4,7 @@ fields:
     handle: page_builder
     field:
       type: replicator
-      localizable: false
+      localizable: true
       collapse: true
       listable: false
       display: 'Page builder'
