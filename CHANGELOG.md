@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.18.3 (2021-01-08)
+
+### What's improved
+- Update `tailwind.config.js` proper key for `darkMode`, remove `future` and `expiremental` keys. Thanks [Vlad](https://github.com/vladdu).
+
 ## 1.18.2 (2021-01-07)
 
 ### What's improved
