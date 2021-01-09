@@ -14,8 +14,8 @@ module.exports = {
       keyframes: (theme) => ({
         // Add a highlight animation for the highlight utility.
         'highlight': {
-          'from': { boxShadow: 'inset 4px 4px ' + theme('colors.error.600') + ', inset -4px -4px ' + theme('colors.error.600') },
-          'to': { boxShadow: 'inset 8px 8px ' + theme('colors.error.600') + ', inset -8px -8px ' + theme('colors.error.600') },
+          'from': { boxShadow: `inset 4px 4px ${theme('colors.error.600')}, inset -4px -4px ${theme('colors.error.600')}` },
+          'to': { boxShadow: `inset 8px 8px ${theme('colors.error.600')}, inset -8px -8px ${theme('colors.error.600')}` },
         },
       }),
       spacing: {
@@ -96,8 +96,8 @@ module.exports = {
           marginLeft: 'auto',
           marginRight: 'auto',
           // Use safe-area-inset together with default padding for Apple devices with a notch.
-          paddingLeft: 'calc(env(safe-area-inset-left, 0rem) + ' + theme('padding.8') + ')',
-          paddingRight: 'calc(env(safe-area-inset-right, 0rem) + ' + theme('padding.8') + ')',
+          paddingLeft: `calc(env(safe-area-inset-left, 0rem) + ${theme('padding.8')})`,
+          paddingRight: `calc(env(safe-area-inset-right, 0rem) + ${theme('padding.8')})`,
         },
         // Disable scroll e.g. when a modal is open. Should be used on the <body>
         '.no-scroll': {
@@ -134,8 +134,8 @@ module.exports = {
           // Larger horizontal padding on larger screens.
           '.fluid-container': {
             // Use safe-area-inset together with default padding for Apple devices with a notch.
-            paddingLeft: 'calc(env(safe-area-inset-left, 0rem) + ' + theme('padding.12') + ')',
-            paddingRight: 'calc(env(safe-area-inset-right, 0rem) + ' + theme('padding.12') + ')',
+            paddingLeft: `calc(env(safe-area-inset-left, 0rem) + ${theme('padding.12')})`,
+            paddingRight: `calc(env(safe-area-inset-right, 0rem) + ${theme('padding.12')})`,
           },
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
