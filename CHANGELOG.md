@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Consistent use of template string in `tailwind.config.peak.js`.
+
 ## 1.18.4 (2021-01-08)
 
 ### What's improved
