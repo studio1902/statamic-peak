@@ -1,6 +1,9 @@
 # Release Notes
 
-## Unreleased
+## 1.18.5 (2021-01-11)
+
+### What's new
+- Added `resources/css/custom.css` if you prefer defining your custom CSS in actual CSS.
 
 ### What's improved
 - Consistent use of template string in `tailwind.config.peak.js`.
