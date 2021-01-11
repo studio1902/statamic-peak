@@ -18,7 +18,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Browser support](#browser-support)
 * [Knowledge assumptions](#knowledge-assumptions)
 * [Installation](#installation)
-* [Tailwind config](#tailwind-config)
+* [Tailwind and css config](#tailwind-css-config)
 
 ### Features
 
@@ -103,8 +103,8 @@ npm run production
 
 **5. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
-## Tailwind configuration
-<span id="tailwind-config"></span>
+## Tailwind and CSS configuration
+<span id="tailwind-css-config"></span>
 
 Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsible for various parts of your website. Next to the default config, it uses the following configuration files:
 
@@ -119,6 +119,8 @@ Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-form
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
 You can use a helper utility by adding the class `?` to quickly identify elements on screen. Original idea by [Gavin Joyce](https://github.com/GavinJoyce/tailwindcss-question-mark).
+
+> Note: if you don't want to define your custom CSS in Tailwind JS config files you can add it to `resources/css/custom.css`. Use whatever method you prefer.
 
 # Features
 
