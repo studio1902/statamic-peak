@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.18.7 (2021-01-15)
+
+### What's improved
+- Damned trailing comma's! Thanks [Vannut](https://github.com/vannut). #65
+- Persons and organizations deserve their own URL. Thanks [Vannut](https://github.com/vannut). #65
+
 ## 1.18.6 (2021-01-14)
 
 ### What's improved
