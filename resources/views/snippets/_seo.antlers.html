@@ -52,13 +52,15 @@
                 "@context": "http://schema.org",
                 "@type": "Organization",
                 "name": "{{ seo:organization_name }}",
-                "logo": "{{ permalink }}{{ glide:seo:organization_logo width='336' height='336' fit='crop_focal' }}",
+                "url": "{{ config:app:url }}{{ homepage }}",
+                "logo": "{{ permalink }}{{ glide:seo:organization_logo width='336' height='336' fit='crop_focal' }}"
             }
         {{ elseif seo:json_ld_type == 'person' }}
             {
                 "@context": "http://schema.org",
                 "@type": "Person",
-                "name": "{{ seo:person_name }}",
+                "url": "{{ config:app:url }}{{ homepage }}",
+                "name": "{{ seo:person_name }}"
             }
         {{ elseif seo:json_ld_type == 'custom' }}
             {{ seo:json_ld }}
