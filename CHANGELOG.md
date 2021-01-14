@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.18.6 (2021-01-14)
+
+### What's improved
+- Use the right OG image dimensions. Thanks [Vannut](https://github.com/vannut).
+
 ## 1.18.5 (2021-01-11)
 
 ### What's new
