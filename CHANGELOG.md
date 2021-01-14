@@ -3,13 +3,13 @@
 ## 1.18.7 (2021-01-15)
 
 ### What's improved
-- Damned trailing comma's! Thanks [Vannut](https://github.com/vannut). #65
-- Persons and organizations deserve their own URL. Thanks [Vannut](https://github.com/vannut). #65
+- Damned trailing comma's! Thanks [Vannut](https://github.com/vannut). [#65](https://github.com/studio1902/statamic-peak/pull/65)
+- Persons and organizations deserve their own URL. Thanks [Vannut](https://github.com/vannut). [#65](https://github.com/studio1902/statamic-peak/pull/65)
 
 ## 1.18.6 (2021-01-14)
 
 ### What's improved
-- Use the right OG image dimensions. Thanks [Vannut](https://github.com/vannut).
+- Use the right OG image dimensions. Thanks [Vannut](https://github.com/vannut). [#64](https://github.com/studio1902/statamic-peak/pull/64)
 
 ## 1.18.5 (2021-01-11)
 
