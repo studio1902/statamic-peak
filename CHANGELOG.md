@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.18.7 (unreleased)
+
+### What's improved
+- Translatable labels for select, radio and checkboxes.
+
 ## 1.18.6 (2021-01-14)
 
 ### What's improved
