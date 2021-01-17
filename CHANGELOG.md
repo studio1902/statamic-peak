@@ -3,6 +3,7 @@
 ## 1.18.8 (2021-01-17)
 
 ### What's new
+- Revoke all cookie consent given before a certain date so users have to consent again. Handy when your privacy policy changed. 
 - Add a field called `button_type` to buttons. It has two options by default: `inline` and `button`. The template `views/components/_button.antlers.html` defaults to `button`. 
 
 ### What's improved

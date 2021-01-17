@@ -190,7 +190,7 @@ sections:
         field:
           type: section
           instructions: 'Configure privacty friendly trackers that don''t require a cookie notification.'
-          display: Privacy Friendly Trackers
+          display: 'Privacy Friendly Trackers'
       -
         handle: use_fathom
         field:
@@ -236,23 +236,23 @@ sections:
         field:
           type: section
           instructions: 'Configure Google trackers and an optional cookie notification.'
-          display: Google Trackers
+          display: 'Google Trackers'
       -
         handle: tracker_type
         field:
           options:
             none: None
-            gtag: Google Analytics
-            gtm: Google Tag Manager
+            gtag: 'Google Analytics'
+            gtm: 'Google Tag Manager'
           default: none
           type: button_group
           instructions: 'The type of Google Tracker you want added on each page.'
           listable: false
-          display: Google Tracker type
+          display: 'Google Tracker type'
       -
         handle: google_analytics
         field:
-          width: 66
+          width: 50
           display: 'Tracking ID'
           input_type: text
           type: text
@@ -267,7 +267,7 @@ sections:
         handle: anonymize_ip
         field:
           type: toggle
-          width: 33
+          width: 50
           listable: false
           default: true
           display: 'Anonymize IP''s'
@@ -281,7 +281,7 @@ sections:
           type: text
           localizable: true
           listable: hidden
-          width: 66
+          width: 50
           display: 'Tracking ID'
           instructions: 'The GTM tracking ID.'
           validate:
@@ -316,6 +316,26 @@ sections:
             tracker_type: 'equals gtm'
             use_cookie_banner: 'equals true'
       -
+        handle: cookie_revoke_before
+        field:
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: Revoke consent before
+          instructions: Revoke all use consent before this date. Use this when you added new trackers to GTM and your privacy policy changed. The cookie bar will reappear.
+          type: date
+          width: 50
+          icon: date
+          listable: hidden
+          if:
+            tracker_type: 'equals gtm'
+            use_cookie_banner: 'equals true'
+      -
         handle: link_privacy_statement
         field:
           options:
@@ -326,7 +346,7 @@ sections:
           type: button_group
           instructions: 'Link to a privacy statement or cookie policy from the cookie notification.'
           listable: false
-          display: Link to more information
+          display: 'Link to more information'
           width: 50
           if:
             tracker_type: 'equals gtm'
@@ -356,3 +376,4 @@ sections:
             tracker_type: 'equals gtm'
             use_cookie_banner: 'equals true'
             link_privacy_statement: 'equals entry'
+     
