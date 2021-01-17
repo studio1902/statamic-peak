@@ -7,6 +7,7 @@
 
 ### What's improved
 - Translatable labels using the `{{ trans key="{ label }" }}` pattern for checkboxes, radio's and selects. 
+- Updated JS dependencies.
 
 ## 1.18.7 (2021-01-15)
 
