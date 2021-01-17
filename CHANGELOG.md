@@ -1,5 +1,13 @@
 # Release Notes
 
+## 1.18.8 (2021-01-17)
+
+### What's new
+- Add a field called `button_type` to buttons. It has two options by default: `inline` and `button`. The template `views/components/_button.antlers.html` defaults to `button`. 
+
+### What's improved
+- Translatable labels using the `{{ trans key="{ label }" }}` pattern for checkboxes, radio's and selects. 
+
 ## 1.18.7 (2021-01-15)
 
 ### What's improved

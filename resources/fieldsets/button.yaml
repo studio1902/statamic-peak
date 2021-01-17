@@ -40,6 +40,19 @@ fields:
       display: 'Link type'
       replicator_preview: false
   -
+    handle: button_type
+    field:
+      options:
+        button: Button
+        inline: Inline
+      type: button_group
+      instructions: 'How should the button be displayed?'
+      localizable: false
+      default: button
+      listable: false
+      display: 'Button type'
+      replicator_preview: false
+  -
     handle: entry
     field:
       max_items: 1
