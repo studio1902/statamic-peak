@@ -166,15 +166,18 @@ For example use the sizing utilities to let an image break out of it's content. 
 
 > Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
 
-[Screenshot Bard Sets](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-01.png) | [Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
-
+| Bard sizing utilities | 
+|---|
+| [![Bard sizing utilities](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/bard.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/bard.png) |
 
 ## Buttons
 <span id="buttons"></span>
 
 The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_buttons.antlers.html` go together. The button fieldset is a set in Bard but can also be called from other fieldsets where you want to include buttons. Just call the buttons partial in your template and one or multiple buttons will be rendered. 
 
-[Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
+| Buttons | 
+|---|
+| [![Buttons](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png) |
 
 ## Forms
 <span id="forms"></span>
@@ -195,14 +198,18 @@ The forms sending is done with AJAX and uses Alpine to display the various notif
 
 > Note: When using BrowserSync and visit your site by means of an IP adress as url; You'll get an 500-error upon submitting the form. This is caused by Statamic's FormController which identifies your Site by means of the FQDN listed in `config/statamic/sites.php`. As you visit the website through an IP adress this lookup will fail, resulting in the said 500 `Call to a member function shortLocale() on null` error.
 
-[Screenshot Form Page Builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-01.png) | [Screenshot Form error handling](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-02.png) | [Screenshot Form mail to owner](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-03.png) | [Screenshot Form mail to sender](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-04.png)
+| Forms backend | Forms frontend  |
+|---|---|
+| [![Forms backend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png) | [![Forms frontend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-frontend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-frontend.png) |
 
 ## Globals
 <span id="globals"></span>
 
 Peak currently comes with two global sets you often need, one to edit content on error pages like the 404 page and one to add social media accounts to your website. There's already a basic 404 template in place (`resources/views/errors/404.antlers.html`) to display those messages. 
 
-[Screenshot Globals Errors](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-01.png) | [Screenshot Globals Social Media](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-02.png)
+| Globals error messages  | Globals social media  |
+|---|---|
+| [![Globals error messages](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/globals.png)(https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/globals.png) | [![Globals social media](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/social-media.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/social-media.png) |
 
 ## Navigation
 <span id="navigation"></span>
@@ -218,7 +225,9 @@ While you could make different templates for all your page types, the idea is to
 
 If the layout of a page is totally different - or you really want to - you can always opt for using templates.
 
-[Screenshot page builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-builder-01.png)
+| Page builder | 
+|---|
+| [![Page builder](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/page-builder.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/page-builder.png) |
 
 ### Adding blocks
 Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) to the fieldset. In `resources/views/default.antlers.html` you can see the blocks being loaded. Antlers will look in the `resources/views/page_builder/` folder for partials with the handle of your block. Peak ships with the following blocks:
@@ -232,8 +241,6 @@ Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) 
 For example if you add a fieldset to the `page_builder.yaml` with the handle `call_to_action` make sure you add a `_call_to_action.antlers.html` file to the `resources/views/page_builder` folder.
 
 > Note: blocks are scoped under `block` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ block:field_name }}`
-
-[Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-01.png) | [Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-02.png)
 
 ## Pagination
 <span id="pagination"></span>
@@ -280,7 +287,13 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 
 > Note: tracking and cookie consent by default only work on the `production` environment.
 
-[Screenshot global](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-01.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-02.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-03.png)
+| Globals error messages  | Globals social media  |  Globals social media  |
+|---|---|---|
+| [![SEO globals JSON-ld](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-01.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-01.png) | [![SEO globals sitemap](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-02.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-02.png) | [![SEO globals cookie banner](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-03.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-03.png) |
+
+| Entry specific SEO | 
+|---|
+| [![Page builder](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/entry-seo.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/entry-seo.png) |
 
 ### Disable SEO features
 
