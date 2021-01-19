@@ -1,8 +1,9 @@
 # Release Notes
 
-## Unreleased
+## 1.18.10 (2021-01-19)
 
 ### What's improved
+- Actually commit the `1.18.9` changes regarding site locale. Sorry!
 - Remove unused `scrollMarginTop` declaration from `tailwind.config.typography.js`.
 
 ## 1.18.9 (2021-01-19)
