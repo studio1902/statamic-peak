@@ -1,5 +1,16 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Remove unused `scrollMarginTop` declaration from `tailwind.config.typography.js`.
+
+## 1.18.9 (2021-01-19)
+
+### What's improved
+- Use the proper locale variable `site:locale` for localizing form e-mails. The previous variable `locale` returns `default` for the default site and that could cause issues translating your e-mails. Thanks [Jason](https://github.com/jasonvarga).
+- The [README.md](https://github.com/studio1902/statamic-peak/blob/main/README.md) now has inline and updated screenshots.
+
 ## 1.18.8 (2021-01-17)
 
 ### What's new
