@@ -5,6 +5,7 @@
 ### What's improved
 - Ignore errors in the `php artisan warm` command in `routes/console.php`.
 - Remove `php artisan inspire` from `routes/console.php`.
+- Add note in `README.example.md` for Ploi users.
 
 ## 1.18.10 (2021-01-19)
 
