@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.18.11 (2021-01-20)
+
+### What's improved
+- Ignore errors in the `php artisan warm` command in `routes/console.php`.
+- Remove `php artisan inspire` from `routes/console.php`.
+
 ## 1.18.10 (2021-01-19)
 
 ### What's improved
