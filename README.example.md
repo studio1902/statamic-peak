@@ -32,9 +32,11 @@ location ~* ^/(assets|img|themes)/.+\.(jpe?g|webp|gif|png|css|js|ico|xml|svg|wof
 
 ## Deploy script
 
+> Note: `$FORGE_DEPLOY_MESSAGE` only works on Forge. When you use ploi use `{COMMIT_MESSAGE}`.
+
 ```bash
 if [[ $FORGE_DEPLOY_MESSAGE =~ "[BOT]" ]]; then
-    echo "AUTO-COMMITTED ON PRODUCTION. NOTHING TO DEPLOY."
+    echo "Automatically comitted on production. Nothing to deploy."
     exit 0
 fi
 
