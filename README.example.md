@@ -44,13 +44,13 @@ composer install --no-interaction --prefer-dist --optimize-autoloader
 
 npm i
 npm run production
-{SITE_PHP_VERSION} artisan cache:clear
-{SITE_PHP_VERSION} artisan config:cache
-{SITE_PHP_VERSION} artisan statamic:stache:warm
-{SITE_PHP_VERSION} please search:update --all
-{SITE_PHP_VERSION} artisan statamic:static:clear
-{SITE_PHP_VERSION} artisan warm
-{SITE_PHP_VERSION} artisan statamic:assets:generate-presets
+php{SITE_PHP_VERSION} artisan cache:clear
+php{SITE_PHP_VERSION} artisan config:cache
+php{SITE_PHP_VERSION} artisan statamic:stache:warm
+php{SITE_PHP_VERSION} please search:update --all
+php{SITE_PHP_VERSION} artisan statamic:static:clear
+php{SITE_PHP_VERSION} artisan warm
+php{SITE_PHP_VERSION} artisan statamic:assets:generate-presets
 
 {RELOAD_PHP_FPM}
 
