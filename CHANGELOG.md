@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.18.12 (2021-01-21)
+
+### What's improved
+- Use Tailwind layers to instruct PurgeCSS in `tailwind.config.js` and `resources/css/custom.css`. Thanks for the tip Tom.
+
 ## 1.18.11 (2021-01-20)
 
 ### What's improved
