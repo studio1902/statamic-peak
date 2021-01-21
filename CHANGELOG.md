@@ -4,6 +4,8 @@
 
 ### What's improved
 - Use Tailwind layers to instruct PurgeCSS in `tailwind.config.js` and `resources/css/custom.css`. Thanks for the tip Tom.
+- Update JS dependencies.
+- Update Forge/Ploi references in the README files.
 
 ## 1.18.11 (2021-01-20)
 
