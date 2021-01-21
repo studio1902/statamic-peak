@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.18.13 (2021-01-21)
+
+### What's improved
+- Fix error in Ploi deployment script.
+
 ## 1.18.12 (2021-01-21)
 
 ### What's improved
