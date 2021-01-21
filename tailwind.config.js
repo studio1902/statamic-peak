@@ -26,6 +26,7 @@ module.exports = {
       './resources/views/**/*.html',
       './resources/js/**/*.js',
     ],
+    layers: ['components', 'utilities'],
     options: {
       // Always remove the following classes during purging.
       blocklist: ['?',],
