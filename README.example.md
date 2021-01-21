@@ -34,7 +34,7 @@ location ~* ^/(assets|img|themes)/.+\.(jpe?g|webp|gif|png|css|js|ico|xml|svg|wof
 
 ```bash
 if [[ {COMMIT_MESSAGE} =~ "[BOT]" ]]; then
-    echo "Automatically comitted on production. Nothing to deploy."
+    echo "Automatically committed on production. Nothing to deploy."
     exit 0
 fi
 
@@ -61,7 +61,7 @@ echo "🚀 Application deployed!"
 
 ```bash
 if [[ $FORGE_DEPLOY_MESSAGE =~ "[BOT]" ]]; then
-    echo "Automatically comitted on production. Nothing to deploy."
+    echo "Automatically committed on production. Nothing to deploy."
     exit 0
 fi
 
