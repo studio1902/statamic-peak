@@ -4,6 +4,7 @@
 
 ### What's improved
 - Fix typo's in `README.example.md`. Thanks [Sam](https://github.com/sjclark).
+- Fix forge deploy script.
 
 ## 1.18.13 (2021-01-21)
 
