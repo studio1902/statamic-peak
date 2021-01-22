@@ -38,7 +38,7 @@ if [[ {COMMIT_MESSAGE} =~ "[BOT]" ]]; then
     exit 0
 fi
 
-cd /home/ploi/site.ext
+cd {SITE_DIRECTORY}
 git pull origin main
 composer install --no-interaction --prefer-dist --optimize-autoloader
 
@@ -65,19 +65,19 @@ if [[ $FORGE_DEPLOY_MESSAGE =~ "[BOT]" ]]; then
     exit 0
 fi
 
-cd /home/forge/site.ext
+cd $FORGE_SITE_PATH
 git pull origin main
-composer install --no-interaction --prefer-dist --optimize-autoloader
+$FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader
 
 npm i
 npm run production
-{SITE_PHP_VERSION} artisan cache:clear
-{SITE_PHP_VERSION} artisan config:cache
-{SITE_PHP_VERSION} artisan statamic:stache:warm
-{SITE_PHP_VERSION} please search:update --all
-{SITE_PHP_VERSION} artisan statamic:static:clear
-{SITE_PHP_VERSION} artisan warm
-{SITE_PHP_VERSION} artisan statamic:assets:generate-presets
+$FORGE_PHP artisan cache:clear
+$FORGE_PHP artisan config:cache
+$FORGE_PHP artisan statamic:stache:warm
+$FORGE_PHP please search:update --all
+$FORGE_PHP artisan statamic:static:clear
+$FORGE_PHP artisan warm
+$FORGE_PHP artisan statamic:assets:generate-presets
 
 ( flock -w 10 9 || exit 1
     echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9>/tmp/fpmlock
