@@ -29,7 +29,6 @@ module.exports = {
               textDecoration: 'none',
             },
             'h1, h2, h3, h4': {
-              scrollMarginTop: theme('spacing.36'), 
               color: theme('colors.neutral.900'),
             },
             blockquote: {
