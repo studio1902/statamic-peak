@@ -1,5 +1,42 @@
 # Release Notes
 
+## 1.18.14 (2021-01-24)
+
+### What's improved
+- Fix typo's in `README.example.md`. Thanks [Sam](https://github.com/sjclark).
+- Fix forge deploy script.
+
+## 1.18.13 (2021-01-21)
+
+### What's improved
+- Fix error in Ploi deployment script.
+
+## 1.18.12 (2021-01-21)
+
+### What's improved
+- Use Tailwind layers to instruct PurgeCSS in `tailwind.config.js` and `resources/css/custom.css`. Thanks for the tip Tom.
+- Update JS dependencies.
+- Update Forge/Ploi references in the README files.
+
+## 1.18.11 (2021-01-20)
+
+### What's improved
+- Ignore errors in the `php artisan warm` command in `routes/console.php`.
+- Remove `php artisan inspire` from `routes/console.php`.
+- Add note in `README.example.md` for Ploi users.
+
+## 1.18.10 (2021-01-19)
+
+### What's improved
+- Actually commit the `1.18.9` changes regarding site locale. Sorry!
+- Remove unused `scrollMarginTop` declaration from `tailwind.config.typography.js`.
+
+## 1.18.9 (2021-01-19)
+
+### What's improved
+- Use the proper locale variable `site:locale` for localizing form e-mails. The previous variable `locale` returns `default` for the default site and that could cause issues translating your e-mails. Thanks [Jason](https://github.com/jasonvarga).
+- The [README.md](https://github.com/studio1902/statamic-peak/blob/main/README.md) now has inline and updated screenshots.
+
 ## 1.18.8 (2021-01-17)
 
 ### What's new
