@@ -1,6 +1,6 @@
 # Release Notes
 
-## Unreleased
+## 1.18.14 (2021-01-24)
 
 ### What's improved
 - Fix typo's in `README.example.md`. Thanks [Sam](https://github.com/sjclark).
