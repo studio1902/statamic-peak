@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Update deploy scripts in `README.example.md`.
+
 ## 1.18.14 (2021-01-24)
 
 ### What's improved

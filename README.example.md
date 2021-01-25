@@ -46,8 +46,9 @@ npm i
 npm run production
 php{SITE_PHP_VERSION} artisan cache:clear
 php{SITE_PHP_VERSION} artisan config:cache
+php{SITE_PHP_VERSION} artisan route:cache
 php{SITE_PHP_VERSION} artisan statamic:stache:warm
-php{SITE_PHP_VERSION} please search:update --all
+php{SITE_PHP_VERSION} artisan statamic:search:update --all
 php{SITE_PHP_VERSION} artisan statamic:static:clear
 php{SITE_PHP_VERSION} artisan warm
 php{SITE_PHP_VERSION} artisan statamic:assets:generate-presets
@@ -73,8 +74,9 @@ npm i
 npm run production
 $FORGE_PHP artisan cache:clear
 $FORGE_PHP artisan config:cache
+$FORGE_PHP artisan route:cache
 $FORGE_PHP artisan statamic:stache:warm
-$FORGE_PHP please search:update --all
+$FORGE_PHP artisan statamic:search:update --all
 $FORGE_PHP artisan statamic:static:clear
 $FORGE_PHP artisan warm
 $FORGE_PHP artisan statamic:assets:generate-presets
