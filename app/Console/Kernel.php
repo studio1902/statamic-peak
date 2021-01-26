@@ -26,7 +26,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('cache:clear')->hourly();
         $schedule->command('config:cache')->hourly();
-        $schedule->command('statamic:stache:warm')->hourly();
+        $schedule->command('route:cache')->hourly();
+        $schedule->command('statamic:stache:warm')->hourly(); 
         $schedule->command('statamic:static:clear')->hourly();
         $schedule->command('warm')->hourly();
     }
