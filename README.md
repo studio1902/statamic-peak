@@ -409,7 +409,7 @@ Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aiss
 <span id="warm-all-caches"></span>
 Running `php artisan warm` after your deployments will visit all urls and warm up the static cache. This is a custom command and is defined in `routes/console.php`. 
 
-Triggering `php artisan schedule:run` with a cronjob on a server will hourly clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this hourly but for example daily. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
+Triggering `php artisan schedule:run` with a cronjob on a server will daily clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this daily but for example hourly. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 
 # Contributing and license
 
