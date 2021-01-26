@@ -4,6 +4,7 @@
 
 ### What's improved
 - Update deploy scripts in `README.example.md`.
+- Add `route:cache` command to optional schedule in `app/Console/Kernel.php`.
 
 ## 1.18.14 (2021-01-24)
 
