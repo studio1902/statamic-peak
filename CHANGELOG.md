@@ -1,9 +1,13 @@
 # Release Notes
 
-## Unreleased
+## 1.18.15 (2021-01-27)
+
+### What's new
+- Add a consent field to the default form.
+- Don't e-mail form fields that have `consent` as a handle: those are usually single checkbox field that have to be checked for the form to be valid.
+- Yield a SEO title to `resources/views/snippets/_seo.antlers.html` from `resources/views/error/404.antlers.html` to render a page title on the error page. This pattern is reusable to optional other error pages.
 
 ### What's improved
-- Yield a SEO title to `resources/views/snippets/_seo.antlers.html` from `resources/views/error/404.antlers.html` to render a page title on the error page. This pattern is reusable to optional other error pages.
 - Update deploy scripts in `README.example.md`.
 - Add `route:cache` command to optional schedule in `app/Console/Kernel.php`.
 - Set the optional clear and warm schedule to daily by default instead of hourly in `app/Console/Kernel.php`.
