@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### What's improved
+- Yield a SEO title to `resources/views/snippets/_seo.antlers.html` from `resources/views/error/404.antlers.html` to render a page title on the error page. This pattern is reusable to optional other error pages.
 - Update deploy scripts in `README.example.md`.
 - Add `route:cache` command to optional schedule in `app/Console/Kernel.php`.
 - Set the optional clear and warm schedule to daily by default instead of hourly in `app/Console/Kernel.php`.
