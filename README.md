@@ -192,6 +192,8 @@ Peak renders forms and mail templates dynamically so you can add as many forms a
 
 Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`, and the form's field labels are localized and defined in `resources/lang/en.json`.
 
+The default contact form has a required consent field. When you use `consent` as a field handle it won't render in the e-mail templates.
+
 The forms sending is done with AJAX and uses Alpine to display the various notifications. 
 
 > Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
