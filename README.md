@@ -202,7 +202,7 @@ The forms sending is done with AJAX and uses Alpine to display the various notif
 
 | Forms backend | Forms frontend  |
 |---|---|
-| [![Forms backend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png) | [![Forms frontend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-frontend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-frontend.png) |
+| [![Forms backend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png) | [![Forms frontend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/forms-frontend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/forms-frontend.png) |
 
 ## Globals
 <span id="globals"></span>
