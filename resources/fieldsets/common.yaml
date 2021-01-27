@@ -41,6 +41,7 @@ fields:
       fullscreen: true
       allow_source: true
       type: bard
+      replicator_preview: false
       localizable: true
       listable: hidden
       display: Text
@@ -63,6 +64,7 @@ fields:
       fullscreen: true
       allow_source: true
       type: bard
+      replicator_preview: false
       localizable: true
       listable: hidden
       display: Text
