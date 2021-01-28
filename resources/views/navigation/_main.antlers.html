@@ -14,7 +14,7 @@
                     class="flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
                     {{ if children }}
                         href="#"
-                        @click.prevent="subnavOpen = true"
+                        @click.prevent="subnavOpen = !subnavOpen"
                         @click.away="subnavOpen = false"
                     {{ else }}
                         href="{{ url }}"
