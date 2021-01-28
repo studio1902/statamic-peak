@@ -1,3 +1,4 @@
+{{# A responsive imageset in a picture element. See `resources/views/components/_figure.antlers.html` for an example on how to use this. #}}
 {{ if image }}
     <picture>
         {{ asset :url="image" }}
@@ -10,7 +11,8 @@
                         {{ glide:url preset='sm-webp' }} 480w,
                         {{ glide:url preset='md-webp' }} 768w,
                         {{ glide:url preset='lg-webp' }} 1280w,
-                        {{ glide:url preset='xl-webp' }} 1440w"
+                        {{ glide:url preset='xl-webp' }} 1440w,
+                        {{ glide:url preset='2xl-webp' }} 1680w"
                     sizes="{{ sizes }}"
                     type="image/webp"
                 >
@@ -20,7 +22,8 @@
                         {{ glide:url preset='sm' }} 480w,
                         {{ glide:url preset='md' }} 768w,
                         {{ glide:url preset='lg' }} 1280w,
-                        {{ glide:url preset='xl' }} 1440w"
+                        {{ glide:url preset='xl' }} 1440w,
+                        {{ glide:url preset='2xl' }} 1680w"
                     sizes="{{ sizes }}"
                     {{ if extension == 'png' }}
                         type="image/png"

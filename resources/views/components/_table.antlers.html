@@ -1,0 +1,43 @@
+{{# A sizeable table. #}}
+<div class="size-{{ size }} my-4">
+    <table class="w-full bg-light rounded-md shadow border-collapse overflow-hidden">
+        {{ table }}
+            {{ if first && first_row_headers }}
+                <thead>
+                    <tr>
+                        {{ cells }}
+                            <th class="px-3 xl:px-6 py-3 border-b border-neutral-200 bg-neutral-100 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">{{ value }}</th>
+                        {{ /cells }}
+                    </tr>
+                </thead>
+                <tbody>
+            {{ /if }}
+
+            {{ if !first && first_row_headers || !first_row_headers }}
+                {{ if first }}
+                    <tbody>
+                {{ /if }}
+
+                <tr>
+                    {{ cells }}
+                        {{ if first && first_column_headers }}
+                            <th class="px-3 xl:px-6 py-3 border-b border-neutral-200 bg-neutral-50 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">{{ value }}</th>
+                        {{ else }}
+                            <td class="px-3 xl:px-6 py-3 whitespace-nowrap border-b border-neutral-200 text-sm leading-3 text-neutral-600">{{ value }}</td>
+                        {{ /if }}
+                    {{ /cells }}
+                </tr>
+
+                {{ if last }}
+                    </tbody>
+                {{ /if }}
+            {{ /if }}
+        {{ /table }}
+    </table>
+
+    {{ if caption }}
+        <span class="block mt-2 text-neutral-500">
+            {{ caption }}
+        </span>
+    {{ /if }} 
+</div>

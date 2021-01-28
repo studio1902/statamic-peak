@@ -7,7 +7,6 @@
 // classes. Various aspects of the config are split inmultiple files.
 //
 
-const _ = require('lodash')
 const defaultTheme = require('tailwindcss/defaultTheme')
 const plugin = require('tailwindcss/plugin')
 
@@ -19,40 +18,37 @@ module.exports = {
     require('./tailwind.config.peak.js'),
     require('./tailwind.config.site.js'),
   ],
-  // Opt in to future Tailwind features.
-  future: {
-    defaultLineHeights: true,
-    extendedSpacingScale: true,
-    purgeLayersByDefault: true,
-    standardFontWeights: true,
-    removeDeprecatedGapUtilities: true,
-  },
   // Dark mode
-  dark: 'media', // or 'class'
-  experimental: {
-    darkModeVariant: false,
-    // Add extra breakpoint.
-    additionalBreakpoint: false,
-  },
+  darkMode: 'media', // or 'class'
   // Configure Purge CSS.
   purge: {
     content: [
       './resources/views/**/*.html',
       './resources/js/**/*.js',
     ],
+    layers: ['components', 'utilities'],
     options: {
-      whitelist: ['size-sm', 'size-md', 'size-lg', 'size-xl']
+      // Always remove the following classes during purging.
+      blocklist: ['?',],
+      // Remove unused keyframes during purging.
+      keyframes: true,
+      // Always keep the following classes during purging.
+      safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl', 'js-focus-visible'],
     }
   },
-  // Define all variants available.
+  // Extend variants.
   variants: {
-    boxShadow: ['responsive', 'hover', 'focus', 'group-hover'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
-    scale: ['responsive', 'hover', 'focus', 'group-hover'],
-    skew: ['responsive', 'hover', 'focus', 'group-hover'],
-    rotate: ['responsive', 'hover', 'focus', 'group-hover'],
-    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    translate: ['responsive', 'hover', 'focus', 'group-hover'],
+    extend: {
+      animation: ['motion-safe'],
+      margin: ['last'],
+      ringWidth: ['focus-visible'],
+      rotate: ['group-hover', 'motion-safe'],
+      scale: ['group-hover', 'motion-safe'],
+      skew: ['group-hover', 'motion-safe'],
+      transitionDuration: ['motion-safe'],
+      transitionProperty: ['motion-safe'],
+      translate: ['group-hover', 'motion-safe'],
+      // typography: ["dark"],
+    }
   }
 }

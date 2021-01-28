@@ -1,0 +1,39 @@
+{{# The cookie banner defined in `resources/views/snippets/_seo.antlers.html` and yielded in `resources/views/layout.antlers.html`. #}}
+<div 
+    x-data="{ open: !window.getCookie('cookie_consent') }"
+    {{ if seo:cookie_revoke_before }}
+        x-init="(window.getCookie('cookie_consent_date') < '{{ seo:cookie_revoke_before format="Y-m-d" }}' ? window.eraseCookie('cookie_consent') : '')"
+    {{ /if }}
+    x-show="open"
+    class="fixed z-50 inset-x-0 bottom-0 bg-primary-700"
+    x-cloak
+>
+    <div class="fluid-container flex flex-col md:flex-row md:items-center justify-between flex-wrap py-4 space-y-4 md:space-y-0 md:space-x-4">
+        <p class="text-sm font-bold text-primary-50">
+            {{ trans:strings.cookie_explanation }}
+            
+            {{ if seo:link_privacy_statement == 'entry' }}
+                <a class="underline" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
+            {{ elseif seo:link_privacy_statement == 'pdf' }}
+                <a class="underline" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
+            {{ /if }}
+        </p>
+        <div class="flex space-x-4">
+            <button 
+                @click="open = false, window.setCookie('cookie_consent', '0', {{ seo:cookie_expiration_days }})"
+                type="button" 
+                class="text-sm font-bold text-primary-100"
+            >
+                {{ trans:strings.cookie_deny }}
+            </button>
+
+            <button 
+                @click="open = false, window.setCookie('cookie_consent', true, {{ seo:cookie_expiration_days }}), window.setCookie('cookie_consent_date', '{{ now format="Y-m-d" }}', {{ seo:cookie_expiration_days }})"
+                type="button" 
+                class="px-4 py-2 bg-primary-200 text-sm font-bold text-primary-700"
+            >
+                {{ trans:strings.cookie_accept }}
+            </button>
+        </div>
+    </div>
+</div>

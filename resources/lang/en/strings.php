@@ -1,9 +1,15 @@
 <?php
 return [
+    // Cookie banner
+    'cookie_accept'                     => 'I accept',
+    'cookie_deny'                       => 'I decline',
+    'cookie_explanation'                => 'This site uses tracking cookies used for marketing and statistics.',
+    'cookie_learn_more'                 => 'Learn more',
+
     // Pagination
+    'next'                              => 'next',
     'of'                                => 'of',
     'previous'                          => 'previous',
-    'next'                              => 'next',
 
     // Contact form
     'form_honeypot'                     => 'Fax',
@@ -18,4 +24,9 @@ return [
     'form_mail_url'                     => config('app.url'),
     'form_send'                         => 'Send message',
     'form_success'                      => 'Thank you, we received your message and will contact you as soon as possible.',
+
+    // Search
+    'search'                            => 'Search',
+    'search_no_results'                 => 'No results found',
+    'search_results_for'                => 'Results for',
 ];

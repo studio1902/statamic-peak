@@ -1,0 +1,36 @@
+{{# The search form, to be used in `resources/views/navigation/_main.antlers.html. #}}
+<li 
+    x-data="{ open: false }" 
+    x-on:click.away="{ open = false }"
+    class="flex py-2 relative"
+>
+    <button 
+        x-on:click="{ open = !open, setTimeout(() => {$refs.input.focus()}, 200) }" 
+        class="text-neutral-800 hover:text-primary-600"
+        aria-label="{{ trans:strings.search }}"
+    >
+        {{ svg:search class="w-5 h-5 fill-current transition-colors" }}
+    </button>
+    
+    <form 
+        action="/search"
+        x-show.transition.origin.right.duration.200ms="open"
+        class="absolute inset-y-0 right-0 -mr-2 flex"
+    >
+        <input 
+            x-ref="input" 
+            class="w-52 h-full pr-10 rounded border-neutral-400 focus:border-primary-300 focus:ring focus:ring-primary-300 motion-safe:transition" 
+            placeholder="{{ trans:strings.search }}" 
+            type="text" 
+            value="{{ get:q }}"
+            name="q" 
+        />
+
+        <button 
+            class="absolute inset-y-0 right-0 mr-2 flex items-center text-neutral-800 hover:text-primary-600"
+            aria-label="{{ trans:strings.search }}"
+        >
+            {{ svg:search class="w-5 h-5 fill-current transition-colors" }}
+        </button>
+    </form>
+</li>
