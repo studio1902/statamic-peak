@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### What's new
+- Added a `marketeer` role you can grant certain `editors` to access the SEO globals.
+
 ### What's improved
 - Add `replicator_preview: false` by default to bard fields in `resources/fieldsets/common.yaml`.
 - Make subnav toggable. Thank you [Philip](https://github.com/philipboomy).

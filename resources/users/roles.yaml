@@ -31,3 +31,8 @@ editor:
     - 'create users'
     - 'delete users'
     - 'change passwords'
+marketeer:
+  title: Marketeer
+  permissions:
+    - 'access cp'
+    - 'edit seo globals'
