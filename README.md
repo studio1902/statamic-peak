@@ -11,12 +11,14 @@ Statamic Peak is an opinionated starter kit for all your Statamic sites. It's de
 
 The aim of Peak is to make it easy to start new projects as they often share much of the same principles. Whether you're new to Statamic or a veteran, there will be something interesting in here for you. Feel free to participate and discuss on how to make Peak better.
 
+[Discuss Peak on Discord](https://discord.gg/sW7KXWaucH)
+
 ### Getting started
 
 * [Browser support](#browser-support)
 * [Knowledge assumptions](#knowledge-assumptions)
 * [Installation](#installation)
-* [Tailwind config](#tailwind-config)
+* [Tailwind and css config](#tailwind-css-config)
 
 ### Features
 
@@ -28,6 +30,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Navigation](#navigation)
 * [Page builder](#page-builder)
 * [Pagination](#pagination)
+* [Search](#search)
 * [SEO](#seo)
 * [Statamic login screen](#statamic-login-screen)
 * [Typography](#typography)
@@ -36,8 +39,11 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 * [Configuration changes](#configuration-changes)
 * [Deployment script](#deployment-script)
+* [Focus-visible](#focus-visible)
+* [Lighthouse](#lighthouse)
 * [Modernizr](#modernizr)
 * [Multilingual fields and localization](#multilingual-fields)
+* [Reduced motion](#reduced-motion)
 * [Upcoming features](#upcoming-features)
 * [Warm all caches](#warm-all-caches)
 
@@ -64,6 +70,11 @@ Before using Peak make sure you're familiar with:
 
 ## Installation
 <span id="installation"></span>
+
+### Installation via the CLI
+The easiest way to install Statamic together with Peak is to use the [official CLI](https://github.com/statamic/cli). Install the CLI by running `composer global require statamic/cli` and for each project just run `statamic new my-site` and pick Peak as a starter kit. Alternatively you can skip this manual selection by running: `statamic new my-site --starter="studio1902/statamic-peak"`.
+
+### Manual installation.
 
 **1. Create a new site** - cloning the repo and removing the origin repo.
 ```bash
@@ -92,10 +103,10 @@ npm run production
 
 **5. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
-## Tailwind configuration
-<span id="tailwind-config"></span>
+## Tailwind and CSS configuration
+<span id="tailwind-css-config"></span>
 
-Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsable for various parts of your website. Next to the default config, it uses the following configuration files:
+Peak comes with a `tailwind.config.js` which dictates how Tailwind should be compiled. This file imports multiple Tailwind config files each responsible for various parts of your website. Next to the default config, it uses the following configuration files:
 
 1. `tailwind.config.typography.js`: the Tailwind typography configuration for customizing the `prose` class.
 2. `tailwind.config.peak.js`: all Peak's configuration, utilities and components.
@@ -106,6 +117,10 @@ All configuration files are fully documented. Read the Tailwind docs on [theme c
 Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file for typography already include some basic customization. The plugins are easy to remove if you don't plan on using them.
 
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
+
+You can use a helper utility by adding the class `?` to quickly identify elements on screen. Original idea by [Gavin Joyce](https://github.com/GavinJoyce/tailwindcss-question-mark).
+
+> Note: if you don't want to define your custom CSS in Tailwind JS config files you can add it to `resources/css/custom.css`. Use whatever method you prefer.
 
 # Features
 
@@ -119,6 +134,8 @@ Peak comes a picture partial that will add responsive sourcesets to your images.
 * `class`: *string*, optional css classes that should be applied to the image.
 * `cover`: *boolean*, true means the image should cover the containing element.
 * `sizes`: *string*, the sizes attribute that informs the browser how the image should be rendered.
+
+The following example renders an image and object-fills it's wrapping container: `{{ partial:components/picture :image="image" cover="true" class="w-full h-full" sizes="(min-width: 768px) 35vw, 90vw" }}`
 
 See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information.
 
@@ -149,15 +166,18 @@ For example use the sizing utilities to let an image break out of it's content. 
 
 > Note: the layout doesn't have to be centered and is easy to change in the `tailwind.config.js` file.
 
-[Screenshot Bard Sets](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-01.png) | [Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
-
+| Bard sizing utilities | 
+|---|
+| [![Bard sizing utilities](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/bard.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/bard.png) |
 
 ## Buttons
 <span id="buttons"></span>
 
 The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_buttons.antlers.html` go together. The button fieldset is a set in Bard but can also be called from other fieldsets where you want to include buttons. Just call the buttons partial in your template and one or multiple buttons will be rendered. 
 
-[Screenshot Bard Figure & Buttons](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-bard-02.png)
+| Buttons | 
+|---|
+| [![Buttons](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png) |
 
 ## Forms
 <span id="forms"></span>
@@ -172,18 +192,26 @@ Peak renders forms and mail templates dynamically so you can add as many forms a
 
 Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`, and the form's field labels are localized and defined in `resources/lang/en.json`.
 
+The default contact form has a required consent field. When you use `consent` as a field handle it won't render in the e-mail templates.
+
 The forms sending is done with AJAX and uses Alpine to display the various notifications. 
 
 > Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
 
-[Screenshot Form Page Builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-01.png) | [Screenshot Form error handling](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-02.png) | [Screenshot Form mail to owner](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-03.png) | [Screenshot Form mail to sender](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-form-04.png)
+> Note: When using BrowserSync and visit your site by means of an IP adress as url; You'll get an 500-error upon submitting the form. This is caused by Statamic's FormController which identifies your Site by means of the FQDN listed in `config/statamic/sites.php`. As you visit the website through an IP adress this lookup will fail, resulting in the said 500 `Call to a member function shortLocale() on null` error.
+
+| Forms backend | Forms frontend  |
+|---|---|
+| [![Forms backend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png) | [![Forms frontend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/forms-frontend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/forms-frontend.png) |
 
 ## Globals
 <span id="globals"></span>
 
 Peak currently comes with two global sets you often need, one to edit content on error pages like the 404 page and one to add social media accounts to your website. There's already a basic 404 template in place (`resources/views/errors/404.antlers.html`) to display those messages. 
 
-[Screenshot Globals Errors](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-01.png) | [Screenshot Globals Social Media](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-globals-02.png)
+| Globals error messages  | Globals social media  |
+|---|---|
+| [![Globals error messages](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/globals.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/globals.png) | [![Globals social media](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/social-media.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/social-media.png) |
 
 ## Navigation
 <span id="navigation"></span>
@@ -199,7 +227,9 @@ While you could make different templates for all your page types, the idea is to
 
 If the layout of a page is totally different - or you really want to - you can always opt for using templates.
 
-[Screenshot page builder](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-builder-01.png)
+| Page builder | 
+|---|
+| [![Page builder](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/page-builder.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/page-builder.png) |
 
 ### Adding blocks
 Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) to the fieldset. In `resources/views/default.antlers.html` you can see the blocks being loaded. Antlers will look in the `resources/views/page_builder/` folder for partials with the handle of your block. Peak ships with the following blocks:
@@ -214,8 +244,6 @@ For example if you add a fieldset to the `page_builder.yaml` with the handle `ca
 
 > Note: blocks are scoped under `block` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ block:field_name }}`
 
-[Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-01.png) | [Screenshot link blocks](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-link-blocks-02.png)
-
 ## Pagination
 <span id="pagination"></span>
 
@@ -225,10 +253,23 @@ The pagination partial automatically adds linktags to your documents head with `
 
 > Note: the strings used in the partial are translatable and can be edited in `resources/lang/en/site.php`.
 
+## Search
+<span id="search"></span>
+
+Statamic comes with great search functionality out of the box. If you want to use this you have to do some configuration and templating work. Peak comes with basic search support you can easily customize to suit your needs. To enable default search do the following:
+
+* Uncomment the search partial in `views/navigation/_main.antlers.html`.
+* Uncomment the search results route  in `routes/web.php`.
+* Add fields you want indexed to the index in `config/statamic/search.php`. The `page_builder` field is added by default.
+* Update the search index by running `php please search:update --all`.
+* Make sure you add the update command to your [deployment script](#deployment-script).
+
+> Note: the strings used in search form and result templates are translatable and can be edited in `resources/lang/en/site.php`.
+
 ## SEO
 <span id="seo"></span>
 
-Peak includes full SEO support. It's easy to expand on since it's al built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) (at time of writing not yet released for v3) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
+Peak includes full SEO support. It's easy to expand on since it's all built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
 
 ### SEO features
 * Edit the title.
@@ -244,14 +285,23 @@ Peak includes full SEO support. It's easy to expand on since it's al built with 
 * Add knowledge graph data (organization, person or custom).
 * Auto generated optional JSON-ld breadcrumbs.
 * Add trackers: Google Analytics, Google Tag Manager, Site Verification or Fathom.
+* Use a Cookie Consent Notification. Make sure you listen to `cookie_consent` to be `true` in GTM.
 
-[Screenshot global](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-01.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-02.png) | [Screenshot per entry](https://studio1902.ams3.cdn.digitaloceanspaces.com/assets/statamic-peak/screenshots/peak-seo-03.png)
+> Note: tracking and cookie consent by default only work on the `production` environment.
+
+| Globals error messages  | Globals social media  |  Globals social media  |
+|---|---|---|
+| [![SEO globals JSON-ld](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-01.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-01.png) | [![SEO globals sitemap](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-02.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-02.png) | [![SEO globals cookie banner](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-03.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-03.png) |
+
+| Entry specific SEO | 
+|---|
+| [![Page builder](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/entry-seo.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/entry-seo.png) |
 
 ### Disable SEO features
 
 If you plan on using an addon for SEO and Peak's built in features, do the following:
 * Remove `{{ partial:snippets/seo }}` from `resources/views/layout.antlers.html`.
-* Remove `{{ yield:google_tag_manager }}` from `resources/views/layout.antlers.html`.
+* Remove `{{ yield:seo_body }}` from `resources/views/layout.antlers.html`.
 * Remove the SEO section and import from `resources/blueprints/collections/pages/page.yaml`.
 * Remove the whole `{{ section:pagination }}{{ /section:pagination }}` from `resources/views/components/_pagination.antlers.html`.
 * Delete the SEO global `content/globals/seo.yaml`.
@@ -261,7 +311,7 @@ And optionally to erase all traces:
 * Delete the SEO global blueprint `resources/blueprints/globals/seo.yaml`.
 * Delete the SEO fieldset `resources/fieldsets/seo.yaml`.
 * Delete the SEO partial `resources/views/snippets/_seo.antlers.html`.
-
+* Delete the Cookie Banner fieldset: `resources/views/components/_cookie_banner.antlers.html`.
 
 ## Statamic login screen
 <span id="statamic-login-screen"></span>
@@ -308,11 +358,13 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
 | `config/statamic/git.php` |  | Add `[BOT]` to git commit message. |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
+| `config/statamic/search.php` | `title` in search index | `title`, and `page_builder` in search index |
 | `config/statamic/stache.php` | `'watcher' => true` | `'watcher' => env('STATAMIC_STACHE_WATCHER', true)` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
 | `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
-| `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token. 
+| `routes/web.php` |  | Routes for the search [functionality](#search). Commented by default.
+| `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token.  
 
 ## Deployment script
  <span id="deployment-script"></span>
@@ -322,19 +374,33 @@ Peak changes the default Statamic config. The following is different:
  php artisan cache:clear # Clear the Laravel application cache.
  php artisan config:cache # Clear and refresh the Laravel config cache.
  php artisan statamic:stache:warm # Warm the Statamic stache.
+ php please search:update --all # Update the search index.
  php artisan statamic:static:clear # Clear the Statamic static cache (if you use this).
  php artisan warm # Warm the Statamic static cache (if you use this / only available in Peak).
+ php artisan statamic:assets:generate-presets # Generate all asset presets.
  ```
 
-## Modernizr
-<span id="modernizr"></span>
+## Focus-visible
+<span id="focus-visible"></span>
 
-Peak comes with Modernizr support. By default the only feature detect that's added is WebP. It will add a `webp` class or a `no-webp` class to the `<html>` tag. If you want to add more feature detects you can edit `modernizr.config.js`.
+Focus-visible solves a lot of issues regarding a11y and styling. To use focus-visible today we need polyfills (for Safari). One in [Javascript](https://github.com/WICG/focus-visible) and one in [PostCSS](https://github.com/csstools/postcss-focus-visible). With focus-visible we can make sure the browser only shows an outline when the user navigates with a keyboard. This means no more outlines in Chrome when you click styled buttons. 
+
+You can take this even further by using the [Tailwind Ring utilties](https://tailwindcss.com/docs/ring-width) together with the `focus-visible:` variant to customize and brand your focus styles. Peak has the `focus-visible:` variant enabled by default for the `ringWidth` utility. You can disable this in `tailwind.config.js`.
+
+## Lighthouse
+<span id="lighthouse"></span>
+
+A performant website is extremely important for a11y and search engine ranking. Using Peak's best practices regarding caching, responsive images, ARIA use and SEO it's not hard to optimize your site for a perfect Lighthouse score.
 
 ## Multilingual fields and localization
 <span id="multilingual-fields"></span>
 
 It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
+
+## Reduced motion
+<span id="reduced-motion"></span>
+
+The default anchor styles configured in `tailwind.config.site.js` respects users that prefer less motion. Other transition utilities used in Peaks' templates are prefixed with the `motion-safe:` variant by default. Motion-safe variants are enabled for all animation and transition utilities. You can disable this in `tailwind.config.js`. Read more on [how motion safe works](https://tailwindcss.com/docs/hover-focus-and-other-states#motion-safe).
 
 ## Upcoming features
 <span id="upcoming-features"></span>
@@ -345,9 +411,9 @@ Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aiss
 <span id="warm-all-caches"></span>
 Running `php artisan warm` after your deployments will visit all urls and warm up the static cache. This is a custom command and is defined in `routes/console.php`. 
 
-Triggering `php artisan schedule:run` with a cronjob on a server will hourly clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this hourly but for example daily. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
+Triggering `php artisan schedule:run` with a cronjob on a server will daily clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this daily but for example hourly. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 
-# Contibuting and license
+# Contributing and license
 
 ## Contributing
 <span id="contributing"></span>

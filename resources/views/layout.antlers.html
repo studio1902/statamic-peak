@@ -12,7 +12,8 @@
     <body 
         class="min-h-screen bg-white {{ environment == 'local' ? 'debug' : '' }}" 
     >
-        {{ yield:google_tag_manager }}
+        {{# Remove the following line if you want to use an addon for SEO. #}}
+        {{ yield:seo_body }}
         {{ partial:layout/header }}
         {{ template_content }}
         {{ partial:layout/footer }}

@@ -2,6 +2,7 @@
 
 {{# Page title #}}
 <title>
+    {{ yield:seo_title }}
     {{ seo_title ? seo_title : title }}
     {{ seo:title_separator ? seo:title_separator : " &#124; " }}
     {{ seo:site_name ? seo:site_name : site:name }}
@@ -13,12 +14,16 @@
 {{ /if }}
 
 {{# No index and no follow #}}
-{{ if seo_noindex & seo_nofollow }}
+{{ if environment == 'production' }}
+    {{ if seo_noindex & seo_nofollow }}
+        <meta name="robots" content="noindex, nofollow">
+    {{ elseif seo_nofollow }}
+        <meta name="robots" content="nofollow">
+    {{ elseif seo_noindex }}
+        <meta name="robots" content="noindex">
+    {{ /if }}
+{{ else }}
     <meta name="robots" content="noindex, nofollow">
-{{ elseif seo_nofollow }}
-    <meta name="robots" content="nofollow">
-{{ elseif seo_noindex }}
-    <meta name="robots" content="noindex">
 {{ /if }}
 
 {{# hreflang tags #}}
@@ -36,6 +41,8 @@
 {{ elseif seo_canonical_type == 'entry' }}
     <link rel="canonical" href="{{ permalink }}">
 {{ /if }}
+
+{{# Auto add pagination link's when using resources/views/components/_pagination.antlers.html. #}}
 {{ yield:pagination }}
 
 {{# Knowledge graph JSON-ld #}}
@@ -46,13 +53,15 @@
                 "@context": "http://schema.org",
                 "@type": "Organization",
                 "name": "{{ seo:organization_name }}",
-                "logo": "{{ permalink }}{{ glide:seo:organization_logo width='336' height='336' fit='crop_focal' }}",
+                "url": "{{ config:app:url }}{{ homepage }}",
+                "logo": "{{ permalink }}{{ glide:seo:organization_logo width='336' height='336' fit='crop_focal' }}"
             }
         {{ elseif seo:json_ld_type == 'person' }}
             {
                 "@context": "http://schema.org",
                 "@type": "Person",
-                "name": "{{ seo:person_name }}",
+                "url": "{{ config:app:url }}{{ homepage }}",
+                "name": "{{ seo:person_name }}"
             }
         {{ elseif seo:json_ld_type == 'custom' }}
             {{ seo:json_ld }}
@@ -99,44 +108,39 @@
     <meta property="og:description" content="{{ seo_description }}">
 {{ /if }}
 {{ if og_image }}
-    <meta property="og:image" content="{{ glide:og_image width='1200' height='600' fit='crop_focal' absolute="true" }}">
+    <meta property="og:image" content="{{ glide:og_image width='1200' height='630' fit='crop_focal' absolute="true" }}">
 {{ elseif seo:og_image }}
-    <meta property="og:image" content="{{ glide:seo:og_image width='1200' height='600' fit='crop_focal' absolute="true" }}">
+    <meta property="og:image" content="{{ glide:seo:og_image width='1200' height='630' fit='crop_focal' absolute="true" }}">
 {{ /if }}
 
 {{# Trackers #}}
 {{ if environment == 'production' }}
-    {{ if seo:use_google_tag_manager }}
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','{{ seo:google_tag_manager }}');</script>
+    {{ if seo:tracker_type == 'gtm' }}
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ seo:google_tag_manager }}');</script>
+    {{ elseif seo:tracker_type == 'gtag' }}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ seo:google_analytics }}"></script>
+        <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', new Date());gtag('config', '{{ seo:google_analytics }}' {{ if seo:anonymize_ip }}, {'anonymize_ip': true}{{ /if }});</script>
     {{ /if }}
 
-    {{ if seo:use_google_tag_manager }}
-        {{# Yield this section in all your layouts after opening the <body> #}}
-        {{ section:google_tag_manager }}
+    {{# Yield this section in all your layouts after opening the <body> #}}
+    {{ section:seo_body }}
+        {{ if seo:tracker_type == 'gtm' }}
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ seo:google_tag_manager }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        {{ /section:google_tag_manager }}
-    {{ /if }}
+            {{ if seo:use_cookie_banner }}
+                {{ partial:components/cookie_banner }}
+            {{ /if }}
+        {{ /if }}
+    {{ /section:seo_body }}
 
     {{ if seo:use_google_site_verification }}
         <meta name="google-site-verification" content="{{ seo:google_site_verification }}" />
     {{ /if }}
 
-    {{ if seo:use_google_analytics }}
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ seo:google_analytics }}"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('set', new Date());
-        gtag('config', '{{ seo:google_analytics }}' {{ if seo:anonymize_ip }}, {'anonymize_ip': true}{{ /if }});
-        </script>
-    {{ /if }}
-
     {{ if seo:use_fathom }}
         <script src="https://cdn.usefathom.com/script.js" site="{{ seo:fathom }}" defer></script>
+    {{ /if }}
+
+    {{ if seo:use_cloudflare_web_analytics }}
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ seo:cloudflare_web_analytics }}"}'></script>
     {{ /if }}
 {{ /if }}

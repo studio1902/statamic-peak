@@ -2,7 +2,7 @@
 
 {{# The desktop navigation. Hidden on smaller screen. Shown from md and up. #}}
 <nav class="hidden md:block">
-    <ul class="flex space-x-8">
+    <ul class="flex items-center space-x-8">
         {{ nav:main max_depth="2" include_home="true" }}
             <li
                 {{ if children }}
@@ -40,7 +40,7 @@
                         {{ children }}
                             <li class="">
                                 <a
-                                    class="whitespace-no-wrap text-xs font-bold hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
+                                    class="whitespace-nowrap text-xs font-bold hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
                                     href="{{ url }}"
                                 >
                                     {{ title }}
@@ -51,11 +51,15 @@
                 {{ /if }}
             </li>
         {{ /nav:main }}
+
+        {{# Uncomment the following line to add a search form. Also enable the route in `routes/web.php` and update the search index in `config/statamic/search.php`. #}}
+        {{# {{ partial:components/search_form }} #}}
+
     </ul>
 </nav>
 
 {{# The mobile navigation. Hidden from md and up #}}
-<nav class="md:hidden">
+<nav class="md:hidden" x-data="{ mobileNavOpen: false }">
     <button
         @click.prevent="mobileNavOpen = !mobileNavOpen, mobileNavOpen ? document.body.classList.add('no-scroll') : document.body.classList.remove('no-scroll')"
         class="fixed z-20 w-16 h-16 flex justify-center items-center right-0 bottom-0 mb-safe mr-8 bg-primary-500 text-white text-xs text-uppercase tracking-widest font-bold"
@@ -64,7 +68,7 @@
     ></button>
 
     <ul
-        class="fixed z-10 inset-0 flex flex-col justify-center items-center space-y-8 bg-white overflow-auto scrolling-touch"
+        class="fixed z-10 inset-0 flex flex-col justify-center items-center space-y-8 bg-white overflow-auto"
         x-show="mobileNavOpen"
         x-cloak
     >
@@ -105,7 +109,7 @@
                         {{ children }}
                             <li>
                                 <a
-                                    class="whitespace-no-wrap font-bold hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
+                                    class="whitespace-nowrap font-bold hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
                                     href="{{ url }}">
                                     {{ title }}
                                 </a>

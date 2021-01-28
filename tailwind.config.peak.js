@@ -5,11 +5,19 @@
 // Here we define base styles, components and utilities used by Peak. 
 //
 
+const _ = require('lodash')
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   theme: {
     extend: {
+      keyframes: (theme) => ({
+        // Add a highlight animation for the highlight utility.
+        'highlight': {
+          'from': { boxShadow: `inset 4px 4px ${theme('colors.error.600')}, inset -4px -4px ${theme('colors.error.600')}` },
+          'to': { boxShadow: `inset 8px 8px ${theme('colors.error.600')}, inset -8px -8px ${theme('colors.error.600')}` },
+        },
+      }),
       spacing: {
         // Used for the mobile navigation toggle.
         'safe': 'calc(env(safe-area-inset-bottom, 0rem) + 2rem)',
@@ -37,6 +45,10 @@ module.exports = {
         // Used to hide alpine elements before being rendered.
         '[x-cloak]': { 
           display: 'none !important'
+        },
+        // Implement the focus-visible polyfill: https://github.com/WICG/focus-visible
+        '.js-focus-visible :focus:not(.focus-visible)': {
+          outline: 'none',
         },
         // Display screen breakpoints in debug environment.
         'body.debug::before': {
@@ -84,8 +96,8 @@ module.exports = {
           marginLeft: 'auto',
           marginRight: 'auto',
           // Use safe-area-inset together with default padding for Apple devices with a notch.
-          paddingLeft: 'calc(env(safe-area-inset-left, 0rem) + ' + theme('padding.8') + ')',
-          paddingRight: 'calc(env(safe-area-inset-right, 0rem) + ' + theme('padding.8') + ')',
+          paddingLeft: `calc(env(safe-area-inset-left, 0rem) + ${theme('padding.8')})`,
+          paddingRight: `calc(env(safe-area-inset-right, 0rem) + ${theme('padding.8')})`,
         },
         // Disable scroll e.g. when a modal is open. Should be used on the <body>
         '.no-scroll': {
@@ -103,8 +115,8 @@ module.exports = {
           // If the last child of the outer grid is full width (e.g. when it has a full width 
           // colored background), give it negative margin bottom to get it flush to your 
           // sites footer.
-          '& > *:last-child:has(.w-full)': {
-            marginBottom: theme('spacing.12') * -1,
+          '& > *:last-child.w-full': {
+            marginBottom: `-${theme('spacing.12')}`,
           },
         },
         [`@media (min-width: ${theme('screens.md')})`]: {
@@ -113,8 +125,8 @@ module.exports = {
             rowGap: theme('spacing.16'),
             paddingTop: theme('spacing.16'),
             paddingBottom: theme('spacing.16'),
-            '& > *:last-child:has(.w-full)': {
-              marginBottom: theme('spacing.16') * -1,
+            '& > *:last-child.w-full': {
+              marginBottom: `-${theme('spacing.16')}`,
             },
           },
         },
@@ -122,16 +134,16 @@ module.exports = {
           // Larger horizontal padding on larger screens.
           '.fluid-container': {
             // Use safe-area-inset together with default padding for Apple devices with a notch.
-            paddingLeft: 'calc(env(safe-area-inset-left, 0rem) + ' + theme('padding.12') + ')',
-            paddingRight: 'calc(env(safe-area-inset-right, 0rem) + ' + theme('padding.12') + ')',
+            paddingLeft: `calc(env(safe-area-inset-left, 0rem) + ${theme('padding.12')})`,
+            paddingRight: `calc(env(safe-area-inset-right, 0rem) + ${theme('padding.12')})`,
           },
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
             rowGap: theme('spacing.24'),
             paddingTop: theme('spacing.24'),
             paddingBottom: theme('spacing.24'),
-            '& > *:last-child:has(.w-full)': {
-              marginBottom: theme('spacing.24') * -1,
+            '& > *:last-child.w-full': {
+              marginBottom: `-${theme('spacing.24')}`,
             },
           },
         },
@@ -141,6 +153,10 @@ module.exports = {
 
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
+        // Add a ? utility to quickly highlight an element. 
+        '.\?': {
+          'animation': 'highlight 0.5s ease-in-out alternate infinite',
+        },
         // Break words only when needed.
         '.break-decent': {
           wordBreak: 'break-word',
