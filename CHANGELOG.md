@@ -4,6 +4,7 @@
 
 ### What's improved
 - Add `replicator_preview: false` by default to bard fields in `resources/fieldsets/common.yaml`.
+- Make subnav toggable. Thank you [Philip](https://github.com/philipboomy).
 
 ## 1.18.15 (2021-01-27)
 
