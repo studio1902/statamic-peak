@@ -266,6 +266,8 @@ Statamic comes with great search functionality out of the box. If you want to us
 
 > Note: the strings used in search form and result templates are translatable and can be edited in `resources/lang/en/site.php`.
 
+> Note: alternatively you could use [Live Search](https://github.com/jonassiewertsen/statamic-live-search) by [Jonas Siewertsen](https://github.com/jonassiewertsen/statamic-live-search). It uses Laravel Livewire to get live search results as you type. It's very easy to implement.
+
 ## SEO
 <span id="seo"></span>
 
