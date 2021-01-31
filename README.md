@@ -102,6 +102,9 @@ npm run production
 
 **5. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
+### Install into a existing Laravel project
+[Job Verplanke](https://github.com/jobverplanke) is working on a package to install Peak into your current Laravel project. [The package](https://github.com/studio1902/statamic-peak-package) is currently in beta.
+
 ## Tailwind and CSS configuration
 <span id="tailwind-css-config"></span>
 
