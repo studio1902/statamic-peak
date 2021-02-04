@@ -22,11 +22,19 @@ Dump your .env values here with senstive data removed.
 
 ## NGINX config
 
-Add the following to your NGINX config to enable static resource caching:
-
+Add the following to your NGINX config __inside the server block__ enable static resource caching:
 ```
-location ~* ^/(assets|img|themes)/.+\.(jpe?g|webp|gif|png|css|js|ico|xml|svg|woff|woff2?)(\?|$) {
-    expires 30d;
+expires $expires;
+```
+
+And this __outside the server block__:
+```
+map $sent_http_content_type $expires {
+    default    off;
+    text/css    max;
+    ~image/    max;
+    application/javascript    max;
+    application/octet-stream    max;
 }
 ```
 
