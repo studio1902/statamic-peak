@@ -7,9 +7,9 @@
 
 ![Statamic 3.0+](https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 
-Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, configuration and more to get you started on your clients' site straight away. Peak is easy to extend or edit to fit your clients' website needs. 
+Statamic Peak is an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, SEO functionality, configuration and more to get you started on your clients' site straight away. Peak is easy to extend or edit to fit your clients' website needs. 
 
-The aim of Peak is to make it easy to start new projects as they often share much of the same principles. Whether you're new to Statamic or a veteran, there will be something interesting in here for you. Feel free to participate and discuss on how to make Peak better.
+The aim of Peak is to make it easy to start new projects as they often share much of the same principles. Whether you're new to Statamic or a veteran, there will be something interesting in here for you. Please participate and discuss on how to make our websites better.
 
 [Discuss Peak on Discord](https://discord.gg/sW7KXWaucH)
 
@@ -42,7 +42,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Focus-visible](#focus-visible)
 * [Lighthouse](#lighthouse)
 * [Modernizr](#modernizr)
-* [Multilingual fields and localization](#multilingual-fields)
+* [Localization and template strings](#localization)
 * [Reduced motion](#reduced-motion)
 * [Upcoming features](#upcoming-features)
 * [Warm all caches](#warm-all-caches)
@@ -60,13 +60,12 @@ Peak makes extensive use of CSS Grid so it doesn't support IE11.
 
 ## Knowledge assumptions
 <span id="knowledge-assumptions"></span>
-
 Before using Peak make sure you're familiar with:
 
 * Statamic 
 * Antlers
 * TailwindCSS
-* *And to lesser extend:* AlpineJS (JS framework)
+* AlpineJS
 
 ## Installation
 <span id="installation"></span>
@@ -103,6 +102,9 @@ npm run production
 
 **5. Build!** - if you're using [Laravel Valet](https://laravel.com/docs/valet), your site should be available at `http://my-site.test`. You can access the control panel at `http://my-site.test/cp` and login with your new user. Build your site, read the [Statamic Docs](https://statamic.dev) and have fun!
 
+### Install in existing Laravel project
+[Job Verplanke](https://github.com/jobverplanke) is working on a package to install Peak into your current Laravel project. [The package](https://github.com/studio1902/statamic-peak-package) is currently in beta.
+
 ## Tailwind and CSS configuration
 <span id="tailwind-css-config"></span>
 
@@ -114,16 +116,15 @@ Peak comes with a `tailwind.config.js` which dictates how Tailwind should be com
 
 All configuration files are fully documented. Read the Tailwind docs on [theme configuration](https://tailwindcss.com/docs/theme/) for more information.
 
-Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file for typography already include some basic customization. The plugins are easy to remove if you don't plan on using them.
+Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file for typography already includes some basic customization so your theme colors are automatically applied. The plugins are easy to remove if you don't want to use them.
 
 When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
 You can use a helper utility by adding the class `?` to quickly identify elements on screen. Original idea by [Gavin Joyce](https://github.com/GavinJoyce/tailwindcss-question-mark).
 
-> Note: if you don't want to define your custom CSS in Tailwind JS config files you can add it to `resources/css/custom.css`. Use whatever method you prefer.
+> Note: if you don't want to define your custom CSS in Tailwind JS config files you can add it to `resources/css/custom.css`. Make sure to read up on the use of [@layer](https://tailwindcss.com/docs/functions-and-directives#layer) to instruct PurgeCSS. Use whatever method you prefer.
 
 # Features
-
 ## Assets
 <span id="assets"></span>
 
@@ -139,6 +140,8 @@ The following example renders an image and object-fills it's wrapping container:
 
 See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information.
 
+> Note: alternatively you could use the fantastic [Responsive Images Addon](https://github.com/spatie/statamic-responsive-images) by [Rias](https://github.com/riasvdv) from Spatie. It features more asset presets and uses Javascript to auto populate your `sizes` attribute.
+
 ### Background images
 Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use `{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}`. The predefined sizes used in `resources/views/snippets/_background_image.antlers.html` are defined in `config/statamic/assets.php`.
 
@@ -150,7 +153,7 @@ For long form content you can use the `Article` content block. This is a [Bard f
 ### Adding sets
 Edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the article. In `resources/views/page_builder/_article.antlers.html` you can see the sets being loaded. Antlers will look in the `resources/views/components/` folder for partials with the handle of your set. 
 
-For example if you add a fieldset to the `article.yaml` with the handle `table` make sure you add a `_table.antlers.html` file to the `resources/views/components` folder.
+For example if you add a fieldset to the `article.yaml` with the handle `code` make sure you add a `_code.antlers.html` file to the `resources/views/components` folder.
 
 > Note: sets are scoped under `set` to avoid collision with other fields. Make sure you reference variables in a block like this: `{{ set:field_name }}`
 
@@ -168,7 +171,7 @@ For example use the sizing utilities to let an image break out of it's content. 
 
 | Bard sizing utilities | 
 |---|
-| [![Bard sizing utilities](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/bard.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/bard.png) |
+| [![Bard sizing utilities](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/bard.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/bard.png) |
 
 ## Buttons
 <span id="buttons"></span>
@@ -192,6 +195,8 @@ Peak renders forms and mail templates dynamically so you can add as many forms a
 
 Strings used in the e-mail templates are localized and defined in `resources/lang/en/site.php`, and the form's field labels are localized and defined in `resources/lang/en.json`.
 
+The default contact form has a required consent field. When you use `consent` as a field handle it won't render in the e-mail templates.
+
 The forms sending is done with AJAX and uses Alpine to display the various notifications. 
 
 > Note: Peak dynamically fetches a CSRF token so you can even use forms with [Static File Caching](https://statamic.dev/static-caching) on. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak.
@@ -200,7 +205,7 @@ The forms sending is done with AJAX and uses Alpine to display the various notif
 
 | Forms backend | Forms frontend  |
 |---|---|
-| [![Forms backend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png) | [![Forms frontend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-frontend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-frontend.png) |
+| [![Forms backend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/forms-backend.png) | [![Forms frontend](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/forms-frontend.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.15/forms-frontend.png) |
 
 ## Globals
 <span id="globals"></span>
@@ -264,26 +269,29 @@ Statamic comes with great search functionality out of the box. If you want to us
 
 > Note: the strings used in search form and result templates are translatable and can be edited in `resources/lang/en/site.php`.
 
+> Note: alternatively you could use [Live Search](https://github.com/jonassiewertsen/statamic-live-search) by [Jonas Siewertsen](https://github.com/jonassiewertsen/statamic-live-search). It uses Laravel Livewire to get live search results as you type. It's very easy to implement.
+
 ## SEO
 <span id="seo"></span>
 
 Peak includes full SEO support. It's easy to expand on since it's all built with native fields and templating. You can also easily replace it with a professional addon like [Aardvark SEO](https://statamic.com/addons/candour/aardvark-seo) or [SEO Pro](https://statamic.com/addons/statamic/seo-pro). 
 
 ### SEO features
-* Edit the title.
-* Edit the website title and separator.
-* Edit the meta description.
-* Add a canonical URL.
-* Add Open Graph data and image.
-* Add a default Open Graph image.
-* Auto generated sitemap.xml, customize which collections are included and per entry frequency and priority settings.
-* Turn on no-index for an entry, also have it excluded in the sitemap.
-* Add custom JSON-ld schema objects.
-* Auto generated hreflang tags on localized sites.
-* Add knowledge graph data (organization, person or custom).
-* Auto generated optional JSON-ld breadcrumbs.
-* Add trackers: Google Analytics, Google Tag Manager, Site Verification or Fathom.
-* Use a Cookie Consent Notification. Make sure you listen to `cookie_consent` to be `true` in GTM.
+* Page title.
+* Website title and seperator.
+* Meta description.
+* Canonical URL.
+* Open Graph data and images.
+* Default Open Graph image.
+* Auto generated sitemap.xml.
+* Customize the sitemap: which collections are included and per entry frequency and priority settings.
+* No-index for entries, also excludes from sitemap.
+* JSON-ld schema objects.
+* Hreflang tags automatically generated.
+* Knowledge graph data (organization, person or custom).
+* JSON-ld breadcrumbs.
+* Trackers: Google Analytics, Google Tag Manager, Site Verification, Fathom or Cloudflare Web Analytics.
+* Cookie Consent Notification. Make sure you listen to `cookie_consent` to be `true` in GTM.
 
 > Note: tracking and cookie consent by default only work on the `production` environment.
 
@@ -321,19 +329,19 @@ If you want to use another logo on the login screen. For example the current sit
 ## Typography
 <span id="typography"></span>
 
-Peak contains a few basic typography partials in `resources/views/typography`. Whenever you need to render text in your partial you should call the relevant partial or add a new one. Let's say we have a block in our page builder with a `{{ title }}` field. In the template partial for your block you could do the following:
+Peak contains a few basic typography partials in `resources/views/typography`. Whenever you need to render text in your partial you could call the relevant partial or add a new one. Usually typography styles are shared, so this helps keeping your templates DRY. Let's say we have a block in our page builder with a `{{ title }}` field. In the template partial for your block you could do the following:
 
 ```html
 {{ partial:typography/h1 :content="block:title" }}
 ```
 
-This will render the title with the styling defined in `typography/h1`. This way you ensure the same styling throughout your website without having to add or edit Tailwinds utility classes in multiple template files. You can even change the tag and text color and add classes if need be:
+This will render the title with the styling defined in `typography/h1`. This way you ensure the same styling throughout your website without having to add or edit Tailwinds utility classes in multiple template files. Exceptions are possible. You can change the tag, text color and add classes when you need to:
 
 ```html
 {{ partial:typography/h1 tag="span" color="text-error-600" class="mb-8" :content="block:title" }}
 ```
 
-Peak comes with a few defaults that are easy to style. Feel free to add more partials for your current website.
+Peak comes with a few defaults that are easy to style. Add as many partials your website needs.
 
 # Other
 
@@ -366,11 +374,12 @@ Peak changes the default Statamic config. The following is different:
 
 ## Deployment script
  <span id="deployment-script"></span>
- You could use the following deployment script together with Peak to make sure everything runs smoothly after a deploy.
+ You can use the following deployment script together with Peak to make sure everything runs smoothly after a deploy.
 
  ```bash
  php artisan cache:clear # Clear the Laravel application cache.
  php artisan config:cache # Clear and refresh the Laravel config cache.
+ php artisan route:cache # Clear and refresh the Laravel route cache.
  php artisan statamic:stache:warm # Warm the Statamic stache.
  php please search:update --all # Update the search index.
  php artisan statamic:static:clear # Clear the Statamic static cache (if you use this).
@@ -390,8 +399,10 @@ You can take this even further by using the [Tailwind Ring utilties](https://tai
 
 A performant website is extremely important for a11y and search engine ranking. Using Peak's best practices regarding caching, responsive images, ARIA use and SEO it's not hard to optimize your site for a perfect Lighthouse score.
 
-## Multilingual fields and localization
-<span id="multilingual-fields"></span>
+## Localization and template strings
+<span id="localization"></span>
+
+All strings in templates use the `{{ trans:strings_file.string_id }}` pattern to call the `{{ trans }}` tag and get the correct translation for the current site. Learn more in the [Statamic docs on the translate tag](https://statamic.dev/tags/trans#content).
 
 It is currently not possible in Statamic to translate field labels and descriptions so I settled for English. Translate the labels and descriptions in all fieldsets (`resources/fieldsets/*.yaml`) and follow the [the instructions in the Statamic documentation](https://statamic.dev/cp-translations#content) to make the Statamic CP available in your language of choice.
 
@@ -409,7 +420,7 @@ Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aiss
 <span id="warm-all-caches"></span>
 Running `php artisan warm` after your deployments will visit all urls and warm up the static cache. This is a custom command and is defined in `routes/console.php`. 
 
-Triggering `php artisan schedule:run` with a cronjob on a server will hourly clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this hourly but for example daily. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
+Triggering `php artisan schedule:run` with a cronjob on a server will daily clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this daily but for example hourly. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 
 # Contributing and license
 

@@ -23,3 +23,14 @@ sections:
           type: textarea
           validate: required
           localizable: true
+      -
+        handle: consent
+        field:
+          inline: false
+          type: checkboxes
+          listable: hidden
+          display: Consent
+          validate:
+            - required
+          options:
+            'yes': 'I agree that my submitted data is being collected and stored.'

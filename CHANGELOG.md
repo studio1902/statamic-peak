@@ -1,5 +1,27 @@
 # Release Notes
 
+## 1.18.16 (2021-01-28)
+
+### What's new
+- Added a `marketeer` role you can grant certain `editors` to access the SEO globals.
+
+### What's improved
+- Add `replicator_preview: false` by default to bard fields in `resources/fieldsets/common.yaml`.
+- Make subnav toggable. Thank you [Philip](https://github.com/philipboomy).
+- The readme.
+
+## 1.18.15 (2021-01-27)
+
+### What's new
+- Add a consent field to the default form.
+- Don't e-mail form fields that have `consent` as a handle: those are usually single checkbox field that have to be checked for the form to be valid.
+- Yield a SEO title to `resources/views/snippets/_seo.antlers.html` from `resources/views/error/404.antlers.html` to render a page title on the error page. This pattern is reusable to optional other error pages.
+
+### What's improved
+- Update deploy scripts in `README.example.md`.
+- Add `route:cache` command to optional schedule in `app/Console/Kernel.php`.
+- Set the optional clear and warm schedule to daily by default instead of hourly in `app/Console/Kernel.php`.
+
 ## 1.18.14 (2021-01-24)
 
 ### What's improved
