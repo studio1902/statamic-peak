@@ -23,6 +23,12 @@ Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
     'content_type' => 'application/xml'
 ]); 
 
+// The Manifest route to the manifest.json
+Route::statamic('/favicons/site.webmanifest', 'manifest/manifest', [
+    'layout' => null, 
+    'content_type' => 'application/json'
+]); 
+
 // The Search route to display search results with `views/search.antlers.html`.
 // Route::statamic('/search', 'search', [
 //     'title' => 'Search results'
