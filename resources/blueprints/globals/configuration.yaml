@@ -8,14 +8,14 @@ sections:
           type: section
           listable: hidden
           display: 'General configuration'
+          instructions: 'Global site configuration options.'
   error_messages:
     display: 'Error messages'
     fields:
       -
-        handle: 404_error
+        handle: section_404
         field:
           type: section
-          localizable: false
           listable: hidden
           display: '404 error'
       -
