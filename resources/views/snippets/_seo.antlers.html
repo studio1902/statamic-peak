@@ -2,6 +2,7 @@
 
 {{# Page title #}}
 <title>
+    {{ yield:seo_title }}
     {{ seo_title ? seo_title : title }}
     {{ seo:title_separator ? seo:title_separator : " &#124; " }}
     {{ seo:site_name ? seo:site_name : site:name }}

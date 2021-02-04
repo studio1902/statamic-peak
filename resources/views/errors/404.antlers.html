@@ -1,4 +1,10 @@
 {{# The 404 page taking it's content from the configuration global. #}}
+
+{{# Yield a title to the SEO partial. #}}
+{{ section:seo_title }}
+    404
+{{ /section:seo_title }}
+
 <main class="outer-grid">
     <article class="fluid-container grid md:grid-cols-12 gap-y-4">
         <div class="col-span-12">
