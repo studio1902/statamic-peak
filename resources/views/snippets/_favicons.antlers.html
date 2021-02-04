@@ -1,16 +1,22 @@
-{{# SVG of any size, main icon #}}
-<link rel="icon" href="/favicons/favicon.svg">
-{{# Single color Safari icon, on transparent bg #}}
-<link rel="mask-icon" href="/favicons/mask-icon.svg" color="#000000">
-{{# iOS touch icons. 180x180 #}}
-<link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
-{{# manifest.json for lighthouse one 512x512 #}}
-<link rel="manifest" href="/favicons/site.webmanifest">
-{{# Theme color for android chrome browser color #}}
-<meta name="theme-color" content="#ffffff">
+{{ if favicons:use }}
+    {{# SVG of any size, main icon #}}
+    <link rel="icon" href="{{ favicons:svg }}">
+    {{# Single color Safari icon, on transparent bg #}}
+    <link rel="mask-icon" href="{{ favicons:svg }}" color="{{ favicons:safari_color }}">
+    {{# iOS touch icons. 180x180 #}}
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+    {{# manifest.json for lighthouse one 512x512 #}}
+    <link rel="manifest" href="/site.webmanifest">
+    {{# Theme color for android chrome browser color #}}
+    <meta name="theme-color" content="{{ favicons:chrome_color }}">
+{{ /if }}
 
-{{# What could work, I don't know how yet, is uploading one SVG logo (multicoloured), picking a theme color and a background color. From that we should generate:
+{{# 
+
+What could work, I don't know how yet, is uploading one SVG logo (multicoloured), picking a theme color and a background color. From that we should generate:
 
 The regular favicon.svg (the svg as is).
 A mask-icon.svg where every fill/stroke get's the selected theme color by using the color attribute (I hope).
-A apple-touch-icon.png where the logo is rendered on a coloured background (another color setting). I think we need imagick for this which I don't like as a requirement. #}}
+A apple-touch-icon.png where the logo is rendered on a coloured background (another color setting). I think we need imagick for this which I don't like as a requirement. 
+
+#}}
