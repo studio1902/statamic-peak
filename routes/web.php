@@ -24,7 +24,7 @@ Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
 ]); 
 
 // The Manifest route to the manifest.json
-Route::statamic('/favicons/site.webmanifest', 'manifest/manifest', [
+Route::statamic('/site.webmanifest', 'manifest/manifest', [
     'layout' => null, 
     'content_type' => 'application/json'
 ]); 
