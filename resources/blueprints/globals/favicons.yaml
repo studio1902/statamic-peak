@@ -21,6 +21,8 @@ sections:
         handle: svg
         field: common.image
         config:
+          container: favicons
+          restrict: true
           display: 'Favicon SVG'
           instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg). Make sure the viewbox is squared and the SVG paths are as simple and expanded as possible.'
           width: 50
@@ -44,7 +46,7 @@ sections:
           default_color_mode: HEXA
           color_modes:
             - hex
-          display: 'Safari'
+          display: Safari
           type: color
           icon: color
           listable: hidden
@@ -62,7 +64,7 @@ sections:
           default_color_mode: HEXA
           color_modes:
             - hex
-          display: 'iOS'
+          display: iOS
           type: color
           icon: color
           default: '#ffffff'
@@ -81,7 +83,7 @@ sections:
           default_color_mode: HEXA
           color_modes:
             - hex
-          display: 'Android'
+          display: Android
           type: color
           default: '#ffffff'
           icon: color
