@@ -1,0 +1,12 @@
+{{ if favicons:use }}
+    {{# SVG of any size, main icon #}}
+    <link rel="icon" href="{{ favicons:svg }}">
+    {{# Single color Safari icon, on transparent bg #}}
+    <link rel="mask-icon" href="{{ favicons:svg }}" color="{{ favicons:safari_color }}">
+    {{# iOS touch icons. 180x180 #}}
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+    {{# manifest.json for lighthouse one 512x512 #}}
+    <link rel="manifest" href="/site.webmanifest">
+    {{# Theme color for android chrome browser color #}}
+    <meta name="theme-color" content="{{ favicons:chrome_color }}">
+{{ /if }}

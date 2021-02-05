@@ -1,0 +1,6 @@
+title: Favicons
+data:
+  use: false
+  safari_color: '#000000'
+  ios_color: '#FFFFFF'
+  chrome_color: '#FFFFFF'
