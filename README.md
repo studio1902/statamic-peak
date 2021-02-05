@@ -186,7 +186,7 @@ The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_bu
 ## Favicons
 <span id="favicons"></span>
 
-By uploading a single favicon SVG to the favicons asset container you can generate favicons for modern browsers on the fly. Make sure your SVG is as flat as possible and has a squared viewbox: `viewbox="0 0 100 100"` for example. And make sure it has a `width` and a `height` set in pixels. The favicon partial will spit out the following favicons:
+By uploading a single favicon SVG to the favicons asset container you can generate favicons for modern browsers on the fly. The favicon partial will spit out the following favicons:
 
 * The SVG you uploaded as a `rel="icon"`.
 * The SVG you uploaded with a custom color attribute as a `rel="mask-icon"`.
