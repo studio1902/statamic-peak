@@ -31,21 +31,18 @@ class GenerateFavicons implements ShouldQueue
             $svg = GlobalSet::findByHandle('favicons')->in('default')->get('svg');
             $background = GlobalSet::findByHandle('favicons')->in('default')->get('ios_color');
 
-            // TODO: Dynamicify
-            // TODO: squarify SVG transform="translate(14.000000, 0.000000)" half of added viewbox
-
-            $this->createThumbnail('assets/' . $svg, public_path('touch_icon.png'), 180, 180, $background, 15);
-            $this->createThumbnail('assets/' . $svg, public_path('android-chrome-512x512.png'), 512, 512, 'transparent', false);
+            $this->createThumbnail('favicons/' . $svg, public_path('favicons/touch_icon.png'), 180, 180, $background, 15);
+            $this->createThumbnail('favicons/' . $svg, public_path('favicons/android-chrome-512x512.png'), 512, 512, 'transparent', false);
         }
     }
 
-    private function createThumbnail($filename, $thname, $width=100, $height=100, $background='#ffffff', $border='15')
+    private function createThumbnail($import, $export, $width, $height, $background, $border)
     {
         try {
             $im = new \Imagick();
             $im->setBackgroundColor(new \ImagickPixel($background));
 
-            $svgdata = file_get_contents($filename);
+            $svgdata = file_get_contents($import);
             $svgdata = $this->svgScaleHack($svgdata, $width, $height);
 
             $im->readImageBlob($svgdata);
@@ -54,7 +51,7 @@ class GenerateFavicons implements ShouldQueue
             $im->resizeImage($width, $height, \imagick::FILTER_LANCZOS, 1);
             
             $im->setImageFormat('png32');
-            file_put_contents($thname, $im->getImageBlob());
+            file_put_contents($export, $im->getImageBlob());
 
             $im->clear();
             $im->destroy();

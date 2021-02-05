@@ -71,6 +71,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'favicons' => [
+            'driver' => 'local',
+            'root' => public_path('favicons'),
+            'url' => '/favicons',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
