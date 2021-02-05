@@ -49,7 +49,7 @@ class GenerateFavicons implements ShouldQueue
             $im = new \Imagick();
             $im->setResolution($width, $height);
             $im->setBackgroundColor(new \ImagickPixel($background));
-            $svgdata = file_get_contents($import);
+            $svgdata = $this->squareViewbox(file_get_contents($import), $width, $height);
             $im->readImageBlob($svgdata);
             if ($border)
                 $im->borderImage($background, $border, $border);
@@ -63,5 +63,25 @@ class GenerateFavicons implements ShouldQueue
         catch(Exception $e) {
             return false;
         }
+    }
+
+    private function squareViewbox($svg, $width, $height)
+    {
+        $svgObj = simplexml_load_string($svg);
+        $svgObj['width'] = $width . 'px';
+        $svgObj['height'] = $height . 'px';
+        $viewBox = explode(' ', $svgObj['viewBox']);
+        $viewBoxWidth = $viewBox[2];
+        $viewBoxHeight = $viewBox[3];
+        $min = min($viewBoxWidth, $viewBoxHeight);
+        $max = max($viewBoxWidth, $viewBoxHeight);
+        $translate = ($max - $min) / 2;
+        $svgObj['viewBox'] = '0 0 ' . $max . ' ' . $max;
+        if (isset($svgObj->g)) {
+            $viewBoxWidth < $viewBoxHeight 
+                ? $svgObj->g->addAttribute('transform', "translate(${translate}, 0)") 
+                : $svgObj->g->addAttribute('transform', "translate(0, ${translate})");
+        }
+        return $svgObj->asXML();
     }
 }
