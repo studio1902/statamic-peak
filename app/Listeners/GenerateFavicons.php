@@ -31,7 +31,7 @@ class GenerateFavicons implements ShouldQueue
             $svg = GlobalSet::findByHandle('favicons')->in('default')->get('svg');
             $background = GlobalSet::findByHandle('favicons')->in('default')->get('ios_color');
 
-            $this->createThumbnail('favicons/' . $svg, public_path('favicons/touch_icon.png'), 180, 180, $background, 15);
+            $this->createThumbnail('favicons/' . $svg, public_path('favicons/apple-touch-icon.png'), 180, 180, $background, 15);
             $this->createThumbnail('favicons/' . $svg, public_path('favicons/android-chrome-512x512.png'), 512, 512, 'transparent', false);
         }
     }

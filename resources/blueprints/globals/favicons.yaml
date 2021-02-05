@@ -69,7 +69,7 @@ sections:
           icon: color
           default: '#ffffff'
           listable: hidden
-          instructions: 'The icon for iOS (_Apple touch icon_) will used the full color SVG with this color as a background.'
+          instructions: 'The icon for iOS (_apple-touch-icon_) will used the full color SVG with this color as a background.'
           width: 33
           validate:
             - 'required_if:use,true'
