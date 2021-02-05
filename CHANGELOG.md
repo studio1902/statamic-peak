@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.19.0 (2021-02-05)
+
+### What's new
+- Add favicon support. Generate favicons for modern browsers with a single SVG. Thanks to [David](https://github.com/austriker27) for the inspiration!
+
 ## 1.18.16 (2021-01-28)
 
 ### What's new

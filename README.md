@@ -25,6 +25,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Assets](#assets)
 * [Bard](#bard)
 * [Buttons](#buttons)
+* [Favicons](#favicons)
 * [Forms](#forms)
 * [Globals](#globals)
 * [Navigation](#navigation)
@@ -181,6 +182,31 @@ The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_bu
 | Buttons | 
 |---|
 | [![Buttons](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png) |
+
+## Favicons
+<span id="favicons"></span>
+
+By uploading a single favicon SVG to the favicons asset container you can generate favicons for modern browsers on the fly. Make sure your SVG is as flat as possible and has a squared viewbox: `viewbox="0 0 100 100"` for example. And make sure it has a `width` and a `height` set in pixels. The favicon partial will spit out the following favicons:
+
+* The SVG you uploaded as a `rel="icon"`.
+* The SVG you uploaded with a custom color attribute as a `rel="mask-icon"`.
+* A PNG with a custom colored background as a `rel="apple-touch-icon`.
+* A `site.webmanifest` route with a manifest file containing a `android-chrome-512x512.png`.
+* A meta with `name="theme-color"` with a custom color.
+
+### Disable favicon feature
+If you don't want to use this feature you can leave it disabled (default). To remove all traces, do the following:
+* Remove `{{ partial:snippets/favicons }}` from `resources/views/layout.antlers.html`.
+* Delete the asset container `content/assets/favicons.yaml`.
+* Delete the blueprint `resources/blueprints/globals/favicons.yaml`.
+* Delete the global `content/globals/favicons.yaml`.
+* Delete the partial `resources/views/snippets/_favicons.antlers.html`.
+* Delete the manifest view `resources/views/manifest/manifest.antlers.html`.
+* Delete the listener `app/listeners/GenerateFavicons.php`.
+* Remove manifest route from `routes/web.php`.
+* Remove the listener from `app/providers/EventServiceProvider.php`.
+
+> Note: To use the favicon feature you need to have the `PHP Imagick module` installed. Forge users: newer servers ship with this automatically. Ploi users: you can optionally install this with a click in the Ploi interface.
 
 ## Forms
 <span id="forms"></span>
@@ -354,9 +380,11 @@ Peak changes the default Statamic config. The following is different:
 | --- | --- | --- |
 | `.env.example` |  | Add more default Statamic and Redis settings by default.  
 | `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to [warm all caches](#warm-all-caches).
-| `app/Http/Controllers/DynamicToken.php` | - | New Controller for [forms](#forms) |
+| `app/Http/Controllers/DynamicToken.php` |  | New Controller for [forms](#forms) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
-| `app/Tags/DynamicToken.php` | - | New Tag for [forms](#forms) |
+| `app/listeners/GenerateFavicons.php` |  | Listen to a GlobalSavedEvent to generate [favicons](#favicons).
+| `app/providers/EventServiceProvider.php` |  | Listen to a GlobalSavedEvent to generate [favicons](#favicons).
+| `app/Tags/DynamicToken.php` |  | New Tag for [forms](#forms) |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
 | `config/statamic/assets.php` | `'presets' => [],` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
@@ -369,8 +397,10 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
 | `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
+| `routes/web.php` |  | Routes for the [favicons](#favicons) feature.  
 | `routes/web.php` |  | Routes for the search [functionality](#search). Commented by default.
 | `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token.  
+
 
 ## Deployment script
  <span id="deployment-script"></span>
