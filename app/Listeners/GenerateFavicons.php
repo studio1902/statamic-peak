@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Queue\InteractsWithQueue;
 use Statamic\Events\GlobalSetSaved;
 use Statamic\Globals\GlobalSet;
@@ -28,11 +29,17 @@ class GenerateFavicons implements ShouldQueue
     public function handle(GlobalSetSaved $event)
     {
         if ($event->globals->handle() === 'favicons') {
-            $svg = GlobalSet::findByHandle('favicons')->in('default')->get('svg');
-            $background = GlobalSet::findByHandle('favicons')->in('default')->get('ios_color');
+            $use = GlobalSet::findByHandle('favicons')->in('default')->get('use');
 
-            $this->createThumbnail('favicons/' . $svg, public_path('favicons/apple-touch-icon.png'), 180, 180, $background, 15);
-            $this->createThumbnail('favicons/' . $svg, public_path('favicons/android-chrome-512x512.png'), 512, 512, 'transparent', false);
+            if ($use) {
+                $svg = GlobalSet::findByHandle('favicons')->in('default')->get('svg');
+                $background = GlobalSet::findByHandle('favicons')->in('default')->get('ios_color');
+
+                $this->createThumbnail('favicons/' . $svg, public_path('favicons/apple-touch-icon.png'), 180, 180, $background, 15);
+                $this->createThumbnail('favicons/' . $svg, public_path('favicons/android-chrome-512x512.png'), 512, 512, 'transparent', false);
+
+                Artisan::call('cache:clear');
+            }
         }
     }
 

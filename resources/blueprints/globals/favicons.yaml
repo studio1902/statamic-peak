@@ -49,6 +49,7 @@ sections:
           display: Safari
           type: color
           icon: color
+          default: '#000000'
           listable: hidden
           instructions: 'The icon for Safari (_mask-icon_) will be converted to a single color SVG with this as the color.'
           width: 33
