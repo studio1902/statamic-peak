@@ -1,5 +1,9 @@
 # Release Notes
 
+## 1.19.1 (2021-02-05)
+
+### What's disabled
+- Disabled centering your favicon for when you're SVG viewport is not already squared due to possible bugs. For now.
 
 ## 1.19.0 (2021-02-05)
 

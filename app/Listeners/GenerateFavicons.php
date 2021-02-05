@@ -73,15 +73,15 @@ class GenerateFavicons implements ShouldQueue
         $viewBox = explode(' ', $svgObj['viewBox']);
         $viewBoxWidth = $viewBox[2];
         $viewBoxHeight = $viewBox[3];
-        $min = min($viewBoxWidth, $viewBoxHeight);
+        // $min = min($viewBoxWidth, $viewBoxHeight);
         $max = max($viewBoxWidth, $viewBoxHeight);
-        $translate = ($max - $min) / 2;
+        // $translate = ($max - $min) / 2;
         $svgObj['viewBox'] = '0 0 ' . $max . ' ' . $max;
-        if (isset($svgObj->g)) {
-            $viewBoxWidth < $viewBoxHeight 
-                ? $svgObj->g->addAttribute('transform', "translate(${translate}, 0)") 
-                : $svgObj->g->addAttribute('transform', "translate(0, ${translate})");
-        }
+        // if (isset($svgObj->g)) {
+        //     $viewBoxWidth < $viewBoxHeight 
+        //         ? $svgObj->g->addAttribute('transform', "translate(${translate}, 0)") 
+        //         : $svgObj->g->addAttribute('transform', "translate(0, ${translate})");
+        // }
         return $svgObj->asXML();
     }
 }
