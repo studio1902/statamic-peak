@@ -24,7 +24,7 @@ sections:
           container: favicons
           restrict: true
           display: 'Favicon SVG'
-          instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg). Make sure the viewbox is squared and the SVG paths are as simple and expanded as possible.'
+          instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg).'
           width: 50
           validate:
             - 'required_if:use,true'
