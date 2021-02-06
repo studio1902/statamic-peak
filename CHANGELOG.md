@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.19.3 (2021-02-06)
+
+### What's improved
+- Rewrote and simplified the favicon image generation. You can now use any SVG, don't need a squared viewport and it will still be centered in the resulting PNG's.
+
 ## 1.19.2 (2021-02-06)
 
 ### What's fixed
