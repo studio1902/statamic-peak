@@ -40,19 +40,6 @@ fields:
       display: 'Link type'
       replicator_preview: false
   -
-    handle: button_type
-    field:
-      options:
-        button: Button
-        inline: Inline
-      type: button_group
-      instructions: 'How should the button be displayed?'
-      localizable: false
-      default: button
-      listable: false
-      display: 'Button type'
-      replicator_preview: false
-  -
     handle: entry
     field:
       max_items: 1
@@ -113,18 +100,25 @@ fields:
         link_type: 'tel'
   -
     handle: asset
-    field:
-      mode: grid
-      restrict: false
-      allow_uploads: true
-      max_files: 1
-      type: assets
+    field: common.image
+    config:
       instructions: 'The asset you want to link.'
-      localizable: false
-      listable: false
       display: Asset
       if:
         link_type: 'asset'
+  -
+    handle: button_type
+    field:
+      options:
+        button: Button
+        inline: Inline
+      type: button_group
+      instructions: 'How should the button be displayed?'
+      localizable: false
+      default: button
+      listable: false
+      display: 'Button type'
+      replicator_preview: false
   -
     handle: attr_title
     field:
