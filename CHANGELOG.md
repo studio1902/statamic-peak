@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.20.0 (2021-02-07)
+
+### What's new
+- Redirects old URL's to new URL's and present it in a fancy grid. That's it. Only kicks in when a 404 is triggered. Just like the SEO global it's only accessible to the superusers and the `marketeer` role (which you add to users with the `editor` role). 
+
 ## 1.19.3 (2021-02-06)
 
 ### What's improved

@@ -27,4 +27,5 @@ marketeer:
   title: Marketeer
   permissions:
     - 'access cp'
+    - 'edit redirects globals'
     - 'edit seo globals'
