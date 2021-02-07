@@ -18,18 +18,18 @@
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.4.0",
-    "autoprefixer": "^10.2.3",
-    "browser-sync": "^2.26.13",
+    "autoprefixer": "^10.2.4",
+    "browser-sync": "^2.26.14",
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^7.0.3",
     "glob-all": "^3.2.1",
-    "laravel-mix": "^6.0.10",
-    "postcss": "^8.2.4",
+    "laravel-mix": "^6.0.11",
+    "postcss": "^8.2.5",
     "postcss-focus-visible": "^5.0.0",
     "postcss-import": "^14.0.0",
     "postcss-nested": "^5.0.3",
     "resolve-url-loader": "^3.1.2",
-    "tailwindcss": "^2.0.2",
+    "tailwindcss": "^2.0.3",
     "vue-template-compiler": "^2.6.12"
   }
 }
