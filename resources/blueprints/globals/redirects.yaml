@@ -1,0 +1,57 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: section_redirects
+        field:
+          type: section
+          instructions: 'Redirect URL''s.'
+          display: Redirects
+      -
+        handle: redirects
+        field:
+          fields:
+            -
+              handle: url_old
+              field:
+                input_type: text
+                display: 'Old URL'
+                instructions: 'For example: `/my-old-url`.'
+                listable: hidden
+                placeholder: /old-url
+                antlers: false
+                width: 50
+                validate:
+                  - required
+            -
+              handle: entry
+              field: common.entry
+              config:
+                display: 'New URL'
+                instructions: 'Select the new URL'
+            -
+              handle: response
+              field:
+                options:
+                  301: 'Permanent (301)'
+                  302: 'Temporary (302)'
+                multiple: false
+                clearable: false
+                searchable: false
+                taggable: false
+                push_tags: false
+                cast_booleans: false
+                display: Response
+                default: '301'
+                type: select
+                icon: select
+                instructions: 'The HTTP response code'
+                listable: hidden
+          mode: table
+          reorderable: true
+          display: Redirects
+          type: grid
+          icon: grid
+          listable: hidden
+          add_row: 'Add redirect'

@@ -326,8 +326,8 @@ sections:
           inline: false
           columns: 1
           rows: 1
-          display: Revoke consent before
-          instructions: Revoke all users consent before this date. Use this when you added new trackers to GTM and your privacy policy changed. The cookie bar will reappear.
+          display: 'Revoke consent before'
+          instructions: 'Revoke all users consent before this date. Use this when you added new trackers to GTM and your privacy policy changed. The cookie bar will reappear.'
           type: date
           width: 50
           icon: date
@@ -376,4 +376,3 @@ sections:
             tracker_type: 'equals gtm'
             use_cookie_banner: 'equals true'
             link_privacy_statement: 'equals entry'
-     
