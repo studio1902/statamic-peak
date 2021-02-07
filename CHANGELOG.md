@@ -1,9 +1,10 @@
 # Release Notes
 
-## Unreleased
+## 1.20.1 (UNRELEASED)
 
 ### What's improved
 - Use fakerphp/faker instead of fzaninotto/faker. Thanks [Julius](https://github.com/Jubeki).
+- Update Tailwind and other JS dependencies.
 
 ## 1.20.0 (2021-02-07)
 
