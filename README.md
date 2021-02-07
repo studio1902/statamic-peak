@@ -31,6 +31,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Navigation](#navigation)
 * [Page builder](#page-builder)
 * [Pagination](#pagination)
+* [Redirects](#redirects)
 * [Search](#search)
 * [SEO](#seo)
 * [Statamic login screen](#statamic-login-screen)
@@ -282,6 +283,13 @@ The pagination partial automatically adds linktags to your documents head with `
 
 > Note: the strings used in the partial are translatable and can be edited in `resources/lang/en/site.php`.
 
+## Redirects
+<span id="redirects"></span>
+
+There is Redirects global where you can define your 301 and 302 redirects. This only kicks in when a 404 error is triggered as all logic is being done in `resources/views/errors/404.antlers.html`.
+
+> Note: by default only `superusers` and the `marketeer` role get access to this feature.
+
 ## Search
 <span id="search"></span>
 
@@ -320,6 +328,8 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 * Cookie Consent Notification. Make sure you listen to `cookie_consent` to be `true` in GTM.
 
 > Note: tracking and cookie consent by default only work on the `production` environment.
+
+> Note: by default only `superusers` and the `marketeer` role get access to the SEO global configuration.
 
 | Globals error messages  | Globals social media  |  Globals social media  |
 |---|---|---|

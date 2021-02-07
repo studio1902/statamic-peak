@@ -8,3 +8,7 @@ data:
   use_fathom: false
   use_cloudflare_web_analytics: false
   tracker_type: none
+  anonymize_ip: true
+  use_cookie_banner: false
+  cookie_expiration_days: 365
+  link_privacy_statement: none
