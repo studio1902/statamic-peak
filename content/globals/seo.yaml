@@ -8,3 +8,16 @@ data:
   use_fathom: false
   use_cloudflare_web_analytics: false
   tracker_type: none
+  anonymize_ip: true
+  use_cookie_banner: false
+  cookie_expiration_days: 365
+  link_privacy_statement: none
+  redirects:
+    -
+      url_old: /oud
+      entries: 6b995156-142b-43d6-be4e-6c260ea90d37
+      type: redirect_301
+    -
+      url_old: /oud2
+      entries: 20f6a148-63b8-47a8-9b0e-d57095d78c21
+      type: redirect_301
