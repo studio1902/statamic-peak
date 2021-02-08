@@ -1,6 +1,9 @@
 # Release Notes
 
-## 1.20.1 (UNRELEASED)
+## 1.20.1 (2021-02-08)
+
+### What's new
+- The ability to override different favicons with custom assets.
 
 ### What's improved
 - Use fakerphp/faker instead of fzaninotto/faker. Thanks [Julius](https://github.com/Jubeki).
