@@ -19,7 +19,7 @@
 ## 1.19.2 (2021-02-06)
 
 ### What's fixed
-- Specify asset contantainer for image fields.
+- Specify asset container for image fields.
 
 ## 1.19.1 (2021-02-05)
 
