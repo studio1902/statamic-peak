@@ -9,7 +9,7 @@
         class="text-neutral-800 hover:text-primary-600"
         aria-label="{{ trans:strings.search }}"
     >
-        {{ svg:search class="w-5 h-5 fill-current transition-colors" }}
+        {{ svg:search class="w-5 h-5 fill-current transition-colors" aria-hidden="true" }}
     </button>
     
     <form 
@@ -30,7 +30,7 @@
             class="absolute inset-y-0 right-0 mr-2 flex items-center text-neutral-800 hover:text-primary-600"
             aria-label="{{ trans:strings.search }}"
         >
-            {{ svg:search class="w-5 h-5 fill-current transition-colors" }}
+            {{ svg:search class="w-5 h-5 fill-current transition-colors" aria-hidden="true" }}
         </button>
     </form>
 </li>
