@@ -2,8 +2,8 @@
 
 ## 1.20.2 (2021-02-08)
 
-### What's new
-- Fix toolbar.
+### What's improved
+- Use fixed positioning for the toolbar instead of absolute.
 
 ## 1.20.1 (2021-02-08)
 
