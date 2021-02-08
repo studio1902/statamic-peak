@@ -95,3 +95,45 @@ sections:
             - 'required_if:use,true'
           if:
             use: 'equals true'
+      -
+        handle: section_overrides
+        field:
+          type: section
+          listable: hidden
+          display: Overrides
+          instructions: 'Override specific generated assets with your own.'
+          if:
+            use: 'equals true'
+      -
+        handle: safari_mask_icon
+        field: common.image
+        config:
+          container: favicons
+          restrict: true
+          display: 'Safari Mask Icon'
+          instructions: 'A single color as flattened as possible SVG. The color defined above at `Safari` will be used.'
+          width: 33
+          if:
+            use: 'equals true'
+      -
+        handle: apple_touch_icon
+        field: common.image
+        config:
+          container: favicons
+          restrict: true
+          display: 'Apple touch icon'
+          instructions: 'A 180x180 PNG image used on iOS devices. Will be focal cropped to this dimension.'
+          width: 33
+          if:
+            use: 'equals true'
+      -
+        handle: android_chrome
+        field: common.image
+        config:
+          container: favicons
+          restrict: true
+          display: 'Android Chrome icon'
+          instructions: 'A 512x512 PNG image image used on Android devices. Will be focal cropped to this dimension.'
+          width: 33
+          if:
+            use: 'equals true'
