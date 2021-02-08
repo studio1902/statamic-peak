@@ -4,7 +4,7 @@
 
 ### What's new
 - The ability to override different favicons with custom assets.
-- An edit page link bundled with the TW breakpoint indicator as a page overlay in the frontend. A great idea by [Kerns](https://github.com/kerns).
+- The Tailwind breakpoint pill replaced by a toolbar in the top right corner. It also contains an edit button when you're logged in. The toolbar can be permantly fixed to your window by toggling the button. A great idea by [Kerns](https://github.com/kerns).
 
 ### What's improved
 - Use fakerphp/faker instead of fzaninotto/faker. Thanks [Julius](https://github.com/Jubeki).

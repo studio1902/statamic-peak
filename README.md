@@ -46,6 +46,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Modernizr](#modernizr)
 * [Localization and template strings](#localization)
 * [Reduced motion](#reduced-motion)
+* [Toolbar](#toolbar)
 * [Upcoming features](#upcoming-features)
 * [Warm all caches](#warm-all-caches)
 
@@ -119,8 +120,6 @@ Peak comes with a `tailwind.config.js` which dictates how Tailwind should be com
 All configuration files are fully documented. Read the Tailwind docs on [theme configuration](https://tailwindcss.com/docs/theme/) for more information.
 
 Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms) and [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography) plugins. They're easy to customize and the config file for typography already includes some basic customization so your theme colors are automatically applied. The plugins are easy to remove if you don't want to use them.
-
-When your app environment is `local`, Peak will add a breakpoint notice to your site so you can tell on which breakpoint you're currently displaying the website. You can turn this off by removing `{{ environment == 'local' ? 'debug' : '' }}` from `resources/views/layout.antlers.html`.
 
 You can use a helper utility by adding the class `?` to quickly identify elements on screen. Original idea by [Gavin Joyce](https://github.com/GavinJoyce/tailwindcss-question-mark).
 
@@ -452,6 +451,11 @@ It is currently not possible in Statamic to translate field labels and descripti
 <span id="reduced-motion"></span>
 
 The default anchor styles configured in `tailwind.config.site.js` respects users that prefer less motion. Other transition utilities used in Peaks' templates are prefixed with the `motion-safe:` variant by default. Motion-safe variants are enabled for all animation and transition utilities. You can disable this in `tailwind.config.js`. Read more on [how motion safe works](https://tailwindcss.com/docs/hover-focus-and-other-states#motion-safe).
+
+## Toolbar
+<span id="toolbar"></span>
+
+Peak adds a hidden toolbar to the top right corner of your screen. It becomes visible when you hover it and it displays the current Tailwind breakpoint (when your env is `local`). It also has an edit button when you're logged in. The toolbar can be permantly fixed to your window by toggling the button.
 
 ## Upcoming features
 <span id="upcoming-features"></span>

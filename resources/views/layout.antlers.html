@@ -9,9 +9,8 @@
         {{ partial:snippets/seo }}
         {{ partial:snippets/favicons }}
     </head>
-    <body 
-        class="min-h-screen bg-white {{ environment == 'local' ? 'debug' : '' }}" 
-    >
+    <body class="min-h-screen bg-white">
+        {{ partial:components/toolbar }}
         {{# Remove the following line if you want to use an addon for SEO. #}}
         {{ yield:seo_body }}
         {{ partial:layout/header }}

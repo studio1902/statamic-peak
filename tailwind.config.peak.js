@@ -51,24 +51,11 @@ module.exports = {
           outline: 'none',
         },
         // Display screen breakpoints in debug environment.
-        'body.debug::before': {
+        '.breakpoint:before': {
           display: 'block',
-          position: 'fixed',
-          zIndex: '99',
-          top: theme('spacing.1'),
-          right: theme('spacing.1'),
-          padding: theme('spacing.1'),
-          border: '1px',
-          borderStyle: 'solid',
-          borderColor: theme('colors.notice.300'),
-          borderRadius: theme('borderRadius.full'),
-          backgroundColor: theme('colors.notice.200'),
-          fontSize: '.5rem',
           color: theme('colors.notice.900'),
           textTransform: 'uppercase',
-          fontWeight: theme('fontWeight.bold'),
           content: '"-"',
-          pointerEvents: 'none',
         },
       })
     }),
@@ -78,7 +65,7 @@ module.exports = {
       const breakpoints = _.map(theme('screens'), (value, key) => {
         return {
           [`@media (min-width: ${value})`]: {
-            'body.debug::before': {
+            '.breakpoint::before': {
               content: `"${key}"`,
             }
           }
