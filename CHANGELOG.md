@@ -4,10 +4,12 @@
 
 ### What's new
 - The ability to override different favicons with custom assets.
+- An edit page link bundled with the TW breakpoint indicator as a page overlay in the frontend. A great idea by [Kerns](https://github.com/kerns).
 
 ### What's improved
 - Use fakerphp/faker instead of fzaninotto/faker. Thanks [Julius](https://github.com/Jubeki).
 - Update Tailwind and other JS dependencies.
+- Use the `{{ svg }}` tag where possible.
 
 ## 1.20.0 (2021-02-07)
 
