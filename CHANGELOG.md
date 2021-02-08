@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.20.2 (2021-02-08)
+
+### What's new
+- Fix toolbar.
+
 ## 1.20.1 (2021-02-08)
 
 ### What's new
