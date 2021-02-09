@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.20.3 (2021-02-09)
+
+### What's improved
+- Make DynamicToken check work with both non www and www domains. Thanks [Frederik](https://github.com/freshface).
+- Only make search submit button enabled when the search input field has a value. Thanks for reporting [Kerns](https://github.com/kerns).
+
 ## 1.20.2 (2021-02-08)
 
 ### What's improved
