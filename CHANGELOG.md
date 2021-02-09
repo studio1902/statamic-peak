@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.20.4 (Unreleased)
+
+### What's improved
+- Published the password reset blade views and removed rad mode to be in line with the login view. This method will likely improve siginificantly with the upcoming release of Statamic 3.1 containing white-labeling features. 
+
 ## 1.20.3 (2021-02-09)
 
 ### What's improved
