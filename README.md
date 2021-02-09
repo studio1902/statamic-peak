@@ -332,7 +332,7 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 
 > Note: by default only `superusers` and the `marketeer` role get access to the SEO global configuration.
 
-| Globals error messages  | Globals social media  |  Globals social media  |
+| Globals error messages  | Globals SEO  |  Globals Cookie Banner  |
 |---|---|---|
 | [![SEO globals JSON-ld](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-01.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-01.png) | [![SEO globals sitemap](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-02.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-02.png) | [![SEO globals cookie banner](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-03.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/seo-globals-03.png) |
 
