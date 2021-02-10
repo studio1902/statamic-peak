@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.20.4 (Unreleased)
+## 1.20.4 (2021-02-10)
 
 ### What's new
 - Use Mailhog as the default SMTP config in `.env.example` since it's a local service and free, unlike Mailtrap, the Laravel default. Run `brew install mailhog`, `valet proxy mailhog http://127.0.0.1:8025` and catch your mails on `https://mailhog.test`.
