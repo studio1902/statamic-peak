@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.20.5 (unreleased)
+
+### What's new
+- Add commented `IMAGE_MANIPULATION_DRIVER=imagick` to `.env.example` to make it easier to enable Imagick.
+
 ## 1.20.4 (2021-02-10)
 
 ### What's new
