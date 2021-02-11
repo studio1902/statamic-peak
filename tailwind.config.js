@@ -18,8 +18,8 @@ module.exports = {
     require('./tailwind.config.peak.js'),
     require('./tailwind.config.site.js'),
   ],
-  // Dark mode
-  darkMode: 'media', // or 'class'
+  // Uncomment the next line to enable Dark mode.
+  // darkMode: 'media', // or 'class'
   // Configure Purge CSS.
   purge: {
     content: [
