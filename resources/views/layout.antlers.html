@@ -6,15 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
 
-        {{# Uncomment the following line if you use class based dark mode and enabled the `resources/views/components/_dark_mode_toggle.antlers.html` in `resources/views/navigation_main.antlers.html`. #}}
-        {{ yield:set_current_theme }}
-
         {{# Replace the following line with the SEO Pro or Aardvark SEO tag if you want to use an addon for SEO. Also remove the seo section in you page blueprint.#}}
         {{ partial:snippets/seo }}
 
         {{ partial:snippets/favicons }}
     </head>
-    <body class=" min-h-screen bg-white dark:bg-black">
+    <body class="min-h-screen bg-white">
         {{ partial:components/toolbar }}
 
         {{# Remove the following line if you want to use an addon for SEO. #}}
