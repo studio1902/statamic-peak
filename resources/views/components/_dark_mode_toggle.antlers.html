@@ -1,0 +1,26 @@
+{{# The dark mode toggle when you use class based dark mode. #}}
+
+{{ section:set_current_theme }}
+    <script>
+        (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+            ? document.documentElement.classList.add('dark') 
+            : document.documentElement.classList.remove('dark');
+    </script>
+{{ /section:set_current_theme }}
+
+<div x-data="{ theme: (localStorage.theme) ? localStorage.theme : 'light' }" x-cloak>
+    <button 
+        x-show="theme === 'light' || !('theme' in localStorage)"
+        @click="theme = 'dark', localStorage.theme = 'dark', document.documentElement.classList.add('dark')"
+        aria-label="{{ trans:strings.set_dark_mode }}"
+    >
+        {{ svg:moon class="w-5 h-5 text-neutral-800 hover:text-primary-600 stroke-current transition-colors" aria-hidden="true" }}
+    </button>
+    <button 
+        x-show="theme === 'dark'"
+        @click="theme = 'light', localStorage.theme = 'light', document.documentElement.classList.remove('dark')"
+        aria-label="{{ trans:strings.disable_dark_mode }}"
+    >
+        {{ svg:sun class="w-5 h-5 text-neutral-800 hover:text-primary-600 stroke-current transition-colors" aria-hidden="true" }}
+    </button
+</div>
