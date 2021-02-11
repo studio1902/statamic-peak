@@ -1,12 +1,12 @@
 # Release Notes
 
-## 1.20.5 (unreleased)
-
-### What's improved
-- Disable darkmode by default. That shaves of some dev build size and will make your debugger faster. Woof!
+## 1.20.5 (2020-02-11)
 
 ### What's new
 - Add commented `IMAGE_MANIPULATION_DRIVER=imagick` to `.env.example` to make it easier to enable Imagick.
+
+### What's improved
+- Disable darkmode by default. That shaves of some dev build size and will make your debugger faster. Woof!
 
 ## 1.20.4 (2021-02-10)
 
