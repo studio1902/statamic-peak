@@ -21,7 +21,7 @@ module.exports = {
   // Uncomment the next line to enable Dark mode using `prefers-color-scheme`.
   // darkMode: 'media', 
   // Or use the next line to use darkmode by adding a class to your html.
-  darkMode: 'class',
+  // darkMode: 'class',
   // Configure Purge CSS.
   purge: {
     content: [
