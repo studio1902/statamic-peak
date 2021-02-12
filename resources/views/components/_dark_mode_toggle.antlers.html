@@ -1,4 +1,13 @@
 {{# The dark mode toggle when you use class based dark mode. #}}
+{{ section:dark_mode_toggle }}
+    <script>
+        alert('Do you see this?');
+        (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+            ? document.documentElement.classList.add('dark') 
+            : document.documentElement.classList.remove('dark');
+    </script>
+{{ /section:dark_mode_toggle }}
+
 <div 
     x-data="{ 
         theme: (localStorage.theme) 
@@ -20,7 +29,7 @@
         aria-label="{{ trans:strings.set_dark_mode }}"
         title="{{ trans:strings.set_dark_mode }}"
     >
-        {{ svg:moon class="w-5 h-5 text-neutral-800 hover:text-primary-600 stroke-current transition-colors" aria-hidden="true" }}
+        {{ svg:moon class="w-5 h-5 text-neutral-800 hover:text-primary-600 stroke-current transition-colors overflow-visible" aria-hidden="true" }}
     </button>
     <button 
         x-show="theme === 'dark'"
@@ -31,6 +40,6 @@
         aria-label="{{ trans:strings.disable_dark_mode }}"
         title="{{ trans:strings.disable_dark_mode }}"
     >
-        {{ svg:sun class="w-5 h-5 text-neutral-800 hover:text-primary-600 stroke-current transition-colors" aria-hidden="true" }}
+        {{ svg:sun class="w-5 h-5 text-neutral-800 hover:text-primary-600 stroke-current transition-colors overflow-visible" aria-hidden="true" }}
     </button
 </div>

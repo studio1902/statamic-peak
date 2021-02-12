@@ -6,11 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         
         {{# Uncomment the following line if you use class based dark mode and enabled the `resources/views/components/_dark_mode_toggle.antlers.html` in `resources/views/navigation_main.antlers.html`. #}}
-        <script>
-            (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-                ? document.documentElement.classList.add('dark') 
-                : document.documentElement.classList.remove('dark');
-        </script>
+        {{ yield:dark_mode_toggle }}
 
         <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
 
