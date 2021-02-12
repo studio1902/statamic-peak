@@ -25,6 +25,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Assets](#assets)
 * [Bard](#bard)
 * [Buttons](#buttons)
+* [Dark mode (off by default)](#dark-mode)
 * [Favicons](#favicons)
 * [Forms](#forms)
 * [Globals](#globals)
@@ -32,7 +33,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Page builder](#page-builder)
 * [Pagination](#pagination)
 * [Redirects](#redirects)
-* [Search](#search)
+* [Search (off by default)](#search)
 * [SEO](#seo)
 * [Statamic login screen](#statamic-login-screen)
 * [Typography](#typography)
@@ -183,6 +184,17 @@ The files `resources/fieldsets/buttons.yaml` and `resources/views/components/_bu
 |---|
 | [![Buttons](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png)](https://cdn.studio1902.nl/assets/statamic-peak/screenshots/v1.18.8/button.png) |
 
+## Dark mode (off by default)
+<span id="dark-mode"></span>
+
+In Tailwind you can enable [default dark mode](https://tailwindcss.com/docs/dark-mode) by uncommenting `darkMode: 'media',` in `tailwind.config.js`. This way your website will react to the users OS wide `prefers-color-scheme`.
+
+If you want to use [class based dark mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually) you should do the following:
+
+- Uncomment `darkMode: 'class'` in `tailwind.config.js`.
+- Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/vies/layout.antlers.html`.
+- Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
+
 ## Favicons
 <span id="favicons"></span>
 
@@ -291,12 +303,12 @@ There is Redirects global where you can define your 301 and 302 redirects. This 
 
 > Note: alternatively you could use the fantastic [Rediret](https://github.com/riasvdv/statamic-redirect) by [Rias](https://github.com/riasvdv). It's very feature rich and even tracks 404 errors you can easily setup redirects for those as well.
 
-## Search
+## Search (off by default)
 <span id="search"></span>
 
 Statamic comes with great search functionality out of the box. If you want to use this you have to do some configuration and templating work. Peak comes with basic search support you can easily customize to suit your needs. To enable default search do the following:
 
-* Uncomment the search partial in `views/navigation/_main.antlers.html`.
+* Add `{{ partial:components/search_form }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
 * Uncomment the search results route  in `routes/web.php`.
 * Add fields you want indexed to the index in `config/statamic/search.php`. The `page_builder` field is added by default.
 * Update the search index by running `php please search:update --all`.

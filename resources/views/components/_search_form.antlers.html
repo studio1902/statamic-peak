@@ -1,4 +1,13 @@
-{{# The search form, to be used in `resources/views/navigation/_main.antlers.html. #}}
+{{# 
+    The search form partial when you want to use search. To enable this do the following:
+    
+    * Add `{{ partial:components/search_form }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
+    * Uncomment the search results route in routes/web.php.
+    * Add fields you want indexed to the index in config/statamic/search.php. The page_builder field is added by default.
+    * Update the search index by running php please search:update --all.
+    * Make sure you add the update command to your deployment script.
+#}}
+
 <li 
     x-data="{ open: false, value: '' }" 
     x-on:click.away="{ open = false }"

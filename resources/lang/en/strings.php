@@ -29,4 +29,8 @@ return [
     'search'                            => 'Search',
     'search_no_results'                 => 'No results found',
     'search_results_for'                => 'Results for',
+
+    // Other
+    'set_dark_mode'                     => 'Enable dark mode',
+    'disable_dark_mode'                 => 'Disable dark mode',
 ];
