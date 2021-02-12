@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.21.0 (2020-02-12)
+
+### What's new
+- Added an optional dark mode toggle. Follow the instructions in README or `resources/views/components/_dark_mode_toggle.antlers.html` on how to enable (class based) Dark Mode.
+- Search disabled and removed from partials by default to clean the templates up a little. Follow the instructions in README or `resources/views/components/_search_form.antlers.html` on how to enable search.
+
 ## 1.20.5 (2020-02-11)
 
 ### What's new
