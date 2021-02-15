@@ -121,7 +121,7 @@ sections:
                     type: hidden
                     default: 'https://www.youtube.com/'
             github:
-              display: Github
+              display: GitHub
               fields:
                 -
                   handle: url
