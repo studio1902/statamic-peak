@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.21.1 (unreleaseD)
+
+### What's new
+- Added GitHub to the Social Media blueprint. Thanks [Gal](https://github.com/morpheus7CS).
+
 ## 1.21.0 (2020-02-12)
 
 ### What's new
