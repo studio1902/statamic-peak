@@ -120,6 +120,24 @@ sections:
                   field: 
                     type: hidden
                     default: 'https://www.youtube.com/'
+            github:
+              display: GitHub
+              fields:
+                -
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.github.com/'
+                    display: URL
+                    validate: required
+                - 
+                  handle: prefix
+                  field: 
+                    type: hidden
+                    default: 'https://www.github.com/'
           type: replicator
           listable: hidden
           display: 'Social media'
