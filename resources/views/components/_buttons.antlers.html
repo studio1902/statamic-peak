@@ -11,7 +11,7 @@
         {{# The styling when called from any other partial or template. #}}
         <div class="inline-flex flex-col md:flex-row justify-start md:items-center flex-wrap space-y-8 md:space-y-0 md:space-x-4">
             {{ buttons }}
-                {{ partial:components/button }}
+                {{ partial:components/button :inverted="inverted" }}
             {{ /buttons }}
         </div>
     {{ /if }}
