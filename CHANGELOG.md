@@ -1,8 +1,9 @@
 # Release Notes
 
-## 1.21.1 (unreleased)
+## 1.21.1 (2020-02-17)
 
 ### What's new
+- Use `inverted="true"` on `resources/views/components/_buttons.antlers.html` or `resources/views/component/_button.antlers.html` to use inverted styled buttons. Usefull on contrasting backgrounds (BYOS: bring your own styling).
 - Added GitHub to the Social Media blueprint. Thanks [Gal](https://github.com/morpheus7CS).
 
 ## 1.21.0 (2020-02-12)
