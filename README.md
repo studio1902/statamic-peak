@@ -12,6 +12,7 @@ Statamic Peak is an opinionated starter kit for all your Statamic sites. It's de
 The aim of Peak is to make it easy to start new projects as they often share much of the same principles. Whether you're new to Statamic or a veteran, there will be something interesting in here for you. Please participate and discuss on how to make our websites better.
 
 [Discuss Peak on Discord](https://discord.gg/sW7KXWaucH)
+[Peak on Laravel News](https://laravel-news.com/statamic-peak)
 
 ### Getting started
 
