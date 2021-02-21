@@ -132,7 +132,7 @@ You can use a helper utility by adding the class `?` to quickly identify element
 <span id="assets"></span>
 
 ### Images
-Peak comes a picture partial that will add responsive sourcesets to your images. The variants generated are defined in `config/statamic/assets.php` and cover most use cases. In `resources/views/components/_figure.antlers.html` you can see an example of how to include the picture partial. It accepts the following arguments:
+Peak comes with a picture partial that will add responsive sourcesets to your images. The variants generated are defined in `config/statamic/assets.php` and cover most use cases. In `resources/views/components/_figure.antlers.html` you can see an example of how to include the picture partial. It accepts the following arguments:
 
 * `image`: *asset*, the actual image variable.
 * `class`: *string*, optional css classes that should be applied to the image.
@@ -302,7 +302,7 @@ There is Redirects global where you can define your 301 and 302 redirects. This 
 
 > Note: by default only `superusers` and the `marketeer` role get access to this feature.
 
-> Note: alternatively you could use the fantastic [Rediret](https://github.com/riasvdv/statamic-redirect) by [Rias](https://github.com/riasvdv). It's very feature rich and even tracks 404 errors you can easily setup redirects for those as well.
+> Note: alternatively you could use the fantastic [Redirect](https://github.com/riasvdv/statamic-redirect) by [Rias](https://github.com/riasvdv). It's very feature rich and even tracks 404 errors you can easily setup redirects for those as well.
 
 ## Search (off by default)
 <span id="search"></span>
