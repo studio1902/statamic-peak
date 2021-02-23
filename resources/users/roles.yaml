@@ -23,6 +23,9 @@ editor:
     - 'create users'
     - 'delete users'
     - 'change passwords'
+    - 'edit other authors pages entries'
+    - 'publish other authors pages entries'
+    - 'delete other authors pages entries'
 marketeer:
   title: Marketeer
   permissions:
