@@ -3,13 +3,19 @@ const mix = require('laravel-mix')
 mix.js('resources/js/site.js', 'public/js/site.js')
     .sourceMaps(false)
 
-mix.postCss('resources/css/site.css', 'public/css/site.css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('postcss-nested'),
-    require('postcss-focus-visible'),
-    require('autoprefixer'),
-])
+mix.options({
+    postCss: [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('postcss-nested'),
+        require('postcss-focus-visible'),
+        require('autoprefixer'),
+    ], 
+})
+
+mix.postCss('resources/css/theme.css', 'public/css/theme.css')
+mix.postCss('resources/css/utilities.css', 'public/css/utilities.css')
+mix.combine(['./public/css/theme.css', './public/css/utilities.css'], 'public/css/site.css')
 
 mix.browserSync({
     proxy: process.env.APP_URL,
