@@ -13,6 +13,7 @@ mix.options({
     ], 
 })
 
+// Separate compiliation steps so edits to just `resources/css/custom.css` will compile blazingly fast.
 mix.postCss('resources/css/theme.css', 'public/css/theme.css')
 mix.postCss('resources/css/utilities.css', 'public/css/utilities.css')
 mix.combine(['./public/css/theme.css', './public/css/utilities.css'], 'public/css/site.css')

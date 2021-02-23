@@ -125,7 +125,7 @@ Read up on the [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-form
 
 You can use a helper utility by adding the class `?` to quickly identify elements on screen. Original idea by [Gavin Joyce](https://github.com/GavinJoyce/tailwindcss-question-mark).
 
-> Note: if you don't want to define your custom CSS in Tailwind JS config files you can add it to `resources/css/custom.css`. Make sure to read up on the use of [@layer](https://tailwindcss.com/docs/functions-and-directives#layer) to instruct PurgeCSS. Use whatever method you prefer.
+> Note: if you don't want to define your custom CSS in Tailwind JS config files you can add it to `resources/css/custom.css`. Make sure to read up on the use of [@layer](https://tailwindcss.com/docs/functions-and-directives#layer) to instruct PurgeCSS. Use whatever method you prefer. Compilation is separated from the Tailwind utilities so it'll be blazingly fast.
 
 # Features
 ## Assets
