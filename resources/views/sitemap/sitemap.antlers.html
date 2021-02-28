@@ -5,6 +5,12 @@
         {{ collection from="{handle}" seo_noindex:isnt="true" }}
             <url>
                 <loc>{{ permalink }}</loc>
+                
+                {{ locales }}
+                    <xhtml:link rel="alternate" hreflang="{{locale:key}}" href="{{ permalink }}" />
+                {{ /locales }}
+                <xhtml:link rel="alternate" hreflang="x-default" href="{{ permalink }}" />
+                        
                 <lastmod>{{ updated_at format="Y-m-d"}}</lastmod>
                 <changefreq>{{ sitemap_change_frequency ? sitemap_change_frequency : 'weekly' }}</changefreq>
                 <priority>{{ sitemap_priority ? sitemap_priority : '0.5' }}</priority>
