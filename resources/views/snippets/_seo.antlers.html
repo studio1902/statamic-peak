@@ -53,8 +53,10 @@
                 "@context": "http://schema.org",
                 "@type": "Organization",
                 "name": "{{ seo:organization_name }}",
-                "url": "{{ config:app:url }}{{ homepage }}",
-                "logo": "{{ permalink }}{{ glide:seo:organization_logo width='336' height='336' fit='crop_focal' }}"
+                "url": "{{ config:app:url }}{{ homepage }}"
+                {{ if seo:organization_logo }},
+                    "logo": "{{ config:app:url }}{{ glide:seo:organization_logo width='336' height='336' fit='crop_focal' }}",
+                {{ /if }}
             }
         {{ elseif seo:json_ld_type == 'person' }}
             {
