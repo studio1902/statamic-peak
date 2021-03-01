@@ -4,10 +4,10 @@
 
 ### What's new
 - Support for Statamic 3.1 white labeling.
-- Seperate compilation of Tailwind CSS so when you use and edit just `resources/css/site.css` to add custom CSS, compilation will be way faster.
 
 ### What's improved
 - Disable `max-width` on `prose` class by default (as it's already in a container).
+- Disable `size-modifiers` for Tailwind Typography by default since we use fluid typography.
 
 ## 1.21.1 (2020-02-17)
 
