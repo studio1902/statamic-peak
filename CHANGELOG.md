@@ -9,6 +9,7 @@
 - Disable `max-width` on `prose` class by default (as it's already in a container).
 - Disable `size-modifiers` for Tailwind Typography by default since we use fluid typography.
 - Fix Knowledge Graph JSON-ld Organisation logo url.
+- Contain Knowledge Graph JSON-ld Organisation logo in it's square.
 
 ## 1.21.1 (2020-02-17)
 
