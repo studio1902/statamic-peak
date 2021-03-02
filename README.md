@@ -36,7 +36,6 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Redirects](#redirects)
 * [Search (off by default)](#search)
 * [SEO](#seo)
-* [Statamic login screen](#statamic-login-screen)
 * [Typography](#typography)
 
 ### Other
@@ -369,13 +368,6 @@ And optionally to erase all traces:
 * Delete the SEO partial `resources/views/snippets/_seo.antlers.html`.
 * Delete the Cookie Banner fieldset: `resources/views/components/_cookie_banner.antlers.html`.
 
-## Statamic login screen
-<span id="statamic-login-screen"></span>
-
-The *Rad Mode&trade;* on the login screen is disabled by default to give the login screen a less fun, but more businessy look. If you want to re-enable Rad Mode, delete `resources/views/vendor/statamic/auth/login.blade.php`.
-
-If you want to use another logo on the login screen. For example the current sites logo, uncomment the code in `/public/vendor/app/css/cp.css` and point to an image file of choice.
-
 ## Typography
 <span id="typography"></span>
 
@@ -413,6 +405,7 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/assets.php` | `'presets' => [],` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
 | `config/statamic/cp.php` | `'link_to_docs' => true` | `'link_to_docs' => false` |
+| `config/statamic/cp.php` | `'theme' => env('STATAMIC_THEME', 'rad')` | `'theme' => env('STATAMIC_THEME', 'business')` |
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
 | `config/statamic/git.php` |  | Add `[BOT]` to git commit message. |
 | `config/statamic/live_preview.php` | Three breakpoints | All tailwinds breakpoints defined in `tailwind.config.js` |
