@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.22.0 (unreleased)
+## 1.22.0 (2020-02-17)
 
 ### What's new
 - Support for Statamic 3.1 white labeling.
