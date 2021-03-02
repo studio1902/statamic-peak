@@ -401,8 +401,9 @@ Peak changes the default Statamic config. The following is different:
 | `app/listeners/GenerateFavicons.php` |  | Listen to a GlobalSavedEvent to generate [favicons](#favicons).
 | `app/providers/EventServiceProvider.php` |  | Listen to a GlobalSavedEvent to generate [favicons](#favicons).
 | `app/Tags/DynamicToken.php` |  | New Tag for [forms](#forms) |
+| `config/statamic/assets.php` | `driver' => 'gd'` | `'driver' => env('IMAGE_MANIPULATION_DRIVER', 'gd')` |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
-| `config/statamic/assets.php` | `'presets' => [],` | Contains a whole bunch of asset presets. |
+| `config/statamic/assets.php` | `'presets' => []` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | A page collection widget |
 | `config/statamic/cp.php` | `'link_to_docs' => true` | `'link_to_docs' => false` |
 | `config/statamic/cp.php` | `'theme' => env('STATAMIC_THEME', 'rad')` | `'theme' => env('STATAMIC_THEME', 'business')` |
