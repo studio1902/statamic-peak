@@ -11,6 +11,7 @@
 - Fix Knowledge Graph JSON-ld Organisation logo url.
 - Contain Knowledge Graph JSON-ld Organisation logo in it's square.
 - Scope sitemap results to prevent empty `<url>` entries in it. 
+- Actually use `.env` `IMAGE_MANIPULATION_DRIVER` in `config/statamic/assets.php` (defaults to `gd`).
 
 ## 1.21.1 (2020-02-17)
 
