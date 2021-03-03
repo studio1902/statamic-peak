@@ -2,6 +2,9 @@
 
 ## 1.22.1 (Unreleased)
 
+### What's new
+- Add a `class` attribute to the button partial.
+
 ### What's improved
 - Only show `resources/views/components/_toolbar.antlers.html` when environment is `local` and not when you're logged in as that won't work with static caching.
 
