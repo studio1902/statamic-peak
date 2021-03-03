@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.22.1 (Unreleased)
+
+### What's improved
+- Only show `resources/views/components/_toolbar.antlers.html` when environment is `local` and not when you're logged in as that won't work with static caching.
+
 ## 1.22.0 (2020-02-17)
 
 ### What's new
