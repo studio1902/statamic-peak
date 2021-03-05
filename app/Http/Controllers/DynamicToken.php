@@ -22,6 +22,9 @@ class DynamicToken extends Controller
                 abort(404);
             }
         }
-        return csrf_token();
+
+        return response()->json([
+            'csrf_token' => csrf_token()
+        ]);
     }
 }

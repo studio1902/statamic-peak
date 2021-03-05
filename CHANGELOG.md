@@ -1,11 +1,12 @@
 # Release Notes
 
-## 1.22.1 (Unreleased)
+## 1.22.1 (2020-02-18)
 
 ### What's new
 - Add a `class` attribute to the button partial.
 
 ### What's improved
+- Update `app/Http/Controllers/DynamicToken.php` and `app/Tags/DyamicToken.php` to use async/await instead of Ajax and return JSON so you can use the dynamic token route in other places as well.
 - Only show `resources/views/components/_toolbar.antlers.html` when environment is `local` and not when you're logged in as that won't work with static caching.
 
 ## 1.22.0 (2020-02-17)
