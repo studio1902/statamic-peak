@@ -21,32 +21,23 @@ class DynamicToken extends Tags
         return "
             <script>
                 if (document.querySelectorAll('{$selector}').length > 0) {
-                    function httpGetAsync(theUrl, callback) {
-                        var xmlHttp = new XMLHttpRequest();
-                        xmlHttp.onreadystatechange = function() {
-                        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                            callback(xmlHttp.responseText);
-                        };
-                        xmlHttp.open('GET', theUrl, true); // true for asynchronous
-                        xmlHttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                        xmlHttp.send(null);
-                    }
-
-                    function setToken(token) {
-                        document
-                        .querySelectorAll('{$selector}')
-                        .forEach(function(item) {
-                            item.value = token;
+                    async function setToken() {
+                        let token = await fetch('/!/DynamicToken/refresh')
+                            .then((res) => res.json())
+                            .then((data) => { 
+                                return data.csrf_token 
+                            })
+                            .catch(function (error) {
+                                console.error('Error:', error)
+                            })
+                        document.querySelectorAll('{$selector}').forEach(function(item) {
+                            item.value = token
                         });
                     }
-
-                    function updateToken() {
-                        httpGetAsync('{$route}', setToken);
-                    }
-
-                    updateToken();
-
-                    setInterval(updateToken, {$minutes} * 60 * 1000);
+            
+                    setToken()
+            
+                    setInterval(setToken, {$minutes} * 60 * 1000)
                 }
             </script>
         ";
