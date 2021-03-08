@@ -1,8 +1,11 @@
 <?php
 
+namespace App\Console\Commands;
+
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
+use Statamic\Facades\Entry;
 
 class WarmCommand extends Command
 {
@@ -12,7 +15,7 @@ class WarmCommand extends Command
     protected $description = "Warms the static cache by visiting all entry URL's.";
 
     public function handle() {
-        $this->info('Warming the static cache');
+        $this->info('Warming the static cache.');
 
         $this->context = stream_context_create(array(
             'http' => array('ignore_errors' => true),
