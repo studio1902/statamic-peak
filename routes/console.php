@@ -14,19 +14,3 @@ use Statamic\Facades\Entry;
 | simple approach to interacting with each command's IO methods.
 |
 */
-
-// A simple way to get al URL's and visit them to warm up the static cache.
-Artisan::command('warm', function () {
-    $this->context = stream_context_create(array(
-        'http' => array('ignore_errors' => true),
-    ));
-
-    Entry::query()
-        ->where('status', 'published')
-        ->get()
-        ->map->absoluteUrl()
-        ->unique()
-        ->each(function ($url) {
-            $visit = file_get_contents($url, false, $this->context);
-        });
-});
