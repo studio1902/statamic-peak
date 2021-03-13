@@ -22,7 +22,7 @@ class DynamicToken extends Tags
             <script>
                 if (document.querySelectorAll('{$selector}').length > 0) {
                     async function setToken() {
-                        let token = await fetch('/!/DynamicToken/refresh')
+                        let token = await fetch('{$route}')
                             .then((res) => res.json())
                             .then((data) => { 
                                 return data.csrf_token 
