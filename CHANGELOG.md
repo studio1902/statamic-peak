@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.22.2 (UNRELEASED)
+
+### What's improved
+- Use defined variable in Dynamic Token tag. Thanks [Alexander](https://github.com/stoffelio).
+
 ## 1.22.1 (2020-02-18)
 
 ### What's new
