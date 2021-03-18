@@ -4,6 +4,8 @@
 
 ### What's improved
 - Use defined variable in Dynamic Token tag. Thanks [Alexander](https://github.com/stoffelio).
+- Default to `rad` mode, but set `STATAMIC_THEME` to `business` in `.env.example`.
+- Restore an empty `public/vendor/app/css/cp.css` to prevent a 404 error in the console.
 
 ## 1.22.1 (2020-02-18)
 
