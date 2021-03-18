@@ -192,7 +192,7 @@ In Tailwind you can enable [default dark mode](https://tailwindcss.com/docs/dark
 If you want to use [class based dark mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually) you should do the following:
 
 - Uncomment `darkMode: 'class'` in `tailwind.config.js`.
-- Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/vies/layout.antlers.html`.
+- Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/views/layout.antlers.html`.
 - Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
 
 ## Favicons
