@@ -3,6 +3,7 @@
 ## 1.22.2 (UNRELEASED)
 
 ### What's improved
+- Ensure a full stop in the alt text in `resources/views/components/_picture.antlers.html`.
 - Use defined variable in Dynamic Token tag. Thanks [Alexander](https://github.com/stoffelio).
 - Default to `rad` mode, but set `STATAMIC_THEME` to `business` in `.env.example`.
 - Restore an empty `public/vendor/app/css/cp.css` to prevent a 404 error in the console.
