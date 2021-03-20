@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.22.2 (2020-03-20)
+## 1.23.0 (2020-03-20)
 
 ### What's new
 - Use [Tailwinds JIT](https://github.com/tailwindlabs/tailwindcss-jit/) compiler.
