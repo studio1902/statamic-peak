@@ -38,19 +38,4 @@ module.exports = {
       safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl', 'js-focus-visible'],
     }
   },
-  // Extend variants.
-  variants: {
-    extend: {
-      animation: ['motion-safe'],
-      margin: ['last'],
-      ringWidth: ['focus-visible'],
-      rotate: ['group-hover', 'motion-safe'],
-      scale: ['group-hover', 'motion-safe'],
-      skew: ['group-hover', 'motion-safe'],
-      transitionDuration: ['motion-safe'],
-      transitionProperty: ['motion-safe'],
-      translate: ['group-hover', 'motion-safe'],
-      // typography: ["dark"],
-    }
-  }
 }

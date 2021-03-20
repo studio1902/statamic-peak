@@ -1,6 +1,9 @@
 # Release Notes
 
-## 1.22.2 (UNRELEASED)
+## 1.22.2 (2020-03-20)
+
+### What's new
+- Use [Tailwinds JIT](https://github.com/tailwindlabs/tailwindcss-jit/) compiler.
 
 ### What's improved
 - Ensure a full stop in the alt text in `resources/views/components/_picture.antlers.html`.
