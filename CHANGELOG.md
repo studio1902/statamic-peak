@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.23.1 (2020-03-20)
+
+### What's improved
+- Remove `npm i && npm run dev` from `post-create-project` in `composer.json` to prevent issues when using the Statamic CLI together with the Tailwind JIT compiler.
+
 ## 1.23.0 (2020-03-20)
 
 ### What's new
