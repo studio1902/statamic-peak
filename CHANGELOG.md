@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.23.2 (Unreleased)
+
+### What's new
+- Add `~` as a page title separator.
+
 ## 1.23.1 (2020-03-20)
 
 ### What's improved
