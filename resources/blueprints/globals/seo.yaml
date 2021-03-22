@@ -17,6 +17,7 @@ sections:
             ' / ': /
             ' :: ': '::'
             ' > ': '>'
+            ' ~ ': '~'
           clearable: false
           multiple: false
           searchable: true
