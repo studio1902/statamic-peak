@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('route:cache')->daily();
         $schedule->command('statamic:stache:warm')->daily(); 
         $schedule->command('statamic:static:clear')->daily();
-        $schedule->command('warm')->daily();
+        $schedule->command('statamic:peak:warm')->daily();
     }
 
     /**

@@ -4,6 +4,7 @@
 
 ### What's new
 - Add `~` as a page title separator.
+- Properly define the warm command in it's own file. *Important*: you must now run `php please peak:warm` or `php artisan statamic:peak:warm`.
 
 ## 1.23.1 (2020-03-20)
 
