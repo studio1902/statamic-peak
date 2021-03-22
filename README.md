@@ -415,7 +415,6 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/stache.php` | `'watcher' => true` | `'watcher' => env('STATAMIC_STACHE_WATCHER', true)` |
 | `config/statamic/static_caching.php` | `rules' => [ // ]` | `'rules' => 'all'` |
 | `config/statamic/users.php` | `'avatars' => 'initials'` | `'avatars' => 'gravatar'` |
-| `routes/console.php` |  | A `php artisan warm` command to [warm the static cache](#warm-all-caches). 
 | `routes/web.php` |  | Routes for the [favicons](#favicons) feature.  
 | `routes/web.php` |  | Routes for the search [functionality](#search). Commented by default.
 | `routes/web.php` |  | Routes for the sitemap and [dynamic form](#forms) token.  
@@ -432,7 +431,7 @@ Peak changes the default Statamic config. The following is different:
  php artisan statamic:stache:warm # Warm the Statamic stache.
  php please search:update --all # Update the search index.
  php artisan statamic:static:clear # Clear the Statamic static cache (if you use this).
- php artisan warm # Warm the Statamic static cache (if you use this / only available in Peak).
+ php artisan statamic:peak:warm # Warm the Statamic static cache (if you use this / only available in Peak).
  php artisan statamic:assets:generate-presets # Generate all asset presets.
  ```
 
@@ -472,7 +471,7 @@ Check the [issues](https://github.com/studio1902/statamic-peak/issues?q=is%3Aiss
 
 ## Warm all caches
 <span id="warm-all-caches"></span>
-Running `php artisan warm` after your deployments will visit all urls and warm up the static cache. This is a custom command and is defined in `routes/console.php`. 
+Running `php artisan statamic:peak:warm` after your deployments will visit all urls and warm up the static cache. This is a custom command and is defined in `app/console/commands/WarmCommand.php`. 
 
 Triggering `php artisan schedule:run` with a cronjob on a server will daily clear and warm all caches. It basically chains all commands defined in the [deployment-script](#deployment-script). Edit `app/console/Kernel.php` if you don't want this daily but for example hourly. [Read more in the Laravel Docs](https://laravel.com/docs/master/scheduling).
 

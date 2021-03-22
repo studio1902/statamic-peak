@@ -2,7 +2,6 @@
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
-use Statamic\Facades\Entry;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,18 +14,6 @@ use Statamic\Facades\Entry;
 |
 */
 
-// A simple way to get al URL's and visit them to warm up the static cache.
-Artisan::command('warm', function () {
-    $this->context = stream_context_create(array(
-        'http' => array('ignore_errors' => true),
-    ));
-
-    Entry::query()
-        ->where('status', 'published')
-        ->get()
-        ->map->absoluteUrl()
-        ->unique()
-        ->each(function ($url) {
-            $visit = file_get_contents($url, false, $this->context);
-        });
-});
+Artisan::command('inspire', function () {
+    $this->comment(Inspiring::quote());
+})->purpose('Display an inspiring quote');
