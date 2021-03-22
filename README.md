@@ -47,6 +47,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Modernizr](#modernizr)
 * [Localization and template strings](#localization)
 * [Reduced motion](#reduced-motion)
+* [Tags](#tags)
 * [Toolbar](#toolbar)
 * [Upcoming features](#upcoming-features)
 * [Warm all caches](#warm-all-caches)
@@ -458,6 +459,11 @@ It is currently not possible in Statamic to translate field labels and descripti
 <span id="reduced-motion"></span>
 
 The default anchor styles configured in `tailwind.config.site.js` respects users that prefer less motion. Other transition utilities used in Peaks' templates are prefixed with the `motion-safe:` variant by default. Read more on [how motion safe works](https://tailwindcss.com/docs/hover-focus-and-other-states#motion-safe).
+
+## Tags
+<span id="tags"></span>
+
+Peak adds a tag to get a collections mount URL. So you can use `{{ mount_url from="news" }}` to generate a `View all news articles` link for example. Thanks [Simon Bédard](https://statamic.com/forum/4925-get-url-of-page-with-mounted-collection).
 
 ## Toolbar
 <span id="toolbar"></span>
