@@ -1,17 +1,18 @@
 # Release Notes
 
-## 1.23.2 (Unreleased)
+## 1.23.2 (2021-03-22)
 
 ### What's new
+- Add a tag to get a collections mount URL. So you can use `{{ mount_url from="news" }}` to generate a `View all news articles` link. Thanks [Simon Bédard](https://statamic.com/forum/4925-get-url-of-page-with-mounted-collection).
 - Add `~` as a page title separator.
 - Properly define the warm command in it's own file. *Important*: you must now run `php please peak:warm` or `php artisan statamic:peak:warm`.
 
-## 1.23.1 (2020-03-20)
+## 1.23.1 (2021-03-20)
 
 ### What's improved
 - Remove `npm i && npm run dev` from `post-create-project` in `composer.json` to prevent issues when using the Statamic CLI together with the Tailwind JIT compiler.
 
-## 1.23.0 (2020-03-20)
+## 1.23.0 (2021-03-20)
 
 ### What's new
 - Use [Tailwinds JIT](https://github.com/tailwindlabs/tailwindcss-jit/) compiler.
@@ -22,7 +23,7 @@
 - Default to `rad` mode, but set `STATAMIC_THEME` to `business` in `.env.example`.
 - Restore an empty `public/vendor/app/css/cp.css` to prevent a 404 error in the console.
 
-## 1.22.1 (2020-02-18)
+## 1.22.1 (2021-02-18)
 
 ### What's new
 - Add a `class` attribute to the button partial.
@@ -31,7 +32,7 @@
 - Update `app/Http/Controllers/DynamicToken.php` and `app/Tags/DyamicToken.php` to use async/await instead of Ajax and return JSON so you can use the dynamic token route in other places as well.
 - Only show `resources/views/components/_toolbar.antlers.html` when environment is `local` and not when you're logged in as that won't work with static caching.
 
-## 1.22.0 (2020-02-17)
+## 1.22.0 (2021-02-17)
 
 ### What's new
 - Support for Statamic 3.1 white labeling.
@@ -44,19 +45,19 @@
 - Scope sitemap results to prevent empty `<url>` entries in it. 
 - Actually use `.env` `IMAGE_MANIPULATION_DRIVER` in `config/statamic/assets.php` (defaults to `gd`).
 
-## 1.21.1 (2020-02-17)
+## 1.21.1 (2021-02-17)
 
 ### What's new
 - Use `inverted="true"` on `resources/views/components/_buttons.antlers.html` or `resources/views/component/_button.antlers.html` to use inverted styled buttons. Usefull on contrasting backgrounds (BYOS: bring your own styling).
 - Added GitHub to the Social Media blueprint. Thanks [Gal](https://github.com/morpheus7CS).
 
-## 1.21.0 (2020-02-12)
+## 1.21.0 (2021-02-12)
 
 ### What's new
 - Added an optional dark mode toggle. Follow the instructions in README or `resources/views/components/_dark_mode_toggle.antlers.html` on how to enable (class based) Dark Mode.
 - Search disabled and removed from partials by default to clean the templates up a little. Follow the instructions in README or `resources/views/components/_search_form.antlers.html` on how to enable search.
 
-## 1.20.5 (2020-02-11)
+## 1.20.5 (2021-02-11)
 
 ### What's new
 - Add commented `IMAGE_MANIPULATION_DRIVER=imagick` to `.env.example` to make it easier to enable Imagick.
