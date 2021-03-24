@@ -1,9 +1,12 @@
 # Release Notes
 
-## 1.23.2 (2021-03-22)
+## 1.24.0 (2021-03-24)
 
 ### What's new
+- Add Twitter `Summary Large Image` card support.
 - Propertly enforce `focus-visible` where applicable.
+
+Peak now has it's own docs thanks to Robert Guss.
 
 ## 1.23.2 (2021-03-22)
 
