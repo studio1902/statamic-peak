@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.24.1 (2021-03-24)
+
+### What's new
+- Add Twitter Image Alt meta tag.
+
 ## 1.24.0 (2021-03-24)
 
 ### What's new
