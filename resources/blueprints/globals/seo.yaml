@@ -137,8 +137,28 @@ sections:
         config:
           listable: hidden
           display: 'Social image'
-          instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px'
+          instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px. This image will be focal cropped to this dimension.'
           width: 50
+      -
+        handle: twitter_image
+        field: common.image
+        config:
+          listable: hidden
+          display: 'Twitter image'
+          instructions: 'The default Twitter image. Can be overridden per entry. Images should have an aspect ratio of 2:1 with minimum dimensions of 300x157. This image will be focal cropped to this dimension.'
+          width: 50
+      -
+        handle: twitter_handle
+        field:
+          listable: hidden
+          display: 'Twitter handle'
+          width: 50
+          input_type: text
+          type: text
+          localizable: true
+          instructions: 'The Twitter user name that should be included with Twitter Card tags.'
+          prepend: '@'
+          antlers: false
   sitemap:
     display: Sitemap
     fields:

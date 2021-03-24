@@ -113,6 +113,27 @@
     <meta property="og:image" content="{{ glide:seo:og_image width='1200' height='630' fit='crop_focal' absolute="true" }}">
 {{ /if }}
 
+{{# Twitter #}}
+{{ if twitter_image or seo:twitter_image }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ seo:twitter_handle }}">
+    {{ if og_title }}
+        <meta name="twitter:title" content="{{ og_title }}">
+    {{ else }}
+        <meta name="twitter:title" content="{{ seo_title ? seo_title : title }}">
+    {{ /if }}
+    {{ if og_description }}
+        <meta name="twitter:description" content="{{ og_description }}">
+    {{ elseif seo_description }}
+        <meta name="twitter:description" content="{{ seo_description }}">
+    {{ /if }}
+    {{ if twitter_image }}
+        <meta name="twitter:image" content="{{ glide:twitter_image width='1200' height='600' fit='crop_focal' absolute="true" }}">
+    {{ elseif seo:twitter_image }}
+        <meta name="twitter:image" content="{{ glide:seo:twitter_image width='1200' height='600' fit='crop_focal' absolute="true" }}">
+    {{ /if }}
+{{ /if }}
+
 {{# Trackers #}}
 {{ if environment == 'production' }}
     {{ if seo:tracker_type == 'gtm' }}
