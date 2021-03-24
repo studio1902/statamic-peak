@@ -6,7 +6,7 @@
 - Add Twitter `Summary Large Image` card support.
 - Propertly enforce `focus-visible` where applicable.
 
-Peak now has it's own docs thanks to Robert Guss.
+Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.studio1902.nl).
 
 ## 1.23.2 (2021-03-22)
 
