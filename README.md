@@ -23,7 +23,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 ## Contributing
 <span id="contributing"></span>
 
-Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect. Read the [Code of Conduct](CODE_OF_CONDUCT.md).
+Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect. Read the [Code of Conduct](https://github.com/studio1902/statamic-peak/blob/main/.github/CODE_OF_CONDUCT.md).
 
 ## License
 <span id="license"></span>
