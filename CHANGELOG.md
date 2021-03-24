@@ -3,6 +3,11 @@
 ## 1.23.2 (2021-03-22)
 
 ### What's new
+- Propertly enforce `focus-visible` where applicable.
+
+## 1.23.2 (2021-03-22)
+
+### What's new
 - Add a tag to get a collections mount URL. So you can use `{{ mount_url from="news" }}` to generate a `View all news articles` link. Thanks [Simon Bédard](https://statamic.com/forum/4925-get-url-of-page-with-mounted-collection).
 - Add `~` as a page title separator.
 - Properly define the warm command in it's own file. *Important*: you must now run `php please peak:warm` or `php artisan statamic:peak:warm`.
