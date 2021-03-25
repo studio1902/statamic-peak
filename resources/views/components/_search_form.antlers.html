@@ -18,7 +18,7 @@
         class="text-neutral-800 hover:text-primary-600"
         aria-label="{{ trans:strings.search }}"
     >
-        {{ svg:search class="w-5 h-5 fill-current transition-colors" aria-hidden="true" }}
+        {{ svg:search class="w-5 h-5 fill-current transition-colors" alt="" aria-hidden="true" }}
     </button>
     
     <form 
@@ -41,7 +41,7 @@
             :disabled="value === 0"
             :class="{ 'opacity-25 cursor-default': value.length === 0, 'opacity-100': value.length > 0 }"
         >
-            {{ svg:search class="w-5 h-5 fill-current transition-colors" aria-hidden="true" }}
+            {{ svg:search class="w-5 h-5 fill-current transition-colors" alt="" aria-hidden="true" }}
         </button>
     </form>
 </li>

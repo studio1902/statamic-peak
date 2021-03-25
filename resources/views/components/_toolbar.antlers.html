@@ -7,14 +7,14 @@
     >
         {{ if environment == 'local' }}
             <span title="Current Tailwind breakpoint" class="flex items-center p-2 space-x-1 text-notice-800 bg-notice-200">
-                {{ svg:breakpoint class="w-4 h-4 fill-current" aria-hidden="true" }}
+                {{ svg:breakpoint class="w-4 h-4 fill-current" alt="" aria-hidden="true" }}
                 <span class="breakpoint"></span>
             </span>
         {{ /if }}
 
         {{ if logged_in == true }}
-            <a href="{{ edit_url }}" title="Edit entry in CP" target="_blank" class="flex items-center p-2 space-x-1 text-neutral-800 bg-neutral-200 hover:bg-neutral-300">
-                {{ svg:edit class="w-4 h-4 fill-current" aria-hidden="true" }}
+            <a href="{{ edit_url }}" title="Edit entry in CP" aria-label="Edit entry in CP" target="_blank" class="flex items-center p-2 space-x-1 text-neutral-800 bg-neutral-200 hover:bg-neutral-300">
+                {{ svg:edit class="w-4 h-4 fill-current" alt="" aria-hidden="true" }}
                 <span>Edit</span>
             </a>
         {{ /if }}
@@ -24,10 +24,10 @@
             title="Toggle toolbar visibility" aria-label="Toggle toolbar visibility" class="flex items-center justify-center px-2 bg-neutral-200 hover:bg-neutral-300"
         >
             <div :class="{ 'hidden': visible, 'block': !visible }">
-                {{ svg:invisible class="w-5 h-5 fill-current" aria-hidden="true" }}
+                {{ svg:invisible class="w-5 h-5 fill-current" alt="" aria-hidden="true" }}
             </div>
             <div :class="{ 'block': visible, 'hidden': !visible }">
-                {{ svg:visible class="w-5 h-5 fill-current" aria-hidden="true" }}
+                {{ svg:visible class="w-5 h-5 fill-current" alt="" aria-hidden="true" }}
             </div>
         </button>
     </aside>

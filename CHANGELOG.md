@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.24.2 (Unreleased)
+
+### What's improved
+- Add empty `alt` attributes to SVG icons for improved a11y according to best practices. This makes sure VoiceOver won't read the filename for those decorative icons.
+
 ## 1.24.1 (2021-03-24)
 
 ### What's new
