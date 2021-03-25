@@ -21,3 +21,15 @@ window.getCookie = function(name) {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
+
+// Global get CSRF token function (used by forms).
+window.getToken = async () => {
+    fetch('/!/DynamicToken/refresh')
+        .then((res) => res.json())
+        .then((data) => { 
+            return data.csrf_token
+        })
+        .catch(function (error) {
+            this.error = 'Something went wrong. Please try again later.'
+        })
+}
