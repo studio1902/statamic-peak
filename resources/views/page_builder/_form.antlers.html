@@ -58,6 +58,10 @@
                     sendForm: async function() {
                         this.sending = true
 
+                        // Doesn't work:
+                        const tokenWindow = await window.getToken()
+                        console.log(tokenWindow)
+                        // Works:
                         const token = await fetch('/!/DynamicToken/refresh')
                             .then((res) => res.json())
                             .then((data) => { 
