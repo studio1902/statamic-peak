@@ -44,6 +44,10 @@ module.exports = {
             'ol > li::before': { 
               color: theme('colors.neutral.500'),
             },
+            'ul > li p, ol > li p': { 
+              marginTop: '0em !important',
+              marginBottom: '0em !important',
+            },
             pre: {
               whiteSpace: 'pre-wrap',
             },
