@@ -70,6 +70,7 @@
                             .catch(function (error) {
                                 this.error = 'Something went wrong. Please try again later.'
                             })
+                        console.log(token)
                         
                         document.querySelectorAll('form input[name="_token"]').forEach(function(item) {
                             item.value = token

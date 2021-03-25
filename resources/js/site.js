@@ -23,10 +23,10 @@ window.getCookie = function(name) {
 }
 
 // Global get CSRF token function (used by forms).
-window.getToken = function() {
+window.getToken = () => {
     fetch('/!/DynamicToken/refresh')
         .then((res) => res.json())
-        .then((data) => { 
+        .then((data) => {
             return data.csrf_token
         })
         .catch(function (error) {
