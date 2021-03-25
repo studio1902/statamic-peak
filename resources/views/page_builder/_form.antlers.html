@@ -67,7 +67,7 @@
                                 this.error = 'Something went wrong. Please try again later.'
                             })
                         
-                        document.querySelectorAll('form input[name="_token"]').forEach(async function(item) {
+                        document.querySelectorAll('form input[name="_token"]').forEach(function(item) {
                             item.value = token
                         });
 
