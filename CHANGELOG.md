@@ -3,6 +3,7 @@
 ## 1.24.2 (Unreleased)
 
 ### What's improved
+- Remove `app/Tags/DynamicToken.php` and move this logic to to the window as a global helper function.
 - Add empty `alt` attributes to SVG icons for improved a11y according to best practices. This makes sure VoiceOver won't read the filename for those decorative icons.
 - Update `composer.json` to use Statamic 3.1.*.
 

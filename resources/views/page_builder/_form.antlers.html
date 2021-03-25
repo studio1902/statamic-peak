@@ -47,57 +47,65 @@
             </div>
         {{ /form:create }}
 
-        {{# Load dynamic token JS to dynamically fetch and refresh a CSRF token. #}}
-        {{ dynamic_token }}
-
         {{# The form script handling validation and submission via AJAX with `fetch()`. #}}
          <script>
-        function sending() {
-            return {
-                error: false,
-                errors: [],
-                sending: false,
-                success: false,
-                sendForm() {
-                    this.sending = true;
-                    fetch(this.$refs.form.action, {
-                        headers: {
-                            'X-Requested-With' : 'XMLHttpRequest'
-                        },
-                        method: 'POST',
-                        body: new FormData(this.$refs.form)})
-                    .then(res => res.json())
-                    .then(json => {
+            function sending() {
+                return {
+                    error: false,
+                    errors: [],
+                    sending: false,
+                    success: false,
+                    sendForm: async function() {
+                        this.sending = true
 
-                        var t = this; // re-assign this
+                        const token = await fetch('/!/DynamicToken/refresh')
+                            .then((res) => res.json())
+                            .then((data) => { 
+                                return data.csrf_token 
+                            })
+                            .catch(function (error) {
+                                this.error = 'Something went wrong. Please try again later.'
+                            })
+                        
+                        document.querySelectorAll('form input[name="_token"]').forEach(async function(item) {
+                            item.value = token
+                        });
 
-                        if (json['success']) {
-                            t.errors = [];
-                            t.success = true;
-                            t.error = false;
-                            t.sending = false;
-                            t.$refs.form.reset();
+                        fetch(this.$refs.form.action, {
+                            headers: {
+                                'X-Requested-With' : 'XMLHttpRequest',
+                            },
+                            method: 'POST',
+                            body: new FormData(this.$refs.form)})
+                        .then(res => res.json())
+                        .then(json => {
+                            if (json['success']) {
+                                this.errors = []
+                                this.success = true
+                                this.error = false
+                                this.sending = false
+                                this.$refs.form.reset()
 
-                            setTimeout(function(){ 
-                                t.success = false; // to hide the success message
-                            }, 4500);
-                        }
-                        if (json['error']) {
-                            t.sending = false;
-                            t.error = true;
-                            t.success = false;
-                            t.errors = json['error'];
-                        }
-                    })
-                    .catch(err => {
-                        err.text().then( errorMessage => {
-                            this.sending = false
+                                setTimeout(function(){ 
+                                    this.success = false
+                                }, 4500)
+                            }
+                            if (json['error']) {
+                                this.sending = false
+                                this.error = true
+                                this.success = false
+                                this.errors = json['error']
+                            }
                         })
-                    })
+                        .catch(err => {
+                            err.text().then( errorMessage => {
+                                this.sending = false
+                            })
+                        })
+                    }
                 }
             }
-        }
-    </script>
+        </script>
 
     </div>
 </section>
