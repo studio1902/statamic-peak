@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.25.1 (Unreleased)
+## 1.25.1 (2021-04-25)
 
 ### What's improved
 - Disable margin on p's in li's in ul's or ol's in `tailwind.config.typography.js`.
