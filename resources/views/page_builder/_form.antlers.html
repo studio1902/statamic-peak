@@ -58,24 +58,13 @@
                     sendForm: async function() {
                         this.sending = true
 
-                        // Doesn't work:
-                        const tokenWindow = await window.getToken()
-                        console.log(tokenWindow)
-                        // Works:
-                        const token = await fetch('/!/DynamicToken/refresh')
-                            .then((res) => res.json())
-                            .then((data) => { 
-                                return data.csrf_token 
-                            })
-                            .catch(function (error) {
-                                this.error = 'Something went wrong. Please try again later.'
-                            })
-                        console.log(token)
-                        
+                        // Get a token and set it.
+                        const token = await window.getToken()                       
                         document.querySelectorAll('form input[name="_token"]').forEach(function(item) {
                             item.value = token
                         });
 
+                        // Post the form.
                         fetch(this.$refs.form.action, {
                             headers: {
                                 'X-Requested-With' : 'XMLHttpRequest',
