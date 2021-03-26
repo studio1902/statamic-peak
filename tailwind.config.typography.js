@@ -15,7 +15,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            maxWidth: 'none',
             color: theme('colors.neutral.800'),
             '[class~="lead"]': {
               color: theme('colors.neutral.800'),
