@@ -57,6 +57,48 @@ module.exports = {
           textTransform: 'uppercase',
           content: '"-"',
         },
+        // Sizing utilities for sets in our bard (long form content).
+        // On small devices they're full width.
+        '.size-md, .size-lg, .size-xl': {
+          gridColumn: 'span 12 / span 12',
+        },
+        [`@media (min-width: ${theme('screens.md')})`]: {
+          // Sizing utilities for sets in our bard (long form content).
+          // On larger devices they go from nedium to extra large.
+          // (E.g. an image wider then text in an article.)
+          '.size-md': {
+            gridColumn: 'span 8 / span 8',
+            gridColumnStart: '3',
+          },
+          '.size-lg': {
+            gridColumn: 'span 8 / span 8',
+            gridColumnStart: '3',
+          }, 
+          '.size-xl': {
+            gridColumn: 'span 10 / span 10',
+            gridColumnStart: '2',
+          },
+        },
+        [`@media (min-width: ${theme('screens.lg')})`]: {
+          // Sizing utilities for sets in our bard (long form content).
+          // On larger devices they go from small to extra large.
+          '.size-sm': {
+            gridColumn: 'span 4 / span 4',
+            gridColumnStart: '4',
+          },
+          '.size-md': {
+            gridColumn: 'span 6 / span 6',
+            gridColumnStart: '4',
+          },
+          '.size-lg': {
+            gridColumn: 'span 8 / span 8',
+            gridColumnStart: '3',
+          }, 
+          '.size-xl': {
+            gridColumn: 'span 10 / span 10',
+            gridColumnStart: '2',
+          },
+        },
       })
     }),
 
@@ -147,52 +189,6 @@ module.exports = {
         // Break words only when needed.
         '.break-decent': {
           wordBreak: 'break-word',
-        },
-        // Sizing utilities for sets in our bard (long form content).
-        // On small devices they're full width.
-        '.size-sm, .size-md, .size-lg, .size-xl': {
-          gridColumn: 'span 12 / span 12',
-        },
-        [`@media (min-width: ${theme('screens.md')})`]: {
-          // Sizing utilities for sets in our bard (long form content).
-          // On larger devices they go from small to extra large.
-          // (E.g. an image wider then text in an article.)
-          '.size-sm': {
-            gridColumn: 'span 4 / span 4',
-            gridColumnStart: '3',
-          },
-          '.size-md': {
-            gridColumn: 'span 8 / span 8',
-            gridColumnStart: '3',
-          },
-          '.size-lg': {
-            gridColumn: 'span 8 / span 8',
-            gridColumnStart: '3',
-          }, 
-          '.size-xl': {
-            gridColumn: 'span 10 / span 10',
-            gridColumnStart: '2',
-          },
-        },
-        [`@media (min-width: ${theme('screens.lg')})`]: {
-          // Sizing utilities for sets in our bard (long form content).
-          // On larger devices they go from small to extra large.
-          '.size-sm': {
-            gridColumn: 'span 4 / span 4',
-            gridColumnStart: '4',
-          },
-          '.size-md': {
-            gridColumn: 'span 6 / span 6',
-            gridColumnStart: '4',
-          },
-          '.size-lg': {
-            gridColumn: 'span 8 / span 8',
-            gridColumnStart: '3',
-          }, 
-          '.size-xl': {
-            gridColumn: 'span 10 / span 10',
-            gridColumnStart: '2',
-          },
         },
       }
       addUtilities(newUtilities)
