@@ -79,8 +79,7 @@ fields:
     handle: size
     field:
       options:
-        sm: SM
-        md: MD
+        md: Normal
         lg: LG
         xl: XL
       type: button_group

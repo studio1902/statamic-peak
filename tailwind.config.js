@@ -35,7 +35,7 @@ module.exports = {
       // Remove unused keyframes during purging.
       keyframes: true,
       // Always keep the following classes during purging.
-      safelist: ['size-sm', 'size-md', 'size-lg', 'size-xl', 'js-focus-visible'],
+      safelist: [ ],
     }
   },
 }

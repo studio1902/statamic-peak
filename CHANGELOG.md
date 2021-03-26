@@ -3,7 +3,9 @@
 ## 1.25.2 (unreleased)
 
 ### What's improved
-- Use `max-w-none` on `.prose` instead of disabling the `max-width` in the `tailwind.config.typography.js` as per the Tailwind Typography docs..
+- Remove `sm` sizing utility.
+- Move sizing utilities and `js-focus-visible` to the Tailwind base layer so we don't need to whitelist those classes.
+- Use `max-w-none` on `.prose` instead of disabling the `max-width` in the `tailwind.config.typography.js` as per the Tailwind Typography docs.
 
 ## 1.25.1 (2021-04-25)
 
