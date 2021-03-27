@@ -29,13 +29,5 @@ module.exports = {
       './resources/js/**/*.js',
     ],
     layers: ['components', 'utilities'],
-    options: {
-      // Always remove the following classes during purging.
-      blocklist: ['?',],
-      // Remove unused keyframes during purging.
-      keyframes: true,
-      // Always keep the following classes during purging.
-      safelist: [ ],
-    }
   },
 }
