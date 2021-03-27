@@ -1,10 +1,11 @@
 # Release Notes
 
-## 1.25.2 (unreleased)
+## 1.25.2 (2021-03-27)
 
 ### What's improved
 - Remove `sm` sizing utility.
 - Move sizing utilities and `js-focus-visible` to the Tailwind base layer so we don't need to whitelist those classes.
+- Remove purge options options from `tailwind.config.js`, since the JIT compiler doesn't actually use Purge CSS.
 - Use `max-w-none` on `.prose` instead of disabling the `max-width` in the `tailwind.config.typography.js` as per the Tailwind Typography docs.
 
 ## 1.25.1 (2021-04-25)
