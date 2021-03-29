@@ -16,9 +16,6 @@
             sizes="90vw" 
         {{ /if }}
     }}
-    {{ if caption }}
-        <figcaption class="mt-2 text-neutral-500">
-            {{ caption }}
-        </figcaption>
-    {{ /if }} 
+    
+    {{ partial:components/caption tag="figcaption" }}
 </figure>
