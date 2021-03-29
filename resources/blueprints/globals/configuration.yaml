@@ -9,6 +9,14 @@ sections:
           listable: hidden
           display: 'General configuration'
           instructions: 'Global site configuration options.'
+      -
+        handle: html
+        field:
+          html: 'This is where you can add site specific configuration options like color options or globally used e-mail addresses.'
+          display: General configuration
+          type: html
+          icon: code
+          listable: hidden
   error_messages:
     display: 'Error messages'
     fields:
