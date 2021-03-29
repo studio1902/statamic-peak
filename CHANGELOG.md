@@ -4,6 +4,7 @@
 
 ### What's improved
 - DRY caption for `_figure.antlers.html`, `_table.antlers.html` and `_video.antlers.html` in `resources/views/components/_caption.antlers.nl`. 
+- Add some HTML content to the empty configuration global.
 
 ## 1.25.2 (2021-03-27)
 
