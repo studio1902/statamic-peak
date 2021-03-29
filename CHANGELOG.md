@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.25.3 (Unreleased)
+
+### What's improved
+- DRY caption for `_figure.antlers.html`, `_table.antlers.html` and `_video.antlers.html` in `resources/views/components/_caption.antlers.nl`. 
+
 ## 1.25.2 (2021-03-27)
 
 ### What's improved
