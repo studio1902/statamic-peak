@@ -1,10 +1,5 @@
 # Release Notes
 
-## 1.25.5 (2021-03-30)
-
-### What's improved
-- Actually use the `.env` white labeling variables. Sorry folks.
-
 ## 1.25.4 (2021-03-30)
 
 ### What's improved
