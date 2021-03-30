@@ -1,6 +1,12 @@
 # Release Notes
 
-## 1.25.3 (Unreleased)
+## 1.25.4 (2021-03-30)
+
+### What's improved
+- The caption partial should, and now is located in `resources/views/typography/_caption.antlers.nl`. 
+- Update `.env.example` with the right whitelabel variables.
+
+## 1.25.3 (2021-03-29)
 
 ### What's improved
 - DRY caption for `_figure.antlers.html`, `_table.antlers.html` and `_video.antlers.html` in `resources/views/components/_caption.antlers.nl`. 
