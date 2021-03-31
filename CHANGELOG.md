@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.25.5 (unreleased)
+
+### What's improved
+- Somewhere along the way the `overflow-scroll` got lost on the table partial. It's back now for a better mobile experience.
+
 ## 1.25.4 (2021-03-30)
 
 ### What's improved
