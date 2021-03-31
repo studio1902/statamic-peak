@@ -3,6 +3,7 @@
 ## 1.25.5 (unreleased)
 
 ### What's improved
+- Use `{{ xml_header }}` in `resources/views/sitemap.xml`. Thanks [Taylor](https://github.com/taylorcammack).
 - Somewhere along the way the `overflow-scroll` got lost on the table partial. It's back now for a better mobile experience.
 
 ## 1.25.4 (2021-03-30)
