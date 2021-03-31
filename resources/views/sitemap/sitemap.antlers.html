@@ -1,5 +1,5 @@
 {{# The sitemap.xml template that renders a SEO friendy sitemap.xml. #}}
-<?xml version="1.0" encoding="UTF-8"?>
+{{ xml_header }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {{ seo:sitemap_collections }}
         {{ collection from="{handle}" seo_noindex:isnt="true" as="results" }}
