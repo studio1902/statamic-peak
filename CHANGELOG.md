@@ -1,6 +1,11 @@
 # Release Notes
 
-## 1.25.5 (unreleased)
+## Unreleased
+
+### What's improved
+Add `x-cloak` to `resources/views/components/_search_form.antlers.html`.
+
+## 1.25.5 (2021-03-31)
 
 ### What's improved
 - Use `{{ xml_header }}` in `resources/views/sitemap.xml`. Thanks [Taylor](https://github.com/taylorcammack).
