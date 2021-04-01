@@ -12,6 +12,7 @@
     x-data="{ open: false, value: '' }" 
     x-on:click.away="{ open = false }"
     class="flex py-2 relative"
+    x-cloak
 >
     <button 
         x-on:click="{ open = !open, setTimeout(() => {$refs.input.focus()}, 200) }" 
