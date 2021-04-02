@@ -8,6 +8,9 @@ editor:
     - 'delete pages entries'
     - 'publish pages entries'
     - 'reorder pages entries'
+    - 'edit other authors pages entries'
+    - 'publish other authors pages entries'
+    - 'delete other authors pages entries'
     - 'view main nav'
     - 'edit main nav'
     - 'edit configuration globals'
@@ -23,9 +26,8 @@ editor:
     - 'create users'
     - 'delete users'
     - 'change passwords'
-    - 'edit other authors pages entries'
-    - 'publish other authors pages entries'
-    - 'delete other authors pages entries'
+    - 'view contact form submissions'
+    - 'delete contact form submissions'
 marketeer:
   title: Marketeer
   permissions:
