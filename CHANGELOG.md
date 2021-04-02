@@ -1,9 +1,10 @@
 # Release Notes
 
-## Unreleased
+## 1.25.6
 
 ### What's improved
-Add `x-cloak` to `resources/views/components/_search_form.antlers.html`.
+- Add `x-cloak` to `resources/views/components/_search_form.antlers.html`.
+- Editor role can view and delete contact form submissions by default.
 
 ## 1.25.5 (2021-03-31)
 
