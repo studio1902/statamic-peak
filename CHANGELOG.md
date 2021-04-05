@@ -1,5 +1,11 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Close mobile sub navigation when clicking the the parent again.
+- The Menu and Close labels in the menu button are now localisable. 
+
 ## 1.25.6
 
 ### What's improved

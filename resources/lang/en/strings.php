@@ -1,5 +1,9 @@
 <?php
 return [
+    // Navigation
+    'close'                             => 'Close',
+    'menu'                              => 'Menu',
+
     // Cookie banner
     'cookie_accept'                     => 'I accept',
     'cookie_deny'                       => 'I decline',
