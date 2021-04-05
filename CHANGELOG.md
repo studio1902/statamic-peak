@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.26.0 (2021-04-05)
+
+### What's new
+- Use Tailwind 2.1 with native JIT support.
+
 ## 1.25.8 (2021-04-05)
 
 ### What's improved

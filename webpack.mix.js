@@ -5,7 +5,7 @@ mix.js('resources/js/site.js', 'public/js/site.js')
 
 mix.postCss('resources/css/site.css', 'public/css/site.css', [
     require('postcss-import'),
-    require('@tailwindcss/jit'),
+    require('tailwindcss'),
     require('postcss-nested'),
     require('postcss-focus-visible'),
     require('autoprefixer'),

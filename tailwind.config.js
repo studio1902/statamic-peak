@@ -22,6 +22,7 @@ module.exports = {
   // darkMode: 'media', 
   // Or use the next line to use darkmode by adding a class to your html.
   // darkMode: 'class',
+  mode: 'jit',
   // Configure Purge CSS.
   purge: {
     content: [
