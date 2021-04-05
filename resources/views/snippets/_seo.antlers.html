@@ -28,9 +28,7 @@
 
 {{# hreflang tags #}}
 {{ locales }}
-    {{ unless locale.key == current }}
-        <link rel="alternate" hreflang="{{ locale:full replace="_|-" }}" href="{{ permalink }}">
-    {{ /unless}}
+    <link rel="alternate" hreflang="{{ locale:full replace="_|-" }}" href="{{ permalink }}">
 {{ /locales }}
 
 {{# Canonical URL #}}
