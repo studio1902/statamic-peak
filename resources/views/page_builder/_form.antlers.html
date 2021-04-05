@@ -15,8 +15,8 @@
             <div class="w-full grid md:grid-cols-12 gap-y-6 md:gap-x-6">
                 {{# Honeypot spam protection. #}}
                 <div class="hidden">
-                    <label class="font-bold" for="fax">{{ trans:strings.form_honeypot }} <sup class="text-notice-400">*</sup></label>
-                    <input class="form-input w-full" id="fax" type="fax" name="fax" tabindex="-1" autocomplete="off"/>
+                    <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-notice-400">*</sup></label>
+                    <input class="form-input w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
                 </div>
 
                 {{ fields }}

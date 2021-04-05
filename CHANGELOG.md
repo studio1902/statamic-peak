@@ -1,12 +1,13 @@
 # Release Notes
 
-## Unreleased
+## 1.25.7 (2021-04-05)
 
 ### What's improved
+- Use the new `honepot` variable instead of hard coding it.
 - Close mobile sub navigation when clicking the the parent again.
-- The Menu and Close labels in the menu button are now localisable. 
+- The `menu` and `close` labels in the menu button are now localisable. 
 
-## 1.25.6
+## 1.25.6 (2021-04-02)
 
 ### What's improved
 - Add `x-cloak` to `resources/views/components/_search_form.antlers.html`.
