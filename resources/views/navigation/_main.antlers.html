@@ -60,7 +60,7 @@
         @click.prevent="mobileNavOpen = !mobileNavOpen, mobileNavOpen ? document.body.classList.add('no-scroll') : document.body.classList.remove('no-scroll')"
         class="fixed z-20 w-16 h-16 flex justify-center items-center right-0 bottom-0 mb-safe mr-8 bg-primary-500 text-white text-xs text-uppercase tracking-widest font-bold"
         aria-label="Toggle menu"
-        x-text="mobileNavOpen ? 'Close' : 'Menu'"
+        x-text="mobileNavOpen ? '{{ trans:strings.close }}' : '{{ trans:strings.menu }}'"
     ></button>
 
     <ul
@@ -79,7 +79,7 @@
                     class="flex items-center font-bold uppercase tracking-wide hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
                     {{ if children }}
                         href="#"
-                        @click.prevent="mobileNavSubnavOpen = true"
+                        @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
                         @click.away="mobileNavSubnavOpen = false"
                     {{ else }}
                         href="{{ url }}"
