@@ -1,5 +1,9 @@
 # Release Notes
 
+## Unreleased
+- Make social media `aria-label` in `resources/views/layout/_footer.antlers.html` more descriptive.
+- Alphabetize strings based on category in `resources/lang/en/strings.php`. 
+
 ## 1.25.7 (2021-04-05)
 
 ### What's improved
