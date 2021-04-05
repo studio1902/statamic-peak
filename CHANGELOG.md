@@ -1,6 +1,9 @@
 # Release Notes
 
-## Unreleased
+## 1.25.8 (2021-04-05)
+
+### What's improved
+- Also add current locale as hreflang tag in `resources/views/snippets/_seo.antlers.html`.
 - Make social media `aria-label` in `resources/views/layout/_footer.antlers.html` more descriptive.
 - Alphabetize strings based on category in `resources/lang/en/strings.php`. 
 
