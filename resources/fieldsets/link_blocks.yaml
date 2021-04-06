@@ -9,8 +9,6 @@ fields:
       listable: hidden
       display: Title
       instructions: 'The title you want to display above the collection entries.'
-      validate:
-        - required
   -
     handle: link_blocks
     field:
@@ -23,14 +21,9 @@ fields:
             localizable: true
             listable: hidden
             display: Title
-            validate:
-              - required
         -
           handle: text
           field: common.text_plain
-          config:
-            validate:
-              - required
         -
           import: button
       mode: stacked

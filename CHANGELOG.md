@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.26.1 (2021-04-06)
+
+### What's changed
+- Remove `validation: required` from `resources/fieldsets/link_blocks.yaml` and `resources/fieldsets/button.yaml` due to validation currently not working as expected in Statamic. Please open an issue or a PR if this is needed in more places.
+- Added some conditionalis to `resources/views/page_builder/_link_blocks.antlers.html` and `resources/views/components/_button.antlers.html` due to the validation being removed.
+
 ## 1.26.0 (2021-04-05)
 
 ### What's new
