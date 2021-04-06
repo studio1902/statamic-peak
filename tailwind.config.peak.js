@@ -64,7 +64,7 @@ module.exports = {
         },
         [`@media (min-width: ${theme('screens.md')})`]: {
           // Sizing utilities for sets in our bard (long form content).
-          // On larger devices they go from nedium to extra large.
+          // On larger devices they go from medium to extra large.
           // (E.g. an image wider then text in an article.)
           '.size-md': {
             gridColumn: 'span 8 / span 8',
@@ -81,11 +81,7 @@ module.exports = {
         },
         [`@media (min-width: ${theme('screens.lg')})`]: {
           // Sizing utilities for sets in our bard (long form content).
-          // On larger devices they go from small to extra large.
-          '.size-sm': {
-            gridColumn: 'span 4 / span 4',
-            gridColumnStart: '4',
-          },
+          // On larger devices they go from medium to extra large.
           '.size-md': {
             gridColumn: 'span 6 / span 6',
             gridColumnStart: '4',
