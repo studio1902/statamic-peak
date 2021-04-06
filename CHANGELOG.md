@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's changed
+- Remove the ability for editors to create users, since they can't select roles due to a Statamic issue. Superusers have to do this.
+
 ## 1.26.1 (2021-04-06)
 
 ### What's changed

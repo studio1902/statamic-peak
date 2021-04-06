@@ -23,7 +23,6 @@ editor:
     - 'delete assets assets'
     - 'view users'
     - 'edit users'
-    - 'create users'
     - 'delete users'
     - 'change passwords'
     - 'view contact form submissions'
