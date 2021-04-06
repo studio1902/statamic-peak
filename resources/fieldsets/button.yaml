@@ -9,8 +9,6 @@ fields:
       listable: false
       display: Label
       instructions: 'The text inside the button.'
-      validate:
-        - required
       width: 66
       replicator_preview: false
   -

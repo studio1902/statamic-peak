@@ -1,8 +1,10 @@
 {{# The link blocks content block. #}}
 <section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
-    <div class="md:col-start-3 md:col-span-8 text-center">
-        {{ partial:typography/h2 :content="block:title" }}
-    </div>
+    {{ if block:title }}
+        <div class="md:col-start-3 md:col-span-8 text-center">
+            {{ partial:typography/h2 :content="block:title" }}
+        </div>
+    {{ /if }}
     {{ block:link_blocks }}
         <a 
             class="flex flex-col justify-between items-start bg-white shadow p-6 no-underline
@@ -18,10 +20,14 @@
             {{ partial:components/button_attributes }}
         >
             <div>
-                <span id="{{ title | slugify }}">
-                    {{ partial src="typography/h2" class="mb-2" :content="title" }}
-                </span>
-                {{ partial:typography/paragraph class="mb-4" :content="text" }}
+                {{ if title }}
+                    <span id="{{ title | slugify }}">
+                        {{ partial src="typography/h2" class="mb-2" :content="title" }}
+                    </span>
+                {{ /if }}
+                {{ if text }}
+                    {{ partial:typography/paragraph class="mb-4" :content="text" }}
+                {{ /if }}
             </div>
             {{ partial:components/button tag="span" faux="true" }}
         </a>
