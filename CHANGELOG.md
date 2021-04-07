@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### What's improved
+- Repeat search form on the search results template in `resources/views/search.antlers.html`.
+
 ### What's changed
 - Remove the ability for editors to create users, since they can't select roles due to a Statamic issue. Superusers have to do this.
 - Remove `sm` sizing utility in one specific breakpoint missed before..
