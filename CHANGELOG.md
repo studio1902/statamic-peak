@@ -1,13 +1,14 @@
 # Release Notes
 
-## Unreleased
+## 1.26.2 (2021-04-08)
 
 ### What's improved
 - Repeat search form on the search results template in `resources/views/search.antlers.html`.
+- Use `slug` instead of `title | slugify` for link blocks a11y ID's. 
 
 ### What's changed
 - Remove the ability for editors to create users, since they can't select roles due to a Statamic issue. Superusers have to do this.
-- Remove `sm` sizing utility in one specific breakpoint missed before..
+- Remove `sm` sizing utility in one specific breakpoint missed before.
 
 ## 1.26.1 (2021-04-06)
 
