@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's new
+- Add a `notice` state and icon to `resources/views/components/_notification.antlers.html`.
+
 ## 1.26.2 (2021-04-08)
 
 ### What's improved

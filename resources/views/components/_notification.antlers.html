@@ -1,15 +1,39 @@
 {{# A notification that can be included. Currently used in `resources/views/page_builder/_form.antlers.html`. #}}
-<div class="rounded {{ if type == 'error' }}bg-error-50{{ elseif type == 'success'}}bg-success-50{{ /if }} p-4 {{ class }}">
+<div 
+    class="
+        rounded border p-4 
+        {{ if type == 'success'}}
+            bg-success-100 border-success-600
+        {{ elseif type == 'notice' }}
+            bg-notice-100 border-notice-600
+        {{ elseif type == 'error' }}
+            bg-error-100 border-error-600
+        {{ /if }} 
+        {{ class }}
+    ">
     <div class="flex">
         <div class="flex-shrink-0">
-            {{ if type == "error" }}
-                {{ svg:error class="h-5 w-5 text-error-400 fill-current transition-colors" alt="" aria-hidden="true" }}
-            {{ elseif type == "success" }}
-                {{ svg:success class="h-5 w-5 text-success-400 fill-current transition-colors" alt="" aria-hidden="true" }}
+            {{ if type == "success" }}
+                {{ svg:success class="h-5 w-5 text-success-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+            {{ elseif type == "notice" }}
+                {{ svg:notice class="h-5 w-5 text-notice-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+            {{ elseif type == "error" }}
+                {{ svg:error class="h-5 w-5 text-error-800 fill-current transition-colors" alt="" aria-hidden="true" }}
             {{ /if }}
         </div>
         <div class="ml-3">
-            <h3 class="text-sm leading-5 font-bold {{ if type == 'error' }}text-error-800{{ elseif type == 'success' }}text-success-800{{ /if }}" {{ attribute }}>
+            <h3 
+                class="
+                    text-sm leading-5 font-bold 
+                    {{ if type == 'success' }}
+                        text-success-800
+                    {{ elseif type == 'notice' }}
+                        text-notice-800
+                    {{ elseif type == 'error' }}
+                        text-error-800
+                    {{ /if }}
+                " 
+                {{ attribute }}>
                 {{ content }}
             </h3>
         </div>
