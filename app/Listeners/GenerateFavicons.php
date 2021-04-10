@@ -11,29 +11,34 @@ use Statamic\Globals\GlobalSet;
 class GenerateFavicons implements ShouldQueue
 {
     /**
-     * Create the event listener.
+     * Determine whether this event should be handled.
      *
-     * @return void
+     * @param GlobalSet $globals
+     * @return bool
      */
-    public function __construct()
+    private function shouldHandle(GlobalSet $globals): bool
     {
-        //
+        return $globals->handle() === 'favicons'
+            && $globals->inDefaultSite()->get('use');
     }
 
     /**
      * Handle the event.
      *
-     * @param  object  $event
+     * @param GlobalSetSaved $event
      * @return void
      */
     public function handle(GlobalSetSaved $event)
     {
-        if ($event->globals->handle() !== 'favicons' || !GlobalSet::findByHandle('favicons')->in('default')->get('use')) {
+        /** @var GlobalSet $globals */
+        $globals = $event->globals;
+
+        if (!$this->shouldHandle($globals)) {
             return;
         }
 
-        $svg = GlobalSet::findByHandle('favicons')->in('default')->get('svg');
-        $iOSBackground = GlobalSet::findByHandle('favicons')->in('default')->get('ios_color');
+        $svg = $globals->inDefaultSite()->get('svg');
+        $iOSBackground = $globals->inDefaultSite()->get('ios_color');
 
         $this->createThumbnail('favicons/' . $svg, 'favicons/apple-touch-icon.png', 180, 180, $iOSBackground, 15);
         $this->createThumbnail('favicons/' . $svg, 'favicons/android-chrome-512x512.png', 512, 512, 'transparent', false);
