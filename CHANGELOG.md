@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.26.4 (2021-04-13)
+
+### What's improved
+- Improved `GenerateFavicons.php` listener so it doesn't break the `php please multisite` command. Thanks [Jelle Roorda](https://github.com/jelleroorda).
+
 ## 1.26.3 (2021-04-09)
 
 ### What's new
