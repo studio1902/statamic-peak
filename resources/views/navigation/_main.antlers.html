@@ -15,7 +15,6 @@
                     {{ if children }}
                         href="#"
                         @click.prevent="subnavOpen = !subnavOpen"
-                        @click.away="subnavOpen = false"
                     {{ else }}
                         href="{{ url }}"
                     {{ /if }}
@@ -35,6 +34,7 @@
                         x-show="subnavOpen"
                         class="absolute py-2 bg-white space-y-2"
                         :aria-expanded="subnavOpen"
+                        @click.away="subnavOpen = false"
                         x-cloak
                     >
                         {{ children }}

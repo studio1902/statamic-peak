@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Add `@click.away` to subnav list instead of parent anchor to prevent accidentally closing the subnav.
+
 ## 1.26.4 (2021-04-13)
 
 ### What's improved
