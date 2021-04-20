@@ -5,6 +5,7 @@
 ### What's improved
 - Add `@click.away` to subnav list instead of parent anchor to prevent accidentally closing the subnav.
 - Use padding in navigation links instead of spacing the items. Thanks [Daniel](https://github.com/klickreflex).
+- Revert using `slug` instead of `title | slugify` for link blocks as we don't know if there is a `slug`.
 
 ## 1.26.4 (2021-04-13)
 
