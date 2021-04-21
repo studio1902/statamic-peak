@@ -1,6 +1,11 @@
 title: 'Pull quote'
 fields:
   -
+    handle: size
+    field: common.size
+    config:
+      instructions: 'The size in which the quote should be displayed.'
+  -
     handle: quote
     field:
       type: textarea

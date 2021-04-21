@@ -7,10 +7,19 @@
 
 const _ = require('lodash')
 const plugin = require('tailwindcss/plugin')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   theme: {
     extend: {
+      colors: {
+        // Error styling colors (currently default TW Red).
+        error: colors.red,
+        // Notice styling colors (currently default TW Amber).
+        notice: colors.amber,
+        // Success styling colors (currently default TW Amber).
+        success: colors.green,
+      },
       spacing: {
         // Used for the mobile navigation toggle.
         'safe': 'calc(env(safe-area-inset-bottom, 0rem) + 2rem)',
