@@ -1,6 +1,6 @@
 {{# A single button. Faux is used when a button is displayed inside a link (for example in link blocks). #}}
 {{ if label }}
-    <{{ tag or 'a' }}
+    <{{ as or 'a' }}
         {{ attribute }}
         class="font-bold outline-none focus-visible:ring focus-visible:ring-offset-2 {{ class }}
             {{ if button_type == 'inline' }}
@@ -16,5 +16,5 @@
         {{ /unless }}
     >
         {{ label }}
-    </{{ tag or 'a' }}>
+    </{{ as or 'a' }}>
 {{ /if }}
