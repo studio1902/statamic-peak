@@ -3,22 +3,22 @@
     class="
         rounded border p-4 
         {{ if type == 'success'}}
-            bg-success-100 border-success-600
+            bg-green-100 border-green-600
         {{ elseif type == 'notice' }}
-            bg-notice-100 border-notice-600
+            bg-yellow-100 border-yellow-600
         {{ elseif type == 'error' }}
-            bg-error-100 border-error-600
+            bg-red-100 border-red-600
         {{ /if }} 
         {{ class }}
     ">
     <div class="flex">
         <div class="flex-shrink-0">
             {{ if type == "success" }}
-                {{ svg:success class="h-5 w-5 text-success-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+                {{ svg:success class="h-5 w-5 text-green-800 fill-current transition-colors" alt="" aria-hidden="true" }}
             {{ elseif type == "notice" }}
-                {{ svg:notice class="h-5 w-5 text-notice-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+                {{ svg:notice class="h-5 w-5 text-yellow-800 fill-current transition-colors" alt="" aria-hidden="true" }}
             {{ elseif type == "error" }}
-                {{ svg:error class="h-5 w-5 text-error-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+                {{ svg:error class="h-5 w-5 text-red-800 fill-current transition-colors" alt="" aria-hidden="true" }}
             {{ /if }}
         </div>
         <div class="ml-3">
@@ -26,11 +26,11 @@
                 class="
                     text-sm leading-5 font-bold 
                     {{ if type == 'success' }}
-                        text-success-800
+                        text-green-800
                     {{ elseif type == 'notice' }}
-                        text-notice-800
+                        text-yellow-800
                     {{ elseif type == 'error' }}
-                        text-error-800
+                        text-red-800
                     {{ /if }}
                 " 
                 {{ attribute }}>
