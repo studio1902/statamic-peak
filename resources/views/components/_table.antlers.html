@@ -1,12 +1,12 @@
 {{# A sizeable table. #}}
 <div class="size-{{ size }} my-4 overflow-scroll">
-    <table class="w-full bg-light rounded-md shadow border-collapse overflow-hidden">
+    <table class="w-full bg-light border-collapse">
         {{ table }}
             {{ if first && first_row_headers }}
                 <thead>
                     <tr>
                         {{ cells }}
-                            <th class="px-3 xl:px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">{{ value }}</th>
+                            <th class="px-3 xl:px-6 py-3 border-b border-neutral bg-neutral text-left text-xs font-bold text-white uppercase tracking-wider">{{ value }}</th>
                         {{ /cells }}
                     </tr>
                 </thead>
@@ -21,9 +21,9 @@
                 <tr>
                     {{ cells }}
                         {{ if first && first_column_headers }}
-                            <th class="px-3 xl:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">{{ value }}</th>
+                            <th class="px-3 xl:px-6 py-3 border-b border-neutral bg-neutral text-left text-xs font-bold text-white uppercase tracking-wider">{{ value }}</th>
                         {{ else }}
-                            <td class="px-3 xl:px-6 py-3 whitespace-nowrap border-b border-gray-200 text-sm leading-3 text-gray-600">{{ value }}</td>
+                            <td class="px-3 xl:px-6 py-3 whitespace-nowrap border-b border-neutral text-sm leading-3 text-neutral">{{ value }}</td>
                         {{ /if }}
                     {{ /cells }}
                 </tr>

@@ -11,7 +11,7 @@
                 class="relative leading-none"
             >
                 <a
-                    class="flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-gray-800' }}"
+                    class="flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                     {{ if children }}
                         href="#"
                         @click.prevent="subnavOpen = !subnavOpen"
@@ -21,7 +21,7 @@
                 >
                     {{ title }}
                     {{ if children }}
-                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-gray-800"
+                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-neutral"
                             :class="{ 'rotate-180': subnavOpen }"
                             aria-hidden="true"
                             stroke-width="16"
@@ -40,7 +40,7 @@
                         {{ children }}
                             <li class="">
                                 <a
-                                    class="whitespace-nowrap py-2 block text-xs font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-gray-800' }}"
+                                    class="whitespace-nowrap py-2 block text-xs font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                     href="{{ url }}"
                                 >
                                     {{ title }}
@@ -51,6 +51,7 @@
                 {{ /if }}
             </li>
         {{ /nav:main }}
+        {{ partial:components/search_form }}
     </ul>
 </nav>
 
@@ -76,7 +77,7 @@
                 class="leading-none"
             >
                 <a
-                    class="flex items-center font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-gray-800' }}"
+                    class="flex items-center font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                     {{ if children }}
                         href="#"
                         @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
@@ -87,7 +88,7 @@
                 >
                    {{ title }}
                    {{ if children }}
-                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-gray-800"
+                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-neutral"
                             :class="{ 'rotate-180': mobileNavSubnavOpen }"
                             aria-hidden="true"
                             stroke-width="16"
@@ -105,7 +106,7 @@
                         {{ children }}
                             <li>
                                 <a
-                                    class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-gray-800' }}"
+                                    class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                     href="{{ url }}">
                                     {{ title }}
                                 </a>

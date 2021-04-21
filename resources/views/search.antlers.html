@@ -6,9 +6,9 @@
         </div>
 
         <form class="relative col-span-12 md:col-span-8 md:col-start-3" action="/search">
-            <input class="w-full pr-10 rounded border-gray-400 focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"" placeholder="{{ trans:strings.search }}" type="text" value="{{ get:q }}" name="q"/>
+            <input class="w-full pr-10 rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"" placeholder="{{ trans:strings.search }}" type="text" value="{{ get:q }}" name="q"/>
 
-            <button class="absolute inset-y-0 right-0 flex mr-1 items-center text-gray-500 hover:text-primary rounded outline-none focus:outline-none focus-visible:ring-2 ring-secondary-600 ring-offset-4 ring-offset-white" aria-label="{{ trans:strings.search }}">
+            <button class="absolute inset-y-0 right-0 flex mr-1 items-center text-neutral hover:text-primary rounded outline-none focus:outline-none focus-visible:ring-2 ring-secondary ring-offset-4 ring-offset-white" aria-label="{{ trans:strings.search }}">
                 {{ svg:search class="w-5 h-5 fill-current transition-colors" alt="" aria-hidden="true" }}
             </button>
         </form>
@@ -21,7 +21,7 @@
             {{ else }}
                 <article class="col-span-12 md:col-span-8 md:col-start-3">
                     <a class="flex flex-col" href="{{ url }}">
-                        <span class="text-gray-500">{{ permalink }}</span>
+                        <span class="text-neutral">{{ permalink }}</span>
                         
                         {{ partial:typography/h2 class="mt-0" color="text-primary" :content="title" }}
                     </a>
