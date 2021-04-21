@@ -18,13 +18,12 @@ module.exports = {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
-      // Neutrals (currently default TW blue gray).
+      // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT if you use shades.
       neutral: { 
-        DEFAULT: colors.blueGray['600'],
+        DEFAULT: colors.blueGray['800'],
         ...colors.blueGray
       },
-      // Client primary color (currently default TW blue).
-      // This is the color set you usually change for each project with brand color shades.
+      // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT if you use shades.
       primary: { 
         DEFAULT: colors.blue['600'],
         ...colors.blue
@@ -71,7 +70,7 @@ module.exports = {
         },
         'html': {
             fontDisplay: 'swap',
-            color: theme('colors.neutral.800'),
+            color: theme('colors.neutral.DEFAULT'),
             //--------------------------------------------------------------------------
             // Set sans, serif or mono stack with optional custom font as default.
             //--------------------------------------------------------------------------
@@ -80,11 +79,11 @@ module.exports = {
             // fontFamily: theme('fontFamily.serif'),
         },
         '::selection': {
-            backgroundColor: theme('colors.primary.600'),
+            backgroundColor: theme('colors.primary.DEFAULT'),
             color: theme('colors.white'),
         },
         '::-moz-selection': {
-            backgroundColor: theme('colors.primary.600'),
+            backgroundColor: theme('colors.primary.DEFAULT'),
             color: theme('colors.white'),
         },
       })

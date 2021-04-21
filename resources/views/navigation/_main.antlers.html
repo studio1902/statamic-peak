@@ -11,7 +11,7 @@
                 class="relative leading-none"
             >
                 <a
-                    class="flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
+                    class="flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                     {{ if children }}
                         href="#"
                         @click.prevent="subnavOpen = !subnavOpen"
@@ -21,7 +21,7 @@
                 >
                     {{ title }}
                     {{ if children }}
-                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-neutral-800"
+                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-neutral"
                             :class="{ 'rotate-180': subnavOpen }"
                             aria-hidden="true"
                             stroke-width="16"
@@ -40,7 +40,7 @@
                         {{ children }}
                             <li class="">
                                 <a
-                                    class="whitespace-nowrap py-2 block text-xs font-bold hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
+                                    class="whitespace-nowrap py-2 block text-xs font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                     href="{{ url }}"
                                 >
                                     {{ title }}
@@ -58,7 +58,7 @@
 <nav class="md:hidden" x-data="{ mobileNavOpen: false }">
     <button
         @click.prevent="mobileNavOpen = !mobileNavOpen, mobileNavOpen ? document.body.classList.add('no-scroll') : document.body.classList.remove('no-scroll')"
-        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold tracking-widest text-white mb-safe bg-primary-500 text-uppercase"
+        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold tracking-widest text-white mb-safe bg-primary text-uppercase"
         aria-label="Toggle menu"
         x-text="mobileNavOpen ? '{{ trans:strings.close }}' : '{{ trans:strings.menu }}'"
     ></button>
@@ -76,7 +76,7 @@
                 class="leading-none"
             >
                 <a
-                    class="flex items-center font-bold uppercase tracking-wide hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
+                    class="flex items-center font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                     {{ if children }}
                         href="#"
                         @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
@@ -87,7 +87,7 @@
                 >
                    {{ title }}
                    {{ if children }}
-                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-neutral-800"
+                        <svg class="w-2 ml-1 overflow-visible transform stroke-current text-neutral"
                             :class="{ 'rotate-180': mobileNavSubnavOpen }"
                             aria-hidden="true"
                             stroke-width="16"
@@ -105,7 +105,7 @@
                         {{ children }}
                             <li>
                                 <a
-                                    class="whitespace-nowrap font-bold hover:text-primary-600 {{ is_current || is_parent ? 'text-primary-600' : 'text-neutral-800' }}"
+                                    class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                     href="{{ url }}">
                                     {{ title }}
                                 </a>

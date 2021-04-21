@@ -16,7 +16,7 @@
 >
     <button 
         x-on:click="{ open = !open, setTimeout(() => {$refs.input.focus()}, 200) }" 
-        class="text-neutral-800 hover:text-primary-600"
+        class="text-neutral hover:text-primary"
         aria-label="{{ trans:strings.search }}"
     >
         {{ svg:search class="w-5 h-5 fill-current transition-colors" alt="" aria-hidden="true" }}
@@ -29,7 +29,7 @@
     >
         <input 
             x-ref="input" 
-            class="w-52 h-full pr-10 rounded border-neutral-400 focus-visible:border-primary-300 focus-visible:ring focus-visible:ring-primary-300 motion-safe:transition" 
+            class="w-52 h-full pr-10 rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" 
             placeholder="{{ trans:strings.search }}" 
             type="text" 
             x-model="value"
@@ -37,7 +37,7 @@
             name="q" 
         />
         <button 
-            class="absolute inset-y-0 right-0 mr-2 flex items-center text-neutral-800 hover:text-primary-600"
+            class="absolute inset-y-0 right-0 mr-2 flex items-center text-neutral hover:text-primary"
             aria-label="{{ trans:strings.search }}"
             :disabled="value === 0"
             :class="{ 'opacity-25 cursor-default': value.length === 0, 'opacity-100': value.length > 0 }"

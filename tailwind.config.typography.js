@@ -15,33 +15,33 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.neutral.800'),
+            color: theme('colors.neutral.DEFAULT'),
             '[class~="lead"]': {
-              color: theme('colors.neutral.800'),
+              color: theme('colors.neutral.DEFAULT'),
             },
             a: {
-              color: theme('colors.primary.600'),
+              color: theme('colors.primary.DEFAULT'),
               '&:hover': {
-                color: theme('colors.primary.800'),
+                color: theme('colors.primary.DEFAULT'),
               },
             },
             'a.no-underline': {
               textDecoration: 'none',
             },
             'h1, h2, h3, h4': {
-              color: theme('colors.neutral.900'),
+              color: theme('colors.neutral.DEFAULT'),
             },
             blockquote: {
-              borderColor: theme('colors.primary.200'),
+              borderColor: theme('colors.primary.DEFAULT'),
             },
             hr: {
-              borderColor: theme('colors.neutral.100'), 
+              borderColor: theme('colors.neutral.DEFAULT'), 
             },
             'ul > li::before': { 
-              backgroundColor: theme('colors.neutral.500'),
+              backgroundColor: theme('colors.neutral.DEFAULT'),
             },
             'ol > li::before': { 
-              color: theme('colors.neutral.500'),
+              color: theme('colors.neutral.DEFAULT'),
             },
             'ul > li p, ol > li p': { 
               marginTop: '0em !important',
