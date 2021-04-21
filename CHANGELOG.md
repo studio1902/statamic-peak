@@ -3,7 +3,7 @@
 ## 1.27.0 (2021-04-21)
 
 ### What's new
-- Revamped the default color config
+- Revamped the [default color config](https://github.com/studio1902/statamic-peak/pull/96).
 - Add the sizing utility to the pull quote set.
 
 ### What's improved
