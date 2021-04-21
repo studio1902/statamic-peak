@@ -1,15 +1,17 @@
 # Release Notes
 
-## Unreleased
+## 1.27.0 (2021-04-21)
 
 ### What's new
+- Revamped the default color config
 - Add the sizing utility to the pull quote set.
 
 ### What's improved
 - Add `@click.away` to subnav list instead of parent anchor to prevent accidentally closing the subnav.
-- Use padding in navigation links instead of spacing the items. Thanks [Daniel](https://github.com/klickreflex).
+- Fix focus styles in Safari for buttons and the search input.
 - Revert using `slug` instead of `title | slugify` for link blocks as we don't know if there is a `slug`.
 - Use `as` instead of `tag` to overrule typography partial tags. This is a little more natural: `{{ partial:typograph/h1 as="h2" }}`.
+- Use padding in navigation links instead of spacing the items. Thanks [Daniel](https://github.com/klickreflex).
 
 ### What's removed
 - The Tailwind highlight utility.
