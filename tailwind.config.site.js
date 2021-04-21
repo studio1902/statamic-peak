@@ -18,17 +18,17 @@ module.exports = {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
-      // Grays (currently default TW blue gray).
-      neutral: colors.blueGray,
+      // Neutrals (currently default TW blue gray).
+      neutral: { 
+        DEFAULT: colors.blueGray['600'],
+        ...colors.blueGray
+      },
       // Client primary color (currently default TW blue).
       // This is the color set you usually change for each project with brand color shades.
-      primary: colors.blue,
-      // Error styling colors (currently default TW Red).
-      error: colors.red,
-      // Notice styling colors (currently default TW Amber).
-      notice: colors.amber,
-      // Success styling colors (currently default TW Amber).
-      success: colors.green,
+      primary: { 
+        DEFAULT: colors.blue['600'],
+        ...colors.blue
+      },
     },
     extend: {
       fontFamily: {
