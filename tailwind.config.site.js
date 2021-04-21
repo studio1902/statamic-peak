@@ -18,13 +18,12 @@ module.exports = {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
-      // Neutrals (currently default TW blue gray).
+      // Neutrals: neutral colors, with a default fallback if you don't need shades.
       neutral: { 
         DEFAULT: colors.blueGray['600'],
         ...colors.blueGray
       },
-      // Client primary color (currently default TW blue).
-      // This is the color set you usually change for each project with brand color shades.
+      // Primary: primary brand color with a default fallback if you don't need shades.
       primary: { 
         DEFAULT: colors.blue['600'],
         ...colors.blue
