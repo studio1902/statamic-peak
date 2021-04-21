@@ -6,6 +6,7 @@
 - Add `@click.away` to subnav list instead of parent anchor to prevent accidentally closing the subnav.
 - Use padding in navigation links instead of spacing the items. Thanks [Daniel](https://github.com/klickreflex).
 - Revert using `slug` instead of `title | slugify` for link blocks as we don't know if there is a `slug`.
+- Use `as` instead of `tag` to overrule typography partial tags. This is a little more natural: `{{ partial:typograph/h1 as="h2" }}`.
 
 ### What's removed
 - The Tailwind highlight utility.
