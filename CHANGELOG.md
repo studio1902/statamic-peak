@@ -7,6 +7,9 @@
 - Use padding in navigation links instead of spacing the items. Thanks [Daniel](https://github.com/klickreflex).
 - Revert using `slug` instead of `title | slugify` for link blocks as we don't know if there is a `slug`.
 
+### What's removed
+- The Tailwind highlight utility.
+
 ## 1.26.4 (2021-04-13)
 
 ### What's improved
