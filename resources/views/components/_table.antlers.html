@@ -6,7 +6,7 @@
                 <thead>
                     <tr>
                         {{ cells }}
-                            <th class="px-3 xl:px-6 py-3 border-b border-neutral-200 bg-neutral-100 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">{{ value }}</th>
+                            <th class="px-3 xl:px-6 py-3 border-b border-gray-200 bg-gray-100 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">{{ value }}</th>
                         {{ /cells }}
                     </tr>
                 </thead>
@@ -21,9 +21,9 @@
                 <tr>
                     {{ cells }}
                         {{ if first && first_column_headers }}
-                            <th class="px-3 xl:px-6 py-3 border-b border-neutral-200 bg-neutral-50 text-left text-xs font-bold text-neutral-500 uppercase tracking-wider">{{ value }}</th>
+                            <th class="px-3 xl:px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">{{ value }}</th>
                         {{ else }}
-                            <td class="px-3 xl:px-6 py-3 whitespace-nowrap border-b border-neutral-200 text-sm leading-3 text-neutral-600">{{ value }}</td>
+                            <td class="px-3 xl:px-6 py-3 whitespace-nowrap border-b border-gray-200 text-sm leading-3 text-gray-600">{{ value }}</td>
                         {{ /if }}
                     {{ /cells }}
                 </tr>

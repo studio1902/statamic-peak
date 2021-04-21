@@ -13,12 +13,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Error styling colors (currently default TW Red).
-        error: colors.red,
-        // Notice styling colors (currently default TW Amber).
-        notice: colors.amber,
-        // Success styling colors (currently default TW Amber).
-        success: colors.green,
+        // Gray colors.
+        gray: colors.blueGray,
+        // Error styling colors.
+        red: colors.red,
+        // Notice styling colors.
+        yellow: colors.amber,
+        // Success styling colors.
+        green: colors.green,
       },
       spacing: {
         // Used for the mobile navigation toggle.

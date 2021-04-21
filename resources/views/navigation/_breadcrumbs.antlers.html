@@ -2,7 +2,7 @@
 <ul class="flex">
     {{ nav:breadcrumbs }}
         <li class="flex">
-            <a class="{{ if is_current }}text-primary-600{{ /if }}" href="{{ url }}">{{ title }}</a>
+            <a class="{{ if is_current }}text-primary{{ /if }}" href="{{ url }}">{{ title }}</a>
             <span class="px-2">{{ unless last }}>{{ /unless }}</span>
         </li>
     {{ /nav:breadcrumbs }}
