@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.27.1 (2021-04-21)
+
+### What's improved
+- Fixed tpyo in SEO partial causing the Twitter image not to load. Thanks [Eric](https://github.com/EricBusch).
+
 ## 1.27.0 (2021-04-21)
 
 ### What's new
