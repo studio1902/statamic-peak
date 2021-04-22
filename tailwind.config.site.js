@@ -18,12 +18,12 @@ module.exports = {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
-      // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT if you use shades.
+      // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
       neutral: { 
         DEFAULT: colors.blueGray['800'],
         ...colors.blueGray
       },
-      // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT if you use shades.
+      // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
       primary: { 
         DEFAULT: colors.blue['600'],
         ...colors.blue
