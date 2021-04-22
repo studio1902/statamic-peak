@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Remove redundant title from e-mail templates.
+
 ## 1.27.1 (2021-04-21)
 
 ### What's improved
