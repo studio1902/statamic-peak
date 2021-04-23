@@ -5,7 +5,7 @@
     {{ yield:seo_title }}
     {{ seo_title ? seo_title : title }}
     {{ seo:title_separator ? seo:title_separator : " &#124; " }}
-    {{ seo:site_name ? seo:site_name : site:name }}
+    {{ seo:site_name ? seo:site_name : config:app:name }}
 </title>
 
 {{# Page description #}}
@@ -92,7 +92,7 @@
 {{ /if }}
 
 {{# Open Graph #}}
-<meta property="og:site_name" content="{{ seo:site_name ? seo:site_name : site:name }}">
+<meta property="og:site_name" content="{{ seo:site_name ? seo:site_name : config:app:name }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{{ site:locale }}">
 {{ if og_title }}
