@@ -3,6 +3,7 @@
 ## Unreleased
 
 ### What's improved
+- Support for extending breakpoints in the breakpoint indicator.
 - Remove redundant title from e-mail templates.
 
 ## 1.27.1 (2021-04-21)
