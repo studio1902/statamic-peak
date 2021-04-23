@@ -32,7 +32,7 @@ fields:
       reorderable: true
       type: grid
       instructions: 'Add one or more link blocks with a title, text and a button.'
-      localizable: false
+      localizable: true
       listable: hidden
       display: 'Link blocks'
       replicator_preview: false

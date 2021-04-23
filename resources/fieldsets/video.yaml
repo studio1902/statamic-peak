@@ -6,7 +6,7 @@ fields:
       placeholder: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
       input_type: url
       type: text
-      localizable: false
+      localizable: true
       width: 50
       listable: hidden
       display: 'Youtube URL'
@@ -15,6 +15,7 @@ fields:
     handle: size
     field: common.size
     config:
+      localizable: true
       width: 50
       instructions: 'The size in which the video should be displayed.'
   -

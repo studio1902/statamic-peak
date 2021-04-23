@@ -10,7 +10,7 @@ fields:
       add_row: 'Add button'
       reorderable: true
       type: grid
-      localizable: false
+      localizable: true
       listable: hidden
       display: Buttons
       instructions: 'Add one or more buttons.'

@@ -15,7 +15,7 @@ fields:
     handle: target_blank
     field:
       type: toggle
-      localizable: false
+      localizable: true
       width: 33
       listable: false
       display: 'Open in new window?'
@@ -32,7 +32,7 @@ fields:
         asset: Asset
       type: button_group
       instructions: 'What type of link do you want to add?'
-      localizable: false
+      localizable: true
       default: entry
       listable: false
       display: 'Link type'
@@ -44,7 +44,7 @@ fields:
       mode: default
       type: entries
       instructions: 'Choose the collection entry you want to link.'
-      localizable: false
+      localizable: true
       listable: false
       display: Entry
       replicator_preview: false
@@ -59,7 +59,7 @@ fields:
       input_type: url
       type: text
       instructions: 'The URL you want to link.'
-      localizable: false
+      localizable: true
       listable: false
       display: URL
       validate:
@@ -73,7 +73,7 @@ fields:
       input_type: email
       type: text
       instructions: 'The e-mail address you want to link.'
-      localizable: false
+      localizable: true
       listable: false
       display: E-mail
       replicator_preview: false
@@ -88,7 +88,7 @@ fields:
       input_type: tel
       type: text
       instructions: 'The telephone number you want to link.'
-      localizable: false
+      localizable: true
       listable: false
       display: Telephone
       replicator_preview: false
@@ -102,6 +102,7 @@ fields:
     config:
       instructions: 'The asset you want to link.'
       display: Asset
+      localizable: true
       if:
         link_type: 'asset'
   -
@@ -112,7 +113,7 @@ fields:
         inline: Inline
       type: button_group
       instructions: 'How should the button be displayed?'
-      localizable: false
+      localizable: true
       default: button
       listable: false
       display: 'Button type'
