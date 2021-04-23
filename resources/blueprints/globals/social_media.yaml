@@ -140,4 +140,5 @@ sections:
                     default: 'https://www.github.com/'
           type: replicator
           listable: hidden
+          localizable: true
           display: 'Social media'

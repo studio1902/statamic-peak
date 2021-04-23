@@ -15,6 +15,7 @@ sections:
           display: 'Use favicons'
           type: toggle
           icon: toggle
+          localizable: false
           instructions: 'Enable if you want Peak to generate favicons. **Important**: you need to have the PHP Imagick module installed.'
           listable: hidden
       -
@@ -23,6 +24,7 @@ sections:
         config:
           container: favicons
           restrict: true
+          localizable: false
           display: 'Favicon SVG'
           instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg).'
           width: 50
@@ -43,6 +45,7 @@ sections:
         field:
           theme: nano
           lock_opacity: true
+          localizable: false
           default_color_mode: HEXA
           color_modes:
             - hex
@@ -61,6 +64,7 @@ sections:
         handle: ios_color
         field:
           theme: nano
+          localizable: false
           lock_opacity: true
           default_color_mode: HEXA
           color_modes:
@@ -80,6 +84,7 @@ sections:
         handle: chrome_color
         field:
           theme: nano
+          localizable: false
           lock_opacity: true
           default_color_mode: HEXA
           color_modes:
@@ -108,6 +113,7 @@ sections:
         handle: safari_mask_icon
         field: common.image
         config:
+          localizable: false
           container: favicons
           restrict: true
           display: 'Safari Mask Icon'
@@ -120,6 +126,7 @@ sections:
         field: common.image
         config:
           container: favicons
+          localizable: false
           restrict: true
           display: 'Apple touch icon'
           instructions: 'A 180x180 PNG image used on iOS devices. Will be focal cropped to this dimension.'
@@ -131,6 +138,7 @@ sections:
         field: common.image
         config:
           container: favicons
+          localizable: false
           restrict: true
           display: 'Android Chrome icon'
           instructions: 'A 512x512 PNG image image used on Android devices. Will be focal cropped to this dimension.'
