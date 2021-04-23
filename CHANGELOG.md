@@ -1,8 +1,9 @@
 # Release Notes
 
-## Unreleased
+## 1.27.2 (2021-04-23)
 
 ### What's improved
+- Use `config:app:name` instead of `site:name` in the SEO partial. When you use descriptive site names in a multisite situation (e.g. 'Dutch', or 'English'), the partial won't fall back to that in the page title.
 - Support for extending breakpoints in the breakpoint indicator.
 - Remove redundant title from e-mail templates.
 
