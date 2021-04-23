@@ -5,7 +5,6 @@
 // Here we define base styles, components and utilities used by Peak. 
 //
 
-const _ = require('lodash')
 const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 
@@ -104,15 +103,24 @@ module.exports = {
 
     // Render screen names in the breakpoint display.
     plugin(function({ addBase, theme}) {
-      const breakpoints = _.map(theme('screens'), (value, key) => {
+      let breakpoints = Object.entries(theme('screens'))
+
+      breakpoints = breakpoints.filter(value => typeof value[1] == 'string')
+      
+      breakpoints = breakpoints.sort((a, b) => {
+        return a[1].substring(0, a[1].length - 2) - b[1].substring(0, b[1].length - 2)
+      })
+      
+      breakpoints = breakpoints.map((value) => {
         return {
-          [`@media (min-width: ${value})`]: {
+          [`@media (min-width: ${value[1]})`]: {
             '.breakpoint::before': {
-              content: `"${key}"`,
+              content: `"${value[0]}"`,
             }
           }
         }
       })
+      
       addBase(breakpoints)
     }),
 

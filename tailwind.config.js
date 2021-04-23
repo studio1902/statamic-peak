@@ -18,9 +18,7 @@ module.exports = {
     require('./tailwind.config.peak.js'),
     require('./tailwind.config.site.js'),
   ],
-  // Uncomment the next line to enable Dark mode using `prefers-color-scheme`.
-  // darkMode: 'media', 
-  // Or use the next line to use darkmode by adding a class to your html.
+  // Uncomment the next line to enable class based dark mode: https://peak.studio1902.nl/features/dark-mode.html.
   // darkMode: 'class',
   mode: 'jit',
   // Configure Purge CSS.
