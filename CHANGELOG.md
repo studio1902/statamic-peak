@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.27.3 (2021-04-23)
+
+### What's improved
+- Use regular expression for sorting breakpoints to use in the Peak toolbar to make it a little more secure.
+
 ## 1.27.2 (2021-04-23)
 
 ### What's improved
