@@ -18,6 +18,7 @@ fields:
         max_items: 1
         mode: default
         type: entries
+        localizable: true
         listable: false
         display: Entry
   -
