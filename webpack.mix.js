@@ -11,6 +11,10 @@ mix.postCss('resources/css/site.css', 'public/css/site.css', [
     require('autoprefixer'),
 ])
 
+mix.options({
+    cssNano: { minifyFontValues: false }
+});
+
 mix.browserSync({
     proxy: process.env.APP_URL,
     files: [
