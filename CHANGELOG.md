@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- The property `minifyFontValues` is added and set to `false` in `webpack.mix.js` to prevent cssNano from stripping quotes from font names. Thanks [Vlad](https://github.com/vladdu).
+
 ## 1.27.3 (2021-04-24)
 
 ### What's improved
