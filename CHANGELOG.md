@@ -1,9 +1,10 @@
 # Release Notes
 
-## Unreleased
+## 1.27.4 (2021-04-26)
 
 ### What's improved
 - The property `minifyFontValues` is added and set to `false` in `webpack.mix.js` to prevent cssNano from stripping quotes from font names. Thanks [Vlad](https://github.com/vladdu).
+- The `window.getToken` function has been touched by an actual developer, so it's shorter now. Thanks [Jonas](https://github.com/jonassiewertsen).
 
 ## 1.27.3 (2021-04-24)
 
