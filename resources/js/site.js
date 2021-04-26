@@ -24,7 +24,7 @@ window.getCookie = function(name) {
 
 // Global get CSRF token function (used by forms).
 window.getToken = async () => {
-    const token = await fetch('/!/DynamicToken/refresh')
+    return await fetch('/!/DynamicToken/refresh')
         .then((res) => res.json())
         .then((data) => {
             return data.csrf_token
@@ -32,6 +32,4 @@ window.getToken = async () => {
         .catch(function (error) {
             this.error = 'Something went wrong. Please try again later.'
         })
-
-    return token
 }
