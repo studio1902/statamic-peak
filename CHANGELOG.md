@@ -1,9 +1,14 @@
 # Release Notes
 
+## 1.27.6 (2021-05-04)
+
+### What's improved
+- Move the `button_attributes` partial to snippets as it's not a component and update the partials requiring it it. 
+
 ## 1.27.5 (2021-05-04)
 
 ### What's improved
-- Removed extra quote in the search results view. Thanks [Craig](https://github.com/intrepidws).
+- Remove extra quote in the search results view. Thanks [Craig](https://github.com/intrepidws).
 
 ## 1.27.4 (2021-04-26)
 
