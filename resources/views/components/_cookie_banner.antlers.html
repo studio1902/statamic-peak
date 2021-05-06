@@ -1,4 +1,8 @@
-{{# The cookie banner defined in `resources/views/snippets/_seo.antlers.html` and yielded in `resources/views/layout.antlers.html`. #}}
+{{#
+	@name Cookie banner
+	@desc The cookie banner component defined in `resources/views/snippets/_seo.antlers.html` and yielded in `resources/views/layout.antlers.html`.
+#}}
+
 <div 
     x-data="{ open: !window.getCookie('cookie_consent') }"
     {{ if seo:cookie_revoke_before }}
