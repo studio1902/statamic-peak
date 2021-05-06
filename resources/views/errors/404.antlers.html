@@ -1,4 +1,7 @@
-{{# The 404 page taking it's content from the configuration global. #}}
+{{#
+	@name Error: 404
+	@desc The 404 error template.
+#}}
 
 {{# Redirect if current_url is in the Redirects global. #}}
 {{ redirects:redirects where="url_old:{current_uri}"}}

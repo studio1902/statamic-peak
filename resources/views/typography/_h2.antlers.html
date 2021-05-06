@@ -1,2 +1,6 @@
-{{# Typography h2 partial with class, tag, color and content attributes. #}}
+{{#
+	@name h2
+	@desc The typography h2 partial to render an h2 with `class`, `as`, `color` and `content` attributes.
+#}}
+
 <{{ as or 'h2' }} class="text-2xl font-black leading-tight {{ color or 'text-black' }} {{ class }}">{{ content | nl2br }}</{{ as or 'h2' }}>

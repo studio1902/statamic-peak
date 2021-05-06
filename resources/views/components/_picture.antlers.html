@@ -1,4 +1,8 @@
-{{# A responsive imageset in a picture element. See `resources/views/components/_figure.antlers.html` for an example on how to use this. #}}
+{{#
+	@name Picture
+	@desc The picture component. A responsive imageset in a picture element. See `resources/views/components/_figure.antlers.html` for an example on how to use this.
+#}}
+
 {{ if image }}
     <picture>
         {{ asset :url="image" }}

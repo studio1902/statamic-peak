@@ -1,9 +1,9 @@
-{{# 
-    The dark mode toggle when you use class based dark mode. To enable this do the following:
-
-    * Uncomment `darkMode: 'class'` in `tailwind.config.js`.
-    * Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/vies/layout.antlers.html`.
-    * Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
+{{#
+	@name Dark mode toggle
+	@desc The dark mode toggle component when you use class based dark mode. To enable this do the following: 
+    1. Uncomment `darkMode: 'class'` in `tailwind.config.js`. 
+    2. Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/vies/layout.antlers.html`. 
+    3. Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
 #}}
 
 <script>
