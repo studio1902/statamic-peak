@@ -1,9 +1,13 @@
 # Release Notes
 
-## 1.27.6 (2021-05-04)
+## 1.27.6 (2021-05-06)
+
+### What's new
+- Updated template comment/description system for future benefit.
 
 ### What's improved
 - Move the `button_attributes` partial to snippets as it's not a component and update the partials requiring it it. 
+- Rename `bard` handle to `article` just like `page_builder` isn't called `replicator`.
 
 ## 1.27.5 (2021-05-04)
 
