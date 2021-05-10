@@ -8,7 +8,8 @@ use mikehaertl\wkhtmlto\Image;
 use Statamic\Facades\Entry;
 use Statamic\Events\EntrySaved;
 
-class GenerateOGImage implements ShouldQueue
+// class GenerateOGImage implements ShouldQueue
+class GenerateOGImage 
 {
      /**
      * Handle the event.
@@ -20,10 +21,11 @@ class GenerateOGImage implements ShouldQueue
     {
         $id = $event->entry->id();
         $entry = Entry::find($id);
+        $app_url = config('app.url');
 
-        if ($entry->get('og_render_image') == true) {
+        // if ($entry->get('og_render_image') == true) {
             
-            $image = new Image("/og_images/{$id}.png");
+            $image = new Image("{$app_url}/og/{$id}");
             $image->setOptions([
                 'width' => 1200,
                 'height' => 630,
@@ -32,8 +34,7 @@ class GenerateOGImage implements ShouldQueue
             ]);
 
             $image->saveAs('/public/test.png');
-            
-            // $entry->set('og_image', $file)->set('og_render_image', false)->save();
-        }
+            \Log::debug("{$app_url}/og/{$id}");
+        // }
     }
 }
