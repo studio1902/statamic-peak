@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.27.8 (2021-05-10)
+## 1.27.7 (2021-05-10)
 
 ### What's improved
 - Add `strong` rule in `tailwind.config.typography.js` and set it to the DEFAULT neutral color.
