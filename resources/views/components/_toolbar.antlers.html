@@ -10,12 +10,10 @@
         :class="{ 'opacity-100': visible, 'opacity-0': !visible }"
         x-cloak
     >
-        {{ if environment == 'local' }}
-            <span title="Current Tailwind breakpoint" class="flex items-center p-2 space-x-1 text-yellow-800 bg-yellow-200">
-                {{ svg:breakpoint class="w-4 h-4 fill-current" alt="" aria-hidden="true" }}
-                <span class="breakpoint"></span>
-            </span>
-        {{ /if }}
+        <span title="Current Tailwind breakpoint" class="flex items-center p-2 space-x-1 text-yellow-800 bg-yellow-200">
+            {{ svg:breakpoint class="w-4 h-4 fill-current" alt="" aria-hidden="true" }}
+            <span class="breakpoint"></span>
+        </span>
 
         {{ if logged_in == true }}
             <a href="{{ edit_url }}" title="Edit entry in CP" aria-label="Edit entry in CP" target="_blank" class="flex items-center p-2 space-x-1 text-gray-800 bg-gray-200 hover:bg-gray-300">
