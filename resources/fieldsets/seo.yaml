@@ -108,6 +108,14 @@ fields:
       instructions: 'This entries OG description, defaults to meta description.'
       width: 100
   -
+    handle: og_render_image
+    field:
+      type: toggle
+      display: Render OG image.
+      instructions: 'Automatically render an OG image when you save this entry. An image will be rendered the first time you save an entry and after that you have to explicitely toggle this on after changes.'
+      default: true
+      width: 100
+  -
     handle: og_image
     field: common.image
     config:

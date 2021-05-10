@@ -29,6 +29,11 @@ Route::statamic('/site.webmanifest', 'manifest/manifest', [
     'content_type' => 'application/json'
 ]); 
 
+// The OG route to generate OG images.
+Route::statamic('/og/{id}', 'og', [
+    'layout' => null
+]); 
+
 // The Search route to display search results with `views/search.antlers.html`.
 // Route::statamic('/search', 'search', [
 //     'title' => 'Search results'
