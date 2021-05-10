@@ -7,6 +7,7 @@
     <aside 
         class="fixed z-50 top-1 right-1 flex text-xs divide-x divide-white shadow-sm divide-solid transition-opacity hover:opacity-100"
         x-data="{ visible: window.getCookie('toolbar_visible') }"
+        x-ref="toolbar"
         :class="{ 'opacity-100': visible, 'opacity-0': !visible }"
         x-cloak
     >
@@ -32,6 +33,13 @@
             <div :class="{ 'block': visible, 'hidden': !visible }">
                 {{ svg:visible class="w-5 h-5 fill-current" alt="" aria-hidden="true" }}
             </div>
+        </button>
+
+        <button
+            @click="$refs.toolbar.remove()"
+            title="Remove toolbar" aria-label="Remove toolbar" class="flex items-center justify-center px-2 bg-gray-200 hover:bg-gray-300"
+        >
+            {{ svg:trash class="w-4 h-4 text-yellow-800 stroke-current" alt="" aria-hidden="true" }}
         </button>
     </aside>
 {{ /if }}

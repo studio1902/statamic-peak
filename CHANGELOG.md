@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.27.8 (2021-05-10)
+
+### What's new
+- You can now remove the toolbar for the current request. Thanks [Jelle Roorda](https://github.com/jelleroorda).
+
 ## 1.27.7 (2021-05-10)
 
 ### What's improved
