@@ -50,6 +50,9 @@ module.exports = {
             pre: {
               whiteSpace: 'pre-wrap',
             },
+            strong: {
+              color: theme('colors.neutral.DEFAULT'),
+            },
           }
         }
       }),
