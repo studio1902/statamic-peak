@@ -1,0 +1,25 @@
+<!doctype html>
+<html class="h-full">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex">
+        <title>OG Image</title>
+        <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
+    </head>
+    <body class="bg-oval-blur h-full flex justify-center items-center">
+        <div class="relative p-8 flex flex-col justify-between overflow-hidden" style="width: 1200px; height: 630px;">
+            {{ get_content:id }}
+                <h1 class="flex flex-col text-7xl font-bold leading-crammed text-neutral">
+                    {{ og_title ?? seo_title ?? title }}
+                </h1>
+                <p class="text-xl text-neutral leading-loose max-w-[40ch]">
+                    {{ og_description ?? seo_description }}
+                </p>
+                <div class="flex justify-end space-x-4">
+                    <img class="w-48 h-auto" src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png"/>
+                </div>
+            {{ /get_content:id }}
+        </div>
+    </body>
+</html>
