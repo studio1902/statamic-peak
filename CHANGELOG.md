@@ -1,5 +1,12 @@
 # Release Notes
 
+## 1.27.8 (2021-05-10)
+
+### What's improved
+- Add `strong` rule in `tailwind.config.typography.js` and set it to the DEFAULT neutral color.
+- Remove duplicate `if local` check in `resources/views/components/_toolbar.antlers.html`. Thanks [Vlad](https://github.com/vladdu).
+- No hyphen in `Email address` in `resources/blueprints/forms/contact.yaml` and `resources/lang/en.json`.
+
 ## 1.27.6 (2021-05-06)
 
 ### What's new
