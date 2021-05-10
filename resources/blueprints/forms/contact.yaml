@@ -12,7 +12,7 @@ sections:
       -
         handle: email
         field:
-          display: "E-mail address"
+          display: "Email address"
           type: text
           validate: required|email
           localizable: true
