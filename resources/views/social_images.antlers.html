@@ -1,3 +1,8 @@
+{{#
+	@name Social Images
+	@desc The template for generating Social Images. By default two sizes, one for the regular OG protocol and one for Twitter. 
+#}}
+
 <!doctype html>
 <html class="h-full">
     <head>
@@ -9,6 +14,7 @@
     </head>
 
     <body 
+        {{# Render two type of Social Images. One for the regular OG graph protocol and one for Twitter. #}}
         x-data="{
             shots: [
                 {
@@ -25,6 +31,7 @@
     >
 
         <template x-for="(item, index) in shots" :key="index">
+            {{# The actual Social Image template. #}}
             <div>
                 <h2 class="mb-4 text-xs text-black font-bold uppercase tracking-widest" x-text="item.id"></h2>
                 <div x-bind:id="item.id" x-bind:style="item.style" class="relative p-8 flex flex-col justify-between bg-neutral-50">
