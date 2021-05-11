@@ -25,7 +25,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Assets](https://peak.studio1902.nl/features/assets.html)
 * [Bard](https://peak.studio1902.nl/features/bard.html)
 * [Buttons](https://peak.studio1902.nl/features/buttons.html)
-* [Dark mode (off by default)](https://peak.studio1902.nl/features/dark-mode.html)
+* [Dark mode (off)](https://peak.studio1902.nl/features/dark-mode.html)
 * [Favicons](https://peak.studio1902.nl/features/favicons.html)
 * [Forms](https://peak.studio1902.nl/features/forms.html)
 * [Globals](https://peak.studio1902.nl/features/globals.html)
@@ -33,7 +33,8 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 * [Page builder](https://peak.studio1902.nl/features/page-builder.html)
 * [Pagination](https://peak.studio1902.nl/features/pagination.html)
 * [Redirects](https://peak.studio1902.nl/features/redirects.html)
-* [Search (off by default)](https://peak.studio1902.nl/features/search.html)
+* [Search (off)](https://peak.studio1902.nl/features/search.html)
+* [Social images generation (off)](https://peak.studio1902.nl/features/social-images-generation.html)
 * [SEO](https://peak.studio1902.nl/features/seo.html)
 * [Typography](https://peak.studio1902.nl/features/typography.html)
 
