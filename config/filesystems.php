@@ -78,6 +78,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'og' => [
+            'driver' => 'local',
+            'root' => public_path('og'),
+            'url' => '/og',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

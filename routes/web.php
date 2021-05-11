@@ -29,8 +29,8 @@ Route::statamic('/site.webmanifest', 'manifest/manifest', [
     'content_type' => 'application/json'
 ]); 
 
-// The OG route to generate OG images.
-Route::statamic('/og/{id}', 'og', [
+// The Social Image route to generate social images.
+Route::statamic('/social-images/{id}', 'social_images', [
     'layout' => null
 ]); 
 
