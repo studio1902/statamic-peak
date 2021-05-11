@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.28.0 (2021-05-11)
+
+### What's new
+- The ability to auto generate social images based on a template you control. [Read the docs here](https://peak.studio1902.nl/features/social-images-generation.html).
+- Social images are now saved in a seperate asset container.
+
 ## 1.27.8 (2021-05-10)
 
 ### What's new
