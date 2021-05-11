@@ -21,16 +21,31 @@ class GenerateSocialImages extends Action implements ShouldQueue
         }
     }
     
+    /**
+     * Determine if the current thing is an entry and if it's opted in to the auto generation config (global).
+     *
+     * @return boolean
+     */
     public function visibleTo($item)
     {
         return $item instanceof EntryInstance && in_array($item->collectionHandle(), $this->available_collections);
     }
     
+    /**
+     * Determine if the current user is allowed to run this action.
+     *
+     * @return boolean
+     */
     public function authorize($user, $item)
     {
         return $user->can('edit', $item);
     }
     
+     /**
+     * Run the action
+     *
+     * @return void
+     */
     public function run($items, $values)
     {
         $items->each(function($item, $key) {
