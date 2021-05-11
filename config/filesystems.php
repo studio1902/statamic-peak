@@ -78,10 +78,10 @@ return [
             'visibility' => 'public',
         ],
 
-        'og' => [
+        'social_images' => [
             'driver' => 'local',
-            'root' => public_path('og'),
-            'url' => '/og',
+            'root' => public_path('social_images'),
+            'url' => '/social_images',
             'visibility' => 'public',
         ],
 
