@@ -78,6 +78,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'social_images' => [
+            'driver' => 'local',
+            'root' => public_path('social_images'),
+            'url' => '/social_images',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*

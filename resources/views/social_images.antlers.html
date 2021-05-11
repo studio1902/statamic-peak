@@ -1,0 +1,58 @@
+{{#
+	@name Social Images
+	@desc The template for generating Social Images. By default two sizes, one for the regular OG protocol and one for Twitter. 
+#}}
+
+<!doctype html>
+<html class="h-full">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex">
+        <title>Social Images - {{ get_content:id }}{{ title }}{{ /get_content:id }}</title>
+        <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
+        <style>
+            .phpdebugbar { display: none !important; }
+        </style>
+    </head>
+
+    <body 
+        {{# Render two type of Social Images. One for the regular OG graph protocol and one for Twitter. #}}
+        x-data="{
+            shots: [
+                {
+                    id: 'og',
+                    style: 'width: 1200px; height: 630px',
+                },
+                {
+                    id: 'twitter',
+                    style: 'width: 1200px; height: 600px',
+                }
+            ]
+        }"
+        class="pb-8 flex flex-col items-center space-y-8"
+    >
+
+        <template x-for="(item, index) in shots" :key="index">
+            {{# The actual Social Image template. #}}
+            <div>
+                <h2 class="mb-4 text-xs text-black font-bold uppercase tracking-widest" x-text="item.id"></h2>
+                <div x-bind:id="item.id" x-bind:style="item.style" class="relative p-8 flex flex-col justify-between bg-neutral-50">
+                    {{ get_content:id }}
+                        <h1 class="flex flex-col text-7xl font-bold leading-crammed text-primary">
+                            {{ og_title ?? seo_title ?? title }}
+                        </h1>
+                        <p class="text-xl text-neutral leading-loose max-w-[40ch]">
+                            {{ og_description ?? seo_description }}
+                        </p>
+                        <div class="flex justify-end space-x-4">
+                            <img class="w-64 h-auto" src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg"/>
+                        </div>
+                    {{ /get_content:id }}
+                </div>
+            </div>
+        </template>
+
+        <script src="{{ mix src='/js/site.js' }}"></script>
+    </body>
+</html>
