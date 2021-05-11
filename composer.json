@@ -10,8 +10,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "mikehaertl/phpwkhtmltopdf": "^2.5",
-        "statamic/cms": "3.1.*"
+        "statamic/cms": "3.1.*",
+        "spatie/browsershot": "^3.42"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
