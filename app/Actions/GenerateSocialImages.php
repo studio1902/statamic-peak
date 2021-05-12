@@ -4,6 +4,7 @@ namespace App\Actions;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
 use Spatie\Browsershot\Browsershot;
 use Statamic\Actions\Action;
@@ -69,5 +70,7 @@ class GenerateSocialImages extends Action implements ShouldQueue
                 ->save("social_images/{$file}");
             $item->set('twitter_image', $file)->save();
         });
+
+        Artisan::call('cache:clear');
     }
 }
