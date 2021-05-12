@@ -1,5 +1,12 @@
 # Release Notes
 
+## 1.28.1 (2021-05-12)
+
+### What's new
+- Clear cache after generating social images.
+- Track changes in git for the `favicons` and `social_images` asset containers. 
+- .gitkeep `public/social_images`.
+
 ## 1.28.0 (2021-05-11)
 
 ### What's new
