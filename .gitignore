@@ -5,10 +5,12 @@
 /public/img/
 /public/static/
 /storage/*.key
+/storage/antlers-language-server
 /vendor
 .env
 .env.backup
 .phpunit.result.cache
+.antlers.json
 Homestead.json
 Homestead.yaml
 npm-debug.log
