@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Use grid display for social sharing images in the SEO tab.
+
 ## 1.28.1 (2021-05-12)
 
 ### What's improved
