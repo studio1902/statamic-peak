@@ -111,6 +111,7 @@ fields:
     handle: og_image
     field: common.image
     config:
+      mode: grid
       container: social_images
       listable: hidden
       display: 'Social image'
@@ -120,6 +121,7 @@ fields:
     handle: twitter_image
     field: common.image
     config:
+      mode: grid
       container: social_images
       listable: hidden
       display: 'Twitter image'
