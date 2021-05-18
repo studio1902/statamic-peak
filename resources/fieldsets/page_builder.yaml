@@ -12,7 +12,7 @@ fields:
       sets:
         article:
           display: Article
-          instructions: 'Long form content, can be expaned with media like figures, video, quotes or tables.'
+          instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
           fields:
             -
               import: article
