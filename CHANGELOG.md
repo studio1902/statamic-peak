@@ -4,6 +4,7 @@
 
 ### What's improved
 - Use grid display for social sharing images in the SEO tab.
+- Fixed typo. Thanks [Matthew](https://github.com/matthewbdaly).
 
 ## 1.28.1 (2021-05-12)
 
