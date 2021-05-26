@@ -25,7 +25,7 @@ return [
                 'users' => base_path('users'),
                 'roles' => resource_path('users/roles.yaml'),
                 'groups' => resource_path('users/groups.yaml'),
-            ]
+            ],
         ],
 
         'eloquent' => [
@@ -76,6 +76,33 @@ return [
     'passwords' => [
         'resets' => 'resets',
         'activations' => 'activations',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | DB Connection
+    |--------------------------------------------------------------------------
+    |
+    | Default database connection.
+    |
+    */
+
+    'database' => config('database.default'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication Guards
+    |--------------------------------------------------------------------------
+    |
+    | By default, Statamic will use the `web` authentication guard. However,
+    | if you want to run Statamic alongside the default Laravel auth
+    | guard, you can configure that for your cp and/or frontend.
+    |
+    */
+
+    'guards' => [
+        'cp' => 'web',
+        'web' => 'web',
     ],
 
 ];

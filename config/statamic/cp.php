@@ -78,8 +78,20 @@ return [
     |
     */
 
-    'link_to_docs' => false,
+    'link_to_docs' => env('STATAMIC_LINK_TO_DOCS', true),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Support Link
+    |--------------------------------------------------------------------------
+    |
+    | Set the location of the support link in the "Useful Links" header
+    | dropdown. Use 'false' to remove it entirely.
+    |
+    */
+
+    'support_url' => env('STATAMIC_SUPPORT_URL', 'https://statamic.com/support'),
+    
      /*
     |--------------------------------------------------------------------------
     | Login Theme
