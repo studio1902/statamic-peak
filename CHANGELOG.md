@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.28.3 (2021-05-27)
+
+### What's improved
+- Don't show canonical links when the entry has `seo_noindex` set in `resources/views/snippets/_seo.antlers.html`. Thanks for the headsup Fabbow!
+- Only show `hreflang` tags when `seo_canonical_type` is pointing to itself and when the entry doesn't have `seo_noindex` set in `resources/views/snippets/_seo.antlers.html`. Thanks for the headsup Fabbow!
+
 ## 1.28.2 (2021-05-26)
 
 ### What's improved
@@ -12,7 +18,7 @@
 
 ### What's improved
 - Clear cache after generating social images.
-- Track changes in git for the `favicons` and `social_images` asset containers. 
+- Track changes in git for the `favicons` and `social_images` asset containers.
 - .gitkeep `public/social_images`.
 
 ## 1.28.0 (2021-05-11)
@@ -39,7 +45,7 @@
 - Updated template comment/description system for future benefit.
 
 ### What's improved
-- Move the `button_attributes` partial to snippets as it's not a component and update the partials requiring it it. 
+- Move the `button_attributes` partial to snippets as it's not a component and update the partials requiring it it.
 - Rename `bard` handle to `article` just like `page_builder` isn't called `replicator`.
 
 ## 1.27.5 (2021-05-04)
@@ -101,7 +107,7 @@
 
 ### What's improved
 - Repeat search form on the search results template in `resources/views/search.antlers.html`.
-- Use `slug` instead of `title | slugify` for link blocks a11y ID's. 
+- Use `slug` instead of `title | slugify` for link blocks a11y ID's.
 
 ### What's changed
 - Remove the ability for editors to create users, since they can't select roles due to a Statamic issue. Superusers have to do this.
@@ -123,14 +129,14 @@
 ### What's improved
 - Also add current locale as hreflang tag in `resources/views/snippets/_seo.antlers.html`.
 - Make social media `aria-label` in `resources/views/layout/_footer.antlers.html` more descriptive.
-- Alphabetize strings based on category in `resources/lang/en/strings.php`. 
+- Alphabetize strings based on category in `resources/lang/en/strings.php`.
 
 ## 1.25.7 (2021-04-05)
 
 ### What's improved
 - Use the new `honepot` variable instead of hard coding it.
 - Close mobile sub navigation when clicking the the parent again.
-- The `menu` and `close` labels in the menu button are now localisable. 
+- The `menu` and `close` labels in the menu button are now localisable.
 
 ## 1.25.6 (2021-04-02)
 
@@ -147,13 +153,13 @@
 ## 1.25.4 (2021-03-30)
 
 ### What's improved
-- The caption partial should, and now is located in `resources/views/typography/_caption.antlers.nl`. 
+- The caption partial should, and now is located in `resources/views/typography/_caption.antlers.nl`.
 - Update `.env.example` with the right whitelabel variables.
 
 ## 1.25.3 (2021-03-29)
 
 ### What's improved
-- DRY caption for `_figure.antlers.html`, `_table.antlers.html` and `_video.antlers.html` in `resources/views/components/_caption.antlers.nl`. 
+- DRY caption for `_figure.antlers.html`, `_table.antlers.html` and `_video.antlers.html` in `resources/views/components/_caption.antlers.nl`.
 - Add some HTML content to the empty configuration global.
 
 ## 1.25.2 (2021-03-27)
@@ -233,7 +239,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 - Disable `size-modifiers` for Tailwind Typography by default since we use fluid typography.
 - Fix Knowledge Graph JSON-ld Organisation logo url.
 - Contain Knowledge Graph JSON-ld Organisation logo in it's square.
-- Scope sitemap results to prevent empty `<url>` entries in it. 
+- Scope sitemap results to prevent empty `<url>` entries in it.
 - Actually use `.env` `IMAGE_MANIPULATION_DRIVER` in `config/statamic/assets.php` (defaults to `gd`).
 
 ## 1.21.1 (2021-02-17)
@@ -262,7 +268,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 - Use Mailhog as the default SMTP config in `.env.example` since it's a local service and free, unlike Mailtrap, the Laravel default. Run `brew install mailhog`, `valet proxy mailhog http://127.0.0.1:8025` and catch your mails on `https://mailhog.test`.
 
 ### What's improved
-- Published the password reset blade views and removed rad mode to be in line with the login view. This method will likely improve siginificantly with the upcoming release of Statamic 3.1 containing white-labeling features. 
+- Published the password reset blade views and removed rad mode to be in line with the login view. This method will likely improve siginificantly with the upcoming release of Statamic 3.1 containing white-labeling features.
 
 ## 1.20.3 (2021-02-09)
 
@@ -289,7 +295,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 ## 1.20.0 (2021-02-07)
 
 ### What's new
-- Redirects old URL's to new URL's and present it in a fancy grid. That's it. Only kicks in when a 404 is triggered. Just like the SEO global it's only accessible to the superusers and the `marketeer` role (which you add to users with the `editor` role). 
+- Redirects old URL's to new URL's and present it in a fancy grid. That's it. Only kicks in when a 404 is triggered. Just like the SEO global it's only accessible to the superusers and the `marketeer` role (which you add to users with the `editor` role).
 
 ## 1.19.3 (2021-02-06)
 
@@ -373,11 +379,11 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 ## 1.18.8 (2021-01-17)
 
 ### What's new
-- Revoke all cookie consent given before a certain date so users have to consent again. Handy when your privacy policy changed. 
-- Add a field called `button_type` to buttons. It has two options by default: `inline` and `button`. The template `views/components/_button.antlers.html` defaults to `button`. 
+- Revoke all cookie consent given before a certain date so users have to consent again. Handy when your privacy policy changed.
+- Add a field called `button_type` to buttons. It has two options by default: `inline` and `button`. The template `views/components/_button.antlers.html` defaults to `button`.
 
 ### What's improved
-- Translatable labels using the `{{ trans key="{ label }" }}` pattern for checkboxes, radio's and selects. 
+- Translatable labels using the `{{ trans key="{ label }" }}` pattern for checkboxes, radio's and selects.
 - Updated JS dependencies.
 
 ## 1.18.7 (2021-01-15)
@@ -424,7 +430,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 ## 1.18.0 (2021-01-05)
 
 ### What's new
-- Search functionality. Disabled by default. See the readme for more details on how to [enable and extend search](https://github.com/studio1902/statamic-peak#search). 
+- Search functionality. Disabled by default. See the readme for more details on how to [enable and extend search](https://github.com/studio1902/statamic-peak#search).
 
 ### What's improved
 - Updated and added (missing) inline documentation.
@@ -482,7 +488,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 ## 1.15.0 (2020-12-10)
 
 ### What's new
-- Use and implement `focus-visible` Polyfill: https://github.com/studio1902/statamic-peak#focus-visible 
+- Use and implement `focus-visible` Polyfill: https://github.com/studio1902/statamic-peak#focus-visible
 - Use and implement the `motion-safe` variant: https://github.com/studio1902/statamic-peak#reduced-motion
 - Add Cloudflare Web Analytics Tracker. Thanks Vaggelis!
 
@@ -492,7 +498,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 ## 1.14.3 (2020-12-03)
 
 ### What's improved
-- Fixed a bug in the Tailwind config that prevented the VS Code Intellisense plugin from working. 
+- Fixed a bug in the Tailwind config that prevented the VS Code Intellisense plugin from working.
 
 ## 1.14.2 (2020-12-03)
 
@@ -520,9 +526,9 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.s
 - Hide contact form success message after 2500secs. Thanks Frederik!
 - Don't let the site be indexed when not in production. Thanks Frederik!
 - Improve default form styling.
-- Fix Tailwind prose classes not compiling. 
+- Fix Tailwind prose classes not compiling.
 - Only apply prose class to `resources/views/components/_text.antlers.html` so bard sets don't inherit prose styles.
-- Update bard sets styling with margin y. 
+- Update bard sets styling with margin y.
 
 ## 1.13.0 (2020-11-19)
 
