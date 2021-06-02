@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Make redirects localizable.
+
 ## 1.28.3 (2021-05-27)
 
 ### What's improved

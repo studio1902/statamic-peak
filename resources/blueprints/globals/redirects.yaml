@@ -55,4 +55,5 @@ sections:
           icon: grid
           localizable: false
           listable: hidden
+          localizable: true
           add_row: 'Add redirect'
