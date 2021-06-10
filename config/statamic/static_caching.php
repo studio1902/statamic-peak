@@ -20,7 +20,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may define all of the static caching strategies for your
-    | application as well as their drivers. 
+    | application as well as their drivers.
     |
     | Supported drivers: "application", "file"
     |
@@ -46,8 +46,8 @@ return [
     | Exclusions
     |--------------------------------------------------------------------------
     |
-    | Here you may define a list of URLs to be excluded from static 
-    | caching. You may want to exclude URLs containing dynamic 
+    | Here you may define a list of URLs to be excluded from static
+    | caching. You may want to exclude URLs containing dynamic
     | elements like contact forms, or shopping carts.
     |
     */
@@ -75,6 +75,23 @@ return [
 
         'rules' => 'all',
 
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Warming Rules
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define any extra URLS that should be visited when warming
+    | up the static cache. See the documentation for more details. Usually
+    | you don't need this, as we warm all published entries by default.
+    |
+    | https://peak.studio1902.nl/other/warm-all-caches.html#the-static-cache
+    |
+    */
+
+    'warm' => [
+        // 'my-collection?page=2',
     ],
 
 ];
