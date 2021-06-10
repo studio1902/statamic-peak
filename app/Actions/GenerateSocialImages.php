@@ -3,10 +3,6 @@
 namespace App\Actions;
 
 use App\Jobs\GenerateSocialImagesJob;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Str;
-use Spatie\Browsershot\Browsershot;
 use Statamic\Actions\Action;
 use Statamic\Contracts\Entries\Entry as EntryInstance;
 use Statamic\Facades\Entry;

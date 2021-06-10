@@ -8,6 +8,9 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Artisan;
+use Spatie\Browsershot\Browsershot;
 
 class GenerateSocialImagesJob implements ShouldQueue
 {
