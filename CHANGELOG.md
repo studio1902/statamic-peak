@@ -1,5 +1,12 @@
 # Release Notes
 
+## 1.29.0 (2021-06-010)
+
+### What's improved
+- Generating social images is now a job and queuable when you use Redis.
+- You can include and exclude URL's for the static caching warm command. Thanks [Jelle](https://github.com/jelleroorda).
+- The .env example is more structured. Thanks [Jelle](https://github.com/jelleroorda).
+
 ## 1.28.4 (2021-06-02)
 
 ### What's improved
