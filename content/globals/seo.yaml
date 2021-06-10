@@ -2,9 +2,7 @@ title: SEO
 data:
   json_ld_type: none
   breadcrumbs: false
-  use_social_image_generation: true
-  social_images_collections:
-    - pages
+  use_social_image_generation: false
   sitemap_collections:
     - pages
   use_google_site_verification: false
