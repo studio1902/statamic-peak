@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Entry;
 
@@ -10,25 +11,81 @@ class WarmCommand extends Command
 {
     use RunsInPlease;
 
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
     protected $name = 'statamic:peak:warm';
-    protected $description = "Warms the static cache by visiting all entry URL's.";
 
-    public function handle() {
-        $this->info('Warming the static cache.');
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = "Warms the static cache by visiting the published entry URLs.";
 
-        $this->context = stream_context_create(array(
-            'http' => array('ignore_errors' => true),
-        ));
+    /**
+     * @var resource
+     */
+    private $context;
 
-        Entry::query()
-            ->where('status', 'published')
-            ->get()
-            ->map->absoluteUrl()
-            ->unique()
-            ->each(function ($url) {
-                $visit = file_get_contents($url, false, $this->context);
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
+    public function handle(): int
+    {
+        $this->prepareStreamContext();
+
+        $urls = $this->getUrlsToWarmUp();
+
+        $this->info('Getting ready to warm up ' . $urls->count() . ' urls...');
+
+        $urls->each(function ($url) {
+            $this->line(sprintf('Warming: <info>%s</info>', $url));
+
+            file_get_contents($url, false, $this->context);
         });
+
+        $this->info('Your static cache is now warm and shiny...');
+
+        return 1;
     }
 
-    
+    /**
+     * Retrieve all urls we want to warm.
+     *
+     * @return Collection
+     */
+    protected function getUrlsToWarmUp(): Collection
+    {
+        return collect(config('statamic.static_caching.warm', []))
+            ->map(function($url) {
+                return url($url);
+            })
+            ->merge($this->getEntryUrls())
+            ->unique();
+    }
+
+    /**
+     * Retrieves the urls of your published entries
+     *
+     * @return Collection
+     */
+    protected function getEntryUrls(): Collection
+    {
+        return Entry::query()
+            ->where('status', 'published')
+            ->get()
+            ->map->absoluteUrl();
+    }
+
+    protected function prepareStreamContext(): void
+    {
+        $this->context = stream_context_create([
+            'http' => ['ignore_errors' => true],
+        ]);
+    }
 }
