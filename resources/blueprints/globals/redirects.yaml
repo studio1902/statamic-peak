@@ -53,7 +53,6 @@ sections:
           display: Redirects
           type: grid
           icon: grid
-          localizable: false
           listable: hidden
           localizable: true
           add_row: 'Add redirect'
