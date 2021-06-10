@@ -1,5 +1,12 @@
 # Release Notes
 
+## 1.29.1 (2021-06-010)
+
+### What's improved
+- Fix typo in `resources/views/components/_dark_mode_toggle.antlers.html`. Thanks [Jelle](https://github.com/jelleroorda).
+- Fix color contrest issue in `resources/views/components/_cookie_banner.antlers.html`.
+- Remove duplicate `localizable` key in `resources/blueprints/globals/redirects.yaml`.
+
 ## 1.29.0 (2021-06-010)
 
 ### What's improved
