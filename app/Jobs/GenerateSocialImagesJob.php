@@ -45,7 +45,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 630)
                 ->select('#og')
-                ->save("social_images/{$file}");
+                ->save(public_path("social_images/{$file}"));
             $item->set('og_image', $file)->save();
 
             // Generate, save and set default twitter image.
@@ -53,7 +53,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 600)
                 ->select('#twitter')
-                ->save("social_images/{$file}");
+                ->save(public_path("social_images/{$file}"));
             $item->set('twitter_image', $file)->save();
         });
 
