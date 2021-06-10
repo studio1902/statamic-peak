@@ -2,13 +2,11 @@
 
 namespace App\Listeners;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Queue\InteractsWithQueue;
 use Statamic\Events\GlobalSetSaved;
 use Statamic\Globals\GlobalSet;
 
-class GenerateFavicons implements ShouldQueue
+class GenerateFavicons
 {
     /**
      * Determine whether this event should be handled.
