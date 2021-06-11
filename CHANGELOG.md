@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.29.2 (2021-06-010)
+
+### What's improved
+- Return `0` in the warm script to prevent deployment errors.
+
 ## 1.29.1 (2021-06-010)
 
 ### What's improved
