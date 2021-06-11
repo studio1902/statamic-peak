@@ -51,7 +51,7 @@ class WarmCommand extends Command
 
         $this->info('Your static cache is now warm and shiny...');
 
-        return 1;
+        return 0;
     }
 
     /**
