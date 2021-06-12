@@ -41,4 +41,7 @@ return [
     'search_no_results'                 => 'No results found',
     'search_results_for'                => 'Results for',
 
+    // Social images
+    'social_images'                     => 'Generated one social image.|Generated :count social images.',
+    'social_images_queue'               => 'Generating one social image in the background.|Generating :count social images in the background.',
 ];
