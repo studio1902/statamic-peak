@@ -46,5 +46,9 @@ class GenerateSocialImages extends Action
     public function run($items, $values)
     {
         GenerateSocialImagesJob::dispatch($items);
+
+        return config('queue.default') == 'redis'
+            ? trans_choice('strings.social_images_queue', $items)
+            : trans_choice('strings.social_images', $items);
     }
 }

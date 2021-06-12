@@ -1,18 +1,23 @@
 # Release Notes
 
-## 1.29.2 (2021-06-010)
+## 1.29.3 (2021-06-12)
+
+### What's improved
+- Add a more informative toast notification message when generation social images.
+
+## 1.29.2 (2021-06-11)
 
 ### What's improved
 - Return `0` in the warm script to prevent deployment errors.
 
-## 1.29.1 (2021-06-010)
+## 1.29.1 (2021-06-10)
 
 ### What's improved
 - Fix typo in `resources/views/components/_dark_mode_toggle.antlers.html`. Thanks [Jelle](https://github.com/jelleroorda).
 - Fix color contrest issue in `resources/views/components/_cookie_banner.antlers.html`.
 - Remove duplicate `localizable` key in `resources/blueprints/globals/redirects.yaml`.
 
-## 1.29.0 (2021-06-010)
+## 1.29.0 (2021-06-01)
 
 ### What's improved
 - Generating social images is now a job and queuable when you use Redis.
