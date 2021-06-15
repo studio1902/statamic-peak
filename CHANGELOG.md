@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.29.4 (2021-06-15)
+
+### What's improved
+- Move `fontFamily` settings out of `extend`.
+- Add `fontWeight` settings.
+
 ## 1.29.3 (2021-06-12)
 
 ### What's improved

@@ -13,43 +13,23 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   theme: {
     // Here we define the default colors available. If you want to include
-    // all default Tailwind colors you should extend the colors instead. 
+    // all default Tailwind colors you should extend the colors instead.
     colors: {
       transparent: 'transparent',
       black:   '#000',
       white:  '#fff',
       // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-      neutral: { 
+      neutral: {
         DEFAULT: colors.blueGray['800'],
         ...colors.blueGray
       },
       // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-      primary: { 
+      primary: {
         DEFAULT: colors.green['600'],
         ...colors.green
       },
     },
     extend: {
-      fontFamily: {
-        mono: [
-          // Use a custom mono font for this site by changing 'Anonymous' to the 
-          // font name you want and uncommenting the following line.
-          // 'Anonymous',
-          ...defaultTheme.fontFamily.mono,
-        ],
-        sans: [
-          // Use a custom sans serif font for this site by changing 'Gaultier' to the 
-          // font name you want and uncommenting the following line.
-          // 'Gaultier',
-          ...defaultTheme.fontFamily.sans,
-        ],
-        serif: [
-          // Use a custom serif font for this site by changing 'Lavigne' to the 
-          // font name you want and uncommenting the following line.
-          // 'Lavigne',
-          ...defaultTheme.fontFamily.serif,
-        ],
-      },
       // Set default transition durations and easing when using the transition utilities.
       transitionDuration: {
         DEFAULT: '300ms',
@@ -57,6 +37,39 @@ module.exports = {
       transitionTimingFunction: {
         DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
+    },
+    // Remove the font families you don't want to use.
+    fontFamily: {
+      mono: [
+        // Use a custom mono font for this site by changing 'Anonymous' to the
+        // font name you want and uncommenting the following line.
+        // 'Anonymous',
+        ...defaultTheme.fontFamily.mono,
+      ],
+      sans: [
+        // Use a custom sans serif font for this site by changing 'Gaultier' to the
+        // font name you want and uncommenting the following line.
+        // 'Gaultier',
+        ...defaultTheme.fontFamily.sans,
+      ],
+      serif: [
+        // Use a custom serif font for this site by changing 'Lavigne' to the
+        // font name you want and uncommenting the following line.
+        // 'Lavigne',
+        ...defaultTheme.fontFamily.serif,
+      ],
+    },
+    // The font weights available for this site.
+    fontWeight: {
+      // hairline: 100,
+      // thin: 200,
+      // light: 300,
+      normal: 400,
+      // medium: 500,
+      // semibold: 600,
+      bold: 700,
+      // extrabold: 800,
+      // black: 900,
     },
   },
   plugins: [
@@ -92,7 +105,7 @@ module.exports = {
     // Custom components for this particular site.
     plugin(function({ addComponents, theme }) {
       const components = {
-        
+
       }
       addComponents(components)
     }),
