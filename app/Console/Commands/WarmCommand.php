@@ -66,7 +66,9 @@ class WarmCommand extends Command
                 return url($url);
             })
             ->merge($this->getEntryUrls())
-            ->unique();
+            ->unique()
+            ->filter();
+
     }
 
     /**
