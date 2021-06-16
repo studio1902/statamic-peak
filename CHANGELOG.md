@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.29.5 (2021-06-16)
+
+### What's improved
+- Fixes bug that caused wrong URL's in JSON-ld breadcrumbs in `resources/views/snippets/_seo.antlers.html`.
+
 ## 1.29.4 (2021-06-15)
 
 ### What's improved
