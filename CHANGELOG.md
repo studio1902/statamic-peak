@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.29.6 (2021-06-16)
+
+### What's improved
+- Add ->filter() method to warm command.
+
 ## 1.29.5 (2021-06-16)
 
 ### What's improved
