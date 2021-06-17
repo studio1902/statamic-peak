@@ -16,7 +16,7 @@
 
         {{ partial:snippets/favicons }}
     </head>
-    <body class="min-h-screen bg-white">
+    <body class="min-h-screen bg-white selection:bg-primary selection:text-white">
         {{ partial:components/toolbar }}
 
         {{# Remove the following line if you want to use an addon for SEO. #}}
@@ -25,7 +25,7 @@
         {{ partial:layout/header }}
         {{ template_content }}
         {{ partial:layout/footer }}
-        
+
         <script src="{{ mix src='/js/site.js' }}"></script>
     </body>
 </html>

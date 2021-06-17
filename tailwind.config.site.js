@@ -91,14 +91,6 @@ module.exports = {
             fontFamily: theme('fontFamily.sans'),
             // fontFamily: theme('fontFamily.serif'),
         },
-        '::selection': {
-            backgroundColor: theme('colors.primary.DEFAULT'),
-            color: theme('colors.white'),
-        },
-        '::-moz-selection': {
-            backgroundColor: theme('colors.primary.DEFAULT'),
-            color: theme('colors.white'),
-        },
       })
     }),
 

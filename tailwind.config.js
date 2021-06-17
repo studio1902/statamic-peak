@@ -2,8 +2,8 @@
 // Tailwind configuration
 //--------------------------------------------------------------------------
 //
-// Use the Tailwind configuration to completely define the current sites 
-// design system by adding and extending to Tailwinds default utility 
+// Use the Tailwind configuration to completely define the current sites
+// design system by adding and extending to Tailwinds default utility
 // classes. Various aspects of the config are split inmultiple files.
 //
 
@@ -27,6 +27,7 @@ module.exports = {
       './resources/views/**/*.html',
       './resources/js/**/*.js',
     ],
+    safelist: [],
     layers: ['components', 'utilities'],
   },
 }
