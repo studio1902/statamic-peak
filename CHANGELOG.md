@@ -2,7 +2,8 @@
 
 ## 1.30.0 (2021-06-17)
 
-### Upgrade to Tailwind 2.2
+### What's improved
+Upgrade to Tailwind 2.2:
 - Move `::selection` from the tailwind config to `resources/views/layout.antlers.html` as utility classes.
 - Added caret color utilities to the appropriate published form views.
 - Remove the now redudant `transform` utility (so is `filter` but we don't use it by default).
