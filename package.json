@@ -11,7 +11,7 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
-    "alpinejs": "^2.8.2",
+    "alpinejs": "^3.0.6",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {

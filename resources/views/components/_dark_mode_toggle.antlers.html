@@ -1,32 +1,32 @@
 {{#
 	@name Dark mode toggle
-	@desc The dark mode toggle component when you use class based dark mode. To enable this do the following: 
-    1. Uncomment `darkMode: 'class'` in `tailwind.config.js`. 
-    2. Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/vies/layout.antlers.html`. 
+	@desc The dark mode toggle component when you use class based dark mode. To enable this do the following:
+    1. Uncomment `darkMode: 'class'` in `tailwind.config.js`.
+    2. Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/vies/layout.antlers.html`.
     3. Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
 #}}
 
 <script>
     (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-        ? document.documentElement.classList.add('dark') 
+        ? document.documentElement.classList.add('dark')
         : document.documentElement.classList.remove('dark');
 </script>
 
 {{# The actual toggle yielded in the `resources/views/navigation/_main.antlers.html`. #}}
 {{ section:dark_mode_toggle }}
-    <li 
-        x-data="{ 
+    <li
+        x-data="{
             theme: (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
                 ? 'dark'
                 : 'light'
         }"
         x-cloak
     >
-        <button 
+        <button
             x-show="theme === 'light'"
             @click="
-                theme = 'dark', 
-                localStorage.theme = 'dark', 
+                theme = 'dark',
+                localStorage.theme = 'dark',
                 document.documentElement.classList.add('dark')"
             aria-label="{{ trans:strings.set_dark_mode }}"
             title="{{ trans:strings.set_dark_mode }}"
@@ -34,11 +34,11 @@
             {{ svg:moon class="w-5 h-5 text-neutral hover:text-primary stroke-current transition-colors overflow-visible" alt="" aria-hidden="true" }}
         </button>
 
-        <button 
+        <button
             x-show="theme === 'dark'"
             @click="
-                theme = 'light', 
-                localStorage.theme = 'light', 
+                theme = 'light',
+                localStorage.theme = 'light',
                 document.documentElement.classList.remove('dark')"
             aria-label="{{ trans:strings.disable_dark_mode }}"
             title="{{ trans:strings.disable_dark_mode }}"

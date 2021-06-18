@@ -37,7 +37,7 @@
                         x-show="subnavOpen"
                         class="absolute py-2 bg-white"
                         :aria-expanded="subnavOpen"
-                        @click.away="subnavOpen = false"
+                        @click.outside="subnavOpen = false"
                         x-cloak
                     >
                         {{ children }}
@@ -83,7 +83,7 @@
                     {{ if children }}
                         href="#"
                         @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
-                        @click.away="mobileNavSubnavOpen = false"
+                        @click.outside="mobileNavSubnavOpen = false"
                     {{ else }}
                         href="{{ url }}"
                     {{ /if }}

@@ -1,4 +1,4 @@
-import 'alpinejs'
+import Alpine from 'alpinejs'
 import 'focus-visible'
 
 // Global cookie functions (used by cookie banner).
@@ -33,3 +33,7 @@ window.getToken = async () => {
             this.error = 'Something went wrong. Please try again later.'
         })
 }
+
+// Call Alpine.
+window.Alpine = Alpine
+Alpine.start()
