@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.31.1 (unreleaesed)
+- Use `.xml` for sitemap template and remove redundant `content_type` from route.
+
 ## 1.31.0 (2021-06-18)
 
 ### What's improved

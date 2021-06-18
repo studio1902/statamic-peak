@@ -19,8 +19,7 @@ Route::get('/!/DynamicToken/refresh', [DynamicToken::class, 'getRefresh']);
 
 // The Sitemap route to the sitemap.xml
 Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
-    'layout' => null,
-    'content_type' => 'application/xml'
+    'layout' => null
 ]);
 
 // The Manifest route to the manifest.json
