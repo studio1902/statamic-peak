@@ -1,5 +1,17 @@
 # Release Notes
 
+## 1.31.0 (2021-06-18)
+
+### What's improved
+- Make cookie banner decline button actually readeable by default.
+- No more whitespace in the default textarea view in `resources/views/vendor/statamic/forms/fields/textarea.antlers.html`.
+Upgrade to AlpineJS v3:
+- Defer loading of the script tag in the document head in `resources/views/layout.antlers.html`.
+- Import Alpine, Start Alpine and set window.Alpine in `resources/js/site.js`.
+- Use `@click` in `resources/views/components/_search_form.antlers.html`.
+- Use `.outside` in `resources/views/components/_search_form.antlers.html` and `resources/views/navigation/_main.antlers.html`.
+- Properly setup Alpine.data function function in `resources/views/page_builder/_form.antlers.html`.
+
 ## 1.30.0 (2021-06-17)
 
 ### What's improved
