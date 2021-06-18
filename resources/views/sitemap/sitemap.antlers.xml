@@ -2,7 +2,6 @@
 	@name Sitemap
 	@desc The sitemap template that renders a SEO friendy sitemap.xml.
 #}}
-
 {{ xml_header }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {{ seo:sitemap_collections }}
@@ -16,5 +15,5 @@
                 </url>
             {{ /results }}
         {{ /collection }}
-    {{ /seo:sitemap_collections }} 
+    {{ /seo:sitemap_collections }}
 </urlset>
