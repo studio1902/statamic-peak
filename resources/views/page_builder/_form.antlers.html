@@ -10,12 +10,12 @@
         {{ partial:typography/paragraph :content="block:text" }}
 
         {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
-        {{ form:create in="{ form:handle }" 
+        {{ form:create in="{ form:handle }"
             id="form"
-            class="flex flex-wrap" 
-            x-ref="form" 
-            x-data="sending()" 
-            @submit.prevent="sendForm()" 
+            class="flex flex-wrap"
+            x-ref="form"
+            x-data="sending"
+            @submit.prevent="sendForm()"
         }}
             <div class="w-full grid md:grid-cols-12 gap-y-6 md:gap-x-6">
                 {{# Honeypot spam protection. #}}
@@ -25,7 +25,7 @@
                 </div>
 
                 {{ fields }}
-                    <div class="flex flex-col space-y-4 
+                    <div class="flex flex-col space-y-4
                         {{ width == '25' ?= 'md:col-span-3' }}
                         {{ width == '33' ?= 'md:col-span-4' }}
                         {{ width == '50' ?= 'md:col-span-6' }}
@@ -54,56 +54,58 @@
 
         {{# The form script handling validation and submission via AJAX with `fetch()`. #}}
          <script>
-            function sending() {
-                return {
-                    error: false,
-                    errors: [],
-                    sending: false,
-                    success: false,
-                    sendForm: async function() {
-                        this.sending = true
+            document.addEventListener('alpine:initializing', () => {
+                Alpine.data('sending', () => {
+                    return {
+                        error: false,
+                        errors: [],
+                        sending: false,
+                        success: false,
+                        sendForm: async function() {
+                            this.sending = true
 
-                        // Get a token and set it.
-                        const token = await window.getToken()                       
-                        document.querySelectorAll('form input[name="_token"]').forEach(function(item) {
-                            item.value = token
-                        });
+                            // Get a token and set it.
+                            const token = await getToken()
+                            document.querySelectorAll('form input[name="_token"]').forEach(function(item) {
+                                item.value = token
+                            });
 
-                        // Post the form.
-                        fetch(this.$refs.form.action, {
-                            headers: {
-                                'X-Requested-With' : 'XMLHttpRequest',
-                            },
-                            method: 'POST',
-                            body: new FormData(this.$refs.form)})
-                        .then(res => res.json())
-                        .then(json => {
-                            if (json['success']) {
-                                this.errors = []
-                                this.success = true
-                                this.error = false
-                                this.sending = false
-                                this.$refs.form.reset()
+                            // Post the form.
+                            fetch(this.$refs.form.action, {
+                                headers: {
+                                    'X-Requested-With' : 'XMLHttpRequest',
+                                },
+                                method: 'POST',
+                                body: new FormData(this.$refs.form)})
+                            .then(res => res.json())
+                            .then(json => {
+                                if (json['success']) {
+                                    this.errors = []
+                                    this.success = true
+                                    this.error = false
+                                    this.sending = false
+                                    this.$refs.form.reset()
 
-                                setTimeout(function(){ 
+                                    setTimeout(function(){
+                                        this.success = false
+                                    }, 4500)
+                                }
+                                if (json['error']) {
+                                    this.sending = false
+                                    this.error = true
                                     this.success = false
-                                }, 4500)
-                            }
-                            if (json['error']) {
-                                this.sending = false
-                                this.error = true
-                                this.success = false
-                                this.errors = json['error']
-                            }
-                        })
-                        .catch(err => {
-                            err.text().then( errorMessage => {
-                                this.sending = false
+                                    this.errors = json['error']
+                                }
                             })
-                        })
+                            .catch(err => {
+                                err.text().then( errorMessage => {
+                                    this.sending = false
+                                })
+                            })
+                        }
                     }
-                }
-            }
+                })
+            })
         </script>
 
     </div>

@@ -10,6 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
+        <script src="{{ mix src='/js/site.js' }}" defer></script>
 
         {{# Replace the following line with the SEO Pro or Aardvark SEO tag if you want to use an addon for SEO. Also remove the seo section in you page blueprint.#}}
         {{ partial:snippets/seo }}
@@ -25,7 +26,5 @@
         {{ partial:layout/header }}
         {{ template_content }}
         {{ partial:layout/footer }}
-
-        <script src="{{ mix src='/js/site.js' }}"></script>
     </body>
 </html>
