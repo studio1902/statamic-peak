@@ -1,7 +1,8 @@
 # Release Notes
 
-## 1.31.1 (unreleaesed)
+## 1.31.1 (2021-06-19)
 - Use `.xml` for sitemap template and remove redundant `content_type` from route.
+- Add a custom Tailwind variant to check support of backdrop blur so you can do stuff like: `supports-backdrop-blur:bg-opacity-80`.
 
 ## 1.31.0 (2021-06-18)
 
