@@ -1,5 +1,8 @@
 # Release Notes
 
+## Unreleased
+- Yield a translateable page title on the `resources/views/search.antlers.html` template just like on the 404 template.
+
 ## 1.31.1 (2021-06-19)
 - Use `.xml` for sitemap template and remove redundant `content_type` from route.
 - Add a custom Tailwind variant to check support of backdrop blur so you can do stuff like: `supports-backdrop-blur:bg-opacity-80`.
