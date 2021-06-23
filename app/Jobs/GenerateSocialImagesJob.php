@@ -44,6 +44,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             $file = "{$title}-og.png";
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 630)
+                ->timeout(900)
                 ->select('#og')
                 ->save(public_path("social_images/{$file}"));
             $item->set('og_image', $file)->save();
@@ -52,6 +53,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             $file = "{$title}-twitter.png";
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 600)
+                ->timeout(900)
                 ->select('#twitter')
                 ->save(public_path("social_images/{$file}"));
             $item->set('twitter_image', $file)->save();
