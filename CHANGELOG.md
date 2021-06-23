@@ -1,5 +1,9 @@
 # Release Notes
 
+## Unreleased
+- Comment all scheduled commands in `App/Console/Kernel.php` by default.
+- Use `x-effect` to toggle `no-scroll` on the body in `resources/views/navigation_main.antlers.html`.
+
 ## 1.31.3 (2021-06-23)
 - Fix id selectors in `resources/views/social_images.antlers.html`. Sorry folks.
 
