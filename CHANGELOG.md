@@ -3,6 +3,7 @@
 ## Unreleased
 - Comment all scheduled commands in `App/Console/Kernel.php` by default.
 - Use `x-effect` to toggle `no-scroll` on the body in `resources/views/navigation_main.antlers.html`.
+- Remove `scope="set"` from `resources/views/page_builder/_article.antlers.html` since it wasn't being used in the actual sets, and the data is usually so far nested in that it won't collide with anything.
 
 ## 1.31.3 (2021-06-23)
 - Fix id selectors in `resources/views/social_images.antlers.html`. Sorry folks.
