@@ -24,12 +24,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('cache:clear')->daily();
-        $schedule->command('config:cache')->daily();
-        $schedule->command('route:cache')->daily();
-        $schedule->command('statamic:stache:warm')->daily(); 
-        $schedule->command('statamic:static:clear')->daily();
-        $schedule->command('statamic:peak:warm')->daily();
+        // $schedule->command('cache:clear')->daily();
+        // $schedule->command('config:cache')->daily();
+        // $schedule->command('route:cache')->daily();
+        // $schedule->command('statamic:stache:warm')->daily();
+        // $schedule->command('statamic:static:clear')->daily();
+        // $schedule->command('statamic:peak:warm')->daily();
     }
 
     /**
