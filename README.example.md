@@ -11,13 +11,13 @@
 ### Development
 
 ```env
-Dump your .env values here with senstive data removed.
+Dump your .env values here with sensitive data removed.
 ```
 
 ### Production
 
 ```env
-Dump your .env values here with senstive data removed.
+Dump your .env values here with sensitive data removed.
 ```
 
 ## NGINX config
