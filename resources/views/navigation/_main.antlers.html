@@ -58,9 +58,15 @@
 </nav>
 
 {{# The mobile navigation. Hidden from md and up #}}
-<nav class="md:hidden" x-data="{ mobileNavOpen: false }">
+<nav
+    x-data="{ mobileNavOpen: false }"
+    x-effect="mobileNavOpen
+        ? document.body.classList.add('no-scroll')
+        : document.body.classList.remove('no-scroll')"
+    class="md:hidden"
+>
     <button
-        @click.prevent="mobileNavOpen = !mobileNavOpen, mobileNavOpen ? document.body.classList.add('no-scroll') : document.body.classList.remove('no-scroll')"
+        @click.prevent="mobileNavOpen = !mobileNavOpen"
         class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold tracking-widest text-white mb-safe bg-primary text-uppercase"
         aria-label="Toggle menu"
         x-text="mobileNavOpen ? '{{ trans:strings.close }}' : '{{ trans:strings.menu }}'"
