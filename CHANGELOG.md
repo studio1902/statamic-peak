@@ -1,6 +1,7 @@
 # Release Notes
 
-## Unreleased
+## 1.32.2 (2021-06-23)
+- Remove Alpine logic from the social images template to prevent issues with Browsershot and Puppeteer. Thanks [Michael](https://github.com/aerni) for finding this issue.
 - Yield a translateable page title on the `resources/views/search.antlers.html` template just like on the 404 template.
 
 ## 1.31.1 (2021-06-19)
