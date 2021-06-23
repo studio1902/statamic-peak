@@ -2,7 +2,7 @@
 
 ## Unreleased
 - Yield a translateable page title on the `resources/views/search.antlers.html` template just like on the 404 template.
-- Set social images browsershot timeout to 15 minutes.
+- Set social images browsershot timeout to 5 minutes.
 
 ## 1.31.1 (2021-06-19)
 - Use `.xml` for sitemap template and remove redundant `content_type` from route.
