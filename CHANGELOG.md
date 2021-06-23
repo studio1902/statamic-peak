@@ -1,5 +1,8 @@
 # Release Notes
 
+## 1.32.3 (2021-06-23)
+- Fix id selectors in `resources/views/social_images.antlers.html`. Sorry folks.
+
 ## 1.32.2 (2021-06-23)
 - Remove Alpine logic from the social images template to prevent issues with Browsershot and Puppeteer. Thanks [Michael](https://github.com/aerni) for finding this issue.
 - Yield a translateable page title on the `resources/views/search.antlers.html` template just like on the 404 template.
