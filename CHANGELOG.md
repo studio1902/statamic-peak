@@ -1,18 +1,26 @@
 # Release Notes
 
-## Unreleased
+## 1.31.4
+
+### What's improved
 - Comment all scheduled commands in `App/Console/Kernel.php` by default.
 - Use `x-effect` to toggle `no-scroll` on the body in `resources/views/navigation_main.antlers.html`.
 - Remove `scope="set"` from `resources/views/page_builder/_article.antlers.html` since it wasn't being used in the actual sets, and the data is usually so far nested in that it won't collide with anything.
 
 ## 1.31.3 (2021-06-23)
+
+### What's improved
 - Fix id selectors in `resources/views/social_images.antlers.html`. Sorry folks.
 
 ## 1.31.2 (2021-06-23)
+
+### What's improved
 - Remove Alpine logic from the social images template to prevent issues with Browsershot and Puppeteer. Thanks [Michael](https://github.com/aerni) for finding this issue.
 - Yield a translateable page title on the `resources/views/search.antlers.html` template just like on the 404 template.
 
 ## 1.31.1 (2021-06-19)
+
+### What's improved
 - Use `.xml` for sitemap template and remove redundant `content_type` from route.
 - Add a custom Tailwind variant to check support of backdrop blur so you can do stuff like: `supports-backdrop-blur:bg-opacity-80`.
 
@@ -67,7 +75,7 @@ Upgrade to Tailwind 2.2:
 
 ### What's improved
 - Fix typo in `resources/views/components/_dark_mode_toggle.antlers.html`. Thanks [Jelle](https://github.com/jelleroorda).
-- Fix color contrest issue in `resources/views/components/_cookie_banner.antlers.html`.
+- Fix color contrast issue in `resources/views/components/_cookie_banner.antlers.html`.
 - Remove duplicate `localizable` key in `resources/blueprints/globals/redirects.yaml`.
 
 ## 1.29.0 (2021-06-01)
