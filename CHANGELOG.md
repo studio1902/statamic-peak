@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.31.4
+## 1.31.4 (2021-06-24)
 
 ### What's improved
 - Comment all scheduled commands in `App/Console/Kernel.php` by default.
