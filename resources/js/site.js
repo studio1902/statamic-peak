@@ -1,3 +1,4 @@
+import persist from './persist.js'
 import Alpine from 'alpinejs'
 import 'focus-visible'
 
@@ -36,4 +37,5 @@ window.getToken = async () => {
 
 // Call Alpine.
 window.Alpine = Alpine
+Alpine.plugin(persist)
 Alpine.start()
