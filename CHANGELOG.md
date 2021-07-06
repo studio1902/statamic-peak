@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.31.5 (2021-07-06)
+
+### What's improved
+- Update S3 filesystem config.
+
 ## 1.31.4 (2021-06-24)
 
 ### What's improved
