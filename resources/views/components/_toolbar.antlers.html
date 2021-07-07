@@ -6,9 +6,10 @@
 {{ if environment == 'local' }}
     <aside
         class="fixed z-50 top-1 right-1 flex text-xs divide-x divide-white shadow-sm divide-solid transition-opacity hover:opacity-100"
-        x-data="{ visible: window.getCookie('toolbar_visible') }"
+        x-data="{ toolbarVisible: $persist(true) }"
+        x-effect="toolbarVisible = JSON.parse(toolbarVisible)"
         x-ref="toolbar"
-        :class="{ 'opacity-100': visible, 'opacity-0': !visible }"
+        :class="{ 'opacity-100': toolbarVisible == 'true', 'opacity-0': !toolbarVisible }"
         x-cloak
     >
         <span title="Current Tailwind breakpoint" class="flex items-center p-2 space-x-1 text-yellow-800 bg-yellow-200">
@@ -24,13 +25,13 @@
         {{ /if }}
 
         <button
-            @click="visible = !visible, visible ? window.setCookie('toolbar_visible', true) : window.setCookie('toolbar_visible', false)"
+            @click="toolbarVisible = !toolbarVisible"
             title="Toggle toolbar visibility" aria-label="Toggle toolbar visibility" class="flex items-center justify-center px-2 bg-gray-200 hover:bg-gray-300"
         >
-            <div :class="{ 'hidden': visible, 'block': !visible }">
+            <div x-show="!toolbarVisible">
                 {{ svg:invisible class="w-5 h-5 fill-current" alt="" aria-hidden="true" }}
             </div>
-            <div :class="{ 'block': visible, 'hidden': !visible }">
+            <div x-show="toolbarVisible">
                 {{ svg:visible class="w-5 h-5 fill-current" alt="" aria-hidden="true" }}
             </div>
         </button>
