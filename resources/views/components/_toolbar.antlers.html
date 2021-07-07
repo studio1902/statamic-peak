@@ -9,7 +9,7 @@
         x-data="{ toolbarVisible: $persist(true) }"
         x-effect="toolbarVisible = JSON.parse(toolbarVisible)"
         x-ref="toolbar"
-        :class="{ 'opacity-100': toolbarVisible == 'true', 'opacity-0': !toolbarVisible }"
+        :class="{ 'opacity-100': toolbarVisible, 'opacity-0': !toolbarVisible }"
         x-cloak
     >
         <span title="Current Tailwind breakpoint" class="flex items-center p-2 space-x-1 text-yellow-800 bg-yellow-200">
