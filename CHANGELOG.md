@@ -1,6 +1,7 @@
 # Release Notes
 
 ## Unreleased
+- Add default asset field styling
 - Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic.
 
 ## 1.31.5 (2021-07-06)
