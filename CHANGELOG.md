@@ -6,6 +6,7 @@
 - Enable the cookie banner for Google Analytics as well. It's not needed anymore to traffic GA through GTM if you don't anonymize IP's (please don't though).
 - Reorder tracking fields in the SEO global blueprint.
 - Remove all cookie functions from the window object.
+- Add default asset field styling.
 - Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic.
 
 ## 1.31.5 (2021-07-06)

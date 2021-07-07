@@ -91,6 +91,21 @@ module.exports = {
             fontFamily: theme('fontFamily.sans'),
             // fontFamily: theme('fontFamily.serif'),
         },
+        'input[type="file"]::file-selector-button, input[type="file"]::-webkit-file-upload-button': {
+            paddingTop: theme('spacing.2'),
+            paddingBottom: theme('spacing.2'),
+            paddingRight: theme('spacing.4'),
+            paddingLeft: theme('spacing.4'),
+            borderWidth: '2px',
+            borderStyle: 'solid',
+            borderColor: theme('colors.primary.DEFAULT'),
+            backgroundColor: theme('colors.white'),
+            color: theme('colors.primary.DEFAULT'),
+            fontSize: theme('fontSize.xs'),
+            textTransform: 'uppercase',
+            letterSpacing: theme('letterSpacing.widest'),
+            fontWeight: theme('fontWeight.bold'),
+        }
       })
     }),
 
