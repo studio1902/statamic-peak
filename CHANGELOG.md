@@ -1,13 +1,14 @@
 # Release Notes
 
 ## Unreleased
-- Use Alpine's v3 persist plugin throughout peak: cookie banner, dark mode toggle, toolbar.
-- Use the GTM Consent API for cookie consent: https://developers.google.com/tag-manager/consent.
-- Enable the cookie banner for Google Analytics as well. It's not needed anymore to traffic GA through GTM if you don't anonymize IP's (please don't though).
-- Reorder tracking fields in the SEO global blueprint.
-- Remove all cookie functions from the window object.
-- Add default asset field styling.
-- Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic.
+- Use Alpine's v3 persist plugin throughout peak: cookie banner, dark mode toggle, toolbar in `resources/views/components/_cookie_banner.antlers.html`, `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/views/components/_toolbar.antlers.html`.
+- Use the GTM Consent API for cookie consent: https://developers.google.com/tag-manager/consent in `resources/views/components/_cookie_banner.antlers.html` and `resources/views/snippets/_seo.antlers.html`.
+- Enable the cookie banner for Google Analytics as well. It's not needed anymore to traffic GA through GTM if you don't anonymize IP's (please don't though) in `resources/blueprints/globals/seo.yaml` and `resources/views/snippets/_seo.antlers.html`.
+- Reorder tracking fields in the SEO global blueprint in `resources/blueprints/globals/seo.yaml`.
+- Remove all cookie functions from the window object in `resources/js/site.js`.
+- Add default asset field styling in `resources/views/vendor/statamic/forms/fields/assets.antlers.html` and `tailwind.config.site.js`.
+- Rename dark mode localizable strings in `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/lang/en/strings.php`.
+- Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic in `.env.example` and `config/statamic/static_caching.php`.
 
 ## 1.31.5 (2021-07-06)
 
