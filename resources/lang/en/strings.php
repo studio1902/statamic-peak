@@ -28,8 +28,8 @@ return [
     'menu'                              => 'Menu',
 
     // Other
-    'set_dark_mode'                     => 'Enable dark mode',
-    'disable_dark_mode'                 => 'Disable dark mode',
+    'dark_mode_on'                      => 'Enable dark mode',
+    'dark_momde_off'                    => 'Disable dark mode',
 
     // Pagination
     'next'                              => 'next',
