@@ -29,7 +29,7 @@ return [
 
     // Other
     'dark_mode_on'                      => 'Enable dark mode',
-    'dark_momde_off'                    => 'Disable dark mode',
+    'dark_mode_off'                     => 'Disable dark mode',
 
     // Pagination
     'next'                              => 'next',
