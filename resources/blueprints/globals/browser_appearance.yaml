@@ -1,6 +1,9 @@
 sections:
-  main:
-    display: Main
+  general:
+    display: General
+    fields: {  }
+  favicons:
+    display: Favicons
     fields:
       -
         handle: section_favicons
@@ -15,7 +18,6 @@ sections:
           display: 'Use favicons'
           type: toggle
           icon: toggle
-          localizable: false
           instructions: 'Enable if you want Peak to generate favicons. **Important**: you need to have the PHP Imagick module installed.'
           listable: hidden
       -
@@ -45,7 +47,6 @@ sections:
         field:
           theme: nano
           lock_opacity: true
-          localizable: false
           default_color_mode: HEXA
           color_modes:
             - hex
@@ -64,7 +65,6 @@ sections:
         handle: ios_color
         field:
           theme: nano
-          localizable: false
           lock_opacity: true
           default_color_mode: HEXA
           color_modes:
@@ -84,7 +84,6 @@ sections:
         handle: chrome_color
         field:
           theme: nano
-          localizable: false
           lock_opacity: true
           default_color_mode: HEXA
           color_modes:
@@ -113,9 +112,9 @@ sections:
         handle: safari_mask_icon
         field: common.image
         config:
-          localizable: false
           container: favicons
           restrict: true
+          localizable: false
           display: 'Safari Mask Icon'
           instructions: 'A single color as flattened as possible SVG. The color defined above at `Safari` will be used.'
           width: 33
@@ -126,8 +125,8 @@ sections:
         field: common.image
         config:
           container: favicons
-          localizable: false
           restrict: true
+          localizable: false
           display: 'Apple touch icon'
           instructions: 'A 180x180 PNG image used on iOS devices. Will be focal cropped to this dimension.'
           width: 33
@@ -138,8 +137,8 @@ sections:
         field: common.image
         config:
           container: favicons
-          localizable: false
           restrict: true
+          localizable: false
           display: 'Android Chrome icon'
           instructions: 'A 512x512 PNG image image used on Android devices. Will be focal cropped to this dimension.'
           width: 33
