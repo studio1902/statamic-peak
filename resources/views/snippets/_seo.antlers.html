@@ -152,19 +152,30 @@
 {{# Trackers #}}
 {{ if environment == 'production' }}
     {{ if seo:tracker_type == 'gtm' }}
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ seo:google_tag_manager }}');</script>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ seo:google_tag_manager }}');function gtag(){dataLayer.push(arguments);}</script>
     {{ elseif seo:tracker_type == 'gtag' }}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ seo:google_analytics }}"></script>
         <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', new Date());gtag('config', '{{ seo:google_analytics }}' {{ if seo:anonymize_ip }}, {'anonymize_ip': true}{{ /if }});</script>
+    {{ /if }}
+    {{ if seo:use_cookie_banner }}
+        <script>
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
+            });
+            dataLayer.push({
+                'event': 'default_consent'
+            });
+        </script>
     {{ /if }}
 
     {{# Yield this section in all your layouts after opening the <body> #}}
     {{ section:seo_body }}
         {{ if seo:tracker_type == 'gtm' }}
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ seo:google_tag_manager }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            {{ if seo:use_cookie_banner }}
-                {{ partial:components/cookie_banner }}
-            {{ /if }}
+        {{ /if }}
+        {{ if seo:use_cookie_banner }}
+            {{ partial:components/cookie_banner }}
         {{ /if }}
     {{ /section:seo_body }}
 
