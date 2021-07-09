@@ -15,10 +15,15 @@ return [
     'form_success'                      => 'Thank you, we received your message and will contact you as soon as possible.',
 
     // Cookie banner
-    'cookie_accept'                     => 'I accept',
-    'cookie_deny'                       => 'I decline',
-    'cookie_explanation'                => 'This site uses tracking cookies used for marketing and statistics.',
+    'cookie_title'                      => 'Cookies 🍪',
+    'cookie_functional'                 => 'Functional',
+    'cookie_analytics'                  => 'Analytics',
+    'cookie_ads'                        => 'Ads',
+    'cookie_accept'                     => 'Accept',
+    'cookie_ignore'                     => 'Ignore',
+    'cookie_explanation'                => 'This site uses cookies that need consent.',
     'cookie_learn_more'                 => 'Learn more',
+    'cookie_reset_consent'              => 'Reset cookie consent',
 
     // Footer
     'on'                                => 'on',

@@ -7,52 +7,86 @@
     x-data="{
         open: true,
         cookieConsent: $persist(0),
-        cookieConsentDate: $persist(0)
+        cookieConsentDate: $persist(0),
+        analyticsStorage: $persist(false),
+        adStorage: $persist(false),
     }"
     x-effect="
         cookieConsent = JSON.parse(cookieConsent),
+        analyticsStorage = JSON.parse(analyticsStorage),
+        adStorage = JSON.parse(adStorage),
         cookieConsent
-            ? gtag('consent', 'update', { 'ad_storage': 'granted', 'analytics_storage': 'granted' })
-            : gtag('consent', 'update', { 'ad_storage': 'denied', 'analytics_storage': 'denied' })
+            ? gtag('consent', 'update', {
+                'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
+                'ad_storage': (adStorage ? 'granted' : 'denied') })
+            : ''
     "
     x-init="
         cookieConsent != 0 ? open = false : '',
         (cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}' ? (cookieConsent = 0, cookieConsentDate = 0) : '')"
     x-show="open"
-    class="fixed z-50 inset-x-0 bottom-0 bg-primary"
+    class="fixed z-50 right-[2rem] bottom-[2rem] flex flex-col p-6 space-y-4 bg-white border border-neutral/10 rounded shadow-lg"
     x-cloak
 >
-    <div class="fluid-container flex flex-col md:flex-row md:items-center justify-between flex-wrap py-4 space-y-4 md:space-y-0 md:space-x-4">
-        <p class="text-sm font-bold text-primary-50">
-            {{ trans:strings.cookie_explanation }}
-
-            {{ if seo:link_privacy_statement == 'entry' }}
-                <a class="underline" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
-            {{ elseif seo:link_privacy_statement == 'pdf' }}
-                <a class="underline" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
-            {{ /if }}
-        </p>
-        <div class="flex space-x-4">
-            <button
-                @click="
-                    open = false,
-                    cookieConsent = false"
-                type="button"
-                class="text-sm font-bold text-white"
+    <h2 class="text-2xl font-bold">{{ trans:strings.cookie_title }}</h2>
+    <p class="text-sm font-bold text-neutral">
+        {{ trans:strings.cookie_explanation }}
+    </p>
+    {{ if seo:link_privacy_statement == 'entry' }}
+        <a class="text-xs font-bold underline" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
+    {{ elseif seo:link_privacy_statement == 'pdf' }}
+        <a class="text-xs font-bold underline" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
+    {{ /if }}
+    <div class="mt-4 flex flex-col space-y-2">
+        <label class="inline-flex items-center text-sm">
+            <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
+            {{ trans:strings.cookie_functional }}
+        </label>
+        <label class="inline-flex items-center text-sm">
+            <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
+            {{ trans:strings.cookie_analytics }}
+        </label>
+        {{ if seo:tracker_type == 'gtm' }}
+            <label class="inline-flex items-center text-sm">
+                <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
+                {{ trans:strings.cookie_ads }}
+            </label>
+        {{ /if }}
+    </div>
+    <div class="flex space-x-4">
+        <button
+            @click="
+                open = false,
+                cookieConsent = true,
+                cookieConsentDate = '{{ now format="Y-m-d" }}'"
+            type="button"
+            class="px-4 py-2 bg-primary rounded text-sm font-bold text-white focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
             >
-                {{ trans:strings.cookie_deny }}
-            </button>
-
-            <button
-                @click="
-                    open = false,
-                    cookieConsent = true,
-                    cookieConsentDate = '{{ now format="Y-m-d" }}'"
-                type="button"
-                class="px-4 py-2 bg-primary text-sm font-bold text-white"
-            >
-                {{ trans:strings.cookie_accept }}
-            </button>
-        </div>
+            {{ trans:strings.cookie_accept }}
+        </button>
+        <button
+            @click="
+                open = false,
+                cookieConsent = false"
+            type="button"
+            class="px-1 py-2 rounded text-sm font-bold text-neutral focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
+        >
+            {{ trans:strings.cookie_ignore }}
+        </button>
     </div>
 </div>
+
+{{# Yield this section in `resources/layouts/_footer.antlers.html` so users can reset their consent. #}}
+{{ section:reset_cookie_consent }}
+    {{ if seo:use_cookie_banner }}
+        <span
+            x-data="{ cookieConsent: false }"
+            x-init="$nextTick(() => { cookieConsent = JSON.parse(localStorage.getItem('cookieConsent')) })"
+            x-cloak
+        >
+            <span x-show="cookieConsent">
+                - <a @click="localStorage.setItem('cookieConsent', '0')" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
+            </span>
+        </span>
+    {{ /if }}
+{{ /section:reset_cookie_consent }}
