@@ -15,7 +15,7 @@ sections:
           display: 'Disable telephone detection'
           type: toggle
           icon: toggle
-          width: 50
+          width: 33
           instructions: 'Disables phone number detection.'
           listable: hidden
       -
@@ -24,7 +24,7 @@ sections:
           display: 'Disable e-mail detection'
           type: toggle
           icon: toggle
-          width: 50
+          width: 33
           instructions: 'Disables e-mail address detection.'
           listable: hidden
       -
@@ -33,7 +33,7 @@ sections:
           display: 'Disable address detection'
           type: toggle
           icon: toggle
-          width: 50
+          width: 33
           instructions: 'Disables address detection.'
           listable: hidden
       -
@@ -170,9 +170,9 @@ sections:
           instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg).'
           width: 50
           validate:
-            - 'required_if:use,true'
+            - 'required_if:use_favicons,true'
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
       -
         handle: section_colors
         field:
@@ -180,7 +180,7 @@ sections:
           listable: hidden
           display: Colors
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
       -
         handle: safari_color
         field:
@@ -197,9 +197,9 @@ sections:
           instructions: 'The icon for Safari (_mask-icon_) will be converted to a single color SVG with this as the color.'
           width: 33
           validate:
-            - 'required_if:use,true'
+            - 'required_if:use_favicons,true'
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
       -
         handle: ios_color
         field:
@@ -216,9 +216,9 @@ sections:
           instructions: 'The icon for iOS (_apple-touch-icon_) will used the full color SVG with this color as a background.'
           width: 33
           validate:
-            - 'required_if:use,true'
+            - 'required_if:use_favicons,true'
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
       -
         handle: section_overrides
         field:
@@ -227,7 +227,7 @@ sections:
           display: Overrides
           instructions: 'Override specific generated assets with your own.'
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
       -
         handle: safari_mask_icon
         field: common.image
@@ -239,7 +239,7 @@ sections:
           instructions: 'A single color as flattened as possible SVG. The color defined above at `Safari` will be used.'
           width: 33
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
       -
         handle: apple_touch_icon
         field: common.image
@@ -251,7 +251,7 @@ sections:
           instructions: 'A 180x180 PNG image used on iOS devices. Will be focal cropped to this dimension.'
           width: 33
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
       -
         handle: android_chrome
         field: common.image
@@ -263,4 +263,4 @@ sections:
           instructions: 'A 512x512 PNG image image used on Android devices. Will be focal cropped to this dimension.'
           width: 33
           if:
-            use: 'equals true'
+            use_favicons: 'equals true'
