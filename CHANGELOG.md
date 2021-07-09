@@ -6,7 +6,7 @@
 - Enable the cookie banner for Google Analytics as well. It's not needed anymore to traffic GA through GTM if you don't anonymize IP's (please don't though) in `resources/blueprints/globals/seo.yaml` and `resources/views/snippets/_seo.antlers.html`.
 - Reorder tracking fields in the SEO global blueprint in `resources/blueprints/globals/seo.yaml`.
 - Remove all cookie functions from the window object in `resources/js/site.js`.
-- Merge favicons globals into a new Browser appearance global: `content/globals/browser_appearance.yaml` and `resources/blueprints/globals/browser_appearance.yaml`.
+- Merge favicons globals into a new Browser appearance global: `content/globals/browser_appearance.yaml` and `resources/blueprints/globals/browser_appearance.yaml` and rename certain fields.
 - The favicon listener in `app/Listeners/GenerateFavicons.php` now listens to `browser_appearance` instead of `favicons`.
 - Add a new panel to the Browser appearance global for configuring browser specific meta tags.
 - Rename `resources/views/snippets/_favicons.antlers.html` to `resources/views/snippets/_browser_appearance.antlers.html` and add new browser appearance logic.
