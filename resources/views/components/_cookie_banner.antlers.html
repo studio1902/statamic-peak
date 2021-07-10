@@ -45,7 +45,7 @@
     </p>
     <div class="mt-4 flex flex-col space-y-2">
         <label class="inline-flex items-center">
-            <input class="mr-4 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
+            <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
             <span class="flex flex-col">
                 <span class="font-bold text-xs">{{ trans:strings.cookie_functional }}</span>
                 <span class="text-xs text-neutral/75">{{ trans:strings.cookie_functional_explanation }}</span>
@@ -53,7 +53,7 @@
         </label>
         {{# x-model analyticsStorage checkbox. #}}
         <label class="inline-flex items-center">
-            <input class="mr-4 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
+            <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
             <span class="flex flex-col">
                 <span class="font-bold text-xs">{{ trans:strings.cookie_analytics }}</span>
                 <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
@@ -62,7 +62,7 @@
         {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
             <label class="inline-flex items-center">
-                <input class="mr-4 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
+                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
                 <span class="flex flex-col">
                     <span class="font-bold text-xs">{{ trans:strings.cookie_ads }}</span>
                     <span class="text-xs text-neutral/75">{{ trans:strings.cookie_ads_explanation }}</span>
