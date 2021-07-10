@@ -71,7 +71,7 @@ sections:
           default_color_mode: HEXA
           color_modes:
             - hex
-          display: Theme color
+          display: 'Theme color'
           type: color
           default: '#ffffff'
           icon: color
@@ -88,7 +88,7 @@ sections:
           default_color_mode: HEXA
           color_modes:
             - hex
-          display: Theme color dark mode
+          display: 'Theme color dark mode'
           type: color
           default: '#000000'
           icon: color
@@ -97,7 +97,7 @@ sections:
           instructions: 'Sets the theme color for Safari (iOS 15+ and MacOS 11.4+) and the Android Chrome browser in dark mode.'
           if:
             use_theme_color: 'equals true'
-            use_dark_mode_theme_color: 'equals true'
+            use_theme_color_dark_mode: 'equals true'
       -
         handle: section_apple
         field:
