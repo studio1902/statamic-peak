@@ -4,6 +4,7 @@
 #}}
 
 <div
+    {{# Persist 0 as untouched banner state. #}}
     x-data="{
         open: true,
         cookieConsent: $persist(0),
@@ -11,6 +12,7 @@
         analyticsStorage: $persist(false),
         adStorage: $persist(false),
     }"
+    {{# Parse localStorage strings to use as booleans. Update gtag on state change. #}}
     x-effect="
         cookieConsent = JSON.parse(cookieConsent),
         analyticsStorage = JSON.parse(analyticsStorage),
@@ -21,6 +23,7 @@
                 'ad_storage': (adStorage ? 'granted' : 'denied') })
             : ''
     "
+    {{# Hide when banner is interacted with, check date for optional consent revoke. If so set state back to initial state. #}}
     x-init="
         cookieConsent != 0 ? open = false : '',
         (cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}' ? (cookieConsent = 0, cookieConsentDate = 0) : '')"
@@ -42,10 +45,12 @@
             <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
             {{ trans:strings.cookie_functional }}
         </label>
+        {{# x-model analyticsStorage checkbox. #}}
         <label class="inline-flex items-center text-sm">
             <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
             {{ trans:strings.cookie_analytics }}
         </label>
+        {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
             <label class="inline-flex items-center text-sm">
                 <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
@@ -54,6 +59,7 @@
         {{ /if }}
     </div>
     <div class="flex space-x-4">
+        {{# Accept cookies and set current date. #}}
         <button
             @click="
                 open = false,
@@ -64,6 +70,7 @@
             >
             {{ trans:strings.cookie_accept }}
         </button>
+        {{# Ignore consent and hide banner. #}}
         <button
             @click="
                 open = false,
@@ -79,6 +86,7 @@
 {{# Yield this section in `resources/layouts/_footer.antlers.html` so users can reset their consent. #}}
 {{ section:reset_cookie_consent }}
     {{ if seo:use_cookie_banner }}
+        {{# Read out localStorage on nextTick for consent status and display a reset consent link by saving the initial state. #}}
         <span
             x-data="{ cookieConsent: false }"
             x-init="$nextTick(() => { cookieConsent = JSON.parse(localStorage.getItem('cookieConsent')) })"
