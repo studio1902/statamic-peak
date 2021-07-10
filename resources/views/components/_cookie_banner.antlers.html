@@ -28,33 +28,45 @@
         cookieConsent != 0 ? open = false : '',
         (cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}' ? (cookieConsent = 0, cookieConsentDate = 0) : '')"
     x-show="open"
-    class="fixed z-50 right-[2rem] bottom-[2rem] flex flex-col p-6 space-y-4 bg-white border border-neutral/10 rounded shadow-lg"
+    x-transition
+    class="fixed z-50 inset-x-[1rem] bottom-[1rem] md:bottom-[2rem] md:w-80 flex flex-col p-6 space-y-4 bg-white border border-neutral/10 rounded shadow-lg
+    {{ seo:display_style == 'left' ?= 'md:right-auto md:left-[2rem]' }}
+    {{ seo:display_style == 'right' ?= 'md:left-auto md:right-[2rem]' }}"
     x-cloak
 >
     <h2 class="text-2xl font-bold">{{ trans:strings.cookie_title }}</h2>
     <p class="text-sm font-bold text-neutral">
         {{ trans:strings.cookie_explanation }}
+        {{ if seo:link_privacy_statement == 'entry' }}
+        <a class="underline hover:text-primary" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
+        {{ elseif seo:link_privacy_statement == 'pdf' }}
+        <a class="underline hover:text-primary" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
+        {{ /if }}
     </p>
-    {{ if seo:link_privacy_statement == 'entry' }}
-        <a class="text-xs font-bold underline" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
-    {{ elseif seo:link_privacy_statement == 'pdf' }}
-        <a class="text-xs font-bold underline" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
-    {{ /if }}
     <div class="mt-4 flex flex-col space-y-2">
-        <label class="inline-flex items-center text-sm">
-            <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
-            {{ trans:strings.cookie_functional }}
+        <label class="inline-flex items-center">
+            <input class="mr-4 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
+            <span class="flex flex-col">
+                <span class="font-bold text-xs">{{ trans:strings.cookie_functional }}</span>
+                <span class="text-xs text-neutral/75">{{ trans:strings.cookie_functional_explanation }}</span>
+            </span>
         </label>
         {{# x-model analyticsStorage checkbox. #}}
-        <label class="inline-flex items-center text-sm">
-            <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
-            {{ trans:strings.cookie_analytics }}
+        <label class="inline-flex items-center">
+            <input class="mr-4 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
+            <span class="flex flex-col">
+                <span class="font-bold text-xs">{{ trans:strings.cookie_analytics }}</span>
+                <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
+            </span>
         </label>
         {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
-            <label class="inline-flex items-center text-sm">
-                <input class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
-                {{ trans:strings.cookie_ads }}
+            <label class="inline-flex items-center">
+                <input class="mr-4 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
+                <span class="flex flex-col">
+                    <span class="font-bold text-xs">{{ trans:strings.cookie_ads }}</span>
+                    <span class="text-xs text-neutral/75">{{ trans:strings.cookie_ads_explanation }}</span>
+                </span>
             </label>
         {{ /if }}
     </div>

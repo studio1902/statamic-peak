@@ -17,8 +17,11 @@ return [
     // Cookie banner
     'cookie_title'                      => 'Cookies 🍪',
     'cookie_functional'                 => 'Functional',
+    'cookie_functional_explanation'     => 'Needed for the website to function. These can\'t be turned off.',
     'cookie_analytics'                  => 'Analytics',
-    'cookie_ads'                        => 'Ads',
+    'cookie_analytics_explanation'      => 'Not needed if we cared.',
+    'cookie_ads'                        => 'Ads & tracking',
+    'cookie_ads_explanation'            => 'Absolutely terrible for privacy, but we don\'t give a sh*t.',
     'cookie_accept'                     => 'Accept',
     'cookie_ignore'                     => 'Ignore',
     'cookie_explanation'                => 'This site uses cookies that need consent.',

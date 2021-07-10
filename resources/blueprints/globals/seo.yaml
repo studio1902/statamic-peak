@@ -350,6 +350,23 @@ sections:
           if:
             tracker_type: 'not none'
       -
+        handle: display_style
+        field:
+          options:
+            left: Left
+            right: Right
+          default: left
+          type: button_group
+          instructions: 'The banners'' display style.'
+          listable: false
+          localizable: true
+          validate: required
+          display: 'Display style'
+          width: 50
+          if:
+            tracker_type: 'not none'
+            use_cookie_banner: 'equals true'
+      -
         handle: cookie_revoke_before
         field:
           mode: single
