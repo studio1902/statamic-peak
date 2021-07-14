@@ -10,8 +10,11 @@
 - Enable the cookie banner for Google Analytics as well. It's not needed anymore to traffic GA through GTM if you don't anonymize IP's (please don't though) in `resources/blueprints/globals/seo.yaml` and `resources/views/snippets/_seo.antlers.html`.
 - Adds the ability to specify which cookies you accept.
 - Adds the ability to revoke cookie consent when you `{{ yield:reset_cookie_consent }}` in `resources/views/layout/_footer.antlers.html`.
-- Reorder tracking fields in the SEO global blueprint in `resources/blueprints/globals/seo.yaml`.
 - Remove all cookie functions from the window object in `resources/js/site.js`.
+
+### SEO
+- Add the ability to set fallback meta, OG and Twitter descriptions in `resources/views/snippets/_seo.antlers.html`, `resources/blueprints/globals/seo.yaml` and `app/Tags/ScopeValue.php`.
+- Reorder tracking fields in the SEO global blueprint in `resources/blueprints/globals/seo.yaml`.
 
 ### Browser appeareance
 - Merge favicons globals into a new Browser appearance global: `content/globals/browser_appearance.yaml` and `resources/blueprints/globals/browser_appearance.yaml` and rename certain fields.

@@ -1,6 +1,6 @@
 sections:
   page_titles:
-    display: 'Page titles'
+    display: 'Page meta'
     fields:
       -
         handle: section_title
@@ -40,6 +40,67 @@ sections:
           display: 'Website title'
           instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
           width: 66
+      -
+        handle: section_description
+        field:
+          type: section
+          instructions: 'Set fallback data per collection to use as meta, OG and Twitter descriptions when users don''t fill in those fields.'
+          display: Descriptions
+      -
+        handle: collection_defaults
+        field:
+          fields:
+            -
+              handle: collection
+              field:
+                max_items: 1
+                mode: select
+                display: Collection
+                type: collections
+                icon: collections
+                instructions: 'The collection for this fallback.'
+                width: 33
+                listable: hidden
+            -
+              handle: fallback
+              field:
+                options:
+                  field: 'Custom field'
+                  page_builder: 'First text in page builder'
+                multiple: false
+                max_items: 1
+                clearable: false
+                searchable: false
+                taggable: false
+                push_tags: false
+                cast_booleans: false
+                display: Fallback
+                type: select
+                icon: select
+                instructions: 'The fallback type'
+                width: 33
+                listable: hidden
+            -
+              handle: field_handle
+              field:
+                input_type: text
+                antlers: false
+                display: 'Field handle'
+                type: text
+                icon: text
+                instructions: 'The custom field handle.'
+                width: 33
+                listable: hidden
+                if:
+                  fallback: 'equals field'
+          mode: table
+          add_row: 'Add collection default'
+          reorderable: true
+          display: 'Collection defaults'
+          type: grid
+          icon: grid
+          instructions: 'Set fallback meta descriptions for each collection.'
+          listable: hidden
   json-ld:
     display: JSON-ld
     fields:

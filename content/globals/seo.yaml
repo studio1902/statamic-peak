@@ -11,4 +11,5 @@ data:
   tracker_type: none
   anonymize_ip: true
   use_cookie_banner: false
+  display_style: left
   link_privacy_statement: none
