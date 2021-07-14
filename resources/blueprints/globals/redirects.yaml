@@ -6,8 +6,9 @@ sections:
         handle: section_redirects
         field:
           type: section
-          instructions: 'Redirect URL''s.'
+          instructions: 'Redirect URL''s *only* when a 404 error hits.'
           display: Redirects
+          listable: hidden
       -
         handle: redirects
         field:
