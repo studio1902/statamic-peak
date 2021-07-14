@@ -11,9 +11,32 @@
     {{ seo:site_name ? seo:site_name : config:app:name }}
 </title>
 
+{{# Get the fallback description for meta, og and twitter. #}}
+{{ section:fallback_description }}
+    {{ seo:collection_defaults where="collection:{collection}" }}
+        {{ if fallback == 'field' }}
+            {{ scope_value :var="field_handle" as="field_value" }}
+                {{ field_value | trim | truncate:157:... }}
+            {{ /scope_value }}
+        {{ elseif fallback == 'page_builder' }}
+            {{ page_builder limit="1" }}
+                {{ if article }}
+                    {{ article where="type:text" limit="1" }}
+                        {{ text | strip_tags | trim | truncate:157:... }}
+                    {{ /article }}
+                {{ elseif text }}
+                    {{ text | trim | truncate:157:... }}
+                {{ /if }}
+            {{ /page_builder }}
+        {{ /if }}
+    {{ /seo:collection_defaults }}
+{{ /section:fallback_description }}
+
 {{# Page description #}}
 {{ if seo_description }}
     <meta name="description" content="{{ seo_description }}">
+{{ elseif seo:collection_defaults }}
+    <meta name="description" content="{{ yield:fallback_description }}">
 {{ /if }}
 
 {{# No index and no follow #}}
@@ -111,6 +134,8 @@
     <meta property="og:description" content="{{ og_description }}">
 {{ elseif seo_description }}
     <meta property="og:description" content="{{ seo_description }}">
+{{ elseif seo:collection_defaults }}
+    <meta property="og:description" content="{{ yield:fallback_description }}">
 {{ /if }}
 {{ if og_image }}
     <meta property="og:image" content="{{ glide:og_image width='1200' height='630' fit='crop_focal' absolute="true" }}">
@@ -131,6 +156,8 @@
         <meta name="twitter:description" content="{{ og_description }}">
     {{ elseif seo_description }}
         <meta name="twitter:description" content="{{ seo_description }}">
+    {{ elseif seo:collection_defaults }}
+        <meta name="twitter:description" content="{{ yield:fallback_description }}">
     {{ /if }}
     {{ if twitter_image }}
         <meta name="twitter:image" content="{{ glide:twitter_image width='1200' height='600' fit='crop_focal' absolute="true" }}">
