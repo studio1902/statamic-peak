@@ -27,7 +27,8 @@
 - Add default file upload styling in `resources/views/vendor/statamic/forms/fields/assets.antlers.html` and `tailwind.config.site.js`.
 - Rename dark mode localizable strings in `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/lang/en/strings.php`.
 - Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic in `.env.example` and `config/statamic/static_caching.php`.
-- Rename `bard` to `article` in `resources/views/search.antlers.html`
+- Rename `bard` to `article` in `resources/views/search.antlers.html`.
+- Explain how redirects work better in `resources/blueprints/globals/redirects.yaml`.
 
 ## 1.31.5 (2021-07-06)
 
