@@ -13,13 +13,13 @@
 - Remove all cookie functions from the window object in `resources/js/site.js`.
 
 ### SEO
-- Add the ability to set fallback meta, OG and Twitter descriptions in `resources/views/snippets/_seo.antlers.html`, `resources/blueprints/globals/seo.yaml` and `app/Tags/ScopeValue.php`.
+- Add the ability to set fallback meta, OG and Twitter descriptions in `resources/views/snippets/_seo.antlers.html`, `resources/blueprints/globals/seo.yaml`, `resources/views/snippets/_fallback_description.antlers.html` and `app/Tags/ScopeValue.php`.
 - Reorder tracking fields in the SEO global blueprint in `resources/blueprints/globals/seo.yaml`.
 
 ### Browser appeareance
+- Add a new browser appearance appearance global for configuring browser specific meta tags.
 - Merge favicons globals into a new Browser appearance global: `content/globals/browser_appearance.yaml` and `resources/blueprints/globals/browser_appearance.yaml` and rename certain fields.
 - The favicon listener in `app/Listeners/GenerateFavicons.php` now listens to `browser_appearance` instead of `favicons`.
-- Add a new panel to the Browser appearance global for configuring browser specific meta tags.
 - Rename `resources/views/snippets/_favicons.antlers.html` to `resources/views/snippets/_browser_appearance.antlers.html` and add new browser appearance logic.
 - Call in `browser_appearance` partial instead of `favicons` in `resources/views/layout.antlers.html`.
 
