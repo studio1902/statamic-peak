@@ -30,7 +30,7 @@
 - Rename `bard` to `article` in `resources/views/search.antlers.html`.
 - Explain how redirects work better in `resources/blueprints/globals/redirects.yaml`.
 - Use a unique form ID per form in `resources/views/page_builder/_form.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
-- Seperate form fields from form logic in `resources/views/page_builder/_form.antlers.html` by adding `resources/views/components/_form_fields.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
+- Seperate form fields from form logic in `resources/views/page_builder/_form.antlers.html` by adding `resources/views/snippets/_form_fields.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
 
 ## 1.31.5 (2021-07-06)
 
