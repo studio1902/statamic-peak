@@ -29,6 +29,7 @@
 - Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic in `.env.example` and `config/statamic/static_caching.php`.
 - Rename `bard` to `article` in `resources/views/search.antlers.html`.
 - Explain how redirects work better in `resources/blueprints/globals/redirects.yaml`.
+- Use a unique form ID per form in `resources/views/page_builder/_form.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
 
 ## 1.31.5 (2021-07-06)
 

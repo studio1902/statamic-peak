@@ -11,7 +11,7 @@
 
         {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
         {{ form:create in="{ form:handle }"
-            id="form"
+            id="form-{form:handle}"
             class="flex flex-wrap"
             x-ref="form"
             x-data="sending"
