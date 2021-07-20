@@ -31,6 +31,8 @@
 - Explain how redirects work better in `resources/blueprints/globals/redirects.yaml`.
 - Use a unique form ID per form in `resources/views/page_builder/_form.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
 - Seperate form fields from form logic in `resources/views/page_builder/_form.antlers.html` by adding `resources/views/snippets/_form_fields.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
+- Use placeholder data in `resources/views/vendor/statamic/forms/fields/text.antlers.html` and `resources/views/vendor/statamic/forms/fields/textarea.antlers.html`. Thanks [Sense and Image](https://github.com/SenseAndImage).
+- Exclude the sitemap from static caching in `config/statamic/static_caching.php`. Thanks [Sense and Image](https://github.com/SenseAndImage).
 
 ## 1.31.5 (2021-07-06)
 
