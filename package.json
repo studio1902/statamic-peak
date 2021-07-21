@@ -11,14 +11,14 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
-    "alpinejs": "^3.2.1",
+    "alpinejs": "^3.2.2",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.3.1",
     "browser-sync": "^2.27.4",
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^7.0.3",
@@ -29,7 +29,7 @@
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.5",
     "resolve-url-loader": "^4.0.0",
-    "tailwindcss": "^2.2.4",
+    "tailwindcss": "^2.2.5",
     "vue-template-compiler": "^2.6.14"
   }
 }
