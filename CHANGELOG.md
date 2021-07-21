@@ -24,6 +24,7 @@
 - Call in `browser_appearance` partial instead of `favicons` in `resources/views/layout.antlers.html`.
 
 ### What else is improved
+- Add a noscript partial `resources/views/snippets/_noscript.antlers.html` and import it in `resources/views/layout.antlers.html`. Use it to disable the CSS that hides x-cloak elements for users that have Javascript disabled.
 - Add default file upload styling in `resources/views/vendor/statamic/forms/fields/assets.antlers.html` and `tailwind.config.site.js`.
 - Rename dark mode localizable strings in `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/lang/en/strings.php`.
 - Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic in `.env.example` and `config/statamic/static_caching.php`.
