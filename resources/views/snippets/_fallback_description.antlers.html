@@ -1,4 +1,8 @@
-{{# Get the fallback description for meta, og and twitter. #}}
+{{#
+	@name Fallback description
+	@desc Get the fallback description for meta, og and twitter.
+#}}
+
 {{ seo:collection_defaults where="collection:{collection}" }}
     {{ if fallback == 'field' }}
         {{ scope_value :var="field_handle" as="field_value" }}
