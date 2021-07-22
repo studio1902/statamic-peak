@@ -24,6 +24,7 @@
 - Call in `browser_appearance` partial instead of `favicons` in `resources/views/layout.antlers.html`.
 
 ### What else is improved
+- Peak now ships with compiled assets so `npm i && npm run dev` is not needed upon installation. This is in preparation to the new starter kits feature coming in Statamic 3.2.
 - Add a noscript partial `resources/views/snippets/_noscript.antlers.html` and import it in `resources/views/layout.antlers.html`. Use it to disable the CSS that hides x-cloak elements for users that have Javascript disabled.
 - Add default file upload styling in `resources/views/vendor/statamic/forms/fields/assets.antlers.html` and `tailwind.config.site.js`.
 - Rename dark mode localizable strings in `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/lang/en/strings.php`.
