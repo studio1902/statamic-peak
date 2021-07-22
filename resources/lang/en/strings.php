@@ -15,10 +15,18 @@ return [
     'form_success'                      => 'Thank you, we received your message and will contact you as soon as possible.',
 
     // Cookie banner
-    'cookie_accept'                     => 'I accept',
-    'cookie_deny'                       => 'I decline',
-    'cookie_explanation'                => 'This site uses tracking cookies used for marketing and statistics.',
+    'cookie_title'                      => 'Cookies 🍪',
+    'cookie_functional'                 => 'Functional',
+    'cookie_functional_explanation'     => 'First party cookies needed for the website to function. These can\'t be turned off.',
+    'cookie_analytics'                  => 'Analytics',
+    'cookie_analytics_explanation'      => 'Third party cookies, not needed if we cared.',
+    'cookie_ads'                        => 'Ads & tracking',
+    'cookie_ads_explanation'            => 'Third party cookies absolutely terrible for privacy, but we don\'t give a sh*t.',
+    'cookie_accept'                     => 'Accept',
+    'cookie_ignore'                     => 'Ignore',
+    'cookie_explanation'                => 'This site uses cookies that need consent.',
     'cookie_learn_more'                 => 'Learn more',
+    'cookie_reset_consent'              => 'Reset cookie consent',
 
     // Footer
     'on'                                => 'on',
@@ -28,8 +36,8 @@ return [
     'menu'                              => 'Menu',
 
     // Other
-    'set_dark_mode'                     => 'Enable dark mode',
-    'disable_dark_mode'                 => 'Disable dark mode',
+    'dark_mode_on'                      => 'Enable dark mode',
+    'dark_mode_off'                     => 'Disable dark mode',
 
     // Pagination
     'next'                              => 'next',

@@ -1,0 +1,12 @@
+{{#
+	@name noscript
+	@desc Disable the hiding of x-cloak elements when a user doesn't have Javascript enabled so content is still accessible.
+#}}
+
+<noscript>
+    <style>
+        [x-cloak] {
+            display: revert !important;
+        }
+    </style>
+</noscript>

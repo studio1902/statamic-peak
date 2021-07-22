@@ -1,6 +1,6 @@
 sections:
   page_titles:
-    display: 'Page titles'
+    display: 'Page meta'
     fields:
       -
         handle: section_title
@@ -40,6 +40,67 @@ sections:
           display: 'Website title'
           instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
           width: 66
+      -
+        handle: section_description
+        field:
+          type: section
+          instructions: 'Set fallback data per collection to use as meta, OG and Twitter descriptions when users don''t fill in those fields.'
+          display: Descriptions
+      -
+        handle: collection_defaults
+        field:
+          fields:
+            -
+              handle: collection
+              field:
+                max_items: 1
+                mode: select
+                display: Collection
+                type: collections
+                icon: collections
+                instructions: 'The collection for this fallback.'
+                width: 33
+                listable: hidden
+            -
+              handle: fallback
+              field:
+                options:
+                  field: 'Custom field'
+                  page_builder: 'First text in page builder'
+                multiple: false
+                max_items: 1
+                clearable: false
+                searchable: false
+                taggable: false
+                push_tags: false
+                cast_booleans: false
+                display: Fallback
+                type: select
+                icon: select
+                instructions: 'The fallback type'
+                width: 33
+                listable: hidden
+            -
+              handle: field_handle
+              field:
+                input_type: text
+                antlers: false
+                display: 'Field handle'
+                type: text
+                icon: text
+                instructions: 'The custom field handle.'
+                width: 33
+                listable: hidden
+                if:
+                  fallback: 'equals field'
+          mode: table
+          add_row: 'Add collection default'
+          reorderable: true
+          display: 'Collection defaults'
+          type: grid
+          icon: grid
+          instructions: 'Set fallback meta descriptions for each collection.'
+          listable: hidden
   json-ld:
     display: JSON-ld
     fields:
@@ -127,7 +188,7 @@ sections:
           localizable: true
           display: Breadcrumbs
   social:
-    display: Social Sharing
+    display: 'Social Sharing'
     fields:
       -
         handle: section_social_images
@@ -141,7 +202,6 @@ sections:
           display: 'Use Social Images generation'
           type: toggle
           icon: toggle
-          localizable: false
           instructions: 'Enable auto Social Image generation. **Important**: you need to have Puppeteer and Browsershot installed.'
           listable: hidden
           width: 50
@@ -306,11 +366,11 @@ sections:
       -
         handle: google_analytics
         field:
-          width: 50
+          width: 25
           display: 'Tracking ID'
           input_type: text
           type: text
-          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent in the EU. You should then use Google Tag Manager to load the Analytics tracking scripts and enable the Cookie Banner.*'
+          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent in the EU.'
           listable: hidden
           validate:
             - 'required_if:tracker_type,gtag'
@@ -320,7 +380,7 @@ sections:
         handle: anonymize_ip
         field:
           type: toggle
-          width: 50
+          width: 25
           listable: false
           default: true
           display: 'Anonymize IP''s'
@@ -344,28 +404,28 @@ sections:
         handle: use_cookie_banner
         field:
           type: toggle
-          instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM and set GTM to only function when the cookie `cookie_consent` is set to `true`.'
+          instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM. Uses the consent api: https://developers.google.com/tag-manager/consent'
           listable: false
           display: 'Cookie banner'
           width: 50
           if:
-            tracker_type: 'equals gtm'
+            tracker_type: 'not none'
       -
-        handle: cookie_expiration_days
+        handle: display_style
         field:
-          input_type: number
-          prepend: After
-          append: days
-          antlers: false
-          display: 'Expire cookie consent'
-          type: text
-          icon: text
-          instructions: 'After how many days the cookie consent cookie should expire and users need to consent again.'
-          listable: hidden
+          options:
+            left: Left
+            right: Right
+          default: left
+          type: button_group
+          instructions: 'The banners'' display style.'
+          listable: false
+          localizable: true
+          validate: required
+          display: 'Display style'
           width: 50
-          default: 365
           if:
-            tracker_type: 'equals gtm'
+            tracker_type: 'not none'
             use_cookie_banner: 'equals true'
       -
         handle: cookie_revoke_before
@@ -385,7 +445,7 @@ sections:
           icon: date
           listable: hidden
           if:
-            tracker_type: 'equals gtm'
+            tracker_type: 'not none'
             use_cookie_banner: 'equals true'
       -
         handle: link_privacy_statement
@@ -402,7 +462,7 @@ sections:
           display: 'Link to more information'
           width: 50
           if:
-            tracker_type: 'equals gtm'
+            tracker_type: 'not none'
             use_cookie_banner: 'equals true'
       -
         handle: privacy_statement_asset
@@ -414,7 +474,7 @@ sections:
           instructions: 'The PDF you want to link to.'
           width: 50
           if:
-            tracker_type: 'equals gtm'
+            tracker_type: 'not none'
             use_cookie_banner: 'equals true'
             link_privacy_statement: 'equals pdf'
       -
@@ -427,6 +487,6 @@ sections:
           width: 50
           instructions: 'The entry you want to link to.'
           if:
-            tracker_type: 'equals gtm'
+            tracker_type: 'not none'
             use_cookie_banner: 'equals true'
             link_privacy_statement: 'equals entry'
