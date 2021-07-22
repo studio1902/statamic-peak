@@ -100,12 +100,12 @@
     {{ if seo:use_cookie_banner }}
         {{# Read out localStorage on nextTick for consent status and display a reset consent link by saving the initial state. #}}
         <span
-            x-data="{ cookieConsent: false }"
-            x-init="$nextTick(() => { cookieConsent = JSON.parse(localStorage.getItem('cookieConsent')) })"
+            x-data="{ cookieConsent: 0 }"
+            x-init="$nextTick(() => { cookieConsent = JSON.parse(localStorage.getItem('_x_cookieConsent')) })"
             x-cloak
         >
             <span x-show="cookieConsent">
-                - <a @click="localStorage.setItem('cookieConsent', '0')" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
+                - <a @click="localStorage.setItem('_x_cookieConsent', '0')" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
             </span>
         </span>
     {{ /if }}

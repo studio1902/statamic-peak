@@ -7,8 +7,8 @@
 #}}
 
 <script>
-    (localStorage.darkMode === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-        ? (document.documentElement.classList.add('dark'), localStorage.darkMode = 'true')
+    (localStorage._x_darkMode === 'true' || (!('_x_darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+        ? (document.documentElement.classList.add('dark'), localStorage._x_darkMode = 'true')
         : document.documentElement.classList.remove('dark');
 </script>
 

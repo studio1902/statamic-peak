@@ -1,5 +1,5 @@
-import persist from './persist.js'
 import Alpine from 'alpinejs'
+import persist from '@alpinejs/persist'
 import 'focus-visible'
 
 // Global get CSRF token function (used by forms).
