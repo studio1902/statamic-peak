@@ -13,45 +13,6 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 [Read the documentation](https://peak.studio1902.nl)
 
-### Getting started
-
-* [Browser support](https://peak.studio1902.nl/getting-started/browser-support.html)
-* [Knowledge assumptions](https://peak.studio1902.nl/getting-started/knowledge-assumptions.html)
-* [Installation](https://peak.studio1902.nl/getting-started/installation.html)
-* [Tailwind and css config](https://peak.studio1902.nl/getting-started/tailwind-css.html)
-
-### Features
-
-* [Assets](https://peak.studio1902.nl/features/assets.html)
-* [Bard](https://peak.studio1902.nl/features/bard.html)
-* [Buttons](https://peak.studio1902.nl/features/buttons.html)
-* [Dark mode (off)](https://peak.studio1902.nl/features/dark-mode.html)
-* [Favicons](https://peak.studio1902.nl/features/favicons.html)
-* [Forms](https://peak.studio1902.nl/features/forms.html)
-* [Globals](https://peak.studio1902.nl/features/globals.html)
-* [Navigation](https://peak.studio1902.nl/features/navigation.html)
-* [Page builder](https://peak.studio1902.nl/features/page-builder.html)
-* [Pagination](https://peak.studio1902.nl/features/pagination.html)
-* [Redirects](https://peak.studio1902.nl/features/redirects.html)
-* [Search (off)](https://peak.studio1902.nl/features/search.html)
-* [Social images generation (off)](https://peak.studio1902.nl/features/social-images-generation.html)
-* [SEO](https://peak.studio1902.nl/features/seo.html)
-* [Typography](https://peak.studio1902.nl/features/typography.html)
-
-### Other
-
-* [Configuration changes](https://peak.studio1902.nl/other/configuration-changes.html)
-* [Deployment script](https://peak.studio1902.nl/other/deployment-script.html)
-* [Focus-visible](https://peak.studio1902.nl/other/focus-visible.html)
-* [Lighthouse](https://peak.studio1902.nl/other/lighthouse.html)
-* [Modernizr](https://peak.studio1902.nl/other/localization.html)
-* [Localization and template strings](https://peak.studio1902.nl/other/localization.html)
-* [Reduced motion](https://peak.studio1902.nl/other/reduced-motion.html)
-* [Tags](https://peak.studio1902.nl/other/tags.html)
-* [Toolbar](https://peak.studio1902.nl/other/toolbar.html)
-* [Upcoming features](https://peak.studio1902.nl/other/upcoming-features.html)
-* [Warm all caches](https://peak.studio1902.nl/other/warm-all-caches.html)
-
 ### Contributing and license
 
 ## Contributing
