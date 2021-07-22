@@ -53,7 +53,7 @@ return [
     */
 
     'exclude' => [
-        //
+        '/sitemap.xml'
     ],
 
     /*

@@ -91,6 +91,7 @@ module.exports = {
             fontFamily: theme('fontFamily.sans'),
             // fontFamily: theme('fontFamily.serif'),
         },
+        // Style fyle upload form elements.
         'input[type="file"]::file-selector-button, input[type="file"]::-webkit-file-upload-button': {
             paddingTop: theme('spacing.2'),
             paddingBottom: theme('spacing.2'),

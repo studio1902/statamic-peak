@@ -11,11 +11,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
         <script src="{{ mix src='/js/site.js' }}" defer></script>
+        {{ partial:snippets/noscript }}
 
         {{# Replace the following line with the SEO Pro or Aardvark SEO tag if you want to use an addon for SEO. Also remove the seo section in you page blueprint.#}}
         {{ partial:snippets/seo }}
 
-        {{ partial:snippets/favicons }}
+        {{ partial:snippets/browser_appearance }}
     </head>
     <body class="min-h-screen bg-white selection:bg-primary selection:text-white">
         {{ partial:components/toolbar }}

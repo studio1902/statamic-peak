@@ -1,0 +1,44 @@
+{{#
+	@name Browser appearance
+	@desc The browser appearance snippet for the `<head>` to include browser specific meta tags Peak generated favicons.
+#}}
+
+{{ if browser_appearance:disable_telephone_detection }}
+    <meta name="format-detection" content="telephone=no">
+{{ /if }}
+{{ if browser_appearance:disable_email_detection }}
+    <meta name="format-detection" content="email=no">
+{{ /if }}
+{{ if browser_appearance:disable_address_detection }}
+    <meta name="format-detection" content="address=no">
+{{ /if }}
+{{ if browser_appearance:use_theme_color }}
+    <meta name="theme-color" content="{{ browser_appearance:theme_color }}"{{ if browser_appearance:use_theme_color_dark_mode }} media="(prefers-color-scheme: light)"{{ /if }}>
+    {{ if browser_appearance:use_theme_color_dark_mode }}
+        <meta name="theme-color" content="{{ browser_appearance:theme_color_dark_mode }}" media="(prefers-color-scheme: dark)">
+    {{ /if }}
+{{ /if }}
+{{ if browser_appearance:apple_mobile_web_app }}
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    {{ if browser_appearance:apple_status_bar_black }}
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    {{ /if }}
+{{ /if }}
+{{ if browser_appearance:android_mobile_web_app }}
+    <meta name="mobile-web-app-capable" content="yes">
+{{ /if }}
+
+{{ if browser_appearance:use_favicons }}
+    {{# SVG of any size, main icon #}}
+    <link rel="icon" href="{{ favicons:svg }}">
+    {{# Single color Safari icon, on transparent bg #}}
+    <link rel="mask-icon" href="{{ favicons:safari_mask_icon ?? favicons:svg }}" color="{{ favicons:safari_color }}">
+    {{# iOS touch icons. 180x180 #}}
+    {{ if favicons:apple_touch_icon }}
+        <link rel="apple-touch-icon" href="{{ glide:favicons:apple_touch_icon width='180' height='180' fit='crop_focal' }}">
+    {{ else }}
+        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
+    {{ /if }}
+    {{# manifest.json for lighthouse one 512x512 #}}
+    <link rel="manifest" href="/site.webmanifest">
+{{ /if }}

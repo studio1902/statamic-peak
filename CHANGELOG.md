@@ -1,8 +1,40 @@
 # Release Notes
 
 ## Unreleased
-- Add default asset field styling
-- Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic.
+
+### Alpine v3
+- Use Alpine's v3 persist plugin throughout peak: cookie banner, dark mode toggle, toolbar in `resources/views/components/_cookie_banner.antlers.html`, `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/views/components/_toolbar.antlers.html`.
+
+### Cookie Banner
+- Use the GTM Consent API for cookie consent: https://developers.google.com/tag-manager/consent in `resources/views/components/_cookie_banner.antlers.html` and `resources/views/snippets/_seo.antlers.html`.
+- Enable the cookie banner for Google Analytics as well. It's not needed anymore to traffic GA through GTM if you don't anonymize IP's (please don't though) in `resources/blueprints/globals/seo.yaml` and `resources/views/snippets/_seo.antlers.html`.
+- Adds the ability to specify which cookies you accept.
+- Adds the ability to revoke cookie consent when you `{{ yield:reset_cookie_consent }}` in `resources/views/layout/_footer.antlers.html`.
+- Remove all cookie functions from the window object in `resources/js/site.js`.
+
+### SEO
+- Add the ability to set fallback meta, OG and Twitter descriptions in `resources/views/snippets/_seo.antlers.html`, `resources/blueprints/globals/seo.yaml`, `resources/views/snippets/_fallback_description.antlers.html` and `app/Tags/ScopeValue.php`.
+- Reorder tracking fields in the SEO global blueprint in `resources/blueprints/globals/seo.yaml`.
+
+### Browser appeareance
+- Add a new browser appearance appearance global for configuring browser specific meta tags.
+- Merge favicons globals into a new Browser appearance global: `content/globals/browser_appearance.yaml` and `resources/blueprints/globals/browser_appearance.yaml` and rename certain fields.
+- The favicon listener in `app/Listeners/GenerateFavicons.php` now listens to `browser_appearance` instead of `favicons`.
+- Rename `resources/views/snippets/_favicons.antlers.html` to `resources/views/snippets/_browser_appearance.antlers.html` and add new browser appearance logic.
+- Call in `browser_appearance` partial instead of `favicons` in `resources/views/layout.antlers.html`.
+
+### What else is improved
+- Peak now ships with compiled assets so `npm i && npm run dev` is not needed upon installation. This is in preparation to the new starter kits feature coming in Statamic 3.2.
+- Add a noscript partial `resources/views/snippets/_noscript.antlers.html` and import it in `resources/views/layout.antlers.html`. Use it to disable the CSS that hides x-cloak elements for users that have Javascript disabled.
+- Add default file upload styling in `resources/views/vendor/statamic/forms/fields/assets.antlers.html` and `tailwind.config.site.js`.
+- Rename dark mode localizable strings in `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/lang/en/strings.php`.
+- Change 'CACHING_STRATEGY' for 'STATAMIC_STATIC_CACHING_STRATEGY' to be on par with Statamic in `.env.example` and `config/statamic/static_caching.php`.
+- Rename `bard` to `article` in `resources/views/search.antlers.html`.
+- Explain how redirects work better in `resources/blueprints/globals/redirects.yaml`.
+- Use a unique form ID per form in `resources/views/page_builder/_form.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
+- Seperate form fields from form logic in `resources/views/page_builder/_form.antlers.html` by adding `resources/views/snippets/_form_fields.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
+- Use placeholder data in `resources/views/vendor/statamic/forms/fields/text.antlers.html` and `resources/views/vendor/statamic/forms/fields/textarea.antlers.html`. Thanks [Sense and Image](https://github.com/SenseAndImage).
+- Exclude the sitemap from static caching in `config/statamic/static_caching.php`. Thanks [Sense and Image](https://github.com/SenseAndImage).
 
 ## 1.31.5 (2021-07-06)
 
