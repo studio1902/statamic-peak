@@ -11,6 +11,7 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
+    "@alpinejs/persist": "^3.2.2",
     "alpinejs": "^3.2.2",
     "focus-visible": "^5.2.0"
   },
@@ -24,12 +25,12 @@
     "cross-env": "^7.0.3",
     "glob-all": "^3.2.1",
     "laravel-mix": "^6.0.25",
-    "postcss": "^8.3.5",
+    "postcss": "^8.3.6",
     "postcss-focus-visible": "^5.0.0",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.5",
     "resolve-url-loader": "^4.0.0",
-    "tailwindcss": "^2.2.5",
+    "tailwindcss": "^2.2.6",
     "vue-template-compiler": "^2.6.14"
   }
 }
