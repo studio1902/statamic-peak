@@ -1,6 +1,6 @@
 # Release Notes
 
-## Unreleased
+## 2.0 (2021-07-22)
 
 ### Alpine v3
 - Use Alpine's v3 persist plugin throughout peak: cookie banner, dark mode toggle, toolbar in `resources/views/components/_cookie_banner.antlers.html`, `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/views/components/_toolbar.antlers.html`.
@@ -16,7 +16,7 @@
 - Add the ability to set fallback meta, OG and Twitter descriptions in `resources/views/snippets/_seo.antlers.html`, `resources/blueprints/globals/seo.yaml`, `resources/views/snippets/_fallback_description.antlers.html` and `app/Tags/ScopeValue.php`.
 - Reorder tracking fields in the SEO global blueprint in `resources/blueprints/globals/seo.yaml`.
 
-### Browser appeareance
+### Browser appearance
 - Add a new browser appearance appearance global for configuring browser specific meta tags.
 - Merge favicons globals into a new Browser appearance global: `content/globals/browser_appearance.yaml` and `resources/blueprints/globals/browser_appearance.yaml` and rename certain fields.
 - The favicon listener in `app/Listeners/GenerateFavicons.php` now listens to `browser_appearance` instead of `favicons`.
