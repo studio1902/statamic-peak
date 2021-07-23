@@ -14,9 +14,6 @@
     }"
     {{# Parse localStorage strings to use as booleans. Update gtag on state change. #}}
     x-effect="
-        cookieConsent = JSON.parse(cookieConsent),
-        analyticsStorage = JSON.parse(analyticsStorage),
-        adStorage = JSON.parse(adStorage),
         cookieConsent
             ? gtag('consent', 'update', {
                 'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),

@@ -17,7 +17,6 @@
     <li
         x-data="{ darkMode: $persist(false) }"
         x-effect="
-            darkMode = JSON.parse(darkMode),
             darkMode
                 ? document.documentElement.classList.add('dark')
                 : document.documentElement.classList.remove('dark')"
