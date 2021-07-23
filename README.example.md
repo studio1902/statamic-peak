@@ -87,7 +87,7 @@ $FORGE_PHP artisan statamic:stache:warm
 $FORGE_PHP artisan statamic:search:update --all
 $FORGE_PHP artisan statamic:static:clear
 $FORGE_PHP artisan statamic:peak:warm
-$FORGE_PHP artisan statamic:assets:generate-presets
+$FORGE_PHP artisan statamic:assets:generate-presets --queue
 
 ( flock -w 10 9 || exit 1
     echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9>/tmp/fpmlock

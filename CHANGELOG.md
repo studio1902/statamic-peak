@@ -2,6 +2,7 @@
 
 ## 2.1 (2021-07-23)
 - Get rid of `JSON.parse()` when using `$persist` in `resources/views/components/_toolbar.antlers.html`, `resources/views/components/_dark_mode_toggle.antlers.html` and `resources/views/components/_cookie_banner.antlers.html`. The final release of the plugin does this for us automatically.
+- Use the `queue` flag in `README.example.md` for the assets generate presets command so the queue get's used when available.
 
 ## 2.0 (2021-07-22)
 
