@@ -4,7 +4,9 @@
 
 ### What's improved
 - Now Alpine's '$persist' plugin got a nice bug fix we can clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
+- Add fallback-description to social-media image partial `resources/views/components/_social_image.antlers.html`. Thanks [Goldnead](https://github.com/goldnead).
 - Updated dependencies.
+
 
 ## 2.1 (2021-07-23)
 
