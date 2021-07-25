@@ -6,6 +6,7 @@
     3. Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
 #}}
 
+{{# We can't use Alpine logic here since this has to run before anything else. #}}
 <script>
     (localStorage._x_darkMode === 'true' || (!('_x_darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
         ? (document.documentElement.classList.add('dark'), localStorage._x_darkMode = 'true')
