@@ -1,5 +1,11 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Now Alpine's '$persist' plugin got a nice bug fix we can clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
+- Updated dependencies.
+
 ## 2.1 (2021-07-23)
 
 ### What's improved
