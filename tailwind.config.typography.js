@@ -9,7 +9,7 @@
 
 const plugin = require('tailwindcss/plugin')
 
-module.exports = { 
+module.exports = {
   theme: {
     extend: {
       typography: (theme) => ({
@@ -29,21 +29,22 @@ module.exports = {
               textDecoration: 'none',
             },
             'h1, h2, h3, h4': {
-              color: theme('colors.neutral.DEFAULT'),
+              color: theme('colors.primary.DEFAULT'),
+              fontFamily: theme('fontFamily.serif')
             },
             blockquote: {
               borderColor: theme('colors.primary.DEFAULT'),
             },
             hr: {
-              borderColor: theme('colors.neutral.DEFAULT'), 
+              borderColor: theme('colors.neutral.DEFAULT'),
             },
-            'ul > li::before': { 
+            'ul > li::before': {
               backgroundColor: theme('colors.neutral.DEFAULT'),
             },
-            'ol > li::before': { 
+            'ol > li::before': {
               color: theme('colors.neutral.DEFAULT'),
             },
-            'ul > li p, ol > li p': { 
+            'ul > li p, ol > li p': {
               marginTop: '0em !important',
               marginBottom: '0em !important',
             },
