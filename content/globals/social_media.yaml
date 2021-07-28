@@ -1,1 +1,13 @@
 title: 'Social media'
+data:
+  social_media:
+    -
+      url: studio1902
+      prefix: 'https://www.twitter.com/'
+      type: twitter
+      enabled: true
+    -
+      url: studio1902/statamic-peak
+      prefix: 'https://www.github.com/'
+      type: github
+      enabled: true
