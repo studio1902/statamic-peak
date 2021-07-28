@@ -77,21 +77,18 @@ return [
 
     ],
 
+
     /*
     |--------------------------------------------------------------------------
-    | Warming Rules
+    | Ignoring Query Strings
     |--------------------------------------------------------------------------
     |
-    | Here you may define any extra URLS that should be visited when warming
-    | up the static cache. See the documentation for more details. Usually
-    | you don't need this, as we warm all published entries by default.
-    |
-    | https://peak.studio1902.nl/other/warm-all-caches.html#the-static-cache
+    | Statamic will cache pages of the same URL but with different query
+    | parameters separately. This is useful for pages with pagination.
+    | If you'd like to ignore the query strings, you may do so.
     |
     */
 
-    'warm' => [
-        // 'my-collection?page=2',
-    ],
+    'ignore_query_strings' => false,
 
 ];
