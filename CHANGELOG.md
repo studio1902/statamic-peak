@@ -6,6 +6,7 @@
 - Now Alpine's '$persist' plugin got a nice bug fix we can clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
 - Add fallback-description to social-media image partial `resources/views/components/_social_image.antlers.html`. Thanks [Goldnead](https://github.com/goldnead).
 - Added a no-script explainer text to `resources/views/snippets/_noscript.antlers.html` and `resources/lang/en/strings.php`.
+- Removed `peak:warm` command (`app/Console/Commands/WarmCommand.php`) as this is now built into Statamic. Also updated `app/Console/Kernel.php`, `README.example.md` and `config/statamic/static_caching.php` to reflect this change.
 - Updated dependencies.
 
 ## 2.1 (2021-07-23)
