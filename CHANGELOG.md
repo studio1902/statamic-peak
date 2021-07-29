@@ -3,7 +3,7 @@
 ## 2.1.1 (2021-07-29)
 
 ### What's fixed
-- Fix bugs after reorganizing the favicons feature into 'Browswer appearance'. Files changed: `app/Listeners/GenerateFavicons.php`, `resources/views/manifest/manifest.antlers.html` and `resources/views/snippets/_browser_appearance.antlers.html`.
+- Fix bugs after reorganizing the favicons feature into 'Browser appearance'. Files changed: `app/Listeners/GenerateFavicons.php`, `resources/views/manifest/manifest.antlers.html` and `resources/views/snippets/_browser_appearance.antlers.html`.
 
 ## 2.1 (2021-07-23)
 
