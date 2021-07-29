@@ -30,12 +30,12 @@
 
 {{ if browser_appearance:use_favicons }}
     {{# SVG of any size, main icon #}}
-    <link rel="icon" href="{{ favicons:svg }}">
+    <link rel="icon" href="{{ browser_appearance:svg }}">
     {{# Single color Safari icon, on transparent bg #}}
-    <link rel="mask-icon" href="{{ favicons:safari_mask_icon ?? favicons:svg }}" color="{{ favicons:safari_color }}">
+    <link rel="mask-icon" href="{{ browser_appearance:safari_mask_icon ?? browser_appearance:svg }}" color="{{ browser_appearance:safari_color }}">
     {{# iOS touch icons. 180x180 #}}
-    {{ if favicons:apple_touch_icon }}
-        <link rel="apple-touch-icon" href="{{ glide:favicons:apple_touch_icon width='180' height='180' fit='crop_focal' }}">
+    {{ if browser_appearance:apple_touch_icon }}
+        <link rel="apple-touch-icon" href="{{ glide:browser_appearance:apple_touch_icon width='180' height='180' fit='crop_focal' }}">
     {{ else }}
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png">
     {{ /if }}
