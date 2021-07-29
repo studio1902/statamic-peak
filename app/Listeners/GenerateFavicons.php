@@ -17,7 +17,7 @@ class GenerateFavicons
     private function shouldHandle(GlobalSet $globals): bool
     {
         return $globals->handle() === 'browser_appearance'
-            && $globals->inDefaultSite()->get('use');
+            && $globals->inDefaultSite()->get('use_favicons');
     }
 
     /**

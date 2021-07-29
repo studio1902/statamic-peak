@@ -1,6 +1,6 @@
 # Release Notes
 
-## Unreleased
+## 2.2 (Unreleased)
 
 ### What's improved
 - Now Alpine's '$persist' plugin got a nice bug fix we can clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
@@ -8,6 +8,11 @@
 - Added a no-script explainer text to `resources/views/snippets/_noscript.antlers.html` and `resources/lang/en/strings.php`.
 - Removed `peak:warm` command (`app/Console/Commands/WarmCommand.php`) as this is now built into Statamic. Also updated `app/Console/Kernel.php`, `README.example.md` and `config/statamic/static_caching.php` to reflect this change.
 - Updated dependencies.
+
+## 2.1.1 (2021-07-29)
+
+### What's fixed
+- Fix bugs after reorganizing the favicons feature into 'Browser appearance'. Files changed: `app/Listeners/GenerateFavicons.php`, `resources/views/manifest/manifest.antlers.html` and `resources/views/snippets/_browser_appearance.antlers.html`.
 
 ## 2.1 (2021-07-23)
 
