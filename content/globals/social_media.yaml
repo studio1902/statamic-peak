@@ -11,3 +11,8 @@ data:
       prefix: 'https://www.github.com/'
       type: github
       enabled: true
+    -
+      url: in/robdekort/
+      prefix: 'https://www.linkedin.com/'
+      type: linkedin
+      enabled: true

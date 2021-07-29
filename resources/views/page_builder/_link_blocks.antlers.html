@@ -11,8 +11,8 @@
         </div>
     {{ /if }}
     {{ block:link_blocks }}
-        <a 
-            class="flex flex-col justify-between items-start bg-white shadow p-6 no-underline
+        <a
+            class="flex flex-col justify-between items-start bg-white shadow-lg rounded border border-primary/10 p-6 no-underline
             {{ if total_results == 1 }}
                 md:col-span-8 md:col-start-3
             {{ elseif total_results == 2 }}
@@ -20,11 +20,11 @@
             {{ elseif total_results > 2 }}
                 md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0
             {{ /if }}"
-            aria-labelledby="{{ title | slugify }}" 
+            aria-labelledby="{{ title | slugify }}"
             draggable="false"
             {{ partial:snippets/button_attributes }}
         >
-            <div>
+            <div class="mb-4">
                 {{ if title }}
                     <span id="{{ title | slugify }}">
                         {{ partial src="typography/h2" class="mb-2" :content="title" }}

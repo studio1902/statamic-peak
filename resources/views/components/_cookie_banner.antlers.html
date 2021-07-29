@@ -101,7 +101,7 @@
             x-cloak
         >
             <span x-show="cookieConsent">
-                - <a @click="cookieConsent = 0" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
+                <a @click="cookieConsent = 0" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
             </span>
         </span>
     {{ /if }}
