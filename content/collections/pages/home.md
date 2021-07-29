@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: 9be3d58e-745d-4669-9a70-21c4c5049b89
-updated_at: 1627505956
+updated_at: 1627560782
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -47,5 +47,24 @@ page_builder:
       -
         type: paragraph
     type: article
+    enabled: true
+  -
+    title: Thingies
+    link_blocks:
+      -
+        title: 'Title one'
+        text: 'Text two'
+        label: null
+        target_blank: false
+        link_type: entry
+        entry: null
+        url: null
+        email: null
+        tel: null
+        asset: null
+        button_type: button
+        attr_title: null
+        attr_aria: null
+    type: link_blocks
     enabled: true
 ---

@@ -30,7 +30,6 @@ module.exports = {
             },
             'h1, h2, h3, h4': {
               color: theme('colors.primary.DEFAULT'),
-              fontFamily: theme('fontFamily.serif')
             },
             blockquote: {
               borderColor: theme('colors.primary.DEFAULT'),
