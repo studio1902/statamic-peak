@@ -3,7 +3,7 @@
 ## 3.0
 
 ### What's new
-- Installing Peak now goes via the new Starter Kit functionality in Peak.
+- Installing Peak now uses the new Starter Kit functionality in Peak. [Check the docs](https://peak.studio1902.nl/getting-started/installation.html).
 - Add the new Peak branding to the default templates, pages and e-mails.
 - Add some starter content to explain what Peak can do.
 
