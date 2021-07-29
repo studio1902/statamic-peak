@@ -6,8 +6,8 @@
 {
     "icons": [
         {
-            {{ if favicons:android_chrome }}
-                "src": "{{ glide:favicons:android_chrome width='512' height='512' fit='crop_focal' }}",
+            {{ if browser_appearance:android_chrome }}
+                "src": "{{ glide:browser_appearance:android_chrome width='512' height='512' fit='crop_focal' }}",
             {{ else }}
                 "src": "/favicons/android-chrome-512x512.png",
             {{ /if }}
