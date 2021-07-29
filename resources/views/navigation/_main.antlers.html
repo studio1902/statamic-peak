@@ -35,7 +35,7 @@
                 {{ if children }}
                     <ul
                         x-show="subnavOpen"
-                        class="absolute py-2 bg-white"
+                        class="absolute mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
                         :aria-expanded="subnavOpen"
                         @click.outside="subnavOpen = false"
                         x-cloak
