@@ -1,6 +1,13 @@
 # Release Notes
 
-## 2.2 (Unreleased)
+## 3.0 ()
+
+### What's new
+- Installing Peak now uses the new Starter Kit functionality in Peak. [Check the docs](https://peak.studio1902.nl/getting-started/installation.html).
+- Add the new Peak branding to the default templates, pages and e-mails.
+- Add some starter content to explain what Peak can do.
+
+## 2.2 ()
 
 ### What's improved
 - Now Alpine's '$persist' plugin got a nice bug fix we can clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
