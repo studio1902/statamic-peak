@@ -15,8 +15,6 @@ Maintaining Peak demands a lot of my time and it probably saves you a lot. Your 
 
 [Read the documentation](https://peak.studio1902.nl)
 
-### Contributing and license
-
 ## Contributing
 <span id="contributing"></span>
 
