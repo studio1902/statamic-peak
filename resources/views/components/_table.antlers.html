@@ -1,10 +1,10 @@
 {{#
 	@name Table
-	@desc The table component for sizeable content tables. 
+	@desc The table component for sizeable content tables.
     @set page.article.table
 #}}
 
-<div class="size-{{ size }} my-4 overflow-scroll">
+<div class="size-{{ size }} my-4 overflow-auto">
     <table class="w-full bg-light border-collapse">
         {{ table }}
             {{ if first && first_row_headers }}
