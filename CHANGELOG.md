@@ -8,6 +8,7 @@
 - Added a no-script explainer text to `resources/views/snippets/_noscript.antlers.html` and `resources/lang/en/strings.php`.
 - Removed `peak:warm` command (`app/Console/Commands/WarmCommand.php`) as this is now built into Statamic. Also updated `app/Console/Kernel.php`, `README.example.md` and `config/statamic/static_caching.php` to reflect this change.
 - Automatically add `w-full h-full` when calling in `resources/views/components/_picture.antlers.html` using `cover="true"`.
+- Add default asset container to the bard field in `resources/fieldsets/article.yaml`.
 - Updated dependencies.
 
 ## 2.1.1 (2021-07-29)
