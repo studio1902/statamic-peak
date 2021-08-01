@@ -47,7 +47,7 @@ fields:
             -
               import: pull_quote
         table:
-          display: 'Table'
+          display: Table
           fields:
             -
               import: table
@@ -56,3 +56,6 @@ fields:
           fields:
             -
               import: video
+      container: assets
+      enable_input_rules: true
+      enable_paste_rules: true
