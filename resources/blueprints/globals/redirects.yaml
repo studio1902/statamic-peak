@@ -22,7 +22,7 @@ sections:
                 listable: hidden
                 placeholder: /old-url
                 antlers: false
-                width: 50
+                width: 33
                 validate:
                   - required
             -
@@ -31,6 +31,7 @@ sections:
               config:
                 display: 'New URL'
                 instructions: 'Select the new URL'
+                width: 33
             -
               handle: response
               field:
@@ -49,6 +50,7 @@ sections:
                 icon: select
                 instructions: 'The HTTP response code'
                 listable: hidden
+                width: 33
           mode: table
           reorderable: true
           display: Redirects

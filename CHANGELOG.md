@@ -7,6 +7,9 @@
 - Add the new Peak branding to the default templates, pages and e-mails.
 - Add some starter content to explain what Peak can do.
 
+### What's improved
+- Set widths to fields in the redirect grid in `resources/blueprints/globals/redirects.yaml`.
+
 ## 2.2 (Unreleased)
 
 ### What's improved
