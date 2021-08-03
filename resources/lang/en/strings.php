@@ -38,6 +38,7 @@ return [
     // Other
     'dark_mode_on'                      => 'Enable dark mode',
     'dark_mode_off'                     => 'Disable dark mode',
+    'no_script'                         => 'This website requires Javascript for some parts to function propertly. Your experience may vary.',
 
     // Pagination
     'next'                              => 'next',

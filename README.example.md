@@ -58,7 +58,7 @@ php{SITE_PHP_VERSION} artisan route:cache
 php{SITE_PHP_VERSION} artisan statamic:stache:warm
 php{SITE_PHP_VERSION} artisan statamic:search:update --all
 php{SITE_PHP_VERSION} artisan statamic:static:clear
-php{SITE_PHP_VERSION} artisan statamic:peak:warm
+php{SITE_PHP_VERSION} artisan statamic:static:warm
 php{SITE_PHP_VERSION} artisan statamic:assets:generate-presets
 
 {RELOAD_PHP_FPM}
@@ -86,7 +86,7 @@ $FORGE_PHP artisan route:cache
 $FORGE_PHP artisan statamic:stache:warm
 $FORGE_PHP artisan statamic:search:update --all
 $FORGE_PHP artisan statamic:static:clear
-$FORGE_PHP artisan statamic:peak:warm
+$FORGE_PHP artisan statamic:static:warm
 $FORGE_PHP artisan statamic:assets:generate-presets --queue
 
 ( flock -w 10 9 || exit 1
