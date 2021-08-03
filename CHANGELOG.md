@@ -1,6 +1,6 @@
 # Release Notes
 
-## 2.2 (2021-0803)
+## 2.2 (2021-08-03)
 
 ### What's improved
 - Clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
