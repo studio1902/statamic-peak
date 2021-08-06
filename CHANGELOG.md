@@ -10,6 +10,7 @@
 ### What's improved
 - Set widths to fields in the redirect grid in `resources/blueprints/globals/redirects.yaml`.
 - Update `README.example.md` with zero downtime deployment `{CLEAR_NEW_RELEASE}` command.
+- Change `font-black` to `font-bold` in `resources/views/typography/_h2.antlers.html` and `resources/views/typography/_h3.antlers.html`.
 
 ## 2.2 (Unreleased)
 
