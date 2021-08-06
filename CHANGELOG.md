@@ -9,6 +9,7 @@
 
 ### What's improved
 - Set widths to fields in the redirect grid in `resources/blueprints/globals/redirects.yaml`.
+- Update `README.example.md` with zero downtime deployment `{CLEAR_NEW_RELEASE}` command.
 
 ## 2.2 (Unreleased)
 
