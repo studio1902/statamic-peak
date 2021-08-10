@@ -27,7 +27,7 @@
             <div class="mb-4">
                 {{ if title }}
                     <span id="{{ title | slugify }}">
-                        {{ partial src="typography/h2" class="mb-2" :content="title" }}
+                        {{ partial:typography/h2 class="mb-2" :content="title" }}
                     </span>
                 {{ /if }}
                 {{ if text }}
