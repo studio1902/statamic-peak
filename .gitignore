@@ -16,8 +16,6 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 # Uncomment the following lines if you build assets on your server (recommended):
-# /public/js/site.js
-# /public/js/site.js.map
-# /public/js/site.js.LICENSE.txt
-# /public/mix-manifest.json
+# /public/js/
+# /public/css/
 # /public/mix-manifest.json
