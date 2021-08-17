@@ -13,10 +13,10 @@
 - Update `README.example.md` with zero downtime deployment `{CLEAR_NEW_RELEASE}` command.
 - Change `font-black` to `font-bold` in `resources/views/typography/_h2.antlers.html` and `resources/views/typography/_h3.antlers.html`.
 
-## 2.2 (Unreleased)
+## 2.2 (2021-08-03)
 
 ### What's improved
-- Now Alpine's '$persist' plugin got a nice bug fix we can clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
+- Clean up JS logic in `resources/views/components/_cookie_banner.antlers.html`.
 - Add fallback-description to social-media image partial `resources/views/components/_social_image.antlers.html`. Thanks [Goldnead](https://github.com/goldnead).
 - Added a no-script explainer text to `resources/views/snippets/_noscript.antlers.html` and `resources/lang/en/strings.php`.
 - Removed `peak:warm` command (`app/Console/Commands/WarmCommand.php`) as this is now built into Statamic. Also updated `app/Console/Kernel.php`, `README.example.md` and `config/statamic/static_caching.php` to reflect this change.
