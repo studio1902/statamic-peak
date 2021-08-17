@@ -10,6 +10,7 @@ export_paths:
   - app/Providers/EventServiceProvider.php
   - app/Tags/MountUrl.php
   - app/Tags/ScopeValue.php
+  - CHANGELOG.md
   - content
   - config/filesystems.php
   - config/statamic/assets.php
