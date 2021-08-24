@@ -25,7 +25,6 @@ export_paths:
   - public/assets
   - public/css
   - public/favicons
-  - public/img
   - public/js
   - public/social_images
   - public/visuals

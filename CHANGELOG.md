@@ -1,10 +1,5 @@
 # Release Notes
 
-## 3.0.1 (2021-08-24)
-
-### What's improved
-- Remove `CHANGELOG.md` from `.gitattributes` to prevent install error.
-
 ## 3.0 (2021-08-24)
 
 ### What's new
