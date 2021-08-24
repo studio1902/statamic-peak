@@ -10,22 +10,11 @@ Maintaining Peak demands a lot of my time and it probably saves you a lot. Your 
 
 [Read the docs](https://peak.studio1902.nl)
 
-### Extendible page builder and long form content with sets
 ![Extendible page builder and long form content with sets.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-01.png)
-
-### Generate custom social images and browser appearance
 ![Generate custom social images and browser appearance configuration and generate favicons.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-02.png)
-
-### Professional SEO, per entry and globally.
 ![Professional SEO, per entry and globally.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-03.png)
-
-### Configure trackers and add a GPRD compliant cookie banner
 ![Configure trackers, add a GPDR compliant cookie banner.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-04.png)
-
-### Social media integration and 301/302 redirects
 ![Social media integration and 301/302 redirects.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-05.png)
-
-### A lot more additional bottles of oxygen
 ![And a lot more additional bottles of oxygen.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-06.png)
 
 <!-- statamic:hide -->
