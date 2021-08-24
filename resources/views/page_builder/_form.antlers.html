@@ -6,7 +6,7 @@
 
 <section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
     <div class="md:col-start-3 md:col-span-8">
-        {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        {{ partial:typography/h1 as="h2" color="text-primary" class="mb-8" :content="block:title" }}
         {{ partial:typography/paragraph :content="block:text" }}
 
         {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}

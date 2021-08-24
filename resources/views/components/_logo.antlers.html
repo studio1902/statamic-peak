@@ -3,6 +3,10 @@
 	@desc The logo component with a `width` attribute.
 #}}
 
-<a aria-label="Logo {{ config:app:name }}" href="{{ site:url }}">
-    <img src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg" width="{{ width }}" alt="{{ config:app:name }}"/>
+<a
+	class="hover:scale-125 hover:rotate-2 transition-transform"
+	aria-label="Logo {{ config:app:name }}"
+	href="{{ site:url }}"
+>
+    <img src="/visuals/statamic-peak-logo.svg" width="{{ width }}" alt="{{ config:app:name }}"/>
 </a>
