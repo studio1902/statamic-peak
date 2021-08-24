@@ -1,5 +1,18 @@
 # Release Notes
 
+## 3.0 (Unreleased)
+
+### What's new
+- Installing Peak now uses the new Starter Kit functionality in Peak. [Check the docs](https://peak.studio1902.nl/getting-started/installation.html).
+- Add the new Peak branding to the default templates, pages and e-mails.
+- Add some starter content to explain what Peak can do.
+
+### What's improved
+- Use the Glide tag in `resources/views/snippets/_background_image.antlers.html` so you can use either an asset or a hard coded image. E.g: `{{ partial:snippets/background_image image="visuals/some-image.jpg" selector="footer" }}`.
+- Set widths to fields in the redirect grid in `resources/blueprints/globals/redirects.yaml`.
+- Update `README.example.md` with zero downtime deployment `{CLEAR_NEW_RELEASE}` command.
+- Change `font-black` to `font-bold` in `resources/views/typography/_h2.antlers.html` and `resources/views/typography/_h3.antlers.html`.
+
 ## 2.2 (2021-08-03)
 
 ### What's improved

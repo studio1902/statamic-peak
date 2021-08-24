@@ -15,4 +15,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.DS_Store
+# Uncomment the following lines if you build assets on your server (recommended):
+# /public/js/
+# /public/css/
+# /public/mix-manifest.json
