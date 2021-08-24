@@ -1,6 +1,6 @@
 # Release Notes
 
-## 3.0 (Unreleased)
+## 3.0 (2021-08-24)
 
 ### What's new
 - Installing Peak now uses the new Starter Kit functionality in Peak. [Check the docs](https://peak.studio1902.nl/getting-started/installation.html).
