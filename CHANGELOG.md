@@ -1,5 +1,13 @@
 # Release Notes
 
+## 3.1 (Unreleased)
+
+### What's new
+- Add SEO global option to add content to the page title on a per collection basis in: `resources/views/snippets/_seo.antlers.html`, and `resources/blueprints/globals/seo.yaml`.
+
+### What's improved
+- Add `strip_tags` modifier in `resources/views/snippets/_fallback_description.antlers.html` when fallback is set to `field`.
+
 ## 3.0 (2021-08-24)
 
 ### What's new
