@@ -6,7 +6,7 @@
 {{ seo:collection_defaults where="collection:{collection}" }}
     {{ if fallback == 'field' }}
         {{ scope_value :var="field_handle" as="field_value" }}
-            {{ field_value | trim | truncate:157:... }}
+            {{ field_value | strip_tags | trim | truncate:157:... }}
         {{ /scope_value }}
     {{ elseif fallback == 'page_builder' }}
         {{ page_builder limit="1" }}

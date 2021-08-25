@@ -6,7 +6,7 @@ sections:
         handle: section_title
         field:
           type: section
-          instructions: 'The website title'
+          instructions: 'Website and page titles'
           display: Title
       -
         handle: title_separator
@@ -40,6 +40,61 @@ sections:
           display: 'Website title'
           instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
           width: 66
+      -
+        handle: change_page_title
+        field:
+          fields:
+            -
+              handle: collection
+              field:
+                max_items: 1
+                mode: select
+                display: Collection
+                type: collections
+                icon: collections
+                instructions: 'The collection you want to change the title for.'
+                width: 33
+                listable: hidden
+            -
+              handle: fallback
+              field:
+                options:
+                  custom_text: 'Custom text'
+                  collection_title: 'The collection title'
+                multiple: false
+                max_items: 1
+                clearable: false
+                searchable: false
+                taggable: false
+                push_tags: false
+                cast_booleans: false
+                display: Fallback
+                type: select
+                icon: select
+                instructions: 'The fallback type.'
+                width: 33
+                listable: hidden
+            -
+              handle: custom_text
+              field:
+                input_type: text
+                antlers: false
+                display: 'Text'
+                type: text
+                icon: text
+                instructions: 'The custom text.'
+                width: 33
+                listable: hidden
+                if:
+                  fallback: 'equals custom_text'
+          mode: table
+          add_row: 'Add collection default'
+          reorderable: true
+          type: grid
+          icon: grid
+          display: 'Change collection title'
+          instructions: 'Select collections where you want to add something to be part of the page title. For example: _Entry title - **Collection title** - Site title_.'
+          listable: hidden
       -
         handle: section_description
         field:
