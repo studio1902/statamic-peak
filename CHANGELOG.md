@@ -1,6 +1,11 @@
 # Release Notes
 
-## 3.1 (Unreleased)
+## 3.1.1 (2021-08-26)
+
+### What's improved
+- Grant editors the ability to rename and move assets in `resources/users/roles.yaml` since 3.2 automagically updates all asset references. Lovely!
+
+## 3.1 (2021-08-25)
 
 ### What's new
 - Add SEO global option to add content to the page title on a per collection basis in: `resources/views/snippets/_seo.antlers.html`, and `resources/blueprints/globals/seo.yaml`.
