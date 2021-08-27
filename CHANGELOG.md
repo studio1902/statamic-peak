@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### What's new
+- When used render form field instructions in `resources/views/snippets/_form_fields.antlers.html`.
+
 ### What's improved
 - Clean up `resources/views/components/_notification.antlers.html` by using Antlers conditional variable fallbacks.
 
