@@ -12,7 +12,15 @@
         {{ width == '75' ?= 'md:col-span-9' }}
         {{ width == '100' ?= 'md:col-span-12' }}"
     >
-        <label class="font-bold" for="{{ handle }}">{{ trans key="{display}" }} {{ if validate | contains:required }}<sup class="text-yellow-400">*</sup>{{ /if }}</label>
+        <label class="font-bold" for="{{ handle }}">
+            {{ trans key="{display}" }}
+            {{ if validate | contains:required }}
+                <sup class="text-yellow-400">*</sup>
+            {{ /if }}
+            {{ if instructions }}
+                <p class="font-normal text-sm my-1">{{ instructions }}</p>
+            {{ /if }}
+        </label>
         {{# Load notification when there is a validation error with the name field. #}}
         <template x-if="errors.{{ handle }}">
             {{ partial src="components/notification" type="error" attribute="x-text='errors.{handle}'" }}
