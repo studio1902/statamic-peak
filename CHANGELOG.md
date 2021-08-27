@@ -1,9 +1,9 @@
 # Release Notes
 
-## Unreleased
+## 3.1.2 (2021-08-27)
 
 ### What's new
-- When used render form field instructions in `resources/views/snippets/_form_fields.antlers.html`.
+- Render form field instructions when they are being used in `resources/views/snippets/_form_fields.antlers.html`.
 
 ### What's improved
 - Clean up `resources/views/components/_notification.antlers.html` by using Antlers conditional variable fallbacks.
