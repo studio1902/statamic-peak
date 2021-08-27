@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Clean up `resources/views/components/_notification.antlers.html` by using Antlers conditional variable fallbacks.
+
 ## 3.1.1 (2021-08-26)
 
 ### What's improved
