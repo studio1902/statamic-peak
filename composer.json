@@ -1,5 +1,5 @@
 {
-    "name": "my-vendor-name/statamic-peak",
+    "name": "studio1902/statamic-peak",
     "extra": {
         "statamic": {
             "name": "Statamic Peak",
