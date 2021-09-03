@@ -156,6 +156,14 @@ sections:
           icon: grid
           instructions: 'Set fallback meta descriptions for each collection.'
           listable: hidden
+      -
+        handle: seo_description_last_resort
+        field: common.text_plain
+        config:
+          listable: hidden
+          display: 'Meta description last resort'
+          character_limit: '160'
+          instructions: 'This default fallback meta description for all entries. Max 160 characters.'
   json-ld:
     display: JSON-ld
     fields:
