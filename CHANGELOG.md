@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.2 (2021-09-03)
+
+### What's new
+- Add a last resort meta description field in `resources/views/snippets/_seo.antlers.html` and `resources/blueprints/globals/seo.yaml`. Thanks David!
+
 ## 3.1.2 (2021-08-27)
 
 ### What's new

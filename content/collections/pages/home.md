@@ -78,7 +78,7 @@ page_builder:
         target_blank: true
         link_type: url
         entry: null
-        url: 'https://peak.studio1902.nl/features/assets.html'
+        url: 'https://peak.studio1902.nl/'
         email: null
         tel: null
         asset: null
