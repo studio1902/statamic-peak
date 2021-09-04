@@ -24,8 +24,6 @@
     <meta name="description" content="{{ seo_description }}">
 {{ elseif seo:collection_defaults }}
     <meta name="description" content="{{ partial:snippets/fallback_description }}">
-{{ elseif seo:seo_description_last_resort }}
-    <meta name="description" content="{{ seo:seo_description_last_resort }}">
 {{ /if }}
 
 {{# No index and no follow #}}

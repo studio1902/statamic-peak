@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.3 (2021-09-04)
+
+### What's new
+- Ok that previous version simply wasn’t finished. The last resort wouldn’t even dive into OG tags. Can you imagine? Now it does. But all in the collection grid. You might have to copy and paste stuff one or two times, but the wild fallback cascade became kind of a last resort on itself anyway. This is cleaner. Thanks again Mountain Watcher David. Updated files: `resources/views/snippets/_seo.antlers.html`, `resources/views/snippets/_fallback_description.antlers.html` and `resources/blueprints/globals/seo.yaml`.
+
 ## 3.2 (2021-09-03)
 
 ### What's new

@@ -79,7 +79,7 @@ sections:
               field:
                 input_type: text
                 antlers: false
-                display: 'Text'
+                display: Text
                 type: text
                 icon: text
                 instructions: 'The custom text.'
@@ -121,6 +121,7 @@ sections:
               field:
                 options:
                   field: 'Custom field'
+                  custom_text: 'Custom text'
                   page_builder: 'First text in page builder'
                 multiple: false
                 max_items: 1
@@ -148,7 +149,20 @@ sections:
                 listable: hidden
                 if:
                   fallback: 'equals field'
-          mode: table
+            -
+              handle: custom_text
+              field:
+                character_limit: '160'
+                antlers: false
+                display: 'Custom text'
+                type: textarea
+                icon: textarea
+                instructions: 'The custom text. Max 160 characters.'
+                width: 33
+                listable: hidden
+                if:
+                  fallback: 'equals custom_text'
+          mode: stacked
           add_row: 'Add collection default'
           reorderable: true
           display: 'Collection defaults'
@@ -156,14 +170,6 @@ sections:
           icon: grid
           instructions: 'Set fallback meta descriptions for each collection.'
           listable: hidden
-      -
-        handle: seo_description_last_resort
-        field: common.text_plain
-        config:
-          listable: hidden
-          display: 'Meta description last resort'
-          character_limit: '160'
-          instructions: 'This default fallback meta description for all entries. Max 160 characters.'
   json-ld:
     display: JSON-ld
     fields:
