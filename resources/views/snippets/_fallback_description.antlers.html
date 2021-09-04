@@ -8,6 +8,8 @@
         {{ scope_value :var="field_handle" as="field_value" }}
             {{ field_value | strip_tags | trim | truncate:157:... }}
         {{ /scope_value }}
+    {{ elseif fallback == 'custom_text' }}
+        {{ custom_text }}
     {{ elseif fallback == 'page_builder' }}
         {{ page_builder limit="1" }}
             {{ if article }}
