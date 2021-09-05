@@ -1,7 +1,4 @@
 /node_modules
-/docs/node_modules
-/docs/docs/.vuepress/.cache
-/docs/docs/.vuepress/.temp
 /public/hot
 /public/storage
 /public/vendor/statamic
