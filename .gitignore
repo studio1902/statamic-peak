@@ -1,4 +1,5 @@
 /node_modules
+/docs/node_modules
 /public/hot
 /public/storage
 /public/vendor/statamic
