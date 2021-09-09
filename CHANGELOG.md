@@ -1,5 +1,16 @@
 # Release Notes
 
+## 3.4 (2021-09-09)
+
+### What's new
+- Add `x-trap` to trap focus in `resources/views/navigation/_main.antlers.html`. Also changed: `resources/site.js` and `package.json`.
+
+### What's improved
+- Update dependencies.
+
+### What's removed
+- Remove unreliable backdrop blur variant in `tailwind.config.peak.js`.
+
 ## 3.3 (2021-09-04)
 
 ### What's new
