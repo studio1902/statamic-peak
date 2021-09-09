@@ -195,17 +195,5 @@ module.exports = {
       }
       addUtilities(newUtilities)
     }),
-
-    // Custom variant for supports backdrop blur.
-    plugin(function({ addVariant, e, postcss }) {
-      addVariant('supports-backdrop-blur', ({ container, separator }) => {
-        const supportsRule = postcss.atRule({ name: 'supports', params: '(backdrop-filter: blur(24px))' })
-        supportsRule.append(container.nodes)
-        container.append(supportsRule)
-        supportsRule.walkRules(rule => {
-          rule.selector = `.${e(`supports-backdrop-blur${separator}${rule.selector.slice(1)}`)}`
-        })
-      })
-    }),
   ]
 }
