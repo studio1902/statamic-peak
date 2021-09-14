@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.4.1 (2021-09-09)
+
+### What's fixed
+- Added missing `config/statamic/system.php` to the kit. It was missing since 3.0 and contains the options to enable cache tags on a per environment basis.
+
 ## 3.4 (2021-09-09)
 
 ### What's new
