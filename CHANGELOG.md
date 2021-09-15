@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.4.1 (2021-09-15)
+
+### What's fixed
+- Propertly include `x-trap`.
+
 ## 3.4 (2021-09-09)
 
 ### What's new

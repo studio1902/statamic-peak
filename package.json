@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "@alpinejs/persist": "^3.2.3",
+    "@alpinejs/trap": "^3.3.3",
     "alpinejs": "^3.2.3",
     "focus-visible": "^5.2.0"
   },
