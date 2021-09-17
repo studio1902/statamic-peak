@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.4.2 (2021-09-17)
+
+### What's improved
+- Make the footer sticky. Thanks [Daniel](https://github.com/klickreflex).
+
 ## 3.4.1 (2021-09-15)
 
 ### What's fixed
