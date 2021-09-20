@@ -29,11 +29,7 @@
                         {{ glide:url preset='xl' }} 1440w,
                         {{ glide:url preset='2xl' }} 1680w"
                     sizes="{{ sizes }}"
-                    {{ if extension == 'png' }}
-                        type="image/png"
-                    {{ else }}
-                        type="image/jpeg"
-                    {{ /if }}
+                    type="{{ image.mime_type }}"
                 >
                 <img
                     {{ if cover }}
