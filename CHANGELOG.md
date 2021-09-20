@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Use `mime_type` data from the actual image in `resources/views/components/_picture.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
+
 ## 3.4.2 (2021-09-17)
 
 ### What's improved
