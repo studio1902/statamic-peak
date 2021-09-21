@@ -7,14 +7,14 @@
 {{ if buttons }}
     {{ if type == 'buttons' }}
         {{# Add a size utility and use different styling when called as a Bard set. #}}
-        <div class="size-md inline-flex justify-start items-center flex-wrap space-x-4">
+        <div class="size-md flex flex-wrap gap-3">
             {{ buttons }}
                 {{ partial:components/button }}
             {{ /buttons }}
         </div>
     {{ else }}
         {{# The styling when called from any other partial or template. #}}
-        <div class="inline-flex flex-col md:flex-row justify-start md:items-center flex-wrap space-y-8 md:space-y-0 md:space-x-4">
+        <div class="flex flex-wrap gap-3 {{ class }}">
             {{ buttons }}
                 {{ partial:components/button :inverted="inverted" }}
             {{ /buttons }}

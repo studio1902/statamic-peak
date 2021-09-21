@@ -1,10 +1,11 @@
 # Release Notes
 
-## Unreleased
+## 3.4.3 (2021-09-21)
 
 ### What's improved
 - Use `mime_type` data from the actual image in `resources/views/components/_picture.antlers.html`. Thanks [Daniel](https://github.com/klickreflex).
 - Rename fields for Change Collection Title in `resources/blueprints/globals/seo.yaml` and `statamic-peak/resources/views/snippets/_seo.antlers.html`.
+- Improve `resources/views/components/_buttons.antlers.html` with flex and flex gap.
 
 ## 3.4.2 (2021-09-17)
 
