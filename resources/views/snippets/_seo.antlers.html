@@ -9,9 +9,9 @@
     {{ seo_title ? seo_title : title }}
     {{ seo:title_separator ? seo:title_separator : " &#124; " }}
     {{ seo:change_page_title where="collection:{collection}" }}
-        {{ if what_to_add == 'collection_title' }}
+        {{ if fallback == 'collection_title' }}
             {{ collection:title }}
-        {{ elseif what_to_add == 'custom_text' }}
+        {{ elseif fallback == 'custom_text' }}
             {{ custom_text }}
         {{ /if }}
         {{ seo:title_separator ? seo:title_separator : " &#124; " }}
@@ -27,7 +27,11 @@
 {{ /if }}
 
 {{# No index and no follow #}}
-{{ if environment == 'production' }}
+{{ if
+    (environment == 'local' && !seo:noindex_local) or
+    (environment == 'staging' && !seo:noindex_staging) or
+    (environment == 'production' && !seo:noindex_production)
+}}
     {{ if seo_noindex & seo_nofollow }}
         <meta name="robots" content="noindex, nofollow">
     {{ elseif seo_nofollow }}
@@ -164,7 +168,11 @@
 {{ /if }}
 
 {{# Trackers #}}
-{{ if environment == 'production' }}
+{{ if
+    (environment == 'local' && !!seo:trackers_local) or
+    (environment == 'staging' && !!seo:trackers_staging) or
+    (environment == 'production' && !!seo:trackers_production)
+}}
     {{ if seo:tracker_type == 'gtm' }}
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ seo:google_tag_manager }}');function gtag(){dataLayer.push(arguments);}</script>
     {{ elseif seo:tracker_type == 'gtag' }}

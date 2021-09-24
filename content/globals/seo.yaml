@@ -1,10 +1,16 @@
 title: SEO
 data:
+  noindex_local: true
+  noindex_staging: true
+  noindex_production: false
   json_ld_type: none
   breadcrumbs: false
   use_social_image_generation: false
   sitemap_collections:
     - pages
+  trackers_local: false
+  trackers_staging: false
+  trackers_production: true
   use_google_site_verification: false
   use_fathom: false
   use_cloudflare_web_analytics: false
