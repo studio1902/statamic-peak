@@ -11,27 +11,27 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
-    "@alpinejs/persist": "^3.2.3",
-    "@alpinejs/trap": "^3.3.3",
-    "alpinejs": "^3.2.3",
+    "@alpinejs/persist": "^3.4.1",
+    "@alpinejs/trap": "^3.4.1",
+    "alpinejs": "^3.4.1",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.5",
     "browser-sync": "^2.27.5",
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^7.0.3",
     "glob-all": "^3.2.1",
-    "laravel-mix": "^6.0.27",
-    "postcss": "^8.3.6",
-    "postcss-focus-visible": "^5.0.0",
+    "laravel-mix": "^6.0.31",
+    "postcss": "^8.3.7",
+    "postcss-focus-visible": "^6.0.1",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.6",
     "resolve-url-loader": "^4.0.0",
-    "tailwindcss": "^2.2.7",
+    "tailwindcss": "^2.2.15",
     "vue-template-compiler": "^2.6.14"
   }
 }
