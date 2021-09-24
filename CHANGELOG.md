@@ -1,5 +1,14 @@
 # Release Notes
 
+## 3.5 (2021-09-24)
+
+### What's new
+- Toggles to set on which environments Peak should auto-add noindex/nofollow, trackers and the cookie banner: `resources/blueprints/globals/seo.yaml` and `resources/views/snippets/_seo.antlers.html`.
+
+### What's improved
+- Update dependencies.
+- Remove whitespace from `resources/views/default.antlers.html`. Thanks [Flemming](https://github.com/flemssound).
+
 ## 3.4.3 (2021-09-21)
 
 ### What's improved
