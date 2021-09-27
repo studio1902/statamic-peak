@@ -68,7 +68,7 @@ sections:
                 taggable: false
                 push_tags: false
                 cast_booleans: false
-                display: What to add
+                display: 'What to add'
                 type: select
                 icon: select
                 instructions: 'What to add.'
@@ -100,14 +100,14 @@ sections:
         field:
           type: section
           instructions: 'When to noindex and nofollow by default.'
-          display: 'Environments'
+          display: Environments
       -
         handle: noindex_local
         field:
           type: toggle
           instructions: 'Add noindex and nofollow tags on the local environment automatically.'
           listable: false
-          display: 'Local'
+          display: Local
           width: 33
       -
         handle: noindex_staging
@@ -115,7 +115,7 @@ sections:
           type: toggle
           instructions: 'Add noindex and nofollow tags on the staging environment automatically.'
           listable: false
-          display: 'Staging'
+          display: Staging
           width: 33
       -
         handle: noindex_production
@@ -123,7 +123,7 @@ sections:
           type: toggle
           instructions: 'Add noindex and nofollow tags on the production environment automatically.'
           listable: false
-          display: 'Production'
+          display: Production
           width: 33
       -
         handle: section_description
@@ -200,6 +200,23 @@ sections:
           icon: grid
           instructions: 'Set fallback meta descriptions for each collection.'
           listable: hidden
+      -
+        handle: section_hreflang
+        field:
+          type: section
+          instructions: 'Set for which sites in your multisite a hreflang tag should be generated.'
+          display: Hreflang
+      -
+        handle: hreflang_sites
+        field:
+          mode: select
+          display: 'Hreflang sites'
+          type: sites
+          icon: sites
+          instructions: 'Auto generate hreflang tags for the following sites.'
+          listable: hidden
+          instructions_position: above
+          width: 50
   json-ld:
     display: JSON-ld
     fields:
@@ -380,14 +397,14 @@ sections:
         field:
           type: section
           instructions: 'When to render tracker tags and the cookie banner.'
-          display: 'Environments'
+          display: Environments
       -
         handle: trackers_local
         field:
           type: toggle
           instructions: 'Render tracker tags on the local environment.'
           listable: false
-          display: 'Local'
+          display: Local
           width: 33
       -
         handle: trackers_staging
@@ -395,7 +412,7 @@ sections:
           type: toggle
           instructions: 'Render tracker tags on the staging environment.'
           listable: false
-          display: 'Staging'
+          display: Staging
           width: 33
       -
         handle: trackers_production
@@ -403,7 +420,7 @@ sections:
           type: toggle
           instructions: 'Render tracker tags on the production environment.'
           listable: false
-          display: 'Production'
+          display: Production
           width: 33
       -
         handle: section_verification
