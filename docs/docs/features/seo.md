@@ -5,7 +5,7 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 ## SEO features
 * Page title.
 * Website title and seperator.
-* Meta description.
+* Meta description (and set global fallback options).
 * Canonical URL.
 * Open Graph data and image.
 * Default Open Graph image.
@@ -15,7 +15,7 @@ Peak includes full SEO support. It's easy to expand on since it's all built with
 * Customize the sitemap: which collections are included and per entry frequency and priority settings.
 * No-index for entries, also excludes from sitemap.
 * JSON-ld schema objects.
-* Hreflang tags automatically generated.
+* Hreflang tags automatically generated (for selected site locales).
 * Knowledge graph data (organization, person or custom).
 * JSON-ld breadcrumbs.
 * Trackers: Google Analytics, Google Tag Manager, Site Verification, Fathom or Cloudflare Web Analytics.
