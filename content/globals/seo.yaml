@@ -3,6 +3,8 @@ data:
   noindex_local: true
   noindex_staging: true
   noindex_production: false
+  hreflang_sites:
+    - default
   json_ld_type: none
   breadcrumbs: false
   use_social_image_generation: false

@@ -1,5 +1,14 @@
 # Release Notes
 
+## 3.6 (2021-09-27)
+
+### What's new
+- Set copyright year and name in a global in `resources/blueprints/globals/configuration.yaml` and `resources/views/layout/_footer.antlers.html`.
+- Define for which sites hreflang tags should be auto generated in `resources/blueprints/globals/seo.yaml` and `resources/views/snippets/_seo.antlers.html`.
+
+### What's improved
+- Rename default site to `English` in `config/statamic/sites.php`.
+
 ## 3.5 (2021-09-24)
 
 ### What's new

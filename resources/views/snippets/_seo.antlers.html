@@ -46,7 +46,9 @@
 {{# hreflang tags #}}
 {{ if not seo_noindex and seo_canonical_type == 'entry' and current_full_url === permalink }}
     {{ locales }}
-        <link rel="alternate" hreflang="{{ locale:full replace="_|-" }}" href="{{ permalink }}">
+        {{ seo:hreflang_sites where="{locale:handle}" limit="1" }}
+            <link rel="alternate" hreflang="{{ locale:full replace="_|-" }}" href="{{ permalink }}">
+        {{ /seo:hreflang_sites }}
     {{ /locales }}
 {{ /if }}
 
