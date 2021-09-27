@@ -81,7 +81,6 @@ module.exports = {
           },
         },
         'html': {
-            fontDisplay: 'swap',
             color: theme('colors.neutral.DEFAULT'),
             //--------------------------------------------------------------------------
             // Set sans, serif or mono stack with optional custom font as default.

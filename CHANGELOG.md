@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.6.1 (2021-09-27)
+
+### What's changed
+- Remove useless font swap rule from `tailwind.config.site.js`.
+
 ## 3.6 (2021-09-27)
 
 ### What's new
