@@ -16,5 +16,4 @@ Read up on the [Tailwind CSS Forms](https://github.com/tailwindlabs/tailwindcss-
 
 Peak ships with a few custom Tailwind CSS goodies:
 * `.break-decent`: uses `word-break: break-word`.
-* `supports-backdrop-blur:`: a variant to check if the browsers supports backdrop filters (backdrop blur). This way you can do condionally change a background opacity for example using `supports-backdrop-blur:bg-opacity-70`.
 * Style file upload form elements by default using your site's theme colors.
