@@ -10,13 +10,35 @@ sections:
           display: 'General configuration'
           instructions: 'Global site configuration options.'
       -
-        handle: html
+        handle: copyright_since
         field:
-          html: 'This is where you can add site specific configuration options like color options or globally used e-mail addresses.'
-          display: General configuration
-          type: html
-          icon: code
+          placeholder: '2020'
+          input_type: number
+          character_limit: 4
+          prepend: ©
+          antlers: false
+          default: '2020'
+          display: 'Copyright since'
+          instructions: 'The website will add ` - current_year ` if they differ.'
+          type: text
+          icon: text
+          width: 50
           listable: hidden
+          instructions_position: above
+          validate:
+            - required
+      -
+        handle: copyright_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Copyright name'
+          type: text
+          icon: text
+          instructions: 'Falls back to the applicaton name.'
+          width: 50
+          listable: hidden
+          instructions_position: above
   error_messages:
     display: 'Error messages'
     fields:
