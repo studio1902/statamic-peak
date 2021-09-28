@@ -30,7 +30,7 @@
 
 {{ if browser_appearance:use_favicons }}
     {{# SVG of any size, main icon #}}
-    <link rel="icon" href="{{ browser_appearance:svg }}">
+    <link rel="icon" href="{{ browser_appearance:svg }}" type="image/svg+xml">
     {{# Single color Safari icon, on transparent bg #}}
     <link rel="mask-icon" href="{{ browser_appearance:safari_mask_icon ?? browser_appearance:svg }}" color="{{ browser_appearance:safari_color }}">
     {{# iOS touch icons. 180x180 #}}
