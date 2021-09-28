@@ -1,9 +1,11 @@
 # Release Notes
 
-## Unreleased
+## 3.7.0 (2021-09-28)
 
 ### What's changed
+- Remove x-trap. It wasn't doing anything as there are no input elements in the main nav and it was booted wrong. Sorry: `package.json`, `resources/js/site.js`, `resources/views/navigation/_main.antlers.html`.
 - Add mime type to svg favicon. Thanks [Daniel](https://github.com/klickreflex).
+- Update dependencies.
 
 ## 3.6.1 (2021-09-27)
 

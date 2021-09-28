@@ -11,14 +11,13 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
-    "@alpinejs/persist": "^3.4.1",
-    "@alpinejs/trap": "^3.4.1",
-    "alpinejs": "^3.4.1",
+    "@alpinejs/persist": "^3.4.2",
+    "alpinejs": "^3.4.2",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.1",
-    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.6",
     "browser-sync": "^2.27.5",
