@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's changed
+- Add mime type to svg favicon. Thanks [Daniel](https://github.com/klickreflex).
+
 ## 3.6.1 (2021-09-27)
 
 ### What's changed
