@@ -1,5 +1,13 @@
 # Release Notes
 
+## 3.8.1 (2021-09-29)
+
+### What's changed
+- Split out mobile and desktop navigation into two partials in `resources/views/navigation/_main.antlers.html`, `resources/views/navigation/_main_desktop.antlers.html` and `resources/views/navigation/_main_mobile.antlers.html`.
+
+### What's fixed
+- Use correct field name (`what_to_add` instead of `fallback`) for collection titles on show pages in `resources/views/snippets/_seo.antlers.html`.
+
 ## 3.8.0 (2021-09-29)
 
 ### What's new
