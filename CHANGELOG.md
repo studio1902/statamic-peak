@@ -1,5 +1,12 @@
 # Release Notes
 
+## 3.8.0 (2021-09-29)
+
+### What's new
+- Hey, `x-trap` is back. Why? Because I continue screwing this up: `package.json`, `resources/js/site.js`, `resources/views/navigation/_main.antlers.html` are changed. All is fine now. I promise. Sort of. No I don't.
+- Added `x-collapse` to the mobile navigation: `package.json`, `resources/js/site.js`, `resources/views/navigation/_main.antlers.html`.
+- Updated the mobile nav layout in `resources/views/navigation/_main.antlers.html`.
+
 ## 3.7.0 (2021-09-28)
 
 ### What's changed
