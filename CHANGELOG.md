@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.9.0 (2021-09-30)
+
+### What's new
+- A `php please peak:add-block` command to generate all files needed for a fresh page builder block. You get a named fieldset, a named partial and the fieldset get's added with instructions to `resources/fieldsets/page_builder.yaml`. You can use all your saved time to learn about NFT's. Please don't though, it's stupid and bad for the environment. Go play with your kids.
+
 ## 3.8.1 (2021-09-29)
 
 ### What's changed
