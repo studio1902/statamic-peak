@@ -9,7 +9,9 @@ If the layout of a page is totally different - or you really want to - you can a
 | ![Page builder](/visuals/screenshots/page-builder.png) |
 
 ## Adding blocks
-Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) to the fieldset. In `resources/views/default.antlers.html` you can see the blocks being loaded. Antlers will look in the `resources/views/page_builder/` folder for partials with the handle of your block. Peak ships with the following blocks:
+Edit `resources/fieldsets/page_builder.yaml` to add blocks (preferably imports) to the fieldset. In `resources/views/default.antlers.html` you can see the blocks being loaded. Antlers will look in the `resources/views/page_builder/` folder for partials with the handle of your block. 
+
+Peak ships with the following blocks:
 
 * Article ([long form content](/features/bard.html))
 * Call to action (title, text and a button)
@@ -23,3 +25,5 @@ For example if you add a fieldset to the `page_builder.yaml` with the handle `ca
 ```html
 {{ block:field_name }}
 ```
+
+Alternatively you can use the generate block command in Peak. Run `php please peak:add-block` and follow the instrutions by filling in a name, a filename and a fieldset instruction. All the files needed will be generated and the block will be added to the `page_builder.yaml` file. 
