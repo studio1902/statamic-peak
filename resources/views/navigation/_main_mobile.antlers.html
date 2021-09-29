@@ -1,0 +1,73 @@
+<nav
+    x-data="{ mobileNavOpen: false }"
+    x-trap="mobileNavOpen"
+    x-effect="mobileNavOpen
+        ? document.body.classList.add('no-scroll')
+        : document.body.classList.remove('no-scroll')"
+    class="md:hidden"
+>
+    <button
+        @click.prevent="mobileNavOpen = !mobileNavOpen"
+        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold text-white mb-safe bg-primary"
+        aria-label="Toggle menu"
+        x-text="mobileNavOpen ? '{{ trans:strings.close }}' : '{{ trans:strings.menu }}'"
+    ></button>
+
+    <div
+        class="fixed inset-0 z-10 pt-8 px-8 pb-12 flex flex-col justify-end bg-white"
+        x-show="mobileNavOpen"
+        x-cloak
+    >
+        <ul class="flex flex-col py-2 space-y-8 overflow-auto">
+            {{ nav:main max_depth="2" include_home="true" }}
+                <li
+                    {{ if children }}
+                        x-data="{ mobileNavSubnavOpen: false }"
+                    {{ /if }}
+                    class="leading-none"
+                >
+                    <a
+                        class="w-full flex items-center space-x-1 font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
+                        {{ if children }}
+                            href="#"
+                            @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
+                            @click.outside="mobileNavSubnavOpen = false"
+                        {{ else }}
+                            href="{{ url }}"
+                        {{ /if }}
+                    >
+                        <span>{{ title }}</span>
+                        {{ if children }}
+                            <svg
+                                class="w-3 h-2 overflow-visible stroke-current text-neutral"
+                                :class="{ 'rotate-180': mobileNavSubnavOpen }"
+                                aria-hidden="true"
+                                stroke-width="20"
+                                viewBox="0 0 140 140"><path d="M135.625 42.648l-62.533 62.527a4.37 4.37 0 01-6.184 0L4.375 42.648" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            /></svg>
+                        {{ /if }}
+                    </a>
+                    {{ if children }}
+                        <ul
+                            x-show="mobileNavSubnavOpen"
+                            class="flex flex-col mt-6 space-y-6"
+                            :aria-expanded="mobileNavSubnavOpen"
+                            x-collapse
+                            x-cloak
+                        >
+                            {{ children }}
+                                <li>
+                                    <a
+                                        class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
+                                        href="{{ url }}">
+                                        {{ title }}
+                                    </a>
+                                </li>
+                            {{ /children }}
+                        </ul>
+                    {{ /if }}
+                </li>
+            {{ /nav:main }}
+        </ul>
+    </div>
+</nav>
