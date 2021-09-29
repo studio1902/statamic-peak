@@ -68,7 +68,7 @@ fields: []";
 #}}
 
 <section class=\"fluid-container grid md:grid-cols-12 gap-8\">
-   Get out on top!
+    {{ partial:typography/h3 content=\"🔧<br>$name\" class=\"md:col-span-12 text-center\" }}
 </section>
 ";
 

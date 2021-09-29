@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.9.1 (2021-09-29)
+
+### What's improved
+- The default generated block template is pimped up a little: `app/Console/Commands/AddBlock.php`.
+
 ## 3.9.0 (2021-09-29)
 
 ### What's new
