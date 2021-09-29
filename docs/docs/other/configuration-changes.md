@@ -5,7 +5,8 @@ Peak changes the default Statamic config. The following is different:
 | File | Default | Peak |
 | --- | --- | --- |
 | `.env.example` |  | Add more default Statamic and Redis settings by default.
-| `app/console/Kernel.php` |  | Add a schedule you can invoke via a cron to warm all caches.
+| `app/Console/Kernel.php` |  | Add a schedule you can invoke via a cron to warm all caches.
+| `app/Console/Commands/AddBlock.php` | | A command to generate all files needed to add a block to the [page builder](/features/page-builder.html#adding-blocks).
 | `app/Actions/GenerateSocialImages.php` |  | An action to [generate social images](/features/social-images-generation.html) for entries.
 | `app/Http/Controllers/DynamicToken.php` |  | New Controller for [forms](/features/forms.html) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
