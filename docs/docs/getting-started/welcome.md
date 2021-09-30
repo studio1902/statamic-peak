@@ -6,6 +6,9 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 Maintaining Peak demands a lot of my time and it probably saves you a lot. Your sponsoring would mean a great deal to me as it makes it much easier for me to maintain this project and keep improving it. [Sponsor me](https://github.com/sponsors/studio1902).
 
+### Live screencast on Peak
+<div class='embed-container'><iframe src='https://www.youtube.com/embed/79Ist1HrHoA' frameborder='0' allowfullscreen></iframe></div>
+
 ### Extendible page builder and long form content with sets
 ![Extendible page builder and long form content with sets.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-01.png)
 

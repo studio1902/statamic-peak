@@ -15,9 +15,14 @@
 <td>Add more default Statamic and Redis settings by default.</td>
 </tr>
 <tr>
-<td><code>app/console/Kernel.php</code></td>
+<td><code>app/Console/Kernel.php</code></td>
 <td></td>
 <td>Add a schedule you can invoke via a cron to warm all caches.</td>
+</tr>
+<tr>
+<td><code>app/Console/Commands/AddBlock.php</code></td>
+<td></td>
+<td>A command to generate all files needed to add a block to the <RouterLink to="/features/page-builder.html#adding-blocks">page builder</RouterLink>.</td>
 </tr>
 <tr>
 <td><code>app/Actions/GenerateSocialImages.php</code></td>
