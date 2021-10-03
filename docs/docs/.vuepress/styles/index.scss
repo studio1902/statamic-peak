@@ -1,3 +1,49 @@
+.button-group {
+    display: flex;
+    gap: .3rem;
+    margin-bottom: 2rem;
+
+    &--center {
+        justify-content: center;
+    }
+}
+
+.button {
+    border-radius: 3px;
+    border: 1px solid var(--c-border);
+    padding: 0.4rem 1.4rem;
+    font-size: .8rem;
+    color: var(--c-text);
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: var(--c-border);
+    }
+
+    &__icon {
+        width: .8rem;
+        height: .8rem;
+        fill: currentColor;
+
+        &--sponsor {
+            color: #E3508E;
+        }
+
+        &--github {
+            color: #3F3F46;
+        }
+
+        &--twitter {
+            color: #0CA5E9;
+        }
+    }
+
+}
+
 .navbar .site-name {
     display: none;
 }
