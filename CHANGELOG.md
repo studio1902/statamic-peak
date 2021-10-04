@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.9.2 (2021-10-04)
+
+### What's improved
+- Add unique # to social images filename to circumvent caching issues in `app/Jobs/GenerateSocialImagesJob.php`.
+
 ## 3.9.1 (2021-09-29)
 
 ### What's improved

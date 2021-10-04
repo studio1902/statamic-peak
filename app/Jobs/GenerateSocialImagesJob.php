@@ -39,9 +39,10 @@ class GenerateSocialImagesJob implements ShouldQueue
             $id = $item->id();
             $title = Str::of($item->get('title'))->slug('-');
             $app_url = config('app.url');
+            $unique = time();
 
             // Generate, save and set default og image.
-            $file = "{$title}-og.png";
+            $file = "{$title}-og-{$unique}.png";
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 630)
                 ->select('#og')
@@ -49,7 +50,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             $item->set('og_image', $file)->save();
 
             // Generate, save and set default twitter image.
-            $file = "{$title}-twitter.png";
+            $file = "{$title}-twitter-{$unique}.png";
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 600)
                 ->select('#twitter')
