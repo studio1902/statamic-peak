@@ -3,8 +3,10 @@
 ## Articles on Peak
 * [Peak on Laravel News](https://laravel-news.com/statamic-peak)
 
-## Made with Peak
+## Video's on Peak
+<div class='embed-container'><iframe src='https://www.youtube.com/embed/79Ist1HrHoA' frameborder='0' allowfullscreen></iframe></div>
 
+## Made with Peak
 This is a collection of sites made with Statamic using Peak:
 
 * [mam.org.mm](https://mam.org.mm) by [Studio 1902](https://studio1902.nl)

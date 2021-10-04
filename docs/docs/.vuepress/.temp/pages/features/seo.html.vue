@@ -1,10 +1,10 @@
 <template><h1 id="seo" tabindex="-1"><a class="header-anchor" href="#seo" aria-hidden="true">#</a> SEO</h1>
-<p>Peak includes full SEO support. It's easy to expand on since it's all built with native fields and templating. You can also easily replace it with a third party addon like <a href="https://statamic.com/addons/candour/aardvark-seo" target="_blank" rel="noopener noreferrer">Aardvark SEO<OutboundLink/></a> or a first party aeddon like <a href="https://statamic.com/addons/statamic/seo-pro" target="_blank" rel="noopener noreferrer">SEO Pro<OutboundLink/></a>. However this implementation is already pretty full featured.</p>
+<p>Peak includes full professional SEO support. It's easy to expand on since it's all built with native fields and templating.</p>
 <h2 id="seo-features" tabindex="-1"><a class="header-anchor" href="#seo-features" aria-hidden="true">#</a> SEO features</h2>
 <ul>
 <li>Page title.</li>
 <li>Website title and seperator.</li>
-<li>Meta description.</li>
+<li>Meta description (and set global fallback options).</li>
 <li>Canonical URL.</li>
 <li>Open Graph data and image.</li>
 <li>Default Open Graph image.</li>
@@ -14,7 +14,7 @@
 <li>Customize the sitemap: which collections are included and per entry frequency and priority settings.</li>
 <li>No-index for entries, also excludes from sitemap.</li>
 <li>JSON-ld schema objects.</li>
-<li>Hreflang tags automatically generated.</li>
+<li>Hreflang tags automatically generated (for selected site locales).</li>
 <li>Knowledge graph data (organization, person or custom).</li>
 <li>JSON-ld breadcrumbs.</li>
 <li>Trackers: Google Analytics, Google Tag Manager, Site Verification, Fathom or Cloudflare Web Analytics.</li>

@@ -22,7 +22,7 @@ See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-ta
 Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use
 
 ```html
-{{ partial:snippets/background_image image="YOUR_IMAGE" selector="SELECTOR_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}
+{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}
 ```
 The predefined sizes used in `resources/views/snippets/_background_image.antlers.html` are defined in `config/statamic/assets.php`.
 

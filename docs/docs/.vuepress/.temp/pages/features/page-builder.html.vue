@@ -14,7 +14,8 @@
 </tbody>
 </table>
 <h2 id="adding-blocks" tabindex="-1"><a class="header-anchor" href="#adding-blocks" aria-hidden="true">#</a> Adding blocks</h2>
-<p>Edit <code>resources/fieldsets/page_builder.yaml</code> to add blocks (preferably imports) to the fieldset. In <code>resources/views/default.antlers.html</code> you can see the blocks being loaded. Antlers will look in the <code>resources/views/page_builder/</code> folder for partials with the handle of your block. Peak ships with the following blocks:</p>
+<p>Edit <code>resources/fieldsets/page_builder.yaml</code> to add blocks (preferably imports) to the fieldset. In <code>resources/views/default.antlers.html</code> you can see the blocks being loaded. Antlers will look in the <code>resources/views/page_builder/</code> folder for partials with the handle of your block.</p>
+<p>Peak ships with the following blocks:</p>
 <ul>
 <li>Article (<RouterLink to="/features/bard.html">long form content</RouterLink>)</li>
 <li>Call to action (title, text and a button)</li>
@@ -27,4 +28,5 @@
 <p>Note: blocks are scoped under <code>block</code> to avoid collision with other fields. Make sure you reference variables in a block like this:</p>
 </blockquote>
 <div class="language-html ext-html line-numbers-mode"><pre v-pre class="language-html"><code>{{ block:field_name }}
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div></template>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>Alternatively you can use the generate block command in Peak. Run <code>php please peak:add-block</code> and follow the instrutions by filling in a name, a filename and a fieldset instruction. All the files needed will be generated and the block will be added to the <code>page_builder.yaml</code> file.</p>
+</template>
