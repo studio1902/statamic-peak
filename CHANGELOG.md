@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.9.3 (2021-10-05)
+
+### What's improved
+- Refactor `app/Console/Commands/AddBlock.php` and added `app/Console/Commands/stubs/block.html.stub` and `app/Console/Commands/stubs/fieldset.yaml.stub`.
+
 ## 3.9.2 (2021-10-04)
 
 ### What's improved
