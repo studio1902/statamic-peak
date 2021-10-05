@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
 use Statamic\Support\Arr;
@@ -27,85 +28,118 @@ class AddBlock extends Command
     protected $description = "Add a page builder block.";
 
      /**
+     * The block name.
+     *
+     * @var string
+     */
+    protected $block_name = '';
+
+     /**
+     * The block filename.
+     *
+     * @var string
+     */
+    protected $filename = '';
+
+     /**
+     * The block instructions.
+     *
+     * @var string
+     */
+    protected $instructions = '';
+
+     /**
      * Execute the console command.
      *
      * @return bool|null
      */
     public function handle()
     {
-        // Ask block human readeable name.
-        $name = $this->ask('What should be the name for this block?');
+        $this->block_name = $this->ask('What should be the name for this block?');
+        $this->filename = $this->ask('What should be the filename for this block?');
+        $this->instructions = $this->ask('What should be the instructions for this block?');
 
-        // Ask for filename.
-        $filename = $this->ask('What should be the filename for this block?');
+        try {
+            $this->checkExistence('Fieldset', "resources/fieldsets/$this->filename.yaml");
+            $this->checkExistence('Partial', "resources/views/page_builder/_$this->filename.antlers.html");
 
-        // Check if yaml with filename already exists.
-        if (file::exists(base_path("resources/fieldsets/$filename.yaml"))) {
-            return $this->error("Fieldset 'resources/fieldsets/$filename.yaml' already exists.");
+            $this->createFieldset();
+            $this->createPartial();
+            $this->updatePageBuilder();
+        } catch (\Exception $e) {
+            return $this->error($e->getMessage());
         }
 
-        // Check if template with filename already exists.
-        if (file::exists(base_path("resources/views/page_builder/_$filename.antlers.html"))) {
-            return $this->error("Partial 'resources/views/page_builder/_$filename.antlers.html' already exists.");
+        $this->info("Peak page builder block '$this->block_name' added.");
+    }
+
+    /**
+     * Check if a file doesn't already exist.
+     *
+     * @return bool|null
+     */
+    protected function checkExistence($type, $path)
+    {
+        if (File::exists(base_path($path))) {
+            throw new \Exception("$type '$path' already exists.");
         }
+    }
 
-        // Ask for field instructions.
-        $instructions = $this->ask('What should be the instructions for this block?');
+    /**
+     * Create fieldset.
+     *
+     * @return bool|null
+     */
+    protected function createFieldset()
+    {
+        $stub = File::get(__DIR__.'/stubs/fieldset.yaml.stub');
+        $contents = Str::of($stub)
+            ->replace('{{ name }}', $this->block_name);
 
-        // Create fieldset.
-        $yaml =
-"title: $name
-fields: []";
+        File::put(base_path("resources/fieldsets/$this->filename.yaml"), $contents);
+    }
 
-        File::put(base_path("resources/fieldsets/$filename.yaml"), $yaml);
+    /**
+     * Create partial.
+     *
+     * @return bool|null
+     */
+    protected function createPartial()
+    {
+        $stub = File::get(__DIR__.'/stubs/block.html.stub');
+        $contents = Str::of($stub)
+            ->replace('{{ name }}', $this->block_name)
+            ->replace('{{ filename }}', $this->filename);
 
-        // Create partial.
-        $html =
-"{{#
-	@name $name
-	@desc The $name page builder block.
-    @set page.page_builder.$filename
-#}}
+        File::put(base_path("resources/views/page_builder/_$this->filename.antlers.html"), $contents);
+    }
 
-<section class=\"fluid-container grid md:grid-cols-12 gap-8\">
-    {{ partial:typography/h3 content=\"🔧<br>$name\" class=\"md:col-span-12 text-center\" }}
-</section>
-";
-
-        File::put(base_path("resources/views/page_builder/_$filename.antlers.html"), $html);
-
-        // Parse the page builder fieldset.
+    /**
+     * Update page_builder.yaml.
+     *
+     * @return bool|null
+     */
+    protected function updatePageBuilder()
+    {
         $fieldset = Yaml::parseFile(base_path('resources/fieldsets/page_builder.yaml'));
-
-        // Create an array for the new page builder block.
         $newSet = [
-            'display' => $name,
-            'instructions' => $instructions,
+            'display' => $this->block_name,
+            'instructions' => $this->instructions,
             'fields' => [
                 [
-                    'import' => $filename
+                    'import' => $this->filename
                 ]
             ]
         ];
 
-        // Get existing page builder blocks.
         $existingSets = Arr::get($fieldset, 'fields.0.field.sets');
-
-        // Add new block.
-        $existingSets[$filename] = $newSet;
-
-        // Order the blocks by alphabet.
+        $existingSets[$this->filename] = $newSet;
         $existingSets = collect($existingSets)->sortBy(function ($value, $key) {
             return $key;
         })->all();
 
-        // Merge the fieldset.
         Arr::set($fieldset, 'fields.0.field.sets', $existingSets);
 
-        // Convert the array to YAML and save the page builder fieldset.
         File::put(base_path('resources/fieldsets/page_builder.yaml'), Yaml::dump($fieldset, 99, 2));
-
-        // All done.
-        $this->info('Peak page builder block added.');
     }
 }
