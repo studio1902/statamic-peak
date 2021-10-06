@@ -1,0 +1,21 @@
+{{#
+	@name {{ collection_name }} index
+	@desc The {{ collection_name }} index template.
+#}}
+
+<main class="outer-grid">
+    <div class="fluid-container grid md:grid-cols-12 gap-12">
+        {{ collection:{{ handle }} sort="date:desc" paginate="true" limit="10" as="items" }}
+            {{ items }}
+                <div class="md:col-span-6">
+                    <a class="underline" href="{{ url }}">{{ title }}</a>
+                </div>
+            {{ /items }}
+            {{ partial:components/pagination class="md:col-span-12" }}
+        {{ /collection:{{ handle }} }}
+    </div>
+
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+</main>

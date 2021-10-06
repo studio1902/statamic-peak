@@ -110,6 +110,13 @@ class AddCollection extends Command
      */
     protected $mount = '';
 
+    /**
+     * Index template.
+     *
+     * @var bool
+     */
+    protected $index = true;
+
      /**
      * Execute the console command.
      *
@@ -134,12 +141,14 @@ class AddCollection extends Command
             $this->date_past = $this->ask('What should be the date behavior for entries in the past?', 'public');
             $this->date_future = $this->ask('What should be the date behavior for entries in the future?', 'private');
         }
-
-        // https://laravel.com/api/8.x/Illuminate/Console/Command.html#method_choice
+        $this->index = ($this->confirm('Generate and apply index template?', true)) ? true : false;
+        $this->show = ($this->confirm('Generate and apply show template?', true)) ? true : false;
 
         try {
             $this->createCollection();
             $this->createBlueprint();
+            if ($this->index) $this->createIndexTemplate();
+            if ($this->show) $this->createShowTemplate();
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
@@ -198,7 +207,7 @@ class AddCollection extends Command
             ->replace('{{ dated }}', ($this->dated) ? 'true' : 'false')
             ->replace('{{ date_past }}', $this->date_past)
             ->replace('{{ date_future }}', $this->date_future)
-            ->replace('{{ template }}', $this->template)
+            ->replace('{{ template }}', $this->show ? "{$this->filename}/show" : 'default' )
             ->replace('{{ mount }}', $this->mount);
 
         File::put(base_path("content/collections/{$this->filename}.yaml"), $contents);
@@ -230,25 +239,45 @@ class AddCollection extends Command
     }
 
     /**
-     * Create partial.
+     * Create index template.
      *
      * @return bool|null
      */
-    protected function createPartial()
+    protected function createIndexTemplate()
     {
-        $stub = File::get(__DIR__.'/stubs/block.html.stub');
-        $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->collection_name);
+        $this->checkExistence('Template', "resources/views/{$this->filename}/_index.antlers.html");
 
-        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), $contents);
+        $stub = File::get(__DIR__.'/stubs/index.antlers.html.stub');
+        $contents = Str::of($stub)
+            ->replace('{{ collection_name }}', $this->collection_name)
+            ->replace('{{ handle }}', $this->filename);
+
+        File::makeDirectory("resources/views/{$this->filename}");
+        File::put(base_path("resources/views/{$this->filename}/_index.antlers.html"), $contents);
+    }
+
+    /**
+     * Create index template.
+     *
+     * @return bool|null
+     */
+    protected function createShowTemplate()
+    {
+        $this->checkExistence('Template', "resources/views/{$this->filename}/_show.antlers.html");
+
+        $stub = File::get(__DIR__.'/stubs/show.antlers.html.stub');
+        $contents = Str::of($stub)
+            ->replace('{{ collection_name }}', $this->collection_name);
+
+        File::makeDirectory("resources/views/{$this->filename}");
+        File::put(base_path("resources/views/{$this->filename}/_show.antlers.html"), $contents);
     }
 }
 // 1. DONE Input: name handle route blueprint index show
 // 2. Collection.yaml generated from input variables
 // 3. DONE Mount collection, show list of pages
 // 4. DONE Add route with default ‘/{mount}/{slug}’
-// 5. Blueprint from default stub with section headers, page builder
-// 6. Generate index from stub
-// 7. Generate show from stub
-// 8. Generate pages index blueprint with hidden index template field
-// 9. Apply blueprint and template to mounted page
+// 5. DONE Blueprint from default stub with section headers, page builder
+// 6. DONE Generate index from stub
+// 7. DONE Generate show from stub
+// 9. Apply template to mounted page
