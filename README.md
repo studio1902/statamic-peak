@@ -26,7 +26,7 @@ Maintaining Peak demands a lot of my time and it probably saves you a lot. Your 
 ## Contributing
 Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect. Read the [Code of Conduct](https://github.com/studio1902/statamic-peak/blob/main/.github/CODE_OF_CONDUCT.md).
 
-Statamic is a mono repo. If you want to contribute make sure you change files the `/dev/` folder.
+Statamic Peak is a mono repo. If you want to contribute make sure you target files the `/dev/` folder and run your local install from this folder. When you use valet you can navigate to the folder and type: `valet link statamic-peak`. 
 
 ### Repo structure
 ```
