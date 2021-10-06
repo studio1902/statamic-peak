@@ -158,7 +158,7 @@ class AddCollection extends Command
 
         // $this->createPartial();
 
-        $this->info("Collection '{$this->name}' created.");
+        $this->info("Collection '{$this->collection_name}' created.");
     }
 
     /**
