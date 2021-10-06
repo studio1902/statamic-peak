@@ -1,0 +1,11 @@
+title: {{ collection_name }}
+route: '{{ route }}'
+layout: {{ layout }}
+template: {{ template }}
+revisions: {{ revisions }}
+date: {{ dated }}
+sort_dir: {{ sort_dir }}
+date_behavior:
+    past: {{ date_past }}
+    future: {{ date_future }}
+mount: {{ mount }}

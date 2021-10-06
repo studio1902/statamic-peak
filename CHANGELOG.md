@@ -1,5 +1,27 @@
 # Release Notes
 
+## 3.10.0 (2021-10-06)
+
+### What's new
+- A `php please peak:add-collection` command to generate all files needed for a brand new completely custom collection. You get a collection file, a collection blueprint (with all Peak goodies), and index page and a show page. And it's all mounted, setup and ready to go.
+Files new/changed:
+    - `app/Console/Commands/AddCollection.php`
+    - `app/Console/Commands/stubs/collection_blueprint_private_dated.yaml.stub`
+    - `app/Console/Commands/stubs/collection_blueprint_private.yaml.stub`
+    - `app/Console/Commands/stubs/collection_blueprint_public_dated.yaml.stub`
+    - `app/Console/Commands/stubs/collection_blueprint_public.yaml.stub`
+    - `app/Console/Commands/stubs/collection.yaml.stub`
+    - `app/Console/Commands/stubs/index.antlers.html.stub`
+    - `app/Console/Commands/stubs/show.antlers.html.stub`
+
+### What's improved
+- Use `{}` around variables in:
+    - `app/Console/Commands/AddBlock.php`.
+- Added a `no_results` string to:
+    - `resources/lang/en/strings.php`.
+- Added a wrapper around pagination that takes a custom class in:
+    - `resources/views/components/_pagination.antlers.html`.
+
 ## 3.9.3 (2021-10-05)
 
 ### What's improved
