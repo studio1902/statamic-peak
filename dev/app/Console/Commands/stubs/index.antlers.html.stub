@@ -6,11 +6,17 @@
 <main class="outer-grid">
     <div class="fluid-container grid md:grid-cols-12 gap-12">
         {{ collection:{{ handle }} sort="date:desc" paginate="true" limit="10" as="items" }}
-            {{ items }}
+            {{ unless no_results }}
+                {{ items }}
+                    <div class="md:col-span-6">
+                        <a class="underline" href="{{ url }}">{{ title }}</a>
+                    </div>
+                {{ /items }}
+            {{ else }}
                 <div class="md:col-span-6">
-                    <a class="underline" href="{{ url }}">{{ title }}</a>
+                    {{ trans:strings.no_results }}
                 </div>
-            {{ /items }}
+            {{ /unless }}
             {{ partial:components/pagination class="md:col-span-12" }}
         {{ /collection:{{ handle }} }}
     </div>
