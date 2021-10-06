@@ -29,11 +29,12 @@ Contributions and discussions are always welcome, no matter how large or small. 
 Statamic Peak is a mono repo. If you want to contribute make sure you target files the `/dev/` folder and run your local install from this folder. When you use valet you can navigate to the folder and type: `valet link statamic-peak`. 
 
 ### Repo structure
-```
-/starter-kit-files -> The kit that gets installed by Statamic.
-/docs/ -> The docs.
-/dev/ -> The dev environment, a running Statamic Peak instance.
-```
+
+| Location | Purpose |
+| --- | --- |
+| `/` | The root level contains the actual kit that gets installed by Statamic. |
+| `/docs/` | The documentation auto deployed to [peak.studio1902.nl](https://peak.studio1902.nl) running on Netlify. |
+| `/dev/` | The actual development environment. A running Statamic Peak instance. |
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has its' own license.
