@@ -128,7 +128,7 @@ class AddCollection extends Command
         $this->filename = Str::slug($this->collection_name, '_');
         $this->public = ($this->confirm('Should this be a public collection with a route?', true)) ? true : false;
         if ($this->public) {
-            $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{url}');
+            $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{slug}');
             $choice = $this->choice('On which page do you want to mount this collection?', $this->getPages());
             preg_match('/\[(.*?)\]/', $choice, $id);
             $this->mount = $id[1];
