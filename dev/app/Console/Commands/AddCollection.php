@@ -257,14 +257,14 @@ class AddCollection extends Command
      */
     protected function createIndexTemplate()
     {
-        $this->checkExistence('Template', "resources/views/{$this->filename}/_index.antlers.html");
+        $this->checkExistence('Template', "resources/views/{$this->filename}/index.antlers.html");
 
         $stub = File::get(__DIR__.'/stubs/index.antlers.html.stub');
         $contents = Str::of($stub)
             ->replace('{{ collection_name }}', $this->collection_name)
             ->replace('{{ handle }}', $this->filename);
 
-        File::put(base_path("resources/views/{$this->filename}/_index.antlers.html"), $contents);
+        File::put(base_path("resources/views/{$this->filename}/index.antlers.html"), $contents);
     }
 
     /**
@@ -274,13 +274,13 @@ class AddCollection extends Command
      */
     protected function createShowTemplate()
     {
-        $this->checkExistence('Template', "resources/views/{$this->filename}/_show.antlers.html");
+        $this->checkExistence('Template', "resources/views/{$this->filename}/show.antlers.html");
 
         $stub = File::get(__DIR__.'/stubs/show.antlers.html.stub');
         $contents = Str::of($stub)
             ->replace('{{ collection_name }}', $this->collection_name);
 
-        File::put(base_path("resources/views/{$this->filename}/_show.antlers.html"), $contents);
+        File::put(base_path("resources/views/{$this->filename}/show.antlers.html"), $contents);
     }
 
     /**
