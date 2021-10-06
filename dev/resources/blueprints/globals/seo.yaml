@@ -1,0 +1,638 @@
+sections:
+  page_titles:
+    display: 'Page meta'
+    fields:
+      -
+        handle: section_title
+        field:
+          type: section
+          instructions: 'Website and page titles'
+          display: Title
+      -
+        handle: title_separator
+        field:
+          options:
+            ' | ': '|'
+            ' - ': '-'
+            ' / ': /
+            ' :: ': '::'
+            ' > ': '>'
+            ' ~ ': '~'
+          clearable: false
+          multiple: false
+          searchable: true
+          localizable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          instructions: 'Select the character to separate the page title and site title.'
+          width: 33
+          listable: hidden
+          display: Separator
+      -
+        handle: site_name
+        field:
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          display: 'Website title'
+          instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
+          width: 66
+      -
+        handle: change_page_title
+        field:
+          fields:
+            -
+              handle: collection
+              field:
+                max_items: 1
+                mode: select
+                display: Collection
+                type: collections
+                icon: collections
+                instructions: 'The collection you want to change the title for.'
+                width: 33
+                listable: hidden
+            -
+              handle: what_to_add
+              field:
+                options:
+                  custom_text: 'Custom text'
+                  collection_title: 'The collection title'
+                multiple: false
+                max_items: 1
+                clearable: false
+                searchable: false
+                taggable: false
+                push_tags: false
+                cast_booleans: false
+                display: 'What to add'
+                type: select
+                icon: select
+                instructions: 'What to add.'
+                width: 33
+                listable: hidden
+            -
+              handle: custom_text
+              field:
+                input_type: text
+                antlers: false
+                display: Text
+                type: text
+                icon: text
+                instructions: 'The custom text.'
+                width: 33
+                listable: hidden
+                if:
+                  what_to_add: 'equals custom_text'
+          mode: table
+          add_row: 'Add collection default'
+          reorderable: true
+          type: grid
+          icon: grid
+          display: 'Change collection title'
+          instructions: 'Select collections where you want to add something to be part of the page title. For example: _Entry title - **Collection title** - Site title_.'
+          listable: hidden
+      -
+        handle: section_environments_noindex
+        field:
+          type: section
+          instructions: 'When to noindex and nofollow by default.'
+          display: Environments
+      -
+        handle: noindex_local
+        field:
+          type: toggle
+          instructions: 'Add noindex and nofollow tags on the local environment automatically.'
+          listable: false
+          display: Local
+          width: 33
+      -
+        handle: noindex_staging
+        field:
+          type: toggle
+          instructions: 'Add noindex and nofollow tags on the staging environment automatically.'
+          listable: false
+          display: Staging
+          width: 33
+      -
+        handle: noindex_production
+        field:
+          type: toggle
+          instructions: 'Add noindex and nofollow tags on the production environment automatically.'
+          listable: false
+          display: Production
+          width: 33
+      -
+        handle: section_description
+        field:
+          type: section
+          instructions: 'Set fallback data per collection to use as meta, OG and Twitter descriptions when users don''t fill in those fields.'
+          display: Descriptions
+      -
+        handle: collection_defaults
+        field:
+          fields:
+            -
+              handle: collection
+              field:
+                max_items: 1
+                mode: select
+                display: Collection
+                type: collections
+                icon: collections
+                instructions: 'The collection for this fallback.'
+                width: 33
+                listable: hidden
+            -
+              handle: fallback
+              field:
+                options:
+                  field: 'Custom field'
+                  custom_text: 'Custom text'
+                  page_builder: 'First text in page builder'
+                multiple: false
+                max_items: 1
+                clearable: false
+                searchable: false
+                taggable: false
+                push_tags: false
+                cast_booleans: false
+                display: Fallback
+                type: select
+                icon: select
+                instructions: 'The fallback type'
+                width: 33
+                listable: hidden
+            -
+              handle: field_handle
+              field:
+                input_type: text
+                antlers: false
+                display: 'Field handle'
+                type: text
+                icon: text
+                instructions: 'The custom field handle.'
+                width: 33
+                listable: hidden
+                if:
+                  fallback: 'equals field'
+            -
+              handle: custom_text
+              field:
+                character_limit: '160'
+                antlers: false
+                display: 'Custom text'
+                type: textarea
+                icon: textarea
+                instructions: 'The custom text. Max 160 characters.'
+                width: 33
+                listable: hidden
+                if:
+                  fallback: 'equals custom_text'
+          mode: stacked
+          add_row: 'Add collection default'
+          reorderable: true
+          display: 'Collection defaults'
+          type: grid
+          icon: grid
+          instructions: 'Set fallback meta descriptions for each collection.'
+          listable: hidden
+      -
+        handle: section_hreflang
+        field:
+          type: section
+          instructions: 'Set for which sites in your multisite a hreflang tag should be generated.'
+          display: Hreflang
+      -
+        handle: hreflang_sites
+        field:
+          mode: select
+          display: 'Hreflang sites'
+          type: sites
+          icon: sites
+          instructions: 'Auto generate hreflang tags for the following sites.'
+          listable: hidden
+          instructions_position: above
+          width: 50
+  json-ld:
+    display: JSON-ld
+    fields:
+      -
+        handle: section_schema
+        field:
+          type: section
+          instructions: 'JSON-LD Schema'
+          display: 'Knowledge graph data'
+      -
+        handle: json_ld_type
+        field:
+          options:
+            none: None
+            organization: Organization
+            person: Person
+            custom: Custom
+          default: none
+          localizable: true
+          type: button_group
+          instructions: 'The type of data to be added on each page.'
+          listable: false
+          display: Type
+      -
+        handle: organization_name
+        field:
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          display: 'Organization name'
+          width: 66
+          if:
+            json_ld_type: 'equals organization'
+          validate:
+            - 'required_if:json_ld_type,organization'
+      -
+        handle: organization_logo
+        field: common.image
+        config:
+          localizable: true
+          listable: hidden
+          display: 'Organization logo'
+          instructions: 'Minimum 112px x 112px, will be focal cropped to a square.'
+          width: 33
+          if:
+            json_ld_type: 'equals organization'
+      -
+        handle: person_name
+        field:
+          listable: hidden
+          display: 'Person name'
+          width: 66
+          input_type: text
+          type: text
+          localizable: true
+          if:
+            json_ld_type: 'equals person'
+          validate:
+            - 'required_if:json_ld_type,person'
+      -
+        handle: json_ld
+        field:
+          type: textarea
+          instructions: 'Add custom JSON-LD to be included on each page. This can include stuff like business hours and contact data.'
+          localizable: true
+          listable: false
+          display: JSON-LD
+          if:
+            json_ld_type: 'equals custom'
+          validate:
+            - 'required_if:json_ld_type,custom'
+      -
+        handle: section_breadcrumbs
+        field:
+          type: section
+          instructions: 'JSON-ld Breadcrumbs'
+          display: Breadcrumbs
+      -
+        handle: breadcrumbs
+        field:
+          type: toggle
+          instructions: 'Add JSON-ld breadcrumbs to each entry.'
+          listable: false
+          localizable: true
+          display: Breadcrumbs
+  social:
+    display: 'Social Sharing'
+    fields:
+      -
+        handle: section_social_images
+        field:
+          type: section
+          instructions: 'Automatically generate Social Images'
+          display: Social
+      -
+        handle: use_social_image_generation
+        field:
+          display: 'Use Social Images generation'
+          type: toggle
+          icon: toggle
+          instructions: 'Enable auto Social Image generation. **Important**: you need to have Puppeteer and Browsershot installed.'
+          listable: hidden
+          width: 50
+      -
+        handle: social_images_collections
+        field:
+          mode: select
+          display: 'Social Images generation'
+          type: collections
+          icon: collections
+          instructions: 'Use auto Social Image generation for the following collections.'
+          listable: hidden
+          width: 50
+          if:
+            use_social_image_generation: 'equals true'
+      -
+        handle: section_og
+        field:
+          type: section
+          instructions: 'Default settings for Social Sharing.'
+          display: Defaults
+      -
+        handle: og_image
+        field: common.image
+        config:
+          container: social_images
+          localizable: true
+          listable: hidden
+          display: 'Social image'
+          instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px. This image will be focal cropped to this dimension.'
+          width: 50
+      -
+        handle: twitter_image
+        field: common.image
+        config:
+          container: social_images
+          localizable: true
+          listable: hidden
+          display: 'Twitter image'
+          instructions: 'The default Twitter image. Can be overridden per entry. Images should have an aspect ratio of 2:1 with minimum dimensions of 300x157. This image will be focal cropped to this dimension.'
+          width: 50
+      -
+        handle: twitter_handle
+        field:
+          listable: hidden
+          display: 'Twitter handle'
+          width: 50
+          input_type: text
+          type: text
+          localizable: true
+          instructions: 'The Twitter user name that should be included with Twitter Card tags.'
+          prepend: '@'
+          antlers: false
+  sitemap:
+    display: Sitemap
+    fields:
+      -
+        handle: section_sitemap
+        field:
+          type: section
+          instructions: 'Configure the sitemap.xml'
+          display: Sitemap
+      -
+        handle: sitemap_collections
+        field:
+          mode: select
+          type: collections
+          instructions: 'Select which collections to include in the sitemap.xml.'
+          listable: hidden
+          default: pages
+          display: Collections
+  trackers:
+    display: Trackers
+    fields:
+      -
+        handle: section_environments
+        field:
+          type: section
+          instructions: 'When to render tracker tags and the cookie banner.'
+          display: Environments
+      -
+        handle: trackers_local
+        field:
+          type: toggle
+          instructions: 'Render tracker tags on the local environment.'
+          listable: false
+          display: Local
+          width: 33
+      -
+        handle: trackers_staging
+        field:
+          type: toggle
+          instructions: 'Render tracker tags on the staging environment.'
+          listable: false
+          display: Staging
+          width: 33
+      -
+        handle: trackers_production
+        field:
+          type: toggle
+          instructions: 'Render tracker tags on the production environment.'
+          listable: false
+          display: Production
+          width: 33
+      -
+        handle: section_verification
+        field:
+          type: section
+          instructions: 'Configure site verifications.'
+          display: 'Site verifications'
+      -
+        handle: use_google_site_verification
+        field:
+          type: toggle
+          instructions: 'Add a google-site-verification meta tag to your head.'
+          listable: false
+          display: 'Google site verification'
+      -
+        handle: google_site_verification
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          width: 66
+          display: 'Verification key'
+          validate:
+            - 'required_if:use_google_site_verification,true'
+          if:
+            use_google_site_verification: 'equals true'
+      -
+        handle: section_privacy_trackers
+        field:
+          type: section
+          instructions: 'Configure privacty friendly trackers that don''t require a cookie notification.'
+          display: 'Privacy Friendly Trackers'
+      -
+        handle: use_fathom
+        field:
+          type: toggle
+          instructions: 'Add Fathom tracking code to your head.'
+          listable: false
+          display: Fathom
+      -
+        handle: fathom
+        field:
+          width: 66
+          display: 'Site ID'
+          input_type: text
+          type: text
+          listable: hidden
+          validate:
+            - 'required_if:use_fathom,true'
+          if:
+            use_fathom: 'equals true'
+      -
+        handle: use_cloudflare_web_analytics
+        field:
+          type: toggle
+          instructions: 'Add Cloudflare tracking code to your head.'
+          listable: false
+          display: 'Cloudflare Web Analytics'
+      -
+        handle: cloudflare_web_analytics
+        field:
+          width: 66
+          display: 'Beacon ID'
+          input_type: text
+          type: text
+          listable: hidden
+          validate:
+            - 'required_if:use_cloudflare_web_analytics,true'
+          if:
+            use_cloudflare_web_analytics: 'equals true'
+      -
+        handle: section_google_trackers
+        field:
+          type: section
+          instructions: 'Configure Google trackers and an optional cookie notification.'
+          display: 'Google Trackers'
+      -
+        handle: tracker_type
+        field:
+          options:
+            none: None
+            gtag: 'Google Analytics'
+            gtm: 'Google Tag Manager'
+          default: none
+          type: button_group
+          instructions: 'The type of Google Tracker you want added on each page.'
+          listable: false
+          display: 'Google Tracker type'
+      -
+        handle: google_analytics
+        field:
+          width: 25
+          display: 'Tracking ID'
+          input_type: text
+          type: text
+          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent in the EU.'
+          listable: hidden
+          validate:
+            - 'required_if:tracker_type,gtag'
+          if:
+            tracker_type: 'equals gtag'
+      -
+        handle: anonymize_ip
+        field:
+          type: toggle
+          width: 25
+          listable: false
+          default: true
+          display: 'Anonymize IP''s'
+          instructions: 'Enable this to be excempt from needing cookie consent.'
+          if:
+            tracker_type: 'equals gtag'
+      -
+        handle: google_tag_manager
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          width: 50
+          display: 'Tracking ID'
+          instructions: 'The GTM tracking ID.'
+          validate:
+            - 'required_if:tracker_type,gtm'
+          if:
+            tracker_type: 'equals gtm'
+      -
+        handle: use_cookie_banner
+        field:
+          type: toggle
+          instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM. Uses the consent api: https://developers.google.com/tag-manager/consent'
+          listable: false
+          display: 'Cookie banner'
+          width: 50
+          if:
+            tracker_type: 'not none'
+      -
+        handle: display_style
+        field:
+          options:
+            left: Left
+            right: Right
+          default: left
+          type: button_group
+          instructions: 'The banners'' display style.'
+          listable: false
+          localizable: true
+          validate: required
+          display: 'Display style'
+          width: 50
+          if:
+            tracker_type: 'not none'
+            use_cookie_banner: 'equals true'
+      -
+        handle: cookie_revoke_before
+        field:
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Revoke consent before'
+          instructions: 'Revoke all users consent before this date. Use this when you added new trackers to GTM and your privacy policy changed. The cookie bar will reappear.'
+          type: date
+          width: 50
+          icon: date
+          listable: hidden
+          if:
+            tracker_type: 'not none'
+            use_cookie_banner: 'equals true'
+      -
+        handle: link_privacy_statement
+        field:
+          options:
+            none: None
+            entry: Entry
+            pdf: PDF
+          default: none
+          type: button_group
+          instructions: 'Link to a privacy statement or cookie policy from the cookie notification.'
+          listable: false
+          localizable: true
+          display: 'Link to more information'
+          width: 50
+          if:
+            tracker_type: 'not none'
+            use_cookie_banner: 'equals true'
+      -
+        handle: privacy_statement_asset
+        field: common.image
+        config:
+          localizable: true
+          listable: hidden
+          display: 'Privacy statement (PDF)'
+          instructions: 'The PDF you want to link to.'
+          width: 50
+          if:
+            tracker_type: 'not none'
+            use_cookie_banner: 'equals true'
+            link_privacy_statement: 'equals pdf'
+      -
+        handle: privacy_statement_entry
+        field: common.entry
+        config:
+          localizable: true
+          listable: hidden
+          display: 'Privacy statement (entry)'
+          width: 50
+          instructions: 'The entry you want to link to.'
+          if:
+            tracker_type: 'not none'
+            use_cookie_banner: 'equals true'
+            link_privacy_statement: 'equals entry'

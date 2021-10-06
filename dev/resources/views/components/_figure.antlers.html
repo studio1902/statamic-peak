@@ -1,0 +1,26 @@
+{{#
+	@name Figure
+	@desc The figure component. A sizeable image rendered in a figure tag with optional caption.
+    @set page.article.figure
+#}}
+
+<figure class="size-{{ size }} my-4">
+    {{ 
+        partial:components/picture 
+        :image="image" 
+        class="w-full" 
+        cover="false" 
+        lazy="true"
+        {{ if size == 'sm'}}
+            sizes="(min-width: 768px) 35vw, 90vw" 
+        {{ elseif size == 'md' }}
+            sizes="(min-width: 768px) 55vw, 90vw" 
+        {{ elseif size == 'lg' }}
+            sizes="(min-width: 768px) 75vw, 90vw" 
+        {{ elseif size == 'xl' }}
+            sizes="90vw" 
+        {{ /if }}
+    }}
+    
+    {{ partial:typography/caption as="figcaption" }}
+</figure>

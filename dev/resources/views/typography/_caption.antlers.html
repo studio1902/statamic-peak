@@ -1,0 +1,10 @@
+{{#
+	@name Caption
+	@desc The typography caption partial to render an h1 caption `as`, `caption` attributes.
+#}}
+
+{{ if caption }}
+    <{{ as or 'span' }} class="mt-2 text-neutral text-sm">
+        {{ caption }}
+    </{{ as or 'span' }}>
+{{ /if }}

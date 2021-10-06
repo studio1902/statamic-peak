@@ -1,0 +1,44 @@
+{{#
+	@name Dark mode toggle
+	@desc The dark mode toggle component when you use class based dark mode. To enable this do the following:
+    1. Uncomment `darkMode: 'class'` in `tailwind.config.js`.
+    2. Add `{{ partial:components/dark_mode_toggle }}` to the <head> in `resources/vies/layout.antlers.html`.
+    3. Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
+#}}
+
+{{# We can't use Alpine logic here since this has to run before anything else. #}}
+<script>
+    (localStorage._x_darkMode === 'true' || (!('_x_darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+        ? (document.documentElement.classList.add('dark'), localStorage._x_darkMode = 'true')
+        : document.documentElement.classList.remove('dark');
+</script>
+
+{{# The actual toggle yielded in the `resources/views/navigation/_main.antlers.html`. #}}
+{{ section:dark_mode_toggle }}
+    <li
+        x-data="{ darkMode: $persist(false) }"
+        x-effect="
+            darkMode
+                ? document.documentElement.classList.add('dark')
+                : document.documentElement.classList.remove('dark')"
+        x-cloak
+    >
+        <button
+            x-show="!darkMode"
+            @click="darkMode = true"
+            aria-label="{{ trans:strings.dark_mode_on }}"
+            title="{{ trans:strings.dark_mode_on }}"
+        >
+            {{ svg:moon class="w-5 h-5 text-neutral hover:text-primary stroke-current transition-colors overflow-visible" alt="" aria-hidden="true" }}
+        </button>
+
+        <button
+            x-show="darkMode"
+            @click="darkMode = false"
+            aria-label="{{ trans:strings.dark_mode_off }}"
+            title="{{ trans:strings.dark_mode_off }}"
+        >
+            {{ svg:sun class="w-5 h-5 text-neutral hover:text-primary stroke-current transition-colors overflow-visible" alt="" aria-hidden="true" }}
+        </button>
+    </li>
+{{ /section:dark_mode_toggle }}

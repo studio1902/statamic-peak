@@ -1,0 +1,21 @@
+{{# Bind custom error classses when there is a validation error with the field. #}}
+<select 
+    class="w-full rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" 
+    :class="{ 'border-red-600 focus-visible:border-red-600': errors.{{ handle }} }"
+    name="{{ handle }}{{ multiple ?= "[]" }}" 
+    {{ multiple ?= "multiple" }} 
+>
+    {{ unless multiple }}
+        <option value>{{ trans key="Please select..." }}</option>
+    {{ /unless }}
+    {{ foreach:options as="value|label" }}
+        <option 
+            value="{{ value }}" 
+            {{ if old|in_array:value or old === value }}
+                selected
+            {{ /if }}
+        >
+            {{ trans key="{ label }" }}
+        </option>
+    {{ /foreach:options }}
+</select>

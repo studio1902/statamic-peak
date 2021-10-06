@@ -1,0 +1,13 @@
+{{#
+	@name Breadcrumbs
+	@desc Breadcrumbs display the current page in it's page hierarcy.
+#}}
+
+<ul class="flex">
+    {{ nav:breadcrumbs }}
+        <li class="flex">
+            <a class="{{ if is_current }}text-primary{{ /if }}" href="{{ url }}">{{ title }}</a>
+            <span class="px-2">{{ unless last }}>{{ /unless }}</span>
+        </li>
+    {{ /nav:breadcrumbs }}
+</ul>

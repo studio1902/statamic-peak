@@ -1,0 +1,61 @@
+{{#
+	@name Search
+	@desc The search template showing search results, if you enable the search form partial in `views/navigation/_main.antlers.html` and the route in `routes/web.php`.
+#}}
+
+{{# Yield a title to the SEO partial. #}}
+{{ section:seo_title }}
+    {{ trans:strings.search }}
+{{ /section:seo_title }}
+
+<main class="outer-grid">
+    <section class="fluid-container grid grid-cols-12 gap-y-6">
+        <div class="col-span-12 md:col-span-8 md:col-start-3">
+            {{ partial:typography/h1 class="mb-2" content="{trans:strings.search_results_for} &quot;{get:q}&quot;" }}
+        </div>
+
+        <form class="relative col-span-12 md:col-span-8 md:col-start-3" action="/search">
+            <input class="w-full pr-10 rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" placeholder="{{ trans:strings.search }}" type="text" value="{{ get:q }}" name="q"/>
+
+            <button class="absolute inset-y-0 right-0 flex mr-1 items-center text-neutral hover:text-primary rounded focus:outline-none focus-visible:ring-2 ring-secondary ring-offset-4 ring-offset-white" aria-label="{{ trans:strings.search }}">
+                {{ svg:search class="w-5 h-5 fill-current transition-colors" alt="" aria-hidden="true" }}
+            </button>
+        </form>
+
+        {{ search:results }}
+            {{ if no_results }}
+                <article class="col-span-12 md:col-span-8 md:col-start-3">
+                    {{ partial:typography/paragraph content="{trans:strings.search_no_results}" }}
+                </article>
+            {{ else }}
+                <article class="col-span-12 md:col-span-8 md:col-start-3">
+                    <a class="flex flex-col" href="{{ url }}">
+                        <span class="text-neutral">{{ permalink }}</span>
+
+                        {{ partial:typography/h2 class="mt-0" color="text-primary" :content="title" }}
+                    </a>
+                    <p>
+                        {{# Sow the SEO meta description if available. #}}
+                        {{ if seo_description }}
+                            {{ seo_description }}
+
+                        {{# Fall back to the bard field. #}}
+                        {{ elseif page_builder }}
+                            {{ page_builder limit="1" }}
+                                {{ if article }}
+                                    {{ article where="type:text" limit="1" }}
+                                        {{ text | strip_tags | trim | safe_truncate:180:... }}
+                                    {{ /article }}
+
+                                {{# Or a field called `text`. #}}
+                                {{ elseif text }}
+                                    {{ text | trim | safe_truncate:180:... }}
+                                {{ /if }}
+                            {{ /page_builder }}
+                        {{ /if }}
+                    </p>
+                </article>
+            {{ /if }}
+        {{ /search:results }}
+    </section>
+</main>

@@ -1,0 +1,63 @@
+<nav class="hidden md:block">
+    <ul class="flex items-center space-x-8">
+        {{ nav:main max_depth="2" include_home="true" }}
+            <li
+                {{ if children }}
+                    x-data="{ subnavOpen: false }"
+                {{ /if }}
+                class="relative leading-none"
+            >
+                <a
+                    class="
+                        flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary
+                        {{ is_current || is_parent
+                            ? 'text-primary'
+                            : 'text-neutral' }}
+                    "
+                    {{ if children }}
+                        href="#"
+                        @click.prevent="subnavOpen = !subnavOpen"
+                    {{ else }}
+                        href="{{ url }}"
+                    {{ /if }}
+                >
+                    {{ title }}
+                    {{ if children }}
+                        <svg class="w-2 ml-1 overflow-visible stroke-current text-neutral"
+                            :class="{ 'rotate-180': subnavOpen }"
+                            aria-hidden="true"
+                            stroke-width="16"
+                            viewBox="0 0 140 140"><path d="M135.625 42.648l-62.533 62.527a4.37 4.37 0 01-6.184 0L4.375 42.648" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                        /></svg>
+                    {{ /if }}
+                </a>
+                {{ if children }}
+                    <ul
+                        x-show="subnavOpen"
+                        class="absolute mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
+                        :aria-expanded="subnavOpen"
+                        @click.outside="subnavOpen = false"
+                        x-transition
+                        x-cloak
+                    >
+                        {{ children }}
+                            <li class="">
+                                <a
+                                    class="
+                                        whitespace-nowrap py-2 block text-xs font-bold hover:text-primary
+                                        {{ is_current || is_parent
+                                            ? 'text-primary'
+                                            : 'text-neutral' }}
+                                    "
+                                    href="{{ url }}"
+                                >
+                                    {{ title }}
+                                </a>
+                            </li>
+                        {{ /children }}
+                    </ul>
+                {{ /if }}
+            </li>
+        {{ /nav:main }}
+    </ul>
+</nav>

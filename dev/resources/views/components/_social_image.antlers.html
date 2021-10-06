@@ -1,0 +1,17 @@
+<div id="{{ selector }}" style="{{ style }}" class="relative p-8 flex flex-col justify-between bg-neutral-50">
+    {{ get_content:id }}
+        <h1 class="flex flex-col text-7xl font-bold leading-crammed text-primary">
+            {{ og_title ?? seo_title ?? title }}
+        </h1>
+        <p class="text-xl text-neutral leading-loose max-w-[40ch]">
+            {{ if og_description || seo_description }}
+                 {{ og_description ?? seo_description }}
+            {{ elseif seo:collection_defaults }}
+                 {{ partial:snippets/fallback_description }}
+            {{ /if }}
+        </p>
+        <div class="flex justify-end space-x-4">
+            <img class="w-64 h-auto" src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.svg"/>
+        </div>
+    {{ /get_content:id }}
+</div>

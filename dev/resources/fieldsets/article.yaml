@@ -1,0 +1,61 @@
+title: Article
+fields:
+  -
+    handle: article
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - quote
+        - removeformat
+        - anchor
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: true
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: true
+      listable: hidden
+      display: Article
+      replicator_preview: false
+      always_show_set_button: true
+      validate:
+        - required
+      sets:
+        figure:
+          display: Figure
+          fields:
+            -
+              import: figure
+        buttons:
+          display: Buttons
+          fields:
+            -
+              import: buttons
+        pull_quote:
+          display: 'Pull quote'
+          fields:
+            -
+              import: pull_quote
+        table:
+          display: Table
+          fields:
+            -
+              import: table
+        video:
+          display: Video
+          fields:
+            -
+              import: video
+      container: assets
+      enable_input_rules: true
+      enable_paste_rules: true

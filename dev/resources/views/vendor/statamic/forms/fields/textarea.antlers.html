@@ -1,0 +1,11 @@
+{{# Bind custom error classses when there is a validation error with the field. #}}
+<textarea
+    class="w-full h-32 rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition caret-primary"
+    :class="{ 'border-red-600 focus-visible:border-red-600': errors.{{ handle }} }"
+    id="{{ handle }}"
+    name="{{ handle }}"
+    rows="5"
+    placeholder="{{ placeholder }}"
+    {{# Uncomment the following line if you want to use native browser validation first. #}}
+    {{# {{ validate | contains:required ?= "required" }} #}}
+>{{ old }}</textarea>

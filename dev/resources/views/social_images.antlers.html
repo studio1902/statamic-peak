@@ -1,0 +1,33 @@
+{{#
+	@name Social Images
+	@desc The template for generating Social Images. By default two sizes, one for the regular OG protocol and one for Twitter.
+#}}
+
+<!doctype html>
+<html class="h-full">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="noindex">
+        <title>Social Images - {{ get_content:id }}{{ title }}{{ /get_content:id }}</title>
+        <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
+        <link rel="stylesheet" href="https://use.typekit.net/pxl4tuu.css">
+        <style>
+            .phpdebugbar { display: none !important; }
+        </style>
+    </head>
+
+    <body class="py-8 flex flex-col items-center space-y-8">
+        {{# The OG template. #}}
+        <div>
+            <h2 class="mb-4 text-xs text-black font-bold uppercase tracking-widest">OG</h2>
+            {{ partial:components/social_image selector="og" style="width: 1200px; height: 630px" }}
+        </div>
+
+        {{# The Twitter template. #}}
+        <div>
+            <h2 class="mb-4 text-xs text-black font-bold uppercase tracking-widest">Twitter</h2>
+            {{ partial:components/social_image selector="twitter" style="width: 1200px; height: 600px" }}
+        </div>
+    </body>
+</html>

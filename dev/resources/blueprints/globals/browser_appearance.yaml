@@ -1,0 +1,266 @@
+sections:
+  general:
+    display: General
+    fields:
+      -
+        handle: section_universal
+        field:
+          type: section
+          listable: hidden
+          display: Universal
+          instructions: 'Configure universal meta tags.'
+      -
+        handle: disable_telephone_detection
+        field:
+          display: 'Disable telephone detection'
+          type: toggle
+          icon: toggle
+          width: 33
+          instructions: 'Disables phone number detection.'
+          listable: hidden
+      -
+        handle: disable_email_detection
+        field:
+          display: 'Disable e-mail detection'
+          type: toggle
+          icon: toggle
+          width: 33
+          instructions: 'Disables e-mail address detection.'
+          listable: hidden
+      -
+        handle: disable_address_detection
+        field:
+          display: 'Disable address detection'
+          type: toggle
+          icon: toggle
+          width: 33
+          instructions: 'Disables address detection.'
+          listable: hidden
+      -
+        handle: section_theme
+        field:
+          type: section
+          listable: hidden
+          display: Theme
+          instructions: 'Configure universal theme meta tags.'
+      -
+        handle: use_theme_color
+        field:
+          display: 'Use theme color'
+          type: toggle
+          icon: toggle
+          width: 50
+          instructions: 'Enable if you want to specify theme colors for various browsers.'
+          listable: hidden
+      -
+        handle: use_theme_color_dark_mode
+        field:
+          display: 'For dark mode'
+          type: toggle
+          icon: toggle
+          width: 50
+          instructions: 'Enable if you want to specify a specific theme color for dark mode.'
+          listable: hidden
+          if:
+            use_theme_color: 'equals true'
+      -
+        handle: theme_color
+        field:
+          theme: nano
+          lock_opacity: true
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Theme color'
+          type: color
+          default: '#ffffff'
+          icon: color
+          listable: hidden
+          width: 50
+          instructions: 'Sets the theme color for Safari (iOS 15+ and MacOS 11.4+) and the Android Chrome browser.'
+          if:
+            use_theme_color: 'equals true'
+      -
+        handle: theme_color_dark_mode
+        field:
+          theme: nano
+          lock_opacity: true
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Theme color dark mode'
+          type: color
+          default: '#000000'
+          icon: color
+          listable: hidden
+          width: 50
+          instructions: 'Sets the theme color for Safari (iOS 15+ and MacOS 11.4+) and the Android Chrome browser in dark mode.'
+          if:
+            use_theme_color: 'equals true'
+            use_theme_color_dark_mode: 'equals true'
+      -
+        handle: section_apple
+        field:
+          type: section
+          listable: hidden
+          display: Apple
+          instructions: 'Configure Apple specific meta tags.'
+      -
+        handle: apple_mobile_web_app
+        field:
+          display: 'Apple mobile web app'
+          type: toggle
+          icon: toggle
+          width: 50
+          instructions: 'Opens websites saved to the iOS springboard fullscreen in it''s own Safari instance.'
+          listable: hidden
+      -
+        handle: apple_status_bar_black
+        field:
+          display: 'Apple status bar black'
+          type: toggle
+          icon: toggle
+          width: 50
+          instructions: 'Can only be used when `Apple mobile web app` is enabled and forces a black status bar.'
+          listable: hidden
+          if:
+            apple_mobile_web_app: 'equals true'
+      -
+        handle: section_android
+        field:
+          type: section
+          listable: hidden
+          display: Android
+          instructions: 'Configure Android specific meta tags.'
+      -
+        handle: android_mobile_web_app
+        field:
+          display: 'Android mobile web app'
+          type: toggle
+          icon: toggle
+          width: 50
+          instructions: 'Opens websites saved to Android''s homescreen in it''s own Chrome instance.'
+          listable: hidden
+  favicons:
+    display: Favicons
+    fields:
+      -
+        handle: section_favicons
+        field:
+          type: section
+          listable: hidden
+          display: Favicons
+          instructions: 'Configure favicons so they can be automatically generated.'
+      -
+        handle: use_favicons
+        field:
+          display: 'Use favicons'
+          type: toggle
+          icon: toggle
+          instructions: 'Enable if you want Peak to generate favicons. **Important**: you need to have the PHP Imagick module installed.'
+          listable: hidden
+      -
+        handle: svg
+        field: common.image
+        config:
+          container: favicons
+          restrict: true
+          localizable: false
+          display: 'Favicon SVG'
+          instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg).'
+          width: 50
+          validate:
+            - 'required_if:use_favicons,true'
+          if:
+            use_favicons: 'equals true'
+      -
+        handle: section_colors
+        field:
+          type: section
+          listable: hidden
+          display: Colors
+          if:
+            use_favicons: 'equals true'
+      -
+        handle: safari_color
+        field:
+          theme: nano
+          lock_opacity: true
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: Safari
+          type: color
+          icon: color
+          default: '#000000'
+          listable: hidden
+          instructions: 'The icon for Safari (_mask-icon_) will be converted to a single color SVG with this as the color.'
+          width: 33
+          validate:
+            - 'required_if:use_favicons,true'
+          if:
+            use_favicons: 'equals true'
+      -
+        handle: ios_color
+        field:
+          theme: nano
+          lock_opacity: true
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: iOS
+          type: color
+          icon: color
+          default: '#ffffff'
+          listable: hidden
+          instructions: 'The icon for iOS (_apple-touch-icon_) will used the full color SVG with this color as a background.'
+          width: 33
+          validate:
+            - 'required_if:use_favicons,true'
+          if:
+            use_favicons: 'equals true'
+      -
+        handle: section_overrides
+        field:
+          type: section
+          listable: hidden
+          display: Overrides
+          instructions: 'Override specific generated assets with your own.'
+          if:
+            use_favicons: 'equals true'
+      -
+        handle: safari_mask_icon
+        field: common.image
+        config:
+          container: favicons
+          restrict: true
+          localizable: false
+          display: 'Safari Mask Icon'
+          instructions: 'A single color as flattened as possible SVG. The color defined above at `Safari` will be used.'
+          width: 33
+          if:
+            use_favicons: 'equals true'
+      -
+        handle: apple_touch_icon
+        field: common.image
+        config:
+          container: favicons
+          restrict: true
+          localizable: false
+          display: 'Apple touch icon'
+          instructions: 'A 180x180 PNG image used on iOS devices. Will be focal cropped to this dimension.'
+          width: 33
+          if:
+            use_favicons: 'equals true'
+      -
+        handle: android_chrome
+        field: common.image
+        config:
+          container: favicons
+          restrict: true
+          localizable: false
+          display: 'Android Chrome icon'
+          instructions: 'A 512x512 PNG image image used on Android devices. Will be focal cropped to this dimension.'
+          width: 33
+          if:
+            use_favicons: 'equals true'

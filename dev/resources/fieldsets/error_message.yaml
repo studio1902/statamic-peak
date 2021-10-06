@@ -1,0 +1,21 @@
+title: Error message
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
+      instructions: 'The title for the current error page.'
+      validate: required
+  -
+    handle: text
+    field:
+      type: textarea
+      localizable: true
+      listable: hidden
+      display: Text
+      instructions: 'The explainer for the current error page.'
+      validate: required

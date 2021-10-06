@@ -1,0 +1,36 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          display: Name
+          type: text
+          validate: required
+          localizable: true
+      -
+        handle: email
+        field:
+          display: 'Email address'
+          type: text
+          validate: required|email
+          localizable: true
+      -
+        handle: message_body
+        field:
+          display: Message
+          type: textarea
+          validate: required
+          localizable: true
+      -
+        handle: consent
+        field:
+          inline: false
+          type: checkboxes
+          listable: hidden
+          display: Consent
+          validate:
+            - required
+          options:
+            'yes': 'I agree that my submitted data is being collected and stored.'

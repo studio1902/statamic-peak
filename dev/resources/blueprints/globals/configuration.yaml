@@ -1,0 +1,53 @@
+sections:
+  general:
+    display: General
+    fields:
+      -
+        handle: section_general
+        field:
+          type: section
+          listable: hidden
+          display: 'General configuration'
+          instructions: 'Global site configuration options.'
+      -
+        handle: copyright_since
+        field:
+          placeholder: '2020'
+          input_type: number
+          character_limit: 4
+          prepend: ©
+          antlers: false
+          default: '2020'
+          display: 'Copyright since'
+          instructions: 'The website will add ` - current_year ` if they differ.'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
+      -
+        handle: copyright_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Copyright name'
+          type: text
+          icon: text
+          instructions: 'Falls back to the applicaton name.'
+          width: 50
+          listable: hidden
+          instructions_position: above
+  error_messages:
+    display: 'Error messages'
+    fields:
+      -
+        handle: section_404
+        field:
+          type: section
+          listable: hidden
+          display: '404 error'
+      -
+        import: error_message
+        prefix: '404_'

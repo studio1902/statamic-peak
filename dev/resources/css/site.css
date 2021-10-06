@@ -1,0 +1,4 @@
+@import "tailwindcss/base";
+@import "custom";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

@@ -1,0 +1,11 @@
+{{#
+	@name Article
+	@desc The article page builder block.
+    @set page.page_builder.article
+#}}
+
+<article class="fluid-container grid grid-cols-12 gap-y-4">
+    {{ article }}
+        {{ partial src="components/{type}" }}
+    {{ /article }}
+</article>

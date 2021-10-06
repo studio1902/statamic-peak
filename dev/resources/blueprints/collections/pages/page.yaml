@@ -1,0 +1,53 @@
+title: Page
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          input_type: text
+          localizable: true
+          listable: true
+          display: Title
+          validate:
+            - required
+      -
+        import: page_builder
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: meta
+        field:
+          type: section
+          instructions: 'This entry''s meta data.'
+          display: Meta
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          generate: true
+          listable: hidden
+          display: Slug
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true

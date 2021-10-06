@@ -1,0 +1,49 @@
+{{#
+	@name Search form
+	@desc The search form component for search functionality. To enable this do the following:
+    1. Add `{{ partial:components/search_form }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
+    2. Uncomment the search results route in routes/web.php.
+    3. Add fields you want indexed to the index in config/statamic/search.php. The page_builder field is added by default.
+    4. Update the search index by running php please search:update --all.
+    5. Make sure you add the update command to your deployment script.
+#}}
+
+<li
+    x-data="{ open: false, value: '' }"
+    @click.outside="open = false"
+    class="flex py-2 relative"
+    x-cloak
+>
+    <button
+        @click="open = !open, setTimeout(() => {$refs.input.focus()}, 200)"
+        class="text-neutral hover:text-primary"
+        aria-label="{{ trans:strings.search }}"
+    >
+        {{ svg:search class="w-5 h-5 fill-current transition-colors" alt="" aria-hidden="true" }}
+    </button>
+
+    <form
+        action="/search"
+        x-show="open"
+        x-transition.origin.right.duration.200ms
+        class="absolute inset-y-0 right-0 -mr-2 flex"
+    >
+        <input
+            x-ref="input"
+            class="w-52 h-full pr-10 rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
+            placeholder="{{ trans:strings.search }}"
+            type="text"
+            x-model="value"
+            value="{{ get:q }}"
+            name="q"
+        />
+        <button
+            class="absolute inset-y-0 right-0 mr-2 flex items-center text-neutral hover:text-primary"
+            aria-label="{{ trans:strings.search }}"
+            :disabled="value === 0"
+            :class="{ 'opacity-25 cursor-default': value.length === 0, 'opacity-100': value.length > 0 }"
+        >
+            {{ svg:search class="w-5 h-5 fill-current transition-colors" alt="" aria-hidden="true" }}
+        </button>
+    </form>
+</li>

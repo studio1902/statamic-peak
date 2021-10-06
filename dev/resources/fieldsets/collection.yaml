@@ -1,0 +1,23 @@
+title: Collection entries
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Title
+      instructions: 'The title you want to display above the collection entries.'
+      validate:
+        - required
+  -
+    handle: collection
+    field:
+      mode: default
+      type: entries
+      localizable: true
+      listable: hidden
+      display: Collection
+      instructions: 'Select the entries you want to link to.'
+      validate: required

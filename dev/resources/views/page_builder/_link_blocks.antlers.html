@@ -1,0 +1,40 @@
+{{#
+	@name Link blocks
+	@desc The link blocks page builder block.
+    @set page.page_builder.link_blocks
+#}}
+
+<section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
+    {{ if block:title }}
+        <div class="md:col-start-3 md:col-span-8 text-center">
+            {{ partial:typography/h2 :content="block:title" }}
+        </div>
+    {{ /if }}
+    {{ block:link_blocks }}
+        <a
+            class="flex flex-col justify-between items-start bg-white shadow-xl rounded p-6 no-underline
+            {{ if total_results == 1 }}
+                md:col-span-8 md:col-start-3
+            {{ elseif total_results == 2 }}
+                md:col-span-6
+            {{ elseif total_results > 2 }}
+                md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0
+            {{ /if }}"
+            aria-labelledby="{{ title | slugify }}"
+            draggable="false"
+            {{ partial:snippets/button_attributes }}
+        >
+            <div class="mb-4">
+                {{ if title }}
+                    <span id="{{ title | slugify }}">
+                        {{ partial:typography/h2 class="mb-2" :content="title" }}
+                    </span>
+                {{ /if }}
+                {{ if text }}
+                    {{ partial:typography/paragraph class="mb-4" :content="text" }}
+                {{ /if }}
+            </div>
+            {{ partial:components/button as="span" faux="true" }}
+        </a>
+    {{ /block:link_blocks }}
+</section>

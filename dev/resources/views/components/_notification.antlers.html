@@ -1,0 +1,37 @@
+{{#
+	@name Notification
+	@desc The notification component. Currently used in `resources/views/page_builder/_form.antlers.html`..
+#}}
+
+<div
+    class="
+        rounded border p-4
+        {{ type == 'success' ?= 'bg-green-100 border-green-600' }}
+        {{ type == 'notice' ?= 'bg-yellow-100 border-yellow-600' }}
+        {{ type == 'error' ?= 'bg-red-100 border-red-600' }}
+        {{ class }}
+    ">
+    <div class="flex">
+        <div class="flex-shrink-0">
+            {{ if type == "success" }}
+                {{ svg:success class="h-5 w-5 text-green-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+            {{ elseif type == "notice" }}
+                {{ svg:notice class="h-5 w-5 text-yellow-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+            {{ elseif type == "error" }}
+                {{ svg:error class="h-5 w-5 text-red-800 fill-current transition-colors" alt="" aria-hidden="true" }}
+            {{ /if }}
+        </div>
+        <div class="ml-3">
+            <h3
+                class="
+                    text-sm leading-5 font-bold
+                    {{ type == 'success' ?= 'text-green-800' }}
+                    {{ type == 'notice' ?= 'text-yellow-800' }}
+                    {{ type == 'error' ?= 'text-red-800' }}
+                "
+                {{ attribute }}>
+                {{ content }}
+            </h3>
+        </div>
+    </div>
+</div>

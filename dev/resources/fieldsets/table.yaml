@@ -1,0 +1,43 @@
+title: Table
+fields:
+  -
+    handle: size
+    field: common.size
+    config:
+      instructions: 'The size in which the table should be displayed.'
+  -
+    handle: first_row_headers
+    field:
+      display: First row as header
+      type: toggle
+      icon: toggle
+      listable: hidden
+      width: 50
+      instructions: 'Show the first row as header and give it a header styling.'
+  -
+    handle: first_column_headers
+    field:
+      display: First column as header
+      type: toggle
+      icon: toggle
+      listable: hidden
+      width: 50
+      instructions: 'Show the first column as header and give it a header styling.'
+  -
+    handle: table
+    field:
+      display: Table
+      type: table
+      icon: table
+      localizable: true
+      instructions: 'Add a table for structured data.'
+      listable: hidden
+  -
+    handle: caption
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Caption
+      instructions: 'An optional caption that will be displayed under the table.'

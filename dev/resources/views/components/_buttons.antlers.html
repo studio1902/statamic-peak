@@ -1,0 +1,23 @@
+{{#
+	@name Buttons
+	@desc Multiple buttons component calling in `resources/vivews/components/_button.antlers.html`.
+    @set page.article.buttons
+#}}
+
+{{ if buttons }}
+    {{ if type == 'buttons' }}
+        {{# Add a size utility and use different styling when called as a Bard set. #}}
+        <div class="size-md flex flex-wrap gap-3">
+            {{ buttons }}
+                {{ partial:components/button }}
+            {{ /buttons }}
+        </div>
+    {{ else }}
+        {{# The styling when called from any other partial or template. #}}
+        <div class="flex flex-wrap gap-3 {{ class }}">
+            {{ buttons }}
+                {{ partial:components/button :inverted="inverted" }}
+            {{ /buttons }}
+        </div>
+    {{ /if }}
+{{ /if }}

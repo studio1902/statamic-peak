@@ -1,0 +1,42 @@
+title: 'Page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      localizable: true
+      collapse: true
+      listable: false
+      display: 'Page builder'
+      instructions: 'Build your page by using various predefined content models.'
+      sets:
+        article:
+          display: Article
+          instructions: 'Long form content, can be expaned with media like figures, video, quotes or tables.'
+          fields:
+            -
+              import: article
+        call_to_action:
+          display: Call to action
+          instructions: 'Show a call to action.'
+          fields:
+            -
+              import: call_to_action
+        collection:
+          display: Collection
+          instructions: 'Show collection entries.'
+          fields:
+            -
+              import: collection
+        form:
+          display: Form
+          instructions: 'Show a form.'
+          fields:
+            -
+              import: form
+        link_blocks:
+          display: Link blocks
+          instructions: 'Show link blocks.'
+          fields:
+            -
+              import: link_blocks

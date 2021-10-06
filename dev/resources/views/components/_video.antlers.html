@@ -1,0 +1,13 @@
+{{#
+	@name Video
+	@desc The video component. A sizeable YouTube or Vimeo video rendered in a responsive container with an optional caption.
+    @set page.article.video
+#}}
+
+<div class="size-{{ size }}">
+    <div class="aspect-w-16 aspect-h-9">
+        <iframe class="absolute top-0 left-0 w-full h-full" width="100%" height="auto" src="{{ youtube_url | embed_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    {{ partial:typography/caption }}
+</div>

@@ -1,0 +1,23 @@
+title: Figure
+fields:
+  -
+    handle: image
+    field: common.image
+    config:
+      width: 50
+      instructions: 'The image you want to add.'
+  -
+    handle: size
+    field: common.size
+    config:
+      width: 50
+      instructions: 'The size in which the image should be displayed.'
+  -
+    handle: caption
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: hidden
+      display: Caption
+      instructions: 'An optional caption that will be displayed under the image.'
