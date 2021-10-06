@@ -26,6 +26,15 @@ Maintaining Peak demands a lot of my time and it probably saves you a lot. Your 
 ## Contributing
 Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect. Read the [Code of Conduct](https://github.com/studio1902/statamic-peak/blob/main/.github/CODE_OF_CONDUCT.md).
 
+Statamic is a mono repo. If you want to contribute make sure you change files the `/dev/` folder.
+
+### Repo structure
+```
+/starter-kit-files -> The kit that gets installed by Statamic.
+/docs/ -> The docs.
+/dev/ -> The dev environment, a running Statamic Peak instance.
+```
+
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has its' own license.
 
