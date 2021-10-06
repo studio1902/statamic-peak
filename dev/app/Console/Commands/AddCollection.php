@@ -141,6 +141,7 @@ class AddCollection extends Command
             $this->checkExistence('Collection', "content/collections/{$this->filename}.yaml");
 
             $this->createCollection();
+            $this->createBlueprint();
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
@@ -189,7 +190,7 @@ class AddCollection extends Command
     {
         $stub = File::get(__DIR__.'/stubs/collection.yaml.stub');
         $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->collection_name)
+            ->replace('{{ collection_name }}', $this->collection_name)
             ->replace('{{ route }}', $this->route)
             ->replace('{{ layout }}', $this->layout)
             ->replace('{{ revisions }}', ($this->revisions) ? 'true' : 'false')
@@ -201,6 +202,28 @@ class AddCollection extends Command
             ->replace('{{ mount }}', $this->mount);
 
         File::put(base_path("content/collections/{$this->filename}.yaml"), $contents);
+    }
+
+    /**
+     * Create blueprints.
+     *
+     * @return bool|null
+     */
+    protected function createBlueprint()
+    {
+        $stub = ($this->public)
+            ? ($this->dated)
+                ? '/stubs/collection_blueprint_public_dated.yaml.stub'
+                : '/stubs/collection_blueprint_public.yaml.stub'
+            : ($this->dated)
+                ? '/stubs/collection_blueprint_public_dated.yaml.stub'
+                : '/stubs/collection_blueprint_public.yaml.stub';
+
+        $stub = File::get(__DIR__.$stub);
+        $contents = Str::of($stub)
+            ->replace('{{ collection_name }}', $this->collection_name);
+
+        File::put(base_path("resources/blueprints/collections/{$this->filename}/{$this->filename}.yaml"), $contents);
     }
 
     /**
@@ -219,7 +242,7 @@ class AddCollection extends Command
 }
 // 1. DONE Input: name handle route blueprint index show
 // 2. Collection.yaml generated from input variables
-// 3. Mount collection, show list of pages
+// 3. DONE Mount collection, show list of pages
 // 4. DONE Add route with default ‘/{mount}/{slug}’
 // 5. Blueprint from default stub with section headers, page builder
 // 6. Generate index from stub

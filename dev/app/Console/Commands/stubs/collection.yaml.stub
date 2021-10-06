@@ -1,4 +1,4 @@
-title: {{ name }}
+title: {{ collection_name }}
 route: '{{ route }}'
 layout: {{ layout }}
 revisions: {{ revisions }}
