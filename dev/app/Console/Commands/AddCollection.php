@@ -132,6 +132,7 @@ class AddCollection extends Command
             $choice = $this->choice('On which page do you want to mount this collection?', $this->getPages());
             preg_match('/\[(.*?)\]/', $choice, $id);
             $this->mount = $id[1];
+            $this->setIndexTemplate($id[1]);
         }
         $this->layout = $this->ask('What should be the layout file for this collection?', 'layout');
         $this->revisions = ($this->confirm('Should revisions be enabled?', false)) ? true : false;
@@ -281,12 +282,16 @@ class AddCollection extends Command
 
         File::put(base_path("resources/views/{$this->filename}/_show.antlers.html"), $contents);
     }
+
+    /**
+     * Set index template.
+     *
+     * @return bool|null
+     */
+    protected function setIndexTemplate($id)
+    {
+        Entry::find($id)
+            ->set('template', "{$this->filename}/index")
+            ->save();
+    }
 }
-// 1. DONE Input: name handle route blueprint index show
-// 2. Collection.yaml generated from input variables
-// 3. DONE Mount collection, show list of pages
-// 4. DONE Add route with default ‘/{mount}/{slug}’
-// 5. DONE Blueprint from default stub with section headers, page builder
-// 6. DONE Generate index from stub
-// 7. DONE Generate show from stub
-// 9. Apply template to mounted page
