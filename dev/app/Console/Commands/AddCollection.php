@@ -124,7 +124,7 @@ class AddCollection extends Command
         // https://laravel.com/api/8.x/Illuminate/Console/Command.html#method_choice
 
         try {
-            $this->checkExistence('Collection', "content/collections/$this->filename.yaml");
+            $this->checkExistence('Collection', "content/collections/{$this->filename}.yaml");
 
             $this->createCollection();
         } catch (\Exception $e) {
@@ -133,7 +133,7 @@ class AddCollection extends Command
 
         // $this->createPartial();
 
-        $this->info("Collection '$this->name' created.");
+        $this->info("Collection '{$this->name}' created.");
     }
 
     /**
@@ -144,7 +144,7 @@ class AddCollection extends Command
     protected function checkExistence($type, $path)
     {
         if (File::exists(base_path($path))) {
-            throw new \Exception("$type '$path' already exists.");
+            throw new \Exception("$type '{$path}' already exists.");
         }
     }
 
@@ -168,7 +168,7 @@ class AddCollection extends Command
             ->replace('{{ template }}', $this->template)
             ->replace('{{ mount }}', $this->mount);
 
-        File::put(base_path("content/collections/$this->filename.yaml"), $contents);
+        File::put(base_path("content/collections/{$this->filename.yaml}"), $contents);
     }
 
     /**
@@ -182,7 +182,7 @@ class AddCollection extends Command
         $contents = Str::of($stub)
             ->replace('{{ name }}', $this->collection_name);
 
-        File::put(base_path("resources/views/page_builder/_$this->filename.antlers.html"), $contents);
+        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), $contents);
     }
 }
 // 1. DONE Input: name handle route blueprint index show
