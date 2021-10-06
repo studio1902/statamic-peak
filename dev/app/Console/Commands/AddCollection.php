@@ -138,8 +138,6 @@ class AddCollection extends Command
         // https://laravel.com/api/8.x/Illuminate/Console/Command.html#method_choice
 
         try {
-            $this->checkExistence('Collection', "content/collections/{$this->filename}.yaml");
-
             $this->createCollection();
             $this->createBlueprint();
         } catch (\Exception $e) {
@@ -188,6 +186,8 @@ class AddCollection extends Command
      */
     protected function createCollection()
     {
+        $this->checkExistence('Collection', "content/collections/{$this->filename}.yaml");
+
         $stub = File::get(__DIR__.'/stubs/collection.yaml.stub');
         $contents = Str::of($stub)
             ->replace('{{ collection_name }}', $this->collection_name)
@@ -211,18 +211,21 @@ class AddCollection extends Command
      */
     protected function createBlueprint()
     {
+        $this->checkExistence('Blueprint', "resources/blueprints/collections/{$this->filename}/{$this->filename}.yaml");
+
         $stub = ($this->public)
-            ? ($this->dated)
+            ? ($this->dated
                 ? '/stubs/collection_blueprint_public_dated.yaml.stub'
-                : '/stubs/collection_blueprint_public.yaml.stub'
-            : ($this->dated)
+                : '/stubs/collection_blueprint_public.yaml.stub')
+            : ($this->dated
                 ? '/stubs/collection_blueprint_public_dated.yaml.stub'
-                : '/stubs/collection_blueprint_public.yaml.stub';
+                : '/stubs/collection_blueprint_public.yaml.stub');
 
         $stub = File::get(__DIR__.$stub);
         $contents = Str::of($stub)
             ->replace('{{ collection_name }}', $this->collection_name);
 
+        File::makeDirectory("resources/blueprints/collections/{$this->filename}");
         File::put(base_path("resources/blueprints/collections/{$this->filename}/{$this->filename}.yaml"), $contents);
     }
 
