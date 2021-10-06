@@ -146,7 +146,9 @@ class AddCollection extends Command
 
         try {
             $this->createCollection();
+            $this->createDirectory("resources/blueprints/collections/{$this->filename}");
             $this->createBlueprint();
+            if ($this->index || $this->show) $this->createDirectory("resources/views/{$this->filename}");
             if ($this->index) $this->createIndexTemplate();
             if ($this->show) $this->createShowTemplate();
         } catch (\Exception $e) {
@@ -234,8 +236,17 @@ class AddCollection extends Command
         $contents = Str::of($stub)
             ->replace('{{ collection_name }}', $this->collection_name);
 
-        File::makeDirectory("resources/blueprints/collections/{$this->filename}");
         File::put(base_path("resources/blueprints/collections/{$this->filename}/{$this->filename}.yaml"), $contents);
+    }
+
+    /**
+     * Create dir.
+     *
+     * @return bool|null
+     */
+    protected function createDirectory($directory)
+    {
+        File::makeDirectory($directory);
     }
 
     /**
@@ -252,7 +263,6 @@ class AddCollection extends Command
             ->replace('{{ collection_name }}', $this->collection_name)
             ->replace('{{ handle }}', $this->filename);
 
-        File::makeDirectory("resources/views/{$this->filename}");
         File::put(base_path("resources/views/{$this->filename}/_index.antlers.html"), $contents);
     }
 
@@ -269,7 +279,6 @@ class AddCollection extends Command
         $contents = Str::of($stub)
             ->replace('{{ collection_name }}', $this->collection_name);
 
-        File::makeDirectory("resources/views/{$this->filename}");
         File::put(base_path("resources/views/{$this->filename}/_show.antlers.html"), $contents);
     }
 }
