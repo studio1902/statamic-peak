@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
+use Statamic\Facades\Entry;
 
 class AddCollection extends Command
 {
@@ -38,6 +39,13 @@ class AddCollection extends Command
      * @var string
      */
     protected $filename = '';
+
+    /**
+     * Public.
+     *
+     * @var bool
+     */
+    protected $public = true;
 
      /**
      * The collection route.
@@ -111,7 +119,13 @@ class AddCollection extends Command
     {
         $this->collection_name = $this->ask('What should be the name for this collection?');
         $this->filename = Str::slug($this->collection_name, '_');
-        $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{url');
+        $this->public = ($this->confirm('Should this be a public collection with a route?', true)) ? true : false;
+        if ($this->public) {
+            $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{url}');
+            $choice = $this->choice('On which page do you want to mount this collection?', $this->getPages());
+            preg_match('/\[(.*?)\]/', $choice, $id);
+            $this->mount = $id[1];
+        }
         $this->layout = $this->ask('What should be the layout file for this collection?', 'layout');
         $this->revisions = ($this->confirm('Should revisions be enabled?', false)) ? true : false;
         $this->sort_dir = ($this->confirm('Should the sort direction be ascending?', true)) ? 'asc' : 'desc';
@@ -149,6 +163,24 @@ class AddCollection extends Command
     }
 
     /**
+     * Get all pages.
+     *
+     * @return array
+     */
+    protected function getPages()
+    {
+        $query = Entry::query()
+            ->where('collection', 'pages')
+            ->where('status', 'published')
+            ->orderBy('title', 'asc');
+
+        return $query->get()->map(fn($entry) =>
+               "{$entry->get('title')} [{$entry->id()}]"
+            )
+            ->toArray();
+    }
+
+    /**
      * Create fieldset.
      *
      * @return bool|null
@@ -168,7 +200,7 @@ class AddCollection extends Command
             ->replace('{{ template }}', $this->template)
             ->replace('{{ mount }}', $this->mount);
 
-        File::put(base_path("content/collections/{$this->filename.yaml}"), $contents);
+        File::put(base_path("content/collections/{$this->filename}.yaml"), $contents);
     }
 
     /**
