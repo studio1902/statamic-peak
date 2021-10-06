@@ -1,0 +1,14 @@
+{{#
+	@name {{ collection_name }} show
+	@desc The {{ collection_name }} show template.
+#}}
+
+<main class="outer-grid">
+    <div class="fluid-container">
+        {{ partial:typography/h1 :content="title" }}
+    </div>
+
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+</main>

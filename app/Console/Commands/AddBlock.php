@@ -60,8 +60,8 @@ class AddBlock extends Command
         $this->instructions = $this->ask('What should be the instructions for this block?');
 
         try {
-            $this->checkExistence('Fieldset', "resources/fieldsets/$this->filename.yaml");
-            $this->checkExistence('Partial', "resources/views/page_builder/_$this->filename.antlers.html");
+            $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
+            $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
 
             $this->createFieldset();
             $this->createPartial();
@@ -70,7 +70,7 @@ class AddBlock extends Command
             return $this->error($e->getMessage());
         }
 
-        $this->info("Peak page builder block '$this->block_name' added.");
+        $this->info("Peak page builder block '{$this->block_name}' added.");
     }
 
     /**
@@ -81,7 +81,7 @@ class AddBlock extends Command
     protected function checkExistence($type, $path)
     {
         if (File::exists(base_path($path))) {
-            throw new \Exception("$type '$path' already exists.");
+            throw new \Exception("{$type} '{$path}' already exists.");
         }
     }
 
@@ -96,7 +96,7 @@ class AddBlock extends Command
         $contents = Str::of($stub)
             ->replace('{{ name }}', $this->block_name);
 
-        File::put(base_path("resources/fieldsets/$this->filename.yaml"), $contents);
+        File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), $contents);
     }
 
     /**
@@ -111,7 +111,7 @@ class AddBlock extends Command
             ->replace('{{ name }}', $this->block_name)
             ->replace('{{ filename }}', $this->filename);
 
-        File::put(base_path("resources/views/page_builder/_$this->filename.antlers.html"), $contents);
+        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), $contents);
     }
 
     /**

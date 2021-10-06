@@ -16,6 +16,9 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 # Uncomment the following lines if you build assets on your server (recommended):
-# /public/js/
-# /public/css/
-# /public/mix-manifest.json
+/public/js/
+/public/css/
+/public/mix-manifest.json
+
+# Ignore the exported kit.
+/statamic-peak/
