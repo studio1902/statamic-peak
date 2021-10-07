@@ -1,6 +1,6 @@
-# Peak Statamic Starter Kit Docs
+# Peak docs
 
-These are the [docs](https://peak.studio1902.nl) repo for Peak. The docs run on https://vuepress.vuejs.org. 
+These are the [docs](https://peak.studio1902.nl) repo for Peak. The docs run on https://vuepress.vuejs.org.
 
 ## Compile
 

@@ -25,6 +25,21 @@
 <td>A command to generate all files needed to add a block to the <RouterLink to="/features/page-builder.html#adding-blocks">page builder</RouterLink>.</td>
 </tr>
 <tr>
+<td><code>app/Console/Commands/AddBlock.php</code></td>
+<td></td>
+<td>A command to generate all files needed to add a block to the <RouterLink to="/features/page-builder.html#adding-blocks">page builder</RouterLink>.</td>
+</tr>
+<tr>
+<td><code>app/Console/Commands/stubs/block.html.stub</code></td>
+<td></td>
+<td>A stub file for the <code>peak:add-block</code> command.</td>
+</tr>
+<tr>
+<td><code>app/Console/Commands/stubs/fieldset.yaml.stub</code></td>
+<td></td>
+<td>A stub file for the <code>peak:add-block</code> command.</td>
+</tr>
+<tr>
 <td><code>app/Actions/GenerateSocialImages.php</code></td>
 <td></td>
 <td>An action to <RouterLink to="/features/social-images-generation.html">generate social images</RouterLink> for entries.</td>

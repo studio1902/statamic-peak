@@ -3,9 +3,6 @@
 ## Articles on Peak
 * [Peak on Laravel News](https://laravel-news.com/statamic-peak)
 
-## Video's on Peak
-<div class='embed-container'><iframe src='https://www.youtube.com/embed/79Ist1HrHoA' frameborder='0' allowfullscreen></iframe></div>
-
 ## Made with Peak
 This is a collection of sites made with Statamic using Peak:
 

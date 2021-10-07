@@ -3,8 +3,6 @@
 <ul>
 <li><a href="https://laravel-news.com/statamic-peak" target="_blank" rel="noopener noreferrer">Peak on Laravel News<OutboundLink/></a></li>
 </ul>
-<h2 id="video-s-on-peak" tabindex="-1"><a class="header-anchor" href="#video-s-on-peak" aria-hidden="true">#</a> Video's on Peak</h2>
-<div class='embed-container'><iframe src='https://www.youtube.com/embed/79Ist1HrHoA' frameborder='0' allowfullscreen></iframe></div>
 <h2 id="made-with-peak" tabindex="-1"><a class="header-anchor" href="#made-with-peak" aria-hidden="true">#</a> Made with Peak</h2>
 <p>This is a collection of sites made with Statamic using Peak:</p>
 <ul>

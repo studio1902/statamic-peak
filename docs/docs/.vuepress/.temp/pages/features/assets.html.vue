@@ -15,7 +15,7 @@
 </blockquote>
 <h2 id="background-images" tabindex="-1"><a class="header-anchor" href="#background-images" aria-hidden="true">#</a> Background images</h2>
 <p>Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use</p>
-<div class="language-html ext-html line-numbers-mode"><pre v-pre class="language-html"><code>{{ partial:snippets/background_image image="YOUR_IMAGE" selector="SELECTOR_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}
+<div class="language-html ext-html line-numbers-mode"><pre v-pre class="language-html"><code>{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>The predefined sizes used in <code>resources/views/snippets/_background_image.antlers.html</code> are defined in <code>config/statamic/assets.php</code>.</p>
 <blockquote>
 <p>Note: You can use either a hardcoded image or an image from an asset field.</p>
