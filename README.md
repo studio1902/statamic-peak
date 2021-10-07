@@ -26,6 +26,8 @@ Maintaining Peak demands a lot of my time and it probably saves you a lot. Your 
 ## Contributing
 Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect. Read the [Code of Conduct](https://github.com/studio1902/statamic-peak/blob/main/.github/CODE_OF_CONDUCT.md).
 
+Read more about [how you can contribute](https://peak.studio1902.nl/other/contributing.html) here.
+
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has its' own license.
 
