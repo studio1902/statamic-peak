@@ -23,5 +23,5 @@ The documentation run on https://vuepress.vuejs.org. To locally install this nav
 
 Commits to these docs are automatically deployed to production on https://peak.studio1902.nl using [Netlify](https://netlify.com).
 
-## Thanks
+## Attribution
 These docs are initially setup using VuePress 1 by [Robert Guss](https://github.com/robertguss/). Thank you so much! Today we run VuePress 2.
