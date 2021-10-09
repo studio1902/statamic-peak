@@ -4,6 +4,7 @@
             <li
                 {{ if children }}
                     x-data="{ subnavOpen: false }"
+                    @keyup.escape.window="subnavOpen = false"
                 {{ /if }}
                 class="relative leading-none"
             >
