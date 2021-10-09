@@ -17,6 +17,11 @@
                     "
                     {{ if children }}
                         href="#"
+                        :aria-label="
+                            subnavOpen
+                                ? '{{ trans:strings.subnav_close }}'
+                                : '{{ trans:strings.subnav_open }}'
+                        "
                         @click.prevent="subnavOpen = !subnavOpen"
                     {{ else }}
                         href="{{ url }}"
