@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.11.0 (2021-10-09)
+
+### What's improved
+- a11y improvements. #136 by @robdekort
+
 ## 3.10.0 (2021-10-06)
 
 ### What's new

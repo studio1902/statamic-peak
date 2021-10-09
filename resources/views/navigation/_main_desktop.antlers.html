@@ -4,6 +4,7 @@
             <li
                 {{ if children }}
                     x-data="{ subnavOpen: false }"
+                    @keyup.escape.window="subnavOpen = false"
                 {{ /if }}
                 class="relative leading-none"
             >
@@ -16,6 +17,11 @@
                     "
                     {{ if children }}
                         href="#"
+                        :aria-label="
+                            subnavOpen
+                                ? '{{ trans:strings.subnav_close }}'
+                                : '{{ trans:strings.subnav_open }}'
+                        "
                         @click.prevent="subnavOpen = !subnavOpen"
                     {{ else }}
                         href="{{ url }}"
