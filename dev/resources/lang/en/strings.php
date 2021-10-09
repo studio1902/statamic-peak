@@ -34,6 +34,11 @@ return [
     // Navigation
     'close'                             => 'Close',
     'menu'                              => 'Menu',
+    'nav_close'                         => 'Close navigation',
+    'nav_open'                          => 'Open navigation',
+    'subnav_close'                      => 'Close sub navigation',
+    'subnav_open'                       => 'Open sub navigation',
+    'skip_to_content'                   => 'Skip to content',
 
     // Other
     'dark_mode_on'                      => 'Enable dark mode',
