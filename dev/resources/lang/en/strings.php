@@ -34,6 +34,7 @@ return [
     // Navigation
     'close'                             => 'Close',
     'menu'                              => 'Menu',
+    'skip_to_content'                   => 'Skip to content',
 
     // Other
     'dark_mode_on'                      => 'Enable dark mode',
