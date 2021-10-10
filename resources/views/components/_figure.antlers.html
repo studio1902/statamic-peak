@@ -1,11 +1,3 @@
----
-sizes: {
-    'sm': '(min-width: 768px) 35vw, 90vw',
-    'md': '(min-width: 768px) 55vw, 90vw',
-    'lg': '(min-width: 768px) 75vw, 90vw',
-    'xl': '90vw'
-}
----
 {{#
 	@name Figure
 	@desc The figure component. A sizeable image rendered in a figure tag with optional caption.
@@ -19,7 +11,15 @@ sizes: {
         class="w-full" 
         cover="false" 
         lazy="true"
-        :sizes="view:sizes[size]"
+        {{ if size == 'sm'}}
+            sizes="(min-width: 768px) 35vw, 90vw" 
+        {{ elseif size == 'md' }}
+            sizes="(min-width: 768px) 55vw, 90vw" 
+        {{ elseif size == 'lg' }}
+            sizes="(min-width: 768px) 75vw, 90vw" 
+        {{ elseif size == 'xl' }}
+            sizes="90vw" 
+        {{ /if }}
     }}
     
     {{ partial:typography/caption as="figcaption" }}
