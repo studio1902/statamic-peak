@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Use front matter instead of nested if statements in picture partial. #137 by @JohnathonKoster
+
 ## 3.11.0 (2021-10-09)
 
 ### What's improved
