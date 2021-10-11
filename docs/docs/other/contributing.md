@@ -1,7 +1,7 @@
 # Contributing
 Contributions and discussions are always welcome, no matter how large or small.
 
-Statamic Peak is a mono repo containing both a development environment and the docs.
+Statamic Peak is a mono repo containing the kit that gets installed for users, a development environment and the docs.
 
 ## Repo structure
 
