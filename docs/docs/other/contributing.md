@@ -14,6 +14,9 @@ Statamic Peak is a mono repo containing both a development environment and the d
 ## Development environment
 If you want to contribute to the core Starter Kit make sure you target files the `/dev/` folder and run your local install from this folder. When you use valet you can navigate to the folder and type: `valet link statamic-peak`.
 
+## Test the kit export
+You can test the kit export by running `php please starter-kit:export .././` in the dev environment. After running this command the git status should reflect all changed and new files in the root of the repo. Please don't commit those kit export changes. Exporting the starter kit, maintaining the changelog and taggin releases is something the maintainer(s) of the project do.
+
 ## Docs
 The documentation run on https://vuepress.vuejs.org. To locally install this navigate to the `docs` dir in this repo and:
 
