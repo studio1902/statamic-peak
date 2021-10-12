@@ -1,5 +1,11 @@
 # Release Notes
 
+## 3.12.0 (2021-10-12)
+
+### What's improved
+- Use front matter in picture partial. #137 by @JohnathonKoster
+- Use front matter in notification partial. #138 by @JohnathonKoster
+
 ## 3.11.0 (2021-10-09)
 
 ### What's improved
