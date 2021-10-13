@@ -12,7 +12,11 @@ Statamic Peak is a mono repo containing the kit that gets installed for users, a
 | `/dev/` | The actual development environment. A running Statamic Peak instance. |
 
 ## Development environment
-If you want to contribute to the core Starter Kit make sure you target files the `/dev/` folder and run your local install from this folder. When you use valet you can navigate to the folder and type: `valet link statamic-peak`.
+If you want to contribute to the core Starter Kit **make sure you update the files in the `dev` folder of the repository**.
+After making changes please run a local starter kit install from this folder to check everything installs properly.
+
+When you use valet you can navigate to the `dev` folder and type: `valet link statamic-peak`.
+After this your site will be available on `http://statamic-peak.test` (or whatever you configured for your TLD).
 
 ## Test the kit export
 You can test the kit export by running `php please starter-kit:export .././` in the dev environment. After running this command the git status should reflect all changed and new files in the root of the repo. Please don't commit those kit export changes. Exporting the starter kit, maintaining the changelog and taggin releases is something the maintainer(s) of the project do.
