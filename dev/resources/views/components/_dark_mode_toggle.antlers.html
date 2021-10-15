@@ -29,7 +29,7 @@
             aria-label="{{ trans:strings.dark_mode_on }}"
             title="{{ trans:strings.dark_mode_on }}"
         >
-            {{ svg:moon class="w-5 h-5 text-neutral hover:text-primary stroke-current transition-colors overflow-visible" alt="" aria-hidden="true" }}
+            {{ svg:moon class="w-5 h-5 text-neutral hover:text-primary stroke-current motion-safe:transition-colors overflow-visible" alt="" aria-hidden="true" }}
         </button>
 
         <button
@@ -38,7 +38,7 @@
             aria-label="{{ trans:strings.dark_mode_off }}"
             title="{{ trans:strings.dark_mode_off }}"
         >
-            {{ svg:sun class="w-5 h-5 text-neutral hover:text-primary stroke-current transition-colors overflow-visible" alt="" aria-hidden="true" }}
+            {{ svg:sun class="w-5 h-5 text-neutral hover:text-primary stroke-current motion-safe:transition-colors overflow-visible" alt="" aria-hidden="true" }}
         </button>
     </li>
 {{ /section:dark_mode_toggle }}
