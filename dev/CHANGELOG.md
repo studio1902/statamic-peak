@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Use `motion-safe` on all transitions. #141 by @robdekort
+
 ## 3.13.0 (2021-10-15)
 
 ### What's improved
