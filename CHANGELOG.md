@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.13.0 (2021-10-15)
+
+### What's improved
+- Include RDFa meta data to breadcrumbs partial. #140 by @klickreflex
+
 ## 3.12.0 (2021-10-12)
 
 ### What's improved
