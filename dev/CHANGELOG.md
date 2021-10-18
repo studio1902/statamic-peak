@@ -1,9 +1,10 @@
 # Release Notes
 
-## Unreleased
+## 3.14.0 (2021-10-18)
 
 ### What's improved
 - Use `motion-safe` on all transitions. #141 by @robdekort
+- Don't hard code 16px as the base font size. #142 by @klickreflex
 
 ## 3.13.0 (2021-10-15)
 
