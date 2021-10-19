@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Move noscript out of head to body. #144 by @robdekort
+
 ## 3.14.0 (2021-10-18)
 
 ### What's improved
