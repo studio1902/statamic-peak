@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Fix typo and duplicate translatable strings. #146 by @sjardim
+
 ## 3.15.0 (2021-10-20)
 
 ### What's improved
