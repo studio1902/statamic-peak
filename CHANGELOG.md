@@ -1,5 +1,11 @@
 # Release Notes
 
+## 3.15.0 (2021-10-20)
+
+### What's improved
+- Move noscript out of head to body. #144 by @robdekort
+- Optionally grant all collection permissions to the `editor` role when using `php please peak:add-collection`. #145 by @robdekort
+
 ## 3.14.0 (2021-10-18)
 
 ### What's improved
