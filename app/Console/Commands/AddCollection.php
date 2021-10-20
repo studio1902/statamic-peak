@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Entry;
+use Statamic\Support\Arr;
+use Symfony\Component\Yaml\Yaml;
 
 class AddCollection extends Command
 {
@@ -117,6 +119,13 @@ class AddCollection extends Command
      */
     protected $index = true;
 
+    /**
+     * Grant permissions.
+     *
+     * @var bool
+     */
+    protected $permissions = true;
+
      /**
      * Execute the console command.
      *
@@ -144,6 +153,7 @@ class AddCollection extends Command
         }
         $this->index = ($this->confirm('Generate and apply index template?', true)) ? true : false;
         $this->show = ($this->confirm('Generate and apply show template?', true)) ? true : false;
+        $this->permissions = ($this->confirm('Grant edit permissions to editor role?', true)) ? true : false;
 
         try {
             $this->createCollection();
@@ -152,6 +162,7 @@ class AddCollection extends Command
             if ($this->index || $this->show) $this->createDirectory("resources/views/{$this->filename}");
             if ($this->index) $this->createIndexTemplate();
             if ($this->show) $this->createShowTemplate();
+            if ($this->permissions) $this->grantPermissionsToEditor();
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
@@ -293,5 +304,33 @@ class AddCollection extends Command
         Entry::find($id)
             ->set('template', "{$this->filename}/index")
             ->save();
+    }
+
+    /**
+     * Grant permissions to editor.
+     *
+     * @return bool|null
+     */
+    protected function grantPermissionsToEditor()
+    {
+        $roles = Yaml::parseFile(base_path('resources/users/roles.yaml'));
+        $newPermissions = [
+            "view {$this->filename} entries",
+            "edit {$this->filename} entries",
+            "create {$this->filename} entries",
+            "delete {$this->filename} entries",
+            "publish {$this->filename} entries",
+            "reorder {$this->filename} entries",
+            "edit other authors {$this->filename} entries",
+            "publish other authors {$this->filename} entries",
+            "delete other authors {$this->filename} entries",
+        ];
+
+        $existingPermissions = Arr::get($roles, 'editor.permissions');
+        $permissions = array_merge($existingPermissions, $newPermissions);
+
+        Arr::set($roles, 'editor.permissions', $permissions);
+
+        File::put(base_path('resources/users/roles.yaml'), Yaml::dump($roles, 99, 2));
     }
 }
