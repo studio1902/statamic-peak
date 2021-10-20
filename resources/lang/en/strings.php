@@ -44,17 +44,12 @@ return [
     'dark_mode_on'                      => 'Enable dark mode',
     'dark_mode_off'                     => 'Disable dark mode',
     'no_results'                        => 'There are currently no posts.',
-    'no_script'                         => 'This website requires Javascript for some parts to function propertly. Your experience may vary.',
+    'no_script'                         => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
 
     // Pagination
     'next'                              => 'next',
     'of'                                => 'of',
     'previous'                          => 'previous',
-
-    // Search
-    'search'                            => 'Search',
-    'search_no_results'                 => 'No results found',
-    'search_results_for'                => 'Results for',
 
     // Search
     'search'                            => 'Search',
