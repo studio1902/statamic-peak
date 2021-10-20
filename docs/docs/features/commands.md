@@ -23,5 +23,6 @@ Run `php please peak:add-collection` to:
 * Optionally create an index partial in `resources/views/{handle}/index.antlers.html` with default Peak markup.
 * Optionally set the index template to the entry you chose to mount the collection on.
 * Optionally create a show partial in `resources/views/{handle}/show.antlers.html` with default Peak markup.
+* Optionally add permissions to the `editor` role in `resources/users/roles.yaml`. 
 
 <div class='embed-container'><iframe src='https://www.youtube.com/embed/JWVDvTFDvHA' frameborder='0' allowfullscreen></iframe></div>
