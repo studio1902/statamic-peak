@@ -14,6 +14,7 @@ This is a collection of sites made with Statamic using Peak:
 * [vespa2rent.be](https://vespa2rent.be) by [VanNut](https://vannut.nl)
 * [roerganger.com](https://roerganger.com) by [VanNut](https://vannut.nl)
 * [voltexsloepverhuur.nl](https://voltexsloepverhuur.nl) by [VanNut](https://vannut.nl)
+* [stadthausmensch.de](https://stadthausmensch.de) by [Croox](https://croox.com) & [Triolog](https://www.triolog-web.de)
 
 ## Peak Branding
 
