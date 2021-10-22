@@ -40,6 +40,8 @@
                     {{ /if }}
                     src="{{ glide:url preset='lg' }}"
                     alt="{{ alt ensure_right='.' }}"
+                    width="{{ image.width }}"
+                    height="{{ image.height }}"
                     {{ if lazy }}
                         loading="lazy"
                     {{ /if }}
