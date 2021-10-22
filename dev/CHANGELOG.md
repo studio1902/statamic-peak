@@ -1,9 +1,10 @@
 # Release Notes
 
-## Unreleased
+## 3.16.0 (2021-10-22)
 
 ### What's improved
 - Fix typo and duplicate translatable strings. #146 by @sjardim
+- Add intrinsic image dimensions. #149 by @klickreflex
 
 ## 3.15.0 (2021-10-20)
 
