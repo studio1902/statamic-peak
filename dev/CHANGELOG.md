@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.17.0 (2021-10-24)
+
+### What's new
+- Add the ability to create a new page to mount your new collection on when running `peak:add-collection`. #150 by @robdekort
+
 ## 3.16.0 (2021-10-22)
 
 ### What's improved
@@ -8,9 +13,11 @@
 
 ## 3.15.0 (2021-10-20)
 
+### What's new
+- Optionally grant all collection permissions to the `editor` role when using `php please peak:add-collection`. #145 by @robdekort
+
 ### What's improved
 - Move noscript out of head to body. #144 by @robdekort
-- Optionally grant all collection permissions to the `editor` role when using `php please peak:add-collection`. #145 by @robdekort
 
 ## 3.14.0 (2021-10-18)
 
