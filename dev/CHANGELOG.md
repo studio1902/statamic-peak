@@ -1,10 +1,15 @@
 # Release Notes
 
+## 3.19.0 (2021-10-25)
+
+### What's new
+- A `php please peak:clear-site` command to clear all default Peak content. #152 by @robdekort
+
 ## 3.18.0 (2021-10-25)
 
 ### What's new
 - Add license file. #154 by @robdekort
-- Add conributing file. #155 by @robdekort
+- Add contributing file. #155 by @robdekort
 
 ### What's improved
 - Add missing IDE helper comments to various partials. #151 by @robdekort
