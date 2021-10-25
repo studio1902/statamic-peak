@@ -1,6 +1,6 @@
 # Release Notes
 
-## 3.18.0 (2021-10-24)
+## 3.18.0 (2021-10-25)
 
 ### What's new
 - Add license file. #154 by @robdekort
