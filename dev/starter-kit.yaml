@@ -52,6 +52,7 @@ export_paths:
   - resources/users/roles.yaml
   - resources/views
   - routes/web.php
+  - CONTRIBUTING.md
   - LICENSE
   - package.json
   - package-lock.json
