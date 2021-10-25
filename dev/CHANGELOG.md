@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Add missing IDE helper comments to various partials. #151 by @robdekort
+
 ## 3.17.0 (2021-10-24)
 
 ### What's new
