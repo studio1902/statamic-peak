@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### What's new
+- Add license file. #154 by @robdekort
+
 ### What's improved
 - Add missing IDE helper comments to various partials. #151 by @robdekort
 
