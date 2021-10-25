@@ -1,3 +1,8 @@
+{{#
+	@name Main desktop navigation
+	@desc The sites main desktop navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity.
+#}}
+
 <nav class="hidden md:block">
     <ul class="flex items-center space-x-8">
         {{ nav:main max_depth="2" include_home="true" }}
