@@ -3,9 +3,12 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Entry;
+use Statamic\Facades\GlobalSet;
 
 class ClearSite extends Command
 {
@@ -32,14 +35,43 @@ class ClearSite extends Command
      */
     public function handle()
     {
-        $clear_site = ($this->confirm('Are you sure you want to clear all content?', true)) ? true : false;
+        $clear_site = ($this->confirm('Are you sure you want to clear all default Peak content?', true)) ? true : false;
 
         if ($clear_site) {
+            $this->trashAssets();
+            $this->clearGlobalSocialMedia();
             $this->clearPageBuilder('/');
-            $this->trashPages('/');
+            $this->trashPagesButHome();
+
+            Artisan::call('statamic:glide:clear');
             Artisan::call('cache:clear');
-            $this->info("Your site is clear.");
+
+            $this->info("Your view from the peak is clear.");
         }
+    }
+
+    /**
+     * Trash all assets.
+     *
+     * @return bool|null
+     */
+    protected function trashAssets()
+    {
+        $files = new Filesystem;
+        $path = public_path('assets');
+        if ($files->exists($path))
+            $files->cleanDirectory($path);
+    }
+
+     /**
+     * Trash global social media data.
+     *
+     * @return bool|null
+     */
+    protected function clearGlobalSocialMedia()
+    {
+        $set = GlobalSet::findByHandle('social_media');
+        $set->inDefaultSite()->set('social_media', null)->save();
     }
 
     /**
@@ -59,8 +91,17 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function trashPages()
+    protected function trashPagesButHome()
     {
+        $pages = Entry::query()
+            ->where('collection', 'pages')
+            ->where('id', '!=', 'home')
+            ->get();
 
+        foreach ($pages as $page) {
+            $file_path = base_path("content/collections/pages/{$page->slug()}.md");
+            if (File::exists($file_path))
+                File::delete($file_path);
+        }
     }
 }
