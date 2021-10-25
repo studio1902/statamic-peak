@@ -1,6 +1,6 @@
 # Release Notes
 
-## Unreleased
+## 3.18.0 (2021-10-24)
 
 ### What's new
 - Add license file. #154 by @robdekort
