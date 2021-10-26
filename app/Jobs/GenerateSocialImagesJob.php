@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Spatie\Browsershot\Browsershot;
+use Statamic\Facades\AssetContainer;
 
 class GenerateSocialImagesJob implements ShouldQueue
 {
@@ -38,10 +39,12 @@ class GenerateSocialImagesJob implements ShouldQueue
     {
         $this->items->each(function($item, $key) {
 
+            $disk = AssetContainer::find('social_images')->disk();
+
             // Delete any old images remaining.
             collect([
-                public_path("social_images/{$item->get('og_image')}"),
-                public_path("social_images/{$item->get('twitter_image')}"),
+                $disk->path($item->get('og_image')),
+                $disk->path($item->get('twitter_image')),
             ])->each(function ($image) {
                 if (File::exists($image))
                     File::delete($image);
@@ -58,7 +61,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 630)
                 ->select('#og')
-                ->save(public_path("social_images/{$file}"));
+                ->save($disk->path($file));
             $item->set('og_image', $file)->save();
 
             // Generate, save and set default twitter image.
@@ -66,7 +69,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             $image = Browsershot::url("{$app_url}/social-images/{$id}")
                 ->windowSize(1200, 600)
                 ->select('#twitter')
-                ->save(public_path("social_images/{$file}"));
+                ->save($disk->path($file));
             $item->set('twitter_image', $file)->save();
         });
 
