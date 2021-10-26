@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.20.0 (2021-10-26)
+
+### What's improved
+- Delete old social images when generating new ones. #156 by @robdekort
+
 ## 3.19.0 (2021-10-25)
 
 ### What's new
