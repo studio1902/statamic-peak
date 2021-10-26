@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.21.1 (2021-10-26)
+
+### What's fixed
+- Actually include `app/Console/Commands/ClearSite.php` in `starter-kit.yaml` so you can use it.
+
 ## 3.21.0 (2021-10-26)
 
 ### What's new
