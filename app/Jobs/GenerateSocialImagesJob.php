@@ -10,6 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Spatie\Browsershot\Browsershot;
 
 class GenerateSocialImagesJob implements ShouldQueue
@@ -36,6 +37,17 @@ class GenerateSocialImagesJob implements ShouldQueue
     public function handle()
     {
         $this->items->each(function($item, $key) {
+
+            // Delete any old images remaining.
+            collect([
+                public_path("social_images/{$item->get('og_image')}"),
+                public_path("social_images/{$item->get('twitter_image')}"),
+            ])->each(function ($image) {
+                if (File::exists($image))
+                    File::delete($image);
+            });
+
+            // Prepare.
             $id = $item->id();
             $title = Str::of($item->get('title'))->slug('-');
             $app_url = config('app.url');
