@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DynamicToken;
 use Illuminate\Support\Facades\Route;
+use Statamic\Facades\Site;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,11 @@ Route::statamic('/site.webmanifest', 'manifest/manifest', [
 ]);
 
 // The Social Image route to generate social images.
-// Route::statamic('/social-images/{id}', 'social_images', [
-//     'layout' => null
-// ]);
+Site::all()->each(function ($site) {
+    Route::statamic("{$site->url()}/social-images/{id}", 'social_images', [
+        'layout' => null,
+    ]);
+});
 
 // The Search route to display search results with `views/search.antlers.html`.
 // Route::statamic('/search', 'search', [
