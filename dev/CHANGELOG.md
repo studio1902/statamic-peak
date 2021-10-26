@@ -1,6 +1,6 @@
 # Release Notes
 
-## Unreleased
+## 3.21.0 (2021-10-26)
 
 ### What's new
 - Generating social images now works in multisite environments. #157 by @robdekort
