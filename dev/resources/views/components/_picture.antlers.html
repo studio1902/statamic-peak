@@ -11,23 +11,23 @@
             {{ else }}
                 <source
                     srcset="
-                        {{ glide:url preset='xs-webp' }} 320w,
-                        {{ glide:url preset='sm-webp' }} 480w,
-                        {{ glide:url preset='md-webp' }} 768w,
-                        {{ glide:url preset='lg-webp' }} 1280w,
-                        {{ glide:url preset='xl-webp' }} 1440w,
-                        {{ glide:url preset='2xl-webp' }} 1680w"
+                        {{ glide:image preset='xs-webp' }} 320w,
+                        {{ glide:image preset='sm-webp' }} 480w,
+                        {{ glide:image preset='md-webp' }} 768w,
+                        {{ glide:image preset='lg-webp' }} 1280w,
+                        {{ glide:image preset='xl-webp' }} 1440w,
+                        {{ glide:image preset='2xl-webp' }} 1680w"
                     sizes="{{ sizes }}"
                     type="image/webp"
                 >
                 <source
                     srcset="
-                        {{ glide:url preset='xs' }} 320w,
-                        {{ glide:url preset='sm' }} 480w,
-                        {{ glide:url preset='md' }} 768w,
-                        {{ glide:url preset='lg' }} 1280w,
-                        {{ glide:url preset='xl' }} 1440w,
-                        {{ glide:url preset='2xl' }} 1680w"
+                        {{ glide:image preset='xs' }} 320w,
+                        {{ glide:image preset='sm' }} 480w,
+                        {{ glide:image preset='md' }} 768w,
+                        {{ glide:image preset='lg' }} 1280w,
+                        {{ glide:image preset='xl' }} 1440w,
+                        {{ glide:image preset='2xl' }} 1680w"
                     sizes="{{ sizes }}"
                     type="{{ image.mime_type }}"
                 >
@@ -38,7 +38,7 @@
                     {{ else }}
                         class="{{ class }}"
                     {{ /if }}
-                    src="{{ glide:url preset='lg' }}"
+                    src="{{ glide:image preset='lg' }}"
                     alt="{{ alt ensure_right='.' }}"
                     width="{{ image.width }}"
                     height="{{ image.height }}"

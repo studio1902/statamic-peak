@@ -8,7 +8,7 @@
 -
 {{ fields }}
 {{ if handle !== 'consent' }}
-{{ trans key="{display}" locale="{locale}" }}:
+{{ trans :key="display" :locale="locale" }}:
 {{ if (value | is_array) }}
 {{ value }}
 {{ value }}
