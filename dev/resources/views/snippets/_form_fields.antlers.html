@@ -13,7 +13,7 @@
         {{ width == '100' ?= 'md:col-span-12' }}"
     >
         <label class="font-bold" for="{{ handle }}">
-            {{ trans key="{display}" }}
+            {{ trans :key="display" }}
             {{ if validate | contains:required }}
                 <sup class="text-yellow-400">*</sup>
             {{ /if }}
