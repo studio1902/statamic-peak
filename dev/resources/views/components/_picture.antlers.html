@@ -5,7 +5,7 @@
 
 {{ if image }}
     <picture>
-        {{ image }}
+        {{ asset :url="image" }}
             {{ if extension == 'svg' || extension == 'gif' }}
                 <img class="{{ class }}" src="{{ url }}" alt="{{ alt }}" />
             {{ else }}
@@ -47,6 +47,6 @@
                     {{ /if }}
                 >
             {{ /if }}
-        {{ /image }}
+        {{ /asset }}
     </picture>
 {{ /if }}
