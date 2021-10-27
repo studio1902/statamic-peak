@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.22.0 (2021-10-27)
+
+### What's improved
+- Performance enhancements. #159 by @jasonvarga and @robdekort
+
 ## 3.21.1 (2021-10-26)
 
 ### What's fixed
