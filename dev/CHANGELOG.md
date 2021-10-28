@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Add aria-expanded where missing and update positions for existing ones. #163 by @robdekort
+
 ## 3.23.0 (2021-10-28)
 
 ### What's improved

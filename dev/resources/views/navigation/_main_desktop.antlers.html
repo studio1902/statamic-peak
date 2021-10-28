@@ -22,12 +22,11 @@
                     "
                     {{ if children }}
                         href="#"
-                        :aria-label="
-                            subnavOpen
-                                ? '{{ trans:strings.subnav_close }}'
-                                : '{{ trans:strings.subnav_open }}'
-                        "
                         @click.prevent="subnavOpen = !subnavOpen"
+                        :aria-label="subnavOpen
+                            ? '{{ trans:strings.subnav_close }}'
+                            : '{{ trans:strings.subnav_open }}'"
+                        :aria-expanded="subnavOpen"
                     {{ else }}
                         href="{{ url }}"
                     {{ /if }}
@@ -46,7 +45,6 @@
                     <ul
                         x-show="subnavOpen"
                         class="absolute mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
-                        :aria-expanded="subnavOpen"
                         @click.outside="subnavOpen = false"
                         x-transition
                         x-cloak
