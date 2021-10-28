@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.23.0 (2021-10-28)
+
+### What's improved
+- move alt from social and favicon assets blueprint. #162 by @robdekort
+
 ## 3.22.0 (2021-10-27)
 
 ### What's improved
