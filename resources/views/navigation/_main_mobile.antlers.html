@@ -19,6 +19,7 @@
             ? '{{ trans:strings.nav_close }}'
             : '{{ trans:strings.nav_open }}'
         "
+        :aria-expanded="mobileNavOpen"
         x-text="mobileNavOpen ? '{{ trans:strings.close }}' : '{{ trans:strings.menu }}'"
     ></button>
 
@@ -41,11 +42,10 @@
                             href="#"
                             @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
                             @click.outside="mobileNavSubnavOpen = false"
-                            :aria-label="
-                            mobileNavSubnavOpen
+                            :aria-label="mobileNavSubnavOpen
                                 ? '{{ trans:strings.subnav_close }}'
-                                : '{{ trans:strings.subnav_open }}'
-                        "
+                                : '{{ trans:strings.subnav_open }}'"
+                            :aria-expanded="mobileNavSubnavOpen"
                         {{ else }}
                             href="{{ url }}"
                         {{ /if }}
@@ -65,7 +65,6 @@
                         <ul
                             x-show="mobileNavSubnavOpen"
                             class="flex flex-col mt-6 space-y-6"
-                            :aria-expanded="mobileNavSubnavOpen"
                             x-collapse
                             x-cloak
                         >
