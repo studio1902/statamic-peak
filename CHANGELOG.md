@@ -1,5 +1,14 @@
 # Release Notes
 
+## 3.24.0 (2021-10-30)
+
+### What's improved
+- Add aria-expanded where missing and update positions for existing ones. #163 by @robdekort
+
+### What's fixed
+- Fix empty sizes attribute when using a figure from Bard. #165 by @robdekort
+
+
 ## 3.23.0 (2021-10-28)
 
 ### What's improved
