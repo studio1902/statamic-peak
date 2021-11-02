@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Add Pinterest as option to social media channels. #170 by @klickreflex
+
 ## 3.25.0 (2021-11-02)
 
 ### What's improved
