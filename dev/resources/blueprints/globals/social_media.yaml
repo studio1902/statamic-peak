@@ -16,126 +16,126 @@ sections:
               display: Facebook
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
                     localizable: true
                     listable: hidden
                     prepend: 'https://www.facebook.com/'
-                    display: URL
+                    display: Handle
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.facebook.com/'
             instagram:
               display: Instagram
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
                     localizable: true
                     listable: hidden
                     prepend: 'https://www.instagram.com/'
-                    display: URL
+                    display: Handle
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.instagram.com/'
             linkedin:
               display: LinkedIn
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
                     localizable: true
                     listable: hidden
                     prepend: 'https://www.linkedin.com/'
-                    display: URL
+                    display: Handle
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.linkedin.com/'
             twitter:
               display: Twitter
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
                     localizable: true
                     listable: hidden
                     prepend: 'https://www.twitter.com/'
-                    display: URL
+                    display: Handle
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.twitter.com/'
             vimeo:
               display: Vimeo
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
                     localizable: true
                     listable: hidden
                     prepend: 'https://www.vimeo.com/'
-                    display: URL
+                    display: Handle
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.vimeo.com/'
             youtube:
               display: YouTube
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
                     localizable: true
                     listable: hidden
                     prepend: 'https://www.youtube.com/'
-                    display: URL
+                    display: Handle
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.youtube.com/'
             github:
               display: GitHub
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
                     localizable: true
                     listable: hidden
                     prepend: 'https://www.github.com/'
-                    display: URL
+                    display: Handle
                     validate: required
-                - 
+                -
                   handle: prefix
-                  field: 
+                  field:
                     type: hidden
                     default: 'https://www.github.com/'
           type: replicator
