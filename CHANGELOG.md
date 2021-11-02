@@ -1,5 +1,13 @@
 # Release Notes
 
+## 3.25.0 (2021-11-02)
+
+### What's improved
+- Update social media globals. Rename fields and add email. #169 by @robdekort
+
+### What's fixed
+- Change incorrect comment in `.gitignore`.
+
 ## 3.24.0 (2021-10-30)
 
 ### What's improved
