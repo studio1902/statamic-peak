@@ -12,6 +12,23 @@ sections:
         handle: social_media
         field:
           sets:
+            email:
+              display: Email
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    display: Email
+                    validate: required
+                -
+                  handle: prefix
+                  field:
+                    type: hidden
+                    default: 'mailto:'
             facebook:
               display: Facebook
               fields:
@@ -48,23 +65,6 @@ sections:
                   field:
                     type: hidden
                     default: 'https://www.github.com/'
-            email:
-              display: Email
-              fields:
-                -
-                  handle: handle
-                  field:
-                    input_type: text
-                    type: text
-                    localizable: true
-                    listable: hidden
-                    display: Email
-                    validate: required
-                -
-                  handle: prefix
-                  field:
-                    type: hidden
-                    default: 'mailto:'
             instagram:
               display: Instagram
               fields:
