@@ -12,6 +12,23 @@ sections:
         handle: social_media
         field:
           sets:
+            email:
+              display: Email
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    display: Email
+                    validate: required
+                -
+                  handle: prefix
+                  field:
+                    type: hidden
+                    default: 'mailto:'
             facebook:
               display: Facebook
               fields:
@@ -30,8 +47,8 @@ sections:
                   field:
                     type: hidden
                     default: 'https://www.facebook.com/'
-            email:
-              display: Email
+            github:
+              display: GitHub
               fields:
                 -
                   handle: handle
@@ -40,13 +57,14 @@ sections:
                     type: text
                     localizable: true
                     listable: hidden
-                    display: Email
+                    prepend: 'https://www.github.com/'
+                    display: Handle
                     validate: required
                 -
                   handle: prefix
                   field:
                     type: hidden
-                    default: 'mailto:'
+                    default: 'https://www.github.com/'
             instagram:
               display: Instagram
               fields:
@@ -83,6 +101,24 @@ sections:
                   field:
                     type: hidden
                     default: 'https://www.linkedin.com/'
+            Pinterest:
+              display: Pinterest
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.pinterest.com/'
+                    display: URL
+                    validate: required
+                -
+                  handle: prefix
+                  field:
+                    type: hidden
+                    default: 'https://www.pinterest.com/'
             twitter:
               display: Twitter
               fields:
@@ -137,24 +173,6 @@ sections:
                   field:
                     type: hidden
                     default: 'https://www.youtube.com/'
-            github:
-              display: GitHub
-              fields:
-                -
-                  handle: handle
-                  field:
-                    input_type: text
-                    type: text
-                    localizable: true
-                    listable: hidden
-                    prepend: 'https://www.github.com/'
-                    display: Handle
-                    validate: required
-                -
-                  handle: prefix
-                  field:
-                    type: hidden
-                    default: 'https://www.github.com/'
           type: replicator
           listable: hidden
           localizable: true
