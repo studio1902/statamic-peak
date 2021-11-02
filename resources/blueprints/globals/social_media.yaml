@@ -159,7 +159,7 @@ sections:
               display: Pinterest
               fields:
                 -
-                  handle: url
+                  handle: handle
                   field:
                     input_type: text
                     type: text
