@@ -155,6 +155,24 @@ sections:
                   field:
                     type: hidden
                     default: 'https://www.github.com/'
+            Pinterest:
+              display: Pinterest
+              fields:
+                -
+                  handle: url
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    prepend: 'https://www.pinterest.com/'
+                    display: URL
+                    validate: required
+                -
+                  handle: prefix
+                  field:
+                    type: hidden
+                    default: 'https://www.pinterest.com/'
           type: replicator
           listable: hidden
           localizable: true
