@@ -6,7 +6,9 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
+use Statamic\Facades\Config;
 use Statamic\Support\Arr;
+use Stringy\StaticStringy as Stringy;
 use Symfony\Component\Yaml\Yaml;
 
 class AddBlock extends Command
@@ -56,7 +58,7 @@ class AddBlock extends Command
     public function handle()
     {
         $this->block_name = $this->ask('What should be the name for this block?');
-        $this->filename = $this->ask('What should be the filename for this block?');
+        $this->filename = Stringy::slugify($this->block_name, '_', Config::getShortLocale());
         $this->instructions = $this->ask('What should be the instructions for this block?');
 
         try {
