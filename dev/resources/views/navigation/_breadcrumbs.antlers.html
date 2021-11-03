@@ -2,6 +2,7 @@
 	@name Breadcrumbs
 	@desc Breadcrumbs display the current page in it's page hierarcy.
 #}}
+
 <nav aria-label="breadcrumb">
     <ol
         vocab="https://schema.org/"
@@ -23,7 +24,7 @@
                         <span property="name">{{ title }}</span>
                     </a>
                     <meta property="position" content="{{ count }}">
-                    <span class="px-2 text-neutral-300" aria-hidden>/</span>
+                    <span class="px-2 text-neutral" aria-hidden>/</span>
                 {{ else }}
                     <a
                         href="{{ url }}"

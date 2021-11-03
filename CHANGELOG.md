@@ -1,10 +1,84 @@
 # Release Notes
 
+## 3.26.0 (2021-11-02)
+
+### What's improved
+- Add Pinterest as option to social media channels. #170 by @klickreflex
+
+## 3.25.0 (2021-11-02)
+
+### What's improved
+- Update social media globals. Rename fields and add email. #169 by @robdekort
+
+### What's fixed
+- Change incorrect comment in `.gitignore`.
+
+## 3.24.0 (2021-10-30)
+
+### What's improved
+- Add aria-expanded where missing and update positions for existing ones. #163 by @robdekort
+
+### What's fixed
+- Fix empty sizes attribute when using a figure from Bard. #165 by @robdekort
+
+
+## 3.23.0 (2021-10-28)
+
+### What's improved
+- Remove alt from social and favicon assets blueprint. #162 by @robdekort
+
+## 3.22.0 (2021-10-27)
+
+### What's improved
+- Performance enhancements. #159 by @jasonvarga and @robdekort
+
+## 3.21.1 (2021-10-26)
+
+### What's fixed
+- Actually include `app/Console/Commands/ClearSite.php` in `starter-kit.yaml` so you can use it.
+
+## 3.21.0 (2021-10-26)
+
+### What's new
+- Generating social images now works in multisite environments. #157 by @robdekort
+
+## 3.20.0 (2021-10-26)
+
+### What's improved
+- Delete old social images when generating new ones. #156 by @robdekort
+
+## 3.19.0 (2021-10-25)
+
+### What's new
+- A `php please peak:clear-site` command to clear all default Peak content. #152 by @robdekort
+
+## 3.18.0 (2021-10-25)
+
+### What's new
+- Add license file. #154 by @robdekort
+- Add contributing file. #155 by @robdekort
+
+### What's improved
+- Add missing IDE helper comments to various partials. #151 by @robdekort
+
+## 3.17.0 (2021-10-24)
+
+### What's new
+- Add the ability to create a new page to mount your new collection on when running `peak:add-collection`. #150 by @robdekort
+
+## 3.16.0 (2021-10-22)
+
+### What's improved
+- Fix typo and duplicate translatable strings. #146 by @sjardim
+- Add intrinsic image dimensions. #149 by @klickreflex
+
 ## 3.15.0 (2021-10-20)
+
+### What's new
+- Optionally grant all collection permissions to the `editor` role when using `php please peak:add-collection`. #145 by @robdekort
 
 ### What's improved
 - Move noscript out of head to body. #144 by @robdekort
-- Optionally grant all collection permissions to the `editor` role when using `php please peak:add-collection`. #145 by @robdekort
 
 ## 3.14.0 (2021-10-18)
 

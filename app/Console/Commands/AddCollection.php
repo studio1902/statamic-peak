@@ -4,11 +4,14 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
+use Statamic\Facades\Config;
 use Statamic\Facades\Entry;
 use Statamic\Support\Arr;
 use Symfony\Component\Yaml\Yaml;
+use Stringy\StaticStringy as Stringy;
 
 class AddCollection extends Command
 {
@@ -55,6 +58,20 @@ class AddCollection extends Command
      * @var string
      */
     protected $route = '';
+
+    /**
+     * Add page.
+     *
+     * @var bool
+     */
+    protected $add_page = true;
+
+    /**
+     * The page title.
+     *
+     * @var string
+     */
+    protected $page_title = '';
 
     /**
      * The layout
@@ -138,10 +155,17 @@ class AddCollection extends Command
         $this->public = ($this->confirm('Should this be a public collection with a route?', true)) ? true : false;
         if ($this->public) {
             $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{slug}');
-            $choice = $this->choice('On which page do you want to mount this collection?', $this->getPages());
-            preg_match('/\[(.*?)\]/', $choice, $id);
-            $this->mount = $id[1];
-            $this->setIndexTemplate($id[1]);
+            $this->add_page = ($this->confirm('Do you want to create a new page to mount this collection on?', true)) ? true : false;
+            if ($this->add_page) {
+                $this->page_title = $this->ask('What should be the page title for this mount?');
+                $this->mount = $this->addPage();
+                $this->setIndexTemplate($this->mount);
+            } else {
+                $choice = $this->choice('On which page existing page do you want to mount this collection?', $this->getPages());
+                preg_match('/\[(.*?)\]/', $choice, $id);
+                $this->mount = $id[1];
+                $this->setIndexTemplate($id[1]);
+            }
         }
         $this->layout = $this->ask('What should be the layout file for this collection?', 'layout');
         $this->revisions = ($this->confirm('Should revisions be enabled?', false)) ? true : false;
@@ -167,7 +191,7 @@ class AddCollection extends Command
             return $this->error($e->getMessage());
         }
 
-        // $this->createPartial();
+        Artisan::call('cache:clear');
 
         $this->info("Collection '{$this->collection_name}' created.");
     }
@@ -191,12 +215,12 @@ class AddCollection extends Command
      */
     protected function getPages()
     {
-        $query = Entry::query()
+        return Entry::query()
             ->where('collection', 'pages')
             ->where('status', 'published')
-            ->orderBy('title', 'asc');
-
-        return $query->get()->map(fn($entry) =>
+            ->orderBy('title', 'asc')
+            ->get()
+            ->map(fn($entry) =>
                "{$entry->get('title')} [{$entry->id()}]"
             )
             ->toArray();
@@ -292,6 +316,23 @@ class AddCollection extends Command
             ->replace('{{ collection_name }}', $this->collection_name);
 
         File::put(base_path("resources/views/{$this->filename}/show.antlers.html"), $contents);
+    }
+
+    /**
+     * Add a page.
+     *
+     * @return string
+     */
+    protected function addPage()
+    {
+        $entry = Entry::make()
+            ->collection('pages')
+            ->published(true)
+            ->slug(Stringy::slugify($this->page_title, '-', Config::getShortLocale()))
+            ->data(['title' => $this->page_title]);
+        $entry->save();
+
+        return $entry->id();
     }
 
     /**

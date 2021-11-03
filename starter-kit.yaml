@@ -5,6 +5,7 @@ export_paths:
   - app/Console/Kernel.php
   - app/Console/Commands/AddBlock.php
   - app/Console/Commands/AddCollection.php
+  - app/Console/Commands/ClearSite.php
   - app/Console/Commands/stubs/block.html.stub
   - app/Console/Commands/stubs/collection_blueprint_private_dated.yaml.stub
   - app/Console/Commands/stubs/collection_blueprint_private.yaml.stub
@@ -52,6 +53,8 @@ export_paths:
   - resources/users/roles.yaml
   - resources/views
   - routes/web.php
+  - CONTRIBUTING.md
+  - LICENSE
   - package.json
   - package-lock.json
   - README.example.md

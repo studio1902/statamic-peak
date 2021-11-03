@@ -1,6 +1,5 @@
 ---
 sizes: {
-    'sm': '(min-width: 768px) 35vw, 90vw',
     'md': '(min-width: 768px) 55vw, 90vw',
     'lg': '(min-width: 768px) 75vw, 90vw',
     'xl': '90vw'
@@ -13,14 +12,14 @@ sizes: {
 #}}
 
 <figure class="size-{{ size }} my-4">
-    {{ 
-        partial:components/picture 
-        :image="image" 
-        class="w-full" 
-        cover="false" 
+    {{
+        partial:components/picture
+        :image="image"
+        class="w-full"
+        cover="false"
         lazy="true"
-        :sizes="view:sizes[size]"
+        :sizes="view:sizes['{size}']"
     }}
-    
+
     {{ partial:typography/caption as="figcaption" }}
 </figure>

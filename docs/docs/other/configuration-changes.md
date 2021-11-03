@@ -6,10 +6,11 @@ Peak changes the default Statamic config. The following is different:
 | --- | --- | --- |
 | `.env.example` |  | Add more default Statamic and Redis settings by default.
 | `app/Console/Kernel.php` |  | Add a schedule you can invoke via a cron to warm all caches.
-| `app/Console/Commands/AddBlock.php` | | A command to generate all files needed to add a block to the [page builder](/features/page-builder.html#adding-blocks).
-| `app/Console/Commands/AddBlock.php` | | A command to generate all files needed to add a block to the [page builder](/features/page-builder.html#adding-blocks).
-| `app/Console/Commands/stubs/block.html.stub` | | A stub file for the `peak:add-block` command.
-| `app/Console/Commands/stubs/fieldset.yaml.stub` | | A stub file for the `peak:add-block` command.
+| `app/Console/Commands/AddBlock.php` |  | A command to generate all files needed to [add a block to the page builder](/features/commands.html#add-page-builder-block).
+| `app/Console/Commands/AddCollection.php` |  | A command to generate all files needed to [add a collection](/features/commands.html#add-collection).
+| `app/Console/Commands/ClearSite.php` |  | A command to [clear all default Peak content](/features/commands.html#clear-site).
+| `app/Console/Commands/stubs/block.html.stub` |  | A stub file for the `peak:add-block` command.
+| `app/Console/Commands/stubs/fieldset.yaml.stub` |  | A stub file for the `peak:add-block` command.
 | `app/Actions/GenerateSocialImages.php` |  | An action to [generate social images](/features/social-images-generation.html) for entries.
 | `app/Http/Controllers/DynamicToken.php` |  | New Controller for [forms](/features/forms.html) |
 | `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |

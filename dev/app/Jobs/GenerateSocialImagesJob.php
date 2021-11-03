@@ -10,7 +10,9 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 use Spatie\Browsershot\Browsershot;
+use Statamic\Facades\AssetContainer;
 
 class GenerateSocialImagesJob implements ShouldQueue
 {
@@ -36,25 +38,38 @@ class GenerateSocialImagesJob implements ShouldQueue
     public function handle()
     {
         $this->items->each(function($item, $key) {
+
+            $disk = AssetContainer::find('social_images')->disk();
+
+            // Delete any old images remaining.
+            collect([
+                $disk->path($item->get('og_image')),
+                $disk->path($item->get('twitter_image')),
+            ])->each(function ($image) {
+                if (File::exists($image))
+                    File::delete($image);
+            });
+
+            // Prepare.
             $id = $item->id();
             $title = Str::of($item->get('title'))->slug('-');
-            $app_url = config('app.url');
+            $absolute_url = $item->site()->absoluteUrl();
             $unique = time();
 
             // Generate, save and set default og image.
             $file = "{$title}-og-{$unique}.png";
-            $image = Browsershot::url("{$app_url}/social-images/{$id}")
+            $image = Browsershot::url("{$absolute_url}/social-images/{$id}")
                 ->windowSize(1200, 630)
                 ->select('#og')
-                ->save(public_path("social_images/{$file}"));
+                ->save($disk->path($file));
             $item->set('og_image', $file)->save();
 
             // Generate, save and set default twitter image.
             $file = "{$title}-twitter-{$unique}.png";
-            $image = Browsershot::url("{$app_url}/social-images/{$id}")
+            $image = Browsershot::url("{$absolute_url}/social-images/{$id}")
                 ->windowSize(1200, 600)
                 ->select('#twitter')
-                ->save(public_path("social_images/{$file}"));
+                ->save($disk->path($file));
             $item->set('twitter_image', $file)->save();
         });
 
