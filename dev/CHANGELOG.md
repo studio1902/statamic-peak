@@ -1,5 +1,11 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Add IDE comment helper to social image component. 2fd78dc by @robdekort
+- Replace color shade in breadcrumbs partial to support TW shades/no-shades out of the box. 03d93db by @robdekort
+
 ## 3.26.0 (2021-11-02)
 
 ### What's improved
