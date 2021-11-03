@@ -5,10 +5,7 @@
 
 <nav
     x-data="{ mobileNavOpen: false }"
-    x-trap="mobileNavOpen"
-    x-effect="mobileNavOpen
-        ? document.body.classList.add('no-scroll')
-        : document.body.classList.remove('no-scroll')"
+    x-trap.inert.noscroll="mobileNavOpen"
     class="md:hidden"
 >
     <button
