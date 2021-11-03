@@ -2,8 +2,11 @@
 
 ## Unreleased
 
-### What's improved
+### What's new
+- Invoke (/) and close (esc) search input with keyboard. #172 by @robdekort
 - Alpine v3.5 with `inert` and `noscroll`. #171 by @robdekort
+
+### What's improved
 - Autogenerate block filename in `php please peak:add-block`. 58493263 by @robdekort
 - Add IDE comment helper to social image component. 2fd78dc by @robdekort
 - Replace color shade in breadcrumbs partial to support TW shades/no-shades out of the box. 03d93db by @robdekort
