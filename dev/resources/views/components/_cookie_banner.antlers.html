@@ -3,17 +3,28 @@
 	@desc The cookie banner component defined in `resources/views/snippets/_seo.antlers.html` and yielded in `resources/views/layout.antlers.html`.
 #}}
 
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('cookie', {
+            consent: Alpine.$persist(false),
+            bannerOpen: Alpine.$persist(true),
+            consentDate: Alpine.$persist(false),
+            consentAnalyticsStorage: Alpine.$persist(false),
+            consentAdStorage: Alpine.$persist(false),
+        })
+    })
+
+    /*Alpine.effect(() => {
+        const count = Alpine.store('counter').count;
+
+        // Now do something with `count`...
+    })*/
+</script>
+
 <div
-    {{# Persist 0 as untouched banner state. #}}
-    x-data="{
-        open: true,
-        cookieConsentDate: $persist(0),
-        analyticsStorage: $persist(false),
-        adStorage: $persist(false),
-    }"
-    {{# Parse localStorage strings to use as booleans. Update gtag on state change. #}}
+    x-data
     x-effect="
-        $store.cookieConsent
+        cookieConsent
             ? gtag('consent', 'update', {
                 'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
                 'ad_storage': (adStorage ? 'granted' : 'denied') })
@@ -21,8 +32,8 @@
     "
     {{# Hide when banner is interacted with, check date for optional consent revoke. If so set state back to initial state. #}}
     x-init="
-        $store.cookieConsent != 0 ? open = false : '',
-        (cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}' ? ($store.cookieConsent = 0, cookieConsentDate = 0) : '')"
+        cookieConsent != 0 ? open = false : '',
+        (cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}' ? (cookieConsent = 0, cookieConsentDate = 0) : '')"
     x-show="open"
     x-transition
     class="fixed z-50 inset-x-[1rem] bottom-[1rem] md:bottom-[2rem] md:w-80 flex flex-col p-6 space-y-4 bg-white border border-neutral/10 rounded shadow-lg
@@ -71,7 +82,7 @@
         <button
             @click="
                 open = false,
-                $store.cookieConsent = true,
+                cookieConsent = true,
                 cookieConsentDate = '{{ now format="Y-m-d" }}'"
             type="button"
             class="px-4 py-2 bg-primary rounded text-sm font-bold text-white focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
@@ -82,7 +93,7 @@
         <button
             @click="
                 open = false,
-                $store.cookieConsent = false"
+                cookieConsent = false"
             type="button"
             class="px-1 py-2 rounded text-sm font-bold text-neutral focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
         >
@@ -91,19 +102,16 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.store('cookieConsent', Alpine.$persist(0))
-    })
-</script>
-
 {{# Yield this section in `resources/layouts/_footer.antlers.html` so users can reset their consent. #}}
 {{ section:reset_cookie_consent }}
     {{ if seo:use_cookie_banner }}
         {{# Read out localStorage on nextTick for consent status and display a reset consent link by saving the initial state. #}}
-        <span x-data x-cloak>
-            <span x-show="$store.cookieConsent">
-                <a @click="$store.cookieConsent = 0" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
+        <span
+            x-data="{ cookieConsent: $persist(0) }"
+            x-cloak
+        >
+            <span x-show="cookieConsent">
+                <a @click="cookieConsent = 0" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
             </span>
         </span>
     {{ /if }}
