@@ -134,11 +134,6 @@ module.exports = {
           paddingLeft: `calc(env(safe-area-inset-left, 0rem) + ${theme('padding.8')})`,
           paddingRight: `calc(env(safe-area-inset-right, 0rem) + ${theme('padding.8')})`,
         },
-        // Disable scroll e.g. when a modal is open. Should be used on the <body>
-        '.no-scroll': {
-          height: '100%',
-          overflow: 'hidden',
-        },
         // The outer grid where all block builder blocks are a child of. Spreads out all blocks
         // vertically with a uniform space between them.
         '.outer-grid': {

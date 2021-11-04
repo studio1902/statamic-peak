@@ -3,7 +3,7 @@ module.exports = {
     head: [
       ['link', { rel: 'icon', href: '/favicon.svg' }],
       ['link', { rel: 'mask-icon', href: '/favicon.svg', color: '#FF0274' }],
-      ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'CCKEJUTO', defer: true }],
+      ['script', { src: 'https://virtuous-ten.studio1902.nl/script.js', 'data-site': 'CCKEJUTO', defer: true }],
       ['meta', { property: 'og:title', content: 'Statamic Peak Docs' }],
       ['meta', { property: 'og:description', content: 'Statamic Peak is an opinionated starter kit for all your bespoke Statamic sites.' }],
       ['meta', { property: 'og:image', content: 'https://peak.studio1902.nl/visuals/statamic-peak-og.png' }],
