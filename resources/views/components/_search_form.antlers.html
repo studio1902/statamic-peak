@@ -10,6 +10,8 @@
 
 <li
     x-data="{ open: false, value: '' }"
+    @keydown.window.prevent.slash.="open = true, setTimeout(() => {$refs.input.focus()}, 200)"
+    @keydown.window.prevent.esc="open = false"
     @click.outside="open = false"
     class="flex py-2 relative"
     x-cloak

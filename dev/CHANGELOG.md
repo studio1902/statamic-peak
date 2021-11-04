@@ -1,6 +1,6 @@
 # Release Notes
 
-## Unreleased
+## 3.27.0 (2021-11-04)
 
 ### What's new
 - Invoke (/) and close (esc) search input with keyboard. #172 by @robdekort
