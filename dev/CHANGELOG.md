@@ -32,7 +32,6 @@
 ### What's fixed
 - Fix empty sizes attribute when using a figure from Bard. #165 by @robdekort
 
-
 ## 3.23.0 (2021-10-28)
 
 ### What's improved
