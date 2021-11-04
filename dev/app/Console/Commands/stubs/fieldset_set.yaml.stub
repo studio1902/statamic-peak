@@ -4,4 +4,4 @@ fields:
     handle: size
     field: common.size
     config:
-      instructions: 'The size in which the quote should be displayed.'
+      instructions: 'The size in which the {{ name }} should be displayed.'

@@ -55,7 +55,7 @@ class AddSet extends Command
 
         try {
             $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
-            $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
+            $this->checkExistence('Partial', "resources/views/components/_{$this->filename}.antlers.html");
 
             $this->createFieldset();
             $this->createPartial();
@@ -64,7 +64,7 @@ class AddSet extends Command
             return $this->error($e->getMessage());
         }
 
-        $this->info("Peak page builder block '{$this->block_name}' added.");
+        $this->info("Peak page builder Article set '{$this->set_name}' added.");
     }
 
     /**
@@ -88,7 +88,7 @@ class AddSet extends Command
     {
         $stub = File::get(__DIR__.'/stubs/fieldset_set.yaml.stub');
         $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->block_name);
+            ->replace('{{ name }}', $this->set_name);
 
         File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), $contents);
     }
@@ -100,12 +100,12 @@ class AddSet extends Command
      */
     protected function createPartial()
     {
-        $stub = File::get(__DIR__.'/stubs/block.html.stub');
+        $stub = File::get(__DIR__.'/stubs/set.html.stub');
         $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->block_name)
+            ->replace('{{ name }}', $this->set_name)
             ->replace('{{ filename }}', $this->filename);
 
-        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), $contents);
+        File::put(base_path("resources/views/components/_{$this->filename}.antlers.html"), $contents);
     }
 
     /**
@@ -115,10 +115,9 @@ class AddSet extends Command
      */
     protected function updatePageBuilder()
     {
-        $fieldset = Yaml::parseFile(base_path('resources/fieldsets/page_builder.yaml'));
+        $fieldset = Yaml::parseFile(base_path('resources/fieldsets/article.yaml'));
         $newSet = [
-            'display' => $this->block_name,
-            'instructions' => $this->instructions,
+            'display' => $this->set_name,
             'fields' => [
                 [
                     'import' => $this->filename
@@ -134,6 +133,6 @@ class AddSet extends Command
 
         Arr::set($fieldset, 'fields.0.field.sets', $existingSets);
 
-        File::put(base_path('resources/fieldsets/page_builder.yaml'), Yaml::dump($fieldset, 99, 2));
+        File::put(base_path('resources/fieldsets/article.yaml'), Yaml::dump($fieldset, 99, 2));
     }
 }
