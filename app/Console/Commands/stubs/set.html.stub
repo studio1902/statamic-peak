@@ -1,0 +1,9 @@
+{{#
+	@name {{ name }}
+	@desc The {{ name }} component.
+    @set page.article.{{ filename }}
+#}}
+
+<div class="size-{{ size }} my-4">
+    <h2>🔧<br>{{ name }}</h2>
+</div>

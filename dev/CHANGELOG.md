@@ -1,5 +1,10 @@
 # Release Notes
 
+## 3.28.0 (2021-11-04)
+
+### What's new
+- A `php please peak:add-set` command to generate all files needed for a fresh page builder article set. You get a named fieldset with a sizing button group, a named partial component and the fieldset get's added to `resources/fieldsets/article.yaml`. #174 by @robdekort
+
 ## 3.27.0 (2021-11-04)
 
 ### What's new
