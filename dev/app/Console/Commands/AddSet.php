@@ -11,7 +11,7 @@ use Statamic\Support\Arr;
 use Stringy\StaticStringy as Stringy;
 use Symfony\Component\Yaml\Yaml;
 
-class AddBlock extends Command
+class AddSet extends Command
 {
     use RunsInPlease;
 
@@ -20,35 +20,28 @@ class AddBlock extends Command
     *
     * @var string
     */
-    protected $name = 'peak:add-block';
+    protected $name = 'peak:add-set';
 
      /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Add a page builder block.";
+    protected $description = "Add an Article (Bard) set.";
 
      /**
-     * The block name.
+     * The set name.
      *
      * @var string
      */
-    protected $block_name = '';
+    protected $set_name = '';
 
      /**
-     * The block filename.
+     * The set filename.
      *
      * @var string
      */
     protected $filename = '';
-
-     /**
-     * The block instructions.
-     *
-     * @var string
-     */
-    protected $instructions = '';
 
      /**
      * Execute the console command.
@@ -57,9 +50,8 @@ class AddBlock extends Command
      */
     public function handle()
     {
-        $this->block_name = $this->ask('What should be the name for this block?');
-        $this->filename = Stringy::slugify($this->block_name, '_', Config::getShortLocale());
-        $this->instructions = $this->ask('What should be the instructions for this block?');
+        $this->set_name = $this->ask('What should be the name for this set?');
+        $this->filename = Stringy::slugify($this->set_name, '_', Config::getShortLocale());
 
         try {
             $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
@@ -94,7 +86,7 @@ class AddBlock extends Command
      */
     protected function createFieldset()
     {
-        $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
+        $stub = File::get(__DIR__.'/stubs/fieldset_set.yaml.stub');
         $contents = Str::of($stub)
             ->replace('{{ name }}', $this->block_name);
 
