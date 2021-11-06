@@ -116,6 +116,7 @@ fields:
       listable: hidden
       display: 'Social image'
       instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px. The image will be focal cropped to this dimension.'
+      instructions_position: below
       width: 50
   -
     handle: twitter_image
@@ -126,6 +127,7 @@ fields:
       listable: hidden
       display: 'Twitter image'
       instructions: 'This entries Twitter image. Defaults to global site Twitter image. Images should have an aspect ratio of 2:1 with minimum dimensions of 300x157. This image will be focal cropped to this dimension.'
+      instructions_position: below
       width: 50
   -
     handle: section_sitemap
@@ -152,6 +154,7 @@ fields:
       cast_booleans: false
       type: select
       instructions: 'How often to instruct search engines to crawl.'
+      instructions_position: below
       width: 50
       default: weekly
       listable: hidden
@@ -163,6 +166,7 @@ fields:
       display: Priority
       default: 0.5
       instructions: 'Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites, it only lets the search engines know which pages you deem most important for the crawlers.'
+      instructions_position: below
       width: 50
       listable: hidden
   -
