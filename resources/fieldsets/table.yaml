@@ -3,8 +3,6 @@ fields:
   -
     handle: size
     field: common.size
-    config:
-      instructions: 'The size in which the table should be displayed.'
   -
     handle: first_row_headers
     field:
@@ -14,6 +12,7 @@ fields:
       listable: hidden
       width: 50
       instructions: 'Show the first row as header and give it a header styling.'
+      instructions_position: below
   -
     handle: first_column_headers
     field:
@@ -23,6 +22,7 @@ fields:
       listable: hidden
       width: 50
       instructions: 'Show the first column as header and give it a header styling.'
+      instructions_position: below
   -
     handle: table
     field:
@@ -30,7 +30,6 @@ fields:
       type: table
       icon: table
       localizable: true
-      instructions: 'Add a table for structured data.'
       listable: hidden
   -
     handle: caption
@@ -40,4 +39,3 @@ fields:
       localizable: true
       listable: hidden
       display: Caption
-      instructions: 'An optional caption that will be displayed under the table.'

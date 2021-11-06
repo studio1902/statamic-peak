@@ -27,6 +27,7 @@ sections:
           cast_booleans: false
           type: select
           instructions: 'Select the character to separate the page title and site title.'
+          instructions_position: below
           width: 33
           listable: hidden
           display: Separator
@@ -38,7 +39,8 @@ sections:
           localizable: true
           listable: hidden
           display: 'Website title'
-          instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
+          instructions: 'The title for the website. Defaults to Laravel''s App Name.'
+          instructions_position: below
           width: 66
       -
         handle: change_page_title
@@ -105,7 +107,7 @@ sections:
         handle: noindex_local
         field:
           type: toggle
-          instructions: 'Add noindex and nofollow tags on the local environment automatically.'
+          instructions_position: below
           listable: false
           display: Local
           width: 33
@@ -113,7 +115,7 @@ sections:
         handle: noindex_staging
         field:
           type: toggle
-          instructions: 'Add noindex and nofollow tags on the staging environment automatically.'
+          instructions_position: below
           listable: false
           display: Staging
           width: 33
@@ -121,7 +123,7 @@ sections:
         handle: noindex_production
         field:
           type: toggle
-          instructions: 'Add noindex and nofollow tags on the production environment automatically.'
+          instructions_position: below
           listable: false
           display: Production
           width: 33
@@ -144,6 +146,7 @@ sections:
                 type: collections
                 icon: collections
                 instructions: 'The collection for this fallback.'
+                instructions_position: below
                 width: 33
                 listable: hidden
             -
@@ -164,6 +167,7 @@ sections:
                 type: select
                 icon: select
                 instructions: 'The fallback type'
+                instructions_position: below
                 width: 33
                 listable: hidden
             -
@@ -175,6 +179,7 @@ sections:
                 type: text
                 icon: text
                 instructions: 'The custom field handle.'
+                instructions_position: below
                 width: 33
                 listable: hidden
                 if:
@@ -188,6 +193,7 @@ sections:
                 type: textarea
                 icon: textarea
                 instructions: 'The custom text. Max 160 characters.'
+                instructions_position: below
                 width: 33
                 listable: hidden
                 if:
@@ -261,6 +267,7 @@ sections:
           listable: hidden
           display: 'Organization logo'
           instructions: 'Minimum 112px x 112px, will be focal cropped to a square.'
+          instructions_position: below
           width: 33
           if:
             json_ld_type: 'equals organization'
@@ -319,6 +326,7 @@ sections:
           type: toggle
           icon: toggle
           instructions: 'Enable auto Social Image generation. **Important**: you need to have Puppeteer and Browsershot installed.'
+          instructions_position: below
           listable: hidden
           width: 50
       -
@@ -329,6 +337,7 @@ sections:
           type: collections
           icon: collections
           instructions: 'Use auto Social Image generation for the following collections.'
+          instructions_position: below
           listable: hidden
           width: 50
           if:
@@ -348,6 +357,7 @@ sections:
           listable: hidden
           display: 'Social image'
           instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px. This image will be focal cropped to this dimension.'
+          instructions_position: below
           width: 50
       -
         handle: twitter_image
@@ -358,6 +368,7 @@ sections:
           listable: hidden
           display: 'Twitter image'
           instructions: 'The default Twitter image. Can be overridden per entry. Images should have an aspect ratio of 2:1 with minimum dimensions of 300x157. This image will be focal cropped to this dimension.'
+          instructions_position: below
           width: 50
       -
         handle: twitter_handle
@@ -369,6 +380,7 @@ sections:
           type: text
           localizable: true
           instructions: 'The Twitter user name that should be included with Twitter Card tags.'
+          instructions_position: below
           prepend: '@'
           antlers: false
   sitemap:
@@ -402,7 +414,6 @@ sections:
         handle: trackers_local
         field:
           type: toggle
-          instructions: 'Render tracker tags on the local environment.'
           listable: false
           display: Local
           width: 33
@@ -410,7 +421,6 @@ sections:
         handle: trackers_staging
         field:
           type: toggle
-          instructions: 'Render tracker tags on the staging environment.'
           listable: false
           display: Staging
           width: 33
@@ -418,7 +428,6 @@ sections:
         handle: trackers_production
         field:
           type: toggle
-          instructions: 'Render tracker tags on the production environment.'
           listable: false
           display: Production
           width: 33
@@ -516,7 +525,8 @@ sections:
           display: 'Tracking ID'
           input_type: text
           type: text
-          instructions: 'The Analytics tracking ID. *Note: if you don''t anonymize IP''s you need cookie consent in the EU.'
+          instructions: '*Note: if you don''t anonymize IP''s you need cookie consent in the EU.'
+          instructions_position: below
           listable: hidden
           validate:
             - 'required_if:tracker_type,gtag'
@@ -531,6 +541,7 @@ sections:
           default: true
           display: 'Anonymize IP''s'
           instructions: 'Enable this to be excempt from needing cookie consent.'
+          instructions_position: below
           if:
             tracker_type: 'equals gtag'
       -
@@ -541,7 +552,7 @@ sections:
           listable: hidden
           width: 50
           display: 'Tracking ID'
-          instructions: 'The GTM tracking ID.'
+          instructions_position: below
           validate:
             - 'required_if:tracker_type,gtm'
           if:
@@ -551,6 +562,7 @@ sections:
         field:
           type: toggle
           instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM. Uses the consent api: https://developers.google.com/tag-manager/consent'
+          instructions_position: below
           listable: false
           display: 'Cookie banner'
           width: 50
@@ -564,7 +576,6 @@ sections:
             right: Right
           default: left
           type: button_group
-          instructions: 'The banners'' display style.'
           listable: false
           localizable: true
           validate: required
@@ -586,6 +597,7 @@ sections:
           rows: 1
           display: 'Revoke consent before'
           instructions: 'Revoke all users consent before this date. Use this when you added new trackers to GTM and your privacy policy changed. The cookie bar will reappear.'
+          instructions_position: below
           type: date
           width: 50
           icon: date
@@ -603,6 +615,7 @@ sections:
           default: none
           type: button_group
           instructions: 'Link to a privacy statement or cookie policy from the cookie notification.'
+          instructions_position: below
           listable: false
           localizable: true
           display: 'Link to more information'
@@ -617,7 +630,6 @@ sections:
           localizable: true
           listable: hidden
           display: 'Privacy statement (PDF)'
-          instructions: 'The PDF you want to link to.'
           width: 50
           if:
             tracker_type: 'not none'
@@ -631,7 +643,6 @@ sections:
           listable: hidden
           display: 'Privacy statement (entry)'
           width: 50
-          instructions: 'The entry you want to link to.'
           if:
             tracker_type: 'not none'
             use_cookie_banner: 'equals true'

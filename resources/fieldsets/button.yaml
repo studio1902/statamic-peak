@@ -8,9 +8,20 @@ fields:
       localizable: true
       listable: false
       display: Label
-      instructions: 'The text inside the button.'
-      width: 66
+      width: 50
       replicator_preview: false
+      instructions_position: above
+      antlers: false
+  -
+    handle: show_controls
+    field:
+      display: 'Show controls'
+      type: toggle
+      default: true
+      icon: revealer
+      listable: hidden
+      width: 50
+      instructions_position: below
   -
     handle: target_blank
     field:
@@ -19,8 +30,9 @@ fields:
       width: 33
       listable: false
       display: 'Open in new window?'
-      instructions: 'Open link in new tab or window.'
       replicator_preview: false
+      if:
+        show_controls: 'equals true'
   -
     handle: link_type
     field:
@@ -31,80 +43,86 @@ fields:
         tel: Telephone
         asset: Asset
       type: button_group
-      instructions: 'What type of link do you want to add?'
       localizable: true
       default: entry
       listable: false
       display: 'Link type'
       replicator_preview: false
+      if:
+        show_controls: 'equals true'
   -
     handle: entry
     field:
       max_items: 1
       mode: default
       type: entries
-      instructions: 'Choose the collection entry you want to link.'
       localizable: true
+      width: 50
       listable: false
       display: Entry
       replicator_preview: false
       validate:
         - 'required_if:{this}.link_type,entry'
       if:
-        link_type: 'entry'
+        link_type: entry
+        show_controls: 'equals true'
   -
     handle: url
     field:
       placeholder: 'https://site.com'
       input_type: url
       type: text
-      instructions: 'The URL you want to link.'
       localizable: true
       listable: false
       display: URL
+      width: 50
       validate:
         - 'required_if:{this}.link_type,url'
       if:
-        link_type: 'url'
+        link_type: url
+        show_controls: 'equals true'
   -
     handle: email
     field:
       placeholder: info@site.com
       input_type: email
       type: text
-      instructions: 'The e-mail address you want to link.'
       localizable: true
       listable: false
       display: E-mail
+      width: 50
       replicator_preview: false
       validate:
         - 'required_if:{this}.link_type,email'
       if:
-        link_type: 'email'
+        link_type: email
+        show_controls: 'equals true'
   -
     handle: tel
     field:
       placeholder: '+0 (0)12 345678'
       input_type: tel
       type: text
-      instructions: 'The telephone number you want to link.'
       localizable: true
       listable: false
       display: Telephone
+      width: 50
       replicator_preview: false
       validate:
         - 'required_if:{this}.link_type,tel'
       if:
-        link_type: 'tel'
+        link_type: tel
+        show_controls: 'equals true'
   -
     handle: asset
     field: common.image
     config:
-      instructions: 'The asset you want to link.'
-      display: Asset
       localizable: true
+      width: 50
+      display: Asset
       if:
-        link_type: 'asset'
+        link_type: asset
+        show_controls: 'equals true'
   -
     handle: button_type
     field:
@@ -112,12 +130,13 @@ fields:
         button: Button
         inline: Inline
       type: button_group
-      instructions: 'How should the button be displayed?'
       localizable: true
       default: button
       listable: false
       display: 'Button type'
       replicator_preview: false
+      if:
+        show_controls: 'equals true'
   -
     handle: attr_title
     field:
@@ -127,9 +146,10 @@ fields:
       localizable: true
       listable: false
       display: Title
-      instructions: 'Optional tooltip on mouse hover.'
       width: 50
       replicator_preview: false
+      if:
+        show_controls: 'equals true'
   -
     handle: attr_aria
     field:
@@ -139,6 +159,7 @@ fields:
       localizable: true
       listable: false
       display: 'Aria label'
-      instructions: 'Optional aria label for accessibility.'
       width: 50
       replicator_preview: false
+      if:
+        show_controls: 'equals true'

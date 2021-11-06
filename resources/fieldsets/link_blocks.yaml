@@ -8,7 +8,6 @@ fields:
       localizable: true
       listable: hidden
       display: Title
-      instructions: 'The title you want to display above the collection entries.'
   -
     handle: link_blocks
     field:
@@ -31,7 +30,6 @@ fields:
       add_row: 'Add link block'
       reorderable: true
       type: grid
-      instructions: 'Add one or more link blocks with a title, text and a button.'
       localizable: true
       listable: hidden
       display: 'Link blocks'
