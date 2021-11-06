@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: Home
-updated_by: 9be3d58e-745d-4669-9a70-21c4c5049b89
-updated_at: 1627569953
+updated_by: 80802917-8d90-4324-9d46-03c0930abb63
+updated_at: 1636186813
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -57,6 +57,7 @@ page_builder:
         button_type: inline
         attr_title: null
         attr_aria: null
+        show_controls: false
       -
         title: 'Long form content'
         text: 'For long form content you can use the Article content block. This is a Bard fieldtypeopen in new window with multiple sets of fields that are regularly used in longer articles.'
@@ -71,6 +72,7 @@ page_builder:
         button_type: inline
         attr_title: null
         attr_aria: null
+        show_controls: false
       -
         title: 'Way more features'
         text: 'Professional SEO, social image generation, responsive assets, appearance globals, favicons generation, search templates, dark mode support with toggle, pagination template, search and additional bottles of oxygen.'
@@ -85,6 +87,7 @@ page_builder:
         button_type: inline
         attr_title: null
         attr_aria: null
+        show_controls: false
     type: link_blocks
     enabled: true
 ---

@@ -8,7 +8,6 @@ fields:
       localizable: true
       listable: hidden
       display: Title
-      instructions: 'The title you want to display above the collection entries.'
       validate:
         - required
   -
@@ -19,5 +18,5 @@ fields:
       localizable: true
       listable: hidden
       display: Collection
-      instructions: 'Select the entries you want to link to.'
+      instructions: 'The entries you want to link to.'
       validate: required

@@ -2,8 +2,8 @@
 id: 20f6a148-63b8-47a8-9b0e-d57095d78c21
 blueprint: page
 title: 'Long form content'
-updated_by: 9be3d58e-745d-4669-9a70-21c4c5049b89
-updated_at: 1627568145
+updated_by: 80802917-8d90-4324-9d46-03c0930abb63
+updated_at: 1636187619
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -188,6 +188,7 @@ page_builder:
                 button_type: button
                 attr_title: null
                 attr_aria: null
+                show_controls: false
               -
                 label: 'Dolor sit amet'
                 target_blank: false
@@ -200,6 +201,7 @@ page_builder:
                 button_type: button
                 attr_title: null
                 attr_aria: null
+                show_controls: false
       -
         type: paragraph
     type: article
