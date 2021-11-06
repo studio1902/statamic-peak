@@ -1,7 +1,7 @@
 # Release Notes
 
 ## 3.29.0 (2021-11-06)
-- Add advanced button control toggle and clean up all fieldsets by removing redundant instructions and positioning under the field where it helps visually. #175 by @robdekort
+- Add advanced button control toggle and clean up all fieldsets by removing redundant instructions and positioning under the field where it helps visually. #175 and ec35235 by @robdekort
 
 ## 3.28.0 (2021-11-04)
 

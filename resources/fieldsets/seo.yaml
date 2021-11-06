@@ -35,6 +35,7 @@ fields:
     field:
       type: toggle
       instructions: 'Instruct crawlers not to index this entry, also excludes it from the sitemap.xml.'
+      instructions_position: below
       listable: hidden
       width: 50
       display: No-index
@@ -43,6 +44,7 @@ fields:
     field:
       type: toggle
       instructions: 'Instruct crawlers not to follow links on this page.'
+      instructions_position: below
       listable: hidden
       width: 50
       display: No-follow
