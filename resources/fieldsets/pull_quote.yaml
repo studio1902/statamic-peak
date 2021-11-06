@@ -3,8 +3,6 @@ fields:
   -
     handle: size
     field: common.size
-    config:
-      instructions: 'The size in which the quote should be displayed.'
   -
     handle: quote
     field:
@@ -12,7 +10,6 @@ fields:
       localizable: true
       listable: hidden
       display: Quote
-      instructions: 'The quote you want to highlight.'
   -
     handle: author
     field:
@@ -21,4 +18,3 @@ fields:
       localizable: true
       listable: hidden
       display: Author
-      instructions: 'The optional author of the quote that will be displayed with it.'
