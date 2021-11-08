@@ -297,7 +297,8 @@ class AddCollection extends Command
         $stub = File::get(__DIR__.'/stubs/index.antlers.html.stub');
         $contents = Str::of($stub)
             ->replace('{{ collection_name }}', $this->collection_name)
-            ->replace('{{ handle }}', $this->filename);
+            ->replace('{{ handle }}', $this->filename)
+            ->replace('{{ sort }}', $this->dated ? 'date:desc' : 'title');
 
         File::put(base_path("resources/views/{$this->filename}/index.antlers.html"), $contents);
     }
