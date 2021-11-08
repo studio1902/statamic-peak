@@ -24,6 +24,14 @@ module.exports = {
               '&:hover': {
                 color: theme('colors.primary.DEFAULT'),
               },
+              '&.focus-visible': {
+                boxShadow: `0 0 0 2px ${theme('colors.primary.DEFAULT')}`,
+                borderRadius: theme('borderRadius.sm'),
+              },
+              '&:focus-visible': {
+                boxShadow: `0 0 0 2px ${theme('colors.primary.DEFAULT')}`,
+                borderRadius: theme('borderRadius.sm'),
+              },
             },
             'a.no-underline': {
               textDecoration: 'none',
