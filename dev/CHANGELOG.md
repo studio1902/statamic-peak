@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Change sort based on input in peak:add-collection. 55d5f28 by @robdekort
+
 ## 3.30.0 (2021-11-08)
 
 ### What's improved
