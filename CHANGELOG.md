@@ -1,5 +1,12 @@
 # Release Notes
 
+## 3.30.0 (2021-11-08)
+
+### What's improved
+- Add default focus-visible styles to all interactive elements. #176 by @robdekort
+- Add `tabindex="1"` to mobile navigation button. 39cc721 by @robdekort
+- Hide skip to content on mobile. 4896781 by @robdekort
+
 ## 3.29.0 (2021-11-06)
 
 ### What's improved

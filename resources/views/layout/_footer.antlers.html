@@ -20,7 +20,7 @@
         {{ if social_media:social_media }}
             <div class="flex space-x-2">
                 {{ social_media:social_media }}
-                    <a href="{{ prefix }}{{ handle }}" rel="noopener" aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}" target="_blank">{{ svg :src="type" class="w-3 h-3 overflow-visible text-neutral hover:text-primary fill-current" alt="" aria-hidden="true" }}</a>
+                    <a class="p-1 -m-1 focus:outline-none focus-visible:ring-2 ring-primary" href="{{ prefix }}{{ handle }}" rel="noopener" aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}" target="_blank">{{ svg :src="type" class="w-3 h-3 overflow-visible text-neutral hover:text-primary fill-current" alt="" aria-hidden="true" }}</a>
                 {{ /social_media:social_media }}
             </div>
         {{ /if }}
