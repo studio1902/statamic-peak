@@ -15,7 +15,7 @@
             >
                 <a
                     class="
-                        flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary
+                        p-1 -m-1 flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary
                         {{ is_current || is_parent
                             ? 'text-primary'
                             : 'text-neutral' }}
@@ -54,7 +54,7 @@
                             <li class="">
                                 <a
                                     class="
-                                        whitespace-nowrap py-2 block text-xs font-bold hover:text-primary
+                                        whitespace-nowrap py-2 px-1 -mx-1 block text-xs font-bold hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary
                                         {{ is_current || is_parent
                                             ? 'text-primary'
                                             : 'text-neutral' }}
