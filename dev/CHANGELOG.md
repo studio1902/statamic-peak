@@ -1,5 +1,10 @@
 # Release Notes
 
+### Unreleased
+
+### What's fixed
+- Styling issue mobile nav when you have sub-items. 4774c735 by @robdekort
+
 ## 3.31.0 (2021-11-09)
 
 ### What's improved
