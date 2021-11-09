@@ -1,5 +1,12 @@
 # Release Notes
 
+## 3.31.0 (2021-11-09)
+
+### What's improved
+- Change `sort` based on input in peak:add-collection. 55d5f28 by @robdekort
+- Remove redundant gap classes. a6d2313 by @robdekort
+- Add section field before button. f542b2e by @robdekort
+
 ## 3.30.0 (2021-11-08)
 
 ### What's improved
