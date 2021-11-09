@@ -17,4 +17,9 @@ fields:
       validate:
         - required
   -
+    handle: section_button
+    field:
+      type: section
+      display: Button
+  -
     import: buttons

@@ -24,6 +24,11 @@ fields:
           handle: text
           field: common.text_plain
         -
+          handle: section_button
+          field:
+            type: section
+            display: Button
+        -
           import: button
       mode: stacked
       min_rows: 1
