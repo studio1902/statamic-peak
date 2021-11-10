@@ -2,6 +2,9 @@
 
 ### Unreleased
 
+### What's improved
+- Add default asset container to common text bard fields. b526f5c3 by @robdekort
+
 ### What's fixed
 - Styling issue mobile nav when you have sub-items. 4774c735 by @robdekort
 - A link block title should be required because we need it for the aria-label. 84cb945d by @robdekort
