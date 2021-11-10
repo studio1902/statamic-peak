@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Set `link_noopener: true` on common bard fields. 91020e3d by @robdekort
+
 ## v3.32.0 (2021-11-10)
 
 ### What's new
