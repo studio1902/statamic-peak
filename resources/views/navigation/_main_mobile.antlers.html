@@ -62,12 +62,12 @@
                     {{ if children }}
                         <ul
                             x-show="mobileNavSubnavOpen"
-                            class="flex flex-col mt-6 space-y-6"
+                            class="flex flex-col space-y-6"
                             x-collapse
                             x-cloak
                         >
                             {{ children }}
-                                <li>
+                                <li class="{{ first ?= 'mt-6' }}">
                                     <a
                                         class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                         href="{{ url }}">

@@ -19,6 +19,7 @@ fields:
             type: text
             localizable: true
             listable: hidden
+            validate: required
             display: Title
         -
           handle: text

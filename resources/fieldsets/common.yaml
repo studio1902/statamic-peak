@@ -37,6 +37,7 @@ fields:
       toolbar_mode: fixed
       link_noopener: false
       link_noreferrer: false
+      container: assets
       target_blank: false
       reading_time: false
       fullscreen: true
@@ -60,6 +61,7 @@ fields:
       toolbar_mode: fixed
       link_noopener: false
       link_noreferrer: false
+      container: assets
       target_blank: false
       reading_time: false
       fullscreen: true

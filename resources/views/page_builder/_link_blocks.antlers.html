@@ -25,11 +25,9 @@
             {{ partial:snippets/button_attributes }}
         >
             <div class="mb-4">
-                {{ if title }}
-                    <span id="{{ title | slugify }}">
-                        {{ partial:typography/h2 class="mb-2" :content="title" }}
-                    </span>
-                {{ /if }}
+                <span id="{{ title | slugify }}">
+                    {{ partial:typography/h2 class="mb-2" :content="title" }}
+                </span>
                 {{ if text }}
                     {{ partial:typography/paragraph class="mb-4" :content="text" }}
                 {{ /if }}
