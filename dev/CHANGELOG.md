@@ -1,6 +1,9 @@
 # Release Notes
 
-### Unreleased
+## v3.32.0 (2021-11-10)
+
+### What's new
+- New `rtl`, `ltr` and `fill-current-cascade` utilities for Tailwind. #177 by @robdekort
 
 ### What's improved
 - Add default asset container to common text bard fields. b526f5c3 by @robdekort
