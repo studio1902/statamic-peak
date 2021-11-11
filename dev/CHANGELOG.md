@@ -4,6 +4,7 @@
 
 ### What's improved
 - Set `link_noopener: true` on common bard fields. 91020e3d by @robdekort
+- Offer mount option for non public collections in `peak:add-collection`. 13cf5055 by @robdekort
 
 ## v3.32.0 (2021-11-10)
 
