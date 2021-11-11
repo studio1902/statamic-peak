@@ -4,8 +4,7 @@
 
 ### What's improved
 - Set `link_noopener: true` on common bard fields. 91020e3d by @robdekort
-- Offer mount option for non public collections in `peak:add-collection`. 13cf5055 by @robdekort
-- Offer template options only on public collections in `peak:add-collection`. 59f39f13 by @robdekort
+- Improve flow and fix bug in `peak:add-collection`. 13cf5055 59f39f13 0a6545d1 by @robdekort
 
 ## v3.32.0 (2021-11-10)
 
