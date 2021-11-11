@@ -5,7 +5,6 @@
 
 <nav
     x-data="{ mobileNavOpen: false }"
-    x-trap.inert.noscroll="mobileNavOpen"
     class="md:hidden"
 >
     <button
@@ -24,6 +23,7 @@
     <div
         class="fixed inset-0 z-10 pt-8 px-8 pb-12 flex flex-col justify-end bg-white"
         x-show="mobileNavOpen"
+        x-trap.inert.noscroll="mobileNavOpen"
         x-cloak
     >
         <ul class="flex flex-col py-2 space-y-8 overflow-auto">
