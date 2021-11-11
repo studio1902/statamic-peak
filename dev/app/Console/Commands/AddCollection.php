@@ -192,6 +192,7 @@ class AddCollection extends Command
             $this->createBlueprint();
             if ($this->index || $this->show) $this->createDirectory("resources/views/{$this->filename}");
             if ($this->index) $this->createIndexTemplate();
+            if ($this->index) $this->setIndexTemplate($this->mount);
             if ($this->show) $this->createShowTemplate();
             if ($this->permissions) $this->grantPermissionsToEditor();
         } catch (\Exception $e) {
