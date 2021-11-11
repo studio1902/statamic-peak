@@ -157,7 +157,6 @@ class AddCollection extends Command
         if ($this->add_page) {
             $this->page_title = $this->ask('What should be the page title for this mount?');
             $this->mount = $this->addPage();
-            $this->setIndexTemplate($this->mount);
         } else {
             $choice = $this->choice('On which page existing page do you want to mount this collection?', $this->getPages());
             preg_match('/\[(.*?)\]/', $choice, $id);
@@ -175,8 +174,13 @@ class AddCollection extends Command
             $this->date_past = $this->ask('What should be the date behavior for entries in the past?', 'public');
             $this->date_future = $this->ask('What should be the date behavior for entries in the future?', 'private');
         }
-        $this->index = ($this->confirm('Generate and apply index template?', true)) ? true : false;
-        $this->show = ($this->confirm('Generate and apply show template?', true)) ? true : false;
+        if ($this->public) {
+            $this->index = ($this->confirm('Generate and apply index template?', true)) ? true : false;
+            if ($this->index) {
+                $this->setIndexTemplate($this->mount);
+            }
+            $this->show = ($this->confirm('Generate and apply show template?', true)) ? true : false;
+        }
         $this->permissions = ($this->confirm('Grant edit permissions to editor role?', true)) ? true : false;
 
         try {
