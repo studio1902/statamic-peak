@@ -4,7 +4,7 @@
 
 ### What's improved
 - Set `link_noopener: true` on common bard fields. 91020e3d by @robdekort
-- Improve flow and fix bug in `peak:add-collection`. 13cf5055 59f39f13 0a6545d1 by @robdekort
+- Improve flow and fix bugs in `peak:add-collection`. 13cf5055 59f39f13 0a6545d1 4b96c4eb by @robdekort
 
 ## v3.32.0 (2021-11-10)
 
