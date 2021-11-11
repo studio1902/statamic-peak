@@ -50,7 +50,7 @@ class AddCollection extends Command
      *
      * @var bool
      */
-    protected $public = true;
+    protected $public = false;
 
      /**
      * The collection route.
@@ -64,7 +64,7 @@ class AddCollection extends Command
      *
      * @var bool
      */
-    protected $add_page = true;
+    protected $add_page = false;
 
     /**
      * The page title.
@@ -134,7 +134,14 @@ class AddCollection extends Command
      *
      * @var bool
      */
-    protected $index = true;
+    protected $index = false;
+
+    /**
+     * Show template.
+     *
+     * @var bool
+     */
+    protected $show = false;
 
     /**
      * Grant permissions.
@@ -153,19 +160,17 @@ class AddCollection extends Command
         $this->collection_name = $this->ask('What should be the name for this collection?');
         $this->filename = Str::slug($this->collection_name, '_');
         $this->public = ($this->confirm('Should this be a public collection with a route?', true)) ? true : false;
+        $this->add_page = ($this->confirm('Do you want to create a new page to mount this collection on?', true)) ? true : false;
+        if ($this->add_page) {
+            $this->page_title = $this->ask('What should be the page title for this mount?');
+            $this->mount = $this->addPage();
+        } else {
+            $choice = $this->choice('On which page existing page do you want to mount this collection?', $this->getPages());
+            preg_match('/\[(.*?)\]/', $choice, $id);
+            $this->mount = $id[1];
+        }
         if ($this->public) {
             $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{slug}');
-            $this->add_page = ($this->confirm('Do you want to create a new page to mount this collection on?', true)) ? true : false;
-            if ($this->add_page) {
-                $this->page_title = $this->ask('What should be the page title for this mount?');
-                $this->mount = $this->addPage();
-                $this->setIndexTemplate($this->mount);
-            } else {
-                $choice = $this->choice('On which page existing page do you want to mount this collection?', $this->getPages());
-                preg_match('/\[(.*?)\]/', $choice, $id);
-                $this->mount = $id[1];
-                $this->setIndexTemplate($id[1]);
-            }
         }
         $this->layout = $this->ask('What should be the layout file for this collection?', 'layout');
         $this->revisions = ($this->confirm('Should revisions be enabled?', false)) ? true : false;
@@ -175,8 +180,10 @@ class AddCollection extends Command
             $this->date_past = $this->ask('What should be the date behavior for entries in the past?', 'public');
             $this->date_future = $this->ask('What should be the date behavior for entries in the future?', 'private');
         }
-        $this->index = ($this->confirm('Generate and apply index template?', true)) ? true : false;
-        $this->show = ($this->confirm('Generate and apply show template?', true)) ? true : false;
+        if ($this->public) {
+            $this->index = ($this->confirm('Generate and apply index template?', true)) ? true : false;
+            $this->show = ($this->confirm('Generate and apply show template?', true)) ? true : false;
+        }
         $this->permissions = ($this->confirm('Grant edit permissions to editor role?', true)) ? true : false;
 
         try {
@@ -185,6 +192,7 @@ class AddCollection extends Command
             $this->createBlueprint();
             if ($this->index || $this->show) $this->createDirectory("resources/views/{$this->filename}");
             if ($this->index) $this->createIndexTemplate();
+            if ($this->index) $this->setIndexTemplate($this->mount);
             if ($this->show) $this->createShowTemplate();
             if ($this->permissions) $this->grantPermissionsToEditor();
         } catch (\Exception $e) {

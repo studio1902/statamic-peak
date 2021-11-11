@@ -52,6 +52,10 @@ export_paths:
   - resources/js/site.js
   - resources/lang/en.json
   - resources/lang/en/strings.php
+  - resources/lang/nl.json
+  - resources/lang/nl/strings.php
+  - resources/lang/no.json
+  - resources/lang/no/strings.php
   - resources/svg
   - resources/users/roles.yaml
   - resources/views

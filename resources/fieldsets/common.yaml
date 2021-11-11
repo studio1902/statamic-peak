@@ -35,7 +35,7 @@ fields:
         - anchor
       save_html: false
       toolbar_mode: fixed
-      link_noopener: false
+      link_noopener: true
       link_noreferrer: false
       container: assets
       target_blank: false
@@ -59,7 +59,7 @@ fields:
         - anchor
       save_html: false
       toolbar_mode: fixed
-      link_noopener: false
+      link_noopener: true
       link_noreferrer: false
       container: assets
       target_blank: false
