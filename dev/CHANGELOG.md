@@ -1,9 +1,14 @@
 # Release Notes
 
-## Unreleased
+## v3.33.0 (2021-11-11)
+
+### What's new
+- Use Alpine Store with a persistent value to live revoke cookie consent. 5cfcbea0 by @robdekort
+- Add Dutch and Norwegian translated frontend string files. 405ce48c by @robdekort
 
 ### What's improved
 - Bind search submit disabled state to value's length. #178 by @klickreflex
+- Rename toolbar localStorage value to be in line with the cookie banner values. 1c4ea330 by @robdekort
 - Set `link_noopener: true` on common bard fields. 91020e3d by @robdekort
 - Improve flow and fix bugs in `peak:add-collection`. 13cf5055 59f39f13 0a6545d1 4b96c4eb by @robdekort
 - Remove `tabindex="1"` from mobile nav button as this is not recommended. 5bc09234 by @robdekort
