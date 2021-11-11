@@ -13,7 +13,7 @@
     @keydown.window.prevent.slash.="open = true, setTimeout(() => {$refs.input.focus()}, 200)"
     @keydown.window.prevent.esc="open = false"
     @click.outside="open = false"
-    class="flex py-2 relative"
+    class="relative flex py-2"
     x-cloak
 >
     <button
@@ -28,11 +28,11 @@
         action="/search"
         x-show="open"
         x-transition.origin.right.duration.200ms
-        class="absolute inset-y-0 right-0 -mr-2 flex"
+        class="absolute inset-y-0 right-0 flex -mr-2"
     >
         <input
             x-ref="input"
-            class="w-52 h-full pr-10 rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
+            class="h-full pr-10 rounded w-52 border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
             placeholder="{{ trans:strings.search }}"
             type="text"
             x-model="value"
@@ -40,9 +40,9 @@
             name="q"
         />
         <button
-            class="absolute inset-y-0 right-0 mr-2 flex items-center text-neutral hover:text-primary"
+            class="absolute inset-y-0 right-0 flex items-center mr-2 text-neutral hover:text-primary"
             aria-label="{{ trans:strings.search }}"
-            :disabled="value === 0"
+            :disabled="value.length === 0"
             :class="{ 'opacity-25 cursor-default': value.length === 0, 'opacity-100': value.length > 0 }"
         >
             {{ svg:search class="w-5 h-5 fill-current motion-safe:transition-colors" alt="" aria-hidden="true" }}
