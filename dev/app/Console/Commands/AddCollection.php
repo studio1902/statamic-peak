@@ -153,19 +153,19 @@ class AddCollection extends Command
         $this->collection_name = $this->ask('What should be the name for this collection?');
         $this->filename = Str::slug($this->collection_name, '_');
         $this->public = ($this->confirm('Should this be a public collection with a route?', true)) ? true : false;
+        $this->add_page = ($this->confirm('Do you want to create a new page to mount this collection on?', true)) ? true : false;
+        if ($this->add_page) {
+            $this->page_title = $this->ask('What should be the page title for this mount?');
+            $this->mount = $this->addPage();
+            $this->setIndexTemplate($this->mount);
+        } else {
+            $choice = $this->choice('On which page existing page do you want to mount this collection?', $this->getPages());
+            preg_match('/\[(.*?)\]/', $choice, $id);
+            $this->mount = $id[1];
+            $this->setIndexTemplate($id[1]);
+        }
         if ($this->public) {
             $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{slug}');
-            $this->add_page = ($this->confirm('Do you want to create a new page to mount this collection on?', true)) ? true : false;
-            if ($this->add_page) {
-                $this->page_title = $this->ask('What should be the page title for this mount?');
-                $this->mount = $this->addPage();
-                $this->setIndexTemplate($this->mount);
-            } else {
-                $choice = $this->choice('On which page existing page do you want to mount this collection?', $this->getPages());
-                preg_match('/\[(.*?)\]/', $choice, $id);
-                $this->mount = $id[1];
-                $this->setIndexTemplate($id[1]);
-            }
         }
         $this->layout = $this->ask('What should be the layout file for this collection?', 'layout');
         $this->revisions = ($this->confirm('Should revisions be enabled?', false)) ? true : false;
