@@ -5,6 +5,7 @@
 ### What's improved
 - Set `link_noopener: true` on common bard fields. 91020e3d by @robdekort
 - Improve flow and fix bugs in `peak:add-collection`. 13cf5055 59f39f13 0a6545d1 4b96c4eb by @robdekort
+- Remove `tabindex="1"` from mobile nav button as this is not recommended. 5bc09234 by @robdekort
 
 ### What's fixed
 - Set `x-trap` for mobile nav on the correct element. 5bc09234 by @robdekort
