@@ -50,7 +50,7 @@ class AddCollection extends Command
      *
      * @var bool
      */
-    protected $public = true;
+    protected $public = false;
 
      /**
      * The collection route.
@@ -64,7 +64,7 @@ class AddCollection extends Command
      *
      * @var bool
      */
-    protected $add_page = true;
+    protected $add_page = false;
 
     /**
      * The page title.
@@ -134,7 +134,14 @@ class AddCollection extends Command
      *
      * @var bool
      */
-    protected $index = true;
+    protected $index = false;
+
+    /**
+     * Show template.
+     *
+     * @var bool
+     */
+    protected $show = false;
 
     /**
      * Grant permissions.
@@ -161,7 +168,6 @@ class AddCollection extends Command
             $choice = $this->choice('On which page existing page do you want to mount this collection?', $this->getPages());
             preg_match('/\[(.*?)\]/', $choice, $id);
             $this->mount = $id[1];
-            $this->setIndexTemplate($id[1]);
         }
         if ($this->public) {
             $this->route = $this->ask('What should be the route for this collection?', '/{mount}/{slug}');
@@ -176,9 +182,6 @@ class AddCollection extends Command
         }
         if ($this->public) {
             $this->index = ($this->confirm('Generate and apply index template?', true)) ? true : false;
-            if ($this->index) {
-                $this->setIndexTemplate($this->mount);
-            }
             $this->show = ($this->confirm('Generate and apply show template?', true)) ? true : false;
         }
         $this->permissions = ($this->confirm('Grant edit permissions to editor role?', true)) ? true : false;
