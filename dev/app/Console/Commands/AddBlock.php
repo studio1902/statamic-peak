@@ -94,7 +94,7 @@ class AddBlock extends Command
      */
     protected function createFieldset()
     {
-        $stub = File::get(__DIR__.'/stubs/fieldset.yaml.stub');
+        $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
         $contents = Str::of($stub)
             ->replace('{{ name }}', $this->block_name);
 

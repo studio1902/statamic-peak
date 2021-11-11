@@ -5,6 +5,7 @@ export_paths:
   - app/Console/Kernel.php
   - app/Console/Commands/AddBlock.php
   - app/Console/Commands/AddCollection.php
+  - app/Console/Commands/AddSet.php
   - app/Console/Commands/ClearSite.php
   - app/Console/Commands/stubs/block.html.stub
   - app/Console/Commands/stubs/collection_blueprint_private_dated.yaml.stub
@@ -12,8 +13,10 @@ export_paths:
   - app/Console/Commands/stubs/collection_blueprint_public_dated.yaml.stub
   - app/Console/Commands/stubs/collection_blueprint_public.yaml.stub
   - app/Console/Commands/stubs/collection.yaml.stub
-  - app/Console/Commands/stubs/fieldset.yaml.stub
+  - app/Console/Commands/stubs/fieldset_block.yaml.stub
+  - app/Console/Commands/stubs/fieldset_set.yaml.stub
   - app/Console/Commands/stubs/index.antlers.html.stub
+  - app/Console/Commands/stubs/set.html.stub
   - app/Console/Commands/stubs/show.antlers.html.stub
   - app/Http/Controllers/DynamicToken.php
   - app/Http/Middleware/VerifyCsrfToken.php

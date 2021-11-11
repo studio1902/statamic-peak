@@ -1,5 +1,52 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Bind search submit disabled state to value's length. #178 by @klickreflex
+- Set `link_noopener: true` on common bard fields. 91020e3d by @robdekort
+- Improve flow and fix bugs in `peak:add-collection`. 13cf5055 59f39f13 0a6545d1 4b96c4eb by @robdekort
+- Remove `tabindex="1"` from mobile nav button as this is not recommended. 5bc09234 by @robdekort
+
+### What's fixed
+- Set `x-trap` for mobile nav on the correct element. 5bc09234 by @robdekort
+
+## v3.32.0 (2021-11-10)
+
+### What's new
+- New `rtl`, `ltr` and `fill-current-cascade` utilities for Tailwind. #177 by @robdekort
+
+### What's improved
+- Add default asset container to common text bard fields. b526f5c3 by @robdekort
+
+### What's fixed
+- Styling issue mobile nav when you have sub-items. 4774c735 by @robdekort
+- A link block title should be required because we need it for the aria-label. 84cb945d by @robdekort
+
+## 3.31.0 (2021-11-09)
+
+### What's improved
+- Change `sort` based on input in peak:add-collection. 55d5f28 by @robdekort
+- Remove redundant gap classes. a6d2313 by @robdekort
+- Add section field before button. f542b2e by @robdekort
+
+## 3.30.0 (2021-11-08)
+
+### What's improved
+- Add default focus-visible styles to all interactive elements. #176 by @robdekort
+- Add `tabindex="1"` to mobile navigation button. 39cc721 by @robdekort
+- Hide skip to content on mobile. 4896781 by @robdekort
+
+## 3.29.0 (2021-11-06)
+
+### What's improved
+- Add advanced button control toggle and clean up all fieldsets by removing redundant instructions and positioning under the field where it helps visually. #175 and ec35235 by @robdekort
+
+## 3.28.0 (2021-11-04)
+
+### What's new
+- A `php please peak:add-set` command to generate all files needed for a fresh page builder article set. You get a named fieldset with a sizing button group, a named partial component and the fieldset get's added to `resources/fieldsets/article.yaml`. #174 by @robdekort
+
 ## 3.27.0 (2021-11-04)
 
 ### What's new

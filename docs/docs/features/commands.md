@@ -13,6 +13,15 @@ Run `php please peak:add-block` to:
 
 <div class='embed-container'><iframe src='https://www.youtube.com/embed/wW1D53nG61c' frameborder='0' allowfullscreen></iframe></div>
 
+## Add Page Builder Article Set
+This command adds a set to the Peak Page Builder Article (Bard) blocko and generates the files needed.
+
+Run `php please peak:add-set` to:
+
+* Add a set to the Article Bard in `resources/fieldsets/article.yaml`.
+* Create a fieldset for your set in `resources/fieldsets/{file_name}.yaml`.
+* Create a component partial with default markup and IDE hinting in `resources/views/components/_{file_name}.antlers.html`.
+
 ## Add Collection
 This command creates a new collection and scaffolds out all needed files with some sane default markup containing the various Peak utilities we use.
 

@@ -11,7 +11,7 @@ use Statamic\Support\Arr;
 use Stringy\StaticStringy as Stringy;
 use Symfony\Component\Yaml\Yaml;
 
-class AddBlock extends Command
+class AddSet extends Command
 {
     use RunsInPlease;
 
@@ -20,35 +20,28 @@ class AddBlock extends Command
     *
     * @var string
     */
-    protected $name = 'peak:add-block';
+    protected $name = 'peak:add-set';
 
      /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Add a page builder block.";
+    protected $description = "Add an Article (Bard) set.";
 
      /**
-     * The block name.
+     * The set name.
      *
      * @var string
      */
-    protected $block_name = '';
+    protected $set_name = '';
 
      /**
-     * The block filename.
+     * The set filename.
      *
      * @var string
      */
     protected $filename = '';
-
-     /**
-     * The block instructions.
-     *
-     * @var string
-     */
-    protected $instructions = '';
 
      /**
      * Execute the console command.
@@ -57,13 +50,12 @@ class AddBlock extends Command
      */
     public function handle()
     {
-        $this->block_name = $this->ask('What should be the name for this block?');
-        $this->filename = Stringy::slugify($this->block_name, '_', Config::getShortLocale());
-        $this->instructions = $this->ask('What should be the instructions for this block?');
+        $this->set_name = $this->ask('What should be the name for this set?');
+        $this->filename = Stringy::slugify($this->set_name, '_', Config::getShortLocale());
 
         try {
             $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
-            $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
+            $this->checkExistence('Partial', "resources/views/components/_{$this->filename}.antlers.html");
 
             $this->createFieldset();
             $this->createPartial();
@@ -72,7 +64,7 @@ class AddBlock extends Command
             return $this->error($e->getMessage());
         }
 
-        $this->info("Peak page builder block '{$this->block_name}' added.");
+        $this->info("Peak page builder Article set '{$this->set_name}' added.");
     }
 
     /**
@@ -94,9 +86,9 @@ class AddBlock extends Command
      */
     protected function createFieldset()
     {
-        $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
+        $stub = File::get(__DIR__.'/stubs/fieldset_set.yaml.stub');
         $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->block_name);
+            ->replace('{{ name }}', $this->set_name);
 
         File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), $contents);
     }
@@ -108,12 +100,12 @@ class AddBlock extends Command
      */
     protected function createPartial()
     {
-        $stub = File::get(__DIR__.'/stubs/block.html.stub');
+        $stub = File::get(__DIR__.'/stubs/set.html.stub');
         $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->block_name)
+            ->replace('{{ name }}', $this->set_name)
             ->replace('{{ filename }}', $this->filename);
 
-        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), $contents);
+        File::put(base_path("resources/views/components/_{$this->filename}.antlers.html"), $contents);
     }
 
     /**
@@ -123,10 +115,9 @@ class AddBlock extends Command
      */
     protected function updatePageBuilder()
     {
-        $fieldset = Yaml::parseFile(base_path('resources/fieldsets/page_builder.yaml'));
+        $fieldset = Yaml::parseFile(base_path('resources/fieldsets/article.yaml'));
         $newSet = [
-            'display' => $this->block_name,
-            'instructions' => $this->instructions,
+            'display' => $this->set_name,
             'fields' => [
                 [
                     'import' => $this->filename
@@ -142,6 +133,6 @@ class AddBlock extends Command
 
         Arr::set($fieldset, 'fields.0.field.sets', $existingSets);
 
-        File::put(base_path('resources/fieldsets/page_builder.yaml'), Yaml::dump($fieldset, 99, 2));
+        File::put(base_path('resources/fieldsets/article.yaml'), Yaml::dump($fieldset, 99, 2));
     }
 }

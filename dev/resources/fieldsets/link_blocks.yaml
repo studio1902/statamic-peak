@@ -8,7 +8,6 @@ fields:
       localizable: true
       listable: hidden
       display: Title
-      instructions: 'The title you want to display above the collection entries.'
   -
     handle: link_blocks
     field:
@@ -20,10 +19,16 @@ fields:
             type: text
             localizable: true
             listable: hidden
+            validate: required
             display: Title
         -
           handle: text
           field: common.text_plain
+        -
+          handle: section_button
+          field:
+            type: section
+            display: Button
         -
           import: button
       mode: stacked
@@ -31,7 +36,6 @@ fields:
       add_row: 'Add link block'
       reorderable: true
       type: grid
-      instructions: 'Add one or more link blocks with a title, text and a button.'
       localizable: true
       listable: hidden
       display: 'Link blocks'

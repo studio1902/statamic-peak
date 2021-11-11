@@ -13,5 +13,4 @@ fields:
       localizable: true
       listable: hidden
       display: Buttons
-      instructions: 'Add one or more buttons.'
       replicator_preview: false

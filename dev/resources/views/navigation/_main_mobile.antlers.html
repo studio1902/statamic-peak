@@ -5,12 +5,11 @@
 
 <nav
     x-data="{ mobileNavOpen: false }"
-    x-trap.inert.noscroll="mobileNavOpen"
     class="md:hidden"
 >
     <button
         @click.prevent="mobileNavOpen = !mobileNavOpen"
-        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold text-white mb-safe bg-primary"
+        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold text-white mb-safe bg-primary focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
         :aria-label="
         mobileNavOpen
             ? '{{ trans:strings.nav_close }}'
@@ -23,6 +22,7 @@
     <div
         class="fixed inset-0 z-10 pt-8 px-8 pb-12 flex flex-col justify-end bg-white"
         x-show="mobileNavOpen"
+        x-trap.inert.noscroll="mobileNavOpen"
         x-cloak
     >
         <ul class="flex flex-col py-2 space-y-8 overflow-auto">
@@ -61,12 +61,12 @@
                     {{ if children }}
                         <ul
                             x-show="mobileNavSubnavOpen"
-                            class="flex flex-col mt-6 space-y-6"
+                            class="flex flex-col space-y-6"
                             x-collapse
                             x-cloak
                         >
                             {{ children }}
-                                <li>
+                                <li class="{{ first ?= 'mt-6' }}">
                                     <a
                                         class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
                                         href="{{ url }}">

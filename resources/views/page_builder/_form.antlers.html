@@ -4,7 +4,7 @@
     @set page.page_builder.form
 #}}
 
-<section class="fluid-container grid md:grid-cols-12 gap-y-8 md:gap-8">
+<section class="fluid-container grid md:grid-cols-12 gap-8">
     <div class="md:col-start-3 md:col-span-8">
         {{ partial:typography/h1 as="h2" color="text-primary" class="mb-8" :content="block:title" }}
         {{ partial:typography/paragraph :content="block:text" }}
@@ -17,7 +17,7 @@
             x-data="sending"
             @submit.prevent="sendForm()"
         }}
-            <div class="w-full grid md:grid-cols-12 gap-y-6 md:gap-x-6">
+            <div class="w-full grid md:grid-cols-12 gap-6">
                 {{# Honeypot spam protection. #}}
                 <div class="hidden">
                     <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-yellow-400">*</sup></label>
