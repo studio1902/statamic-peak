@@ -3,18 +3,27 @@
 	@desc The cookie banner component defined in `resources/views/snippets/_seo.antlers.html` and yielded in `resources/views/layout.antlers.html`.
 #}}
 
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('cookieBanner', {
+            consent: Alpine.$persist(null).as('cookieBannerConsent'),
+            set(value) {
+                this.consent = value
+            }
+        })
+    })
+</script>
+
 <div
-    {{# Persist 0 as untouched banner state. #}}
+    {{# Persist null as untouched banner state. #}}
     x-data="{
-        open: true,
-        cookieConsent: $persist(0),
-        cookieConsentDate: $persist(0),
-        analyticsStorage: $persist(false),
-        adStorage: $persist(false),
+        cookieConsentDate: $persist(null).as('cookieBannerConsentDate'),
+        analyticsStorage: $persist(false).as('cookieBannerAnalyticsStorage'),
+        adStorage: $persist(false).as('cookieBannerAdStorage'),
     }"
-    {{# Parse localStorage strings to use as booleans. Update gtag on state change. #}}
+    {{# Update gtag on state change. #}}
     x-effect="
-        cookieConsent
+        $store.cookieBanner.consent
             ? gtag('consent', 'update', {
                 'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
                 'ad_storage': (adStorage ? 'granted' : 'denied') })
@@ -22,25 +31,31 @@
     "
     {{# Hide when banner is interacted with, check date for optional consent revoke. If so set state back to initial state. #}}
     x-init="
-        cookieConsent != 0 ? open = false : '',
-        (cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}' ? (cookieConsent = 0, cookieConsentDate = 0) : '')"
-    x-show="open"
+        cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}'
+            ? ($store.cookieBanner.set(null), cookieConsentDate = null)
+            : ''
+        "
+    x-show="$store.cookieBanner.consent === null"
     x-transition
-    class="fixed z-50 inset-x-[1rem] bottom-[1rem] md:bottom-[2rem] md:w-80 flex flex-col p-6 space-y-4 bg-white border border-neutral/10 rounded shadow-lg
-    {{ seo:display_style == 'left' ?= 'md:right-auto md:left-[2rem]' }}
-    {{ seo:display_style == 'right' ?= 'md:left-auto md:right-[2rem]' }}"
+    class="
+        fixed z-50 inset-x-[1rem] bottom-[1rem] md:bottom-[2rem] md:w-80 flex flex-col p-6 space-y-4 bg-white border border-neutral/10 rounded shadow-lg
+        {{ seo:display_style == 'left' ?= 'md:right-auto md:left-[2rem]' }}
+        {{ seo:display_style == 'right' ?= 'md:left-auto md:right-[2rem]' }}
+    "
     x-cloak
 >
     <h2 class="text-2xl font-bold">{{ trans:strings.cookie_title }}</h2>
     <p class="text-sm font-bold text-neutral">
         {{ trans:strings.cookie_explanation }}
         {{ if seo:link_privacy_statement == 'entry' }}
-        <a class="underline hover:text-primary" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
+            <a class="underline hover:text-primary" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
         {{ elseif seo:link_privacy_statement == 'pdf' }}
-        <a class="underline hover:text-primary" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
+            <a class="underline hover:text-primary" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
         {{ /if }}
     </p>
+
     <div class="mt-4 flex flex-col space-y-2">
+        {{# Functional cookies are always on. #}}
         <label class="inline-flex items-center">
             <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
             <span class="flex flex-col">
@@ -48,6 +63,7 @@
                 <span class="text-xs text-neutral/75">{{ trans:strings.cookie_functional_explanation }}</span>
             </span>
         </label>
+
         {{# x-model analyticsStorage checkbox. #}}
         <label class="inline-flex items-center">
             <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
@@ -56,6 +72,7 @@
                 <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
             </span>
         </label>
+
         {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
             <label class="inline-flex items-center">
@@ -67,23 +84,22 @@
             </label>
         {{ /if }}
     </div>
+
     <div class="flex space-x-4">
         {{# Accept cookies and set current date. #}}
         <button
             @click="
-                open = false,
-                cookieConsent = true,
+                $store.cookieBanner.set(true),
                 cookieConsentDate = '{{ now format="Y-m-d" }}'"
             type="button"
             class="px-4 py-2 bg-primary rounded text-sm font-bold text-white focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
             >
             {{ trans:strings.cookie_accept }}
         </button>
+
         {{# Ignore consent and hide banner. #}}
         <button
-            @click="
-                open = false,
-                cookieConsent = false"
+            @click="$store.cookieBanner.set(false)"
             type="button"
             class="px-1 py-2 rounded text-sm font-bold text-neutral focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
         >
@@ -95,13 +111,10 @@
 {{# Yield this section in `resources/layouts/_footer.antlers.html` so users can reset their consent. #}}
 {{ section:reset_cookie_consent }}
     {{ if seo:use_cookie_banner }}
-        {{# Read out localStorage on nextTick for consent status and display a reset consent link by saving the initial state. #}}
-        <span
-            x-data="{ cookieConsent: $persist(0) }"
-            x-cloak
-        >
-            <span x-show="cookieConsent">
-                <a @click="cookieConsent = 0" href="{{ url }}">{{ trans:strings.cookie_reset_consent }}</a>
+        {{# Read out global store consent status and display a reset consent link by saving the initial state. #}}
+        <span x-data x-cloak>
+            <span x-show="$store.cookieBanner.consent !== null">
+                <a @click.prevent="$store.cookieBanner.set(null)" href="#">{{ trans:strings.cookie_reset_consent }}</a>
             </span>
         </span>
     {{ /if }}

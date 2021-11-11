@@ -52,7 +52,7 @@ cd {SITE_DIRECTORY}
 git pull origin main
 composer install --no-interaction --prefer-dist --optimize-autoloader
 
-npm i
+npm ci
 npm run production
 php{SITE_PHP_VERSION} artisan cache:clear
 php{SITE_PHP_VERSION} artisan config:cache
@@ -81,7 +81,7 @@ cd $FORGE_SITE_PATH
 git pull origin main
 $FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader
 
-npm i
+npm ci
 npm run production
 $FORGE_PHP artisan cache:clear
 $FORGE_PHP artisan config:cache

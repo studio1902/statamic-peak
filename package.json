@@ -11,10 +11,10 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
-    "@alpinejs/collapse": "^3.5.0",
-    "@alpinejs/persist": "^3.5.0",
-    "@alpinejs/trap": "^3.5.0",
-    "alpinejs": "^3.5.0",
+    "@alpinejs/collapse": "^3.5.1",
+    "@alpinejs/persist": "^3.5.1",
+    "@alpinejs/trap": "^3.5.1",
+    "alpinejs": "^3.5.1",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^7.0.3",
     "glob-all": "^3.2.1",
-    "laravel-mix": "^6.0.37",
+    "laravel-mix": "^6.0.39",
     "postcss": "^8.3.11",
     "postcss-focus-visible": "^6.0.1",
     "postcss-import": "^14.0.2",

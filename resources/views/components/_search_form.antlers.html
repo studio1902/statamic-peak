@@ -42,7 +42,7 @@
         <button
             class="absolute inset-y-0 right-0 mr-2 flex items-center text-neutral hover:text-primary"
             aria-label="{{ trans:strings.search }}"
-            :disabled="value === 0"
+            :disabled="value.length === 0"
             :class="{ 'opacity-25 cursor-default': value.length === 0, 'opacity-100': value.length > 0 }"
         >
             {{ svg:search class="w-5 h-5 fill-current motion-safe:transition-colors" alt="" aria-hidden="true" }}
