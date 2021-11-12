@@ -1,9 +1,10 @@
 # Release Notes
 
-## Unreleased
+## v3.34.0 (2021-11-12)
 
 ### What's improved
 - Use template literals in Tailwind CSS Typography config. 8aa9c908 by @robdekort
+- Remove tabindex from skip to content. Bad practice and not needed. c907e98e by @robdekort
 
 ## v3.33.0 (2021-11-11)
 
