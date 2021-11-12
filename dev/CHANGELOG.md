@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.35.0 (2021-11-13)
+
+### What's new
+- Add an opt in language picker partial. #179 by @robdekort
+
 ## v3.34.0 (2021-11-12)
 
 ### What's improved

@@ -10,6 +10,7 @@
                 {{ if children }}
                     x-data="{ subnavOpen: false }"
                     @keyup.escape.window="subnavOpen = false"
+                    x-cloak
                 {{ /if }}
                 class="relative leading-none"
             >
@@ -48,7 +49,6 @@
                         class="absolute mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
                         @click.outside="subnavOpen = false"
                         x-transition
-                        x-cloak
                     >
                         {{ children }}
                             <li class="">
