@@ -62,6 +62,7 @@ module.exports = {
             '/features/dark-mode.md',
             '/features/forms.md',
             '/features/globals.md',
+            '/features/language-picker.md',
             '/features/navigation.md',
             '/features/page-builder.md',
             '/features/pagination.md',

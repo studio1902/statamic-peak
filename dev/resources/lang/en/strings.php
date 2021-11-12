@@ -31,6 +31,10 @@ return [
     // Footer
     'on'                                => 'on',
 
+    // Language picker
+    'language_open'                     => 'Open language picker. Current language is :current_language',
+    'language_close'                    => 'Close language picker',
+
     // Navigation
     'close'                             => 'Close',
     'menu'                              => 'Menu',
