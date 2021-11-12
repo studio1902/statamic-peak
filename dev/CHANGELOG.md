@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Use template literals in Tailwind CSS Typography config. 8aa9c908 by @robdekort
+
 ## v3.33.0 (2021-11-11)
 
 ### What's new
