@@ -31,6 +31,10 @@ return [
     // Footer
     'on'                                => 'op',
 
+    // Language picker
+    'language_open'                     => 'Open taalselector. De huidige taal :current_language',
+    'language_close'                    => 'Sluit taalselector',
+
     // Navigation
     'close'                             => 'Sluit',
     'menu'                              => 'Menu',
