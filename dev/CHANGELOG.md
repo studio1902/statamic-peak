@@ -1,5 +1,10 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Dutch localizations. da0d980f by @robdekort
+
 ## v3.35.0 (2021-11-13)
 
 ### What's new
