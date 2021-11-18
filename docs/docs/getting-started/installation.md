@@ -2,7 +2,7 @@
 
 ## Installation via the CLI
 
-The easiest way to install Statamic together with Peak is to use the [official CLI](https://github.com/statamic/cli). Install the CLI by running `composer global require statamic/cli` and for each project just run `statamic new my-site` pick option [1] and type `studio1902/statamic-peak` as the starter kit. Alternatively you can skip this manual selection by running: `statamic new my-site studio1902/statamic-peak`.
+The easiest way to install Statamic together with Peak is to use the [official CLI](https://github.com/statamic/cli). Install the CLI by running `composer global require statamic/cli` and for each project just run `statamic new my-site studio1902/statamic-peak`.
 
 Make sure you use the provided `.env.example` file by running `cp .env.example .env && php artisan key:generate`.
 
