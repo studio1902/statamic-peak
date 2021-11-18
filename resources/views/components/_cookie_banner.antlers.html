@@ -48,16 +48,16 @@
     <p class="text-sm font-bold text-neutral">
         {{ trans:strings.cookie_explanation }}
         {{ if seo:link_privacy_statement == 'entry' }}
-            <a class="underline hover:text-primary" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
+            <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
         {{ elseif seo:link_privacy_statement == 'pdf' }}
-            <a class="underline hover:text-primary" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
+            <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
         {{ /if }}
     </p>
 
     <div class="mt-4 flex flex-col space-y-2">
         {{# Functional cookies are always on. #}}
         <label class="inline-flex items-center">
-            <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
+            <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition opacity-50" type="checkbox" name="functional" checked disabled>
             <span class="flex flex-col">
                 <span class="font-bold text-xs">{{ trans:strings.cookie_functional }}</span>
                 <span class="text-xs text-neutral/75">{{ trans:strings.cookie_functional_explanation }}</span>
@@ -66,7 +66,7 @@
 
         {{# x-model analyticsStorage checkbox. #}}
         <label class="inline-flex items-center">
-            <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
+            <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
             <span class="flex flex-col">
                 <span class="font-bold text-xs">{{ trans:strings.cookie_analytics }}</span>
                 <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
@@ -76,7 +76,7 @@
         {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
             <label class="inline-flex items-center">
-                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
+                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="ad_storage" x-model="adStorage">
                 <span class="flex flex-col">
                     <span class="font-bold text-xs">{{ trans:strings.cookie_ads }}</span>
                     <span class="text-xs text-neutral/75">{{ trans:strings.cookie_ads_explanation }}</span>
@@ -114,7 +114,7 @@
         {{# Read out global store consent status and display a reset consent link by saving the initial state. #}}
         <span x-data x-cloak>
             <span x-show="$store.cookieBanner.consent !== null">
-                <a @click.prevent="$store.cookieBanner.set(null)" href="#">{{ trans:strings.cookie_reset_consent }}</a>
+                <a @click.prevent="$store.cookieBanner.set(null)" class="px-1 -mx-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition-colors" href="#">{{ trans:strings.cookie_reset_consent }}</a>
             </span>
         </span>
     {{ /if }}

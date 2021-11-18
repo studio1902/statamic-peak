@@ -1,6 +1,9 @@
 # Release Notes
 
-## Unreleased
+## v3.36.0 (2021-11-18)
+
+### What's changed
+- Simplify hreflang configuration. d18793cf by @robdekort
 
 ### What's improved
 - Dutch localizations. da0d980f by @robdekort

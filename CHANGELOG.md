@@ -1,5 +1,14 @@
 # Release Notes
 
+## v3.36.0 (2021-11-18)
+
+### What's changed
+- Simplify hreflang configuration. d18793cf by @robdekort
+
+### What's improved
+- Dutch localizations. da0d980f by @robdekort
+- Update cookie banner focus styles. d96a0ccf 2c8d89ee by @robdekort
+
 ## v3.35.0 (2021-11-13)
 
 ### What's new
