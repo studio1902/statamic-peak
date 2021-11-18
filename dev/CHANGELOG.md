@@ -4,7 +4,7 @@
 
 ### What's improved
 - Dutch localizations. da0d980f by @robdekort
-- Update cookie banner focus styles. d96a0ccf by @robdekort
+- Update cookie banner focus styles. d96a0ccf 2c8d89ee by @robdekort
 
 ## v3.35.0 (2021-11-13)
 
