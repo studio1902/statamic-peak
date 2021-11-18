@@ -48,9 +48,9 @@
     <p class="text-sm font-bold text-neutral">
         {{ trans:strings.cookie_explanation }}
         {{ if seo:link_privacy_statement == 'entry' }}
-            <a class="underline hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
+            <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ seo:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
         {{ elseif seo:link_privacy_statement == 'pdf' }}
-            <a class="underline hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
+            <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ seo:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
         {{ /if }}
     </p>
 
@@ -114,7 +114,7 @@
         {{# Read out global store consent status and display a reset consent link by saving the initial state. #}}
         <span x-data x-cloak>
             <span x-show="$store.cookieBanner.consent !== null">
-                <a @click.prevent="$store.cookieBanner.set(null)" href="#">{{ trans:strings.cookie_reset_consent }}</a>
+                <a @click.prevent="$store.cookieBanner.set(null)" class="px-1 -mx-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition-colors" href="#">{{ trans:strings.cookie_reset_consent }}</a>
             </span>
         </span>
     {{ /if }}
