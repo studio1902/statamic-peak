@@ -213,13 +213,11 @@ sections:
           instructions: 'Set for which sites in your multisite a hreflang tag should be generated.'
           display: Hreflang
       -
-        handle: hreflang_sites
+        handle: hreflang_auto
         field:
-          mode: select
-          display: 'Hreflang sites'
-          type: sites
-          icon: sites
-          instructions: 'Auto generate hreflang tags for the following sites.'
+          type: toggle
+          display: 'Auto hreflang tags'
+          instructions: 'Auto generate hreflang tags for all sites.'
           listable: hidden
           instructions_position: above
           width: 50
