@@ -3,8 +3,6 @@
 	@desc The {{ collection_name }} index template.
 #}}
 
-{{ partial:snippets/theme selector=":root" :label="theme.label" }}
-
 <main class="outer-grid" id="content">
     <div class="fluid-container grid md:grid-cols-12 gap-12">
         {{ collection:{{ handle }} sort="{{ sort }}" paginate="true" limit="10" as="items" }}

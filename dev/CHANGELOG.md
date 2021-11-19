@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.37.0 (2021-11-19)
+
+### What's changed
+- Remove stuff from index stub that really shouldn't be there. b9c1b5d1 by @robdekort
+
 ## v3.36.0 (2021-11-18)
 
 ### What's changed
