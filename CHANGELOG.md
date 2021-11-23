@@ -3,7 +3,7 @@
 ## v3.38.0 (2021-11-23)
 
 ### What's new
-- `README.example.md` gets renamed as `README.md` upon installing a new instance of Peak. 1b75421e by @robdekort
+- `README.example.md` gets renamed as `README.md` upon installing a new instance of Peak. 02e78b56 by @robdekort
 
 ## v3.37.0 (2021-11-19)
 
