@@ -71,4 +71,4 @@ export_paths:
   - webpack.mix.js
   - upgrade-cli-notice.php
 export_as:
-  README.example.md: README.md
+  README.md: README.example.md
