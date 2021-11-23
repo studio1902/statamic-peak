@@ -1,6 +1,5 @@
 export_paths:
   - .gitignore
-  - .env.example
   - app/Actions/GenerateSocialImages.php
   - app/Console/Kernel.php
   - app/Console/Commands/AddBlock.php
@@ -64,11 +63,12 @@ export_paths:
   - LICENSE
   - package.json
   - package-lock.json
-  - README.example.md
-  - README.md
   - tailwind.config.js
   - tailwind.config.peak.js
   - tailwind.config.site.js
   - tailwind.config.typography.js
   - webpack.mix.js
   - upgrade-cli-notice.php
+export_as:
+  README.example.md: README.md
+  .env.example: .env
