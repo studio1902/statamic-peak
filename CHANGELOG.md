@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.38.0 (2021-11-23)
+
+### What's new
+- `.env.example` and `README.example.md` get renamed as `.env` and `README.md` upon installing a new instance of Peak. 1b75421e by @robdekort
+
 ## v3.37.0 (2021-11-19)
 
 ### What's changed
