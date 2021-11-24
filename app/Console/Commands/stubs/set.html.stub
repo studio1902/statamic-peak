@@ -4,6 +4,8 @@
     @set page.article.{{ filename }}
 #}}
 
+<!-- /components/_{{ filename }}.antlers.html -->
 <div class="size-{{ size }} my-4">
     <h2>🔧<br>{{ name }}</h2>
 </div>
+<!-- End: /components/_{{ filename }}.antlers.html -->

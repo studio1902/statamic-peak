@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.39.0 (2021-11-24)
+
+### What's new
+- All templates and snippets got filename and location hinting as HTML comments. #182 by @robdekort
+
 ## v3.38.0 (2021-11-23)
 
 ### What's new

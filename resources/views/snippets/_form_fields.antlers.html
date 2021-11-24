@@ -3,6 +3,7 @@
 	@desc Render the form fields in the default styling. Duplicate this partial if you use multiple form styles.
 #}}
 
+<!-- /snippets/_form_fields.antlers.html -->
 {{ fields }}
     <div class="flex flex-col space-y-4
         {{ width == '25' ?= 'md:col-span-3' }}
@@ -36,3 +37,4 @@
 <template x-if="success">
     {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
 </template>
+<!-- End: /snippets/_form_fields.antlers.html -->

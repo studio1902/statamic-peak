@@ -3,6 +3,7 @@
 	@desc The {{ collection_name }} index template.
 #}}
 
+<!-- /{{ filename }}/index.antlers.html -->
 <main class="outer-grid" id="content">
     <div class="fluid-container grid md:grid-cols-12 gap-12">
         {{ collection:{{ handle }} sort="{{ sort }}" paginate="true" limit="10" as="items" }}
@@ -25,3 +26,4 @@
         {{ partial src="page_builder/{type}" }}
     {{ /page_builder }}
 </main>
+<!-- End: /{{ filename }}/index.antlers.html -->
