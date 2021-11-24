@@ -1,4 +1,5 @@
 {{# Bind custom error classses when there is a validation error with the field. #}}
+<!-- /vendor/statamic/forms/fields/integer.antlers.html -->
 <input
     class="w-full rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition caret-primary"
     :class="{ 'border-red-600 focus-visible:border-red-600': errors.{{ handle }} }"
@@ -9,3 +10,4 @@
     {{# {{ validate | contains:required ?= "required" }} #}}
     {{ old ?= value="{old}" }}
 />
+<!-- End: /vendor/statamic/forms/fields/integer.antlers.html -->

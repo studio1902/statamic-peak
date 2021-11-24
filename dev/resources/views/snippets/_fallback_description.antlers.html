@@ -3,6 +3,7 @@
 	@desc Get the fallback description for meta, og and twitter.
 #}}
 
+<!-- /snippets/_fallback_description.antlers.html -->
 {{ seo:collection_defaults where="collection:{collection}" }}
     {{ if fallback == 'field' }}
         {{ scope_value :var="field_handle" as="field_value" }}
@@ -22,3 +23,4 @@
         {{ /page_builder }}
     {{ /if }}
 {{ /seo:collection_defaults }}
+<!-- End: /snippets/_fallback_description.antlers.html -->

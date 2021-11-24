@@ -6,15 +6,18 @@
     3. Add `{{ yield:dark_mode_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
 #}}
 
+<!-- /components/_dark_mode_toggle.antlers.html -->
 {{# We can't use Alpine logic here since this has to run before anything else. #}}
 <script>
     (localStorage._x_darkMode === 'true' || (!('_x_darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
         ? (document.documentElement.classList.add('dark'), localStorage._x_darkMode = 'true')
         : document.documentElement.classList.remove('dark');
 </script>
+<!-- End: /components/_dark_mode_toggle.antlers.html -->
 
 {{# The actual toggle yielded in the `resources/views/navigation/_main.antlers.html`. #}}
 {{ section:dark_mode_toggle }}
+    <!-- /components/_dark_mode_toggle.antlers.html -->
     <li
         x-data="{ darkMode: $persist(false) }"
         x-effect="
@@ -41,4 +44,5 @@
             {{ svg:sun class="w-5 h-5 text-neutral hover:text-primary stroke-current motion-safe:transition-colors overflow-visible" alt="" aria-hidden="true" }}
         </button>
     </li>
+    <!-- End: /components/_dark_mode_toggle.antlers.html -->
 {{ /section:dark_mode_toggle }}
