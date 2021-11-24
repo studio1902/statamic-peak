@@ -3,6 +3,7 @@
 	@desc The browser appearance snippet for the `<head>` to include browser specific meta tags Peak generated favicons.
 #}}
 
+<!-- /snippets/_browser_appearance.antlers.html -->
 {{ if browser_appearance:disable_telephone_detection }}
     <meta name="format-detection" content="telephone=no">
 {{ /if }}
@@ -42,3 +43,4 @@
     {{# manifest.json for lighthouse one 512x512 #}}
     <link rel="manifest" href="/site.webmanifest">
 {{ /if }}
+<!-- End: /snippets/_browser_appearance.antlers.html -->
