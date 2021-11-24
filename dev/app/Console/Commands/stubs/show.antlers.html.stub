@@ -3,6 +3,7 @@
 	@desc The {{ collection_name }} show template.
 #}}
 
+<!-- /{{ filename }}/show.antlers.html -->
 <main class="outer-grid" id="content">
     <div class="fluid-container">
         {{ partial:typography/h1 :content="title" }}
@@ -12,3 +13,4 @@
         {{ partial src="page_builder/{type}" }}
     {{ /page_builder }}
 </main>
+<!-- /{{ filename }}/show.antlers.html -->
