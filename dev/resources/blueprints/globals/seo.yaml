@@ -538,7 +538,7 @@ sections:
           listable: false
           default: true
           display: 'Anonymize IP''s'
-          instructions: 'Enable this to be excempt from needing cookie consent.'
+          instructions: 'Enable this to be exempt from needing cookie consent.'
           instructions_position: below
           if:
             tracker_type: 'equals gtag'
