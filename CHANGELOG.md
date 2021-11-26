@@ -1,5 +1,11 @@
 # Release Notes
 
+## v3.40.0 (2021-11-25)
+
+### What's fixed
+- Tpyo's. 7fe96e39 by @robdekort
+- Update translations. 6517e61d by @robdekort
+
 ## v3.39.0 (2021-11-24)
 
 ### What's new
