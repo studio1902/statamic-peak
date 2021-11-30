@@ -210,7 +210,11 @@
     {{ /if }}
 
     {{ if seo:use_fathom }}
-        <script src="https://cdn.usefathom.com/script.js" site="{{ seo:fathom }}" defer></script>
+        {{ if seo:fathom_use_custom_domain }}
+            <script src="{{ seo:fathom_custom_script_url }}" site="{{ seo:fathom }}" defer></script>
+        {{ else }}
+            <script src="https://cdn.usefathom.com/script.js" site="{{ seo:fathom }}" defer></script>
+        {{ /if }}
     {{ /if }}
 
     {{ if seo:use_cloudflare_web_analytics }}

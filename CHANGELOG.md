@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.42.0 (2021-11-30)
+
+### What's new
+- You can now use custom domains for Fathom in the SEO trackers global. 7ca58eb2 by @robdekort
+
 ## v3.41.0 (2021-11-30)
 
 ### What's fixed
