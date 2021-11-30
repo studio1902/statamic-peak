@@ -47,8 +47,11 @@ class GenerateSocialImages extends Action
     {
         GenerateSocialImagesJob::dispatch($items);
 
-        return config('queue.default') == 'redis'
-            ? trans_choice('strings.social_images_queue', $items)
-            : trans_choice('strings.social_images', $items);
+        $queue = config('queue.default');
+        $driver = config("queue.connections.$queue.driver");
+
+        return $driver === 'sync'
+            ? trans_choice('strings.social_images', $items)
+            : trans_choice('strings.social_images_queue', $items);
     }
 }
