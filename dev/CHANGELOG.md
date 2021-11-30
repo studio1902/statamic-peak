@@ -1,10 +1,11 @@
 # Release Notes
 
-## Unreleased
+## v3.41.0 (2021-11-30)
 
 ### What's fixed
 - Remove unused CSS include from social images template. 76de6942 by @robdekort
 - Don't assume queue driver is Redis or Sync. 5c59b4c7 by @robdekort
+- Update dependencies. da9d0e94 by @robdekort
 
 ## v3.40.0 (2021-11-25)
 
