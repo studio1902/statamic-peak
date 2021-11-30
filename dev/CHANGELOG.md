@@ -4,6 +4,7 @@
 
 ### What's fixed
 - Remove unused CSS include from social images template. 76de6942 by @robdekort
+- Don't assume queue driver is Redis or Sync. 5c59b4c7 by @robdekort
 
 ## v3.40.0 (2021-11-25)
 
