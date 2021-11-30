@@ -88,7 +88,7 @@ module.exports = {
             '/other/screencasts.md',
             '/other/tags.md',
             '/other/toolbar.md',
-            '/other/upcoming-features.md',
+            '/other/updating-peak.md',
           ],
         },
         {
