@@ -106,7 +106,8 @@ module.exports = {
         '@vuepress/docsearch',
         {
           apiKey: '0e6e372812c5b04dabd079409d91cf70',
-          indexName: 'studio1902'
+          indexName: 'studio1902',
+          appId: 'YLJJ92S9H8'
         }
       ]
     ]
