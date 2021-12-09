@@ -22,12 +22,9 @@ module.exports = {
   // darkMode: 'class',
   mode: 'jit',
   // Configure Purge CSS.
-  purge: {
-    content: [
-      './resources/views/**/*.html',
-      './resources/js/**/*.js',
-    ],
-    safelist: [],
-    layers: ['components', 'utilities'],
-  },
+  content: [
+    './resources/views/**/*.html',
+    './resources/js/**/*.js',
+  ],
+  safelist: []
 }
