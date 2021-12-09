@@ -183,23 +183,9 @@ module.exports = {
 
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
-        // Break words only when needed.
-        '.break-decent': {
-          wordBreak: 'break-word',
-        },
         // Fill icons that have a fill defined within their paths. For example coming from an asset container.
         '.fill-current-cascade *': {
           fill: 'currentColor',
-        },
-        // Easily switch direction on a grid.
-        '.ltr': {
-          direction: 'ltr',
-        },
-        '.rtl': {
-          direction: 'rtl',
-          '> *': {
-            direction: 'ltr',
-          },
         },
       }
       addUtilities(newUtilities)
