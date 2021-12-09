@@ -13,7 +13,7 @@ module.exports = {
     extend: {
       colors: {
         // Gray colors.
-        gray: colors.blueGray,
+        gray: colors.slate,
         // Error styling colors.
         red: colors.red,
         // Notice styling colors.

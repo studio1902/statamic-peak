@@ -20,8 +20,8 @@ module.exports = {
       white:  '#fff',
       // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
       neutral: {
-        DEFAULT: colors.blueGray['800'],
-        ...colors.blueGray
+        DEFAULT: colors.slate['800'],
+        ...colors.slate
       },
       // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
       primary: {
