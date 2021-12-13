@@ -12,23 +12,23 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   theme: {
-    // Here we define the default colors available. If you want to include
-    // all default Tailwind colors you should extend the colors instead.
-    colors: {
-      transparent: 'transparent',
-      black:   '#000',
-      white:  '#fff',
-      // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-      neutral: {
-        DEFAULT: colors.slate['800'],
-        ...colors.slate
-      },
-      // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-      primary: {
-        DEFAULT: '#FF0274'
-      },
-    },
     extend: {
+      // Here we define the default colors available. If you want to include
+      // all default Tailwind colors you should extend the colors instead.
+      colors: {
+        transparent: 'transparent',
+        black:   '#000',
+        white:  '#fff',
+        // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
+        neutral: {
+          DEFAULT: colors.slate['800'],
+          ...colors.slate
+        },
+        // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
+        primary: {
+          DEFAULT: '#FF0274'
+        },
+      },
       // Set default transition durations and easing when using the transition utilities.
       transitionDuration: {
         DEFAULT: '300ms',
@@ -72,6 +72,10 @@ module.exports = {
     },
   },
   plugins: [
+    // Use Tailwinds aspect-ratio plugin for embedded media: https://github.com/tailwindlabs/tailwindcss-aspect-ratio.
+    require('@tailwindcss/aspect-ratio'),
+    // Use Tailwinds forms plugin for form styling: https://github.com/tailwindlabs/tailwindcss-forms
+    require('@tailwindcss/forms'),
     plugin(function({ addBase, theme }) {
       addBase({
         // Default color transition on links unless user prefers reduced motion.
@@ -95,7 +99,6 @@ module.exports = {
     // Custom components for this particular site.
     plugin(function({ addComponents, theme }) {
       const components = {
-
       }
       addComponents(components)
     }),

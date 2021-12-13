@@ -32,10 +32,6 @@ module.exports = {
     },
   },
   plugins: [
-    // Use Tailwinds aspect-ratio plugin for embedded media: https://github.com/tailwindlabs/tailwindcss-aspect-ratio.
-    require('@tailwindcss/aspect-ratio'),
-    // Use Tailwinds forms plugin for form styling: https://github.com/tailwindlabs/tailwindcss-forms
-    require('@tailwindcss/forms'),
     plugin(function({ addBase, theme }) {
       addBase({
         ':root': {
