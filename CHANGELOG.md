@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.43.0 (2021-12-13)
+
+### What's new
+- TailwindCSS v3 support. #183 by @robdekort
+
 ## v3.42.0 (2021-11-30)
 
 ### What's new

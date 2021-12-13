@@ -7,9 +7,6 @@
 // classes. Various aspects of the config are split inmultiple files.
 //
 
-const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
-
 module.exports = {
   // The various configurable Tailwind configuration files.
   presets: [
@@ -22,12 +19,9 @@ module.exports = {
   // darkMode: 'class',
   mode: 'jit',
   // Configure Purge CSS.
-  purge: {
-    content: [
-      './resources/views/**/*.html',
-      './resources/js/**/*.js',
-    ],
-    safelist: [],
-    layers: ['components', 'utilities'],
-  },
+  content: [
+    './resources/views/**/*.html',
+    './resources/js/**/*.js',
+  ],
+  safelist: []
 }
