@@ -1,7 +1,12 @@
 <!-- /vendor/statamic/forms/fields/assets.antlers.html -->
-{{ if max_files === 1 }}
-    <input type="file" name="{{ handle }}" class="w-full rounded border-neutral focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition">
-{{ else }}
-    <input type="file" name="{{ handle }}[]" class="w-full rounded border-neutral focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" multiple>
-{{ /if }}
+<input
+    type="file"
+    {{ if max_files === 1 }}
+        name="{{ handle }}"
+    {{ else }}
+        name="{{ handle }}[]"
+        multiple
+    {{ /if }}
+    class="w-full file:py-2 file:px-4 file:border-2 file:border-solid file:border-primary file:bg-white file:text-primary file:text-xs file:uppercase file:tracking-widest file:font-bold rounded border-neutral focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition"
+>
 <!-- End: /vendor/statamic/forms/fields/assets.antlers.html -->

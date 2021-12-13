@@ -12,8 +12,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        current: 'currentColor',
+        transparent: 'transparent',
         // Gray colors.
-        gray: colors.blueGray,
+        gray: colors.slate,
         // Error styling colors.
         red: colors.red,
         // Notice styling colors.
@@ -32,10 +34,6 @@ module.exports = {
     },
   },
   plugins: [
-    // Use Tailwinds aspect-ratio plugin for embedded media: https://github.com/tailwindlabs/tailwindcss-aspect-ratio.
-    require('@tailwindcss/aspect-ratio'),
-    // Use Tailwinds forms plugin for form styling: https://github.com/tailwindlabs/tailwindcss-forms
-    require('@tailwindcss/forms'),
     plugin(function({ addBase, theme }) {
       addBase({
         ':root': {
@@ -183,23 +181,9 @@ module.exports = {
 
     plugin(function({ addUtilities, theme, variants }) {
       const newUtilities = {
-        // Break words only when needed.
-        '.break-decent': {
-          wordBreak: 'break-word',
-        },
         // Fill icons that have a fill defined within their paths. For example coming from an asset container.
         '.fill-current-cascade *': {
           fill: 'currentColor',
-        },
-        // Easily switch direction on a grid.
-        '.ltr': {
-          direction: 'ltr',
-        },
-        '.rtl': {
-          direction: 'rtl',
-          '> *': {
-            direction: 'ltr',
-          },
         },
       }
       addUtilities(newUtilities)
