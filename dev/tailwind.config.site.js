@@ -12,23 +12,22 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   theme: {
-    extend: {
-      // Here we define the default colors available. If you want to include
-      // all default Tailwind colors you should extend the colors instead.
-      colors: {
-        transparent: 'transparent',
-        black:   '#000',
-        white:  '#fff',
-        // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-        neutral: {
-          DEFAULT: colors.slate['800'],
-          ...colors.slate
-        },
-        // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
-        primary: {
-          DEFAULT: '#FF0274'
-        },
+    // Here we define the default colors available. If you want to include
+    // all default Tailwind colors you should extend the colors instead.
+    colors: {
+      black:   '#000',
+      white:  '#fff',
+      // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
+      neutral: {
+        DEFAULT: colors.slate['800'],
+        ...colors.slate
       },
+      // Primary: primary brand color with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.
+      primary: {
+        DEFAULT: '#FF0274'
+      },
+    },
+    extend: {
       // Set default transition durations and easing when using the transition utilities.
       transitionDuration: {
         DEFAULT: '300ms',

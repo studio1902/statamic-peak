@@ -12,6 +12,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        current: 'currentColor',
+        transparent: 'transparent',
         // Gray colors.
         gray: colors.slate,
         // Error styling colors.
