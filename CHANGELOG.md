@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.43.1 (2021-12-17)
+
+### What's improved
+- Move the init of the Tailwind forms and aspect plugin back to `tailwind.config.peak.js`. 1c4df41e by @robdekort
+
 ## v3.43.0 (2021-12-13)
 
 ### What's new

@@ -11,6 +11,7 @@ const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  presets: [],
   theme: {
     // Here we define the default colors available. If you want to include
     // all default Tailwind colors you should extend the colors instead.
@@ -71,10 +72,6 @@ module.exports = {
     },
   },
   plugins: [
-    // Use Tailwinds aspect-ratio plugin for embedded media: https://github.com/tailwindlabs/tailwindcss-aspect-ratio.
-    require('@tailwindcss/aspect-ratio'),
-    // Use Tailwinds forms plugin for form styling: https://github.com/tailwindlabs/tailwindcss-forms
-    require('@tailwindcss/forms'),
     plugin(function({ addBase, theme }) {
       addBase({
         // Default color transition on links unless user prefers reduced motion.
