@@ -11,10 +11,10 @@
   "author": "Studio 1902",
   "license": "MIT",
   "dependencies": {
-    "@alpinejs/collapse": "^3.7.0",
-    "@alpinejs/persist": "^3.7.0",
-    "@alpinejs/trap": "^3.7.0",
-    "alpinejs": "^3.7.0",
+    "@alpinejs/collapse": "^3.7.1",
+    "@alpinejs/persist": "^3.7.1",
+    "@alpinejs/trap": "^3.7.1",
+    "alpinejs": "^3.7.1",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
