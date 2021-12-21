@@ -1,5 +1,11 @@
 # Release Notes
 
+## v3.44.0 (2021-12-21)
+
+### What's improved
+- Improve footer layout on desktop and transition the social icon color on hover. a1a1d368 by @robdekort
+- Update AlpineJS. 4db54ad3 by @robdekort
+
 ## v3.43.1 (2021-12-17)
 
 ### What's improved
