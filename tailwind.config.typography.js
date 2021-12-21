@@ -4,7 +4,7 @@
 //
 // Here you may overwrite the default Tailwind Typography (or prosé) styles.
 // Some defaults are provided.
-// More info: https://github.com/tailwindlabs/tailwindcss-typography.
+// More info: https://tailwindcss.com/docs/typography-plugin.
 //
 
 const plugin = require('tailwindcss/plugin')
