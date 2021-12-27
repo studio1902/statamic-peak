@@ -62,7 +62,7 @@ php{SITE_PHP_VERSION} artisan queue:restart
 php{SITE_PHP_VERSION} artisan statamic:search:update --all
 php{SITE_PHP_VERSION} artisan statamic:static:clear
 php{SITE_PHP_VERSION} artisan statamic:static:warm
-php{SITE_PHP_VERSION} artisan statamic:assets:generate-presets
+php{SITE_PHP_VERSION} artisan statamic:assets:generate-presets --queue
 
 {RELOAD_PHP_FPM}
 
