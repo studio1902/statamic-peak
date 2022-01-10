@@ -43,6 +43,7 @@ map $sent_http_content_type $expires {
 ```bash
 if [[ {COMMIT_MESSAGE} =~ "[BOT]" ]]; then
     echo "Automatically committed on production. Nothing to deploy."
+    {DO_NOT_NOTIFY}
     # Uncomment the following line when using zero downtime deployments.
     # {CLEAR_NEW_RELEASE}
     exit 0
