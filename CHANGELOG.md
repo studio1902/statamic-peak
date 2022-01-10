@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.45.0 (2022-01-10)
+
+### What's improved
+- Use queue for asset generation and add `{DO_NOT_NOTIFY}` for Ploi to the deploy script example. d1b0e31f and 2570989c by @robdekort
+
 ## v3.44.0 (2021-12-21)
 
 ### What's improved
