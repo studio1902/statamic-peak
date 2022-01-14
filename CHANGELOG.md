@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.46.0 (2022-01-14)
+
+### What's new
+- Use alpine focus plugin instead of the deprecated trap plugin (no breaking changes). 4c474a73 by @robdekort
+
 ## v3.45.0 (2022-01-10)
 
 ### What's improved

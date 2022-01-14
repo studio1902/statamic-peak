@@ -1,7 +1,7 @@
 import Alpine from 'alpinejs'
 import collapse from '@alpinejs/collapse'
 import persist from '@alpinejs/persist'
-import trap from '@alpinejs/trap'
+import focus from '@alpinejs/focus'
 import 'focus-visible'
 
 // Global get CSRF token function (used by forms).
@@ -20,5 +20,5 @@ window.getToken = async () => {
 window.Alpine = Alpine
 Alpine.plugin(collapse)
 Alpine.plugin(persist)
-Alpine.plugin(trap)
+Alpine.plugin(focus)
 Alpine.start()
