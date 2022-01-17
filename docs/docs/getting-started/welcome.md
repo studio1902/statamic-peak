@@ -42,4 +42,4 @@ Maintaining Peak demands a lot of my time and it probably saves you a lot. Your 
 ### A lot more additional bottles of oxygen
 ![And a lot more additional bottles of oxygen.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-06.png)
 
-The Peak branding is done by Jouke Zult from [Mistral Merkactivisten](https://mistralmerkactivisten.nl). Thank you so much!
+The Peak branding is done by Jouke Zult from [Merkactivisten](https://merkactivisten.nl). Thank you so much!
