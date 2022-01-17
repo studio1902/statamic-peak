@@ -1,5 +1,13 @@
 # Release Notes
 
+## v3.47.0 (2022-01-17)
+
+### What's new
+- Include localized entries in sitemap. #185 by @stefankempf
+
+### What's improved
+- Specifically add a content type to the sitemap route. #184 by @stefankempf
+
 ## v3.46.0 (2022-01-14)
 
 ### What's new
