@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.48.0 (2022-01-17)
+
+### What's new
+- Alias dark mode localStorage variable and dynamically update the `theme-color` meta tag when using dark mode and seperate normal/dark mode theme colors. f5a53e4b by @robdekort
+
 ## v3.47.0 (2022-01-17)
 
 ### What's new
