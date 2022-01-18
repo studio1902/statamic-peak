@@ -9,9 +9,22 @@
 <!-- /components/_dark_mode_toggle.antlers.html -->
 {{# We can't use Alpine logic here since this has to run before anything else. #}}
 <script>
-    (localStorage._x_darkMode === 'true' || (!('_x_darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
-        ? (document.documentElement.classList.add('dark'), localStorage._x_darkMode = 'true')
-        : document.documentElement.classList.remove('dark');
+    (localStorage.darkMode === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+        ?
+            (
+                document.documentElement.classList.add('dark'),
+                localStorage.darkMode = 'true'
+                {{ if browser_appearance:use_theme_color && browser_appearance:use_theme_color_dark_mode }},
+                    document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color_dark_mode ?? browser_appearance:theme_color }}' )
+                {{ /if }}
+            )
+        :
+            (
+                document.documentElement.classList.remove('dark')
+                {{ if browser_appearance:use_theme_color && browser_appearance:use_theme_color_dark_mode }},
+                    document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color }}' )
+                {{ /if }}
+            );
 </script>
 <!-- End: /components/_dark_mode_toggle.antlers.html -->
 
@@ -19,11 +32,21 @@
 {{ section:dark_mode_toggle }}
     <!-- /components/_dark_mode_toggle.antlers.html -->
     <li
-        x-data="{ darkMode: $persist(false) }"
+        x-data="{ darkMode: $persist(false).as('darkMode') }"
         x-effect="
             darkMode
-                ? document.documentElement.classList.add('dark')
-                : document.documentElement.classList.remove('dark')"
+                ? (
+                    document.documentElement.classList.add('dark')
+                    {{ if browser_appearance:use_theme_color && browser_appearance:use_theme_color_dark_mode }},
+                        document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color_dark_mode ?? browser_appearance:theme_color }}' )
+                    {{ /if }}
+                )
+                : (
+                    document.documentElement.classList.remove('dark')
+                    {{ if browser_appearance:use_theme_color && browser_appearance:use_theme_color_dark_mode }},
+                        document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color }}' )
+                    {{ /if }}
+                )"
         x-cloak
     >
         <button
