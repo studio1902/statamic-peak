@@ -16,7 +16,6 @@ Peak changes the default Statamic config. The following is different:
 | `app/Console/Commands/stubs/fieldset_set.yaml.stub` |  | A stub file for the `peak:add-set` command.
 | `app/Actions/GenerateSocialImages.php` |  | An action to [generate social images](/features/social-images-generation.html) for entries.
 | `app/Http/Controllers/DynamicToken.php` |  | New Controller for [forms](/features/forms.html) |
-| `app/Http/Middleware/VerifyCsrfToken.php` | `protected $except = []` | `protected $except = ['/!/DynamicToken']` |
 | `app/Jobs/GenerateSocialImagesJob.php` |  | The acutal job to [generate social images](/features/social-images-generation.html) for entries.
 | `app/listeners/GenerateFavicons.php` |  | Listen to a GlobalSavedEvent to generate [favicons](/features/browser-appearance.html).
 | `app/providers/EventServiceProvider.php` |  | Listen to a GlobalSavedEvent to generate [favicons](/features/browser-appearance.html).
@@ -24,6 +23,8 @@ Peak changes the default Statamic config. The following is different:
 | `app/Tags/ScopeValue.php` |  | New Tag to scope a value [tags](/other/tags.html) |
 | `content/assets/favicons.yaml` |  | An asset container where the [automated favicon feature](/features/browser-appearance.html) stores it's favicons in. |
 | `config/filesystems.php` |  | Filesystems for the Favicon and Social Images assets. |
+| `config/ignition.php` | `'editor' => env('IGNITION_EDITOR', 'phpstorm')` | `'editor' => env('IGNITION_EDITOR', 'vscode')` |
+| `config/ignition.php` | `'theme' => env('IGNITION_THEME', 'light')` | `'theme' => env('IGNITION_THEME', 'auto')` |
 | `config/statamic/assets.php` | `driver' => 'gd'` | `'driver' => env('IMAGE_MANIPULATION_DRIVER', 'gd')` |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
 | `config/statamic/assets.php` | `'presets' => []` | Contains a whole bunch of asset presets. |
