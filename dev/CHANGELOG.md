@@ -1,5 +1,11 @@
 # Release Notes
 
+## Unreleased
+
+### What's improved
+- Remove redundant VerifyCsrfToken config. 2ebbc036 by @robdekort
+- Add slightly changed default Ignition config. Auto switch color mode and use vscode as the default editor (since it's the only editor with Antlers support). 25aabc03 by @robdekort
+
 ## v3.48.0 (2022-01-17)
 
 ### What's new
