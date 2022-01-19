@@ -12,7 +12,7 @@ return [
     | Possible values are 'phpstorm', 'vscode', 'vscode-insiders', 'sublime' and 'atom'.
     */
 
-    'editor' => env('IGNITION_EDITOR', 'phpstorm'),
+    'editor' => env('IGNITION_EDITOR', 'vscode'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'theme' => env('IGNITION_THEME', 'light'),
+    'theme' => env('IGNITION_THEME', 'auto'),
 
     /*
     |--------------------------------------------------------------------------
