@@ -31,16 +31,16 @@ fields:
       validate:
         - required
       sets:
-        figure:
-          display: Figure
-          fields:
-            -
-              import: figure
         buttons:
           display: Buttons
           fields:
             -
               import: buttons
+        figure:
+          display: Figure
+          fields:
+            -
+              import: figure
         pull_quote:
           display: 'Pull quote'
           fields:
