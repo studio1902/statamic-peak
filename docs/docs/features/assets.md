@@ -14,7 +14,7 @@ The following example renders an image and object-fills it's wrapping container:
 {{ partial:components/picture :image="image" cover="true" sizes="(min-width: 768px) 35vw, 90vw" }}
 ```
 
-See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information. Although it was written voor Statamic V2, the concept of the partial remains te same. Some of the settings described in the article (like the preset definition) is replaced in V3.
+See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information. Although it was written for Statamic V2, the concept of the partial remains te same. Some of the settings described in the article (like the preset definition) is replaced in V3.
 
 > Note: alternatively you could use the fantastic [Responsive Images Addon](https://github.com/spatie/statamic-responsive-images) by [Rias](https://github.com/riasvdv) from Spatie. It features more asset presets and uses Javascript to auto populate your `sizes` attribute.
 
