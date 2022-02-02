@@ -37,6 +37,7 @@ return [
 
     // Navigation
     'close'                             => 'Close',
+    'main_navigation'                   => 'Main navigation',
     'menu'                              => 'Menu',
     'nav_close'                         => 'Close navigation',
     'nav_open'                          => 'Open navigation',
