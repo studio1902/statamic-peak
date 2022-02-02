@@ -5,6 +5,7 @@
 ### What's improved
 - Add aria label to main navigation nav tag. 91c19212 by @robdekort
 - Remove focus trap from sub navigation as it's not according to the a11y guidelines. c6c71625 by @robdekort
+- Close flyout menus when the user tabs out. 6cc44196 by @robdekort
 - Update dependencies and remove postcss nested as it's not used by default. da0443e2 by @robdekort
 
 ## v3.49.0 (2022-01-20)

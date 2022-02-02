@@ -27,24 +27,25 @@
         x-trap.inert.noscroll="mobileNavOpen"
         x-cloak
     >
-        <ul class="flex flex-col py-2 space-y-8 overflow-auto">
+        <ul class="flex flex-col py-2 space-y-4 overflow-auto">
             {{ nav:main max_depth="2" include_home="true" }}
                 <li
                     {{ if children }}
-                        x-data="{ mobileNavSubnavOpen: false }"
+                        x-data="{ subnavOpen: false }"
+                        @focusin.window="!$refs.subnav.contains($event.target) && (subnavOpen = false)"
                     {{ /if }}
                     class="leading-none"
                 >
                     <a
-                        class="w-full flex items-center space-x-1 font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
+                        class="w-full py-2 flex items-center space-x-1 font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }} focus:outline-none focus-visible:ring-2 ring-primary"
                         {{ if children }}
                             href="#"
-                            @click.prevent="mobileNavSubnavOpen = !mobileNavSubnavOpen"
-                            @click.outside="mobileNavSubnavOpen = false"
-                            :aria-label="mobileNavSubnavOpen
+                            @click.prevent="subnavOpen = !subnavOpen"
+                            @click.outside="subnavOpen = false"
+                            :aria-label="subnavOpen
                                 ? '{{ trans:strings.subnav_close }}'
                                 : '{{ trans:strings.subnav_open }}'"
-                            :aria-expanded="mobileNavSubnavOpen"
+                            :aria-expanded="subnavOpen"
                         {{ else }}
                             href="{{ url }}"
                         {{ /if }}
@@ -53,7 +54,7 @@
                         {{ if children }}
                             <svg
                                 class="w-3 h-2 overflow-visible stroke-current text-neutral"
-                                :class="{ 'rotate-180': mobileNavSubnavOpen }"
+                                :class="{ 'rotate-180': subnavOpen }"
                                 aria-hidden="true"
                                 stroke-width="20"
                                 viewBox="0 0 140 140"><path d="M135.625 42.648l-62.533 62.527a4.37 4.37 0 01-6.184 0L4.375 42.648" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -62,15 +63,16 @@
                     </a>
                     {{ if children }}
                         <ul
-                            x-show="mobileNavSubnavOpen"
-                            class="flex flex-col space-y-6"
+                            x-show="subnavOpen"
+                            x-ref="subnav"
+                            class="flex flex-col items-stretch space-y-2"
                             x-collapse
                             x-cloak
                         >
                             {{ children }}
-                                <li class="{{ first ?= 'mt-6' }}">
+                                <li class="{{ first ?= 'mt-2' }}">
                                     <a
-                                        class="whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
+                                        class="block py-2 whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }} focus:outline-none focus-visible:ring-2 ring-primary"
                                         href="{{ url }}">
                                         {{ title }}
                                     </a>
