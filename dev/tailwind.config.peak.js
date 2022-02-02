@@ -151,7 +151,7 @@ module.exports = {
             marginBottom: `-${theme('spacing.12')}`,
           },
         },
-        [`@media (min-width: ${theme('screens.md')})`]: {
+        '@media screen(md)': {
           // Larger vertical spacing between blocks on larger screens.
           '.outer-grid': {
             rowGap: theme('spacing.16'),
@@ -162,7 +162,7 @@ module.exports = {
             },
           },
         },
-        [`@media (min-width: ${theme('screens.lg')})`]: {
+        '@media screen(lg)': {
           // Larger horizontal padding on larger screens.
           '.fluid-container': {
             // Use safe-area-inset together with default padding for Apple devices with a notch.
