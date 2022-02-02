@@ -10,7 +10,8 @@
             <li
                 {{ if children }}
                     x-data="{ subnavOpen: false }"
-                    @keyup.escape.window="subnavOpen = false"
+                    @keyup.escape.stop.prevent="subnavOpen = false"
+                    @focusin.window="!$refs.subnav.contains($event.target) && (subnavOpen = false)"
                     x-cloak
                 {{ /if }}
                 class="relative leading-none"
@@ -46,6 +47,7 @@
                 {{ if children }}
                     <ul
                         x-show="subnavOpen"
+                        x-ref="subnav"
                         class="absolute mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
                         @click.outside="subnavOpen = false"
                         x-transition
