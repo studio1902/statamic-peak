@@ -67,7 +67,7 @@ module.exports = {
         '.size-md, .size-lg, .size-xl': {
           gridColumn: 'span 12 / span 12',
         },
-        [`@media (min-width: ${theme('screens.md')})`]: {
+        '@media screen(md)': {
           // Sizing utilities for sets in our bard (long form content).
           // On larger devices they go from medium to extra large.
           // (E.g. an image wider then text in an article.)
@@ -84,7 +84,7 @@ module.exports = {
             gridColumnStart: '2',
           },
         },
-        [`@media (min-width: ${theme('screens.lg')})`]: {
+        '@media screen(lg)': {
           // Sizing utilities for sets in our bard (long form content).
           // On larger devices they go from medium to extra large.
           '.size-md': {
