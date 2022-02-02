@@ -1,5 +1,10 @@
 # Release Notes
 
+## v3.51.0 (2022-02-01)
+
+### What's improved
+- Use `@screen` directive in the Tailwind config. #185 by @klickreflex and 97b30e34 by @robdekort
+
 ## v3.50.0 (2022-02-01)
 
 ### What's improved
