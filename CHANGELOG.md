@@ -1,5 +1,11 @@
 # Release Notes
 
+## v3.50.0 (2022-02-01)
+
+### What's improved
+- Remove focus trap from sub navigation as it's not according to the a11y guidelines. c6c71625 by @robdekort
+- Update dependencies and remove postcss nested as it's not used by default. da0443e2 by @robdekort
+
 ## v3.49.0 (2022-01-20)
 
 ### What's improved
