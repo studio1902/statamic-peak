@@ -1,5 +1,9 @@
 # Release Notes
 
+## v3.52.0 (2022-02-09)
+
+- Lower default concurrency for the `static:warm` command to put less strain on servers. 91893c02 by @robdekort.
+
 ## v3.51.0 (2022-02-01)
 
 ### What's improved
