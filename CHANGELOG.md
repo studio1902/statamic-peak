@@ -1,4 +1,10 @@
-# Release Notes
+# Changelog
+
+## v3.53.0 (2022-02-13)
+
+- Prevent default outline in styled TW typo focus visible. 04118026 by @robdekort.
+- Make `caption` component a block element. 513da3a2 by @robdekort
+- Update dependencies. 2ad650ac by @robdekort
 
 ## v3.52.0 (2022-02-09)
 
