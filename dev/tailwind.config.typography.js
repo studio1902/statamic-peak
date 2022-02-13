@@ -25,10 +25,12 @@ module.exports = {
                 color: `${theme('colors.primary.DEFAULT')}`,
               },
               '&.focus-visible': {
+                outline: 'none',
                 boxShadow: `0 0 0 2px ${theme('colors.primary.DEFAULT')}`,
                 borderRadius: `${theme('borderRadius.sm')}`,
               },
               '&:focus-visible': {
+                outline: 'none',
                 boxShadow: `0 0 0 2px ${theme('colors.primary.DEFAULT')}`,
                 borderRadius: `${theme('borderRadius.sm')}`,
               },
