@@ -22,7 +22,7 @@ module.exports = {
             a: {
               color: `${theme('colors.primary.DEFAULT')}`,
               '&:hover': {
-                color: `${theme('colors.primary.DEFAULT')}`,
+                color: `${theme('colors.primary.DEFAULT')} !important`,
               },
               '&.focus-visible': {
                 outline: 'none',
