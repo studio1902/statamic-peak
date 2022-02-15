@@ -47,10 +47,10 @@ module.exports = {
             hr: {
               borderColor: `${theme('colors.neutral.DEFAULT')}`,
             },
-            'ul > li::before': {
+            'ul > li::marker': {
               backgroundColor: `${theme('colors.neutral.DEFAULT')}`,
             },
-            'ol > li::before': {
+            'ol > li::marker': {
               color: `${theme('colors.neutral.DEFAULT')}`,
             },
             'ul > li p, ol > li p': {
