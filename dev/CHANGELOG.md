@@ -1,13 +1,20 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Use `::marker` to style Tailwind CSS Typography marker styles. 2c0fd2da by @robdekort
+
 ## v3.53.0 (2022-02-13)
 
+### What's improved
 - Prevent default outline in styled TW typo focus visible. 04118026 by @robdekort.
 - Make `caption` component a block element. 513da3a2 by @robdekort
 - Update dependencies. 2ad650ac by @robdekort
 
 ## v3.52.0 (2022-02-09)
 
+### What's improved
 - Lower default concurrency for the `static:warm` command to put less strain on servers. 91893c02 by @robdekort.
 
 ## v3.51.0 (2022-02-01)
