@@ -4,6 +4,7 @@
 
 ### What's improved
 - Use `::marker` to style Tailwind CSS Typography marker styles. 2c0fd2da by @robdekort
+- Use `!important` to style Tailwind CSS Typography `a:hover` text color. 7b755293 by @robdekort
 
 ## v3.53.0 (2022-02-13)
 
