@@ -6,13 +6,13 @@
 
 <!-- /components/_table.antlers.html -->
 <div class="size-{{ size }} my-4 overflow-auto">
-    <table class="w-full bg-light border-collapse">
+    <table class="w-full bg-light border-collapse min-w-[580px] sm:min-w-none">
         {{ table }}
             {{ if first && first_row_headers }}
                 <thead>
                     <tr>
                         {{ cells }}
-                            <th class="px-3 xl:px-6 py-3 border-b border-neutral bg-neutral text-left text-xs font-bold text-white uppercase tracking-wider">{{ value }}</th>
+                            <th class="px-3 py-3 text-xs font-bold tracking-wider text-left text-white uppercase border-b xl:px-6 border-neutral bg-neutral">{{ value }}</th>
                         {{ /cells }}
                     </tr>
                 </thead>
@@ -27,9 +27,9 @@
                 <tr>
                     {{ cells }}
                         {{ if first && first_column_headers }}
-                            <th class="px-3 xl:px-6 py-3 border-b border-neutral bg-neutral text-left text-xs font-bold text-white uppercase tracking-wider">{{ value }}</th>
+                            <th class="px-3 py-3 text-xs font-bold tracking-wider text-left text-white uppercase border-b xl:px-6 border-neutral bg-neutral">{{ value }}</th>
                         {{ else }}
-                            <td class="px-3 xl:px-6 py-3 whitespace-nowrap border-b border-neutral text-sm leading-3 text-neutral">{{ value }}</td>
+                            <td class="px-3 py-3 text-sm border-b xl:px-6 border-neutral text-neutral">{{ value }}</td>
                         {{ /if }}
                     {{ /cells }}
                 </tr>
