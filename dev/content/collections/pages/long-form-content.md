@@ -147,8 +147,8 @@ page_builder:
                 cells:
                   - eleifend
                   - mauris
-                  - tincidunt
-                  - Etiam
+                  - Torquent metus dis finibus odio fringilla facilisis euismod litora mauris eget sodales quis risus convallis penatibus condimentum volutpat integer laoreet
+                  - EtiamEx cras porttitor etiam bibendum ad facilisi est quam dolor sollicitudin commodo rutrum fames platea egestas sit erat blandit vehicula
             caption: 'Add tables with a caption.'
       -
         type: paragraph
