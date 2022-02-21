@@ -1,10 +1,12 @@
 # Changelog
 
-## Unreleased
+## v3.54.0 (2022-02-21)
 
 ### What's improved
+- Improve table component responsive behaviour. #189 by @klickreflex
 - Use `::marker` to style Tailwind CSS Typography marker styles. 2c0fd2da by @robdekort
 - Use `!important` to style Tailwind CSS Typography `a:hover` text color. 7b755293 by @robdekort
+- Fix logo component template comment. 59b0e04e by @robdekort
 
 ## v3.53.0 (2022-02-13)
 
