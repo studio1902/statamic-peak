@@ -1,13 +1,13 @@
 {{#
 	@name Article
-	@desc The article page builder block.
+	@desc The article page builder block. It extends the prose typography partial.
     @set page.page_builder.article
 #}}
 
 <!-- /page_builder/_article.antlers.html -->
-<article class="fluid-container grid grid-cols-12 gap-y-4">
+{{ partial:typography/prose as="article" class="fluid-container grid grid-cols-12 gap-y-4" }}
     {{ article }}
         {{ partial src="components/{type}" }}
     {{ /article }}
-</article>
+{{ /partial:typography/prose }}
 <!-- End: /page_builder/_article.antlers.html -->

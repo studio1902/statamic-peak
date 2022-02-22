@@ -8,7 +8,7 @@
 {{ if buttons }}
     {{ if type == 'buttons' }}
         {{# Add a size utility and use different styling when called as a Bard set. #}}
-        <div class="size-md flex flex-wrap gap-3">
+        <div class="size-md flex flex-wrap gap-3 not-prose">
             {{ buttons }}
                 {{ partial:components/button }}
             {{ /buttons }}

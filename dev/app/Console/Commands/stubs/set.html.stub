@@ -5,7 +5,7 @@
 #}}
 
 <!-- /components/_{{ filename }}.antlers.html -->
-<div class="size-{{ size }} my-4">
+<div class="size-{{ size }} not-prose">
     <h2>🔧<br>{{ name }}</h2>
 </div>
 <!-- End: /components/_{{ filename }}.antlers.html -->
