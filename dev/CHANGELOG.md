@@ -1,5 +1,14 @@
 # Changelog
 
+## v4.0 (Unreleased)
+
+### What's new
+- Rework the Tailwind Typography configuration to use modifiers in a partial. @190 by @robdekort
+
+### What's improved
+- Rename the `paragraph` partial to `p` to be inline with heading partials. 6184f9c3 by @robdekort
+- Rewrite the IDE helper for the `caption` partial. 69c6f9ec by @robdekort
+
 ## v3.54.0 (2022-02-21)
 
 ### What's improved
