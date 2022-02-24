@@ -3,7 +3,7 @@
 ## v4.0 (Unreleased)
 
 ### What's new
-- Rework the Tailwind Typography configuration to use modifiers in a partial. #190 by @robdekort
+- Rework the Tailwind Typography configuration to use modifiers in a partial. #190 and ebd09623 by @robdekort
 - Add a CP widget display assets with missing alt texts. #192 and 606690d9 by @robdekort
 - Make privacy statement a configuration global and use it in checkbox consent fields instead of just the cookie banner. #191 by @robdekort
 
