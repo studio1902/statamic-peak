@@ -17,7 +17,7 @@
         <table tabindex="0" class="data-table">
             <tbody tabindex="0">
     @endif
-    @forelse ($assets->slice(0, 5) as $asset)
+    @forelse ($assets as $asset)
         <tr class="sortable-row outline-none" tabindex="0">
             <td>
                 <div class="flex items-center">

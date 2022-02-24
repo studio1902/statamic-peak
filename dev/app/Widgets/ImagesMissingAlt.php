@@ -24,7 +24,7 @@ class ImagesMissingAlt extends Widget
             });
 
         return view('widgets.images-missing-alt', [
-            'assets' => $assets,
+            'assets' => $assets->slice(0, 5),
             'amount' => count($assets),
         ]);
     }
