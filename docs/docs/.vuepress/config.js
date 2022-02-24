@@ -71,6 +71,7 @@ module.exports = {
             '/features/social-images-generation.md',
             '/features/seo.md',
             '/features/typography.md',
+            '/features/widgets.md',
           ],
         },
         {
