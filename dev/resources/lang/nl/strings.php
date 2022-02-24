@@ -66,7 +66,7 @@ return [
     'social_images_queue'               => 'Generating one social image in the background.|Generating :count social images in the background.',
 
     // Widgets
-    'widget_assets_title'               => 'Assets zonder alt tekst',
+    'widget_assets_title'               => 'Assets zonder alt tekst in :container',
     'widget_assets_edit'                => 'Wijzig deze asset',
     'widget_assets_explanation'         => 'Het is belangrijk om alt-teksten toe te voegen die je afbeeldingen omschrijven. Dit helpt gebruikers die afhankelijk zijn van ondersteunende technologie. Je hebt :amount afbeeldingen die je aandacht nodig hebben.|Het is belangrijk om alt-teksten toe te voegen die je afbeeldingen omschrijven. Dit helpt gebruikers die afhankelijk zijn van ondersteunende technologie. Je hebt :amount afbeelding die je aandacht nodig heeft.',
     'widget_assets_done'                => 'All afbeeldingen hebben een alt-tekst.',

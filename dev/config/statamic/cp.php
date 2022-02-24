@@ -40,6 +40,8 @@ return [
     'widgets' => [
         [
             'type' => 'images_missing_alt',
+            'container' => 'assets',
+            'limit' => 5,
             'width' => 50
         ],
         [

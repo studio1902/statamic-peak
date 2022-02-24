@@ -3,6 +3,8 @@
 namespace App\Widgets;
 
 use Statamic\Widgets\Widget;
+use Statamic\Facades\Asset;
+use \Statamic\Facades\AssetContainer;
 
 class ImagesMissingAlt extends Widget
 {
@@ -13,8 +15,8 @@ class ImagesMissingAlt extends Widget
      */
     public function html()
     {
-        $assets = \Statamic\Facades\Asset::query()
-            ->where('container', 'assets')
+        $assets = Asset::query()
+            ->where('container', $this->config('container', 'assets'))
             ->get()
             ->toAugmentedArray();
 
@@ -24,8 +26,9 @@ class ImagesMissingAlt extends Widget
             });
 
         return view('widgets.images-missing-alt', [
-            'assets' => $assets->slice(0, 5),
+            'assets' => $assets->slice(0, $this->config('limit', 5)),
             'amount' => count($assets),
+            'container' => AssetContainer::findByHandle($this->config('container', 'assets'))->title(),
         ]);
     }
 }
