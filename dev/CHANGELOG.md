@@ -10,6 +10,7 @@
 ### What's improved
 - Rename the `paragraph` partial to `p` to be inline with heading partials. 6184f9c3 by @robdekort
 - Rewrite the IDE helper for the `caption` partial. 69c6f9ec by @robdekort
+- Remove html comments from snippet partials as this can cause problems. 6e80c42e by @robdekort
 
 ## v3.54.0 (2022-02-21)
 
