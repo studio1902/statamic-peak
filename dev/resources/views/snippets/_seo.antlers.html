@@ -3,6 +3,7 @@
 	@desc The SEO partial rendered in the <head> of your page. You don't need to use this file if you plan on using an addon for SEO.
 #}}
 
+<!-- /snippets/_seo.antlers.html -->
 {{# Page title #}}
 <title>
     {{ yield:seo_title }}
@@ -220,3 +221,4 @@
         <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ seo:cloudflare_web_analytics }}"}'></script>
     {{ /if }}
 {{ /if }}
+<!-- End: /snippets/_seo.antlers.html -->
