@@ -17,7 +17,7 @@ class ImagesMissingAlt extends Widget
      */
     public function html()
     {
-        $expiration = Carbon::now()->addMinutes($this->config('expiry', 10));
+        $expiration = Carbon::now()->addMinutes($this->config('expiry', 0));
 
         $assets = Cache::remember('widgets::ImagesMissingAlt', $expiration, function() {
             return Asset::query()

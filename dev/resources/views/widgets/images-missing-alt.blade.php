@@ -10,7 +10,10 @@
         </h2>
     </div>
     <div class="content p-2">
-        <p>{{ trans_choice('strings.widget_assets_explanation', $amount, ['amount' => $amount]) }}</p>
+        <p>
+            {{ __('strings.widget_assets_explanation') }}
+            {{ trans_choice('strings.widget_assets_count', $amount, ['amount' => $amount]) }}
+        </p>
     </div>
 
     @if ($assets)

@@ -42,6 +42,7 @@ return [
             'type' => 'images_missing_alt',
             'container' => 'assets',
             'limit' => 5,
+            'expiry' => 0,
             'width' => 50
         ],
         [
