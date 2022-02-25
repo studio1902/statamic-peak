@@ -7,8 +7,6 @@
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}"
     placeholder="{{ placeholder }}"
-    {{# Uncomment the following line if you want to use native browser validation first. #}}
-    {{# {{ validate | contains:required ?= "required" }} #}}
-    {{ old ?= value="{old}" }}
+    {{ old ?= 'value="{old}"' }}
 />
 <!-- End: /vendor/statamic/forms/fields/text.antlers.html -->
