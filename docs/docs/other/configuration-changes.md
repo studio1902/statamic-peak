@@ -20,12 +20,12 @@ Peak changes the default Statamic config. The following is different:
 | `app/listeners/GenerateFavicons.php` |  | Listen to a GlobalSavedEvent to generate [favicons](/features/browser-appearance.html).
 | `app/providers/EventServiceProvider.php` |  | Listen to a GlobalSavedEvent to generate [favicons](/features/browser-appearance.html).
 | `app/Tags/MountUrl.php` |  | New Tag to get a mount url [tags](/other/tags.html) |
-| `app/Tags/ScopeValue.php` |  | New Tag to scope a value [tags](/other/tags.html) |
 | `app/Widgets/ImagesMissingAlt.php` |  | New widget to [display assets with missing alt texts](/features/widgets.html). |
 | `content/assets/favicons.yaml` |  | An asset container where the [automated favicon feature](/features/browser-appearance.html) stores it's favicons in. |
 | `config/filesystems.php` |  | Filesystems for the Favicon and Social Images assets. |
 | `config/ignition.php` | `'editor' => env('IGNITION_EDITOR', 'phpstorm')` | `'editor' => env('IGNITION_EDITOR', 'vscode')` |
 | `config/ignition.php` | `'theme' => env('IGNITION_THEME', 'light')` | `'theme' => env('IGNITION_THEME', 'auto')` |
+| `config/statamic/antlers.php` | `version' => 'regex'` | `'version' => 'runtime'` |
 | `config/statamic/assets.php` | `driver' => 'gd'` | `'driver' => env('IMAGE_MANIPULATION_DRIVER', 'gd')` |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
 | `config/statamic/assets.php` | `'presets' => []` | Contains a whole bunch of asset presets. |
