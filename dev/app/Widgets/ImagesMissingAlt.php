@@ -2,6 +2,8 @@
 
 namespace App\Widgets;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Statamic\Widgets\Widget;
 use Statamic\Facades\Asset;
 use \Statamic\Facades\AssetContainer;
@@ -15,15 +17,19 @@ class ImagesMissingAlt extends Widget
      */
     public function html()
     {
-        $assets = Asset::query()
-            ->where('container', $this->config('container', 'assets'))
-            ->get()
-            ->toAugmentedArray();
+        $expiration = Carbon::now()->addMinutes($this->config('expiry', 10));
 
-            // Filter assets without alt text.
-            $assets = collect($assets)->filter(function ($item) {
-                return ! isset($item['alt']);
-            });
+        $assets = Cache::remember('widgets::ImagesMissingAlt', $expiration, function() {
+            return Asset::query()
+                ->where('container', $this->config('container', 'assets'))
+                ->whereNull('alt')
+                ->orderBy('last_modified', 'desc')
+                ->limit(100)
+                ->get()
+                ->toAugmentedArray();
+        });
+
+        $assets = collect($assets);
 
         return view('widgets.images-missing-alt', [
             'assets' => $assets->slice(0, $this->config('limit', 5)),
