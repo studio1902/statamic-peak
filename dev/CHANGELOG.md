@@ -11,6 +11,7 @@
 - Rename the `paragraph` partial to `p` to be inline with heading partials. 6184f9c3 by @robdekort
 - Rewrite the IDE helper for the `caption` partial. 69c6f9ec by @robdekort
 - Remove html comments from fallback description partial. 6e80c42e by @robdekort
+- Use logo component in social image template. c03f433d by @robdekort
 
 ## v3.54.0 (2022-02-21)
 
