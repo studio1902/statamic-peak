@@ -24,7 +24,6 @@ export_paths:
   - app/Listeners/GenerateFavicons.php
   - app/Providers/EventServiceProvider.php
   - app/Tags/MountUrl.php
-  - app/Tags/ScopeValue.php
   - app/Widgets/ImagesMissingAlt.php
   - CHANGELOG.md
   - content
