@@ -19,7 +19,7 @@
                 <sup class="text-yellow-400">*</sup>
             {{ /if }}
             {{ if instructions }}
-                <p class="font-normal text-sm my-1">{{ instructions }}</p>
+                <p class="font-normal text-sm my-1">{{ trans :key="instructions" }}</p>
             {{ /if }}
         </label>
         {{# Load notification when there is a validation error with the name field. #}}
