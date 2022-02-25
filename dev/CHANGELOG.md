@@ -12,6 +12,7 @@
 - Rewrite the IDE helper for the `caption` partial. 69c6f9ec by @robdekort
 - Remove html comments from fallback description partial. 6e80c42e by @robdekort
 - Use logo component in social image template. c03f433d by @robdekort
+- Make form field instructions localizable. 643fbe83 by @robdekort
 
 ## v3.54.0 (2022-02-21)
 
