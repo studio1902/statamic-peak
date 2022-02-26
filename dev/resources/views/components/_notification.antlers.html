@@ -24,12 +24,12 @@
                 aria-hidden="true"
                 class="
                     h-5 w-5 fill-current motion-safe:transition-colors
-                    {{ switch(
+                    { switch(
                         (type == 'success') => 'text-green-800',
                         (type == 'notice') => 'text-yellow-800',
                         (type == 'error') => 'text-red-800',
                         () => 'text-gray-800'
-                    )}}
+                    )}
                 "
             }}
         </div>
