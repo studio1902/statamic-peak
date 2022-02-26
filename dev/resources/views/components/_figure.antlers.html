@@ -5,7 +5,17 @@
 #}}
 
 <!-- /components/_figure.antlers.html -->
-<figure class="size-{{ size }} not-prose">
+<figure
+    class="
+        not-prose
+        {{ switch (
+            (size == 'md') => 'size-md',
+            (size == 'lg') => 'size-lg',
+            (size == 'xl') => 'size-xl',
+            () => 'size-md'
+        )}}
+    "
+>
     {{
         partial:components/picture
         :image="image"
