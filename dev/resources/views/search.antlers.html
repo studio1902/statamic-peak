@@ -45,12 +45,12 @@
                             {{ page_builder limit="1" }}
                                 {{ if article }}
                                     {{ article where="type:text" limit="1" }}
-                                        {{ text | strip_tags | trim | safe_truncate:180:... }}
+                                        {{ text | strip_tags | trim | safe_truncate(180, '...') }}
                                     {{ /article }}
 
                                 {{# Or a field called `text`. #}}
                                 {{ elseif text }}
-                                    {{ text | trim | safe_truncate:180:... }}
+                                    {{ text | trim | safe_truncate(180, '...') }}
                                 {{ /if }}
                             {{ /page_builder }}
                         {{ /if }}

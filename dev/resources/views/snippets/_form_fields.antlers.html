@@ -15,7 +15,7 @@
     >
         <label class="font-bold" for="{{ handle }}">
             {{ trans :key="display" }}
-            {{ if validate | contains:required }}
+            {{ if validate | contains('required') }}
                 <sup class="text-yellow-400">*</sup>
             {{ /if }}
             {{ if instructions }}
