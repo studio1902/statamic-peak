@@ -7,5 +7,7 @@
     name="{{ handle }}"
     type="number"
     {{ old ?= 'value="{old}"' }}
+    {{# Uncomment the following line if you want to use native browser validation first. #}}
+    {{# {{ validate | contains:required ?= "required" }} #}}
 />
 <!-- End: /vendor/statamic/forms/fields/integer.antlers.html -->
