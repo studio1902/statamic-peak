@@ -51,7 +51,7 @@ fi
 
 cd {SITE_DIRECTORY}
 git pull origin main
-composer install --no-interaction --prefer-dist --optimize-autoloader
+composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 npm ci
 npm run production
@@ -80,7 +80,7 @@ fi
 
 cd $FORGE_SITE_PATH
 git pull origin main
-$FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader
+$FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 npm ci
 npm run production
