@@ -606,7 +606,6 @@ sections:
           type: button_group
           listable: false
           localizable: true
-          validate: required
           display: 'Display style'
           width: 50
           if:
