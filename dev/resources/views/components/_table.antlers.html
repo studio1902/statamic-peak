@@ -5,7 +5,17 @@
 #}}
 
 <!-- /components/_table.antlers.html -->
-<div class="size-{{ size }} overflow-auto not-prose">
+<div
+    class="
+        overflow-auto not-prose
+        {{ switch(
+            (size == 'md') => 'size-md',
+            (size == 'lg') => 'size-lg',
+            (size == 'xl') => 'size-xl',
+            () => 'size-md'
+        )}}
+    "
+>
     <table class="w-full bg-light border-collapse min-w-[580px] sm:min-w-none">
         {{ table }}
             {{ if first && first_row_headers }}

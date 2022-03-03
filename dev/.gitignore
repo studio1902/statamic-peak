@@ -5,7 +5,6 @@
 /public/img/
 /public/static/
 /storage/*.key
-/storage/antlers-language-server
 /vendor
 .env
 .env.backup

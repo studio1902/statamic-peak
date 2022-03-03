@@ -9,8 +9,8 @@
         <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 text-xs font-bold">
             <span>
                 &copy; {{ configuration:copyright_since }}
-                {{ unless (now | format:Y) == configuration:copyright_since }}
-                    - {{ now | format:Y }}
+                {{ unless (now | format('Y')) == configuration:copyright_since }}
+                    - {{ now | format('Y') }}
                     {{ /unless }}
                 {{ configuration:copyright_name ?? config:app:name }}
             </span>

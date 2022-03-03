@@ -48,7 +48,7 @@
 {{ if seo:hreflang_auto }}
     {{ if not seo_noindex and seo_canonical_type == 'entry' and current_full_url === permalink }}
         {{ locales all="false" }}
-            <link rel="alternate" hreflang="{{ locale:full replace="_|-" }}" href="{{ permalink }}">
+            <link rel="alternate" hreflang="{{ locale:full | replace('_','-') }}" href="{{ permalink }}">
         {{ /locales }}
     {{ /if }}
 {{ /if }}
@@ -172,9 +172,9 @@
 
 {{# Trackers #}}
 {{ if
-    (environment == 'local' && !!seo:trackers_local) or
-    (environment == 'staging' && !!seo:trackers_staging) or
-    (environment == 'production' && !!seo:trackers_production)
+    (environment == 'local' && seo:trackers_local) or
+    (environment == 'staging' && seo:trackers_staging) or
+    (environment == 'production' && seo:trackers_production)
 }}
     {{ if seo:tracker_type == 'gtm' }}
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ seo:google_tag_manager }}');function gtag(){dataLayer.push(arguments);}</script>
@@ -209,12 +209,10 @@
         <meta name="google-site-verification" content="{{ seo:google_site_verification }}" />
     {{ /if }}
 
-    {{ if seo:use_fathom }}
-        {{ if seo:fathom_use_custom_domain }}
-            <script src="{{ seo:fathom_custom_script_url }}" site="{{ seo:fathom }}" defer></script>
-        {{ else }}
-            <script src="https://cdn.usefathom.com/script.js" site="{{ seo:fathom }}" defer></script>
-        {{ /if }}
+    {{ if seo:use_fathom && seo:fathom_use_custom_domain }}
+        <script src="{{ seo:fathom_custom_script_url }}" site="{{ seo:fathom }}" defer></script>
+    {{ elseif seo:use_fathom }}
+        <script src="https://cdn.usefathom.com/script.js" site="{{ seo:fathom }}" defer></script>
     {{ /if }}
 
     {{ if seo:use_cloudflare_web_analytics }}

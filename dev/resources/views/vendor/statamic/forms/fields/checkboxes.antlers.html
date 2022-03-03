@@ -13,7 +13,7 @@
                 type="checkbox"
                 name="{{ handle }}[]"
                 value="{{ value }}"
-                {{ old | in_array:value ?= checked }}
+                {{ (old | in_array(value)) ?= 'checked' }}
             >
             {{ trans :key="label" }}
             {{ if handle === 'consent' }}

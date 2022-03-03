@@ -24,12 +24,12 @@ export_paths:
   - app/Listeners/GenerateFavicons.php
   - app/Providers/EventServiceProvider.php
   - app/Tags/MountUrl.php
-  - app/Tags/ScopeValue.php
   - app/Widgets/ImagesMissingAlt.php
   - CHANGELOG.md
   - content
   - config/filesystems.php
   - config/statamic/assets.php
+  - config/statamic/antlers.php
   - config/statamic/cp.php
   - config/statamic/editions.php
   - config/statamic/git.php
