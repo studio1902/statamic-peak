@@ -17,6 +17,7 @@
 - Make form field instructions localizable. 643fbe83 by @robdekort
 - Use --queue flag on the static:warm command in the example readme. 5275036f by @robdekort
 - Use --no-dev flag on the static:warm command in the example readme. 574a268e by @robdekort
+- Add example production .env contents to the example readme. 12a824d8 by @robdekort
 
 ## v3.54.0 (2022-02-21)
 
