@@ -12,25 +12,26 @@
         {{ partial:typography/p :content="block:text" }}
 
         {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
-        {{ form:create in="{ form:handle }"
-            id="form-{form:handle}"
-            class="flex flex-wrap"
-            x-ref="form"
-            x-data="sending"
-            @submit.prevent="sendForm()"
-            js="alpine"
-        }}
-            <div class="w-full grid md:grid-cols-12 gap-6">
-                {{# Honeypot spam protection. #}}
-                <div class="hidden">
-                    <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-yellow-400">*</sup></label>
-                    <input class="form-input w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
-                </div>
+        <div x-data="sending">
+            {{ form:create in="{ form:handle }"
+                id="form-{form:handle}"
+                class="flex flex-wrap"
+                x-ref="form"
+                @submit.prevent="sendForm()"
+                js="alpine"
+            }}
+                <div class="w-full grid md:grid-cols-12 gap-6">
+                    {{# Honeypot spam protection. #}}
+                    <div class="hidden">
+                        <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-yellow-400">*</sup></label>
+                        <input class="form-input w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
+                    </div>
 
-                {{# Render default-styled fields in a separate partial so it's easy to make different form styles, for example: {{ if form:handle == 'another_form'. }} #}}
-                {{ partial:snippets/form_fields }}
-            </div>
-        {{ /form:create }}
+                    {{# Render default-styled fields in a separate partial so it's easy to make different form styles, for example: {{ if form:handle == 'another_form'. }} #}}
+                    {{ partial:snippets/form_fields }}
+                </div>
+            {{ /form:create }}
+        </div>
 
         {{# The form script handling validation and submission via AJAX with `fetch()`. #}}
          <script>
