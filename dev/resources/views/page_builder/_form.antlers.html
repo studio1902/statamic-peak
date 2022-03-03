@@ -43,16 +43,11 @@
                         sendForm: async function() {
                             this.sending = true
 
-                            // Get a token and set it.
-                            const token = await getToken()
-                            document.querySelectorAll('form input[name="_token"]').forEach(function(item) {
-                                item.value = token
-                            });
-
                             // Post the form.
                             fetch(this.$refs.form.action, {
                                 headers: {
                                     'X-Requested-With' : 'XMLHttpRequest',
+                                    'X-CSRF-Token' : await getToken(),
                                 },
                                 method: 'POST',
                                 body: new FormData(this.$refs.form)})
