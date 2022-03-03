@@ -34,7 +34,7 @@
 <div class="md:col-span-12 flex justify-end">
     {{ partial:components/button as="button" label="{ trans:strings.form_send }" }}
         {{ slot:attributes }}
-            :disabled="sending" :class="{'opacity-25 cursor-default': sending}""
+            :disabled="sending" :class="{ 'opacity-25 cursor-default': sending }"
         {{ /slot:attributes }}
     {{ /partial:components/button }}
 </div>
