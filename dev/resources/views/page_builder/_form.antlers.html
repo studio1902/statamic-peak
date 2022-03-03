@@ -5,6 +5,7 @@
 #}}
 
 <!-- /page_builder/_form.antlers.html -->
+<script src="/vendor/statamic/frontend/js/helpers.js" defer></script>
 <section class="fluid-container grid md:grid-cols-12 gap-8">
     <div class="md:col-start-3 md:col-span-8">
         {{ partial:typography/h1 as="h2" color="text-primary" class="mb-8" :content="block:title" }}
@@ -17,6 +18,7 @@
             x-ref="form"
             x-data="sending"
             @submit.prevent="sendForm()"
+            js="alpine"
         }}
             <div class="w-full grid md:grid-cols-12 gap-6">
                 {{# Honeypot spam protection. #}}
@@ -27,7 +29,6 @@
 
                 {{# Render default-styled fields in a separate partial so it's easy to make different form styles, for example: {{ if form:handle == 'another_form'. }} #}}
                 {{ partial:snippets/form_fields }}
-
             </div>
         {{ /form:create }}
 
