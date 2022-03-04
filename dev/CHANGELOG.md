@@ -2,6 +2,11 @@
 
 ## v4.0 (Unreleased)
 
+### Notes
+If you want to migrate existing Peak sites to the runtime parser, know you usually only have to do two things:
+1. Change this in all form field templates: `{{ old ?= value="{old}" }}` -> `{{ old ?= 'value="{old}"' }}`. The original syntax is simply wrong. It should not have worked in the regex parser but it did due to a bug.
+2. Never use double curly braces when `{{ }}` when inside a tag. Change it to single curly braces: `{ }`. This also should’ve never worked but it did and even opened up possibilities when using the regex parser.
+
 ### What's new
 - Antlers Runtime parser support. #194 by @robdekort
 - Support for conditional form fields. #195 by @robdekort
