@@ -4,6 +4,7 @@
 
 ### What's new
 - Antlers Runtime parser support. #194 by @robdekort
+- Support for conditional form fields. #195 by @robdekort
 - Rework the Tailwind Typography configuration to use modifiers in a partial. #190 and ebd09623 by @robdekort
 - Add a CP widget display assets with missing alt texts. 03059989 by @robdekort and @mikemartin
 - Make privacy statement a configuration global and use it in checkbox consent fields instead of just the cookie banner. #191 by @robdekort
