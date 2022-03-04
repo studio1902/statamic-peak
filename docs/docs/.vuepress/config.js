@@ -48,6 +48,7 @@ module.exports = {
             '/getting-started/installation.md',
             '/getting-started/knowledge-assumptions.md',
             '/getting-started/tailwind-css.md',
+            '/getting-started/runtime-parser.md',
           ],
         },
         {
