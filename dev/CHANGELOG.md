@@ -2,13 +2,8 @@
 
 ## v4.0 (Unreleased)
 
-### Notes
-If you want to migrate existing Peak sites to the runtime parser, know you usually only have to do two things:
-1. Change this in all form field templates: `{{ old ?= value="{old}" }}` -> `{{ old ?= 'value="{old}"' }}`. The original syntax is simply wrong. It should not have worked in the regex parser but it did due to a bug.
-2. Never use double curly braces when `{{ }}` when inside a tag. Change it to single curly braces: `{ }`. This also should’ve never worked but it did and even opened up possibilities when using the regex parser.
-
 ### What's new
-- Antlers Runtime parser support. #194 by @robdekort
+- Antlers Runtime parser support. Check this [upgrade guide](https://peak.studio1902.nl/getting-started/runtime-parser.html) for existing sites. #194 by @robdekort
 - Support for conditional form fields. #195 by @robdekort
 - Rework the Tailwind Typography configuration to use modifiers in a partial. #190 and ebd09623 by @robdekort
 - Add a CP widget display assets with missing alt texts. 03059989 by @robdekort and @mikemartin
@@ -24,6 +19,7 @@ If you want to migrate existing Peak sites to the runtime parser, know you usual
 - Use --queue flag on the static:warm command in the example readme. 5275036f by @robdekort
 - Use --no-dev flag on the static:warm command in the example readme. 574a268e by @robdekort
 - Add example production .env contents to the example readme. 12a824d8 by @robdekort
+- Remove examples entry and simplify the starter navigation. 339ce492 by @robdekort
 
 ## v3.54.0 (2022-02-21)
 
