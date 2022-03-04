@@ -48,6 +48,7 @@ module.exports = {
             '/getting-started/installation.md',
             '/getting-started/knowledge-assumptions.md',
             '/getting-started/tailwind-css.md',
+            '/getting-started/runtime-parser.md',
           ],
         },
         {
@@ -71,6 +72,7 @@ module.exports = {
             '/features/social-images-generation.md',
             '/features/seo.md',
             '/features/typography.md',
+            '/features/widgets.md',
           ],
         },
         {
