@@ -8,6 +8,7 @@
     type="{{ input_type ?? 'text' }}"
     placeholder="{{ placeholder }}"
     {{ old ?= 'value="{old}"' }}
+    {{ js_attributes }}
     {{# Uncomment the following line if you want to use native browser validation first. #}}
     {{# {{ validate | contains:required ?= "required" }} #}}
 />

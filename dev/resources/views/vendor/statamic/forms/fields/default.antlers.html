@@ -6,6 +6,7 @@
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}"
     {{ old ?= 'value="{old}"' }}
+    {{ js_attributes }}
     {{# Uncomment the following line if you want to use native browser validation first. #}}
     {{# {{ validate | contains:required ?= "required" }} #}}
 />
