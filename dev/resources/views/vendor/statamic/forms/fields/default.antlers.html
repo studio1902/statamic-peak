@@ -5,6 +5,7 @@
     id="{{ handle }}"
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}"
+    {{ if character_limit }}maxlength="{{ character_limit }}"{{ /if }}
     {{ old ?= 'value="{old}"' }}
     {{ js_attributes }}
     {{# Uncomment the following line if you want to use native browser validation first. #}}
