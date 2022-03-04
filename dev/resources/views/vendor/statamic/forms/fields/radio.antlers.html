@@ -13,6 +13,7 @@
                 type="radio"
                 name="{{ handle }}"
                 value="{{ value }}"
+                {{ js_attributes }}
                 {{ (old === value) ?= 'checked' }}
             >
             {{ trans :key="label" }}
