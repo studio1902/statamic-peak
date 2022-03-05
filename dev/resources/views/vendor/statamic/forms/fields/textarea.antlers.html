@@ -7,8 +7,8 @@
     name="{{ handle }}"
     rows="5"
     placeholder="{{ placeholder }}"
+    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
+    :aria-describedBy="id"
     {{ js_attributes }}
-    {{# Uncomment the following line if you want to use native browser validation first. #}}
-    {{# {{ validate | contains:required ?= "required" }} #}}
 >{{ old }}</textarea>
 <!-- End: /vendor/statamic/forms/fields/textarea.antlers.html -->

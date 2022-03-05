@@ -1,10 +1,12 @@
 <!-- /vendor/statamic/forms/fields/radio.antlers.html -->
-<div
+<fieldset
     class="flex
         {{ inline
             ? 'space-x-4'
             : 'flex-col space-y-4'
         }}"
+    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
+    :aria-describedBy="id"
 >
     {{ foreach:options as="value|label" }}
         <label class="inline-flex items-center">
@@ -19,5 +21,5 @@
             {{ trans :key="label" }}
         </label>
     {{ /foreach:options }}
-</div>
+</fieldset>
 <!-- End: /vendor/statamic/forms/fields/radio.antlers.html -->

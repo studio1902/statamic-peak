@@ -6,9 +6,9 @@
     id="{{ handle }}"
     name="{{ handle }}"
     type="number"
+    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
+    :aria-describedBy="id"
     {{ old ?= 'value="{old}"' }}
     {{ js_attributes }}
-    {{# Uncomment the following line if you want to use native browser validation first. #}}
-    {{# {{ validate | contains:required ?= "required" }} #}}
 />
 <!-- End: /vendor/statamic/forms/fields/integer.antlers.html -->
