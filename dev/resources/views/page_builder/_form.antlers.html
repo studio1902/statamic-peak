@@ -30,7 +30,7 @@
                     {{# Render the default-styled fields. #}}
                     {{ fields }}
                         <template x-if="{{ show_field }}">
-                            <div class="flex flex-col space-y-4
+                            <div class="flex flex-col space-y-3
                                 {{ width == '25' ?= 'md:col-span-3' }}
                                 {{ width == '33' ?= 'md:col-span-4' }}
                                 {{ width == '50' ?= 'md:col-span-6' }}
@@ -47,11 +47,16 @@
                                         <p class="font-normal text-sm my-1">{{ trans :key="instructions" }}</p>
                                     {{ /if }}
                                 </label>
-                                {{# Load notification when there is a validation error with the name field. #}}
-                                <template x-if="errors.{{ handle }}">
-                                    {{ partial src="components/notification" type="error" attribute="x-text='errors.{handle}'" }}
-                                </template>
-                                {{ field }}
+
+                                <div x-data="{ id: $id('error-label') }" class="flex flex-col space-y-2">
+                                    {{ field }}
+
+                                    {{# Display error label when there is a validation error with the name field. #}}
+                                    <template x-if="errors.{{ handle }}">
+                                        <span class="text-red-800 text-sm font-bold" :id="id" x-text="errors.{{ handle}}"></span>
+                                    </template>
+                                </div>
+
                             </div>
                         </template>
                     {{ /fields }}

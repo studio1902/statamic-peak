@@ -7,10 +7,10 @@
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}"
     placeholder="{{ placeholder }}"
+    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
+    :aria-describedBy="id"
     {{ if character_limit }}maxlength="{{ character_limit }}"{{ /if }}
     {{ old ?= 'value="{old}"' }}
     {{ js_attributes }}
-    {{# Uncomment the following line if you want to use native browser validation first. #}}
-    {{# {{ validate | contains:required ?= "required" }} #}}
 />
 <!-- End: /vendor/statamic/forms/fields/text.antlers.html -->
