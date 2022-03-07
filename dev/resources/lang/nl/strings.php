@@ -28,6 +28,16 @@ return [
     'cookie_learn_more'                 => 'Meer informatie',
     'cookie_reset_consent'              => 'Reset cookie-instellingen',
 
+    // Dark mode
+    'theme_toggle_dark'                 => 'Gebruik donker thema.',
+    'theme_toggle_light'                => 'Gebruik licht thema.',
+    'theme_toggle_system'               => 'Gebruik systeemvoorkeur.',
+    'theme_toggle_dark_short'           => 'Donker',
+    'theme_toggle_light_short'          => 'Licht',
+    'theme_toggle_system_short'         => 'Systeem',
+    'theme_toggle_toggle_close'         => 'Sluit donkere-modus-selector.',
+    'theme_toggle_toggle_open'          => 'Open donkere-modus-selector.',
+
     // Footer
     'on'                                => 'op',
 
@@ -46,8 +56,6 @@ return [
     'skip_to_content'                   => 'Doorgaan naar content',
 
     // Other
-    'dark_mode_on'                      => 'Schakel donkere modus in',
-    'dark_mode_off'                     => 'Schakel donkere modus uit',
     'no_results'                        => 'Er zijn momenteel geen resultaten.',
     'no_script'                         => 'De website vereist Javascript.',
 
