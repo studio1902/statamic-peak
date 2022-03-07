@@ -28,6 +28,16 @@ return [
     'cookie_learn_more'                 => 'Learn more',
     'cookie_reset_consent'              => 'Reset cookie consent',
 
+    // Dark mode
+    'theme_toggle_dark'                 => 'Use dark theme.',
+    'theme_toggle_light'                => 'Use light theme.',
+    'theme_toggle_system'               => 'Use system preference.',
+    'theme_toggle_dark_short'           => 'Dark',
+    'theme_toggle_light_short'          => 'Light',
+    'theme_toggle_system_short'         => 'System',
+    'theme_toggle_toggle_open'          => 'Open dark mode picker.',
+    'theme_toggle_toggle_close'         => 'Close dark mode picker.',
+
     // Footer
     'on'                                => 'on',
 
@@ -46,8 +56,6 @@ return [
     'skip_to_content'                   => 'Skip to content',
 
     // Other
-    'dark_mode_on'                      => 'Enable dark mode',
-    'dark_mode_off'                     => 'Disable dark mode',
     'no_results'                        => 'There are currently no posts.',
     'no_script'                         => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
 
