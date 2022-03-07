@@ -28,6 +28,16 @@ return [
     'cookie_learn_more'                 => 'Learn more',
     'cookie_reset_consent'              => 'Reset cookie consent',
 
+    // Dark mode
+    'theme_toggle_dark'                 => 'Use dark theme.',
+    'theme_toggle_light'                => 'Use light theme.',
+    'theme_toggle_system'               => 'Use system preference.',
+    'theme_toggle_dark_short'           => 'Dark',
+    'theme_toggle_light_short'          => 'Light',
+    'theme_toggle_system_short'         => 'System',
+    'theme_toggle_toggle_open'          => 'Open dark mode picker.',
+    'theme_toggle_toggle_close'         => 'Close dark mode picker.',
+
     // Footer
     'on'                                => 'on',
 
@@ -46,8 +56,6 @@ return [
     'skip_to_content'                   => 'Skip to content',
 
     // Other
-    'dark_mode_on'                      => 'Enable dark mode',
-    'dark_mode_off'                     => 'Disable dark mode',
     'no_results'                        => 'There are currently no posts.',
     'no_script'                         => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
 
@@ -64,4 +72,11 @@ return [
     // Social images
     'social_images'                     => 'Generated one social image.|Generated :count social images.',
     'social_images_queue'               => 'Generating one social image in the background.|Generating :count social images in the background.',
+
+    // Widgets
+    'widget_assets_title'               => 'Assets without Alt Text in :container',
+    'widget_assets_edit'                => 'Edit this Asset',
+    'widget_assets_explanation'         => 'It\'s important to add alt text describing your images. This helps users who depend on assistive technology.',
+    'widget_assets_count'               => '{0}|{1}You have :amount image that need attention.|[2,*]You have at least :amount images that need attention.',
+    'widget_assets_done'                => 'All assets have an alt text.',
 ];
