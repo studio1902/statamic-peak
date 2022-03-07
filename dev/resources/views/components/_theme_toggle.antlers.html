@@ -100,7 +100,9 @@
                     root: {
                         ['x-init']() {
                             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-                                this.preferredColorScheme = e.matches ? 'dark' : 'light'
+                                e.matches
+                                    ? (this.preferredColorScheme = 'dark', this.setDarkTheme())
+                                    : (this.preferredColorScheme = 'light', this.setLightTheme())
                             })
                         },
                         ['@keyup.escape.stop.prevent']() {
@@ -170,9 +172,9 @@
         {{# Set theme on page load. #}}
         (localStorage.theme === '"dark"' || ((localStorage.theme === '"system"') && window.matchMedia('(prefers-color-scheme: dark)').matches)) ? setThemeDark() : setThemeLight()
 
-        {{# Listen to preferred color scheme when theme is set to system. #}}
-        window.matchMedia('(prefers-color-scheme: light)').addListener(e => e.matches && (!localStorage.theme || localStorage.theme === '"system"') && setThemeLight())
-        window.matchMedia('(prefers-color-scheme: dark)').addListener(e => e.matches && (!localStorage.theme || localStorage.theme === '"system"') && setThemeDark())
+        {{# Use preferred color scheme when theme is set to system or on first load. #}}
+        window.matchMedia('(prefers-color-scheme: light)').matches && (!localStorage.theme || localStorage.theme === '"system"') && setThemeLight()
+        window.matchMedia('(prefers-color-scheme: dark)').matches && (!localStorage.theme || localStorage.theme === '"system"') && setThemeDark()
     </script>
     <!-- End: /components/_theme_toggle.antlers.html -->
 {{ /section:theme_toggle }}
