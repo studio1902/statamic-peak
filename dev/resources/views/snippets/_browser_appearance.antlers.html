@@ -43,4 +43,7 @@
     {{# manifest.json for lighthouse one 512x512 #}}
     <link rel="manifest" href="/site.webmanifest">
 {{ /if }}
+
+{{# A yielded JS section needed when you use dark mode. When you don't this will not render. #}}
+{{ yield:theme_toggle }}
 <!-- End: /snippets/_browser_appearance.antlers.html -->

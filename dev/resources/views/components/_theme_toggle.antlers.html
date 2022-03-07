@@ -2,16 +2,10 @@
 	@name Theme toggle
 	@desc The theme toggle component for class based dark mode. To enable this do the following:
     1. Uncomment `darkMode: 'class'` in `tailwind.config.js`.
-    2. Add `{{ partial:components/theme_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
-    2. Add `{{ yield:theme_toggle }}` below the browser appearance snippet `resources/views/layout.antlers.html`.
+    2. Add `{{ partial:components/theme_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`. The `section:team_toggle` is automatically yielded in `resources/views/snippets/_browser_appearance.antlers.html`.
 #}}
 
 <!-- /components/_theme_toggle.antlers.html -->
-{{# Set Antlers variable if there's a regular and dark mode theme color set in browser appearance. #}}
-{{ if browser_appearance:use_theme_color && browser_appearance:use_theme_color_dark_mode }}
-    {{ theme_color = true }}
-{{ /if }}
-
 <li x-data="themeToggle" x-bind="root" class="relative" x-cloak>
     <button
         x-bind="toggle"
@@ -68,6 +62,11 @@
             <span class="{{ label_classes }}">{{ trans:strings.theme_toggle_system_short }}</span>
         </button>
     </div>
+
+    {{# Set Antlers variable if there's a regular and dark mode theme color set in browser appearance. #}}
+    {{ if browser_appearance:use_theme_color && browser_appearance:use_theme_color_dark_mode }}
+        {{ theme_color = true }}
+    {{ /if }}
 
     <script>
         document.addEventListener('alpine:initializing', () => {
@@ -147,7 +146,7 @@
 </li>
 <!-- End: /components/_theme_toggle.antlers.html -->
 
-{{# The script for setting the correct theme on page load. Yield in `resources/views/layout.antlers.html`. #}}
+{{# The script for setting the correct theme on page load. Yielded in `resources/views/snippets/_browser_appearance.antlers.html`. #}}
 {{ section:theme_toggle }}
     <!-- /components/_theme_toggle.antlers.html -->
     {{# We can't use Alpine logic here since this has to run before anything else. #}}
