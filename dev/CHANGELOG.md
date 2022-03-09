@@ -25,6 +25,7 @@
 
 ### What's fixed
 - Typo on default contact form page. #198 by @kerns
+- Remove `bg-neutral-50` from the social image template since Peak can't ship with shades. That's up to the color config of the user. 103086de by @robdekort
 
 ## v3.54.0 (2022-02-21)
 
