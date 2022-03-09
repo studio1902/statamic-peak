@@ -12,7 +12,7 @@ sitemap_priority: 0.5
 page_builder:
   -
     title: 'A contact form'
-    text: 'This form works with static caching. Both the receiver and the owner of the website will receive a styled e-mail. Forms are dynamic, so just add a a field to the forms blueprint and it will work.'
+    text: 'This form works with static caching. Both the receiver and the owner of the website will receive a styled e-mail. Forms are dynamic, so just add a field to the forms blueprint and it will work.'
     form: contact
     type: form
     enabled: true
