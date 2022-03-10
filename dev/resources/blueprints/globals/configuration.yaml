@@ -15,7 +15,7 @@ sections:
         config:
           display: '404'
           width: 50
-          instructions: 'Show this page whenever a URL does not exist.'
+          instructions: 'Show all content of page whenever an URL does not exist.'
           collections:
             - pages
           validate:
