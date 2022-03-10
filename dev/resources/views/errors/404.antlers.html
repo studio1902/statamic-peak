@@ -8,18 +8,10 @@
     {{ redirect to="{entry:url}" response="{response}" }}
 {{ /redirects:redirects }}
 
-{{# Yield a title to the SEO partial. #}}
-{{ section:seo_title }}
-    404
-{{ /section:seo_title }}
-
 <!-- /errors/404.antlers.html -->
 <main class="outer-grid" id="content">
-    <article class="fluid-container grid md:grid-cols-12 gap-y-4">
-        <div class="col-span-12">
-            {{ partial:typography/h1 class="mb-4" :content="configuration:404_title" }}
-            {{ partial:typography/p :content="configuration:404_text" }}
-        </div>
-    </article>
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
 </main>
 <!-- End: /errors/404.antlers.html -->

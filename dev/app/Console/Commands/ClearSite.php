@@ -41,7 +41,7 @@ class ClearSite extends Command
             $this->trashAssets();
             $this->clearGlobalSocialMedia();
             $this->clearPageBuilder('/');
-            $this->trashPagesButHome();
+            $this->trashPagesButHomeAnd404();
 
             Artisan::call('statamic:glide:clear');
             Artisan::call('cache:clear');
@@ -91,11 +91,12 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function trashPagesButHome()
+    protected function trashPagesButHomeAnd404()
     {
         $pages = Entry::query()
             ->where('collection', 'pages')
             ->where('id', '!=', 'home')
+            ->where('title', '!=', 'Page not found')
             ->get();
 
         foreach ($pages as $page) {
