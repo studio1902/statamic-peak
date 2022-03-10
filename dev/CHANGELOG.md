@@ -6,7 +6,7 @@
 - Antlers Runtime parser support. Check this [upgrade guide](https://peak.studio1902.nl/getting-started/runtime-parser.html) for existing sites. #194 by @robdekort
 - Support for conditional form fields. #195 by @robdekort
 - Completely reworked dark mode toggle (theme toggle). It has a light, dark and system option now. #197 by @robdekort
-- Use the content of an actual 404 entry when a 404 error hits (including SEO data). ##199 by @robdekort
+- Use the content of an actual 404 entry when a 404 error hits (including SEO data). ##199 by @robdekort and @jasonvarga
 - Rework the Tailwind Typography configuration to use modifiers in a partial. #190 and ebd09623 by @robdekort
 - Add a CP widget displaying assets with missing alt texts. 03059989 by @robdekort and @mikemartin
 - Make privacy statement a configuration global and use it in checkbox consent fields instead of just the cookie banner. #191 by @robdekort
