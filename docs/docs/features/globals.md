@@ -10,4 +10,4 @@ Peak ships with a few global sets you probably need on most sites. Feel free to 
 
 | Configuration global | Redirects global | Social media global |
 |---|---|---|
-| ![Globals error messages](/visuals/screenshots/globals-configuration.png) | ![Globals social media](/visuals/screenshots/globals-redirects.png) | ![Globals social media](/visuals/screenshots/globals-social-media.png) |
+| ![Globals error messages](/visuals/screenshots/globals-configuration.png) | ![Globals redirects](/visuals/screenshots/globals-redirects.png) | ![Globals social media](/visuals/screenshots/globals-social-media.png) |
