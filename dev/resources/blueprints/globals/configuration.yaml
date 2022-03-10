@@ -10,7 +10,7 @@ sections:
           display: 'Error pages'
           instructions: 'Select the error pages.'
       -
-        handle: 404_entry
+        handle: error_404_entry
         field: common.entry
         config:
           display: '404'

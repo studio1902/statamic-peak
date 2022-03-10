@@ -22,6 +22,7 @@ export_paths:
   - app/Http/Middleware/VerifyCsrfToken.php
   - app/Jobs/GenerateSocialImagesJob.php
   - app/Listeners/GenerateFavicons.php
+  - app/Providers/AppServiceProvider.php
   - app/Providers/EventServiceProvider.php
   - app/Tags/MountUrl.php
   - app/Widgets/ImagesMissingAlt.php
