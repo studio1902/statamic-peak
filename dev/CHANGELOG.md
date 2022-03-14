@@ -19,6 +19,7 @@
 - Remove html comments from fallback description partial. 6e80c42e by @robdekort
 - Use logo component in social image template. c03f433d by @robdekort
 - Make form field instructions localizable. 643fbe83 by @robdekort
+- Use semantic markup for pull quote. #200 by @klickreflex
 - Use `--queue` flag on the static:warm command in the example readme. 5275036f by @robdekort
 - Use `--no-dev` flag on the static:warm command in the example readme. 574a268e by @robdekort
 - Add example production .env contents to the example readme. 12a824d8 by @robdekort
