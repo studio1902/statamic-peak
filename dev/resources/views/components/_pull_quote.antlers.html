@@ -5,7 +5,7 @@
 #}}
 
 <!-- /components/_pull_quote.antlers.html -->
-<div
+<figure
     class="
         not-prose
         {{ switch(
@@ -16,13 +16,13 @@
         )}}
     "
 >
-    <div class="p-0 m-0 text-primary italic text-3xl leading-snug">
+    <blockquote class="p-0 m-0 text-3xl italic leading-snug text-primary">
         {{ quote | nl2br }}
-    </div>
+    </blockquote>
     {{ if author }}
-        <span class="block mt-4 font-bold text-neutral">
+        <figcaption class="block mt-4 font-bold text-neutral">
             {{ author }}
-        </span>
+        </figcaption>
     {{ /if }}
-</div>
+</figure>
 <!-- End: /components/_pull_quote.antlers.html -->
