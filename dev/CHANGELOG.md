@@ -13,6 +13,7 @@
 
 ### What's improved
 - Send CSRF token as header and simplify form submission logic. _Note_: you can use this methodology everywhere you need a dynamic CSRF token. 12a824d8 by @robdekort
+- Clear the navigation when running `php please peak:clear-site`. #202 by @robdekort
 - Improve form error handling a11y. #196 by @robdekort
 - Rename the `paragraph` partial to `p` to be inline with heading partials. 6184f9c3 by @robdekort
 - Rewrite the IDE helper for the `caption` partial. 69c6f9ec by @robdekort
