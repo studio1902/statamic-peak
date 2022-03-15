@@ -9,7 +9,7 @@
     {{ yield:seo_title }}
     {{ seo_title ? seo_title : title }}
     {{ seo:title_separator ? seo:title_separator : " &#124; " }}
-    {{ seo:change_page_title where="collection:{collection}" }}
+    {{ seo:change_page_title | where('collection', {collection}) }}
         {{ if what_to_add == 'collection_title' }}
             {{ collection:title }}
         {{ elseif what_to_add == 'custom_text' }}
