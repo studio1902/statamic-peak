@@ -15,4 +15,4 @@ to:
 The original syntax is simply wrong. It should not have worked in the regex parser but it did due to a bug.
 
 ## Don't use double curly braces in tags
-Never use double curly braces when `{{ }}` when inside a tag. Change it to single curly braces: `{ }`. This also should’ve never worked but it did and even opened up possibilities when using the regex parser so it's widely used.
+While in a recent update to the runtime parser double curly braces within tags are allowed, it is not recommended. Don't use double curly braces when `{{ }}` when inside a tag. Change it to single curly braces: `{ }`. This should’ve never worked, but it did and even opened up possibilities when using the regex parser so it's widely used.

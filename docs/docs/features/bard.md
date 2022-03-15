@@ -3,7 +3,7 @@
 For long form content you can use the `Article` content block. This is a [Bard fieldtype](https://statamic.dev/fieldtypes/bard#content) with multiple sets of fields that are regularly used in longer articles.
 
 ## Adding sets
-Edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the article. In `resources/views/page_builder/_article.antlers.html` you can see the sets being loaded. Antlers will look in the `resources/views/components/` folder for partials with the handle of your set.
+Add a set by using the [add set command](/features/commands.html#add-page-builder-article-set). Alternatively you could edit `resources/fieldsets/article.yaml` to add sets (preferably imports) to the article. In `resources/views/page_builder/_article.antlers.html` you can see the sets being loaded. Antlers will look in the `resources/views/components/` folder for partials with the handle of your set.
 
 For example if you add a fieldset to the `article.yaml` with the handle `code` make sure you add a `_code.antlers.html` file to the `resources/views/components` folder.
 

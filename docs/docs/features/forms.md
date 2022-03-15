@@ -12,6 +12,8 @@ Peak renders forms and mail templates dynamically so you can add as many forms a
 
 The default contact form has a required consent field. The field handle is `consent`. Due to restraints the form template contains a conditional that depens on this specific handle name. Don't use it for other form fields.
 
+The Peak form templates support the built in Statamic Alpine conditional logic driver.
+
 The forms sending is done with fetch and uses Alpine to display the various notifications.
 
 > Note: Peak dynamically fetches a CSRF token, so you can use forms with [Static File Caching](https://statamic.dev/static-caching) enabled. This technique is based on the [Dynamic Token](https://statamic.com/addons/mykolas-mankevicius/dynamic-token) addon for Statamic v2 by Mykolas. It's ported to v3 and included with Peak. You can hook in on fetching a dynamic token by using `window.getToken()` in your (Alpine) JavaScript.

@@ -55,6 +55,7 @@ module.exports = {
           text: 'Features',
           link: '/features/assets.md',
           children: [
+            '/features/404.md',
             '/features/assets.md',
             '/features/bard.md',
             '/features/browser-appearance.md',

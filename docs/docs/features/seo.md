@@ -1,6 +1,6 @@
 # SEO
 
-Peak includes full professional SEO support. It's easy to expand on since it's all built with native fields and templating. 
+Peak includes full professional SEO support. It's easy to expand on since it's all built with native fields and templating.
 
 ## SEO features
 * Page title.
@@ -39,4 +39,4 @@ Users can specify the type of consent they give (analytics, marketing or both). 
 
 The cookie banner only blocks Google scripts since it uses the consent API, so if you really want to be a marketing-script asshole and bug your users with a Facebook pixel or Hotjar, you can be GDPR compliant by running all those scripts through GTM.
 
-> Note: tracking and cookie consent by default only work on the `production` environment.
+> Note: tracking and cookie consent by default only work on the `production` environment. However you can tweak this from the `SEO` global.

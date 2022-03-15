@@ -18,6 +18,7 @@ Peak changes the default Statamic config. The following is different:
 | `app/Http/Controllers/DynamicToken.php` |  | New Controller for [forms](/features/forms.html) |
 | `app/Jobs/GenerateSocialImagesJob.php` |  | The acutal job to [generate social images](/features/social-images-generation.html) for entries.
 | `app/listeners/GenerateFavicons.php` |  | Listen to a GlobalSavedEvent to generate [favicons](/features/browser-appearance.html).
+| `app/providers/AppServiceProvider.php` |  | Adds 404 page entry data to the 404 template when an error hits.
 | `app/providers/EventServiceProvider.php` |  | Listen to a GlobalSavedEvent to generate [favicons](/features/browser-appearance.html).
 | `app/Tags/MountUrl.php` |  | New Tag to get a mount url [tags](/other/tags.html) |
 | `app/Widgets/ImagesMissingAlt.php` |  | New widget to [display assets with missing alt texts](/features/widgets.html). |
