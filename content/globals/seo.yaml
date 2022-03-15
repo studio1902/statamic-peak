@@ -14,9 +14,8 @@ data:
   trackers_production: true
   use_google_site_verification: false
   use_fathom: false
+  fathom_use_custom_domain: false
   use_cloudflare_web_analytics: false
   tracker_type: none
-  anonymize_ip: true
+  anonymize_ip: false
   use_cookie_banner: false
-  display_style: left
-  link_privacy_statement: none

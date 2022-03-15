@@ -38,7 +38,13 @@ return [
     */
 
     'widgets' => [
-        // 'getting_started',
+        [
+            'type' => 'images_missing_alt',
+            'container' => 'assets',
+            'limit' => 5,
+            'expiry' => 0,
+            'width' => 50
+        ],
         [
             'type' => 'collection',
             'collection' => 'pages',
@@ -91,7 +97,7 @@ return [
     */
 
     'support_url' => env('STATAMIC_SUPPORT_URL', 'https://statamic.com/support'),
-    
+
      /*
     |--------------------------------------------------------------------------
     | Login Theme

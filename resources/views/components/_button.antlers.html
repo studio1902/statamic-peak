@@ -6,7 +6,7 @@
 <!-- /components/_button.antlers.html -->
 {{ if label }}
     <{{ as or 'a' }}
-        {{ attribute }}
+        {{ slot:attributes }}
         class="font-bold focus:outline-none focus-visible:ring focus-visible:ring-offset-2 {{ class }}
             {{ if button_type == 'inline' }}
                 underline motion-safe:transition

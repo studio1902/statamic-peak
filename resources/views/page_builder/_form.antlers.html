@@ -5,31 +5,76 @@
 #}}
 
 <!-- /page_builder/_form.antlers.html -->
+<script src="/vendor/statamic/frontend/js/helpers.js"></script>
 <section class="fluid-container grid md:grid-cols-12 gap-8">
     <div class="md:col-start-3 md:col-span-8">
         {{ partial:typography/h1 as="h2" color="text-primary" class="mb-8" :content="block:title" }}
-        {{ partial:typography/paragraph :content="block:text" }}
+        {{ partial:typography/p :content="block:text" }}
 
         {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
-        {{ form:create in="{ form:handle }"
-            id="form-{form:handle}"
-            class="flex flex-wrap"
-            x-ref="form"
-            x-data="sending"
-            @submit.prevent="sendForm()"
-        }}
-            <div class="w-full grid md:grid-cols-12 gap-6">
-                {{# Honeypot spam protection. #}}
-                <div class="hidden">
-                    <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-yellow-400">*</sup></label>
-                    <input class="form-input w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
+        <div x-data="sending">
+            {{ form:create in="{ form:handle }"
+                id="form-{form:handle}"
+                class="flex flex-wrap"
+                x-ref="form"
+                @submit.prevent="sendForm()"
+                js="alpine:dynamic_form"
+            }}
+                <div class="w-full grid md:grid-cols-12 gap-6">
+                    {{# Honeypot spam protection. #}}
+                    <div class="hidden">
+                        <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-yellow-400">*</sup></label>
+                        <input class="form-input w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
+                    </div>
+
+                    {{# Render the default-styled fields. #}}
+                    {{ fields }}
+                        <template x-if="{{ show_field }}">
+                            <div class="flex flex-col space-y-3
+                                {{ width == '25' ?= 'md:col-span-3' }}
+                                {{ width == '33' ?= 'md:col-span-4' }}
+                                {{ width == '50' ?= 'md:col-span-6' }}
+                                {{ width == '66' ?= 'md:col-span-8' }}
+                                {{ width == '75' ?= 'md:col-span-9' }}
+                                {{ width == '100' ?= 'md:col-span-12' }}"
+                            >
+                                <label class="font-bold" for="{{ handle }}">
+                                    {{ trans :key="display" }}
+                                    {{ if validate | contains('required') }}
+                                        <sup class="text-yellow-400">*</sup>
+                                    {{ /if }}
+                                    {{ if instructions }}
+                                        <p class="font-normal text-sm my-1">{{ trans :key="instructions" }}</p>
+                                    {{ /if }}
+                                </label>
+
+                                <div x-data="{ id: $id('error-label') }" class="flex flex-col space-y-2">
+                                    {{ field }}
+
+                                    {{# Display error label when there is a validation error with the name field. #}}
+                                    <template x-if="errors.{{ handle }}">
+                                        <span class="text-red-800 text-sm font-bold" :id="id" x-text="errors.{{ handle}}"></span>
+                                    </template>
+                                </div>
+
+                            </div>
+                        </template>
+                    {{ /fields }}
+
+                    {{# Pulse button and disable upon sending. #}}
+                    <div class="md:col-span-12 flex justify-end">
+                        {{ partial:components/button as="button" label="{ trans:strings.form_send }" }}
+                            {{ slot:attributes }}
+                                :disabled="sending" :class="{ 'opacity-25 cursor-default': sending }"
+                            {{ /slot:attributes }}
+                        {{ /partial:components/button }}
+                    </div>
+                    <template x-if="success">
+                        {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
+                    </template>
                 </div>
-
-                {{# Render default-styled fields in a separate partial so it's easy to make different form styles, for example: {{ if form:handle == 'another_form'. }} #}}
-                {{ partial:snippets/form_fields }}
-
-            </div>
-        {{ /form:create }}
+            {{ /form:create }}
+        </div>
 
         {{# The form script handling validation and submission via AJAX with `fetch()`. #}}
          <script>
@@ -43,16 +88,11 @@
                         sendForm: async function() {
                             this.sending = true
 
-                            // Get a token and set it.
-                            const token = await getToken()
-                            document.querySelectorAll('form input[name="_token"]').forEach(function(item) {
-                                item.value = token
-                            });
-
                             // Post the form.
                             fetch(this.$refs.form.action, {
                                 headers: {
                                     'X-Requested-With' : 'XMLHttpRequest',
+                                    'X-CSRF-Token' : await getToken(),
                                 },
                                 method: 'POST',
                                 body: new FormData(this.$refs.form)})

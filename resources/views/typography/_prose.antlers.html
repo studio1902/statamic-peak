@@ -1,0 +1,30 @@
+{{#
+	@name Prose
+	@desc The typography prose partial to render a prose object with `class` attribute.
+#}}
+
+<!-- /typography/_prose.antlers.html -->
+<{{ as or 'article' }}
+	class="
+		prose
+		prose-a:text-primary
+		hover:prose-a:text-primary
+		focus:prose-a:outline-none
+		focus-visible:prose-a:ring
+		focus-visible:prose-a:ring-primary
+		focus-visible:prose-a:rounded-sm
+		prose-blockquote:border-primary
+		prose-figure:my-0
+		prose-headings:text-primary
+		prose-hr:border-neutral
+		prose-lead:text-neutral
+		prose-li:marker:text-neutral
+		prose-pre:whitespace-pre-wrap
+		prose-strong:text-neutral
+		max-w-none
+		{{ class }}
+	"
+>
+	{{ slot }}
+</{{ as or 'article' }}>
+<!-- End: /typography/_prose.antlers.html -->

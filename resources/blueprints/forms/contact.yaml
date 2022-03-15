@@ -9,6 +9,7 @@ sections:
           type: text
           validate: required
           localizable: true
+          width: 50
       -
         handle: email
         field:
@@ -16,6 +17,7 @@ sections:
           type: text
           validate: required|email
           localizable: true
+          width: 50
       -
         handle: message_body
         field:
