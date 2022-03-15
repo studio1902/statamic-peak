@@ -17,6 +17,5 @@ data:
   fathom_use_custom_domain: false
   use_cloudflare_web_analytics: false
   tracker_type: none
-  anonymize_ip: true
+  anonymize_ip: false
   use_cookie_banner: false
-  display_style: left

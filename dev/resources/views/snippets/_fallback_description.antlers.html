@@ -3,7 +3,7 @@
 	@desc Get the fallback description for meta, og and twitter.
 #}}
 
-{{ seo:collection_defaults where="collection:{collection}" }}
+{{ seo:collection_defaults | where('collection', {collection}) }}
     {{ if fallback == 'field' }}
         {{ scope:field }}
             {{ field[field_handle] | strip_tags | trim | truncate(157, '...') }}
@@ -13,7 +13,7 @@
     {{ elseif fallback == 'page_builder' }}
         {{ page_builder limit="1" }}
             {{ if article }}
-                {{ article where="type:text" limit="1" }}
+                {{ article | where('type', 'text') | limit(1) }}
                     {{ text | strip_tags | trim | truncate(157, '...') }}
                 {{ /article }}
             {{ elseif text }}
