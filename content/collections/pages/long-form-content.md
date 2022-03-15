@@ -2,8 +2,8 @@
 id: 20f6a148-63b8-47a8-9b0e-d57095d78c21
 blueprint: page
 title: 'Long form content'
-updated_by: 80802917-8d90-4324-9d46-03c0930abb63
-updated_at: 1636187619
+updated_by: 66c6ff90-a9a2-42ba-a4e1-c0872e344786
+updated_at: 1645555803
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -25,7 +25,21 @@ page_builder:
         content:
           -
             type: text
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum, nisi vel tincidunt eleifend, diam risus tempor elit, at blandit ipsum ipsum vel felis. Morbi pulvinar erat sapien. Nam euismod dolor quis eros egestas, a hendrerit mi pharetra. Vestibulum varius dui sit amet augue auctor convallis. Maecenas imperdiet mauris non posuere dignissim. Duis tempus molestie efficitur. Donec efficitur leo vel justo dignissim ultrices. Morbi fermentum magna in purus dapibus euismod. Etiam lobortis odio lectus, eu blandit urna gravida at.'
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'https://studio1902.nl'
+                  rel: null
+                  target: _blank
+                  title: null
+            text: 'Phasellus dictum'
+          -
+            type: text
+            text: ', nisi vel tincidunt eleifend, diam risus tempor elit, at blandit ipsum ipsum vel felis. Morbi pulvinar erat sapien. Nam euismod dolor quis eros egestas, a hendrerit mi pharetra. Vestibulum varius dui sit amet augue auctor convallis. Maecenas imperdiet mauris non posuere dignissim. Duis tempus molestie efficitur. Donec efficitur leo vel justo dignissim ultrices. Morbi fermentum magna in purus dapibus euismod. Etiam lobortis odio lectus, eu blandit urna gravida at.'
       -
         type: set
         attrs:
@@ -121,7 +135,45 @@ page_builder:
         content:
           -
             type: text
-            text: 'Mauris malesuada, eros eu facilisis vehicula, turpis justo feugiat felis, lobortis sagittis nulla ante at mauris. Donec efficitur, arcu vel cursus ornare, urna ex sollicitudin est, ac pellentesque neque lectus vel tortor. Phasellus velit metus, maximus sed ex at, maximus laoreet velit. Suspendisse id felis imperdiet, pharetra augue ut, imperdiet erat. Nullam non tellus neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam accumsan metus in tincidunt semper. Duis pulvinar, urna vitae efficitur facilisis, est nibh pretium tellus, euismod bibendum metus tellus quis turpis.'
+            text: 'Mauris malesuada, eros eu facilisis vehicula, turpis justo feugiat felis, lobortis sagittis nulla ante at mauris. Donec efficitur, arcu vel cursus ornare, urna ex sollicitudin est, ac pellentesque neque lectus vel tortor. '
+      -
+        type: ordered_list
+        attrs:
+          order: 1
+        content:
+          -
+            type: list_item
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: 'Item one'
+          -
+            type: list_item
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: 'Item two'
+          -
+            type: list_item
+            content:
+              -
+                type: paragraph
+                content:
+                  -
+                    type: text
+                    text: 'Item three'
+      -
+        type: paragraph
+        content:
+          -
+            type: text
+            text: 'Phasellus velit metus, maximus sed ex at, maximus laoreet velit. Suspendisse id felis imperdiet, pharetra augue ut, imperdiet erat. Nullam non tellus neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam accumsan metus in tincidunt semper. Duis pulvinar, urna vitae efficitur facilisis, est nibh pretium tellus, euismod bibendum metus tellus quis turpis.'
       -
         type: set
         attrs:
@@ -147,8 +199,8 @@ page_builder:
                 cells:
                   - eleifend
                   - mauris
-                  - tincidunt
-                  - Etiam
+                  - 'Torquent metus dis finibus odio fringilla facilisis euismod litora mauris eget sodales quis risus convallis penatibus condimentum volutpat integer laoreet'
+                  - 'EtiamEx cras porttitor etiam bibendum ad facilisi est quam dolor sollicitudin commodo rutrum fames platea egestas sit erat blandit vehicula'
             caption: 'Add tables with a caption.'
       -
         type: paragraph

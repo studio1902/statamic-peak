@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.0 (Unreleased)
+## v4.0 (2022-03-15)
 
 ### What's new
 - Antlers Runtime parser support. Check this [upgrade guide](https://peak.studio1902.nl/getting-started/runtime-parser.html) for existing sites. #194, #201 by @robdekort

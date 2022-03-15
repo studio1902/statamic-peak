@@ -26,7 +26,7 @@
         {{ search:results }}
             {{ if no_results }}
                 <article class="col-span-12 md:col-span-8 md:col-start-3">
-                    {{ partial:typography/paragraph content="{trans:strings.search_no_results}" }}
+                    {{ partial:typography/p content="{trans:strings.search_no_results}" }}
                 </article>
             {{ else }}
                 <article class="col-span-12 md:col-span-8 md:col-start-3">
@@ -44,13 +44,13 @@
                         {{ elseif page_builder }}
                             {{ page_builder limit="1" }}
                                 {{ if article }}
-                                    {{ article where="type:text" limit="1" }}
-                                        {{ text | strip_tags | trim | safe_truncate:180:... }}
+                                    {{ article | where('type', 'text') | limit(1) }}
+                                        {{ text | strip_tags | trim | safe_truncate(180, '...') }}
                                     {{ /article }}
 
                                 {{# Or a field called `text`. #}}
                                 {{ elseif text }}
-                                    {{ text | trim | safe_truncate:180:... }}
+                                    {{ text | trim | safe_truncate(180, '...') }}
                                 {{ /if }}
                             {{ /page_builder }}
                         {{ /if }}

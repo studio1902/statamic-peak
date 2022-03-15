@@ -28,6 +28,16 @@ return [
     'cookie_learn_more'                 => 'Meer informatie',
     'cookie_reset_consent'              => 'Reset cookie-instellingen',
 
+    // Dark mode
+    'theme_toggle_dark'                 => 'Gebruik donker thema.',
+    'theme_toggle_light'                => 'Gebruik licht thema.',
+    'theme_toggle_system'               => 'Gebruik systeemvoorkeur.',
+    'theme_toggle_dark_short'           => 'Donker',
+    'theme_toggle_light_short'          => 'Licht',
+    'theme_toggle_system_short'         => 'Systeem',
+    'theme_toggle_toggle_close'         => 'Sluit donkere-modus-selector.',
+    'theme_toggle_toggle_open'          => 'Open donkere-modus-selector.',
+
     // Footer
     'on'                                => 'op',
 
@@ -46,8 +56,6 @@ return [
     'skip_to_content'                   => 'Doorgaan naar content',
 
     // Other
-    'dark_mode_on'                      => 'Schakel donkere modus in',
-    'dark_mode_off'                     => 'Schakel donkere modus uit',
     'no_results'                        => 'Er zijn momenteel geen resultaten.',
     'no_script'                         => 'De website vereist Javascript.',
 
@@ -64,4 +72,11 @@ return [
     // Social images
     'social_images'                     => 'Generated one social image.|Generated :count social images.',
     'social_images_queue'               => 'Generating one social image in the background.|Generating :count social images in the background.',
+
+    // Widgets
+    'widget_assets_title'               => 'Assets zonder alt tekst in :container',
+    'widget_assets_edit'                => 'Wijzig deze asset',
+    'widget_assets_explanation'         => 'Het is belangrijk om alt-teksten toe te voegen die je afbeeldingen omschrijven. Dit helpt gebruikers die afhankelijk zijn van ondersteunende technologie.',
+    'widget_assets_count'               => '{0}|{1}Je hebt :amount afbeelding die je aandacht nodig heeft.|[2,*]Je hebt (tenminste) :amount afbeeldingen die je aandacht nodig hebben.',
+    'widget_assets_done'                => 'Alle afbeeldingen hebben een alt-tekst.',
 ];

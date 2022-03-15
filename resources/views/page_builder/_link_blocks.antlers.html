@@ -13,14 +13,15 @@
     {{ /if }}
     {{ block:link_blocks }}
         <a
-            class="flex flex-col justify-between items-start bg-white shadow-xl rounded p-6 no-underline focus:outline-none focus-visible:ring-2 ring-primary
-            {{ if total_results == 1 }}
-                md:col-span-8 md:col-start-3
-            {{ elseif total_results == 2 }}
-                md:col-span-6
-            {{ elseif total_results > 2 }}
-                md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0
-            {{ /if }}"
+            class="
+                flex flex-col justify-between items-start bg-white shadow-xl rounded p-6 no-underline focus:outline-none focus-visible:ring-2 ring-primary
+                {{ switch(
+                    (total_results === 1) => 'md:col-span-8 md:col-start-3',
+                    (total_results === 2) => 'md:col-span-6',
+                    (total_results > 2) => 'md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0',
+                    () => void
+                )}}
+            "
             aria-labelledby="{{ title | slugify }}"
             draggable="false"
             {{ partial:snippets/button_attributes }}
@@ -30,7 +31,7 @@
                     {{ partial:typography/h2 class="mb-2" :content="title" }}
                 </span>
                 {{ if text }}
-                    {{ partial:typography/paragraph class="mb-4" :content="text" }}
+                    {{ partial:typography/p class="mb-4" :content="text" }}
                 {{ /if }}
             </div>
             {{ partial:components/button as="span" faux="true" }}

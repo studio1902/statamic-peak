@@ -1,13 +1,53 @@
 # Changelog
 
+## v4.0 (2022-03-15)
+
+### What's new
+- Antlers Runtime parser support. Check this [upgrade guide](https://peak.studio1902.nl/getting-started/runtime-parser.html) for existing sites. #194, #201 by @robdekort
+- Support for conditional form fields. #195 by @robdekort
+- Completely reworked dark mode toggle (theme toggle). It has a light, dark and system option now. #197 by @robdekort
+- Use the content of an actual 404 entry when a 404 error hits (including SEO data). #199 by @robdekort and @jasonvarga
+- Rework the Tailwind Typography configuration to use modifiers in a partial. #190 and ebd09623 by @robdekort
+- Add a CP widget displaying assets with missing alt texts. 03059989 by @robdekort and @mikemartin
+- Make privacy statement a configuration global and use it in checkbox consent fields instead of just the cookie banner. #191 by @robdekort
+
+### What's improved
+- Send CSRF token as header and simplify form submission logic. _Note_: you can use this methodology everywhere you need a dynamic CSRF token. 12a824d8 by @robdekort
+- Clear the navigation when running `php please peak:clear-site`. #202 by @robdekort
+- Improve form error handling a11y. #196 by @robdekort
+- Rename the `paragraph` partial to `p` to be inline with heading partials. 6184f9c3 by @robdekort
+- Rewrite the IDE helper for the `caption` partial. 69c6f9ec by @robdekort
+- Remove html comments from fallback description partial. 6e80c42e by @robdekort
+- Use logo component in social image template. c03f433d by @robdekort
+- Make form field instructions localizable. 643fbe83 by @robdekort
+- Use semantic markup for pull quote. #200 by @klickreflex
+- Use `--queue` flag on the static:warm command in the example readme. 5275036f by @robdekort
+- Use `--no-dev` flag on the static:warm command in the example readme. 574a268e by @robdekort
+- Add example production .env contents to the example readme. 12a824d8 by @robdekort
+- Remove examples entry and simplify the starter navigation. 339ce492 by @robdekort
+
+### What's fixed
+- Typo on default contact form page. #198 by @kerns
+- Remove `bg-neutral-50` from the social image template since Peak can't ship with shades. That's up to the color config of the user. 103086de by @robdekort
+
+## v3.54.0 (2022-02-21)
+
+### What's improved
+- Improve table component responsive behaviour. #189 by @klickreflex
+- Use `::marker` to style Tailwind CSS Typography marker styles. 2c0fd2da by @robdekort
+- Use `!important` to style Tailwind CSS Typography `a:hover` text color. 7b755293 by @robdekort
+- Fix logo component template comment. 59b0e04e by @robdekort
+
 ## v3.53.0 (2022-02-13)
 
+### What's improved
 - Prevent default outline in styled TW typo focus visible. 04118026 by @robdekort.
 - Make `caption` component a block element. 513da3a2 by @robdekort
 - Update dependencies. 2ad650ac by @robdekort
 
 ## v3.52.0 (2022-02-09)
 
+### What's improved
 - Lower default concurrency for the `static:warm` command to put less strain on servers. 91893c02 by @robdekort.
 
 ## v3.51.0 (2022-02-01)

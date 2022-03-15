@@ -3,12 +3,30 @@ sections:
     display: General
     fields:
       -
-        handle: section_general
+        handle: error_pages
         field:
           type: section
           listable: hidden
-          display: 'General configuration'
-          instructions: 'Global site configuration options.'
+          display: 'Error pages'
+          instructions: 'Select the error pages.'
+      -
+        handle: error_404_entry
+        field: common.entry
+        config:
+          display: '404'
+          width: 50
+          instructions: 'Show all content of page whenever an URL does not exist.'
+          collections:
+            - pages
+          validate:
+            - required
+      -
+        handle: section_copyright
+        field:
+          type: section
+          listable: hidden
+          display: Copyright
+          instructions: 'Copyright configuration options.'
       -
         handle: copyright_since
         field:
@@ -39,15 +57,49 @@ sections:
           width: 50
           listable: hidden
           instructions_position: above
-  error_messages:
-    display: 'Error messages'
-    fields:
       -
-        handle: section_404
+        handle: section_privacy
         field:
           type: section
           listable: hidden
-          display: '404 error'
+          display: 'Privacy statement'
+          instructions: 'Configure an optional privacy statement.'
       -
-        import: error_message
-        prefix: '404_'
+        handle: privacy_statement_type
+        field:
+          options:
+            none: None
+            entry: Entry
+            pdf: PDF
+          default: none
+          type: button_group
+          instructions: 'This will be used in form consent and in the optional cookie banner.'
+          instructions_position: below
+          listable: false
+          localizable: true
+          display: 'Privacy statement'
+          width: 50
+      -
+        handle: privacy_statement_asset
+        field: common.image
+        config:
+          localizable: true
+          listable: hidden
+          display: 'Privacy statement (PDF)'
+          width: 50
+          if:
+            privacy_statement_type: 'equals pdf'
+          validate:
+            - 'required_if:privacy_statement_type,pdf'
+      -
+        handle: privacy_statement_entry
+        field: common.entry
+        config:
+          localizable: true
+          listable: hidden
+          display: 'Privacy statement (entry)'
+          width: 50
+          if:
+            privacy_statement_type: 'equals entry'
+          validate:
+            - 'required_if:privacy_statement_type,entry'

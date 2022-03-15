@@ -6,8 +6,9 @@
     id="{{ handle }}"
     name="{{ handle }}"
     type="number"
-    {{# Uncomment the following line if you want to use native browser validation first. #}}
-    {{# {{ validate | contains:required ?= "required" }} #}}
-    {{ old ?= value="{old}" }}
+    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
+    :aria-describedBy="id"
+    {{ old ?= 'value="{old}"' }}
+    {{ js_attributes }}
 />
 <!-- End: /vendor/statamic/forms/fields/integer.antlers.html -->

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Entry;
 use Statamic\Facades\GlobalSet;
+use Statamic\Support\Arr;
+use Symfony\Component\Yaml\Yaml;
 
 class ClearSite extends Command
 {
@@ -41,7 +43,8 @@ class ClearSite extends Command
             $this->trashAssets();
             $this->clearGlobalSocialMedia();
             $this->clearPageBuilder('/');
-            $this->trashPagesButHome();
+            $this->trashPagesButHomeAnd404();
+            $this->clearNavigation();
 
             Artisan::call('statamic:glide:clear');
             Artisan::call('cache:clear');
@@ -91,11 +94,12 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function trashPagesButHome()
+    protected function trashPagesButHomeAnd404()
     {
         $pages = Entry::query()
             ->where('collection', 'pages')
             ->where('id', '!=', 'home')
+            ->where('title', '!=', 'Page not found')
             ->get();
 
         foreach ($pages as $page) {
@@ -103,5 +107,20 @@ class ClearSite extends Command
             if (File::exists($file_path))
                 File::delete($file_path);
         }
+    }
+
+    /**
+     * Clear navigation.
+     *
+     * @return bool|null
+     */
+    protected function clearNavigation()
+    {
+        $navigation = Yaml::parseFile(base_path('content/trees/navigation/main.yaml'));
+        $tree = Arr::get($navigation, 'tree');
+        unset($tree[1]);
+        Arr::set($navigation, 'tree', $tree);
+
+        File::put(base_path('content/trees/navigation/main.yaml'), Yaml::dump($navigation, 99, 2));
     }
 }
