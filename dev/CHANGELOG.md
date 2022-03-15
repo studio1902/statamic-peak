@@ -15,14 +15,14 @@
 - Send CSRF token as header and simplify form submission logic. _Note_: you can use this methodology everywhere you need a dynamic CSRF token. 12a824d8 by @robdekort
 - Clear the navigation when running `php please peak:clear-site`. #202 by @robdekort
 - Improve form error handling a11y. #196 by @robdekort
-- Rename the `paragraph` partial to `p` to be inline with heading partials. 6184f9c3 by @robdekort
+- Rename the `paragraph` partial to `p` to be in line with heading partials. 6184f9c3 by @robdekort
 - Rewrite the IDE helper for the `caption` partial. 69c6f9ec by @robdekort
 - Remove html comments from fallback description partial. 6e80c42e by @robdekort
 - Use logo component in social image template. c03f433d by @robdekort
 - Make form field instructions localizable. 643fbe83 by @robdekort
 - Use semantic markup for pull quote. #200 by @klickreflex
 - Use `--queue` flag on the static:warm command in the example readme. 5275036f by @robdekort
-- Use `--no-dev` flag on the static:warm command in the example readme. 574a268e by @robdekort
+- Use `--no-dev` flag on the composer install command in the example readme. 574a268e by @robdekort
 - Add example production .env contents to the example readme. 12a824d8 by @robdekort
 - Remove examples entry and simplify the starter navigation. 339ce492 by @robdekort
 
