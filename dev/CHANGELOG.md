@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.1 (2022-03-16)
+
+### What's fixed
+- Move up language folder to get `{{ trans }}` and validation working on Laravel 9. #203 by @robdekort
+
 ## v4.0 (2022-03-15)
 
 ### What's new

@@ -39,6 +39,12 @@ export_paths:
   - config/statamic/stache.php
   - config/statamic/static_caching.php
   - config/statamic/users.php
+  - lang/en.json
+  - lang/en/strings.php
+  - lang/nl.json
+  - lang/nl/strings.php
+  - lang/no.json
+  - lang/no/strings.php
   - public/assets
   - public/css
   - public/favicons/.gitkeep
@@ -52,12 +58,6 @@ export_paths:
   - resources/fieldsets
   - resources/forms
   - resources/js/site.js
-  - resources/lang/en.json
-  - resources/lang/en/strings.php
-  - resources/lang/nl.json
-  - resources/lang/nl/strings.php
-  - resources/lang/no.json
-  - resources/lang/no/strings.php
   - resources/svg
   - resources/users/roles.yaml
   - resources/views
