@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.2 (2022-03-17)
+
+### What's improved
+- Get rid of IDE comment in Sitemap template. It can cause issues on certain hosts. #62beea70 by @robdekort
+
 ## v4.1 (2022-03-16)
 
 ### What's fixed

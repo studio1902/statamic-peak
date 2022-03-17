@@ -1,7 +1,3 @@
-{{#
-	@name Sitemap
-	@desc The sitemap template that renders a SEO friendy sitemap.xml.
-#}}
 {{ xml_header }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"{{ if {locales:count} > 1 }} xmlns:xhtml="http://www.w3.org/1999/xhtml"{{ /if }}>
     {{ seo:sitemap_collections }}
