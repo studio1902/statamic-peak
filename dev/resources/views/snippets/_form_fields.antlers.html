@@ -1,0 +1,40 @@
+{{#
+	@name Form fields
+	@desc Render the form fields in the default styling. Duplicate this partial if you use multiple form styles.
+#}}
+
+<!-- /snippets/_form_fields.antlers.html -->
+{{ fields }}
+    <div class="flex flex-col space-y-4
+        {{ width == '25' ?= 'md:col-span-3' }}
+        {{ width == '33' ?= 'md:col-span-4' }}
+        {{ width == '50' ?= 'md:col-span-6' }}
+        {{ width == '66' ?= 'md:col-span-8' }}
+        {{ width == '75' ?= 'md:col-span-9' }}
+        {{ width == '100' ?= 'md:col-span-12' }}"
+    >
+        <label class="font-bold" for="{{ handle }}">
+            {{ trans :key="display" }}
+            {{ if validate | contains:required }}
+                <sup class="text-yellow-400">*</sup>
+            {{ /if }}
+            {{ if instructions }}
+                <p class="font-normal text-sm my-1">{{ instructions }}</p>
+            {{ /if }}
+        </label>
+        {{# Load notification when there is a validation error with the name field. #}}
+        <template x-if="errors.{{ handle }}">
+            {{ partial src="components/notification" type="error" attribute="x-text='errors.{handle}'" }}
+        </template>
+        {{ field }}
+    </div>
+{{ /fields }}
+
+{{# Pulse button and disable upon sending. #}}
+<div class="md:col-span-12 flex justify-end">
+    {{ partial:components/button as="button" label="{ trans:strings.form_send }" attribute='x-bind:disabled="sending" x-bind:class="&#123;&#39;opacity-25 cursor-default&#39;: sending&#125;"' }}
+</div>
+<template x-if="success">
+    {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
+</template>
+<!-- End: /snippets/_form_fields.antlers.html -->
