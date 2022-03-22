@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.4 (2022-03-22)
+
+### What's fixed
+- Use dynamic public paths when generating favicons to prevent errors when running the multisite command. b3c3d819 by @robdekort
+
 ## v4.3 (2022-03-21)
 
 ### What's fixed
