@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Don't ask about mounts for non public collections when using `peak:add-collection`. 7bb0dc5f by @robdekort
+
 ## v4.4 (2022-03-22)
 
 ### What's fixed
