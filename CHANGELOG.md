@@ -1,9 +1,19 @@
 # Changelog
 
+## v4.4 (2022-03-22)
+
+### What's fixed
+- Use dynamic public paths when generating favicons to prevent errors when running the multisite command. b3c3d819 by @robdekort
+
+## v4.3 (2022-03-21)
+
+### What's fixed
+- Fix max width collision with the article page builder block. afe26aa9 by @robdekort
+
 ## v4.2 (2022-03-17)
 
 ### What's improved
-- Get rid of IDE comment in Sitemap template. It can cause issues on certain hosts. #62beea70 by @robdekort
+- Get rid of IDE comment in Sitemap template. It can cause issues on certain hosts. 62beea70 by @robdekort
 
 ## v4.1 (2022-03-16)
 
