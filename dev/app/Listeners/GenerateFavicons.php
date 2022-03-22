@@ -38,8 +38,8 @@ class GenerateFavicons
         $svg = $globals->inDefaultSite()->get('svg');
         $iOSBackground = $globals->inDefaultSite()->get('ios_color');
 
-        $this->createThumbnail('favicons/' . $svg, 'favicons/apple-touch-icon.png', 180, 180, $iOSBackground, 15);
-        $this->createThumbnail('favicons/' . $svg, 'favicons/android-chrome-512x512.png', 512, 512, 'transparent', false);
+        $this->createThumbnail(public_path('favicons/') . $svg, public_path('favicons/apple-touch-icon.png'), 180, 180, $iOSBackground, 15);
+        $this->createThumbnail(public_path('favicons/') . $svg, public_path('favicons/android-chrome-512x512.png'), 512, 512, 'transparent', false);
 
         Artisan::call('cache:clear');
     }
