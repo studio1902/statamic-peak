@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.4 (2022-03-23)
+## v4.5 (2022-03-23)
 
 ### What's fixed
 - 419 errors on form submission. edbe6b75 by @robdekort
