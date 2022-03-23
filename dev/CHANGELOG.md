@@ -1,6 +1,9 @@
 # Changelog
 
-## Unreleased
+## v4.4 (2022-03-23)
+
+### What's fixed
+- 419 errors on form submission. edbe6b75 by @robdekort
 
 ### What's improved
 - Don't ask about mounts for non public collections when using `peak:add-collection`. 7bb0dc5f by @robdekort

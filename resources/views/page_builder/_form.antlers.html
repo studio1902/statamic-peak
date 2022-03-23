@@ -89,7 +89,7 @@
                             this.sending = true
 
                             // Post the form.
-                            fetch(this.$refs.form.action, {
+                            await fetch(this.$refs.form.action, {
                                 headers: {
                                     'X-Requested-With' : 'XMLHttpRequest',
                                     'X-CSRF-Token' : await getToken(),
