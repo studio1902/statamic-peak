@@ -93,7 +93,7 @@
                             fetch(this.$refs.form.action, {
                                 headers: {
                                     'X-Requested-With' : 'XMLHttpRequest',
-                                    'X-CSRF-Token' : await getToken(),
+                                    'X-CSRF-Token' : await getToken()
                                 },
                                 method: 'POST',
                                 body: new FormData(this.$refs.form)})
