@@ -88,11 +88,13 @@
                         sendForm: async function() {
                             this.sending = true
 
+                            // Set an updated token.
+                            this.$refs.form.querySelector('input[name="_token"]').value = await getToken()
+
                             // Post the form.
-                            await fetch(this.$refs.form.action, {
+                            fetch(this.$refs.form.action, {
                                 headers: {
-                                    'X-Requested-With' : 'XMLHttpRequest',
-                                    'X-CSRF-Token' : await getToken(),
+                                    'X-Requested-With' : 'XMLHttpRequest'
                                 },
                                 method: 'POST',
                                 body: new FormData(this.$refs.form)})
