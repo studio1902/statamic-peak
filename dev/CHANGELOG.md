@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's fixed
+- Make OG images job compatible with Statamic 3.3. 3dddf9fe by @robdekort
+
 ## v4.5 (2022-03-23)
 
 ### What's fixed
