@@ -1,5 +1,14 @@
 # Changelog
 
+## v4.4 (2022-03-23)
+
+### What's fixed
+- 419 errors on form submission. edbe6b75 by @robdekort
+
+### What's improved
+- Don't ask about mounts for non public collections when using `peak:add-collection`. 7bb0dc5f by @robdekort
+- Remove unused paragraph partial (it's renamed to `p`). a1e2589d by @robdekort
+
 ## v4.4 (2022-03-22)
 
 ### What's fixed
