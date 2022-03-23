@@ -13,8 +13,9 @@
 
         {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
         <div x-data="sending">
-            {{ form:create in="{ form:handle }"
+            {{ form:create :in="form:handle"
                 id="form-{form:handle}"
+                csrf="false"
                 class="flex flex-wrap"
                 x-ref="form"
                 @submit.prevent="sendForm()"
@@ -88,13 +89,11 @@
                         sendForm: async function() {
                             this.sending = true
 
-                            // Set an updated token.
-                            this.$refs.form.querySelector('input[name="_token"]').value = await getToken()
-
                             // Post the form.
                             fetch(this.$refs.form.action, {
                                 headers: {
-                                    'X-Requested-With' : 'XMLHttpRequest'
+                                    'X-Requested-With' : 'XMLHttpRequest',
+                                    'X-CSRF-Token' : await getToken(),
                                 },
                                 method: 'POST',
                                 body: new FormData(this.$refs.form)})
