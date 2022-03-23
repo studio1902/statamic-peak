@@ -3,7 +3,7 @@
 ## v4.5 (2022-03-23)
 
 ### What's fixed
-- 419 errors on form submission. edbe6b75 by @robdekort
+- 419 errors on form submission. b87e674c by @robdekort
 
 ### What's improved
 - Don't ask about mounts for non public collections when using `peak:add-collection`. 7bb0dc5f by @robdekort
