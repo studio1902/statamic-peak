@@ -15,7 +15,7 @@
                     ? 'text-white focus-visible:ring-white'
                     : 'text-primary focus-visible:ring-primary'
                 }}
-            {{ elseif button_type === 'button' }}
+            {{ else }}
                 inline-flex items-center py-3 px-4 border-2 leading-none uppercase tracking-widest text-sm no-underline select-none whitespace-nowrap motion-safe:transition
                 {{ inverted
                     ? 'border-white text-white focus-visible:ring-white'
