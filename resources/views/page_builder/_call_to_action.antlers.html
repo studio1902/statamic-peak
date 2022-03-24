@@ -9,9 +9,7 @@
     <div class="md:col-start-3 md:col-span-8">
         {{ partial:typography/h2 class="mb-4" :content="block:title" }}
         {{ partial:typography/p class="mb-4" :content="block:text" }}
-        {{ if block:buttons }}
-            {{ partial:components/buttons }}
-        {{ /if }}
+        {{ block:buttons ?= { partial:components/buttons } }}
     </div>
 </section>
 <!-- End: /page_builder/_call_to_action.antlers.html -->

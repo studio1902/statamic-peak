@@ -43,11 +43,14 @@ class GenerateSocialImagesJob implements ShouldQueue
 
             // Delete any old images remaining.
             collect([
-                $disk->path($item->get('og_image')),
-                $disk->path($item->get('twitter_image')),
-            ])->each(function ($image) {
-                if (File::exists($image))
-                    File::delete($image);
+                $item->get('og_image'),
+                $item->get('twitter_image'),
+            ])
+            ->filter()
+            ->each(function ($image) {
+                if ($disk->exists($image)) {
+                    $disk->delete($image);
+                }
             });
 
             // Prepare.

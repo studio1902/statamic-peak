@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v4.6 (2022-03-24)
 
 ### What's fixed
 - Make OG images job compatible with Statamic 3.3. 3dddf9fe by @robdekort
@@ -8,7 +8,7 @@
 ### What's improved
 - Set CSRF token on form header and disable token field on the form partial. #206 by @robdekort
 - Simplify syntax in call to action. cc78ee87 by @robdekort
-- Improve readability in button partial. 0dbbbbda by @robdekort
+- Improve readability in button partial. 0dbbbbda and fbd3edd2 by @robdekort
 
 ## v4.5 (2022-03-23)
 
