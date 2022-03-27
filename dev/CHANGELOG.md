@@ -3,7 +3,7 @@
 ## Unreleased
 
 ### What's new
-- Add Norwegian translation. #207 by @hgrimelid
+- Add Norwegian Nynorsk translation. #207 by @hgrimelid
 
 ## v4.6 (2022-03-24)
 
