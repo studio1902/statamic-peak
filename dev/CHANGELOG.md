@@ -1,13 +1,12 @@
 # Changelog
 
-## Unreleased
+## v4.7 (2022-03-27)
 
 ### What's new
 - Add Norwegian Nynorsk translation. #207 by @hgrimelid
 
 ### What's improved
 - Improve Norwegian Nynorsk translation. #208 by @hgrimelid
-
 
 ## v4.6 (2022-03-24)
 
