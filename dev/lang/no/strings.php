@@ -12,12 +12,12 @@ return [
     'form_mail_title'                   => 'Kontaktskjema',
     'form_mail_url'                     => config('app.url'),
     'form_send'                         => 'Send melding',
-    'form_success'                      => 'Tusen takk, vi har motet din melding og kontakter deg så snart som mulig.',
+    'form_success'                      => 'Tusen takk, vi har mottatt meldingen din og kontakter deg så snart som mulig.',
 
     // Cookie banner
     'cookie_title'                      => 'Informasjonskapsler 🍪',
     'cookie_functional'                 => 'Fungerende',
-    'cookie_functional_explanation'     => 'Førstepartsinformasjonskapsler som trengs for at nettsiden skal fungere. Disse kan ikke bli slått av.',
+    'cookie_functional_explanation'     => 'Førstepartsinformasjonskapsler som trengs for at nettstedet skal fungere. Disse kan ikke slås av.',
     'cookie_analytics'                  => 'Analyser',
     'cookie_analytics_explanation'      => 'Tredjepartsinformasjonskapsler, trengs ikke.',
     'cookie_ads'                        => 'Reklame og sporing',
@@ -41,10 +41,10 @@ return [
     'skip_to_content'                   => 'Gå direkte til innhold',
 
     // Other
-    'dark_mode_on'                      => 'Slå på dark mode',
-    'dark_mode_off'                     => 'Slå av dark mode',
+    'dark_mode_on'                      => 'Slå på mørk modus',
+    'dark_mode_off'                     => 'Slå av mørk modus',
     'no_results'                        => 'Det er ingen innlegg for øyeblikket.',
-    'no_script'                         => 'Denne websiden trenger Javascript for at alle deler skal fungere korrekt. Din opplevelse kan variere om du ikke bruker javascript.',
+    'no_script'                         => 'Denne websiden trenger Javascript for at alle deler skal fungere korrekt. Opplevelsen kan variere om du ikke bruker Javascript.',
 
     // Pagination
     'next'                              => 'neste',
@@ -53,12 +53,12 @@ return [
 
     // Search
     'search'                            => 'Søk',
-    'search_no_results'                 => 'Fant ingen resulater',
+    'search_no_results'                 => 'Fant ingen resultater',
     'search_results_for'                => 'Resultater for',
 
     // Social images
-    'social_images'                     => 'Genererte et sosialt bilde.|Generated :count social images.',
-    'social_images_queue'               => 'Genererte et sosialt bilde i bakgrunnen.|Generating :count social images in the background.',
+    'social_images'                     => 'Genererte et bilde for sosiale medium.|Genererte :count bilder for sosiale medium.',
+    'social_images_queue'               => 'Genererte et bilde for sosiale medium bakgrunnen.|Genererte :count bilder for sosiale medium i bakgrunnen.',
 
     // Other
     'vacancy_visit'                     => 'Se stillingsannonse',
