@@ -53,7 +53,7 @@ return [
 
     // Search
     'search'                            => 'Søk',
-    'search_no_results'                 => 'Fann ingen resulat',
+    'search_no_results'                 => 'Fann ingen resultat',
     'search_results_for'                => 'Resultat for',
 
     // Social images
