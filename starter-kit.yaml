@@ -39,12 +39,7 @@ export_paths:
   - config/statamic/stache.php
   - config/statamic/static_caching.php
   - config/statamic/users.php
-  - lang/en.json
-  - lang/en/strings.php
-  - lang/nl.json
-  - lang/nl/strings.php
-  - lang/no.json
-  - lang/no/strings.php
+  - lang/
   - public/assets
   - public/css
   - public/favicons/.gitkeep
