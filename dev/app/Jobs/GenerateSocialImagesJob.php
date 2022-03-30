@@ -48,9 +48,8 @@ class GenerateSocialImagesJob implements ShouldQueue
             ])
             ->filter()
             ->each(function ($image) {
-                if ($disk->exists($image)) {
-                    $disk->delete($image);
-                }
+                if (File::exists(public_path("social_images/{$image}")))
+                    File::delete(public_path("social_images/{$image}"));
             });
 
             // Prepare.
