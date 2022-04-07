@@ -39,17 +39,19 @@ class GenerateSocialImagesJob implements ShouldQueue
     {
         $this->items->each(function($item, $key) {
 
-            $disk = AssetContainer::find('social_images')->disk();
+            $container = AssetContainer::find('social_images');
+            $disk = $container->disk();
 
-            // Delete any old images remaining.
+            // Delete any old images/meta remaining.
             collect([
                 $item->get('og_image'),
                 $item->get('twitter_image'),
             ])
             ->filter()
             ->each(function ($image) {
-                if (File::exists(public_path("social_images/{$image}")))
-                    File::delete(public_path("social_images/{$image}"));
+                if($container->asset($image)->exists()){
+                    $container->asset($image)->delete();
+                }
             });
 
             // Prepare.
@@ -58,20 +60,22 @@ class GenerateSocialImagesJob implements ShouldQueue
             $absolute_url = $item->site()->absoluteUrl();
             $unique = time();
 
-            // Generate, save and set default og image.
+            // Generate, save and set default og image/meta.
             $file = "{$title}-og-{$unique}.png";
             $image = Browsershot::url("{$absolute_url}/social-images/{$id}")
                 ->windowSize(1200, 630)
                 ->select('#og')
                 ->save($disk->path($file));
+            $container->makeAsset($file)->save();    
             $item->set('og_image', $file)->save();
 
-            // Generate, save and set default twitter image.
+            // Generate, save and set default twitter image/meta.
             $file = "{$title}-twitter-{$unique}.png";
             $image = Browsershot::url("{$absolute_url}/social-images/{$id}")
                 ->windowSize(1200, 600)
                 ->select('#twitter')
                 ->save($disk->path($file));
+            $container->makeAsset($file)->save();    
             $item->set('twitter_image', $file)->save();
         });
 
