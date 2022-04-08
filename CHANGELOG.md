@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.8 (2022-04-08)
+
+### What's improved
+- Remove old meta and generate new upon social image creation. #210 by @PunchRockgroin
+- Revert earlier decision and ignore assets by default again. I got tired of `git -rm -f` on each and every project when I forgot to uncomment those lines. 6878248e by @robdekort
 
 ## v4.8 (2022-03-30)
 
@@ -7,7 +12,7 @@
 - Use base strategy for TW forms. 8e8657d8 by @robdekort
 
 ### What's fixed
-- Previous social images now get purged and don't trigger an error. f5eaa8b9 by @robdekort
+- Previous social images now get purged and don't trigger an error on Laravel 9. f5eaa8b9 by @robdekort
 
 ## v4.7 (2022-03-27)
 

@@ -14,7 +14,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-# Uncomment the following lines when you compile your assets on the server (recommended):
-# /public/js/
-# /public/css/
-# /public/mix-manifest.json
+# Comment the following lines if you don't compile your assets on the server:
+/public/js/
+/public/css/
+/public/mix-manifest.json
