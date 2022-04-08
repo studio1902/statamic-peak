@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.10 (2022-04-08)
+
+### What's new
+- Add a section field and partial to the form builder. 19732c0f by @robdekort
+
 ## v4.9 (2022-04-08)
 
 ### What's improved
