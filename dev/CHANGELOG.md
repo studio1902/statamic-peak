@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.8 (2022-04-08)
+
+### What's improved
+- Remove old meta and generate new upon social image creation. #210 by @PunchRockgroin
+- Revert earlier decision and ignore assets by default again. I got tired of `git -rm -f` on each and every project when I forgot to uncomment those lines. 6878248e by @robdekort
+
 ## v4.8 (2022-03-30)
 
 ### What's improved
