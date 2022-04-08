@@ -1,0 +1,9 @@
+{{# Bind custom error classses when there is a validation error with the field. #}}
+<!-- /vendor/statamic/forms/fields/section.antlers.html -->
+<div>
+    <span class="font-bold">{{ trans :key="display" }}</span>
+    {{ if instructions }}
+        <p class="font-normal text-sm my-1">{{ trans :key="instructions" }}</p>
+    {{ /if }}
+</div>
+<!-- End: /vendor/statamic/forms/fields/section.antlers.html -->
