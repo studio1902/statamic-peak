@@ -39,15 +39,17 @@
                                 {{ width == '75' ?= 'md:col-span-9' }}
                                 {{ width == '100' ?= 'md:col-span-12' }}"
                             >
-                                <label class="font-bold" for="{{ handle }}">
-                                    {{ trans :key="display" }}
-                                    {{ if validate | contains('required') }}
-                                        <sup class="text-yellow-400">*</sup>
-                                    {{ /if }}
-                                    {{ if instructions }}
-                                        <p class="font-normal text-sm my-1">{{ trans :key="instructions" }}</p>
-                                    {{ /if }}
-                                </label>
+                                {{ unless type === 'section' }}
+                                    <label class="font-bold" for="{{ handle }}">
+                                        {{ trans :key="display" }}
+                                        {{ if validate | contains('required') }}
+                                            <sup class="text-yellow-400">*</sup>
+                                        {{ /if }}
+                                        {{ if instructions }}
+                                            <p class="font-normal text-sm my-1">{{ trans :key="instructions" }}</p>
+                                        {{ /if }}
+                                    </label>
+                                {{ /unless }}
 
                                 <div x-data="{ id: $id('error-label') }" class="flex flex-col space-y-2">
                                     {{ field }}
