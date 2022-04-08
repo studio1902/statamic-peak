@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.8 (2022-04-08)
+## v4.9 (2022-04-08)
 
 ### What's improved
 - Remove old meta and generate new upon social image creation. #210 by @PunchRockgroin
