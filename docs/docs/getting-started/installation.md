@@ -8,7 +8,7 @@ Make sure you use the provided `.env.example` file by running `cp .env.example .
 
 ## Install into an existing Statamic v3.2+ project
 
-If you already have an existing Statamic installation you can run the following command: `php please starter-kit:install studio1902/statamic-peak`.
+If you already have an existing, clean, Statamic installation you can run the following command: `php please starter-kit:install studio1902/statamic-peak`.
 
 Make sure you update your `.env` file according to the the `.env.example`. Peak moves some Statamic [configuration options](/other/configuration-changes.html) to environment variables.
 
