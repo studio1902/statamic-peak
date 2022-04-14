@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's fixed
+- A typo in the globals blueprint. #213 by @tricki
+
 ## v4.10 (2022-04-08)
 
 ### What's new
