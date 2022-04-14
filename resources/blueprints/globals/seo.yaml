@@ -458,7 +458,7 @@ sections:
         handle: section_privacy_trackers
         field:
           type: section
-          instructions: 'Configure privacty friendly trackers that don''t require a cookie notification.'
+          instructions: 'Configure privacy friendly trackers that don''t require a cookie notification.'
           display: 'Privacy Friendly Trackers'
       -
         handle: use_fathom
