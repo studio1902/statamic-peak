@@ -20,14 +20,6 @@
                 {{ (old | in_array(value)) ?= 'checked' }}
             >
             {{ trans :key="label" }}
-            {{ if handle === 'consent' }}
-                &nbsp;
-                {{ if configuration:privacy_statement_type == 'entry' }}
-                    <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ configuration:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
-                {{ elseif configuration:privacy_statement_type == 'pdf' }}
-                    <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ configuration:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
-                {{ /if }}
-            {{ /if }}
         </label>
     {{ /foreach:options }}
 </div>

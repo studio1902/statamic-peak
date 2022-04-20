@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.11 (2022-04-20)
+
+### What's new
+- Add toggle form fieldtype and use it as consent field in the default form. #214 by @robdekort
+
+### What's fixed
+- A typo in the globals blueprint. #213 by @tricki
+
 ## v4.10 (2022-04-08)
 
 ### What's new
