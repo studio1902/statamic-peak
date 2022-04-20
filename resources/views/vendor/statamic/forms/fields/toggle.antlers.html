@@ -1,4 +1,8 @@
- <label class="inline-flex items-center">
+<label
+    class="inline-flex items-center"
+    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
+    :aria-describedBy="id"
+>
     <input type="hidden" name="{{ handle }}" value="0">
     <input
         class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
