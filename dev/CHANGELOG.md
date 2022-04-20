@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### What's new
+- Add toggle form fieldtype. #214 by @robdekort
+
 ### What's improved
 - Fluid typography kicks in on wider screens now. 3df076f7 by @robdekort
 
