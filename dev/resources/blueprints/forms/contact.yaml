@@ -28,11 +28,13 @@ sections:
       -
         handle: consent
         field:
-          inline: false
-          type: checkboxes
-          listable: hidden
+          inline_label: 'I agree that my submitted data is being collected and stored.'
+          default: false
           display: Consent
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+          read_only: false
           validate:
-            - required
-          options:
-            'yes': 'I agree that my submitted data is being collected and stored.'
+            - accepted
