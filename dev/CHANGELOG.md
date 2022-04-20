@@ -5,9 +5,6 @@
 ### What's new
 - Add toggle form fieldtype. #214 by @robdekort
 
-### What's improved
-- Fluid typography kicks in on wider screens now. 3df076f7 by @robdekort
-
 ### What's fixed
 - A typo in the globals blueprint. #213 by @tricki
 
