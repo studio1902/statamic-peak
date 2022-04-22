@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.12 (2022-04-22)
+
+### What's new
+- Use a store for the theme/dark-mode configuration. This way you can reactively use the current theme/mode in other components. #216 by @robdekort
+
 ## v4.11 (2022-04-20)
 
 ### What's new

@@ -12,13 +12,13 @@
         class="p-1 -m-1 flex items-center text-neutral dark:text-white hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition-colors"
     >
         {{ icon_classes = 'w-4 h-4 stroke-current overflow-visible' }}
-        <div x-show="theme === 'light'">
+        <div x-show="$store.theme.get() === 'light'">
             {{ svg:sun class="{icon_classes}" alt="" aria-hidden="true" }}
         </div>
-        <div x-show="theme === 'dark'">
+        <div x-show="$store.theme.get() === 'dark'">
             {{ svg:moon class="{icon_classes}" alt="" aria-hidden="true" }}
         </div>
-        <div x-show="theme === 'system'">
+        <div x-show="$store.theme.get() === 'system'">
             {{ svg:sun x-show="preferredColorScheme === 'light'" class="{icon_classes} opacity-50" alt="" aria-hidden="true" }}
             {{ svg:moon x-show="preferredColorScheme === 'dark'" class="{icon_classes} opacity-50" alt="" aria-hidden="true" }}
         </div>
@@ -33,7 +33,7 @@
         {{ label_classes = 'text-xs font-bold' }}
         <button
             @click="themeLight()"
-            :class="{ 'text-primary': theme === 'light' }"
+            :class="{ 'text-primary': $store.theme.get() === 'light' }"
             aria-label="{{ trans:strings.theme_toggle_light }}"
             title="{{ trans:strings.theme_toggle_light }}"
             class="{{ button_classes }}"
@@ -43,7 +43,7 @@
         </button>
         <button
             @click="themeDark()"
-            :class="{ 'text-primary': theme === 'dark' }"
+            :class="{ 'text-primary': $store.theme.get() === 'dark' }"
             aria-label="{{ trans:strings.theme_toggle_dark }}"
             title="{{ trans:strings.theme_toggle_dark }}"
             class="{{ button_classes }}"
@@ -53,7 +53,7 @@
         </button>
         <button
             @click="themeSystem()"
-            :class="{ 'text-primary': theme === 'system' }"
+            :class="{ 'text-primary': $store.theme.get() === 'system' }"
             aria-label="{{ trans:strings.theme_toggle_system }}"
             title="{{ trans:strings.theme_toggle_system }}"
             class="{{ button_classes }}"
@@ -70,22 +70,31 @@
 
     <script>
         document.addEventListener('alpine:initializing', () => {
+            Alpine.store('theme', {
+                theme: Alpine.$persist('system').as('theme'),
+                set(value) {
+                    this.theme = value
+                },
+                get() {
+                    return this.theme
+                }
+            })
+
             Alpine.data('themeToggle', () => {
                 return {
                     themeToggleOpen: false,
-                    theme: Alpine.$persist('system').as('theme'),
                     preferredColorScheme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
                     themeColor: {{ theme_color ?? 'false' }},
                     themeLight: function() {
-                        this.theme = 'light'
+                        this.$store.theme.set('light')
                         this.setLightTheme()
                     },
                     themeDark: function() {
-                        this.theme = 'dark'
+                        this.$store.theme.set('dark')
                         this.setDarkTheme()
                     },
                     themeSystem: function() {
-                        this.theme = 'system'
+                        this.$store.theme.set('system')
                         window.matchMedia('(prefers-color-scheme: light)').matches && this.setLightTheme()
                         window.matchMedia('(prefers-color-scheme: dark)').matches && this.setDarkTheme()
                     },
