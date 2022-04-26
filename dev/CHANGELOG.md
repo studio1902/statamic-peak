@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Glide `fill` SEO JSON-ld image instead of `fit`. 0d2bff96 by @robdekort
+
 ## v4.12 (2022-04-22)
 
 ### What's new
