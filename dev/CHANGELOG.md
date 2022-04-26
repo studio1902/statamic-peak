@@ -4,6 +4,7 @@
 
 ### What's improved
 - Glide `fill` SEO JSON-ld image instead of `fit`. 0d2bff96 by @robdekort
+- Make change collection title field localizable. d02d4b4f by @robdekort
 
 ## v4.12 (2022-04-22)
 
