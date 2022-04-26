@@ -94,6 +94,7 @@ sections:
           reorderable: true
           type: grid
           icon: grid
+          localizable: true
           display: 'Change collection title'
           instructions: 'Select collections where you want to add something to be part of the page title. For example: _Entry title - **Collection title** - Site title_.'
           listable: hidden
