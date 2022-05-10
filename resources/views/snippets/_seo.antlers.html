@@ -76,7 +76,7 @@
                 "@type": "Organization",
                 "name": "{{ seo:organization_name }}",
                 "url": "{{ config:app:url }}{{ homepage }}"{{ if seo:organization_logo }},
-                "logo": "{{ config:app:url }}{{ glide:seo:organization_logo width='336' height='336' fit='contain' }}"{{ /if }}
+                "logo": "{{ config:app:url }}{{ glide:seo:organization_logo width='336' height='336' fit='fill' }}"{{ /if }}
             }
         {{ elseif seo:json_ld_type == 'person' }}
             {
