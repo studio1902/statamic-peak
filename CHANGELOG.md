@@ -1,5 +1,14 @@
 # Changelog
 
+## v4.13 (2022-05-10)
+
+### What's improved
+- Glide `fill` SEO JSON-ld image instead of `fit`. 0d2bff96 by @robdekort
+- Make change collection title field localizable. d02d4b4f by @robdekort
+
+### What's fixed
+- Typo in theme toggle comments. 88f2b82c by @robdekort
+
 ## v4.12 (2022-04-22)
 
 ### What's new
