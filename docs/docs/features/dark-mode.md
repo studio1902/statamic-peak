@@ -12,7 +12,7 @@ If you want to use [class based dark mode](https://tailwindcss.com/docs/dark-mod
 ```html
 {{ partial:components/theme_toggle }}
 ```
-as the last list item in the main ul in `resources/views/navigation/_main_desktop.antlers.html`. The `section:team_toggle` is automatically yielded in `resources/views/snippets/_browser_appearance.antlers.html`.
+as the last list item in the main ul in `resources/views/navigation/_main_desktop.antlers.html`. The `section:theme_toggle` is automatically yielded in `resources/views/snippets/_browser_appearance.antlers.html`.
 
 | Dark mode toggle  |
 |---|
