@@ -8,20 +8,10 @@ fields:
       localizable: true
       listable: false
       display: Label
-      width: 50
+      width: 66
       replicator_preview: false
       instructions_position: above
       antlers: false
-  -
-    handle: show_controls
-    field:
-      display: 'Show controls'
-      type: toggle
-      default: true
-      icon: revealer
-      listable: hidden
-      width: 50
-      instructions_position: below
   -
     handle: target_blank
     field:
@@ -31,8 +21,6 @@ fields:
       listable: false
       display: 'Open in new window?'
       replicator_preview: false
-      if:
-        show_controls: 'equals true'
   -
     handle: link_type
     field:
@@ -48,8 +36,6 @@ fields:
       listable: false
       display: 'Link type'
       replicator_preview: false
-      if:
-        show_controls: 'equals true'
   -
     handle: entry
     field:
@@ -65,7 +51,6 @@ fields:
         - 'required_if:{this}.link_type,entry'
       if:
         link_type: entry
-        show_controls: 'equals true'
   -
     handle: url
     field:
@@ -80,7 +65,6 @@ fields:
         - 'required_if:{this}.link_type,url'
       if:
         link_type: url
-        show_controls: 'equals true'
   -
     handle: email
     field:
@@ -96,7 +80,6 @@ fields:
         - 'required_if:{this}.link_type,email'
       if:
         link_type: email
-        show_controls: 'equals true'
   -
     handle: tel
     field:
@@ -112,7 +95,6 @@ fields:
         - 'required_if:{this}.link_type,tel'
       if:
         link_type: tel
-        show_controls: 'equals true'
   -
     handle: asset
     field: common.image
@@ -122,7 +104,6 @@ fields:
       display: Asset
       if:
         link_type: asset
-        show_controls: 'equals true'
   -
     handle: button_type
     field:
@@ -135,8 +116,6 @@ fields:
       listable: false
       display: 'Button type'
       replicator_preview: false
-      if:
-        show_controls: 'equals true'
   -
     handle: attr_title
     field:
@@ -148,8 +127,6 @@ fields:
       display: Title
       width: 50
       replicator_preview: false
-      if:
-        show_controls: 'equals true'
   -
     handle: attr_aria
     field:
@@ -161,5 +138,3 @@ fields:
       display: 'Aria label'
       width: 50
       replicator_preview: false
-      if:
-        show_controls: 'equals true'
