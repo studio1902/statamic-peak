@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.15 (2022-05-13)
+
+### What's fixed
+- Remove 'Show controls' feature for buttons as data doesn't get saved in recent Statamic versions. 98eedbf9 by @robdekort
+
 ## v4.14 (2022-05-13)
 
 ### What's fixed
