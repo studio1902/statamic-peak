@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.14 (2022-05-13)
+
+### What's fixed
+- Multilingual sitemaps for Statamic 3.3+. 708d5672 by @robdekort
+
 ## v4.13 (2022-05-10)
 
 ### What's improved
