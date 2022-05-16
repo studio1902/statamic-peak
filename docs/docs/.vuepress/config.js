@@ -49,6 +49,7 @@ module.exports = {
             '/getting-started/knowledge-assumptions.md',
             '/getting-started/tailwind-css.md',
             '/getting-started/runtime-parser.md',
+            '/getting-started/statamic-3.3.md'
           ],
         },
         {
