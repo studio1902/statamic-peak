@@ -23,3 +23,6 @@ The forms sending is done with fetch and uses Alpine to display the various noti
 | Forms backend | Forms frontend  |
 |---|---|
 | ![Forms backend](/visuals/screenshots/forms-backend.png) | ![Forms frontend](/visuals/screenshots/forms-frontend.png) |
+
+## Conditional logic
+The Peak form component and published field views support the AlpineJS driven [conditional fields feature](https://statamic.dev/tags/form-create#conditional-fields) added in Statamic 3.3
