@@ -1,6 +1,6 @@
 # Runtime parser
 
-In addition the changes required for [Statamic 3.3](/getting-started/statamic-3.3.html), if you want to migrate existing Peak sites to the runtime parser, know you usually only have to do three things:
+In addition to these [required changes](/getting-started/statamic-3.3.html) for Statamic 3.3, if you want to migrate existing Peak sites to the runtime parser, know you usually only have to do three things:
 
 ## Update your form field templates
 Change:
