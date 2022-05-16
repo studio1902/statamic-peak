@@ -12,4 +12,4 @@ Control Panel forms now only submit visible fields (as originally intended) whic
 This could potentially be a breaking change if you were using field conditions purely for cosmetic showing/hiding of form fields.
 ```
 
-The button partial in Peak relied on this unintended use of conditionally hiding fields. To fix this replace your (vanilla) Peak button partial (`resources/views/components/_button.antlers.html`) with this [updated file](https://github.com/studio1902/statamic-peak/blob/main/resources/views/components/_button.antlers.html).
+The button fieldset in Peak relied on this unintended use of conditionally hiding fields. To fix this replace your (vanilla) Peak button fieldset (`resources/views/components/_button.antlers.html`) with this [updated file](https://github.com/studio1902/statamic-peak/blob/main/resources/views/components/_button.antlers.html).
