@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.16 (2022-05-19)
+
+### What's improved
+- Use new Revealer toggle type to show/hide advanced button controls. 7a319f91 by @robdekort
+- Update dependencies. 0bd379bb by @robdekort
+
 ## v4.15 (2022-05-13)
 
 ### What's fixed
