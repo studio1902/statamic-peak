@@ -17,6 +17,7 @@ This is a collection ofo (alphabetically ordered) sites made with Statamic using
 * [vespa2rent.be](https://vespa2rent.be) by [VanNut](https://vannut.nl)
 * [voltexsloepverhuur.nl](https://voltexsloepverhuur.nl) by [VanNut](https://vannut.nl)
 * [hufeland.com](https://hufeland.com) by [Croox](https://croox.com) & [klickreflex](https://twitter.com/klickreflex)
+* [crazyceramic.de](https://www.crazyceramic.de) by [klickreflex](https://twitter.com/klickreflex)
 
 ## Peak Branding
 
