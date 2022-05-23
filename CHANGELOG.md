@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.17 (2022-05-23)
+
+### What's new
+- Add German translation. #221 by @klickreflex
+
 ## v4.16 (2022-05-19)
 
 ### What's improved
