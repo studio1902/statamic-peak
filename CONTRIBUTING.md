@@ -8,7 +8,7 @@ Statamic Peak is a mono repo containing the kit that gets installed for users, a
 | Location | Purpose |
 | --- | --- |
 | `/` | The root level contains the actual kit that gets installed by Statamic. |
-| `/docs/` | The documentation auto deployed to [peak.studio1902.nl](https://peak.studio1902.nl) running on Netlify. |
+| `/docs/` | The documentation auto deployed to [peak.1902.studio](https://peak.1902.studio) running on Netlify. |
 | `/dev/` | The actual development environment. A running Statamic Peak instance. |
 
 ## Development environment
@@ -28,4 +28,4 @@ The documentation run on https://vuepress.vuejs.org. To locally install this nav
 2. `npm run docs:dev`
 3. Visit http://localhost:8080.
 
-Commits to these docs are automatically deployed to production on https://peak.studio1902.nl using [Netlify](https://netlify.com).
+Commits to these docs are automatically deployed to production on https://peak.1902.studio using [Netlify](https://netlify.com).

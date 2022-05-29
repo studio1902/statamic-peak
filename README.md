@@ -10,7 +10,7 @@ The aim of Peak is to make it easy to start new projects as they often share muc
 
 Maintaining Peak demands a lot of my time and it probably saves you a lot. Your sponsoring would mean a great deal to me as it makes it much easier for me to maintain this project and keep improving it. [Sponsor me](https://github.com/sponsors/studio1902).
 
-[Read the docs](https://peak.studio1902.nl)
+[Read the docs](https://peak.1902.studio)
 
 ![Extendible page builder and long form content with sets.](https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-promo-01.png)
 
@@ -27,7 +27,7 @@ Maintaining Peak demands a lot of my time and it probably saves you a lot. Your 
 ## Contributing
 Contributions and discussions are always welcome, no matter how large or small. Treat each other with respect. Read the [Code of Conduct](https://github.com/studio1902/statamic-peak/blob/main/.github/CODE_OF_CONDUCT.md).
 
-Read more about [how you can contribute](https://peak.studio1902.nl/other/contributing.html) here.
+Read more about [how you can contribute](https://peak.1902.studio/other/contributing.html) here.
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information. Statamic itself is commercial software and has its' own license.
