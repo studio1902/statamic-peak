@@ -80,7 +80,7 @@ page_builder:
         target_blank: true
         link_type: url
         entry: null
-        url: 'https://peak.studio1902.nl/'
+        url: 'https://peak.1902.studio/'
         email: null
         tel: null
         asset: null

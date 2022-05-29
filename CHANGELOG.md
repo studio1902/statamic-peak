@@ -112,7 +112,7 @@
 ## v4.0 (2022-03-15)
 
 ### What's new
-- Antlers Runtime parser support. Check this [upgrade guide](https://peak.studio1902.nl/getting-started/runtime-parser.html) for existing sites. #194, #201 by @robdekort
+- Antlers Runtime parser support. Check this [upgrade guide](https://peak.1902.studio/getting-started/runtime-parser.html) for existing sites. #194, #201 by @robdekort
 - Support for conditional form fields. #195 by @robdekort
 - Completely reworked dark mode toggle (theme toggle). It has a light, dark and system option now. #197 by @robdekort
 - Use the content of an actual 404 entry when a 404 error hits (including SEO data). #199 by @robdekort and @jasonvarga
@@ -585,7 +585,7 @@ Files new/changed:
 ## 3.0 (2021-08-24)
 
 ### What's new
-- Installing Peak now uses the new Starter Kit functionality in Peak. [Check the docs](https://peak.studio1902.nl/getting-started/installation.html).
+- Installing Peak now uses the new Starter Kit functionality in Peak. [Check the docs](https://peak.1902.studio/getting-started/installation.html).
 - Add the new Peak branding to the default templates, pages and e-mails.
 - Add some starter content to explain what Peak can do.
 
@@ -773,7 +773,7 @@ Upgrade to Tailwind 2.2:
 ## 1.28.0 (2021-05-11)
 
 ### What's new
-- The ability to auto generate social images based on a template you control. [Read the docs here](https://peak.studio1902.nl/features/social-images-generation.html).
+- The ability to auto generate social images based on a template you control. [Read the docs here](https://peak.1902.studio/features/social-images-generation.html).
 - Social images are now saved in a seperate asset container.
 
 ## 1.27.8 (2021-05-10)
@@ -944,7 +944,7 @@ Upgrade to Tailwind 2.2:
 - Add Twitter `Summary Large Image` card support.
 - Propertly enforce `focus-visible` where applicable.
 
-Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.studio1902.nl).
+Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.1902.studio).
 
 ## 1.23.2 (2021-03-22)
 
