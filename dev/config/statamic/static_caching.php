@@ -54,6 +54,7 @@ return [
     */
 
     'exclude' => [
+        '/site.webmanifest',
         '/sitemap.xml'
     ],
 
