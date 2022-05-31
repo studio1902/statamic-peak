@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.18 (2022-05-31)
+
+### What's improved
+- Exclude site.webmanifest from static caching. 3226606a by @robdekort
+
 ## v4.17 (2022-05-23)
 
 ### What's new
