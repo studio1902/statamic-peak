@@ -6,6 +6,7 @@
 ## Made with Peak
 This is a collection ofo (alphabetically ordered) sites made with Statamic using Peak:
 
+* [1902.studio](https://1902.studio) by [Studio 1902](https://1902.studio)
 * [codegorilla.nl](https://codegorilla.nl)  by [Studio 1902](https://studio1902.nl) & [Merkactivisten](https://merkactivisten.nl)
 * [eensamen050.nl](https://eensamen050.nl) by [Studio 1902](https://studio1902.nl)
 * [franselente.nl](https://franselente.nl) by [Studio 1902](https://studio1902.nl)
@@ -18,6 +19,7 @@ This is a collection ofo (alphabetically ordered) sites made with Statamic using
 * [voltexsloepverhuur.nl](https://voltexsloepverhuur.nl) by [VanNut](https://vannut.nl)
 * [hufeland.com](https://hufeland.com) by [Croox](https://croox.com) & [klickreflex](https://twitter.com/klickreflex)
 * [crazyceramic.de](https://www.crazyceramic.de) by [klickreflex](https://twitter.com/klickreflex)
+* [socialebenadering.nl](https://socialebenadering.nl) by [Studio 1902](https://1902.studio) & [Merkactivisten](https://merkactivisten.nl)
 
 ## Peak Branding
 
