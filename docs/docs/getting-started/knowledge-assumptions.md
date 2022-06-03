@@ -6,3 +6,6 @@ Peak is an opinionated Starter Kit. It uses a few tools you should be familiar w
 - *[Antlers](https://statamic.dev/antlers#content)* The Statamic template language.
 - *[Tailwind CSS](https://tailwindcss.com)* Utility first CSS framework.
 - *[AlpineJS](https://github.com/alpinejs/alpine/)* A minimal JS framework for composing JS behaviour in your markup.
+
+## Resources
+- *[statamictutorials.com](statamictutorials.com)* is a screencast to learn Statamic.
