@@ -16,6 +16,8 @@ mix.options({
 
 mix.browserSync({
     proxy: process.env.APP_URL,
+    host: process.env.APP_URL.split('//')[1],
+    open: 'external',
     files: [
         'resources/views/**/*.html',
         'public/**/*.(css|js)',

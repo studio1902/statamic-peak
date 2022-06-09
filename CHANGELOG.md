@@ -1,5 +1,14 @@
 # Changelog
 
+## v4.19 (2022-06-09)
+
+### What's improved
+- Use the `app_url` for browsersync. 2f5723e6 by @delz-dev and @robdekort
+- Update dependencies. bd0a5f28 by @robdekort
+
+### What's removed
+- The `mount_url` tag as there is now a native `mount` tag in Statamic. 87f9e798 by @robdekort
+
 ## v4.18 (2022-05-31)
 
 ### What's improved
