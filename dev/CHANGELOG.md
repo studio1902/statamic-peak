@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.20 (2022-06-09)
+
+### What's improved
+- Upgrade to Tailwind CSS 3.1. 03960084 by @robdekort
+- Add Tailwind CSS first-party TypeScript types. 5d2d63be by @robdekort
+- Add partial (required) parameter hinting to common partials for VS Code + Antlers Toolbox . f911751b by @robdekort
+
 ## v4.19 (2022-06-09)
 
 ### What's improved
