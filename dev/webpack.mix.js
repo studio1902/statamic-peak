@@ -14,6 +14,12 @@ mix.options({
     cssNano: { minifyFontValues: false }
 });
 
+mix.webpackConfig({
+    stats: {
+        children: false,
+    },
+});
+
 mix.browserSync({
     proxy: process.env.APP_URL,
     host: process.env.APP_URL.split('//')[1],
