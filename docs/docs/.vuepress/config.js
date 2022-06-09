@@ -90,7 +90,6 @@ module.exports = {
             '/other/localization.md',
             '/other/reduced-motion.md',
             '/other/screencasts.md',
-            '/other/tags.md',
             '/other/toolbar.md',
             '/other/updating-peak.md',
           ],

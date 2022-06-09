@@ -21,7 +21,6 @@ Peak changes the default Statamic config. The following is different:
 | `app/providers/AppServiceProvider.php` |  | Enables the use of a section field in the form builder.
 | `app/providers/AppServiceProvider.php` |  | Adds 404 page entry data to the 404 template when an error hits.
 | `app/providers/EventServiceProvider.php` |  | Listen to a GlobalSavedEvent to generate [favicons](/features/browser-appearance.html).
-| `app/Tags/MountUrl.php` |  | New Tag to get a mount url [tags](/other/tags.html) |
 | `app/Widgets/ImagesMissingAlt.php` |  | New widget to [display assets with missing alt texts](/features/widgets.html). |
 | `content/assets/favicons.yaml` |  | An asset container where the [automated favicon feature](/features/browser-appearance.html) stores it's favicons in. |
 | `config/filesystems.php` |  | Filesystems for the Favicon and Social Images assets. |
