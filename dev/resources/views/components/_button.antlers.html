@@ -31,7 +31,7 @@
         "
         {{ !faux ?= { partial:snippets/button_attributes } }}
     >
-        {{ label }}
+        {{ link_type == 'email' ? { label | obfuscate_email } : label }}
     </{{ as or 'a' }}>
 {{ /if }}
 <!-- End: /components/_button.antlers.html -->
