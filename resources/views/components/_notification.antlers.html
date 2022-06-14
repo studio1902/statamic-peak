@@ -1,6 +1,9 @@
 {{#
     @name Notification
-    @desc The notification component. Currently used in `resources/views/page_builder/_form.antlers.html`..
+    @desc The notification component. Currently used in `resources/views/page_builder/_form.antlers.html`.
+    @param* content The notification content.
+    @param* type The type of notification: `success`, `notice`, or `error`.
+    @param class Add custom CSS classes.
 #}}
 
 <!-- /components/_notification.antlers.html -->
@@ -44,7 +47,6 @@
                         () => 'text-gray-800'
                     )}}
                 "
-                {{ attribute }}
             >
                 {{ content }}
             </h3>

@@ -7,6 +7,7 @@
 // classes. Various aspects of the config are split inmultiple files.
 //
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   // The various configurable Tailwind configuration files.
   presets: [
