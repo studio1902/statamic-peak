@@ -8,6 +8,7 @@
     x-data="{ mobileNavOpen: false }"
     class="md:hidden"
     aria-label="{{ trans:strings.main_navigation }}"
+    x-cloak
 >
     <button
         @click.prevent="mobileNavOpen = !mobileNavOpen"
@@ -25,7 +26,6 @@
         class="fixed inset-0 z-10 pt-8 px-8 pb-12 flex flex-col justify-end bg-white"
         x-show="mobileNavOpen"
         x-trap.inert.noscroll="mobileNavOpen"
-        x-cloak
     >
         <ul class="flex flex-col py-2 space-y-4 overflow-auto">
             {{ nav:main max_depth="2" include_home="true" }}
@@ -67,7 +67,6 @@
                             x-ref="subnav"
                             class="flex flex-col items-stretch space-y-2"
                             x-collapse
-                            x-cloak
                         >
                             {{ children }}
                                 <li class="{{ first ?= 'mt-2' }}">

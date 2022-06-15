@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.21 (2022-06-15)
+
+### What's improved
+- Slightly altered no JS experience so users can see the nav on both desktop and mobile. 76966a60 by @robdekort
+
 ## v4.20 (2022-06-14)
 
 ### What's improved
