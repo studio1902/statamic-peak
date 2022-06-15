@@ -1,14 +1,14 @@
 # Changelog
 
-## v4.21 (2022-06-14)
+## v4.21 (2022-06-15)
+
+### What's improved
+- Slightly altered no JS experience so users can see the nav on both desktop and mobile. 76966a60 by @robdekort
+
+## v4.20 (2022-06-14)
 
 ### What's improved
 - Obfuscate email addresses in buttons. c7bfa3a0 by @robdekort
-- Actually included paramater hinting from the previous release. Sorry. f911751b by @robdekort
-
-## v4.20 (2022-06-09)
-
-### What's improved
 - Upgrade to Tailwind CSS 3.1. 03960084 by @robdekort
 - Add Tailwind CSS first-party TypeScript types. 5d2d63be by @robdekort
 - Add partial (required) parameter hinting to common partials for VS Code + Antlers Toolbox . f911751b by @robdekort

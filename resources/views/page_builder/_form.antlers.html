@@ -12,7 +12,7 @@
         {{ partial:typography/p :content="block:text" }}
 
         {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
-        <div x-data="sending">
+        <div x-data="sending" x-cloak>
             {{ form:create :in="form:handle"
                 id="form-{form:handle}"
                 csrf="false"
