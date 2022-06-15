@@ -8,4 +8,4 @@ Peak is an opinionated Starter Kit. It uses a few tools you should be familiar w
 - *[AlpineJS](https://github.com/alpinejs/alpine/)* A minimal JS framework for composing JS behaviour in your markup.
 
 ## Resources
-- *[statamictutorials.com](statamictutorials.com)* is a screencast to learn Statamic.
+- *[statamictutorials.com](https://statamictutorials.com)* is a screencast to learn Statamic.
