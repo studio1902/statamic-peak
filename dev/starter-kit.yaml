@@ -1,5 +1,4 @@
 export_paths:
-  - .env.example
   - .gitignore
   - app/Actions/GenerateSocialImages.php
   - app/Console/Kernel.php
