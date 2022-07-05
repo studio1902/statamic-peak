@@ -39,13 +39,11 @@ export_paths:
   - config/statamic/static_caching.php
   - config/statamic/users.php
   - lang/
+  - public/build
   - public/assets
-  - public/css
   - public/favicons/.gitkeep
-  - public/js
   - public/social_images/.gitkeep
   - public/visuals
-  - public/mix-manifest.json
   - resources/blueprints
   - resources/css/custom.css
   - resources/css/site.css
@@ -60,11 +58,11 @@ export_paths:
   - LICENSE
   - package.json
   - package-lock.json
+  - postcss.config.js
   - tailwind.config.js
   - tailwind.config.peak.js
   - tailwind.config.site.js
   - tailwind.config.typography.js
-  - webpack.mix.js
-  - upgrade-cli-notice.php
+  - vite.config.js
 export_as:
   README.md: README.example.md
