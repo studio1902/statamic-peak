@@ -66,3 +66,4 @@ export_paths:
   - vite.config.js
 export_as:
   README.md: README.example.md
+  .env: .env.example
