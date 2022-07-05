@@ -4,7 +4,6 @@
 
 ### What's new
 - Use Vite instead of Mix. #232 by @robdekort
-- Automatically copy over the `.env.example` to the `.env` when installing the kit.
 - Skip to content component comes in from the top instead of bottom.
 
 ## v4.21 (2022-06-15)
