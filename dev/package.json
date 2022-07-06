@@ -2,7 +2,9 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "watch": "vite",
+    "build": "vite build",
+    "production": "vite build"
   },
   "author": "Studio 1902",
   "license": "MIT",
