@@ -6,7 +6,7 @@ return [
     'form_mail_body_sender'             => 'Děkujeme za vaši zprávu. Budeme vás kontaktovat co nejdříve.',
     'form_mail_closing'                 => 'S přátelským pozdravem',
     'form_mail_from'                    => config('app.name'),
-    'form_mail_greeting'                => 'Dear',
+    'form_mail_greeting'                => 'Vážený',
     'form_mail_logo'                    => 'https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png',
     'form_mail_submitted'               => 'Odesláno',
     'form_mail_title'                   => 'Kontaktní formulář',
@@ -51,13 +51,13 @@ return [
     'menu'                              => 'Menu',
     'nav_close'                         => 'Zavřít navigaci',
     'nav_open'                          => 'Otevřít navigaci',
-    'subnav_close'                      => 'Close sub navigation',
-    'subnav_open'                       => 'Open sub navigation',
+    'subnav_close'                      => 'Zavřít sub navigaci',
+    'subnav_open'                       => 'Otevřít sub navigaci',
     'skip_to_content'                   => 'Přejít na obsah',
 
     // Other
     'no_results'                        => 'Momentálně zde nejsou žádné příspěvky',
-    'no_script'                         => 'Tato webová stránka vyžaduje pro správnou funkci některých částí Javascript. Vaše zkušenosti se mohou lišit.',
+    'no_script'                         => 'Tato webová stránka vyžaduje pro správnou funkci některých částí Javascript. Váš uživatelský požitek se může lišit.',
 
     // Pagination
     'next'                              => 'další',
