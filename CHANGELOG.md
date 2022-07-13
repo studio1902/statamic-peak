@@ -1,5 +1,18 @@
 # Changelog
 
+## v5.1 (2022-07-06)
+
+### What's improved
+- Add aliases to Vite to support Mix commands. d769cdbb by @robdekort
+
+## v5.0 (2022-07-05)
+
+### What's new
+- Use Vite instead of Mix. #232 by @robdekort
+
+### What's improved
+- Skip to content component comes in from the top instead of bottom.
+
 ## v4.21 (2022-06-15)
 
 ### What's improved
