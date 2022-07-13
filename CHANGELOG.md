@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.2 (2022-07-13)
+
+### What's new
+- Czech translations. #233 by @kuldas
+
 ## v5.1 (2022-07-06)
 
 ### What's improved
