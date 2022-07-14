@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.3 (2022-07-14)
+
+### What's fixed
+- Use vite tag instead of mix in social images layout. 6b77d479 by @robdekort
+
 ## v5.2 (2022-07-13)
 
 ### What's new
