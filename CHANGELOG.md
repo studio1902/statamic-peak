@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's fixed
+- Typo in `page_builder.yaml`. #235 by @brendanfalkowski
+
 ## v5.3 (2022-07-14)
 
 ### What's fixed
