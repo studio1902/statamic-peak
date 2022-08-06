@@ -13,7 +13,7 @@
     <picture>
         {{ asset :url="image" }}
             {{ if extension == 'svg' || extension == 'gif' }}
-                <img class="{{ class }}" src="{{ url }}" alt="{{ alt }}" />
+                <img class="{{ class }}" src="{{ url }}" alt="{{ alt | ensure_right('.') | entities }}" />
             {{ else }}
                 <source
                     srcset="
@@ -45,7 +45,7 @@
                         class="{{ class }}"
                     {{ /if }}
                     src="{{ glide:image preset='lg' }}"
-                    alt="{{ alt ensure_right='.' }}"
+                    alt="{{ alt | ensure_right('.') | entities }}"
                     width="{{ image.width }}"
                     height="{{ image.height }}"
                     {{ if lazy }}
