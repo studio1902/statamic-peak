@@ -13,7 +13,14 @@
     <picture>
         {{ asset :url="image" }}
             {{ if extension == 'svg' || extension == 'gif' }}
-                <img class="{{ class }}" src="{{ url }}" alt="{{ alt }}" />
+                <img
+                    class="{{ class }}"
+                    src="{{ url }}"
+                    alt="{{ alt | ensure_right('.') | entities }}"
+                    {{ unless alt }}
+                        aria-hidden="true"
+                    {{ /unless }}
+                />
             {{ else }}
                 <source
                     srcset="
@@ -38,16 +45,19 @@
                     type="{{ image.mime_type }}"
                 >
                 <img
+                    width="{{ image.width }}"
+                    height="{{ image.height }}"
+                    src="{{ glide:image preset='lg' }}"
+                    alt="{{ alt | ensure_right('.') | entities }}"
                     {{ if cover }}
                         class="object-cover w-full h-full {{ class }}"
                         style="object-position: {{ focus | background_position }}"
                     {{ else }}
                         class="{{ class }}"
                     {{ /if }}
-                    src="{{ glide:image preset='lg' }}"
-                    alt="{{ alt ensure_right='.' }}"
-                    width="{{ image.width }}"
-                    height="{{ image.height }}"
+                    {{ unless alt }}
+                        aria-hidden="true"
+                    {{ /unless }}
                     {{ if lazy }}
                         loading="lazy"
                     {{ /if }}

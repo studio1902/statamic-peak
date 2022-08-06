@@ -1,8 +1,17 @@
 # Changelog
 
-## Unreleased
+## v5.4 (2022-08-06)
+
+### What's new
+- Add `entities` modifier on alt text. 6597c4ff by @robdekort
+- Add `aria-hidden="true"` when there's no alt text. 84d8af72 by @robdekort
+
+### What's improved
+- Updated dependencies (Vite 3) 02a4f2d1 by @robdekort
+- Improve file upload styling. #238 by @freshface
 
 ### What's fixed
+- Circumventing an unintended breaking Statamic change (#237) *only* for new users. 7d086aea by @robdekort
 - Typo in `page_builder.yaml`. #235 by @brendanfalkowski
 
 ## v5.3 (2022-07-14)
