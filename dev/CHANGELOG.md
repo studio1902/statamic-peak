@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.4.1 (2022-08-07)
+
+### What's fixed
+- Reset class paramater as well to circumvent an unintended breaking Statamic change (#237) *only* for new users. 23b1c7ef by @robdekort
+
 ## v5.4 (2022-08-06)
 
 ### What's new
