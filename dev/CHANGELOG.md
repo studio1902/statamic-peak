@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.4.2 (2022-08-08)
+
+### What's changed
+- Removed previously needed changes for a reverted breaking Statamic change. 1ad2bf6c by @robdekort
+
 ## v5.4.1 (2022-08-07)
 
 ### What's fixed
