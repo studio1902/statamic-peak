@@ -19,7 +19,7 @@
           x-bind:style="selected == {{ count }} ? 'max-height: ' + $refs.container{{ count }}.scrollHeight + 'px' : ''"
           aria-label="Accordion Body {{ count }}"
         >
-          <div class="py-4 px-5">
+          <div class="pb-4 px-5">
             {{ partial:typography/prose as="article" class="contents" }}
               {{ content }}  
             {{ /partial:typography/prose }}
