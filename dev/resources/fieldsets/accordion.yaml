@@ -6,7 +6,7 @@ fields:
       collapse: false
       previews: false
       sets:
-        new_set:
+        accordion_set:
           display: 'Accordion Item'
           fields:
             -

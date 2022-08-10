@@ -13,34 +13,6 @@ page_builder:
   -
     article:
       -
-        type: set
-        attrs:
-          values:
-            type: accordion
-            replicator:
-              -
-                title: '1111'
-                content:
-                  -
-                    type: paragraph
-                    content:
-                      -
-                        type: text
-                        text: aaaa
-                type: new_set
-                enabled: true
-              -
-                title: '2222'
-                content:
-                  -
-                    type: paragraph
-                    content:
-                      -
-                        type: text
-                        text: bbbb
-                type: new_set
-                enabled: true
-      -
         type: heading
         attrs:
           level: 1
@@ -270,6 +242,49 @@ page_builder:
                 button_type: button
       -
         type: paragraph
+        content:
+          -
+            type: text
+            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolores. Error, quia dolorem fugiat quibusdam eum iure consequuntur numquam consect.'
+      -
+        type: set
+        attrs:
+          values:
+            type: accordion
+            replicator:
+              -
+                title: 'First accordion item'
+                content:
+                  -
+                    type: paragraph
+                    content:
+                      -
+                        type: text
+                        text: 'Sed nisi erat, bibendum facilisis felis nec, maximus elementum est. Phasellus egestas, ante at bibendum porttitor, nulla urna pellentesque arcu, ut pulvinar libero mauris at sapien. Maecenas lacinia arcu et diam venenatis eleifend. Ut vestibulum pharetra diam, eget eleifend diam tincidunt ac.'
+                type: accordion_set
+                enabled: true
+              -
+                title: 'Another accordion item'
+                content:
+                  -
+                    type: paragraph
+                    content:
+                      -
+                        type: text
+                        text: 'Sed nisi erat, bibendum facilisis felis nec, maximus elementum est. Phasellus egestas, ante at bibendum porttitor, nulla urna pellentesque arcu, ut pulvinar libero mauris at sapien. Maecenas lacinia arcu et diam venenatis eleifend. Ut vestibulum pharetra diam, eget eleifend diam tincidunt ac.'
+                type: accordion_set
+                enabled: true
+              -
+                title: 'Third accordion item'
+                content:
+                  -
+                    type: paragraph
+                    content:
+                      -
+                        type: text
+                        text: 'Nulla urna pellentesque arcu, ut pulvinar libero mauris at sapien. Maecenas lacinia arcu et diam venenatis eleifend. Ut vestibulum pharetra diam, eget eleifend diam tincidunt ac.'
+                type: accordion_set
+                enabled: true
     type: article
     enabled: true
 ---
