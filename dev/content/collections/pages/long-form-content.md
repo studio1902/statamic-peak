@@ -13,6 +13,34 @@ page_builder:
   -
     article:
       -
+        type: set
+        attrs:
+          values:
+            type: accordion
+            replicator:
+              -
+                title: '1111'
+                content:
+                  -
+                    type: paragraph
+                    content:
+                      -
+                        type: text
+                        text: aaaa
+                type: new_set
+                enabled: true
+              -
+                title: '2222'
+                content:
+                  -
+                    type: paragraph
+                    content:
+                      -
+                        type: text
+                        text: bbbb
+                type: new_set
+                enabled: true
+      -
         type: heading
         attrs:
           level: 1

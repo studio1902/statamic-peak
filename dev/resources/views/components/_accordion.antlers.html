@@ -1,0 +1,32 @@
+<div class="size-md mb-4">
+  <div class="divide-y border-black" x-data="{ selected: 1 }">
+    {{ replicator }}
+      <div>
+        <h2 class="mt-0 mb-0">
+          <button 
+            type="button" 
+            class="py-4 px-5 bg-white w-full text-left text-2xl text-primary font-bold"
+            @click="selected !== {{ count }} ? selected = {{ count }} : selected = null"
+            :aria-expanded="selected === {{ count }}"
+            aria-label="Accordion Heading {{ count }}"
+          >
+            {{ title }}
+          </button>
+        </h2>
+        <div
+          class="relative overflow-hidden transition-all max-h-0 duration-500"
+          x-ref="container{{ count }}"
+          x-bind:style="selected == {{ count }} ? 'max-height: ' + $refs.container{{ count }}.scrollHeight + 'px' : ''"
+          aria-label="Accordion Body {{ count }}"
+        >
+          <div class="py-4 px-5">
+            {{ partial:typography/prose as="article" class="contents" }}
+              {{ content }}  
+            {{ /partial:typography/prose }}
+          </div>
+        </div>
+      </div>
+    {{ /replicator }}
+  </div>
+</div>
+  
