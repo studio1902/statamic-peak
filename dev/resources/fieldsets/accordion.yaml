@@ -7,7 +7,7 @@ fields:
       previews: false
       sets:
         new_set:
-          display: Item
+          display: 'Accordion Item'
           fields:
             -
               handle: title
