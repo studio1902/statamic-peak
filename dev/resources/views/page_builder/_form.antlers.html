@@ -31,7 +31,7 @@
                     {{# Render the default-styled fields. #}}
                     {{ fields }}
                         <template x-if="{{ show_field }}">
-                            <div class="{{ if input_type == 'hidden' }} hidden {{ /if }} flex flex-col space-y-3
+                            <div class="{{ input_type == 'hidden' ?= 'hidden' }} flex flex-col space-y-3
                                 {{ width == '25' ?= 'md:col-span-3' }}
                                 {{ width == '33' ?= 'md:col-span-4' }}
                                 {{ width == '50' ?= 'md:col-span-6' }}
