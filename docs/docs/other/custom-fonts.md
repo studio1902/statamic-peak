@@ -14,32 +14,32 @@ Now it's time to add the `@font-face` rules to your CSS build. You can put it th
 @layer base {
     @font-face {
         font-family: 'awesome';
-        src: url('/fonts/awesome-regular.woff2') format('woff2'),
-            url('/fonts/awesome-regular.woff') format('woff');
+        src: url('/public/fonts/awesome-regular.woff2') format('woff2'),
+            url('/public/fonts/awesome-regular.woff') format('woff');
         font-weight: 400;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'awesome';
-        src: url('/fonts/awesome-regular-italic.woff2') format('woff2'),
-            url('/fonts/awesome-regular-italic.woff') format('woff');
+        src: url('/public/fonts/awesome-regular-italic.woff2') format('woff2'),
+            url('/public/fonts/awesome-regular-italic.woff') format('woff');
         font-weight: 400;
         font-style: italic;
     }
 
     @font-face {
         font-family: 'awesome';
-        src: url('/fonts/awesome-bold.woff2') format('woff2'),
-            url('/fonts/awesome-bold.woff') format('woff');
+        src: url('/public/fonts/awesome-bold.woff2') format('woff2'),
+            url('/public/fonts/awesome-bold.woff') format('woff');
         font-weight: 700;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'awesome';
-        src: url('/fonts/awesome-bold-italic.woff2') format('woff2'),
-            url('/fonts/awesome-bold-italic.woff') format('woff');
+        src: url('/public/fonts/awesome-bold-italic.woff2') format('woff2'),
+            url('/public/fonts/awesome-bold-italic.woff') format('woff');
         font-weight: 700;
         font-style: italic;
     }
