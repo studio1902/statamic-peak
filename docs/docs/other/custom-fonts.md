@@ -18,6 +18,7 @@ Now it's time to add the `@font-face` rules to your CSS build. You can put it th
             url('/public/fonts/awesome-regular.woff') format('woff');
         font-weight: 400;
         font-style: normal;
+        font-display: swap;
     }
 
     @font-face {
@@ -26,6 +27,7 @@ Now it's time to add the `@font-face` rules to your CSS build. You can put it th
             url('/public/fonts/awesome-regular-italic.woff') format('woff');
         font-weight: 400;
         font-style: italic;
+        font-display: swap;
     }
 
     @font-face {
@@ -34,6 +36,7 @@ Now it's time to add the `@font-face` rules to your CSS build. You can put it th
             url('/public/fonts/awesome-bold.woff') format('woff');
         font-weight: 700;
         font-style: normal;
+        font-display: swap;
     }
 
     @font-face {
@@ -42,6 +45,7 @@ Now it's time to add the `@font-face` rules to your CSS build. You can put it th
             url('/public/fonts/awesome-bold-italic.woff') format('woff');
         font-weight: 700;
         font-style: italic;
+        font-display: swap;
     }
 }
 ```
