@@ -6,18 +6,22 @@
 <!-- /snippets/_seo.antlers.html -->
 {{# Page title #}}
 <title>
-    {{ yield:seo_title }}
-    {{ seo_title ? seo_title : title }}
-    {{ seo:title_separator ? seo:title_separator : " &#124; " }}
-    {{ seo:change_page_title | where('collection', {collection}) }}
-        {{ if what_to_add == 'collection_title' }}
-            {{ collection:title }}
-        {{ elseif what_to_add == 'custom_text' }}
-            {{ custom_text }}
-        {{ /if }}
+     {{ if seo_title || yield:seo_title }}
+        {{ yield:seo_title }}
+        {{ seo_title }}
+    {{ else }}
+        {{ title }}
         {{ seo:title_separator ? seo:title_separator : " &#124; " }}
-    {{ /seo:change_page_title }}
-    {{ seo:site_name ? seo:site_name : config:app:name }}
+        {{ seo:change_page_title | where('collection', {collection}) }}
+            {{ if what_to_add == 'collection_title' }}
+                {{ collection:title }}
+            {{ elseif what_to_add == 'custom_text' }}
+                {{ custom_text }}
+            {{ /if }}
+            {{ seo:title_separator ? seo:title_separator : " &#124; " }}
+        {{ /seo:change_page_title }}
+        {{ seo:site_name ? seo:site_name : config:app:name }}
+    {{ /if }}
 </title>
 
 {{# Page description #}}
