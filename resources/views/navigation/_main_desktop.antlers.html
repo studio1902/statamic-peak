@@ -6,7 +6,7 @@
 <!-- /navigation/_main_desktop.antlers.html -->
 <nav class="hidden md:block" aria-label="{{ trans:strings.main_navigation }}">
     <ul class="flex items-center space-x-8">
-        {{ nav:main max_depth="2" include_home="true" }}
+        {{ nav:main max_depth="2" include_home="true" select="title|url" }}
             <li
                 {{ if children }}
                     x-data="{ subnavOpen: false }"

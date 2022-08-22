@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.5 (2022-08-22)
+
+### What's improved
+- Improve nav performance in navs. #243 by @freshface
+- Hide fields where input_type == 'hidden'. #245 by @freshface
+- Do not add site title when using a custom SEO title on an entry. #246 by @freshface
+
 ## v5.4.2 (2022-08-08)
 
 ### What's changed

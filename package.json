@@ -21,12 +21,12 @@
     "@tailwindcss/typography": "^0.5.4",
     "autoprefixer": "10.4.8",
     "glob-all": "^3.3.0",
-    "laravel-vite-plugin": "^0.5.3",
+    "laravel-vite-plugin": "^0.5.4",
     "postcss": "^8.4.16",
     "postcss-focus-visible": "^7.1.0",
     "postcss-import": "^14.1.0",
     "resolve-url-loader": "^5.0.0",
     "tailwindcss": "^3.1.8",
-    "vite": "^3.0.4"
+    "vite": "^3.0.9"
   }
 }
