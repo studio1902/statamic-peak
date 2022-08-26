@@ -16,14 +16,14 @@ Make sure you update your `.env` file according to the the `.env.example`. Peak 
 
 The starter kit comes bundles with compiled assets. Run `npm i && npm run dev` to compile your frontend assets. Use `npm run watch` to watch and compile whenever you made any changes.
 
-Since we use the Tailwind CSS JIT compiler, as soon as you make changes you need to compile them yourself. Compilation is configured in `webpack.mix.js`. Make sure you add your hostname to your `.env` file (`APP_URL`) as it's being used for Browsersync in `webpack.mix.js`.
+Since we use the Tailwind CSS JIT compiler, as soon as you make changes you need to compile them yourself. Compilation is configured in `vite.config.js`. Make sure you add your hostname to your `.env` file (`APP_URL`) as it's being used for the Vite dev server.
 
 ```bash
-npm i && npm run watch (or npm run dev)
+npm i && npm run watch
 ```
 
 To compile for production run this (on your server). Since Peak uses the Tailwind CSS JIT compiler this won't purge anything, but it will minify your assets:
 
 ```bash
-npm run production
+npm run build
 ```
