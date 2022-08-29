@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.6.1 (2022-08-29)
+
+### What's fixed
+- Revert changing search snippet truncation. #55549864 by @robdekort
+
 ## v5.6 (2022-08-29)
 
 ### What's new
