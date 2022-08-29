@@ -59,3 +59,9 @@ fields:
       container: assets
       enable_input_rules: true
       enable_paste_rules: true
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      previews: true
+      antlers: false
+      remove_empty_nodes: trim

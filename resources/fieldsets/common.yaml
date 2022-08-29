@@ -13,14 +13,14 @@ fields:
       listable: hidden
       display: Image
   -
-      handle: entry
-      field:
-        max_items: 1
-        mode: default
-        type: entries
-        localizable: true
-        listable: false
-        display: Entry
+    handle: entry
+    field:
+      max_items: 1
+      mode: default
+      type: entries
+      localizable: true
+      listable: false
+      display: Entry
   -
     handle: text_rich
     field:
@@ -47,6 +47,15 @@ fields:
       localizable: true
       listable: hidden
       display: Text
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      always_show_set_button: false
+      previews: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      remove_empty_nodes: trim
   -
     handle: text_basic
     field:
@@ -71,6 +80,15 @@ fields:
       localizable: true
       listable: hidden
       display: Text
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      always_show_set_button: false
+      previews: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      remove_empty_nodes: trim
   -
     handle: text_plain
     field:

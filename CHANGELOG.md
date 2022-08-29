@@ -1,5 +1,14 @@
 # Changelog
 
+## v5.6 (2022-08-29)
+
+### What's new
+- Remove empty nodes on Bard fields. #5e8311c4 by @robdekort
+- Use `bard_text` modifiers to simplify generating meta descriptions and search result snippets. #55549864 by @robdekort
+
+### What's fixed
+- Tpyo's in picture partial. #248 by @websmyth
+
 ## v5.5 (2022-08-22)
 
 ### What's improved
