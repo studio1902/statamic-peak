@@ -44,7 +44,7 @@
                         {{ elseif page_builder }}
                             {{ page_builder limit="1" }}
                                 {{ if article }}
-                                    {{ article | raw | where('type', 'paragraph') | bard_text | trim | safe_truncate(157, '...') }}
+                                    {{ article | raw | where('type', 'paragraph') | bard_text | trim | safe_truncate(180, '...') }}
                                 {{# Or a field called `text`. #}}
                                 {{ elseif text }}
                                     {{ text | trim | safe_truncate(180, '...') }}
