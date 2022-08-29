@@ -6,18 +6,16 @@
 {{ seo:collection_defaults | where('collection', {collection}) }}
     {{ if fallback == 'field' }}
         {{ scope:field }}
-            {{ field[field_handle] | strip_tags | trim | truncate(157, '...') }}
+            {{ field[field_handle] | strip_tags | trim | safe_truncate(157, '...') }}
         {{ /scope:field }}
     {{ elseif fallback == 'custom_text' }}
         {{ custom_text }}
     {{ elseif fallback == 'page_builder' }}
         {{ page_builder limit="1" }}
             {{ if article }}
-                {{ article | where('type', 'text') | limit(1) }}
-                    {{ text | strip_tags | trim | truncate(157, '...') }}
-                {{ /article }}
+                {{ article | raw | where('type', 'paragraph') | bard_text | trim | safe_truncate(157, '...') }}
             {{ elseif text }}
-                {{ text | trim | truncate(157, '...') }}
+                {{ text | trim | safe_truncate(157, '...') }}
             {{ /if }}
         {{ /page_builder }}
     {{ /if }}
