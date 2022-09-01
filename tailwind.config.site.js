@@ -89,6 +89,10 @@ module.exports = {
             fontFamily: theme('fontFamily.sans'),
             // fontFamily: theme('fontFamily.serif'),
         },
+        'mark': {
+          backgroundColor: theme('colors.primary.DEFAULT'),
+          color: theme('colors.white')
+        },
       })
     }),
 
