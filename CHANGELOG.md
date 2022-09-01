@@ -1,20 +1,25 @@
 # Changelog
 
+## v5.8 (2022-09-01)
+
+### What's new
+- Add the ability to inject third party scripts behind the cookie banner. #252 by @robdekort
+
 ## v5.7 (2022-09-01)
 
 ### What's improved
-- Use `mark` modifier on search result snippet to highlight query hits. #44df2034 by @robdekort
+- Use `mark` modifier on search result snippet to highlight query hits. 44df2034 by @robdekort
 
 ## v5.6.1 (2022-08-29)
 
 ### What's fixed
-- Revert changing search snippet truncation. #55549864 by @robdekort
+- Revert changing search snippet truncation. 55549864 by @robdekort
 
 ## v5.6 (2022-08-29)
 
 ### What's new
-- Remove empty nodes on Bard fields. #5e8311c4 by @robdekort
-- Use `bard_text` modifiers to simplify generating meta descriptions and search result snippets. #55549864 by @robdekort
+- Remove empty nodes on Bard fields. 5e8311c4 by @robdekort
+- Use `bard_text` modifiers to simplify generating meta descriptions and search result snippets. 55549864 by @robdekort
 
 ### What's fixed
 - Tpyo's in picture partial. #248 by @websmyth

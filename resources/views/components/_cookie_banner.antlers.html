@@ -21,14 +21,32 @@
         cookieConsentDate: $persist(null).as('cookieBannerConsentDate'),
         analyticsStorage: $persist(false).as('cookieBannerAnalyticsStorage'),
         adStorage: $persist(false).as('cookieBannerAdStorage'),
+        thirdParty: $persist(false).as('cookieBannerThirdParty'),
     }"
-    {{# Update gtag on state change. #}}
     x-effect="
-        $store.cookieBanner.consent
-            ? gtag('consent', 'update', {
-                'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
-                'ad_storage': (adStorage ? 'granted' : 'denied') })
-            : ''
+        {{# Update gtag on state change. #}}
+        {{ if seo:tracker_type == 'gtag' || seo:tracker_type == 'gtm'}}
+            $store.cookieBanner.consent
+                ? gtag('consent', 'update', {
+                    'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
+                    'ad_storage': (adStorage ? 'granted' : 'denied') })
+                : ''
+        {{# Fire other scripts upon consent. #}}
+        {{ elseif seo:tracker_type == 'scripts' }}
+            if ($store.cookieBanner.consent && thirdParty) {
+                {{ seo:scripts }}
+                    {{ script_fragments }}
+                        let script{{ index }} = document.createElement('script')
+                        {{ if type == 'script_tag' }}
+                            script{{ index }}.src = '{{ source }}'
+                        {{ else }}
+                            script{{ index }}.text = '{{ inline_script | add_slashes | entities | collapse_whitespace }}'
+                        {{ /if }}
+                        document.head.appendChild(script{{ index }})
+                    {{ /script_fragments }}
+                {{ /seo:scripts }}
+            }
+        {{ /if }}
     "
     {{# Hide when banner is interacted with, check date for optional consent revoke. If so set state back to initial state. #}}
     x-init="
@@ -66,13 +84,15 @@
         </label>
 
         {{# x-model analyticsStorage checkbox. #}}
-        <label class="inline-flex items-center">
-            <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
-            <span class="flex flex-col">
-                <span class="font-bold text-xs">{{ trans:strings.cookie_analytics }}</span>
-                <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
-            </span>
-        </label>
+        {{ unless seo:tracker_type == 'scripts' }}
+            <label class="inline-flex items-center">
+                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
+                <span class="flex flex-col">
+                    <span class="font-bold text-xs">{{ trans:strings.cookie_analytics }}</span>
+                    <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
+                </span>
+            </label>
+        {{ /unless }}
 
         {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
@@ -81,6 +101,17 @@
                 <span class="flex flex-col">
                     <span class="font-bold text-xs">{{ trans:strings.cookie_ads }}</span>
                     <span class="text-xs text-neutral/75">{{ trans:strings.cookie_ads_explanation }}</span>
+                </span>
+            </label>
+        {{ /if }}
+
+        {{# x-model thirdParty checkbox only when scripts is being used. #}}
+        {{ if seo:tracker_type == 'scripts' }}
+            <label class="inline-flex items-center">
+                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="third_party" x-model="thirdParty">
+                <span class="flex flex-col">
+                    <span class="font-bold text-xs">{{ trans:strings.cookie_third_party }}</span>
+                    <span class="text-xs text-neutral/75">{{ trans:strings.cookie_third_party_explanation }}</span>
                 </span>
             </label>
         {{ /if }}
