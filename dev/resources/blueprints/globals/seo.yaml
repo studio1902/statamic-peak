@@ -630,6 +630,7 @@ sections:
                             - sometimes
                           if:
                             type: 'equals script_tag'
+                          instructions: 'The scripts tag `source` attribute. A URL.'
                       -
                         handle: defer
                         field:
@@ -644,6 +645,7 @@ sections:
                           always_save: false
                           if:
                             type: 'equals script_tag'
+                          instructions: 'If the script tag should be deferred.'
                       -
                         handle: async
                         field:
@@ -658,11 +660,12 @@ sections:
                           always_save: false
                           if:
                             type: 'equals script_tag'
+                          instructions: 'If the script tag should load asynchronous.'
                       -
                         handle: inline_script
                         field:
                           theme: material
-                          mode: htmlmixed
+                          mode: javascript
                           mode_selectable: false
                           indent_type: tabs
                           indent_size: 4
@@ -681,6 +684,7 @@ sections:
                           validate:
                             - required
                             - sometimes
+                          instructions: 'The inline script tag contents (Javascript). Remove `<script>` and `</script>` tags.'
           display: Scripts
           type: replicator
           icon: replicator
