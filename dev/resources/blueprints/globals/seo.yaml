@@ -699,7 +699,7 @@ sections:
       -
         handle: google_analytics
         field:
-          width: 25
+          width: 50
           display: 'Tracking ID'
           input_type: text
           type: text
@@ -714,7 +714,7 @@ sections:
         handle: anonymize_ip
         field:
           type: toggle
-          width: 25
+          width: 50
           listable: false
           default: true
           display: "Anonymize IP's"
