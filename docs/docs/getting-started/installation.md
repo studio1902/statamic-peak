@@ -27,3 +27,12 @@ To compile for production run this (on your server). Since Peak uses the Tailwin
 ```bash
 npm run build
 ```
+## README
+
+Peak ships with a README file you can use. It features:
+
+* Installation instructions
+* A place to dump your non sensitive `.env` variables
+* An example `.env.` for production.
+* Nginx configuration for static resource caching.
+* [Deploy scripts](/other/deployment-script.html) for Ploi and Forge.
