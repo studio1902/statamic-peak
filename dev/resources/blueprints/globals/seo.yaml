@@ -614,11 +614,11 @@ sections:
                           visibility: visible
                           always_save: false
                       -
-                        handle: url
+                        handle: source
                         field:
                           input_type: url
                           antlers: false
-                          display: URL
+                          display: Source
                           type: text
                           icon: text
                           listable: hidden
@@ -628,6 +628,34 @@ sections:
                           validate:
                             - required
                             - sometimes
+                          if:
+                            type: 'equals script_tag'
+                      -
+                        handle: defer
+                        field:
+                          default: false
+                          display: Defer
+                          type: toggle
+                          icon: toggle
+                          width: 50
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          always_save: false
+                          if:
+                            type: 'equals script_tag'
+                      -
+                        handle: async
+                        field:
+                          default: false
+                          display: Async
+                          type: toggle
+                          icon: toggle
+                          width: 50
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          always_save: false
                           if:
                             type: 'equals script_tag'
                       -
