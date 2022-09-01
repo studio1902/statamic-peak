@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.7 (2022-09-01)
+
+### What's improved
+- Use `mark` modifier on search result snippet to highlight query hits. #44df2034 by @robdekort
+
 ## v5.6.1 (2022-08-29)
 
 ### What's fixed
