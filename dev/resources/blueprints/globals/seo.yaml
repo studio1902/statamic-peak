@@ -39,7 +39,7 @@ sections:
           localizable: true
           listable: hidden
           display: 'Website title'
-          instructions: 'The title for the website. Defaults to Laravel''s App Name.'
+          instructions: "The title for the website. Defaults to Laravel's App Name."
           instructions_position: below
           width: 66
       -
@@ -132,7 +132,7 @@ sections:
         handle: section_description
         field:
           type: section
-          instructions: 'Set fallback data per collection to use as meta, OG and Twitter descriptions when users don''t fill in those fields.'
+          instructions: "Set fallback data per collection to use as meta, OG and Twitter descriptions when users don't fill in those fields."
           display: Descriptions
       -
         handle: collection_defaults
@@ -459,7 +459,7 @@ sections:
         handle: section_privacy_trackers
         field:
           type: section
-          instructions: 'Configure privacy friendly trackers that don''t require a cookie notification.'
+          instructions: "Configure privacy friendly trackers that don't require a cookie notification."
           display: 'Privacy Friendly Trackers'
       -
         handle: use_fathom
@@ -530,11 +530,15 @@ sections:
           if:
             use_cloudflare_web_analytics: 'equals true'
       -
-        handle: section_google_trackers
+        handle: section_tracker_consent
         field:
           type: section
-          instructions: 'Configure Google trackers and an optional cookie notification.'
-          display: 'Google Trackers'
+          instructions: 'Configure Google trackers and scripts and optionally inject them after cookie consent.'
+          display: 'Tracker consent'
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          always_save: false
       -
         handle: tracker_type
         field:
@@ -542,19 +546,164 @@ sections:
             none: None
             gtag: 'Google Analytics'
             gtm: 'Google Tag Manager'
+            scripts: Scripts
           default: none
           type: button_group
-          instructions: 'The type of Google Tracker you want added on each page.'
+          instructions: 'The type of tracking you want added on each page.'
           listable: false
-          display: 'Google Tracker type'
+          display: 'Tracker type'
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: scripts
+        field:
+          collapse: true
+          previews: true
+          sets:
+            script:
+              display: Script
+              fields:
+                -
+                  handle: identifier
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Identifier
+                    type: text
+                    icon: text
+                    instructions: 'A visual CP identifier.'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: false
+                    validate:
+                      - required
+                      - sometimes
+                -
+                  handle: script_fragments
+                  field:
+                    mode: stacked
+                    min_rows: 1
+                    add_row: 'Add script fragment'
+                    reorderable: true
+                    display: 'Script fragments'
+                    type: grid
+                    replicator_preview: false
+                    icon: grid
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: false
+                    validate:
+                      - required
+                      - sometimes
+                    fields:
+                      -
+                        handle: type
+                        field:
+                          options:
+                            script_tag: 'Script tag'
+                            inline_script: 'Inline script'
+                          default: script_tag
+                          display: Type
+                          type: button_group
+                          icon: button_group
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          always_save: false
+                      -
+                        handle: source
+                        field:
+                          input_type: url
+                          antlers: false
+                          display: Source
+                          type: text
+                          icon: text
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          always_save: false
+                          validate:
+                            - required
+                            - sometimes
+                          if:
+                            type: 'equals script_tag'
+                          instructions: 'The scripts tag `source` attribute. A URL.'
+                      -
+                        handle: defer
+                        field:
+                          default: false
+                          display: Defer
+                          type: toggle
+                          icon: toggle
+                          width: 50
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          always_save: false
+                          if:
+                            type: 'equals script_tag'
+                          instructions: 'If the script tag should be deferred.'
+                      -
+                        handle: async
+                        field:
+                          default: false
+                          display: Async
+                          type: toggle
+                          icon: toggle
+                          width: 50
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          always_save: false
+                          if:
+                            type: 'equals script_tag'
+                          instructions: 'If the script tag should load asynchronous.'
+                      -
+                        handle: inline_script
+                        field:
+                          theme: material
+                          mode: javascript
+                          mode_selectable: false
+                          indent_type: tabs
+                          indent_size: 4
+                          key_map: default
+                          line_numbers: true
+                          line_wrapping: true
+                          display: 'Inline script'
+                          type: code
+                          icon: code
+                          listable: hidden
+                          instructions_position: above
+                          visibility: visible
+                          always_save: false
+                          if:
+                            type: 'equals inline_script'
+                          validate:
+                            - required
+                            - sometimes
+                          instructions: 'The inline script tag contents (Javascript). Remove `<script>` and `</script>` tags.'
+          display: Scripts
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - 'required_if:tracker_type,scripts'
+          if:
+            tracker_type: 'equals scripts'
       -
         handle: google_analytics
         field:
-          width: 25
+          width: 50
           display: 'Tracking ID'
           input_type: text
           type: text
-          instructions: '*Note: if you don''t anonymize IP''s you need cookie consent in the EU.'
+          instructions: "*Note: if you don't anonymize IP's you need cookie consent in the EU."
           instructions_position: below
           listable: hidden
           validate:
@@ -565,10 +714,10 @@ sections:
         handle: anonymize_ip
         field:
           type: toggle
-          width: 25
+          width: 50
           listable: false
           default: true
-          display: 'Anonymize IP''s'
+          display: "Anonymize IP's"
           instructions: 'Enable this to be exempt from needing cookie consent.'
           instructions_position: below
           if:
@@ -590,11 +739,10 @@ sections:
         handle: use_cookie_banner
         field:
           type: toggle
-          instructions: 'Enable the cookie banner. Make sure you load all tracking scripts via GTM. Uses the consent api: https://developers.google.com/tag-manager/consent'
+          instructions: 'Enable the cookie banner. When you use `Google Analytics` or `Google Tag Manager`, make sure you load all tracking scripts via their service as in this case the banner uses the Google Consent API: https://developers.google.com/tag-manager/consent. When you use `Scripts`, all your scripts will be injected after consent.'
           instructions_position: below
           listable: false
           display: 'Cookie banner'
-          width: 50
           if:
             tracker_type: 'not none'
       -
