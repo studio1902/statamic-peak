@@ -185,8 +185,19 @@
     {{ elseif seo:tracker_type == 'gtag' }}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ seo:google_analytics }}"></script>
         <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('set', new Date());gtag('config', '{{ seo:google_analytics }}' {{ if seo:anonymize_ip }}, {'anonymize_ip': true}{{ /if }});</script>
+    {{ elseif seo:tracker_type == 'scripts' && !seo:use_cookie_banner }}
+        {{ seo:scripts }}
+            {{ script_fragments }}
+                {{ if type == 'script_tag' }}
+                    <script {{ async ?= 'async' }} {{ defer ?= 'defer' }} src="{{ source }}"></script>
+                {{ else }}
+                    <script>{{ inline_script }}</script>
+                {{ /if }}
+            {{ /script_fragments }}
+        {{ /seo:scripts }}
     {{ /if }}
-    {{ if seo:use_cookie_banner }}
+
+    {{ if seo:use_cookie_banner && (seo:tracker_type == 'gtm' || seo:tracker_type == 'gtag') }}
         <script>
             gtag('consent', 'default', {
                 'ad_storage': 'denied',
