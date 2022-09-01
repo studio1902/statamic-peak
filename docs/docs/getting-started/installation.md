@@ -27,7 +27,7 @@ To compile for production run this (on your server). Since Peak uses the Tailwin
 ```bash
 npm run build
 ```
-## README
+## README and deployment
 
 Peak ships with a README file you can use. It features:
 
