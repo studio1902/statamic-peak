@@ -37,6 +37,12 @@ When you use Google Analytics or Google Tag Manager you can enable the cookie co
 
 Users can specify the type of consent they give (analytics, marketing or both). When consent is given a link will be added to the footer for users to reset their consent.
 
-The cookie banner only blocks Google scripts since it uses the consent API, so if you really want to be a marketing-script asshole and bug your users with a Facebook pixel or Hotjar, you can be GDPR compliant by running all those scripts through GTM.
+The cookie banner only blocks Google scripts since it uses the consent API, so if you really want to be a marketing-script-abuser and bug your users with a Facebook pixel or Hotjar, you can be GDPR compliant by running all those scripts through GTM.
 
 > Note: tracking and cookie consent by default only work on the `production` environment. However you can tweak this from the `SEO` global.
+
+## Scripts and consent
+
+If you don't use any form of Google tracking: great job! You can still load in scripts. Set the `Tracker type` to `Scripts` and add your scripts by adding script fragments. The scripts will be loaded in the document head on page load.
+
+When you turn on the cookie banner they will be injected using Javascript only when the user has given consent.
