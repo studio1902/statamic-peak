@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.9 (2022-09-02)
+
+### What's improved
+- Add the option to skip mounting a collection in `php please peak:add-collection`. 796c33e4 by @robdekort
+
 ## v5.8 (2022-09-01)
 
 ### What's new
