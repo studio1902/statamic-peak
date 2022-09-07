@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.10 (2022-09-07)
+
+### What's improved
+- Fallback to default 404 entry when you haven't published the translations in a multisite environment. #253 by @freshface
+
 ## v5.9 (2022-09-02)
 
 ### What's improved
