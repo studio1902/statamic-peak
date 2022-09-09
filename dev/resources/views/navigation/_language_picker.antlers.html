@@ -5,6 +5,12 @@
 #}}
 
 <!-- /navigation/_language_picker.antlers.html -->
+{{ totalOtherLanguages = 0 }}
+{{ locales all="false" self="false"  }}
+    {{ totalOtherLanguages += 1 }}
+{{ /locales }}
+
+{{ if totalOtherLanguages >= 1 }}
 <li
     x-data="{ languagePickerOpen: false }"
     @keyup.escape.stop.prevent="languagePickerOpen = false"
@@ -37,7 +43,7 @@
         @click.outside="languagePickerOpen = false"
         x-transition
     >
-        {{ locales all="true" self="false"  }}
+        {{ locales self="false"  }}
             <li>
                 <a
                     href="{{ permalink }}"
@@ -50,4 +56,5 @@
         {{ /locales }}
     </ul>
 </li>
+{{ /if }}
 <!-- End: /navigation/_language_picker.antlers.html -->
