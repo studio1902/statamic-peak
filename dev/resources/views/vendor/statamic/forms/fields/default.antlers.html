@@ -6,7 +6,7 @@
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}"
     :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    :aria-describedBy="id"
+    aria-describedBy="{{ handle }}"
     {{ if character_limit }}maxlength="{{ character_limit }}"{{ /if }}
     {{ old ?= 'value="{old}"' }}
     {{ js_attributes }}

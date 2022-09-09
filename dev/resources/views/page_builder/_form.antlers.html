@@ -51,12 +51,12 @@
                                     </label>
                                 {{ /unless }}
 
-                                <div x-data="{ id: $id('error-label') }" class="flex flex-col space-y-2">
+                                <div class="flex flex-col space-y-2">
                                     {{ field }}
 
                                     {{# Display error label when there is a validation error with the name field. #}}
                                     <template x-if="errors.{{ handle }}">
-                                        <span class="text-red-800 text-sm font-bold" :id="id" x-text="errors.{{ handle}}"></span>
+                                        <span class="text-red-800 text-sm font-bold" id="{{ handle }}" x-text="errors.{{ handle}}"></span>
                                     </template>
                                 </div>
 

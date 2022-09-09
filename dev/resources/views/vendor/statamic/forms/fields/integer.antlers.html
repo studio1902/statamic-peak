@@ -7,7 +7,7 @@
     name="{{ handle }}"
     type="number"
     :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    :aria-describedBy="id"
+    aria-describedBy="{{ handle }}"
     {{ old ?= 'value="{old}"' }}
     {{ js_attributes }}
 />
