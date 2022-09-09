@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.11 (2022-09-09)
+
+### What's improved
+- Remove unnecessary alpine logic for error labels. 745f2427 by @freshface and @robdekort
+
 ## v5.10 (2022-09-07)
 
 ### What's improved
