@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.12 (2022-09-09)
+
+### What's improved
+- Move the toolbar to the bottom of the screen. #254 by @freshface
+
 ## v5.11 (2022-09-09)
 
 ### What's improved
