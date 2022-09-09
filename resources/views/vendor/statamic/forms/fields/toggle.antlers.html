@@ -1,7 +1,7 @@
 <label
     class="inline-flex items-center"
     :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    :aria-describedBy="id"
+    aria-describedBy="{{ handle }}"
 >
     <input type="hidden" name="{{ handle }}" value="0">
     <input

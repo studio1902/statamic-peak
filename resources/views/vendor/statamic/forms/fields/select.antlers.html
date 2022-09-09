@@ -5,7 +5,7 @@
     :class="{ 'border-red-600 focus-visible:border-red-600': errors.{{ handle }} }"
     name="{{ handle }}{{ multiple ?= "[]" }}"
     :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    :aria-describedBy="id"
+    aria-describedBy="{{ handle }}"
     {{ multiple ?= "multiple" }}
     {{ js_attributes }}
 >
