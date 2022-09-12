@@ -5,13 +5,13 @@ email:
     to: info@site.com
     from: info@site.com
     reply_to: '{{ email }}'
-    subject: 'Contact form received'
+    subject: '{{ trans:strings.form_subject_received }}'
     html: email/form_owner
     text: email/form_owner_text
   -
     to: '{{ email }}'
     from: info@site.com
     reply_to: info@site.com
-    subject: 'Contact form sent'
+    subject: '{{ trans:strings.form_subject_sent }}'
     html: email/form_sender
     text: email/form_sender_text
