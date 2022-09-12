@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.14 (2022-09-12)
+
+### What's improved
+- Localize contact form mail subject. 074d30ac by @robdekort
+
 ## v5.13 (2022-09-12)
 
 ### What's new

@@ -12,6 +12,8 @@ return [
     'form_mail_title'                   => 'Contactformulier',
     'form_mail_url'                     => config('app.url'),
     'form_send'                         => 'Verstuur',
+    'form_subject_received'             => 'Contactformulier ontvangen',
+    'form_subject_sent'                 => 'Contactformulier verzonden',
     'form_success'                      => 'Bedankt voor je bericht.',
 
     // Cookie banner
