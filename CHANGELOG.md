@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.13 (2022-09-12)
+
+### What's new
+- Add vanity redirect option. 89a42a12 by @robdekort
+
 ## v5.12 (2022-09-09)
 
 ### What's improved
