@@ -5,7 +5,11 @@
 
 {{# Redirect if current_url is in the Redirects global. #}}
 {{ redirects:redirects | where('url_old', {current_uri}) }}
-    {{ redirect to="{entry:url}" response="{response}" }}
+    {{ if internal_url }}
+        {{ redirect :to="internal_url:url" response="{response}" }}
+    {{ elseif external_url }}
+        {{ redirect :to="external_url" response="{response}" }}
+    {{ /if }}
 {{ /redirects:redirects }}
 
 <!-- /errors/404.antlers.html -->

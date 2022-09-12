@@ -6,7 +6,7 @@ sections:
         handle: section_redirects
         field:
           type: section
-          instructions: 'Redirect URL''s *only* when a 404 error hits.'
+          instructions: "Redirect URL's *only* when a 404 error hits."
           display: Redirects
           listable: hidden
       -
@@ -22,16 +22,30 @@ sections:
                 listable: hidden
                 placeholder: /old-url
                 antlers: false
-                width: 33
+                width: 25
                 validate:
                   - required
             -
-              handle: entry
+              handle: internal_url
               field: common.entry
               config:
-                display: 'New URL'
-                instructions: 'Select the new URL'
-                width: 33
+                display: 'Internal URL'
+                instructions: 'Select the new URL.'
+                width: 25
+            -
+              handle: external_url
+              field:
+                input_type: text
+                antlers: false
+                display: 'External URL'
+                instructions: 'Set an external URL for vanity redirects.'
+                type: text
+                icon: text
+                width: 25
+                listable: hidden
+                instructions_position: above
+                visibility: visible
+                always_save: false
             -
               handle: response
               field:
@@ -50,7 +64,7 @@ sections:
                 icon: select
                 instructions: 'The HTTP response code'
                 listable: hidden
-                width: 33
+                width: 25
           mode: table
           reorderable: true
           display: Redirects
@@ -59,3 +73,6 @@ sections:
           listable: hidden
           localizable: true
           add_row: 'Add redirect'
+          instructions_position: above
+          visibility: visible
+          always_save: false
