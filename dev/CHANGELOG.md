@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.15 (2022-09-13)
+
+### What's improved
+- Force prose first / last children to have get mt-0 / mb-0. ecd234f9 by @robdekort
+
 ## v5.14 (2022-09-12)
 
 ### What's improved
