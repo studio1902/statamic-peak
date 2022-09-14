@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.15.1 (2022-09-14)
+
+### What's improved
+- Clean up the TW typography CSS added in ecd234f9. bbf46622 by @robdekort
+
 ## v5.15 (2022-09-13)
 
 ### What's improved

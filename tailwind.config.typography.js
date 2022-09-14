@@ -18,10 +18,10 @@ module.exports = {
               marginTop: '0em !important',
               marginBottom: '0em !important',
             },
-            '.prose :where(.prose > div > :first-child):not(:where([class~="not-prose"] *))': {
+            ':where(.prose > div > :first-child)': {
               marginTop: '0 !important',
             },
-            '.prose :where(.prose > div > :last-child):not(:where([class~="not-prose"] *))': {
+            ':where(.prose > div > :last-child)': {
               marginBottom: '0 !important',
             },
             '.not-prose': {
