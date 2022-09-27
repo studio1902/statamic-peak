@@ -20,7 +20,7 @@ class AddSet extends Command
     *
     * @var string
     */
-    protected $name = 'peak:add-set';
+    protected $name = 'statamic:peak:add-set';
 
      /**
      * The console command description.

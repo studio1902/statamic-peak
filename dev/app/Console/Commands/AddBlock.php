@@ -20,7 +20,7 @@ class AddBlock extends Command
     *
     * @var string
     */
-    protected $name = 'peak:add-block';
+    protected $name = 'statamic:peak:add-block';
 
      /**
      * The console command description.
