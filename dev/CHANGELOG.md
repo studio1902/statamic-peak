@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.16 (2022-09-27)
+
+### What's improved
+- Reset class parameter on buttons to avoid collissions. 9a53c281 by @robdekort
+- Wait for the network being idle when generating social images to make sure assets are loaded. e94725f2 by @robdekort
+
 ## v5.15.1 (2022-09-14)
 
 ### What's improved
