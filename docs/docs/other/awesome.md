@@ -9,6 +9,7 @@ This is a collection ofo (alphabetically ordered) sites made with Statamic using
 * [1902.studio](https://1902.studio) by [Studio 1902](https://1902.studio)
 * [Aruba Watersports Center](https://arubawatersportscenter.com) by [Van Nut](https://vannut.nl)
 * [buckettlaw.co.nz](https://buckettlaw.co.nz) by [Josh Tristram](https://joshtristram.com)
+* [buijstandartsen.nl](https://buijstandartsen.nl) by [Sythe Veenje](https://sythe.nl)
 * [crazyceramic.de](https://www.crazyceramic.de) by [klickreflex](https://twitter.com/klickreflex)
 * [codegorilla.nl](https://codegorilla.nl)  by [Studio 1902](https://studio1902.nl) & [Merkactivisten](https://merkactivisten.nl)
 * [eensamen050.nl](https://eensamen050.nl) by [Studio 1902](https://studio1902.nl)
