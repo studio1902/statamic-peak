@@ -37,7 +37,7 @@ class ClearSite extends Command
      */
     public function handle()
     {
-        $clear_site = ($this->confirm('Are you sure you want to clear all default Peak content?', true)) ? true : false;
+        $clear_site = ($this->confirm('Do you want to clear all default Peak content?', true)) ? true : false;
 
         if ($clear_site) {
             $this->trashAssets();
