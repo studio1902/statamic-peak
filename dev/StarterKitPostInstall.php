@@ -28,7 +28,6 @@ class StarterKitPostInstall
         }
 
         if ($console->confirm('Do you want to exclude form entries from git?', false)) {
-            $gitignore = app('files')->get(base_path('.gitignore'));
             app('files')->append(base_path('.gitignore'), "\n/storage/forms");
         }
 
