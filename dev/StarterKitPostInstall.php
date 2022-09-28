@@ -18,12 +18,10 @@ class StarterKitPostInstall
         }
 
         if ($console->confirm('Do you compile assets on your server?', true)) {
-            $gitignore = app('files')->get(base_path('.gitignore'));
             app('files')->append(base_path('.gitignore'), "\n/public/build/");
         }
 
         if ($console->confirm('Do you want to exclude users from git?', false)) {
-            $gitignore = app('files')->get(base_path('.gitignore'));
             app('files')->append(base_path('.gitignore'), "\n/users");
         }
 
