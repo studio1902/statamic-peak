@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Artisan;
-
 class StarterKitPostInstall
 {
     public function handle($console)
