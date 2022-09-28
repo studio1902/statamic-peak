@@ -30,6 +30,13 @@ class InstallBlock extends Command
     protected $description = "Install premade blocks into your page builder.";
 
     /**
+     * The block name.
+     *
+     * @var string
+     */
+    protected $block_name = '';
+
+    /**
      * The chosen block.
      *
      * @var string
@@ -44,6 +51,13 @@ class InstallBlock extends Command
     protected $filename = '';
 
     /**
+     * The instructions.
+     *
+     * @var string
+     */
+    protected $instructions = '';
+
+    /**
      * Execute the console command.
      *
      * @return bool|null
@@ -53,25 +67,26 @@ class InstallBlock extends Command
         $this->choice = $this->choice(
             'Which block do you want to install into your page builder?',
             [
-                'Call to action [call_to_action]',
-                'Collection [collection]'
+                'Call to action: Show a call to action [call_to_action]',
+                'Collection: Show collection entries [collection]'
             ]
         );
 
+        $this->block_name = Stringy::split($this->choice, ':')[0];
         $this->filename = Stringy::between($this->choice, '[', ']');
+        $this->instructions = Stringy::between($this->choice, ': ', ' [');
 
         try {
             $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
             $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
 
-            $this->createFieldset();
-            $this->createPartial();
+            $this->copyStubs();
             $this->updatePageBuilder();
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
 
-        $this->info("Peak page builder block '{$this->filename}' installed.");
+        $this->info("Peak page builder block '{$this->block_name}' installed.");
     }
 
     /**
@@ -84,6 +99,17 @@ class InstallBlock extends Command
         if (File::exists(base_path($path))) {
             throw new \Exception("{$type} '{$path}' already exists.");
         }
+    }
+
+    /**
+     * Copy yaml and html stubs.
+     *
+     * @return bool|null
+     */
+    protected function copyStubs()
+    {
+        File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), File::get(__DIR__."/stubs/blocks/{$this->filename}.yaml.stub"));
+        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), File::get(__DIR__."/stubs/blocks/{$this->filename}.antlers.html.stub"));
     }
 
     /**
