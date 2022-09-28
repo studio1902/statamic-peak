@@ -108,7 +108,7 @@ class AddBlock extends Command
      */
     protected function createPartial()
     {
-        $stub = File::get(__DIR__.'/stubs/block.html.stub');
+        $stub = File::get(__DIR__.'/stubs/block.antlers.html.stub');
         $contents = Str::of($stub)
             ->replace('{{ name }}', $this->block_name)
             ->replace('{{ filename }}', $this->filename);
