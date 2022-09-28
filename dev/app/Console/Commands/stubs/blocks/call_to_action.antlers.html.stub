@@ -1,0 +1,15 @@
+{{#
+	@name Call to action
+	@desc The call to action page builder block.
+    @set page.page_builder.call_to_action
+#}}
+
+<!-- /page_builder/_call_to_action.antlers.html -->
+<section class="fluid-container grid md:grid-cols-12 gap-8">
+    <div class="md:col-start-3 md:col-span-8">
+        {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        {{ partial:typography/p class="mb-4" :content="block:text" }}
+        {{ block:buttons ?= { partial:components/buttons } }}
+    </div>
+</section>
+<!-- End: /page_builder/_call_to_action.antlers.html -->
