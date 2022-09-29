@@ -22,7 +22,7 @@ class AddCollection extends Command
     *
     * @var string
     */
-    protected $name = 'peak:add-collection';
+    protected $name = 'statamic:peak:add-collection';
 
      /**
      * The console command description.

@@ -3,76 +3,91 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
-use Statamic\Facades\Config;
 use Statamic\Support\Arr;
 use Stringy\StaticStringy as Stringy;
 use Symfony\Component\Yaml\Yaml;
 
-class AddBlock extends Command
+class InstallBlock extends Command
 {
     use RunsInPlease;
 
     /**
-    * The name of the console command.
-    *
-    * @var string
-    */
-    protected $name = 'statamic:peak:add-block';
+     * The name of the console command.
+     *
+     * @var string
+     */
+    protected $name = 'statamic:peak:install-block';
 
-     /**
+    /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Add a page builder block.";
+    protected $description = "Install premade blocks into your page builder.";
 
-     /**
+    /**
      * The block name.
      *
      * @var string
      */
     protected $block_name = '';
 
-     /**
-     * The block filename.
+    /**
+     * The chosen block.
+     *
+     * @var string
+     */
+    protected $choices = '';
+
+    /**
+     * The filename.
      *
      * @var string
      */
     protected $filename = '';
 
-     /**
-     * The block instructions.
+    /**
+     * The instructions.
      *
      * @var string
      */
     protected $instructions = '';
 
-     /**
+    /**
      * Execute the console command.
      *
      * @return bool|null
      */
     public function handle()
     {
-        $this->block_name = $this->ask('What should be the name for this block?');
-        $this->filename = Stringy::slugify($this->block_name, '_', Config::getShortLocale());
-        $this->instructions = $this->ask('What should be the instructions for this block?');
+        $this->choices = $this->choice(
+            'Which blocks do you want to install into your page builder? You can separate multiple answers with a comma',
+            [
+                'Call to action: Show a call to action [call_to_action]',
+                'Collection: Show collection entries [collection]'
+            ],
+            null, null, true
+        );
 
-        try {
-            $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
-            $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
+        foreach($this->choices as $choice) {
+            $this->block_name = Stringy::split($choice, ':')[0];
+            $this->filename = Stringy::between($choice, '[', ']');
+            $this->instructions = Stringy::between($choice, ': ', ' [');
 
-            $this->createFieldset();
-            $this->createPartial();
-            $this->updatePageBuilder();
-        } catch (\Exception $e) {
-            return $this->error($e->getMessage());
+            try {
+                $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
+                $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
+
+                $this->copyStubs();
+                $this->updatePageBuilder();
+            } catch (\Exception $e) {
+                return $this->error($e->getMessage());
+            }
+
+            $this->info("Peak page builder block '{$this->block_name}' installed.");
         }
-
-        $this->info("Peak page builder block '{$this->block_name}' added.");
     }
 
     /**
@@ -88,32 +103,14 @@ class AddBlock extends Command
     }
 
     /**
-     * Create fieldset.
+     * Copy yaml and html stubs.
      *
      * @return bool|null
      */
-    protected function createFieldset()
+    protected function copyStubs()
     {
-        $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
-        $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->block_name);
-
-        File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), $contents);
-    }
-
-    /**
-     * Create partial.
-     *
-     * @return bool|null
-     */
-    protected function createPartial()
-    {
-        $stub = File::get(__DIR__.'/stubs/block.antlers.html.stub');
-        $contents = Str::of($stub)
-            ->replace('{{ name }}', $this->block_name)
-            ->replace('{{ filename }}', $this->filename);
-
-        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), $contents);
+        File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), File::get(__DIR__."/stubs/blocks/{$this->filename}.yaml.stub"));
+        File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), File::get(__DIR__."/stubs/blocks/{$this->filename}.antlers.html.stub"));
     }
 
     /**

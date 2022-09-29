@@ -9,7 +9,7 @@
     (link_type == 'email') => 'href="mailto:{{ email | obfuscate_email }}"',
     (link_type == 'tel') => 'href="tel:{{ tel }}"',
     (link_type == 'asset') => 'href="{{ asset }}" download',
-    () => void
+    () => 'href="{{ url }}"'
 )}}
 {{ target_blank ?= 'rel="noopener" target="_blank"' }}
 {{ attr_title ?= 'title="{{ attr_title }}"' }}
