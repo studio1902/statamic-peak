@@ -11,11 +11,10 @@ If you already have an existing, clean, Statamic installation you can run the fo
 ## Installation options
 
 When Statamic installs the Starter Kit, Peak will offer a few options:
-1. Clear the default content Peak ships with (examples).
-2. Copy over the `.env.example` (recommended Peak config) to your `.env` whilst maintaining your `APP_KEY` and `APP_URL`.
-3. Adding `/users` to `.gitignore` to avoid GDPR issues.
-4. Adding `/storage/forms` to `.gitignore` to avoid GDPR issues.
-5. Adding `/public/build` to `.gitignore` for when you compile assets on your server.
+1. Copy over the `.env.example` (recommended Peak config) to your `.env` whilst maintaining your `APP_KEY` and `APP_URL`.
+2. Adding `/users` to `.gitignore` to avoid GDPR issues.
+3. Adding `/storage/forms` to `.gitignore` to avoid GDPR issues.
+4. Adding `/public/build` to `.gitignore` for when you compile assets on your server.
 
 ## Compile the frontend assets
 
