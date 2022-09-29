@@ -46,3 +46,12 @@ Run `php please peak:clear-site` to:
 * Clear the pagebuilder for the homepage.
 * Clear the social media globals.
 * Clear caches.
+
+## Install Page Builder Block
+This command installs a premade block to the Peak Page Builder and generates the files needed.
+
+Run `php please peak:install-block` to pick a block and:
+
+* Add a set to the Page Builder replicator in `resources/fieldsets/page_builder.yaml`.
+* Create a fieldset for the installed block in `resources/fieldsets/{file_name}.yaml`.
+* Create a partial with bespoke markup in `resources/views/page_builder/_{file_name}.antlers.html`.
