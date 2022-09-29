@@ -2,6 +2,20 @@
 
 Peak comes with a growing collection of CLI commands to make tedious recurring tasks easier.
 
+## Add Collection
+This command creates a new collection and scaffolds out all needed files with some sane default markup containing the various Peak utilities we use.
+
+Run `php please peak:add-collection` to:
+
+* Create a collection in `content/collections/{handle}.yaml` with the variables you defined in the CLI.
+* Create a blueprint for collection in `resources/blueprints/collections/pages/{handle}.yaml` containing the page builder fieldset and the SEO tab when your collection has a public route defined.
+* Optionally create an index partial in `resources/views/{handle}/index.antlers.html` with default Peak markup.
+* Optionally set the index template to the entry you chose to mount the collection on.
+* Optionally create a show partial in `resources/views/{handle}/show.antlers.html` with default Peak markup.
+* Optionally add permissions to the `editor` role in `resources/users/roles.yaml`.
+
+<div class='embed-container'><iframe src='https://www.youtube.com/embed/JWVDvTFDvHA' frameborder='0' allowfullscreen></iframe></div>
+
 ## Add Page Builder Block
 This command adds a block to the Peak Page Builder and generates the files needed.
 
@@ -22,19 +36,10 @@ Run `php please peak:add-set` to:
 * Create a fieldset for your set in `resources/fieldsets/{file_name}.yaml`.
 * Create a component partial with default markup and IDE hinting in `resources/views/components/_{file_name}.antlers.html`.
 
-## Add Collection
-This command creates a new collection and scaffolds out all needed files with some sane default markup containing the various Peak utilities we use.
+## Add Partial
+With this command you can choose a type (component/layout) and add a name and description. It will generate a partial with the proper IDE hinting and location comments.
 
-Run `php please peak:add-collection` to:
-
-* Create a collection in `content/collections/{handle}.yaml` with the variables you defined in the CLI.
-* Create a blueprint for collection in `resources/blueprints/collections/pages/{handle}.yaml` containing the page builder fieldset and the SEO tab when your collection has a public route defined.
-* Optionally create an index partial in `resources/views/{handle}/index.antlers.html` with default Peak markup.
-* Optionally set the index template to the entry you chose to mount the collection on.
-* Optionally create a show partial in `resources/views/{handle}/show.antlers.html` with default Peak markup.
-* Optionally add permissions to the `editor` role in `resources/users/roles.yaml`.
-
-<div class='embed-container'><iframe src='https://www.youtube.com/embed/JWVDvTFDvHA' frameborder='0' allowfullscreen></iframe></div>
+Run `php please peak:add-partial`.
 
 ## Clear site
 This command clears the default Peak content.
