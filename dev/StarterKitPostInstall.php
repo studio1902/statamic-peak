@@ -27,6 +27,10 @@ class StarterKitPostInstall
             app('files')->append(base_path('.gitignore'), "\n/storage/forms");
         }
 
+        if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {
+            $console->call('statamic:peak:install-block');
+        }
+
         if ($console->confirm('Enjoying the view? Would you like to star the repo?', false)) {
             if(PHP_OS_FAMILY == 'Darwin') exec('open https://github.com/studio1902/statamic-peak');
             if(PHP_OS_FAMILY == 'Windows') exec('start https://github.com/studio1902/statamic-peak');
