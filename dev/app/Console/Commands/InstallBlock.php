@@ -39,7 +39,7 @@ class InstallBlock extends Command
      *
      * @var string
      */
-    protected $choice = '';
+    protected $choices = '';
 
     /**
      * The filename.
@@ -62,7 +62,7 @@ class InstallBlock extends Command
      */
     public function handle()
     {
-        $this->choice = $this->choice(
+        $this->choices = $this->choice(
             'Which block do you want to install into your page builder? You can separate multiple answers with a comma',
             [
                 'Call to action: Show a call to action [call_to_action]',
@@ -71,7 +71,7 @@ class InstallBlock extends Command
             null, null, true
         );
 
-        foreach($this->choice as $choice) {
+        foreach($this->choices as $choice) {
             $this->block_name = Stringy::split($choice, ':')[0];
             $this->filename = Stringy::between($choice, '[', ']');
             $this->instructions = Stringy::between($choice, ': ', ' [');
