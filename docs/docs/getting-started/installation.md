@@ -4,13 +4,18 @@
 
 The easiest way to install Statamic together with Peak is to use the [official CLI](https://github.com/statamic/cli). Install the CLI by running `composer global require statamic/cli` and for each project just run `statamic new my-site studio1902/statamic-peak`.
 
-Make sure you use the Peak provided `.env.example` and copy it over to the `.env` file Statamic ships with.
-
-## Install into an existing Statamic v3.2+ project
+## Install into an existing Statamic v3.3+ project
 
 If you already have an existing, clean, Statamic installation you can run the following command: `php please starter-kit:install studio1902/statamic-peak`.
 
-Make sure you update your `.env` file according to the the `.env.example`. Peak moves some Statamic [configuration options](/other/configuration-changes.html) to environment variables.
+## Installation options
+
+When Statamic installs the Starter Kit, Peak will offer a few options:
+1. Clear the default content Peak ships with (examples).
+2. Copy over the `.env.example` (recommended Peak config) to your `.env` whilst maintaining your `APP_KEY` and `APP_URL`.
+3. Adding `/users` to `.gitignore` to avoid GDPR issues.
+4. Adding `/storage/forms` to `.gitignore` to avoid GDPR issues.
+5. Adding `/public/build` to `.gitignore` for when you compile assets on your server.
 
 ## Compile the frontend assets
 
