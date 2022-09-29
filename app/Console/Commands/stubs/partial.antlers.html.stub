@@ -1,0 +1,8 @@
+{{#
+	@name {{ partial_name }}
+	@desc {{ partial_description }}
+#}}
+
+<!-- /{{ folder }}/_{{ filename }}.antlers.html -->
+
+<!-- End: /{{ folder }}/_{{ filename }}.antlers.html -->

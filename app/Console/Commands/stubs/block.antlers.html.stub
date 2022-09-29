@@ -1,0 +1,11 @@
+{{#
+	@name {{ name }}
+	@desc The {{ name }} page builder block.
+    @set page.page_builder.{{ filename }}
+#}}
+
+<!-- /page_builder/_{{ filename }}.antlers.html -->
+<section class="fluid-container grid md:grid-cols-12 gap-8">
+    {{ partial:typography/h3 content="🔧<br>{{ name }}" class="md:col-span-12 text-center" }}
+</section>
+<!-- End: /page_builder/_{{ filename }}.antlers.html -->

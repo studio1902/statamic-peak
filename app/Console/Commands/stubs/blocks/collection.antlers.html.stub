@@ -1,0 +1,22 @@
+{{#
+	@name Collection
+	@desc The collection page builder block.
+    @set page.page_builder.collection
+#}}
+
+<!-- /page_builder/_collection.antlers.html -->
+<section class="fluid-container grid md:grid-cols-12 gap-8">
+    <div class="md:col-start-3 md:col-span-8">
+        {{ partial:typography/h2 class="mb-4" :content="block:title" }}
+        <ul class="list-inside list-disc">
+            {{ block:collection }}
+                <li>
+                    <a class="p-1 -m-1 text-primary underline focus:outline-none focus-visible:ring-2 ring-primary" href="{{ url }}">
+                        {{ title }}
+                    </a>
+                </li>
+            {{ /block:collection }}
+        </ul>
+    </div>
+</section>
+<!-- End: /page_builder/_collection.antlers.html -->
