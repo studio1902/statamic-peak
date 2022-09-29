@@ -7,13 +7,12 @@ Peak changes the default Statamic config. The following is different:
 | `.env.example` |  | Add more default Statamic and Redis settings by default.
 | `app/Console/Kernel.php` |  | Add a schedule you can invoke via a cron to warm all caches.
 | `app/Console/Commands/AddBlock.php` |  | A command to generate all files needed to [add a block to the page builder](/features/commands.html#add-page-builder-block).
-| `app/Console/Commands/AddSet.php` |  | A command to generate all files needed to [add a set to the page builder article](/features/commands.html#add-page-builder-article-set).
 | `app/Console/Commands/AddCollection.php` |  | A command to generate all files needed to [add a collection](/features/commands.html#add-collection).
+| `app/Console/Commands/AddPartial.php` |  | A command to generate all files needed to [add a partial](/features/commands.html#add-partial).
+| `app/Console/Commands/AddSet.php` |  | A command to generate all files needed to [add a set to the page builder article](/features/commands.html#add-page-builder-article-set).
 | `app/Console/Commands/ClearSite.php` |  | A command to [clear all default Peak content](/features/commands.html#clear-site).
-| `app/Console/Commands/stubs/block.html.stub` |  | A stub file for the `peak:add-block` command.
-| `app/Console/Commands/stubs/set.html.stub` |  | A stub file for the `peak:add-set` command.
-| `app/Console/Commands/stubs/fieldset_block.yaml.stub` |  | A stub file for the `peak:add-block` command.
-| `app/Console/Commands/stubs/fieldset_set.yaml.stub` |  | A stub file for the `peak:add-set` command.
+| `app/Console/Commands/InstallBlock.php` |  | A command to [install premade blocks](/features/commands.html#install-page-builder-block).
+| `app/Console/Commands/stubs/` |  | Stub files for the various Peak commands.
 | `app/Actions/GenerateSocialImages.php` |  | An action to [generate social images](/features/social-images-generation.html) for entries.
 | `app/Http/Controllers/DynamicToken.php` |  | New Controller for [forms](/features/forms.html) |
 | `app/Jobs/GenerateSocialImagesJob.php` |  | The acutal job to [generate social images](/features/social-images-generation.html) for entries.
