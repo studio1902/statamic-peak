@@ -63,28 +63,31 @@ class InstallBlock extends Command
     public function handle()
     {
         $this->choice = $this->choice(
-            'Which block do you want to install into your page builder?',
+            'Which block do you want to install into your page builder? You can separate multiple answers with a comma',
             [
                 'Call to action: Show a call to action [call_to_action]',
                 'Collection: Show collection entries [collection]'
-            ]
+            ],
+            null, null, true
         );
 
-        $this->block_name = Stringy::split($this->choice, ':')[0];
-        $this->filename = Stringy::between($this->choice, '[', ']');
-        $this->instructions = Stringy::between($this->choice, ': ', ' [');
+        foreach($this->choice as $choice) {
+            $this->block_name = Stringy::split($choice, ':')[0];
+            $this->filename = Stringy::between($choice, '[', ']');
+            $this->instructions = Stringy::between($choice, ': ', ' [');
 
-        try {
-            $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
-            $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
+            try {
+                $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
+                $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
 
-            $this->copyStubs();
-            $this->updatePageBuilder();
-        } catch (\Exception $e) {
-            return $this->error($e->getMessage());
+                $this->copyStubs();
+                $this->updatePageBuilder();
+            } catch (\Exception $e) {
+                return $this->error($e->getMessage());
+            }
+
+            $this->info("Peak page builder block '{$this->block_name}' installed.");
         }
-
-        $this->info("Peak page builder block '{$this->block_name}' installed.");
     }
 
     /**
