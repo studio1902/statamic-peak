@@ -2,10 +2,19 @@
 
 class StarterKitPostInstall
 {
+    public $registerCommands = [
+        \App\Console\Commands\ClearSite::class,
+        \App\Console\Commands\InstallBlock::class
+    ];
+
     public function handle($console)
     {
-        // Can't run this atm because those commands aren't registered yet when the installer runs.
-        // $console->call('statamic:peak:clear-site');
+        if (PHP_OS_FAMILY == 'Windows') {
+            $console->info('On Windows Peak can\'t configure itself further. Check out the installation docs: https://peak.1902.studio/getting-started/installation.html.');
+            return;
+        }
+
+        $console->call('statamic:peak:clear-site');
 
         if ($console->confirm('Do you want overwrite your .env file with the Peak presets?', true)) {
             $originalAppUrl = env('APP_URL');
@@ -28,10 +37,9 @@ class StarterKitPostInstall
             app('files')->append(base_path('.gitignore'), "\n/storage/forms");
         }
 
-        // Can't run this atm because those commands aren't registered yet when the installer runs.
-        // if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {
-        //     $console->call('statamic:peak:install-block');
-        // }
+        if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {
+            $console->call('statamic:peak:install-block');
+        }
 
         if ($console->confirm('Enjoying the view? Would you like to star the repo?', false)) {
             if(PHP_OS_FAMILY == 'Darwin') exec('open https://github.com/studio1902/statamic-peak');

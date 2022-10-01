@@ -3,7 +3,7 @@
 ## v6.0 (2022-09-29)
 
 ### What's new
-- Add a post install hook when installing Peak. This optionally offers you to copy over `.env.example` to your `.env`, add `users` and `forms` and `public/build` to gitignore. #260 by @robdekort
+- [Update the Statamic/CLI](https://github.com/statamic/cli#updating-the-cli-tool) to use this feature: add a post install hook when installing Peak. This optionally offers you to copy over `.env.example` to your `.env`, add `users` and `forms` and `public/build` to gitignore. #260 and #263 by @robdekort
 - Add a block installer command to install preconfigured blocks (partial and fieldset) into the page builder. #261 by @robdekort
 - Add command to add a partial (component or layout) with IDE hinting and file system comments. #262 by @robdekort
 
