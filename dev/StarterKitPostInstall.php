@@ -9,6 +9,10 @@ class StarterKitPostInstall
 
     public function handle($console)
     {
+        if (PHP_OS_FAMILY == 'Windows') {
+            $console->info('On Windows Peak can\'t configure itself further. Check out the installation docs: https://peak.1902.studio/getting-started/installation.html.');
+            return;
+        }
 
         $console->call('statamic:peak:clear-site');
 
