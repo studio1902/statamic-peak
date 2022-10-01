@@ -14,7 +14,7 @@ Alternatively you can run `statamic new my-site` and then run `php please starte
 
 If you already have an existing, clean, Statamic installation you can run the following command: `php please starter-kit:install studio1902/statamic-peak`.
 
-## Installation options
+## Installation options (coming soon)
 
 When Statamic installs the Starter Kit, Peak will offer a few options:
 1. Clear the default content Peak ships with (examples).
