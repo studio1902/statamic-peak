@@ -12,7 +12,7 @@ In some cases you don't want to render dynamic buttons but a button to a specifi
 
 Link to the index page the collection `news` is mounted on:
 ```html
-{{ partial:components/button label="All news" link_type="url" url="{mount_url from='news'}" }}
+{{ partial:components/button label="All news" link_type="url" url="{mount_url:news}" }}
 ```
 
 Or link to a single entry:
