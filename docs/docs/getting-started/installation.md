@@ -16,6 +16,7 @@ Make sure you [update the Statamic CLI](https://github.com/statamic/cli#updating
 3. Adding `/users` to `.gitignore` to avoid GDPR issues.
 4. Adding `/storage/forms` to `.gitignore` to avoid GDPR issues.
 5. Adding `/public/build` to `.gitignore` for when you compile assets on your server.
+6. Running `npm i`.
 
 ## Compile the frontend assets
 
