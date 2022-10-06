@@ -73,7 +73,8 @@ class AddPartial extends Command
             'What type of partial do you want to add?',
             [
                 'Component',
-                'Layout'
+                'Layout',
+                'Typography'
             ]
         );
         $this->folder = strtolower($this->type);
