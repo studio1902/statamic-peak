@@ -42,7 +42,7 @@ class ClearSite extends Command
         if ($clear_site) {
             $this->trashAssets();
             $this->clearGlobalSocialMedia();
-            $this->clearPageBuilder('/');
+            $this->clearHomePage();
             $this->trashPagesButHomeAnd404();
             $this->clearNavigation();
 
@@ -78,15 +78,15 @@ class ClearSite extends Command
     }
 
     /**
-     * Clear the page builder.
+     * Clear the home page.
      *
      * @return bool|null
      */
-    protected function clearPageBuilder($uri)
+    protected function clearHomePage()
     {
-        Entry::findByUri($uri)
-            ->set('page_builder', null)
-            ->save();
+        // Note: we can't use Entry::query()->save() when running from the PostInstallHook.
+        $stub = File::get(__DIR__.'/stubs/home.md.stub');
+        File::put(base_path('content/collections/pages/home.md'), $stub);
     }
 
     /**
