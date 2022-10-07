@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.1 (2022-10-07)
+
+### What's new
+- Ask for `APP_NAME` during configuration. bb9724b7 by @robdekort
+
 ## v6.0 (2022-10-06)
 
 ### What's new
