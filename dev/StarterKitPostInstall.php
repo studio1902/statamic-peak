@@ -15,11 +15,13 @@ class StarterKitPostInstall
         $console->call('statamic:peak:clear-site');
 
         if ($console->confirm('Do you want overwrite your `.env` file with the Peak presets?', true)) {
+            $appName = $console->ask('What should be your app name?');
             $originalAppUrl = env('APP_URL');
             $originalAppKey = env('APP_KEY');
             $env = app('files')->get(base_path('.env.example'));
-            $env = str_replace('APP_URL=', 'APP_URL='.$originalAppUrl, $env);
-            $env = str_replace('APP_KEY=', 'APP_KEY='.$originalAppKey, $env);
+            $env = str_replace("APP_NAME='Statamic Peak'", "APP_NAME='{$appName}'", $env);
+            $env = str_replace('APP_URL=', "APP_URL='{$originalAppUrl}'", $env);
+            $env = str_replace('APP_KEY=', "APP_KEY='{$originalAppKey}'", $env);
             app('files')->put(base_path('.env'), $env);
         }
 
