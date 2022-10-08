@@ -1,0 +1,23 @@
+{{#
+	@name Image and text
+	@desc The Image and text page builder block.
+    @set page.page_builder.image_and_text
+#}}
+
+<!-- /page_builder/_image_and_text.antlers.html -->
+<section class="fluid-container grid md:grid-cols-12 gap-8 items-center">
+    <article class="md:col-span-6 {{ image_position == 'left' ?= 'order-2' }}">
+        {{ block:title ?= { partial:typography/h2 :content="block:title" class="mb-4" } }}
+
+        {{ partial:typography/prose class="{ buttons ?= 'mb-4' }" }}
+            {{ block:text }}
+        {{ /partial:typography/prose }}
+
+        {{ partial:components/buttons }}
+    </article>
+
+    <figure class="md:col-span-6">
+        {{ partial:components/picture :image="block:image" sizes="(min-width: 768px) 50vw, 90vw" }}
+    </figure>
+</section>
+<!-- End: /page_builder/_image_and_text.antlers.html -->
