@@ -3,6 +3,7 @@
 	@desc The picture component. A responsive imageset in a picture element. See `resources/views/components/_figure.antlers.html` for an example on how to use this.
     @param* image An image URL.
     @param* sizes The sizes attribute. Something like `(min-width: 768px) 55vw, 90vw` for example.
+    @param aspect_ratio Optionally pass in an aspect ratio to crop the image in a certain way. `16/9` for example.
     @param class Add optional CSS classes.
     @param cover Boolean. Whether the image should cover the parent. Uses the focus position.
     @param lazy Boolean. Whether the image should be natively lazy loaded.
@@ -10,6 +11,12 @@
 
 <!-- /components/_picture.antlers.html -->
 {{ if image }}
+    {{ if aspect_ratio }}
+        {{ width = aspect_ratio | explode('/') | first }}
+        {{ height = aspect_ratio | explode('/') | last }}
+        {{ ratio = height / width }}
+    {{ /if }}
+
     <picture>
         {{ asset :url="image" }}
             {{ if extension == 'svg' || extension == 'gif' }}
@@ -24,30 +31,52 @@
             {{ else }}
                 <source
                     srcset="
-                        {{ glide:image preset='xs-webp' }} 320w,
-                        {{ glide:image preset='sm-webp' }} 480w,
-                        {{ glide:image preset='md-webp' }} 768w,
-                        {{ glide:image preset='lg-webp' }} 1280w,
-                        {{ glide:image preset='xl-webp' }} 1440w,
-                        {{ glide:image preset='2xl-webp' }} 1680w"
+                        {{ if aspect_ratio }}
+                            {{ glide:image width="320" height="{{ 320 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
+                            {{ glide:image width="480" height="{{ 480 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
+                            {{ glide:image width="768" height="{{ 768 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
+                            {{ glide:image width="1280" height="{{ 1280 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
+                            {{ glide:image width="1440" height="{{ 1440 * ratio }}" quality="95" fit="crop_focal" format="webp" }}
+                            {{ glide:image width="1680" height="{{ 1680 * ratio }}" quality="95" fit="crop_focal" format="webp" }}
+                        {{ else }}
+                            {{ glide:image preset='xs-webp' }} 320w,
+                            {{ glide:image preset='sm-webp' }} 480w,
+                            {{ glide:image preset='md-webp' }} 768w,
+                            {{ glide:image preset='lg-webp' }} 1280w,
+                            {{ glide:image preset='xl-webp' }} 1440w,
+                            {{ glide:image preset='2xl-webp' }} 1680w"
+                        {{ /if }}
                     sizes="{{ sizes }}"
                     type="image/webp"
                 >
                 <source
                     srcset="
-                        {{ glide:image preset='xs' }} 320w,
-                        {{ glide:image preset='sm' }} 480w,
-                        {{ glide:image preset='md' }} 768w,
-                        {{ glide:image preset='lg' }} 1280w,
-                        {{ glide:image preset='xl' }} 1440w,
-                        {{ glide:image preset='2xl' }} 1680w"
+                        {{ if aspect_ratio }}
+                            {{ glide:image width="320" height="{{ 320 * ratio }}" quality="85" fit="crop_focal" }}
+                            {{ glide:image width="480" height="{{ 480 * ratio }}" quality="85" fit="crop_focal" }}
+                            {{ glide:image width="768" height="{{ 768 * ratio }}" quality="85" fit="crop_focal" }}
+                            {{ glide:image width="1280" height="{{ 1280 * ratio }}" quality="85" fit="crop_focal" }}
+                            {{ glide:image width="1440" height="{{ 1440 * ratio }}" quality="95" fit="crop_focal" }}
+                            {{ glide:image width="1680" height="{{ 1680 * ratio }}" quality="95" fit="crop_focal" }}
+                        {{ else }}
+                            {{ glide:image preset='xs' }} 320w,
+                            {{ glide:image preset='sm' }} 480w,
+                            {{ glide:image preset='md' }} 768w,
+                            {{ glide:image preset='lg' }} 1280w,
+                            {{ glide:image preset='xl' }} 1440w,
+                            {{ glide:image preset='2xl' }} 1680w"
+                        {{ /if }}
                     sizes="{{ sizes }}"
                     type="{{ image.mime_type }}"
                 >
                 <img
                     width="{{ image.width }}"
                     height="{{ image.height }}"
-                    src="{{ glide:image preset='lg' }}"
+                    {{ if aspect_ratio }}
+                        src="{{ glide:image width="1280" height="{{ 1280 * ratio }}" quality="85" fit="crop_focal" }}"
+                    {{ else }}
+                        src="{{ glide:image preset='lg' }}"
+                    {{ /if }}
                     alt="{{ alt | ensure_right('.') | entities }}"
                     {{ if cover }}
                         class="object-cover w-full h-full {{ class }}"
