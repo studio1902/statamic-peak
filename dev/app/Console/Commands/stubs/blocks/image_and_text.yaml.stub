@@ -1,0 +1,55 @@
+title: 'Image and text'
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      display: Title
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: text
+    field: common.text_basic
+    config:
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - anchor
+      display: Text
+      validate:
+        - required
+  -
+    import: buttons
+  -
+    handle: image
+    field: common.image
+    config:
+      width: 50
+      validate:
+        - required
+  -
+    handle: image_position
+    field:
+      options:
+        left: Left
+        right: Right
+      default: right
+      display: 'Image position'
+      type: button_group
+      icon: button_group
+      replicator_preview: false
+      width: 50
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      validate:
+        - required

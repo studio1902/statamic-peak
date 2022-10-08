@@ -66,7 +66,8 @@ class InstallBlock extends Command
             'Which blocks do you want to install into your page builder? You can separate multiple answers with a comma',
             [
                 'Call to action: Show a call to action [call_to_action]',
-                'Collection: Show collection entries [collection]'
+                'Collection: Show collection entries [collection]',
+                'Image and text: An image and text side by side [image_and_text]'
             ],
             null, null, true
         );
