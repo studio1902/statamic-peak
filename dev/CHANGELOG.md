@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.2 (2022-10-08)
+
+### What's new
+- Add the ability to use aspect ratio cropping when using the picture partial. #265 by @robdekort
+- Add two new installable blocks. A divider and an image and text block. #266 by @robdekort
+
 ## v6.1 (2022-10-07)
 
 ### What's new
