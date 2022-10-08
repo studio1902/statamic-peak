@@ -14,7 +14,7 @@
     {{ if aspect_ratio }}
         {{ width = aspect_ratio | explode('/') | first }}
         {{ height = aspect_ratio | explode('/') | last }}
-        {{ ratio = height | divide(width)  }}
+        {{ ratio = height / width }}
     {{ /if }}
 
     <picture>
