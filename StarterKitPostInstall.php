@@ -22,6 +22,11 @@ class StarterKitPostInstall
             $env = str_replace("APP_NAME='Statamic Peak'", "APP_NAME='{$appName}'", $env);
             $env = str_replace('APP_URL=', "APP_URL='{$originalAppUrl}'", $env);
             $env = str_replace('APP_KEY=', "APP_KEY='{$originalAppKey}'", $env);
+
+            if ($console->confirm('Do you want use Imagick as an image processor instead of GD?', true)) {
+                $env = str_replace('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick', $env);
+            }
+
             app('files')->put(base_path('.env'), $env);
         }
 
