@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.3 (2022-10-09)
+
+### What's new
+- Add the option to enable Imagick as an image processor during the install. 6c76cf9c by @robdekort
+
 ## v6.2 (2022-10-08)
 
 ### What's new
