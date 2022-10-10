@@ -26,7 +26,7 @@ return [
     'cookie_functional'                 => 'Funkční',
     'cookie_functional_explanation'     => 'Cookies potřebné pro fungování webu. Tyto nelze vypnout.',
     'cookie_ignore'                     => 'Ignorovat',
-    'cookie_third_party'                => 'Third party',
+    'cookie_third_party'                => 'Třetí strana',
     'cookie_third_party_explanation'    => 'Cookies třetích stran používané pro vložené externí služby.',
     'cookie_title'                      => 'Cookies 🍪',
     'cookie_learn_more'                 => 'Zjistit více',
