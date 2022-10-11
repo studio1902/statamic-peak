@@ -12,7 +12,7 @@ Peak comes with a picture partial that will add responsive sourcesets to your im
 The following example renders a squared image on small screens and a 4/3 image on larger screens. It object-fills it's wrapping container and is lazy loaded:
 
 ```html
-{{ partial:components/picture :image="image" aspect_ratio="1/1 desktop:4/3" cover="true" sizes="(min-width: 768px) 35vw, 90vw" lazy="true" }}
+{{ partial:components/picture :image="image" aspect_ratio="1/1 large:4/3" cover="true" sizes="(min-width: 768px) 35vw, 90vw" lazy="true" }}
 ```
 
 See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information. Although it was written for Statamic V2, the concept of the partial remains the same for v3.
