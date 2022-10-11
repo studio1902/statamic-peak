@@ -28,7 +28,6 @@ Peak changes the default Statamic config. The following is different:
 | `config/statamic/antlers.php` | `version' => 'regex'` | `'version' => 'runtime'` |
 | `config/statamic/assets.php` | `driver' => 'gd'` | `'driver' => env('IMAGE_MANIPULATION_DRIVER', 'gd')` |
 | `config/statamic/assets.php` | `'cache' => false` | `'cache' => env('SAVE_CACHED_IMAGES', true),` |
-| `config/statamic/assets.php` | `'presets' => []` | Contains a whole bunch of asset presets. |
 | `config/statamic/cp.php` | A getting started widget | Add alt text and page collection widgets. |
 | `config/statamic/cp.php` | `'link_to_docs' => true` | `'link_to_docs' => false` |
 | `config/statamic/editions.php` | `'pro' -> false` | `'pro' -> true` |
