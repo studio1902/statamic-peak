@@ -3,19 +3,40 @@
 	@desc The picture component. A responsive imageset in a picture element. See `resources/views/components/_figure.antlers.html` for an example on how to use this.
     @param* image An image URL.
     @param* sizes The sizes attribute. Something like `(min-width: 768px) 55vw, 90vw` for example.
-    @param aspect_ratio Optionally pass in an aspect ratio to crop the image in a certain way. `16/9` for example.
+    @param aspect_ratio Pass in an aspect ratio to crop the image in a certain way. `16/9` for example or specify a second ratio for larger screens: `1/1 desktop:1/2`.
     @param class Add optional CSS classes.
     @param cover Boolean. Whether the image should cover the parent. Uses the focus position.
     @param lazy Boolean. Whether the image should be natively lazy loaded.
+    @param quality int Set image quality. Defaults to 85.
 #}}
 
 <!-- /components/_picture.antlers.html -->
 {{ if image }}
-    {{ if aspect_ratio }}
-        {{ width = aspect_ratio | explode('/') | first }}
-        {{ height = aspect_ratio | explode('/') | last }}
-        {{ ratio = height / width }}
-    {{ /if }}
+
+    {{# Configure aspect ratio's. #}}
+    {{ ratio = null }}
+    {{ ratio_desktop = null }}
+    {{ aspect_ratio | trim | explode(' ') }}
+        {{ if value | contains('desktop:') }}
+            {{ aspect = value | explode(':') | last }}
+            {{ ratio_desktop = (aspect | explode('/') | last) / (aspect | explode('/') | first) }}
+        {{ elseif value != '' }}
+            {{ ratio = (value | explode('/') | last) / (value | explode('/') | first) }}
+        {{ /if }}
+    {{ /aspect_ratio }}
+
+    {{# Set srcset sizes. #}}
+    {{ srcsets = [
+        [ 'width' => 320, 'ratio' => '{ ratio }' ],
+        [ 'width' => 480, 'ratio' => '{ ratio }' ],
+        [ 'width' => 640, 'ratio' => '{ ratio }' ],
+        [ 'width' => 768, 'ratio' => '{ ratio }' ],
+        [ 'width' => 1024, 'ratio' => '{ ratio_desktop ?? ratio }' ],
+        [ 'width' => 1280, 'ratio' => '{ ratio_desktop ?? ratio }' ],
+        [ 'width' => 1440, 'ratio' => '{ ratio_desktop ?? ratio }' ],
+        [ 'width' => 1536, 'ratio' => '{ ratio_desktop ?? ratio }' ],
+        [ 'width' => 1680, 'ratio' => '{ ratio_desktop ?? ratio }' ]
+    ] }}
 
     <picture>
         {{ asset :url="image" }}
@@ -31,52 +52,40 @@
             {{ else }}
                 <source
                     srcset="
-                        {{ if aspect_ratio }}
-                            {{ glide:image width="320" height="{{ 320 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
-                            {{ glide:image width="480" height="{{ 480 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
-                            {{ glide:image width="768" height="{{ 768 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
-                            {{ glide:image width="1280" height="{{ 1280 * ratio }}" quality="85" fit="crop_focal" format="webp" }}
-                            {{ glide:image width="1440" height="{{ 1440 * ratio }}" quality="95" fit="crop_focal" format="webp" }}
-                            {{ glide:image width="1680" height="{{ 1680 * ratio }}" quality="95" fit="crop_focal" format="webp" }}
-                        {{ else }}
-                            {{ glide:image preset='xs-webp' }} 320w,
-                            {{ glide:image preset='sm-webp' }} 480w,
-                            {{ glide:image preset='md-webp' }} 768w,
-                            {{ glide:image preset='lg-webp' }} 1280w,
-                            {{ glide:image preset='xl-webp' }} 1440w,
-                            {{ glide:image preset='2xl-webp' }} 1680w"
-                        {{ /if }}
-                    sizes="{{ sizes }}"
+                        {{ srcsets scope="size" }}
+                            {{
+                                glide:image
+                                width="{ size:width }"
+                                height="{ size:ratio ? (size:width * size:ratio) : '10000' }"
+                                quality="{ quality ?? '85' }"
+                                fit="{ size:ratio ? 'crop_focal' : 'contain' }"
+                                format="webp"
+                            }} {{ size:width }}w,
+                        {{ /srcsets }}
+                    "
+                    sizes="{{ sizes ?? '(min-width: 768px) 50vw, 90vw' }}"
                     type="image/webp"
                 >
                 <source
                     srcset="
-                        {{ if aspect_ratio }}
-                            {{ glide:image width="320" height="{{ 320 * ratio }}" quality="85" fit="crop_focal" }}
-                            {{ glide:image width="480" height="{{ 480 * ratio }}" quality="85" fit="crop_focal" }}
-                            {{ glide:image width="768" height="{{ 768 * ratio }}" quality="85" fit="crop_focal" }}
-                            {{ glide:image width="1280" height="{{ 1280 * ratio }}" quality="85" fit="crop_focal" }}
-                            {{ glide:image width="1440" height="{{ 1440 * ratio }}" quality="95" fit="crop_focal" }}
-                            {{ glide:image width="1680" height="{{ 1680 * ratio }}" quality="95" fit="crop_focal" }}
-                        {{ else }}
-                            {{ glide:image preset='xs' }} 320w,
-                            {{ glide:image preset='sm' }} 480w,
-                            {{ glide:image preset='md' }} 768w,
-                            {{ glide:image preset='lg' }} 1280w,
-                            {{ glide:image preset='xl' }} 1440w,
-                            {{ glide:image preset='2xl' }} 1680w"
-                        {{ /if }}
-                    sizes="{{ sizes }}"
+                        {{ srcsets scope="size" }}
+                            {{
+                                glide:image
+                                width="{ size:width }"
+                                height="{ size:ratio ? (size:width * size:ratio) : '10000' }"
+                                quality="{ quality ?? '85' }"
+                                fit="{ size:ratio ? 'crop_focal' : 'contain' }"
+                            }}
+                            {{ size:width }}w,
+                        {{ /srcsets }}
+                    "
+                    sizes="{{ sizes ?? '(min-width: 768px) 50vw, 90vw' }}"
                     type="{{ image.mime_type }}"
                 >
                 <img
                     width="{{ image.width }}"
                     height="{{ image.height }}"
-                    {{ if aspect_ratio }}
-                        src="{{ glide:image width="1280" height="{{ 1280 * ratio }}" quality="85" fit="crop_focal" }}"
-                    {{ else }}
-                        src="{{ glide:image preset='lg' }}"
-                    {{ /if }}
+                    src="{{ glide:image width="1024" height="10000" quality="{ quality ?? '85' }" fit="contain" }}"
                     alt="{{ alt | ensure_right('.') | entities }}"
                     {{ if cover }}
                         class="object-cover w-full h-full {{ class }}"
