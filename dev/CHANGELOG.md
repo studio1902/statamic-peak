@@ -1,5 +1,13 @@
 # Changelog
 
+## v6.4 (2022-10-11)
+
+### What's new
+- Rewritten `picture` partial, disable asset presets, add breakpoint based picture cropping. #268 by @robdekort
+
+### What's improved
+- Updated Czech translations. #267 by @kuldas
+
 ## v6.3 (2022-10-09)
 
 ### What's new
