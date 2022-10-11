@@ -15,11 +15,11 @@
 
     {{# Configure aspect ratio's. #}}
     {{ ratio = null }}
-    {{ ratio_desktop = null }}
+    {{ ratio_large = null }}
     {{ aspect_ratio | trim | explode(' ') }}
-        {{ if value | contains('desktop:') }}
+        {{ if value | contains('large:') }}
             {{ aspect = value | explode(':') | last }}
-            {{ ratio_desktop = (aspect | explode('/') | last) / (aspect | explode('/') | first) }}
+            {{ ratio_large = (aspect | explode('/') | last) / (aspect | explode('/') | first) }}
         {{ elseif value != '' }}
             {{ ratio = (value | explode('/') | last) / (value | explode('/') | first) }}
         {{ /if }}
@@ -31,11 +31,11 @@
         [ 'width' => 480, 'ratio' => '{ ratio }' ],
         [ 'width' => 640, 'ratio' => '{ ratio }' ],
         [ 'width' => 768, 'ratio' => '{ ratio }' ],
-        [ 'width' => 1024, 'ratio' => '{ ratio_desktop ?? ratio }' ],
-        [ 'width' => 1280, 'ratio' => '{ ratio_desktop ?? ratio }' ],
-        [ 'width' => 1440, 'ratio' => '{ ratio_desktop ?? ratio }' ],
-        [ 'width' => 1536, 'ratio' => '{ ratio_desktop ?? ratio }' ],
-        [ 'width' => 1680, 'ratio' => '{ ratio_desktop ?? ratio }' ]
+        [ 'width' => 1024, 'ratio' => '{ ratio_large ?? ratio }' ],
+        [ 'width' => 1280, 'ratio' => '{ ratio_large ?? ratio }' ],
+        [ 'width' => 1440, 'ratio' => '{ ratio_large ?? ratio }' ],
+        [ 'width' => 1536, 'ratio' => '{ ratio_large ?? ratio }' ],
+        [ 'width' => 1680, 'ratio' => '{ ratio_large ?? ratio }' ]
     ] }}
 
     <picture>
