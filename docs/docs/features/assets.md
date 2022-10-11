@@ -1,6 +1,5 @@
 # Assets
 
-## Images
 Peak comes with a picture partial that will add responsive sourcesets to your images. In `resources/views/components/_figure.antlers.html` you can see an example of how to include the picture partial. It accepts the following arguments:
 
 * `image`: *asset*, the actual image variable.
@@ -19,12 +18,3 @@ The following example renders a squared image on small screens and a 4/3 image o
 See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-tailwind-and-glide/) for more information. Although it was written for Statamic V2, the concept of the partial remains the same for v3.
 
 > Note: alternatively you could use the fantastic [Responsive Images Addon](https://github.com/spatie/statamic-responsive-images) by [Rias](https://github.com/riasvdv) from Spatie. It has few more features and uses Javascript to auto populate your `sizes` attribute.
-
-## Background images
-Peak comes with a background image snippet you can use to apply responsive images (WebP included) to an elements background. Just use
-
-```html
-{{ partial:snippets/background_image image="YOUR_IMAGE" class="CLASS_OF_ELEMENT_THAT_NEEDS_BG_IMAGE" }}
-```
-
-> Note: You can use either a hardcoded image or an image from an asset field.
