@@ -22,12 +22,17 @@ class StarterKitPostInstall
             $env = str_replace("APP_NAME='Statamic Peak'", "APP_NAME='{$appName}'", $env);
             $env = str_replace('APP_URL=', "APP_URL='{$originalAppUrl}'", $env);
             $env = str_replace('APP_KEY=', "APP_KEY='{$originalAppKey}'", $env);
+            $readme = app('files')->get(base_path('README.md'));
+            $readme = str_replace("APP_NAME='Statamic Peak'", "APP_NAME='{$appName}'", $readme);
+            $readme = str_replace('APP_KEY=', "APP_KEY='{$originalAppKey}'", $readme);
 
             if ($console->confirm('Do you want use Imagick as an image processor instead of GD?', true)) {
                 $env = str_replace('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick', $env);
+                $readme = str_replace('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick', $readme);
             }
 
             app('files')->put(base_path('.env'), $env);
+            app('files')->put(base_path('README.md'), $readme);
         }
 
         if ($console->confirm('Do you want to exclude the `public/build` folder from git?', true)) {
