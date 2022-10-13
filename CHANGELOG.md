@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.5 (2022-10-13)
+
+### What's improved
+- Besides `.env` also update `README.md` during starter kit install. 8600b1b3 by @robdekort
+
 ## v6.4 (2022-10-11)
 
 ### What's new
