@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.6 (2022-10-13)
+
+### What's new
+- Add installable full width image block. 6dbb9d44 by @robdekort
+
 ## v6.5 (2022-10-13)
 
 ### What's improved

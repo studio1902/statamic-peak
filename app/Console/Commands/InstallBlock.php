@@ -68,6 +68,7 @@ class InstallBlock extends Command
                 'Call to action: Show a call to action. [call_to_action]',
                 'Collection: Show collection entries. [collection]',
                 'Divider: A visual divider between blocks. [divider]',
+                'Full width image: A full width image with optional text and button(s). [full_width_image]',
                 'Image and text: An image and text side by side. [image_and_text]'
             ],
             null, null, true
