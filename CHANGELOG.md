@@ -2,6 +2,9 @@
 
 ## v6.7 (2022-10-14)
 
+### What's improved
+- Provide `width` and `height` attributes for svg and gif. #269 by @klickreflex
+
 ### What's fixed
 - Use working `width` and `height` attributes and aspect ratio crop the fallback image. 81efe110 by @robdekort
 
