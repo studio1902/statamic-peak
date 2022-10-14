@@ -83,9 +83,9 @@
                     type="{{ image.mime_type }}"
                 >
                 <img
-                    width="{{ image.width }}"
-                    height="{{ image.height }}"
-                    src="{{ glide:image width="1024" height="10000" quality="{ quality ?? '85' }" fit="contain" }}"
+                    width="{{ width }}"
+                    height="{{ ratio_large ? (width * ratio_large) : height }}"
+                    src="{{ glide:image width="1024" height="{ ratio_large ? (width * ratio_large) : height }" quality="{ quality ?? '85' }" fit="contain" }}"
                     alt="{{ alt | ensure_right('.') | entities }}"
                     {{ if cover }}
                         class="object-cover w-full h-full {{ class }}"
