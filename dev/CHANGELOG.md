@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.7 (2022-10-14)
+
+### What's fixed
+- Use working `width` and `height` attributes and aspect ratio crop the fallback image. 81efe110 by @robdekort
+
 ## v6.6 (2022-10-13)
 
 ### What's new
