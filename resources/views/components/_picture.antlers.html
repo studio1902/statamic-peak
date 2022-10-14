@@ -45,6 +45,8 @@
                     class="{{ class }}"
                     src="{{ url }}"
                     alt="{{ alt | ensure_right('.') | entities }}"
+                    width="{{ width }}"
+                    height="{{ height }}"
                     {{ unless alt }}
                         aria-hidden="true"
                     {{ /unless }}
