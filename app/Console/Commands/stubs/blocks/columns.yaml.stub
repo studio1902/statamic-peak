@@ -1,0 +1,29 @@
+title: Columns
+fields:
+  -
+    handle: columns
+    field:
+      fields:
+        -
+          handle: image
+          field: common.image
+        -
+          handle: text
+          field: common.text_rich
+          config:
+            validate:
+              - required
+        -
+          import: buttons
+      mode: stacked
+      min_rows: 1
+      add_row: 'Add column'
+      reorderable: true
+      display: 'Columns'
+      replicator_preview: false
+      type: grid
+      icon: grid
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false

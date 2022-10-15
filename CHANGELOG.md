@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.8 (2022-10-15)
+
+### What's new
+- Add installable Columns block. 0ac2e8cf by @robdekort
+
 ## v6.7 (2022-10-14)
 
 ### What's improved
