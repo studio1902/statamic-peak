@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.9 (2022-10-16)
+
+### What's new
+- Add installable Images grid block. f4398ec1 by @robdekort
+- Add installer option to enable/disable debugbar. 2a888986 by @robdekort
+
 ## v6.8 (2022-10-15)
 
 ### What's new
