@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Simplify Ploi deploy script. 020f2e8a by @robdekort
+
 ## v6.9 (2022-10-16)
 
 ### What's new
