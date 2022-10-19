@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Change indentiation in `collection.yaml.stub` to 2 spaces. #272 by @pdipatrizio
+
 ## v6.10 (2022-10-19)
 
 ### What's improved
