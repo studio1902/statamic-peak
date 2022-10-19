@@ -18,7 +18,7 @@
             >
                 <a
                     class="
-                        p-1 -m-1 flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary
+                        p-1 -m-1 flex items-center font-bold text-sm hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary
                         {{ is_current || is_parent
                             ? 'text-primary'
                             : 'text-neutral' }}
@@ -48,7 +48,7 @@
                     <ul
                         x-show="subnavOpen"
                         x-ref="subnav"
-                        class="absolute mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
+                        class="absolute right-0 mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
                         @click.outside="subnavOpen = false"
                         x-transition
                     >
