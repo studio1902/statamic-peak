@@ -107,14 +107,14 @@ composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 npm ci
 npm run build
-php{SITE_PHP_VERSION} artisan cache:clear
-php{SITE_PHP_VERSION} artisan config:cache
-php{SITE_PHP_VERSION} artisan route:cache
-php{SITE_PHP_VERSION} artisan statamic:stache:warm
-php{SITE_PHP_VERSION} artisan queue:restart
-php{SITE_PHP_VERSION} artisan statamic:search:update --all
-php{SITE_PHP_VERSION} artisan statamic:static:clear
-php{SITE_PHP_VERSION} artisan statamic:static:warm --queue
+{SITE_PHP} artisan cache:clear
+{SITE_PHP} artisan config:cache
+{SITE_PHP} artisan route:cache
+{SITE_PHP} artisan statamic:stache:warm
+{SITE_PHP} artisan queue:restart
+{SITE_PHP} artisan statamic:search:update --all
+{SITE_PHP} artisan statamic:static:clear
+{SITE_PHP} artisan statamic:static:warm --queue
 
 {RELOAD_PHP_FPM}
 

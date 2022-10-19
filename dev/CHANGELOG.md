@@ -1,8 +1,11 @@
 # Changelog
 
-## Unreleased
+## v6.10 (2022-10-19)
 
 ### What's improved
+- Make sure +3 columns work correctly on the column page builder block. e52440d8 by @kobe-f8
+- Remove redundant modifier on full image page builder block. 72de7ec6 by @kobe-f8
+- Simplify base styling. 48249b2a by @robdekort
 - Simplify Ploi deploy script. 020f2e8a by @robdekort
 
 ## v6.9 (2022-10-16)
