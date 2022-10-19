@@ -12,7 +12,7 @@
 >
     <button
         @click.prevent="mobileNavOpen = !mobileNavOpen"
-        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold text-white mb-safe bg-primary focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
+        class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold text-white mb-safe rounded bg-primary focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
         :aria-label="
         mobileNavOpen
             ? '{{ trans:strings.nav_close }}'
@@ -37,7 +37,7 @@
                     class="leading-none"
                 >
                     <a
-                        class="w-full py-2 flex items-center space-x-1 font-bold uppercase tracking-wide hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }} focus:outline-none focus-visible:ring-2 ring-primary"
+                        class="w-full py-2 flex items-center space-x-1 text-lg font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }} focus:outline-none focus-visible:ring-2 ring-primary"
                         {{ if children }}
                             href="#"
                             @click.prevent="subnavOpen = !subnavOpen"
