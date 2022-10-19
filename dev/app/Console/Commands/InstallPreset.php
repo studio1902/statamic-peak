@@ -65,10 +65,21 @@ class InstallPreset extends Command
         $this->choices = $this->choice(
             'Which presets do you want to install into your site? You can separate multiple answers with a comma',
             [
-                'News: A dated news collection with index and show templates and a page builder set. [news]',
+                'News: A dated news collection with index and show templates (including JSON-ld) and a page builder set. [news]',
             ],
             null, null, true
         );
+
+        // Copy news-collection.yaml.stub -> content/collections/news.yaml
+        // Copy news.md.stub -> content/collections/pages/news.md
+        // Copy index.antlers.html.stub -> resources/views/news/index.antlers.html
+        // Copy show.antlers.html.stub -> resources/views/news/show.antlers.html
+        // Copy news.antlers.html.stub -> resources/views/page_builder/_news.antlers.html
+        // Copy index_content.antlers.html.stub -> resources/views/page_builder/_index_content.antlers.html
+        // Copy news_item.antlers.html.stub -> resources/views/components/_news_items.antlers.html
+        // Copy news-fieldset.yaml.stub -> resources/fieldsets/news.yaml
+        // Copy index_content.yaml.stub -> resources/fieldsets/index_content.yaml
+        // Add `index_content` and `news` to page builder.
 
         foreach($this->choices as $choice) {
             $this->preset_name = Stringy::split($choice, ':')[0];
