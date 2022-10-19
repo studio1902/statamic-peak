@@ -16,7 +16,7 @@
     <div class="relative fluid-container grid md:grid-cols-12 gap-8">
         <article class="md:col-span-8 md:col-start-3">
             {{ title ?= { partial:typography/h2 :content="block:title" color="text-white" class="mb-4 text-center" } }}
-            {{ text ?= { partial:typography/p content="{ block:text | nl2br }" color="text-white" class="text-center" } }}
+            {{ text ?= { partial:typography/p :content="block:text" color="text-white" class="text-center" } }}
             {{ partial:components/buttons inverted="true" class="justify-center" }}
         </article>
     </div>
