@@ -11,12 +11,14 @@
     {{ elseif fallback == 'custom_text' }}
         {{ custom_text }}
     {{ elseif fallback == 'page_builder' }}
-        {{ page_builder limit="1" }}
-            {{ if article }}
-                {{ article | raw | where('type', 'paragraph') | bard_text | trim | safe_truncate(157, '...') }}
-            {{ elseif text }}
-                {{ text | trim | safe_truncate(157, '...') }}
-            {{ /if }}
-        {{ /page_builder }}
+        {{ if page_builder:0:text }}
+            {{ page_builder:0:text | strip_tags | trim | safe_truncate(157, '...') }}
+        {{ else }}
+            {{ page_builder where="type:article" limit="1" }}
+                {{ if article }}
+                    {{ article | raw | where('type', 'paragraph') | bard_text | trim | safe_truncate(157, '...') }}
+                {{ /if }}
+            {{ /page_builder }}
+        {{ /if }}
     {{ /if }}
 {{ /seo:collection_defaults }}

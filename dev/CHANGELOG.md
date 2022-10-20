@@ -3,6 +3,16 @@
 ## Unreleased
 
 ### What's improved
+- Improve fallback description logic. d42ef587 by @robdekort and @freshface
+
+## v6.11 (2022-10-20)
+
+### What's new
+- Add a typography `time` partial. 471fa0d3 by @robdekort
+- Update to Tailwind 3.2. #274 by @klickreflex
+
+### What's improved
+- Use the same gap sizes for installable page builder blocks. #274 by @klickreflex
 - Change indentiation in `collection.yaml.stub` to 2 spaces. #272 by @pdipatrizio
 
 ## v6.10 (2022-10-19)
