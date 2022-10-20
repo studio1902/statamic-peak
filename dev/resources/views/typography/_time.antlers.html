@@ -1,0 +1,15 @@
+{{#
+	@name Time
+	@desc The typography time partial to render datetime with `as` and `label` attributes.
+    @param* content The time content.
+    @param format The iso format. Defaults to `D MMMM YYYY`.
+    @param as The wrapping element. Defaults to `time`.
+    @param color Set a custom text color utility. Falls back to `text-neutral`.
+    @param class Add custom CSS classes.
+#}}
+
+<!-- /typography/_time.antlers.html -->
+<{{ as or 'time' }} class="{{ color or 'text-neutral' }} {{ class }}">
+    {{ content | iso_format(format or 'D MMMM YYYY') }}
+</{{ as or 'time' }}>
+<!-- End: /typography/_time.antlers.html -->
