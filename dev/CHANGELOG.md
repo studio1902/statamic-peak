@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Improve fallback description logic. d42ef587 by @robdekort and @freshface
+
 ## v6.11 (2022-10-20)
 
 ### What's new
