@@ -28,7 +28,7 @@ Run `php please peak:add-block` to:
 <div class='embed-container'><iframe src='https://www.youtube.com/embed/wW1D53nG61c' frameborder='0' allowfullscreen></iframe></div>
 
 ## Add Page Builder Article Set
-This command adds a set to the Peak Page Builder Article (Bard) blocko and generates the files needed.
+This command adds a set to the Peak Page Builder Article (Bard) block and generates the files needed.
 
 Run `php please peak:add-set` to:
 
