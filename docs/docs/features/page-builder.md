@@ -27,3 +27,12 @@ For example if you add a fieldset to the `page_builder.yaml` with the handle `ca
 ```
 
 Alternatively you can use the generate block command in Peak. Run `php please peak:add-block` and follow the instrutions by filling in a name, a filename and a fieldset instruction. All the files needed will be generated and the block will be added to the `page_builder.yaml` file.
+
+## Installing blocks
+You can install premade blocks using the [install block command](/features/commands.html#install-page-builder-block). Peak ships with a bunch of premade blocks you can style yourself. These blocks include:
+* Call to action
+* Columns
+* Full width image
+* Image and text
+* Images grid
+* And more

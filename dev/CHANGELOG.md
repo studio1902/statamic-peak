@@ -3,7 +3,12 @@
 ## Unreleased
 
 ### What's improved
-- Improve fallback description logic. d42ef587 by @robdekort and @freshface
+- Add `locale` attribute to time partial. 89c238ef by @robdekort
+
+## v6.12 (2022-10-25)
+
+### What's improved
+- Improve fallback description logic. d42ef587 by @freshface and @robdekort
 
 ## v6.11 (2022-10-20)
 
