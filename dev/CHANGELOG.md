@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## v6.12 (2022-10-26)
 
 ### What's improved
 - Add `locale` attribute to time partial. 89c238ef by @robdekort
