@@ -39,16 +39,26 @@ class StarterKitPostInstall
             app('files')->put(base_path('README.md'), $readme);
         }
 
-        if ($console->confirm('Do you want to exclude the `public/build` folder from git?', true)) {
-            app('files')->append(base_path('.gitignore'), "\n/public/build/");
-        }
+        if ($console->confirm('Do you want to init a git repo and configure gitignore?', true)) {
+            $process = new Process(['git', 'init']);
+            try {
+                $process->mustRun();
+                $console->info('Repo initialised.');
+            } catch (ProcessFailedException $exception) {
+                $console->info($exception->getMessage());
+            }
 
-        if ($console->confirm('Do you want to exclude the `users` folder from git?', false)) {
-            app('files')->append(base_path('.gitignore'), "\n/users");
-        }
+            if ($console->confirm('Do you want to exclude the `public/build` folder from git?', true)) {
+                app('files')->append(base_path('.gitignore'), "\n/public/build/");
+            }
 
-        if ($console->confirm('Do you want to exclude the `storage/form` folder from git?', false)) {
-            app('files')->append(base_path('.gitignore'), "\n/storage/forms");
+            if ($console->confirm('Do you want to exclude the `users` folder from git?', false)) {
+                app('files')->append(base_path('.gitignore'), "\n/users");
+            }
+
+            if ($console->confirm('Do you want to exclude the `storage/form` folder from git?', false)) {
+                app('files')->append(base_path('.gitignore'), "\n/storage/forms");
+            }
         }
 
         if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {
@@ -70,7 +80,9 @@ class StarterKitPostInstall
             if(PHP_OS_FAMILY == 'Windows') exec('start https://github.com/studio1902/statamic-peak');
             if(PHP_OS_FAMILY == 'Linux') exec('xdg-open https://github.com/studio1902/statamic-peak');
 
-            $console->info('Thank you and enjoy the view!');
+            $console->info('Thank you!');
         }
+
+        $console->info('Peak is installed. Enjoy the view!');
     }
 }
