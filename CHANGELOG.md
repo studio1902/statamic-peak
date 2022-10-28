@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.14 (2022-10-28)
+
+### What's improved
+- Add an option to init a git repo during installation. 02a4fc99 by @robdekort
+
 ## v6.13 (2022-10-26)
 
 ### What's improved
