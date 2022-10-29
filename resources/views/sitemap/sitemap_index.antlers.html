@@ -1,0 +1,12 @@
+{{#
+    @name Sitemap Index
+    @desc The sitemap index that lists all sitemaps available
+#}}
+{{ xml_header }}
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {{ sites }}
+        <sitemap>
+            <loc>{{ url }}/sitemap.xml</loc>
+        </sitemap>
+    {{ /sites }}
+</sitemapindex>
