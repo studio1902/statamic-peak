@@ -24,6 +24,18 @@ Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
     'content_type' => 'application/xml'
 ]);
 
+// The Sitemap route to the sitemap.xml for multisites
+// Route::statamic('/{site_handle}/sitemap.xml', 'sitemap/sitemap', [
+//     'layout' => null,
+//     'content_type' => 'application/xml'
+// ]);
+
+ // The Sitemap Index route for listing sitemaps of multisites
+// Route::statamic('/sitemaps.xml', 'sitemap/sitemap_index', [
+//     'layout' => null,
+//     'content_type' => 'application/xml'
+// ]);
+
 // The Manifest route to the manifest.json
 Route::statamic('/site.webmanifest', 'manifest/manifest', [
     'layout' => null,
