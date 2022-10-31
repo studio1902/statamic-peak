@@ -32,7 +32,7 @@ Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
 
 // The Sitemap Index route for listing sitemaps of multisites
 // Route::statamic('/sitemaps.xml', 'sitemap/sitemap_index', [
-//     'layout' => null
+//     'layout' => null,
 //     'content_type' => 'application/xml'
 // ]);
 
