@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.15 (2022-10-31)
+
+### What's new
+- Add a multisite sitemap. #277 by @andreasschantl, 57749aef by @robdekort
+
 ## v6.14 (2022-10-28)
 
 ### What's improved
