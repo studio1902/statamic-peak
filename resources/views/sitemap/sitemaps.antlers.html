@@ -1,0 +1,8 @@
+{{ xml_header }}
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {{ sites }}
+        <sitemap>
+            <loc>{{ permalink | ensure_right('/') }}sitemap.xml</loc>
+        </sitemap>
+    {{ /sites }}
+</sitemapindex>

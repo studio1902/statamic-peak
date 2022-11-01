@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.16 (2022-11-01)
+
+### What's improved
+- Use full url's in sitemap index. 186b4f6a by @robdekort
+- Enable multisitemap routes by default. 5c9fcf0d by @robdekort
+
 ## v6.15 (2022-10-31)
 
 ### What's new
