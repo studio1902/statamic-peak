@@ -224,6 +224,12 @@
         <meta name="google-site-verification" content="{{ seo:google_site_verification }}" />
     {{ /if }}
 
+    {{ if seo:use_plausible && seo:plausible_use_custom_script }}
+        <script defer data-domain="{{ seo:plausible }}" src="{{ seo:plausible_custom_script_url }}"></script>
+    {{ elseif seo:use_plausible }}
+        <script defer data-domain="{{ seo:plausible }}" src="https://plausible.io/js/script.js"></script>
+    {{ /if }}
+
     {{ if seo:use_fathom && seo:fathom_use_custom_domain }}
         <script src="{{ seo:fathom_custom_script_url }}" site="{{ seo:fathom }}" defer></script>
     {{ elseif seo:use_fathom }}
