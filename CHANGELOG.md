@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.17 (2022-11-03)
+
+### What's new
+- Add Plausible Analytics options to the global SEO configuration. #278 by @x7ryan
+
 ## v6.16 (2022-11-01)
 
 ### What's improved
