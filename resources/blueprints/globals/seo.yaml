@@ -456,60 +456,11 @@ sections:
           if:
             use_google_site_verification: 'equals true'
       -
-        handle: section_privacy_trackers
+        handle: section_fathom
         field:
           type: section
-          instructions: "Configure privacy friendly trackers that don't require a cookie notification."
-          display: 'Privacy Friendly Trackers'
-      -
-        handle: use_plausible
-        field:
-          type: toggle
-          instructions: 'Add plausible tracking code to your head.'
-          listable: false
-          display: plausible
-          width: 50
-      -
-        handle: plausible_use_custom_script
-        field:
-          type: toggle
-          instructions: 'For when you are you using a self hosted install or proxying the script.'
-          listable: false
-          width: 50
-          display: 'Custom script'
-          instructions_position: above
-          default: false
-          if:
-            use_plausible: 'equals true'
-      -
-        handle: plausible
-        field:
-          width: 50
-          display: 'Site Domain'
-          instructions: 'Specify the domain of your site you wish track visits on.'
-          input_type: text
-          type: text
-          listable: hidden
-          validate:
-            - 'required_if:use_plausible,true'
-          if:
-            use_plausible: 'equals true'
-      -
-        handle: plausible_custom_script_url
-        field:
-          width: 50
-          display: 'Custom script'
-          instructions: 'Add the full script URL.'
-          input_type: url
-          type: text
-          listable: hidden
-          validate:
-            - 'required_if:plausible_use_custom_domain,true'
-          if:
-            use_plausible: 'equals true'
-            plausible_use_custom_script: 'equals true'
-          instructions_position: above
-          antlers: false
+          instructions: "Configure Fathom. A privacy friendly tracker that doesn't require a cookie notification."
+          display: 'Fathom'
       -
         handle: use_fathom
         field:
@@ -559,6 +510,67 @@ sections:
             fathom_use_custom_domain: 'equals true'
           instructions_position: above
           antlers: false
+      -
+        handle: section_plausible
+        field:
+          type: section
+          instructions: "Configure Plausible. A privacy friendly tracker that doesn't require a cookie notification."
+          display: 'Plausible'
+      -
+        handle: use_plausible
+        field:
+          type: toggle
+          instructions: 'Add Plausible tracking code to your head.'
+          listable: false
+          display: Plausible
+          width: 50
+      -
+        handle: plausible_use_custom_script
+        field:
+          type: toggle
+          instructions: 'For when you are you using a self hosted install or proxying the script.'
+          listable: false
+          width: 50
+          display: 'Custom script'
+          instructions_position: above
+          default: false
+          if:
+            use_plausible: 'equals true'
+      -
+        handle: plausible
+        field:
+          width: 50
+          display: 'Site Domain'
+          instructions: 'Specify the domain of your site you wish track visits on.'
+          input_type: text
+          type: text
+          listable: hidden
+          validate:
+            - 'required_if:use_plausible,true'
+          if:
+            use_plausible: 'equals true'
+      -
+        handle: plausible_custom_script_url
+        field:
+          width: 50
+          display: 'Custom script'
+          instructions: 'Add the full script URL.'
+          input_type: url
+          type: text
+          listable: hidden
+          validate:
+            - 'required_if:plausible_use_custom_domain,true'
+          if:
+            use_plausible: 'equals true'
+            plausible_use_custom_script: 'equals true'
+          instructions_position: above
+          antlers: false
+      -
+        handle: section_cloudflare
+        field:
+          type: section
+          instructions: "Configure Cloudflare Web Analytics."
+          display: 'Cloudflare Web Analytics'
       -
         handle: use_cloudflare_web_analytics
         field:
