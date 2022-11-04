@@ -3,6 +3,7 @@
 ## v6.18 (2022-11-04)
 
 ### What's improved
+- Generate PNG favicons for safari to support full color icons. Deprecate mask-icon. 77c1aaea by @robdekort
 - Use double quotes in `.env.example` and `readme.example.md` and remove quotes from App Name during install. #bb759e36 by @robdekort
 - Updated dependencies. d9a115c2 by @robdekort
 
