@@ -16,19 +16,20 @@ class StarterKitPostInstall
 
         if ($console->confirm('Do you want overwrite your `.env` file with the Peak presets?', true)) {
             $appName = $console->ask('What should be your app name?');
+            $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
             $debugBarEnabled = $console->confirm('Do you want to use the debugbar?', true);
             $originalAppUrl = env('APP_URL');
             $originalAppKey = env('APP_KEY');
 
             $env = app('files')->get(base_path('.env.example'));
-            $env = str_replace("APP_NAME='Statamic Peak'", "APP_NAME='{$appName}'", $env);
-            $env = str_replace('APP_URL=', "APP_URL='{$originalAppUrl}'", $env);
-            $env = str_replace('APP_KEY=', "APP_KEY='{$originalAppKey}'", $env);
+            $env = str_replace("APP_NAME=\"Statamic Peak\"", "APP_NAME=\"{$appName}\"", $env);
+            $env = str_replace('APP_URL=', "APP_URL=\"{$originalAppUrl}\"", $env);
+            $env = str_replace('APP_KEY=', "APP_KEY=\"{$originalAppKey}\"", $env);
             if (!$debugBarEnabled) $env = str_replace('DEBUGBAR_ENABLED=true', "DEBUGBAR_ENABLED=false", $env);
 
             $readme = app('files')->get(base_path('README.md'));
-            $readme = str_replace("APP_NAME='Statamic Peak'", "APP_NAME='{$appName}'", $readme);
-            $readme = str_replace('APP_KEY=', "APP_KEY='{$originalAppKey}'", $readme);
+            $readme = str_replace("APP_NAME=\"Statamic Peak\"", "APP_NAME=\"{$appName}\"", $readme);
+            $readme = str_replace('APP_KEY=', "APP_KEY=\"{$originalAppKey}\"", $readme);
 
             if ($console->confirm('Do you want use Imagick as an image processor instead of GD?', true)) {
                 $env = str_replace('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick', $env);
