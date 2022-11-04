@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.18 (2022-11-04)
+
+### What's improved
+- Use double quotes in `.env.example` and `readme.example.md` and remove quotes from App Name during install. #bb759e36 by @robdekort
+- Updated dependencies. d9a115c2 by @robdekort
+
 ## v6.17 (2022-11-03)
 
 ### What's new
