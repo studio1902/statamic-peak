@@ -158,6 +158,7 @@ sections:
           type: toggle
           icon: toggle
           instructions: 'Enable if you want Peak to generate favicons. **Important**: you need to have the PHP Imagick module installed.'
+          instructions_position: below
           listable: hidden
       -
         handle: svg
@@ -168,34 +169,8 @@ sections:
           localizable: false
           display: 'Favicon SVG'
           instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg).'
+          instructions_position: below
           width: 50
-          validate:
-            - 'required_if:use_favicons,true'
-          if:
-            use_favicons: 'equals true'
-      -
-        handle: section_colors
-        field:
-          type: section
-          listable: hidden
-          display: Colors
-          if:
-            use_favicons: 'equals true'
-      -
-        handle: safari_color
-        field:
-          theme: nano
-          lock_opacity: true
-          default_color_mode: HEXA
-          color_modes:
-            - hex
-          display: Safari
-          type: color
-          icon: color
-          default: '#000000'
-          listable: hidden
-          instructions: 'The icon for Safari (_mask-icon_) will be converted to a single color SVG with this as the color.'
-          width: 33
           validate:
             - 'required_if:use_favicons,true'
           if:
@@ -213,8 +188,9 @@ sections:
           icon: color
           default: '#ffffff'
           listable: hidden
-          instructions: 'The icon for iOS (_apple-touch-icon_) will used the full color SVG with this color as a background.'
-          width: 33
+          instructions: 'The icon for iOS (_apple-touch-icon_) will use the full color SVG with this color as a background.'
+          instructions_position: below
+          width: 50
           validate:
             - 'required_if:use_favicons,true'
           if:
@@ -229,17 +205,20 @@ sections:
           if:
             use_favicons: 'equals true'
       -
-        handle: safari_mask_icon
+        handle: safari_icon
         field: common.image
         config:
           container: favicons
           restrict: true
           localizable: false
-          display: 'Safari Mask Icon'
-          instructions: 'A single color as flattened as possible SVG. The color defined above at `Safari` will be used.'
+          display: 'Safari icon'
+          instructions: 'A 32x32 PNG image used for Safari. Will be focal cropped to this dimension and 16x16.'
+          instructions_position: below
           width: 33
           if:
             use_favicons: 'equals true'
+          validate:
+            - 'mimes:png'
       -
         handle: apple_touch_icon
         field: common.image
@@ -249,6 +228,7 @@ sections:
           localizable: false
           display: 'Apple touch icon'
           instructions: 'A 180x180 PNG image used on iOS devices. Will be focal cropped to this dimension.'
+          instructions_position: below
           width: 33
           if:
             use_favicons: 'equals true'
@@ -261,6 +241,7 @@ sections:
           localizable: false
           display: 'Android Chrome icon'
           instructions: 'A 512x512 PNG image image used on Android devices. Will be focal cropped to this dimension.'
+          instructions_position: below
           width: 33
           if:
             use_favicons: 'equals true'
