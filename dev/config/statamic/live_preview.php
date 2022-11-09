@@ -13,6 +13,7 @@ return [
     */
 
     'devices' => [
+        'xs' => ['width' => 375, 'height' => 667],
         'sm' => ['width' => 640, 'height' => 786],
         'md' => ['width' => 768, 'height' => 1024],
         'lg' => ['width' => 1024, 'height' => 800],
