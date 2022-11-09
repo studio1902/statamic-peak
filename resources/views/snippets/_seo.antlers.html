@@ -26,7 +26,7 @@
 
 {{# Page description #}}
 {{ if seo_description }}
-   <meta name="description" content="{{ seo_description }}">
+   <meta name="description" content="{{ seo_description | strip_tags | entities | trim }}">
 {{ elseif seo:collection_defaults }}
    <meta name="description" content="{{ partial:snippets/fallback_description }}">
 {{ /if }}
@@ -110,7 +110,7 @@
                    {
                        "@type": "ListItem",
                        "position": {{ count }},
-                       "name": "{{ title }}",
+                       "name": "{{ title | strip_tags | entities | trim }}",
                        "item": "{{ permalink }}"
                    } {{ unless last}},{{ /unless}}
                {{ /nav:breadcrumbs }}
@@ -124,14 +124,14 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{{ site:locale }}">
 {{ if og_title }}
-   <meta property="og:title" content="{{ og_title }}">
+   <meta property="og:title" content="{{ og_title | strip_tags | entities | trim }}">
 {{ else }}
-   <meta property="og:title" content="{{ seo_title ? seo_title : title }}">
+   <meta property="og:title" content="{{ seo_title ? (seo_title | strip_tags | entities | trim) : (title | strip_tags | entities | trim) }}">
 {{ /if }}
 {{ if og_description }}
-   <meta property="og:description" content="{{ og_description }}">
+   <meta property="og:description" content="{{ og_description | strip_tags | entities | trim }}">
 {{ elseif seo_description }}
-   <meta property="og:description" content="{{ seo_description }}">
+   <meta property="og:description" content="{{ seo_description | strip_tags | entities | trim }}">
 {{ elseif seo:collection_defaults }}
    <meta property="og:description" content="{{ partial:snippets/fallback_description }}">
 {{ /if }}
@@ -146,14 +146,14 @@
    <meta name="twitter:card" content="summary_large_image">
    <meta name="twitter:site" content="{{ seo:twitter_handle }}">
    {{ if og_title }}
-       <meta name="twitter:title" content="{{ og_title }}">
+       <meta name="twitter:title" content="{{ og_title | strip_tags | entities | trim }}">
    {{ else }}
-       <meta name="twitter:title" content="{{ seo_title ? seo_title : title }}">
+       <meta name="twitter:title" content="{{ seo_title ? (seo_title | strip_tags | entities | trim) : (title  | strip_tags | entities | trim) }}">
    {{ /if }}
    {{ if og_description }}
-       <meta name="twitter:description" content="{{ og_description }}">
+       <meta name="twitter:description" content="{{ og_description | strip_tags | entities | trim }}">
    {{ elseif seo_description }}
-       <meta name="twitter:description" content="{{ seo_description }}">
+       <meta name="twitter:description" content="{{ seo_description | strip_tags | entities | trim }}">
    {{ elseif seo:collection_defaults }}
        <meta name="twitter:description" content="{{ partial:snippets/fallback_description }}">
    {{ /if }}
