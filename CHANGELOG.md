@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.21 (2022-11-09)
+
+### What's improved
+- Inline privacy statement link with label in toggle field. d0c82d46 by @robdekort
+
 ## v6.20 (2022-11-09)
 
 ### What's improved
