@@ -65,7 +65,7 @@
                             }} {{ size:width }}w,
                         {{ /srcsets }}
                     "
-                    sizes="{{ sizes ?? '(min-width: 768px) 50vw, 90vw' }}"
+                    sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
                     type="image/webp"
                 >
                 <source
@@ -81,7 +81,7 @@
                             {{ size:width }}w,
                         {{ /srcsets }}
                     "
-                    sizes="{{ sizes ?? '(min-width: 768px) 50vw, 90vw' }}"
+                    sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
                     type="{{ image.mime_type }}"
                 >
                 <img
