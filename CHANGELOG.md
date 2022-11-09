@@ -1,5 +1,12 @@
 # Changelog
 
+## v6.19 (2022-11-09)
+
+### What's improved
+- Add small breakpoint to live preview. #279 by @K3CK
+- Use `strip_tags`, `entities` and `trim` on SEO fields. #280 by @K3CK
+- Add `entities` modifier to fallback description. 59238953 and 6b51b130 by @robdekort
+
 ## v6.18 (2022-11-04)
 
 ### What's improved
