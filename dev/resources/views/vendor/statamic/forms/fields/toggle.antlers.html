@@ -6,7 +6,7 @@
 >
     <input type="hidden" name="{{ handle }}" value="0">
     <input
-        class="mr-2 rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
+        class="mr-2 inline-flex rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
         type="checkbox"
         name="{{ handle }}"
         value="1"
@@ -14,15 +14,16 @@
         {{ (!old && default) ?= 'checked' }}
     >
     {{ if inline_label }}
-        {{ trans :key="inline_label" }}
-    {{ /if }}
-    {{ if handle === 'consent' }}
-        &nbsp;
-        {{ if configuration:privacy_statement_type == 'entry' }}
-            <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ configuration:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
-        {{ elseif configuration:privacy_statement_type == 'pdf' }}
-            <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ configuration:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
-        {{ /if }}
+        <span>
+            {{ trans :key="inline_label" }}
+            {{ if handle === 'consent' }}
+                {{ if configuration:privacy_statement_type == 'entry' }}
+                    <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ configuration:privacy_statement_entry:url }}">{{ trans:strings.cookie_learn_more }}</a>
+                {{ elseif configuration:privacy_statement_type == 'pdf' }}
+                    <a class="px-1 -m-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="{{ configuration:privacy_statement_asset }}" target="_blank">{{ trans:strings.cookie_learn_more }}</a>
+                {{ /if }}
+            {{ /if }}
+        </span>
     {{ /if }}
 </label>
 <!-- End: /vendor/statamic/forms/fields/toggle.antlers.html -->
