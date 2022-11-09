@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.20 (2022-11-09)
+
+### What's improved
+- Better defaults for sizes attributes: especially on large screens. Great suggestion by @klickreflex. 98e69497 by @robdekort
+
 ## v6.19 (2022-11-09)
 
 ### What's improved
