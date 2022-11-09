@@ -24,9 +24,9 @@
         lazy="true"
         sizes="
             {{ switch(
-                (size == 'md') => '(min-width: 768px) 55vw, 90vw',
-                (size == 'lg') => '(min-width: 768px) 75vw, 90vw',
-                (size == 'xl') => '90vw',
+                (size == 'md') => '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw',
+                (size == 'lg') => '(min-width: 1280px) 960px, (min-width: 768px) 75vw, 90vw',
+                (size == 'xl') => '(min-width: 1280px) 1150px, 90vw',
                 () => '100vw'
             )}}
         "

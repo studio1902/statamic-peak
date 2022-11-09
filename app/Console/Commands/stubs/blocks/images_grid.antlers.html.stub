@@ -19,9 +19,9 @@
                     :image="url"
                     sizes="
                         { switch(
-                            (total_results == 1) => '90vw',
-                            (total_results == 2) => '(min-width: 768px) 50vw, 90vw',
-                            (total_results == 3) => '(min-width: 768px) 33vw, 90vw',
+                            (total_results == 1) => '(min-width: 1280px) 1150px, 90vw',
+                            (total_results == 2) => '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw',
+                            (total_results == 3) => '(min-width: 1280px) 430px, (min-width: 768px) 33vw, 90vw',
                         )}
                     "
                     aspect_ratio="{ total_results > 1 ?= 'large:4/3' }"
