@@ -1,6 +1,6 @@
 {{#
-	@name {{ collection_name }} show
-	@desc The {{ collection_name }} show template.
+    @name {{ collection_name }} show
+    @desc The {{ collection_name }} show template.
 #}}
 
 <!-- /{{ filename }}/show.antlers.html -->

@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.22 (2022-11-10)
+
+### What's improved
+- Replace some tabs with spaces. #281 by @hgrimelid
+
 ## v6.21 (2022-11-09)
 
 ### What's improved
