@@ -1,6 +1,6 @@
 {{#
-	@name {{ partial_name }}
-	@desc {{ partial_description }}
+    @name {{ partial_name }}
+    @desc {{ partial_description }}
 #}}
 
 <!-- /{{ folder }}/_{{ filename }}.antlers.html -->

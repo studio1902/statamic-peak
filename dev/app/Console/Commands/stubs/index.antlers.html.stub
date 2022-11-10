@@ -1,6 +1,6 @@
 {{#
-	@name {{ collection_name }} index
-	@desc The {{ collection_name }} index template.
+    @name {{ collection_name }} index
+    @desc The {{ collection_name }} index template.
 #}}
 
 <!-- /{{ filename }}/index.antlers.html -->
