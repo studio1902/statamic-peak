@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.23 (2022-11-11)
+
+### What's improved
+- Improve skip to link behaviour. #282 by @klickreflex
+
 ## v6.22 (2022-11-10)
 
 ### What's improved
