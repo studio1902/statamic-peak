@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.24 (2022-11-12)
+
+### What's new
+- Add Mastodon to Social Media globals, including site verification. 9dfafe55 by @robdekort
+
 ## v6.23 (2022-11-11)
 
 ### What's improved
