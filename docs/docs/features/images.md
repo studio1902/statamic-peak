@@ -1,4 +1,4 @@
-# Assets
+# Images
 
 Peak comes with a picture partial that will add responsive sourcesets to your images. In `resources/views/components/_figure.antlers.html` you can see an example of how to include the picture partial. It accepts the following arguments:
 
@@ -20,7 +20,7 @@ See [this article](https://studio1902.nl/blog/responsive-images-with-statamic-ta
 > Note: alternatively you could use the fantastic [Responsive Images Addon](https://github.com/spatie/statamic-responsive-images) by [Rias](https://github.com/riasvdv) from Spatie. It has few more features and uses Javascript to auto populate your `sizes` attribute.
 
 ### Asset presets
-Peak doesn't use Asset Presets anymore but generates images on the fly. This results in less storage being consumed and a faster CP experience when uploading assets. The downside is that the **first visit** after using new images will be slow as Statamic has to generate and cache all requested variants. When deploying you can bypass this by running `php please static:warm --queue`. That command will generate the static cache and generate all missing asset variants.
+Peak doesn't use Asset Presets but generates images on the fly. This results in less storage being consumed and a faster CP experience when uploading assets. The downside is that the **first visit** after using new images will be slow as Statamic has to generate and cache all requested variants. When deploying you can bypass this by running `php please static:warm --queue`. That command will generate the static cache and generate all missing asset variants.
 
 ### Aspect cropping
 You can specify cropping for small and large screens by providing the picture partial with an `aspect_ratio` argument. For example: `aspect_ratio="1/1 large:1/2"`.
@@ -37,5 +37,7 @@ aspect_ratio="
 	)}
 "
 ```
-
 > Note: While it might seems like it makes sense to tie these crops to Tailwind breakpoint sizes (`md:`, `lg:` etc), the browser picks images not just based on screen width, but also on pixel density. Using those breakpoints implies that you can perfectly specify cropping per screen size, but this is not the case.
+
+### Focal point and zoom
+Whatever options you use to render the image on the frontend, wether it's aspect ratio cropping or background covering an html element, the picture partial will respect the focal point and zoom level set by the Control Panel user.
