@@ -21,6 +21,7 @@ module.exports = {
   mode: 'jit',
   // Configure Purge CSS.
   content: [
+    './resources/views/**/*.blade.php',
     './resources/views/**/*.html',
     './resources/js/**/*.js',
   ],
