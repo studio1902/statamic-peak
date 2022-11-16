@@ -58,7 +58,7 @@
                             {{
                                 glide:image
                                 width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : { size:height } }"
+                                height="{ size:ratio ? (size:width * size:ratio) : size:height }"
                                 quality="{ quality ?? '85' }"
                                 fit="crop_focal"
                                 format="webp"
@@ -74,7 +74,7 @@
                             {{
                                 glide:image
                                 width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : { size:height } }"
+                                height="{ size:ratio ? (size:width * size:ratio) : size:height }"
                                 quality="{ quality ?? '85' }"
                                 fit="crop_focal"
                             }}
