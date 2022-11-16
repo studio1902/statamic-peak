@@ -1,5 +1,14 @@
 # Changelog
 
+## v6.25 (2022-11-16)
+
+### What's new
+- A new `User management` role for creating users and assigning them roles. The `Editor` lost all user permissions. 50d6c81f by @robdekort
+- Enable the asset zoom function using `focal_crop` not just when aspect ratio cropping. 8f46c794 by @robdekort
+
+### What's improved
+- Tailwind JIT: scan `*.blade` files by  default. 7b12a453 by @robdekort
+
 ## v6.24 (2022-11-12)
 
 ### What's new
