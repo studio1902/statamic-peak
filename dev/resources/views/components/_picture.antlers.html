@@ -58,9 +58,9 @@
                             {{
                                 glide:image
                                 width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : '10000' }"
+                                height="{ size:ratio ? (size:width * size:ratio) : { size:height } }"
                                 quality="{ quality ?? '85' }"
-                                fit="{ size:ratio ? 'crop_focal' : 'contain' }"
+                                fit="crop_focal"
                                 format="webp"
                             }} {{ size:width }}w,
                         {{ /srcsets }}
@@ -74,9 +74,9 @@
                             {{
                                 glide:image
                                 width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : '10000' }"
+                                height="{ size:ratio ? (size:width * size:ratio) : { size:height } }"
                                 quality="{ quality ?? '85' }"
-                                fit="{ size:ratio ? 'crop_focal' : 'contain' }"
+                                fit="crop_focal"
                             }}
                             {{ size:width }}w,
                         {{ /srcsets }}
@@ -87,7 +87,7 @@
                 <img
                     width="{{ width }}"
                     height="{{ ratio_large ? (width * ratio_large) : height }}"
-                    src="{{ glide:image width="1024" height="{ ratio_large ? (width * ratio_large) : height }" quality="{ quality ?? '85' }" fit="contain" }}"
+                    src="{{ glide:image width="1024" height="{ ratio_large ? (width * ratio_large) : height }" quality="{ quality ?? '85' }" fit="crop_focal" }}"
                     alt="{{ alt | ensure_right('.') | entities }}"
                     {{ if cover }}
                         class="object-cover w-full h-full {{ class }}"
