@@ -96,7 +96,7 @@ class AddBlock extends Command
     {
         $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
         $contents = Str::of($stub)
-            ->replace('{{ name }}', str_replace('"','\'', $this->block_name));
+            ->replace('{{ name }}', $this->block_name);
 
         File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), $contents);
     }
