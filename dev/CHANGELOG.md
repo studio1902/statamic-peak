@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.26 (2022-11-17)
+
+### What's improved
+- Add quotes in add-block command. #284 by @vannut
+
 ## v6.25 (2022-11-16)
 
 ### What's new
