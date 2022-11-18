@@ -24,86 +24,85 @@
             {{ ratio = (value | explode('/') | last) / (value | explode('/') | first) }}
         {{ /if }}
     {{ /aspect_ratio }}
+    {{ original_ratio = image:height / image:width }}
 
     {{# Set srcset sizes. #}}
     {{ srcsets = [
-        [ 'width' => 320, 'ratio' => '{ ratio }' ],
-        [ 'width' => 480, 'ratio' => '{ ratio }' ],
-        [ 'width' => 640, 'ratio' => '{ ratio }' ],
-        [ 'width' => 768, 'ratio' => '{ ratio }' ],
-        [ 'width' => 1024, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1280, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1440, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1536, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1680, 'ratio' => '{ ratio_large ?? ratio }' ]
+        [ 'width' => 320, 'ratio' => '{ ratio ?? original_ratio }' ],
+        [ 'width' => 480, 'ratio' => '{ ratio ?? original_ratio }' ],
+        [ 'width' => 640, 'ratio' => '{ ratio ?? original_ratio }' ],
+        [ 'width' => 768, 'ratio' => '{ ratio ?? original_ratio }' ],
+        [ 'width' => 1024, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+        [ 'width' => 1280, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+        [ 'width' => 1440, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+        [ 'width' => 1536, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+        [ 'width' => 1680, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ]
     ] }}
 
     <picture>
-        {{ asset :url="image" }}
-            {{ if extension == 'svg' || extension == 'gif' }}
-                <img
+        {{ if extension == 'svg' || extension == 'gif' }}
+            <img
+                class="{{ class }}"
+                src="{{ url }}"
+                alt="{{ alt | ensure_right('.') | entities }}"
+                width="{{ width }}"
+                height="{{ height }}"
+                {{ unless alt }}
+                    aria-hidden="true"
+                {{ /unless }}
+            />
+        {{ else }}
+            <source
+                srcset="
+                    {{ srcsets scope="size" }}
+                        {{
+                            glide:image
+                            width="{ size:width }"
+                            height="{ size:width * size:ratio }"
+                            quality="{ quality ?? '85' }"
+                            fit="crop_focal"
+                            format="webp"
+                        }} {{ size:width }}w,
+                    {{ /srcsets }}
+                "
+                sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
+                type="image/webp"
+            >
+            <source
+                srcset="
+                    {{ srcsets scope="size" }}
+                        {{
+                            glide:image
+                            width="{ size:width }"
+                            height="{ size:width * size:ratio }"
+                            quality="{ quality ?? '85' }"
+                            fit="crop_focal"
+                        }}
+                        {{ size:width }}w,
+                    {{ /srcsets }}
+                "
+                sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
+                type="{{ image.mime_type }}"
+            >
+            <img
+                width="{{ width }}"
+                height="{{ height }}"
+                src="{{ glide:image width="1024" height="{ 1024 * original_ratio }" quality="{ quality ?? '85' }" fit="crop_focal" }}"
+                alt="{{ alt | ensure_right('.') | entities }}"
+                {{ if cover }}
+                    class="object-cover w-full h-full {{ class }}"
+                    style="object-position: {{ focus | background_position }}"
+                {{ else }}
                     class="{{ class }}"
-                    src="{{ url }}"
-                    alt="{{ alt | ensure_right('.') | entities }}"
-                    width="{{ width }}"
-                    height="{{ height }}"
-                    {{ unless alt }}
-                        aria-hidden="true"
-                    {{ /unless }}
-                />
-            {{ else }}
-                <source
-                    srcset="
-                        {{ srcsets scope="size" }}
-                            {{
-                                glide:image
-                                width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : size:height }"
-                                quality="{ quality ?? '85' }"
-                                fit="crop_focal"
-                                format="webp"
-                            }} {{ size:width }}w,
-                        {{ /srcsets }}
-                    "
-                    sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
-                    type="image/webp"
-                >
-                <source
-                    srcset="
-                        {{ srcsets scope="size" }}
-                            {{
-                                glide:image
-                                width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : size:height }"
-                                quality="{ quality ?? '85' }"
-                                fit="crop_focal"
-                            }}
-                            {{ size:width }}w,
-                        {{ /srcsets }}
-                    "
-                    sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
-                    type="{{ image.mime_type }}"
-                >
-                <img
-                    width="{{ width }}"
-                    height="{{ ratio_large ? (width * ratio_large) : height }}"
-                    src="{{ glide:image width="1024" height="{ ratio_large ? (width * ratio_large) : height }" quality="{ quality ?? '85' }" fit="crop_focal" }}"
-                    alt="{{ alt | ensure_right('.') | entities }}"
-                    {{ if cover }}
-                        class="object-cover w-full h-full {{ class }}"
-                        style="object-position: {{ focus | background_position }}"
-                    {{ else }}
-                        class="{{ class }}"
-                    {{ /if }}
-                    {{ unless alt }}
-                        aria-hidden="true"
-                    {{ /unless }}
-                    {{ if lazy }}
-                        loading="lazy"
-                    {{ /if }}
-                >
-            {{ /if }}
-        {{ /asset }}
+                {{ /if }}
+                {{ unless alt }}
+                    aria-hidden="true"
+                {{ /unless }}
+                {{ if lazy }}
+                    loading="lazy"
+                {{ /if }}
+            >
+        {{ /if }}
     </picture>
 {{ /if }}
 <!-- End: /components/_picture.antlers.html -->
