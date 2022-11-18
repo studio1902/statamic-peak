@@ -1,5 +1,14 @@
 # Changelog
 
+## v6.27 (2022-11-18)
+
+### What's new
+- Add a contact form widget to the dashboard. 9e4ec550 by @robdekort
+
+### What's improved
+- Set a default ratio in the picture partial. Replace stock image with a bigger one. Remove `asset` tag for performance. 80c1557b by @robdekort
+- Wrap the Peak toolbar in a nocache tag. 2eec5c01 by @robdekort
+
 ## v6.26 (2022-11-17)
 
 ### What's improved

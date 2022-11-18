@@ -3,7 +3,7 @@ id: 20f6a148-63b8-47a8-9b0e-d57095d78c21
 blueprint: page
 title: 'Long form content'
 updated_by: fd779fda-9c01-4b82-9fad-6f6cedfe03cb
-updated_at: 1652945714
+updated_at: 1668788163
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -11,6 +11,7 @@ sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 page_builder:
   -
+    id: 5vZfKDLI
     article:
       -
         type: heading
@@ -43,6 +44,7 @@ page_builder:
       -
         type: set
         attrs:
+          id: bsz8aFMG
           values:
             type: pull_quote
             size: lg
@@ -102,11 +104,12 @@ page_builder:
       -
         type: set
         attrs:
+          id: 5qFxz8Jl
           values:
             type: figure
-            image: a-peak.jpg
             size: xl
             caption: 'Get on top of the Peak.'
+            image: a-peak.jpg
       -
         type: paragraph
         content:
@@ -177,6 +180,7 @@ page_builder:
       -
         type: set
         attrs:
+          id: nq6mcLET
           values:
             type: table
             size: lg
@@ -211,6 +215,7 @@ page_builder:
       -
         type: set
         attrs:
+          id: i76LCGmZ
           values:
             type: video
             youtube_url: 'https://vimeo.com/53018096'
@@ -225,23 +230,24 @@ page_builder:
       -
         type: set
         attrs:
+          id: t467mRog
           values:
             type: buttons
             buttons:
               -
+                id: dijZ7zid
                 label: 'Lorem ipsum'
                 target_blank: true
                 link_type: url
                 url: 'https://www.youtube.com/watch?v=o-YBDTqX_ZU'
                 button_type: button
               -
+                id: kuVHCd6j
                 label: 'Dolor sit amet'
                 target_blank: false
                 link_type: entry
                 entry: home
                 button_type: button
-      -
-        type: paragraph
     type: article
     enabled: true
 ---
