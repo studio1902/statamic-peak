@@ -50,6 +50,13 @@ return [
             'collection' => 'pages',
             'width' => 50
         ],
+        [
+            'type' => 'form',
+            'form' => 'contact',
+            'fields' => ['name', 'email'],
+            'limit' => '5',
+            'width' => 100
+        ],
     ],
 
     /*
