@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.28 (2022-11-19)
+
+### What's improved
+- Search a11y: close form input when tabbing out. 7ed410ab by @robdekort
+
 ## v6.27 (2022-11-18)
 
 ### What's new

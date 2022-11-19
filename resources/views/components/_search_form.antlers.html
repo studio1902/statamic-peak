@@ -14,6 +14,7 @@
     @keydown.window.prevent.slash.="open = true, setTimeout(() => {$refs.input.focus()}, 200)"
     @keydown.window.prevent.esc="open = false"
     @click.outside="open = false"
+    @focusin.window="!$root.contains($event.target) && (open = false)"
     class="flex py-2 relative"
     x-cloak
 >
