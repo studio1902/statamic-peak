@@ -6,6 +6,14 @@
     @param aspect_ratio Pass in an aspect ratio to crop the image in a certain way. `16/9` for example or specify a second ratio for larger screens: `1/1 large:1/2`.
     @param class Add optional CSS classes.
     @param cover Boolean. Whether the image should cover the parent. Uses the focus position.
+    @param filter String. Applies a filter effect to the image. Accepts `greyscale` or `sepia`.
+    @param bg String. Sets a background color for transparent images.
+    @param blur Integer. Adds a blur effect to the image. Use values between 0 and 100.
+    @param brightness String. Adjusts the image brightness. Use values between -100 and +100, where 0 represents no change.
+    @param contrast Atring. Adjusts the image contrast. Use values between -100 and +100, where 0 represents no change.
+    @param gamma Float. Adjusts the image gamma. Use values between 0.1 and 9.99.
+    @param sharpen Integer. Sharpen the image. Use values between 0 and 100.
+    @param pixelate Integer. Applies a pixelation effect to the image. Use values between 0 and 1000.
     @param lazy Boolean. Whether the image should be natively lazy loaded.
     @param quality int Set image quality. Defaults to 85.
 #}}
@@ -59,10 +67,18 @@
                             glide:image
                             width="{ size:width }"
                             height="{ size:width * size:ratio }"
-                            quality="{ quality ?? '85' }"
+                            :bg="bg"
+                            :blur="blur"
+                            :brightness="brightness"
+                            :contrast="contrast"
+                            :filter="filter"
+                            :gamma="gamma"
+                            :pixelate="pixelate"
+                            :sharpen="sharpen"
                             fit="crop_focal"
                             format="webp"
-                        }} {{ size:width }}w,
+                            quality="{ quality ?? '85' }"
+                        }} {{ size:width }}w{{ !last ?= ',' }}
                     {{ /srcsets }}
                 "
                 sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
@@ -75,10 +91,18 @@
                             glide:image
                             width="{ size:width }"
                             height="{ size:width * size:ratio }"
-                            quality="{ quality ?? '85' }"
+                            :bg="bg"
+                            :blur="blur"
+                            :brightness="brightness"
+                            :contrast="contrast"
+                            :filter="filter"
+                            :gamma="gamma"
+                            :pixelate="pixelate"
+                            :sharpen="sharpen"
                             fit="crop_focal"
+                            quality="{ quality ?? '85' }"
                         }}
-                        {{ size:width }}w,
+                        {{ size:width }}w{{ !last ?= ',' }}
                     {{ /srcsets }}
                 "
                 sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
@@ -87,7 +111,20 @@
             <img
                 width="{{ width }}"
                 height="{{ height }}"
-                src="{{ glide:image width="1024" height="{ 1024 * original_ratio }" quality="{ quality ?? '85' }" fit="crop_focal" }}"
+                src="{{ glide:image
+                    width="1024"
+                    height="{ 1024 * original_ratio }"
+                    fit="crop_focal"
+                    :bg="bg"
+                    :blur="blur"
+                    :brightness="brightness"
+                    :contrast="contrast"
+                    :filter="filter"
+                    :gamma="gamma"
+                    :pixelate="pixelate"
+                    :sharpen="sharpen"
+                    quality="{ quality ?? '85' }"
+                }}"
                 alt="{{ alt | ensure_right('.') | entities }}"
                 {{ if cover }}
                     class="object-cover w-full h-full {{ class }}"
