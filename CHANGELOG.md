@@ -2,7 +2,7 @@
 
 ## v6.29 (2022-11-20)
 
-### What's news
+### What's new
 - Add all available Glide filters in the picture partial. f5ce09d8 by @robdekort
 
 ## v6.28 (2022-11-19)
