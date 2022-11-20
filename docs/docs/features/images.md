@@ -8,6 +8,14 @@ Peak comes with a picture partial that will add responsive sourcesets to your im
 * `cover`: *boolean*, true means the image should cover the containing element.
 * `sizes`: *string*, the sizes attribute that informs the browser how the image should be rendered.
 * `quality` *int* Set image quality. Defaults to 85.
+* `bg` *string*, Sets a background color for transparent images.
+* `blur` *integer*, Adds a blur effect to the image. Use values between 0 and 100.
+* `brightness` *string*, Adjusts the image brightness. Use values between -100 and +100, where 0 represents no change.
+* `contrast` *string*, Adjusts the image contrast. Use values between -100 and +100, where 0 represents no change.
+* `filter` *string*, Applies a filter effect to the image. Accepts `greyscale` or `sepia`.
+* `gamma` *float*, Adjusts the image gamma. Use values between 0.1 and 9.99.
+* `sharpen` *integer*, Sharpen the image. Use values between 0 and 100.
+* `pixelate` *integer*, Applies a pixelation effect to the image. Use values between 0 and 1000.
 
 The following example renders a squared image on small screens and a 4/3 image on larger screens. It object-fills it's wrapping container and is lazy loaded:
 
