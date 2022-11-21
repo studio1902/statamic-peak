@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.32 (2022-11-21)
+
+### What's fixed
+- Fix search results page title. 190ea56f by @robdekort
+
 ## v6.31 (2022-11-21)
 
 ### What's improved

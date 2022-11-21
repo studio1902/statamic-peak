@@ -50,6 +50,4 @@ Route::statamic('/site.webmanifest', 'manifest/manifest', [
 // });
 
 // The Search route to display search results with `views/search.antlers.html`.
-// Route::statamic('/search', 'search', [
-//     'title' => 'Search results'
-// ]);
+// Route::statamic('/search', 'search');
