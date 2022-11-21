@@ -1,5 +1,14 @@
 # Changelog
 
+## v6.30 (2022-11-21)
+
+### What's fixed
+- Add back required `{{ asset }}` tag in picture partial for when looping an asset field. 5fe2f0fd by @robdekort
+
+### What's improved
+- Use `text-neutral` instead of `text-black` in OG image template. 6e22f901 by @robdekort
+- Update dependencies. f4f839f3 by @robdekort
+
 ## v6.29 (2022-11-20)
 
 ### What's new
