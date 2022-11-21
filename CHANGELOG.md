@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.31 (2022-11-21)
+
+### What's improved
+- Better search result URL styling and break words for small screens. f3dfb57b by @robdekort
+
 ## v6.30 (2022-11-21)
 
 ### What's fixed
