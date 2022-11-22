@@ -31,3 +31,5 @@ When you have content coming from the Bard fieldtype you can use the `typography
     {{ block:text }}
 {{ /partial:typography/prose }}
 ```
+
+If you need different prose configurations just create different prose partials and load those in.
