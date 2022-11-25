@@ -31,7 +31,7 @@ module.exports = {
             '--tw-prose-pre-bg': theme('colors.neutral.DEFAULT'),
             '--tw-prose-th-borders': theme('colors.neutral.DEFAULT'),
             '--tw-prose-td-borders': theme('colors.neutral.DEFAULT'),
-            '--tw-prose-invert-body': theme('colors.neutral.DEFAULT'),
+            '--tw-prose-invert-body': theme('colors.white'),
             '--tw-prose-invert-headings': theme('colors.white'),
             '--tw-prose-invert-lead': theme('colors.white'),
             '--tw-prose-invert-links': theme('colors.white'),
