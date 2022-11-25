@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.34 (2022-11-25)
+
+### What's improved
+- Only check certain for filetypes in the missing alt text dashboard widget. 9462a201 by @robdekort
+
 ## v6.33 (2022-11-25)
 
 ### What's improved

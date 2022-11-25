@@ -41,6 +41,7 @@ return [
         [
             'type' => 'images_missing_alt',
             'container' => 'assets',
+            'filetypes' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'bmp', 'tiff'],
             'limit' => 5,
             'expiry' => 0,
             'width' => 50
