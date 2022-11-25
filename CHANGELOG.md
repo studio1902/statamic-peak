@@ -1,5 +1,17 @@
 # Changelog
 
+## v6.33 (2022-11-25)
+
+### What's improved
+- Simplify default prose configuration. 8d5c7106 by @robdekort
+- Default to `text-neutral` typography headings. ac4b2bc4 by @robdekort
+- Improve default pull quote styling. 008b0c96 by @robdekort
+
+## v6.32 (2022-11-21)
+
+### What's fixed
+- Fix search results page title. 190ea56f by @robdekort
+
 ## v6.32 (2022-11-21)
 
 ### What's fixed
