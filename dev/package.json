@@ -21,7 +21,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "10.4.13",
     "glob-all": "^3.3.1",
-    "laravel-vite-plugin": "^0.7.0",
+    "laravel-vite-plugin": "^0.7.1",
     "postcss": "^8.4.19",
     "postcss-focus-visible": "^7.1.0",
     "postcss-import": "^15.0.0",
