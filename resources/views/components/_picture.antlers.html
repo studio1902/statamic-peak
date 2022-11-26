@@ -1,45 +1,53 @@
 {{#
-	@name Picture
-	@desc The picture component. A responsive imageset in a picture element. See `resources/views/components/_figure.antlers.html` for an example on how to use this.
+    @name Picture
+    @desc The picture component. A responsive imageset in a picture element. See `resources/views/components/_figure.antlers.html` for an example on how to use this.
     @param* image An image URL.
     @param* sizes The sizes attribute. Something like `(min-width: 768px) 55vw, 90vw` for example.
     @param aspect_ratio Pass in an aspect ratio to crop the image in a certain way. `16/9` for example or specify a second ratio for larger screens: `1/1 large:1/2`.
     @param class Add optional CSS classes.
     @param cover Boolean. Whether the image should cover the parent. Uses the focus position.
+    @param bg String. Sets a background color for transparent images.
+    @param blur Integer. Adds a blur effect to the image. Use values between 0 and 100.
+    @param brightness String. Adjusts the image brightness. Use values between -100 and +100, where 0 represents no change.
+    @param contrast String. Adjusts the image contrast. Use values between -100 and +100, where 0 represents no change.
+    @param filter String. Applies a filter effect to the image. Accepts `greyscale` or `sepia`.
+    @param gamma Float. Adjusts the image gamma. Use values between 0.1 and 9.99.
+    @param sharpen Integer. Sharpen the image. Use values between 0 and 100.
+    @param pixelate Integer. Applies a pixelation effect to the image. Use values between 0 and 1000.
     @param lazy Boolean. Whether the image should be natively lazy loaded.
     @param quality int Set image quality. Defaults to 85.
 #}}
 
 <!-- /components/_picture.antlers.html -->
 {{ if image }}
+    {{ asset :url="image" }}
+        {{# Configure aspect ratio's. #}}
+        {{ ratio = null }}
+        {{ ratio_large = null }}
+        {{ aspect_ratio | trim | explode(' ') }}
+            {{ if value | contains('large:') }}
+                {{ aspect = value | explode(':') | last }}
+                {{ ratio_large = (aspect | explode('/') | last) / (aspect | explode('/') | first) }}
+            {{ elseif value != '' }}
+                {{ ratio = (value | explode('/') | last) / (value | explode('/') | first) }}
+            {{ /if }}
+        {{ /aspect_ratio }}
+        {{ original_ratio = height / width }}
 
-    {{# Configure aspect ratio's. #}}
-    {{ ratio = null }}
-    {{ ratio_large = null }}
-    {{ aspect_ratio | trim | explode(' ') }}
-        {{ if value | contains('large:') }}
-            {{ aspect = value | explode(':') | last }}
-            {{ ratio_large = (aspect | explode('/') | last) / (aspect | explode('/') | first) }}
-        {{ elseif value != '' }}
-            {{ ratio = (value | explode('/') | last) / (value | explode('/') | first) }}
-        {{ /if }}
-    {{ /aspect_ratio }}
+        {{# Set srcset sizes. #}}
+        {{ srcsets = [
+            [ 'width' => 320, 'ratio' => '{ ratio ?? original_ratio }' ],
+            [ 'width' => 480, 'ratio' => '{ ratio ?? original_ratio }' ],
+            [ 'width' => 640, 'ratio' => '{ ratio ?? original_ratio }' ],
+            [ 'width' => 768, 'ratio' => '{ ratio ?? original_ratio }' ],
+            [ 'width' => 1024, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+            [ 'width' => 1280, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+            [ 'width' => 1440, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+            [ 'width' => 1536, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+            [ 'width' => 1680, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ]
+        ] }}
 
-    {{# Set srcset sizes. #}}
-    {{ srcsets = [
-        [ 'width' => 320, 'ratio' => '{ ratio }' ],
-        [ 'width' => 480, 'ratio' => '{ ratio }' ],
-        [ 'width' => 640, 'ratio' => '{ ratio }' ],
-        [ 'width' => 768, 'ratio' => '{ ratio }' ],
-        [ 'width' => 1024, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1280, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1440, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1536, 'ratio' => '{ ratio_large ?? ratio }' ],
-        [ 'width' => 1680, 'ratio' => '{ ratio_large ?? ratio }' ]
-    ] }}
-
-    <picture>
-        {{ asset :url="image" }}
+        <picture>
             {{ if extension == 'svg' || extension == 'gif' }}
                 <img
                     class="{{ class }}"
@@ -58,14 +66,22 @@
                             {{
                                 glide:image
                                 width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : '10000' }"
-                                quality="{ quality ?? '85' }"
-                                fit="{ size:ratio ? 'crop_focal' : 'contain' }"
+                                height="{ size:width * size:ratio }"
+                                :bg="bg"
+                                :blur="blur"
+                                :brightness="brightness"
+                                :contrast="contrast"
+                                :filter="filter"
+                                :gamma="gamma"
+                                :pixelate="pixelate"
+                                :sharpen="sharpen"
+                                fit="crop_focal"
                                 format="webp"
-                            }} {{ size:width }}w,
+                                quality="{ quality ?? '85' }"
+                            }} {{ size:width }}w{{ !last ?= ',' }}
                         {{ /srcsets }}
                     "
-                    sizes="{{ sizes ?? '(min-width: 768px) 50vw, 90vw' }}"
+                    sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
                     type="image/webp"
                 >
                 <source
@@ -74,20 +90,41 @@
                             {{
                                 glide:image
                                 width="{ size:width }"
-                                height="{ size:ratio ? (size:width * size:ratio) : '10000' }"
+                                height="{ size:width * size:ratio }"
+                                :bg="bg"
+                                :blur="blur"
+                                :brightness="brightness"
+                                :contrast="contrast"
+                                :filter="filter"
+                                :gamma="gamma"
+                                :pixelate="pixelate"
+                                :sharpen="sharpen"
+                                fit="crop_focal"
                                 quality="{ quality ?? '85' }"
-                                fit="{ size:ratio ? 'crop_focal' : 'contain' }"
                             }}
-                            {{ size:width }}w,
+                            {{ size:width }}w{{ !last ?= ',' }}
                         {{ /srcsets }}
                     "
-                    sizes="{{ sizes ?? '(min-width: 768px) 50vw, 90vw' }}"
+                    sizes="{{ sizes ?? '(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw' }}"
                     type="{{ image.mime_type }}"
                 >
                 <img
                     width="{{ width }}"
-                    height="{{ ratio_large ? (width * ratio_large) : height }}"
-                    src="{{ glide:image width="1024" height="{ ratio_large ? (width * ratio_large) : height }" quality="{ quality ?? '85' }" fit="contain" }}"
+                    height="{{ height }}"
+                    src="{{ glide:image
+                        width="1024"
+                        height="{ 1024 * original_ratio }"
+                        fit="crop_focal"
+                        :bg="bg"
+                        :blur="blur"
+                        :brightness="brightness"
+                        :contrast="contrast"
+                        :filter="filter"
+                        :gamma="gamma"
+                        :pixelate="pixelate"
+                        :sharpen="sharpen"
+                        quality="{ quality ?? '85' }"
+                    }}"
                     alt="{{ alt | ensure_right('.') | entities }}"
                     {{ if cover }}
                         class="object-cover w-full h-full {{ class }}"
@@ -103,7 +140,7 @@
                     {{ /if }}
                 >
             {{ /if }}
-        {{ /asset }}
-    </picture>
+        </picture>
+    {{ /asset }}
 {{ /if }}
 <!-- End: /components/_picture.antlers.html -->

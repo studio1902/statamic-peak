@@ -101,7 +101,19 @@ sections:
                   field:
                     type: hidden
                     default: 'https://www.linkedin.com/'
-            Pinterest:
+            mastodon:
+              display: Mastodon
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    display: URL
+                    validate: required
+            pinterest:
               display: Pinterest
               fields:
                 -

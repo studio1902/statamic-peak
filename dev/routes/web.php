@@ -18,8 +18,20 @@ use Statamic\Facades\Site;
 // Dynamic Token route for posting a form with Ajax.
 Route::get('/!/DynamicToken/refresh', [DynamicToken::class, 'getRefresh']);
 
-// The Sitemap route to the sitemap.xml
+// The Sitemap Index route for listing sitemaps of all (multi)sites.
+Route::statamic('/sitemaps.xml', 'sitemap/sitemaps', [
+    'layout' => null,
+    'content_type' => 'application/xml'
+]);
+
+// The Default Site Sitemap route.
 Route::statamic('/sitemap.xml', 'sitemap/sitemap', [
+    'layout' => null,
+    'content_type' => 'application/xml'
+]);
+
+// The Multisite Site Sitemap route(s).
+Route::statamic('/{site_handle}/sitemap.xml', 'sitemap/sitemap', [
     'layout' => null,
     'content_type' => 'application/xml'
 ]);
@@ -38,6 +50,4 @@ Route::statamic('/site.webmanifest', 'manifest/manifest', [
 // });
 
 // The Search route to display search results with `views/search.antlers.html`.
-// Route::statamic('/search', 'search', [
-//     'title' => 'Search results'
-// ]);
+// Route::statamic('/search', 'search');

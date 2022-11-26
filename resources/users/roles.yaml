@@ -25,10 +25,6 @@ editor:
     - 'upload social_images assets'
     - 'edit social_images assets'
     - 'delete social_images assets'
-    - 'view users'
-    - 'edit users'
-    - 'delete users'
-    - 'change passwords'
     - 'view contact form submissions'
     - 'delete contact form submissions'
 marketeer:
@@ -37,3 +33,14 @@ marketeer:
     - 'access cp'
     - 'edit redirects globals'
     - 'edit seo globals'
+user_management:
+  title: 'User management'
+  permissions:
+    - 'access cp'
+    - 'view users'
+    - 'edit users'
+    - 'create users'
+    - 'delete users'
+    - 'change passwords'
+    - 'assign roles'
+    - 'assign user groups'

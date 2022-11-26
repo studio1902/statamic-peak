@@ -1,6 +1,6 @@
 {{#
-	@name {{ name }}
-	@desc The {{ name }} component.
+    @name {{ name }}
+    @desc The {{ name }} component.
     @set page.article.{{ filename }}
 #}}
 

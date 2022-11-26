@@ -1,2 +1,2 @@
-title: '{{ name }}'
+title: "{{ name }}"
 fields: [ ]

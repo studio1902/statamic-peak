@@ -18,7 +18,7 @@ Dump your .env values here with sensitive data removed.
 
 ```env
 Dump your .env values here with sensitive data removed. The following is a production example that uses full static caching:
-APP_NAME='Statamic Peak'
+APP_NAME="Statamic Peak"
 APP_ENV=production
 APP_KEY=
 APP_DEBUG=false
@@ -66,7 +66,7 @@ STATAMIC_STACHE_WATCHER=false
 STATAMIC_CACHE_TAGS_ENABLED=true
 
 #STATAMIC_CUSTOM_CMS_NAME=
-STATAMIC_CUSTOM_LOGO_OUTSIDE_URL='/visuals/client-logo.svg'
+STATAMIC_CUSTOM_LOGO_OUTSIDE_URL="/visuals/client-logo.svg"
 #STATAMIC_CUSTOM_LOGO_NAV_URL=
 #STATAMIC_CUSTOM_FAVICON_URL=
 #STATAMIC_CUSTOM_CSS_URL=

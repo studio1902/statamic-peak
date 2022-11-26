@@ -1,6 +1,135 @@
 # Changelog
 
-## Unreleased
+## v6.34 (2022-11-25)
+
+### What's improved
+- Only check certain for filetypes in the missing alt text dashboard widget. 9462a201 by @robdekort
+
+## v6.33 (2022-11-25)
+
+### What's improved
+- Simplify default prose configuration. 8d5c7106 by @robdekort
+- Default to `text-neutral` typography headings. ac4b2bc4 by @robdekort
+- Improve default pull quote styling. 008b0c96 by @robdekort
+
+## v6.32 (2022-11-21)
+
+### What's fixed
+- Fix search results page title. 190ea56f by @robdekort
+
+## v6.32 (2022-11-21)
+
+### What's fixed
+- Fix search results page title. 190ea56f by @robdekort
+
+## v6.31 (2022-11-21)
+
+### What's improved
+- Better search result URL styling and break words for small screens. f3dfb57b by @robdekort
+
+## v6.30 (2022-11-21)
+
+### What's fixed
+- Add back required `{{ asset }}` tag in picture partial for when looping an asset field. 5fe2f0fd by @robdekort
+
+### What's improved
+- Use `text-neutral` instead of `text-black` in OG image template. 6e22f901 by @robdekort
+- Update dependencies. f4f839f3 by @robdekort
+
+## v6.29 (2022-11-20)
+
+### What's new
+- Add all available Glide filters in the picture partial. f5ce09d8 by @robdekort
+
+## v6.28 (2022-11-19)
+
+### What's improved
+- Search a11y: close form input when tabbing out. 7ed410ab by @robdekort
+
+## v6.27 (2022-11-18)
+
+### What's new
+- Add a contact form widget to the dashboard. 9e4ec550 by @robdekort
+
+### What's improved
+- Set a default ratio in the picture partial. Replace stock image with a bigger one. Remove `asset` tag for performance. 80c1557b by @robdekort
+- Wrap the Peak toolbar in a nocache tag. 2eec5c01 by @robdekort
+
+## v6.26 (2022-11-17)
+
+### What's improved
+- Add quotes in add-block command. #284 by @vannut
+
+## v6.25 (2022-11-16)
+
+### What's new
+- A new `User management` role for creating users and assigning them roles. The `Editor` lost all user permissions. 50d6c81f by @robdekort
+- Enable the asset zoom function using `focal_crop` not just when aspect ratio cropping. 8f46c794 by @robdekort
+
+### What's improved
+- Tailwind JIT: scan `*.blade` files by  default. 7b12a453 by @robdekort
+
+## v6.24 (2022-11-12)
+
+### What's new
+- Add Mastodon to Social Media globals, including site verification. 9dfafe55 by @robdekort
+
+## v6.23 (2022-11-11)
+
+### What's improved
+- Improve skip to content behaviour. #282 by @klickreflex
+
+## v6.22 (2022-11-10)
+
+### What's improved
+- Replace some tabs with spaces. #281 by @hgrimelid
+
+## v6.21 (2022-11-09)
+
+### What's improved
+- Inline privacy statement link with label in toggle field. d0c82d46 by @robdekort
+
+## v6.20 (2022-11-09)
+
+### What's improved
+- Better defaults for sizes attributes: especially on large screens. Great suggestion by @klickreflex. 98e69497 by @robdekort
+
+## v6.19 (2022-11-09)
+
+### What's improved
+- Add small breakpoint to live preview. #279 by @K3CK
+- Use `strip_tags`, `entities` and `trim` on SEO fields. #280 by @K3CK
+- Add `entities` modifier to fallback description. 59238953 and 6b51b130 by @robdekort
+
+## v6.18 (2022-11-04)
+
+### What's improved
+- Generate PNG favicons for safari to support full color icons. Deprecate mask-icon. 77c1aaea by @robdekort
+- Use double quotes in `.env.example` and `readme.example.md` and remove quotes from App Name during install. #bb759e36 by @robdekort
+- Updated dependencies. d9a115c2 by @robdekort
+
+## v6.17 (2022-11-03)
+
+### What's new
+- Add Plausible Analytics options to the global SEO configuration. #278 by @x7ryan
+
+## v6.16 (2022-11-01)
+
+### What's improved
+- Use full url's in sitemap index. 186b4f6a by @robdekort
+- Enable multisitemap routes by default. 5c9fcf0d by @robdekort
+
+## v6.15 (2022-10-31)
+
+### What's new
+- Add a multisite sitemap. #277 by @andreasschantl, 57749aef by @robdekort
+
+## v6.14 (2022-10-28)
+
+### What's improved
+- Add an option to init a git repo during installation. 02a4fc99 by @robdekort
+
+## v6.13 (2022-10-26)
 
 ### What's improved
 - Add `locale` attribute to time partial. 89c238ef by @robdekort

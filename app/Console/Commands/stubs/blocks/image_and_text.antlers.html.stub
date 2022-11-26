@@ -17,7 +17,7 @@
     </article>
 
     <figure class="md:col-span-6">
-        {{ partial:components/picture :image="block:image" sizes="(min-width: 768px) 50vw, 90vw" }}
+        {{ partial:components/picture :image="block:image" sizes="(min-width: 1280px) 640px, (min-width: 768px) 50vw, 90vw" }}
     </figure>
 </section>
 <!-- End: /page_builder/_image_and_text.antlers.html -->

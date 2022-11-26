@@ -11,7 +11,8 @@ Peak includes full professional SEO support. It's easy to expand on since it's a
 * Default Open Graph image.
 * Twitter card and image.
 * Default Twitter card image.
-* Auto generated sitemap.xml.
+* Auto generated sitemaps.xml for a listing of multisitemaps.
+* Auto generated /{locale}/sitemap.xml for per site sitemaps.
 * Customize the sitemap: which collections are included and per entry frequency and priority settings.
 * No-index for entries, also excludes from sitemap.
 * JSON-ld schema objects.

@@ -54,10 +54,9 @@ module.exports = {
         },
         {
           text: 'Features',
-          link: '/features/assets.md',
+          link: '/features/404.md',
           children: [
             '/features/404.md',
-            '/features/assets.md',
             '/features/bard.md',
             '/features/browser-appearance.md',
             '/features/buttons.md',
@@ -65,6 +64,7 @@ module.exports = {
             '/features/dark-mode.md',
             '/features/forms.md',
             '/features/globals.md',
+            '/features/images.md',
             '/features/language-picker.md',
             '/features/navigation.md',
             '/features/page-builder.md',

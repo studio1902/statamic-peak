@@ -1,6 +1,6 @@
 {{#
-	@name {{ name }}
-	@desc The {{ name }} page builder block.
+    @name {{ name }}
+    @desc The {{ name }} page builder block.
     @set page.page_builder.{{ filename }}
 #}}
 

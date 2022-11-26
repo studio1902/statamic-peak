@@ -19,7 +19,22 @@ When you use valet you can navigate to the `dev` folder and type: `valet link st
 After this your site will be available on `http://statamic-peak.test` (or whatever you configured for your TLD).
 
 ## Test the kit export
-You can test the kit export by running `php please starter-kit:export .././` in the dev environment. After running this command the git status should reflect all changed and new files in the root of the repo. Please don't commit those kit export changes. Exporting the starter kit, maintaining the changelog and taggin releases is something the maintainer(s) of the project do.
+You can test the kit export by running `php please starter-kit:export .././` in the dev environment. After running this command the git status should reflect all changed and new files in the root of the repo. Please don't commit those kit export changes. Exporting the starter kit, maintaining the changelog and tagging releases is something the maintainer(s) of the project do.
+
+If you want to install and test your locally exported kit, make sure you add the repo's local path to your global Composer `config.json` file as a repository:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/robdekort/statamic-peak"
+        }
+    ]
+}
+```
+
+You can then run `statamic new site studio1902/statamic-peak --local` to run the Statamic installer using your own locally exported starter kit.
 
 ## Docs
 The documentation run on https://vuepress.vuejs.org. To locally install this navigate to the `docs` dir in this repo and:

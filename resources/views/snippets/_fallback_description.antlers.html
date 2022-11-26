@@ -1,22 +1,22 @@
 {{#
-	@name Fallback description
-	@desc Get the fallback description for meta, og and twitter.
+    @name Fallback description
+    @desc Get the fallback description for meta, og and twitter.
 #}}
 
 {{ seo:collection_defaults | where('collection', {collection}) }}
     {{ if fallback == 'field' }}
         {{ scope:field }}
-            {{ field[field_handle] | strip_tags | trim | safe_truncate(157, '...') }}
+            {{ field[field_handle] | strip_tags | entities | trim | safe_truncate(157, '...') }}
         {{ /scope:field }}
     {{ elseif fallback == 'custom_text' }}
         {{ custom_text }}
     {{ elseif fallback == 'page_builder' }}
         {{ if page_builder:0:text }}
-            {{ page_builder:0:text | strip_tags | trim | safe_truncate(157, '...') }}
+            {{ page_builder:0:text | strip_tags | entities | trim | safe_truncate(157, '...') }}
         {{ else }}
             {{ page_builder where="type:article" limit="1" }}
                 {{ if article }}
-                    {{ article | raw | where('type', 'paragraph') | bard_text | trim | safe_truncate(157, '...') }}
+                    {{ article | raw | where('type', 'paragraph') | bard_text | entities | trim | safe_truncate(157, '...') }}
                 {{ /if }}
             {{ /page_builder }}
         {{ /if }}

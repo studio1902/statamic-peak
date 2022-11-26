@@ -1,6 +1,6 @@
 {{#
-	@name Search
-	@desc The search template showing search results, if you enable the search form partial in `views/navigation/_main.antlers.html` and the route in `routes/web.php`.
+    @name Search
+    @desc The search template showing search results, if you enable the search form partial in `views/navigation/_main.antlers.html` and the route in `routes/web.php`.
 #}}
 
 {{# Yield a title to the SEO partial. #}}
@@ -31,7 +31,7 @@
             {{ else }}
                 <article class="col-span-12 md:col-span-8 md:col-start-3">
                     <a class="flex flex-col" href="{{ url }}">
-                        <span class="text-neutral">{{ permalink }}</span>
+                        <span class="text-neutral underline decoration-primary mb-1 break-words">{{ permalink }}</span>
 
                         {{ partial:typography/h2 class="mt-0" color="text-primary" :content="title" }}
                     </a>
