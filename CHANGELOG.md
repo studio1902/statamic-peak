@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.35 (2022-11-26)
+
+### What's new
+- Add option to group third party scripts under custom labels in the cookie banner. #285 by @robdekort
+
 ## v6.34 (2022-11-25)
 
 ### What's improved

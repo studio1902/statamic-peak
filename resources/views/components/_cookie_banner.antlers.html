@@ -21,7 +21,9 @@
         cookieConsentDate: $persist(null).as('cookieBannerConsentDate'),
         analyticsStorage: $persist(false).as('cookieBannerAnalyticsStorage'),
         adStorage: $persist(false).as('cookieBannerAdStorage'),
-        thirdParty: $persist(false).as('cookieBannerThirdParty'),
+        {{ seo:scripts }}
+            customScript{{ count }}: $persist(false).as('cookieBannerCustomScript{{ count }}'){{ !last ?= ',' }}
+        {{ /seo:scripts }}
     }"
     x-effect="
         {{# Update gtag on state change. #}}
@@ -33,8 +35,8 @@
                 : ''
         {{# Fire other scripts upon consent. #}}
         {{ elseif seo:tracker_type == 'scripts' }}
-            if ($store.cookieBanner.consent && thirdParty) {
-                {{ seo:scripts }}
+            {{ seo:scripts }}
+                if ($store.cookieBanner.consent && customScript{{ count }}) {
                     {{ script_fragments }}
                         let script{{ index }} = document.createElement('script')
                         {{ if type == 'script_tag' }}
@@ -44,8 +46,8 @@
                         {{ /if }}
                         document.head.appendChild(script{{ index }})
                     {{ /script_fragments }}
-                {{ /seo:scripts }}
-            }
+                }
+            {{ /seo:scripts }}
         {{ /if }}
     "
     {{# Hide when banner is interacted with, check date for optional consent revoke. If so set state back to initial state. #}}
@@ -107,13 +109,15 @@
 
         {{# x-model thirdParty checkbox only when scripts is being used. #}}
         {{ if seo:tracker_type == 'scripts' }}
-            <label class="inline-flex items-center">
-                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="third_party" x-model="thirdParty">
-                <span class="flex flex-col">
-                    <span class="font-bold text-xs">{{ trans:strings.cookie_third_party }}</span>
-                    <span class="text-xs text-neutral/75">{{ trans:strings.cookie_third_party_explanation }}</span>
-                </span>
-            </label>
+            {{ seo:scripts }}
+                <label class="inline-flex items-center">
+                    <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="customScript{{ count }}" x-model="customScript{{ count }}">
+                    <span class="flex flex-col">
+                        <span class="font-bold text-xs">{{ category }}</span>
+                        <span class="text-xs text-neutral/75">{{ explainer }}</span>
+                    </span>
+                </label>
+            {{ /seo:scripts }}
         {{ /if }}
     </div>
 
