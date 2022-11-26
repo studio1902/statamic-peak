@@ -26,8 +26,6 @@ return [
     'cookie_functional'                 => 'Functioneel',
     'cookie_functional_explanation'     => 'First party cookies die essentieel zijn voor het functioneren van deze website. Deze kunnen niet uitgeschakeld worden.',
     'cookie_ignore'                     => 'Negeer',
-    'cookie_third_party'                => 'Third party',
-    'cookie_third_party_explanation'    => 'Third party cookies die gebruikt worden voor externe embedded services.',
     'cookie_title'                      => 'Cookies 🍪',
     'cookie_learn_more'                 => 'Meer informatie',
     'cookie_reset_consent'              => 'Reset cookie-instellingen',

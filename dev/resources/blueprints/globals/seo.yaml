@@ -460,7 +460,7 @@ sections:
         field:
           type: section
           instructions: "Configure Fathom. A privacy friendly tracker that doesn't require a cookie notification."
-          display: 'Fathom'
+          display: Fathom
       -
         handle: use_fathom
         field:
@@ -515,7 +515,7 @@ sections:
         field:
           type: section
           instructions: "Configure Plausible. A privacy friendly tracker that doesn't require a cookie notification."
-          display: 'Plausible'
+          display: Plausible
       -
         handle: use_plausible
         field:
@@ -569,7 +569,7 @@ sections:
         handle: section_cloudflare
         field:
           type: section
-          instructions: "Configure Cloudflare Web Analytics."
+          instructions: 'Configure Cloudflare Web Analytics.'
           display: 'Cloudflare Web Analytics'
       -
         handle: use_cloudflare_web_analytics
@@ -626,21 +626,37 @@ sections:
               display: Script
               fields:
                 -
-                  handle: identifier
+                  handle: category
                   field:
                     input_type: text
                     antlers: false
-                    display: Identifier
+                    display: Category
                     type: text
                     icon: text
-                    instructions: 'A visual CP identifier.'
+                    instructions: 'When you use the cookie banner, scripts will be grouped under this category.'
                     listable: hidden
                     instructions_position: above
                     visibility: visible
                     always_save: false
+                    localizable: true
                     validate:
                       - required
                       - sometimes
+                -
+                  handle: explainer
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Explainer
+                    type: text
+                    icon: text
+                    instructions: 'Explainer for the current category when you use the cookie banner.'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate: required
+                    always_save: false
+                    localizable: true
                 -
                   handle: script_fragments
                   field:
@@ -654,6 +670,7 @@ sections:
                     icon: grid
                     listable: hidden
                     instructions_position: above
+                    localizable: false
                     visibility: visible
                     always_save: false
                     validate:
@@ -753,6 +770,7 @@ sections:
           instructions_position: above
           visibility: visible
           always_save: false
+          localizable: true
           validate:
             - 'required_if:tracker_type,scripts'
           if:

@@ -26,8 +26,6 @@ return [
     'cookie_functional'                 => 'Functional',
     'cookie_functional_explanation'     => 'First party cookies needed for the website to function. These can\'t be turned off.',
     'cookie_ignore'                     => 'Ignore',
-    'cookie_third_party'                => 'Third party',
-    'cookie_third_party_explanation'    => 'Third party cookies used for embedded external services.',
     'cookie_title'                      => 'Cookies 🍪',
     'cookie_learn_more'                 => 'Learn more',
     'cookie_reset_consent'              => 'Reset cookie consent',
