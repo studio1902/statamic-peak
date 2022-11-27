@@ -117,17 +117,6 @@
             </label>
         {{ /if }}
 
-        {{# x-model embeds checkbox only when embeds is turned on. #}}
-        {{ if seo:embeds }}
-            <label class="inline-flex items-center">
-                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="embeds" x-model="embeds">
-                <span class="flex flex-col">
-                    <span class="font-bold text-xs">{{ trans:strings.cookie_embeds }}</span>
-                    <span class="text-xs text-neutral/75">{{ trans:strings.cookie_embeds_explanation }}</span>
-                </span>
-            </label>
-        {{ /if }}
-
         {{# x-model thirdParty checkbox only when scripts is being used. #}}
         {{ if seo:tracker_type == 'scripts' }}
             {{ seo:scripts }}
@@ -139,6 +128,17 @@
                     </span>
                 </label>
             {{ /seo:scripts }}
+        {{ /if }}
+
+        {{# x-model embeds checkbox only when embeds is turned on. #}}
+        {{ if seo:embeds }}
+            <label class="inline-flex items-center">
+                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="embeds" x-model="embeds">
+                <span class="flex flex-col">
+                    <span class="font-bold text-xs">{{ trans:strings.cookie_embeds }}</span>
+                    <span class="text-xs text-neutral/75">{{ trans:strings.cookie_embeds_explanation }}</span>
+                </span>
+            </label>
         {{ /if }}
     </div>
 
