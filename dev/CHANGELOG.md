@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.36 (2022-11-27)
+
+### What's new
+- Add video embeds consent option to the cookie banner and when in use only load video embeds after consent. #286 by @robdekort
+
 ## v6.35 (2022-11-26)
 
 ### What's new
