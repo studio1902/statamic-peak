@@ -23,6 +23,8 @@ return [
     'cookie_analytics'                  => 'Analytics',
     'cookie_analytics_explanation'      => 'Third party cookies die nodig zijn voor het meten van geanomiseerde bezoekersstatistieken.',
     'cookie_explanation'                => 'Deze site gebruikt cookies waar we je toestemming voor nodig hebben.',
+    'cookie_embeds'                     => 'Video embeds',
+    'cookie_embeds_explanation'         => 'Third party cookies die nodig zijn om embedded video\'s te tonen. Deze kunnen je gedrag mogelijk tracken.',
     'cookie_functional'                 => 'Functioneel',
     'cookie_functional_explanation'     => 'First party cookies die essentieel zijn voor het functioneren van deze website. Deze kunnen niet uitgeschakeld worden.',
     'cookie_ignore'                     => 'Negeer',
