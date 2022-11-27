@@ -822,8 +822,20 @@ sections:
           instructions_position: below
           listable: false
           display: 'Cookie banner'
+      -
+        handle: embeds
+        field:
+          default: false
+          display: Embeds
+          type: toggle
+          icon: toggle
+          instructions: "Only load in third party embedded video's from the `video` article set after consent."
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
           if:
-            tracker_type: 'not none'
+            use_cookie_banner: 'equals true'
       -
         handle: display_style
         field:
@@ -837,7 +849,6 @@ sections:
           display: 'Display style'
           width: 50
           if:
-            tracker_type: 'not none'
             use_cookie_banner: 'equals true'
       -
         handle: cookie_revoke_before
@@ -858,5 +869,4 @@ sections:
           icon: date
           listable: hidden
           if:
-            tracker_type: 'not none'
             use_cookie_banner: 'equals true'
