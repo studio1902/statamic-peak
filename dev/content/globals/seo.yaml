@@ -9,7 +9,7 @@ data:
   use_social_image_generation: false
   sitemap_collections:
     - pages
-  trackers_local: true
+  trackers_local: false
   trackers_staging: false
   trackers_production: true
   use_google_site_verification: false
@@ -17,6 +17,4 @@ data:
   use_plausible: false
   use_cloudflare_web_analytics: false
   tracker_type: none
-  use_cookie_banner: true
-  embeds: true
-  display_style: left
+  use_cookie_banner: false

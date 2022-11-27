@@ -8,8 +8,12 @@
     document.addEventListener('alpine:init', () => {
         Alpine.store('cookieBanner', {
             consent: Alpine.$persist(null).as('cookieBannerConsent'),
-            set(value) {
+            embeds: Alpine.$persist(null).as('cookieBannerEmbeds'),
+            setConsent(value) {
                 this.consent = value
+            },
+            setEmbeds(value) {
+                this.embeds = value
             }
         })
     })
@@ -21,37 +25,45 @@
         cookieConsentDate: $persist(null).as('cookieBannerConsentDate'),
         analyticsStorage: $persist(false).as('cookieBannerAnalyticsStorage'),
         adStorage: $persist(false).as('cookieBannerAdStorage'),
-        embeds: $persist(false).as('cookieBannerEmbeds')
+        embeds: $store.cookieBanner.embeds,
+        {{ seo:scripts }}
+            customScript{{ count }}: $persist(false).as('cookieBannerCustomScript{{ count }}'){{ !last ?= ',' }}
+        {{ /seo:scripts }}
     }"
-    x-effect="
-        {{# Update gtag on state change. #}}
-        {{ if seo:tracker_type == 'gtag' || seo:tracker_type == 'gtm' }}
-            $store.cookieBanner.consent
-                ? gtag('consent', 'update', {
-                    'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
-                    'ad_storage': (adStorage ? 'granted' : 'denied') })
-                : ''
-        {{# Fire other scripts upon consent. #}}
-        {{ elseif seo:tracker_type == 'scripts' }}
-            {{ seo:scripts }}
-                if ($store.cookieBanner.consent && customScript{{ count }}) {
-                    {{ script_fragments }}
-                        let script{{ index }} = document.createElement('script')
-                        {{ if type == 'script_tag' }}
-                            script{{ index }}.src = '{{ source }}'
-                        {{ else }}
-                            script{{ index }}.text = '{{ inline_script | add_slashes | entities | collapse_whitespace }}'
-                        {{ /if }}
-                        document.head.appendChild(script{{ index }})
-                    {{ /script_fragments }}
-                }
-            {{ /seo:scripts }}
-        {{ /if }}
-    "
+    {{ if seo:tracker_type !== 'none' || seo:embeds }}
+        x-effect="
+            {{# Update gtag on state change. #}}
+            {{ if seo:tracker_type == 'gtag' || seo:tracker_type == 'gtm'}}
+                $store.cookieBanner.consent
+                    ? gtag('consent', 'update', {
+                        'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
+                        'ad_storage': (adStorage ? 'granted' : 'denied') })
+                    : ''
+            {{# Fire other scripts upon consent. #}}
+            {{ elseif seo:tracker_type == 'scripts' }}
+                {{ seo:scripts }}
+                    if ($store.cookieBanner.consent && customScript{{ count }}) {
+                        {{ script_fragments }}
+                            let script{{ index }} = document.createElement('script')
+                            {{ if type == 'script_tag' }}
+                                script{{ index }}.src = '{{ source }}'
+                            {{ else }}
+                                script{{ index }}.text = '{{ inline_script | add_slashes | entities | collapse_whitespace }}'
+                            {{ /if }}
+                            document.head.appendChild(script{{ index }})
+                        {{ /script_fragments }}
+                    }
+                {{ /seo:scripts }}
+            {{ /if }}
+            {{# Set embeds and dispatch event to embed component(s). #}}
+            $store.cookieBanner.setEmbeds(embeds)
+            $dispatch('embeds')
+        "
+    {{ /if }}
     {{# Hide when banner is interacted with, check date for optional consent revoke. If so set state back to initial state. #}}
     x-init="
         cookieConsentDate < '{{ seo:cookie_revoke_before format="Y-m-d" }}'
-            ? ($store.cookieBanner.set(null), cookieConsentDate = null)
+            ? ($store.cookieBanner.setConsent(null), cookieConsentDate = null)
             : ''
         "
     x-show="$store.cookieBanner.consent === null"
@@ -92,7 +104,7 @@
                     <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
                 </span>
             </label>
-        {{ /if }}
+        {{ /unless }}
 
         {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
@@ -105,7 +117,7 @@
             </label>
         {{ /if }}
 
-        {{# x-model embeds checkbox only when this is turned on #}}
+        {{# x-model embeds checkbox only when embeds is turned on. #}}
         {{ if seo:embeds }}
             <label class="inline-flex items-center">
                 <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="embeds" x-model="embeds">
@@ -134,7 +146,7 @@
         {{# Accept cookies and set current date. #}}
         <button
             @click="
-                $store.cookieBanner.set(true),
+                $store.cookieBanner.setConsent(true),
                 cookieConsentDate = '{{ now format="Y-m-d" }}'"
             type="button"
             class="px-4 py-2 bg-primary rounded text-sm font-bold text-white focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
@@ -144,7 +156,7 @@
 
         {{# Ignore consent and hide banner. #}}
         <button
-            @click="$store.cookieBanner.set(false)"
+            @click="$store.cookieBanner.setConsent(false)"
             type="button"
             class="px-1 py-2 rounded text-sm font-bold text-neutral focus:outline-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary motion-safe:transition"
         >
@@ -161,7 +173,7 @@
         {{# Read out global store consent status and display a reset consent link by saving the initial state. #}}
         <span x-data x-cloak>
             <span x-show="$store.cookieBanner.consent !== null">
-                <a @click.prevent="$store.cookieBanner.set(null)" class="px-1 -mx-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition-colors" href="#">{{ trans:strings.cookie_reset_consent }}</a>
+                <a @click.prevent="$store.cookieBanner.setConsent(null)" class="px-1 -mx-1 underline rounded hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition-colors" href="#">{{ trans:strings.cookie_reset_consent }}</a>
             </span>
         </span>
     {{ /if }}

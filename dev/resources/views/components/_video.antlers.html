@@ -6,6 +6,11 @@
 
 <!-- /components/_video.antlers.html -->
 <div
+    {{ if seo:embeds }}
+        x-data="embeds"
+        x-init="validateConsent()"
+        @embeds.window="validateConsent()"
+    {{ /if }}
     class="
         not-prose
         {{ switch(
@@ -17,9 +22,27 @@
     "
 >
     <div class="aspect-w-16 aspect-h-9">
-        <iframe class="absolute top-0 left-0 w-full h-full" width="100%" height="auto" src="{{ youtube_url | embed_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe x-ref="iframe" class="absolute top-0 left-0 w-full h-full" width="100%" data-src="{{ youtube_url | embed_url }}" {{ unless seo:embeds }}src="{{ youtube_url | embed_url }}"{{ /unless}} height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     {{ partial:typography/caption }}
+
+    {{ if seo:embeds }}
+        {{ once }}
+            <script>
+                document.addEventListener('alpine:initializing', () => {
+                    Alpine.data('embeds', () => {
+                        return {
+                            validateConsent: function() {
+                                this.$store.cookieBanner.embeds
+                                    ? this.$refs.iframe.src = this.$refs.iframe.getAttribute('data-src')
+                                    : this.$refs.iframe.src = ''
+                            }
+                        }
+                    })
+                })
+            </script>
+        {{ /once }}
+    {{ /if }}
 </div>
 <!-- End: /components/_video.antlers.html -->
