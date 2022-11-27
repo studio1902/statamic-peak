@@ -9,13 +9,14 @@ data:
   use_social_image_generation: false
   sitemap_collections:
     - pages
-  trackers_local: false
+  trackers_local: true
   trackers_staging: false
   trackers_production: true
   use_google_site_verification: false
   use_fathom: false
-  fathom_use_custom_domain: false
+  use_plausible: false
   use_cloudflare_web_analytics: false
   tracker_type: none
-  anonymize_ip: false
-  use_cookie_banner: false
+  use_cookie_banner: true
+  embeds: true
+  display_style: left

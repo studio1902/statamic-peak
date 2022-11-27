@@ -21,13 +21,11 @@
         cookieConsentDate: $persist(null).as('cookieBannerConsentDate'),
         analyticsStorage: $persist(false).as('cookieBannerAnalyticsStorage'),
         adStorage: $persist(false).as('cookieBannerAdStorage'),
-        {{ seo:scripts }}
-            customScript{{ count }}: $persist(false).as('cookieBannerCustomScript{{ count }}'){{ !last ?= ',' }}
-        {{ /seo:scripts }}
+        embeds: $persist(false).as('cookieBannerEmbeds')
     }"
     x-effect="
         {{# Update gtag on state change. #}}
-        {{ if seo:tracker_type == 'gtag' || seo:tracker_type == 'gtm'}}
+        {{ if seo:tracker_type == 'gtag' || seo:tracker_type == 'gtm' }}
             $store.cookieBanner.consent
                 ? gtag('consent', 'update', {
                     'analytics_storage': (analyticsStorage ? 'granted' : 'denied'),
@@ -86,7 +84,7 @@
         </label>
 
         {{# x-model analyticsStorage checkbox. #}}
-        {{ unless seo:tracker_type == 'scripts' }}
+        {{ if seo:tracker_type == 'gtag' || seo:tracker_type == 'gtm' }}
             <label class="inline-flex items-center">
                 <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="analytics_storage" x-model="analyticsStorage">
                 <span class="flex flex-col">
@@ -94,7 +92,7 @@
                     <span class="text-xs text-neutral/75">{{ trans:strings.cookie_analytics_explanation }}</span>
                 </span>
             </label>
-        {{ /unless }}
+        {{ /if }}
 
         {{# x-model adStorage checkbox only when GTM is being used. #}}
         {{ if seo:tracker_type == 'gtm' }}
@@ -103,6 +101,17 @@
                 <span class="flex flex-col">
                     <span class="font-bold text-xs">{{ trans:strings.cookie_ads }}</span>
                     <span class="text-xs text-neutral/75">{{ trans:strings.cookie_ads_explanation }}</span>
+                </span>
+            </label>
+        {{ /if }}
+
+        {{# x-model embeds checkbox only when this is turned on #}}
+        {{ if seo:embeds }}
+            <label class="inline-flex items-center">
+                <input class="mr-3 w-5 h-5 rounded border-neutral text-primary focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition" type="checkbox" name="embeds" x-model="embeds">
+                <span class="flex flex-col">
+                    <span class="font-bold text-xs">{{ trans:strings.cookie_embeds }}</span>
+                    <span class="text-xs text-neutral/75">{{ trans:strings.cookie_embeds_explanation }}</span>
                 </span>
             </label>
         {{ /if }}
