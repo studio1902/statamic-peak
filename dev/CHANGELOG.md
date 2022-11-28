@@ -1,5 +1,10 @@
 # Changelog
 
+## v6.37 (2022-11-28)
+
+### What's new
+- Add text and link to cookie banner on disabled video's.
+
 ## v6.36 (2022-11-27)
 
 ### What's new
