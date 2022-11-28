@@ -13,53 +13,13 @@ class InstallBlock extends Command
 {
     use RunsInPlease;
 
-    /**
-     * The name of the console command.
-     *
-     * @var string
-     */
     protected $name = 'statamic:peak:install-block';
-
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Install premade blocks into your page builder.";
-
-    /**
-     * The block name.
-     *
-     * @var string
-     */
     protected $block_name = '';
-
-    /**
-     * The chosen block.
-     *
-     * @var string
-     */
     protected $choices = '';
-
-    /**
-     * The filename.
-     *
-     * @var string
-     */
     protected $filename = '';
-
-    /**
-     * The instructions.
-     *
-     * @var string
-     */
     protected $instructions = '';
 
-    /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $this->choices = $this->choice(

@@ -15,39 +15,11 @@ class AddSet extends Command
 {
     use RunsInPlease;
 
-    /**
-    * The name of the console command.
-    *
-    * @var string
-    */
     protected $name = 'statamic:peak:add-set';
-
-     /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Add an Article (Bard) set.";
-
-     /**
-     * The set name.
-     *
-     * @var string
-     */
     protected $set_name = '';
-
-     /**
-     * The set filename.
-     *
-     * @var string
-     */
     protected $filename = '';
 
-     /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $this->set_name = $this->ask('What should be the name for this set?');

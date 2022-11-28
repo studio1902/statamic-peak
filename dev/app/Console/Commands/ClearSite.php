@@ -16,25 +16,9 @@ class ClearSite extends Command
 {
     use RunsInPlease;
 
-    /**
-    * The name of the console command.
-    *
-    * @var string
-    */
     protected $name = 'statamic:peak:clear-site';
-
-     /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Clear all default Peak content.";
 
-     /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $clear_site = ($this->confirm('Do you want to clear all default Peak content?', false)) ? true : false;

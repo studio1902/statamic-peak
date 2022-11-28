@@ -17,151 +17,27 @@ class AddCollection extends Command
 {
     use RunsInPlease;
 
-    /**
-    * The name of the console command.
-    *
-    * @var string
-    */
     protected $name = 'statamic:peak:add-collection';
-
-     /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Add a collection.";
-
-     /**
-     * The collection name.
-     *
-     * @var string
-     */
     protected $collection_name = '';
-
-    /**
-     * The collection filename.
-     *
-     * @var string
-     */
     protected $filename = '';
-
-    /**
-     * Public.
-     *
-     * @var bool
-     */
     protected $public = false;
-
-    /**
-     * Mount collection.
-     *
-     * @var bool
-     */
     protected $mount_collection = false;
-
-     /**
-     * The collection route.
-     *
-     * @var string
-     */
     protected $route = '';
-
-    /**
-     * Add page.
-     *
-     * @var bool
-     */
     protected $add_page = false;
-
-    /**
-     * The page title.
-     *
-     * @var string
-     */
     protected $page_title = '';
-
-    /**
-     * The layout
-     *
-     * @var string
-     */
     protected $layout = '';
-
-    /**
-     * Revisions.
-     *
-     * @var bool
-     */
     protected $revisions = false;
-
-    /**
-     * Dated collection.
-     *
-     * @var bool
-     */
     protected $dated = false;
-
-    /**
-     * Sort direction.
-     *
-     * @var string
-     */
     protected $sort_dir = '';
-
-    /**
-     * Date behavior past
-     *
-     * @var string
-     */
     protected $date_past = 'public';
-
-    /**
-     * Date behavior future
-     *
-     * @var string
-     */
     protected $date_future = 'private';
-
-    /**
-     * Show template.
-     *
-     * @var string
-     */
     protected $template = '';
-
-    /**
-     * Mount.
-     *
-     * @var string
-     */
     protected $mount = '';
-
-    /**
-     * Index template.
-     *
-     * @var bool
-     */
     protected $index = false;
-
-    /**
-     * Show template.
-     *
-     * @var bool
-     */
     protected $show = false;
-
-    /**
-     * Grant permissions.
-     *
-     * @var bool
-     */
     protected $permissions = true;
 
-     /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $this->collection_name = $this->ask('What should be the name for this collection?');

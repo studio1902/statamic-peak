@@ -15,46 +15,12 @@ class AddBlock extends Command
 {
     use RunsInPlease;
 
-    /**
-    * The name of the console command.
-    *
-    * @var string
-    */
     protected $name = 'statamic:peak:add-block';
-
-     /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Add a page builder block.";
-
-     /**
-     * The block name.
-     *
-     * @var string
-     */
     protected $block_name = '';
-
-     /**
-     * The block filename.
-     *
-     * @var string
-     */
     protected $filename = '';
-
-     /**
-     * The block instructions.
-     *
-     * @var string
-     */
     protected $instructions = '';
 
-     /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $this->block_name = $this->ask('What should be the name for this block?');
@@ -97,7 +63,7 @@ class AddBlock extends Command
         $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
         $contents = Str::of($stub)
             ->replace('{{ name }}', str_replace('"','\'', $this->block_name));
-        
+
 
         File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), $contents);
     }

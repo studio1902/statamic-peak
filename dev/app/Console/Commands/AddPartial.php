@@ -13,60 +13,14 @@ class AddPartial extends Command
 {
     use RunsInPlease;
 
-    /**
-    * The name of the console command.
-    *
-    * @var string
-    */
     protected $name = 'statamic:peak:add-partial';
-
-     /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Add a partial with IDE hinting and template paths.";
-
-     /**
-     * The block name.
-     *
-     * @var string
-     */
     protected $partial_name = '';
-
-    /**
-    * The block instructions.
-    *
-    * @var string
-    */
     protected $partial_description = '';
-
-     /**
-     * The block filename.
-     *
-     * @var string
-     */
     protected $filename = '';
-
-    /**
-     * The folder.
-     *
-     * @var string
-     */
     protected $folder = '';
-
-    /**
-     * The type.
-     *
-     * @var string
-     */
     protected $type = '';
 
-     /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $this->type = $this->choice(
