@@ -13,7 +13,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class AddSet extends Command
 {
-    use RunsInPlease, SharedFunctions;
+    use RunsInPlease;
 
     protected $name = 'statamic:peak:add-set';
     protected $description = "Add an Article (Bard) set.";
@@ -31,24 +31,12 @@ class AddSet extends Command
 
             $this->createFieldset();
             $this->createPartial();
-            $this->updatePageBuilder();
+            $this->updateArticleSets();
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
 
         $this->info("Peak page builder Article set '{$this->set_name}' added.");
-    }
-
-    /**
-     * Check if a file doesn't already exist.
-     *
-     * @return bool|null
-     */
-    protected function checkExistence($type, $path)
-    {
-        if (File::exists(base_path($path))) {
-            throw new \Exception("{$type} '{$path}' already exists.");
-        }
     }
 
     /**
@@ -81,11 +69,11 @@ class AddSet extends Command
     }
 
     /**
-     * Update page_builder.yaml.
+     * Update article.yaml.
      *
      * @return bool|null
      */
-    protected function updatePageBuilder()
+    protected function updateArticleSets()
     {
         $fieldset = Yaml::parseFile(base_path('resources/fieldsets/article.yaml'));
         $newSet = [

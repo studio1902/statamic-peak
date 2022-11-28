@@ -91,18 +91,6 @@ class AddCollection extends Command
     }
 
     /**
-     * Check if a file doesn't already exist.
-     *
-     * @return bool|null
-     */
-    protected function checkExistence($type, $path)
-    {
-        if (File::exists(base_path($path))) {
-            throw new \Exception("$type '{$path}' already exists.");
-        }
-    }
-
-    /**
      * Get all pages.
      *
      * @return array

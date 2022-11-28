@@ -14,7 +14,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class ClearSite extends Command
 {
-    use RunsInPlease, SharedFunctions;
+    use RunsInPlease;
 
     protected $name = 'statamic:peak:clear-site';
     protected $description = "Clear all default Peak content.";
