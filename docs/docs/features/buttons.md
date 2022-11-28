@@ -22,5 +22,9 @@ Or link to a single entry:
 
 Or to do fancy Alpine stuff:
 ```html
-{{ partial:components/button as="button" label="Do this thing" faux="true" inverted="true" attribute="x-data @click.prevent='$dispatch(\"my-event\")'" }}
+{{ partial:components/button }}
+    {{ slot:attributes }}
+        @click="doSomething()"
+    {{ /slot:attributes }}
+{{ /partial:components/button }}
 ```

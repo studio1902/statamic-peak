@@ -1,5 +1,25 @@
 # Changelog
 
+## v6.38 (2022-11-28)
+
+### What's improved
+- Embeds behind the cookie banner now respect environment tracker configuration. 95d752a9 by @robdekort
+
+## v6.37 (2022-11-28)
+
+### What's new
+- Add instructions and and link to the cookie banner on disabled video's. 27d3b3b2 by @robdekort
+
+## v6.36 (2022-11-27)
+
+### What's new
+- Add video embeds consent option to the cookie banner and when in use only load video embeds after consent. #286 by @robdekort
+
+## v6.35 (2022-11-26)
+
+### What's new
+- Add option to group third party scripts under custom labels in the cookie banner. #285 by @robdekort
+
 ## v6.34 (2022-11-25)
 
 ### What's improved

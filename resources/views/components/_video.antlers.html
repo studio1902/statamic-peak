@@ -5,7 +5,17 @@
 #}}
 
 <!-- /components/_video.antlers.html -->
+{{ cookie_embeds =
+    (environment == 'local' && seo:trackers_local && seo:embeds) or
+    (environment == 'staging' && seo:trackers_staging && seo:embeds) or
+    (environment == 'production' && seo:trackers_production && seo:embeds)
+}}
 <div
+    {{ if cookie_embeds }}
+        x-data="embeds"
+        x-init="validateConsent()"
+        @embeds.window="validateConsent()"
+    {{ /if }}
     class="
         not-prose
         {{ switch(
@@ -16,10 +26,38 @@
         )}}
     "
 >
-    <div class="aspect-w-16 aspect-h-9">
-        <iframe class="absolute top-0 left-0 w-full h-full" width="100%" height="auto" src="{{ youtube_url | embed_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="relative aspect-w-16 aspect-h-9">
+        {{ if cookie_embeds }}
+            <div
+                x-show="!$store.cookieBanner.consent || !$store.cookieBanner.embeds"
+                class="absolute z-10 inset-0 p-6 flex justify-center items-center bg-neutral/10 text-neutral/80"
+            >
+                <a @click.prevent="$store.cookieBanner.setConsent(null)" href="#" class="p-1 -m-1 underline focus:outline-none focus-visible:ring-2 ring-primary">
+                    {{ trans:strings.cookie_embeds_disabled }}
+                </a>
+            </div>
+        {{ /if }}
+        <iframe x-ref="iframe" class="absolute top-0 left-0 w-full h-full" width="100%" data-src="{{ youtube_url | embed_url }}" {{ unless cookie_embeds }}src="{{ youtube_url | embed_url }}"{{ /unless}} height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     {{ partial:typography/caption }}
+
+    {{ if cookie_embeds }}
+        {{ once }}
+            <script>
+                document.addEventListener('alpine:initializing', () => {
+                    Alpine.data('embeds', () => {
+                        return {
+                            validateConsent: function() {
+                                this.$store.cookieBanner.consent && this.$store.cookieBanner.embeds
+                                    ? this.$refs.iframe.src = this.$refs.iframe.getAttribute('data-src')
+                                    : this.$refs.iframe.src = ''
+                            }
+                        }
+                    })
+                })
+            </script>
+        {{ /once }}
+    {{ /if }}
 </div>
 <!-- End: /components/_video.antlers.html -->
