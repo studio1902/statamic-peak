@@ -3,7 +3,7 @@
 ## v6.37 (2022-11-28)
 
 ### What's new
-- Add text and link to cookie banner on disabled video's.
+- Add instructions and and link to the cookie banner on disabled video's. 27d3b3b2 by @robdekort
 
 ## v6.36 (2022-11-27)
 
