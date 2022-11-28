@@ -21,6 +21,34 @@ trait SharedFunctions {
     }
 
     /**
+     * Update article.yaml.
+     *
+     * @return bool|null
+     */
+    protected function updateArticleSets()
+    {
+        $fieldset = Yaml::parseFile(base_path('resources/fieldsets/article.yaml'));
+        $newSet = [
+            'display' => $this->set_name,
+            'fields' => [
+                [
+                    'import' => $this->filename
+                ]
+            ]
+        ];
+
+        $existingSets = Arr::get($fieldset, 'fields.0.field.sets');
+        $existingSets[$this->filename] = $newSet;
+        $existingSets = collect($existingSets)->sortBy(function ($value, $key) {
+            return $key;
+        })->all();
+
+        Arr::set($fieldset, 'fields.0.field.sets', $existingSets);
+
+        File::put(base_path('resources/fieldsets/article.yaml'), Yaml::dump($fieldset, 99, 2));
+    }
+
+    /**
      * Update page_builder.yaml.
      *
      * @return bool|null
