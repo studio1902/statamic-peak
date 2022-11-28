@@ -2,6 +2,10 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Support\Facades\File;
+use Statamic\Support\Arr;
+use Symfony\Component\Yaml\Yaml;
+
 trait SharedFunctions {
 
     /**

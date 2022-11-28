@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
 use Statamic\Support\Arr;
 use Stringy\StaticStringy as Stringy;
-use Symfony\Component\Yaml\Yaml;
 
 class InstallBlock extends Command
 {
@@ -52,18 +51,6 @@ class InstallBlock extends Command
             }
 
             $this->info("Peak page builder block '{$this->block_name}' installed.");
-        }
-    }
-
-    /**
-     * Check if a file doesn't already exist.
-     *
-     * @return bool|null
-     */
-    protected function checkExistence($type, $path)
-    {
-        if (File::exists(base_path($path))) {
-            throw new \Exception("{$type} '{$path}' already exists.");
         }
     }
 
