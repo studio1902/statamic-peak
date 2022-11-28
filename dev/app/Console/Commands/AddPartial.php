@@ -11,7 +11,7 @@ use Stringy\StaticStringy as Stringy;
 
 class AddPartial extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
     protected $name = 'statamic:peak:add-partial';
     protected $description = "Add a partial with IDE hinting and template paths.";

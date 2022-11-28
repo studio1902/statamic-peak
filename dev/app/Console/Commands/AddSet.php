@@ -13,7 +13,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class AddSet extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
     protected $name = 'statamic:peak:add-set';
     protected $description = "Add an Article (Bard) set.";

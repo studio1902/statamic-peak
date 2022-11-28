@@ -11,7 +11,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class InstallBlock extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
     protected $name = 'statamic:peak:install-block';
     protected $description = "Install premade blocks into your page builder.";

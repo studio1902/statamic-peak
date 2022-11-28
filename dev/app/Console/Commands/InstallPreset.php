@@ -11,7 +11,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class InstallPreset extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
     protected $name = 'statamic:peak:install-preset';
     protected $description = "Install premade collections and page builder blocks into your site.";

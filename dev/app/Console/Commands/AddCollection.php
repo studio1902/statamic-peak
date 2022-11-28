@@ -15,7 +15,7 @@ use Stringy\StaticStringy as Stringy;
 
 class AddCollection extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
     protected $name = 'statamic:peak:add-collection';
     protected $description = "Add a collection.";

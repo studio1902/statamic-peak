@@ -13,7 +13,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class AddBlock extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
     protected $name = 'statamic:peak:add-block';
     protected $description = "Add a page builder block.";
