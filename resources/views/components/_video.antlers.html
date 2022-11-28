@@ -5,8 +5,13 @@
 #}}
 
 <!-- /components/_video.antlers.html -->
+{{ cookie_embeds =
+    (environment == 'local' && seo:trackers_local && seo:embeds) or
+    (environment == 'staging' && seo:trackers_staging && seo:embeds) or
+    (environment == 'production' && seo:trackers_production && seo:embeds)
+}}
 <div
-    {{ if seo:embeds }}
+    {{ if cookie_embeds }}
         x-data="embeds"
         x-init="validateConsent()"
         @embeds.window="validateConsent()"
@@ -22,7 +27,7 @@
     "
 >
     <div class="relative aspect-w-16 aspect-h-9">
-        {{ if seo:embeds }}
+        {{ if cookie_embeds }}
             <div
                 x-show="!$store.cookieBanner.consent || !$store.cookieBanner.embeds"
                 class="absolute z-10 inset-0 p-6 flex justify-center items-center bg-neutral/10 text-neutral/80"
@@ -32,12 +37,12 @@
                 </a>
             </div>
         {{ /if }}
-        <iframe x-ref="iframe" class="absolute top-0 left-0 w-full h-full" width="100%" data-src="{{ youtube_url | embed_url }}" {{ unless seo:embeds }}src="{{ youtube_url | embed_url }}"{{ /unless}} height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe x-ref="iframe" class="absolute top-0 left-0 w-full h-full" width="100%" data-src="{{ youtube_url | embed_url }}" {{ unless cookie_embeds }}src="{{ youtube_url | embed_url }}"{{ /unless}} height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     {{ partial:typography/caption }}
 
-    {{ if seo:embeds }}
+    {{ if cookie_embeds }}
         {{ once }}
             <script>
                 document.addEventListener('alpine:initializing', () => {

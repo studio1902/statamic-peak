@@ -1,9 +1,14 @@
 # Changelog
 
+## v6.38 (2022-11-28)
+
+### What's improved
+- Embeds behind the cookie banner now respect environment tracker configuration. 95d752a9 by @robdekort
+
 ## v6.37 (2022-11-28)
 
 ### What's new
-- Add instructions and and link to the cookie banner on disabled video's. 27d3b3b2 and 31c46b17 by @robdekort
+- Add instructions and and link to the cookie banner on disabled video's. 27d3b3b2 by @robdekort
 
 ## v6.36 (2022-11-27)
 
