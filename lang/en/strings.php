@@ -25,6 +25,7 @@ return [
     'cookie_explanation'                => 'This site uses cookies that need consent.',
     'cookie_embeds'                     => 'Video embeds',
     'cookie_embeds_explanation'         => 'Third party cookies used for embedded video\'s that can possibly track you.',
+    'cookie_embeds_disabled'            => 'Accept video embed cookies to view this video.',
     'cookie_functional'                 => 'Functional',
     'cookie_functional_explanation'     => 'First party cookies needed for the website to function. These can\'t be turned off.',
     'cookie_ignore'                     => 'Ignore',
