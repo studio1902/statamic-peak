@@ -93,6 +93,26 @@ class InstallPreset extends Command
                             'instructions' => 'List the most recent news.',
                             'handle' => 'news',
                         ]
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "
+                            Add this to your string files.
+                            // News
+                            'strings.news_all' => 'All news',
+                            'strings.news_more' => 'More news',
+                        "
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "
+                            Add this to your cp.php widgets array for a dashboard widget:
+                            [
+                                'type' => 'collection',
+                                'collection' => 'pages',
+                                'width' => 50
+                            ],
+                        "
                     ]
                 ]
             ]
@@ -121,10 +141,16 @@ class InstallPreset extends Command
                 if ($operation['type'] == 'copy') {
                     $disk->copy("app/Console/Commands/stubs/presets/{$this->handle}/{$operation['input']}", "{$operation['output']}");
                     $this->info("Installed file: '{$operation['output']}'.");
-                } elseif ($operation['type'] == 'update_page_builder') {
+                }
+
+                elseif ($operation['type'] == 'update_page_builder') {
                     $this->updatePageBuilder($operation['block']['name'], $operation['block']['instructions'], $operation['block']['handle']);
                     $this->info("Installed page builder block: '{$operation['block']['name']}'.");
-                };
+                }
+
+                elseif($operation['type'] == 'notify') {
+                    $this->info($operation['content']);
+                }
             });
 
             Artisan::call('cache:clear');
