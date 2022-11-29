@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Statamic\Console\RunsInPlease;
 use Stringy\StaticStringy as Stringy;
 
@@ -88,7 +90,28 @@ class InstallPreset extends Command
 
         foreach($this->choices as $choice) {
             $this->handle = Stringy::between($choice, '[', ']');
-            dd($this->handle);
+            $preset = $this->presets->filter(function ($preset, $key) {
+                return $preset['handle'] == $this->handle;
+            })->first();
+
+            collect($preset['operations'])->each(function ($operation, $key) {
+                $disk = Storage::build([
+                    'driver' => 'local',
+                    'root' => base_path(),
+                ]);
+
+                if ($operation['type'] == 'copy') {
+                    // TODO: Check for existence.
+                    $disk->copy("app/Console/Commands/stubs/presets/{$this->handle}/{$operation['input']}", "{$operation['output']}");
+                    $this->info("Installed: '{$operation['output']}'.");
+                } elseif ($operation['type'] == 'update_page_builder') {
+                    // TODO: Update page builder.
+                };
+            });
+
+            Artisan::call('cache:clear');
+
+            $this->info("Peak preset '{$preset['name']}' installed.");
         }
     }
 }
