@@ -13,7 +13,7 @@
     {{ /collection:news }}
 
     <nav class="md:col-span-12 text-right">
-        {{ partial:components/button label="{trans:strings.news_all}" button_type="inline" link_type="" url="{mount_url:news}" }}
+        {{ partial:components/button label="{trans:strings.news_all}" button_type="inline" link_type="url" url="{mount_url:news}" }}
     </nav>
 </section>
 <!-- End: /page_builder/_news.antlers.html -->
