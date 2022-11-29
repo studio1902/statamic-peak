@@ -1,5 +1,13 @@
 # Changelog
 
+## v7.0 (2022-11-29)
+
+### What's new
+- Refactor commands and add new `Install Preset` command to add complete collections, templates and page builder blocks to your site. #287 by @robdekort
+
+### What's changed
+- Remove the Tailwind CSS Aspect Ratio plugin and default to native aspect ratio utilities. 6d6f363c by @robdekort
+
 ## v6.38 (2022-11-28)
 
 ### What's improved

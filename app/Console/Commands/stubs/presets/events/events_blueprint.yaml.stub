@@ -1,0 +1,320 @@
+title: Events
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: events
+        field:
+          default: events
+          type: hidden
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          input_type: text
+          localizable: true
+          listable: true
+          display: Title
+          validate:
+            - required
+      -
+        handle: teaser
+        field: common.text_plain
+        config:
+          display: Teaser
+          validate:
+            - required
+          character_limit: '250'
+      -
+        import: page_builder
+  event:
+    display: Event
+    fields:
+      -
+        handle: section_date
+        field:
+          display: 'Event date'
+          type: section
+          icon: section
+          instructions: 'Event date or dates.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: event_date_start
+        field:
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Event date (start)'
+          type: date
+          icon: date
+          listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          width: 50
+          validate:
+            - required
+      -
+        handle: event_date_end
+        field:
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Event date (end)'
+          type: date
+          icon: date
+          listable: true
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          width: 50
+          validate:
+            - required
+      -
+        handle: section_location
+        field:
+          display: 'Status en location'
+          type: section
+          icon: section
+          instructions: 'Event status and location details.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: event_type
+        field:
+          options:
+            offline: Offline
+            online: Online
+          multiple: false
+          clearable: false
+          searchable: false
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: offline
+          display: 'Event type'
+          type: select
+          icon: select
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+          width: 50
+      -
+        handle: event_status
+        field:
+          options:
+            EventScheduled: 'Event scheduled as planned'
+            EventRescheduled: 'Event rescheduled (enter new dates)'
+            EventPostponed: 'Event postponed (new date not yet known)'
+            EventMovedOnline: 'Event moved to online (update location)'
+            EventCancelled: 'Event cancelled (keep values as is)'
+          multiple: false
+          clearable: false
+          searchable: false
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          default: EventScheduled
+          display: 'Event status'
+          type: select
+          icon: select
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: location_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Location name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+            - sometimes
+          if:
+            event_type: 'equals offline'
+      -
+        handle: location_address
+        field:
+          input_type: text
+          antlers: false
+          display: Address
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          width: 50
+          validate:
+            - required
+            - sometimes
+          if:
+            event_type: 'equals offline'
+      -
+        handle: location_locality
+        field:
+          input_type: text
+          antlers: false
+          display: City
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          width: 50
+          validate:
+            - required
+            - sometimes
+          if:
+            event_type: 'equals offline'
+      -
+        handle: event_url
+        field:
+          input_type: url
+          antlers: false
+          display: 'Event URL'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+            - sometimes
+          if:
+            event_type: 'equals online'
+      -
+        handle: section_organizer
+        field:
+          display: 'Organizer'
+          type: section
+          icon: section
+          instructions: 'Event organizer details.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: organizer_name
+        field:
+          input_type: text
+          antlers: false
+          display: Organizer name
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          width: 50
+          validate:
+            - required
+      -
+        handle: organizer_url
+        field:
+          input_type: text
+          antlers: false
+          display: Organizer URL
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          width: 50
+          validate:
+            - required
+      -
+        handle: section_sign_up
+        field:
+          display: 'Sign up'
+          type: section
+          icon: section
+          instructions: 'Buttons to an entry, email address or external URL where visitors can sign up.'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        import: button
+        prefix: sign_up_
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: meta
+        field:
+          type: section
+          instructions: "This entry's meta data."
+          display: Meta
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          generate: true
+          listable: hidden
+          display: Slug
+          validate:
+            - required
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          listable: hidden
+          validate:
+            - required
+          display: 'Publication date'
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '2021-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          time_seconds_enabled: false
+      -
+        handle: image
+        field: common.image
+        config:
+          listable: true
+          instructions: 'Will also be used in image links to this page.'
+          instructions_position: below
+          validate:
+            - required

@@ -7,54 +7,18 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Config;
-use Statamic\Support\Arr;
 use Stringy\StaticStringy as Stringy;
-use Symfony\Component\Yaml\Yaml;
 
 class AddBlock extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
-    /**
-    * The name of the console command.
-    *
-    * @var string
-    */
     protected $name = 'statamic:peak:add-block';
-
-     /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Add a page builder block.";
-
-     /**
-     * The block name.
-     *
-     * @var string
-     */
     protected $block_name = '';
-
-     /**
-     * The block filename.
-     *
-     * @var string
-     */
     protected $filename = '';
-
-     /**
-     * The block instructions.
-     *
-     * @var string
-     */
     protected $instructions = '';
 
-     /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $this->block_name = $this->ask('What should be the name for this block?');
@@ -67,24 +31,12 @@ class AddBlock extends Command
 
             $this->createFieldset();
             $this->createPartial();
-            $this->updatePageBuilder();
+            $this->updatePageBuilder($this->block_name, $this->instructions, $this->filename);
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
 
         $this->info("Peak page builder block '{$this->block_name}' added.");
-    }
-
-    /**
-     * Check if a file doesn't already exist.
-     *
-     * @return bool|null
-     */
-    protected function checkExistence($type, $path)
-    {
-        if (File::exists(base_path($path))) {
-            throw new \Exception("{$type} '{$path}' already exists.");
-        }
     }
 
     /**
@@ -97,7 +49,6 @@ class AddBlock extends Command
         $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
         $contents = Str::of($stub)
             ->replace('{{ name }}', str_replace('"','\'', $this->block_name));
-        
 
         File::put(base_path("resources/fieldsets/{$this->filename}.yaml"), $contents);
     }
@@ -115,34 +66,5 @@ class AddBlock extends Command
             ->replace('{{ filename }}', $this->filename);
 
         File::put(base_path("resources/views/page_builder/_{$this->filename}.antlers.html"), $contents);
-    }
-
-    /**
-     * Update page_builder.yaml.
-     *
-     * @return bool|null
-     */
-    protected function updatePageBuilder()
-    {
-        $fieldset = Yaml::parseFile(base_path('resources/fieldsets/page_builder.yaml'));
-        $newSet = [
-            'display' => $this->block_name,
-            'instructions' => $this->instructions,
-            'fields' => [
-                [
-                    'import' => $this->filename
-                ]
-            ]
-        ];
-
-        $existingSets = Arr::get($fieldset, 'fields.0.field.sets');
-        $existingSets[$this->filename] = $newSet;
-        $existingSets = collect($existingSets)->sortBy(function ($value, $key) {
-            return $key;
-        })->all();
-
-        Arr::set($fieldset, 'fields.0.field.sets', $existingSets);
-
-        File::put(base_path('resources/fieldsets/page_builder.yaml'), Yaml::dump($fieldset, 99, 2));
     }
 }
