@@ -79,25 +79,11 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "
-1. Add this to your `lang/locale/strings.php` file:
-
-// News
-'news_all'                      => 'All news',
-'news_more'                     => 'More news',
-                    "
-                ],
-                [
-                    'type' => 'notify',
-                    'content' => "
-2. Add this to your `config/statamic/cp.php` widgets array:
-
-[
-'type' => 'collection',
-'collection' => 'pages',
-'width' => 50
-],
-                        "
+                        'content' => "1. Add this to your `lang/locale/strings.php` file:\n\n// News\n'news_all' => 'All news',\n'news_more' => 'More news',\n"
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "2. Add this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'pages',\n\t'width' => 50\n],\n"
                     ]
                 ]
             ]
