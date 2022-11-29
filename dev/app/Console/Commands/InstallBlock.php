@@ -45,7 +45,7 @@ class InstallBlock extends Command
                 $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
 
                 $this->copyStubs();
-                $this->updatePageBuilder();
+                $this->updatePageBuilder($this->block_name, $this->instructions, $this->filename);
             } catch (\Exception $e) {
                 return $this->error($e->getMessage());
             }

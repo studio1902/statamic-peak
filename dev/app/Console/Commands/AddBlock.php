@@ -31,7 +31,7 @@ class AddBlock extends Command
 
             $this->createFieldset();
             $this->createPartial();
-            $this->updatePageBuilder();
+            $this->updatePageBuilder($this->block_name, $this->instructions, $this->filename);
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }

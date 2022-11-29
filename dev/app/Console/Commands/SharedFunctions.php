@@ -53,21 +53,21 @@ trait SharedFunctions {
      *
      * @return bool|null
      */
-    protected function updatePageBuilder()
+    protected function updatePageBuilder($name, $instructions, $filename)
     {
         $fieldset = Yaml::parseFile(base_path('resources/fieldsets/page_builder.yaml'));
         $newSet = [
-            'display' => $this->block_name,
-            'instructions' => $this->instructions,
+            'display' => $name,
+            'instructions' => $instructions,
             'fields' => [
                 [
-                    'import' => $this->filename
+                    'import' => $filename
                 ]
             ]
         ];
 
         $existingSets = Arr::get($fieldset, 'fields.0.field.sets');
-        $existingSets[$this->filename] = $newSet;
+        $existingSets[$filename] = $newSet;
         $existingSets = collect($existingSets)->sortBy(function ($value, $key) {
             return $key;
         })->all();

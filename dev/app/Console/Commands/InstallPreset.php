@@ -30,13 +30,13 @@ class InstallPreset extends Command
                 'operations' => [
                     [
                         'type' => 'copy',
-                        'input' => 'news-collection.yaml.stub',
-                        'output' => 'content/collections/news.yaml'
+                        'input' => 'index_content.antlers.html.stub',
+                        'output' => 'resources/views/page_builder/_index_content.antlers.html'
                     ],
                     [
                         'type' => 'copy',
-                        'input' => 'news.md.stub',
-                        'output' => 'content/collections/pages/news.md'
+                        'input' => 'index_content.yaml.stub',
+                        'output' => 'resources/fieldsets/index_content.yaml'
                     ],
                     [
                         'type' => 'copy',
@@ -45,18 +45,18 @@ class InstallPreset extends Command
                     ],
                     [
                         'type' => 'copy',
-                        'input' => 'show.antlers.html.stub',
-                        'output' => 'resources/views/news/show.antlers.html'
+                        'input' => 'news_blueprint.yaml.stub',
+                        'output' => 'resources/blueprints/collections/news/news.yaml'
                     ],
                     [
                         'type' => 'copy',
-                        'input' => 'news.antlers.html.stub',
-                        'output' => 'resources/views/page_builder/_news.antlers.html'
+                        'input' => 'news_collection.yaml.stub',
+                        'output' => 'content/collections/news.yaml'
                     ],
                     [
                         'type' => 'copy',
-                        'input' => 'index_content.antlers.html.stub',
-                        'output' => 'resources/views/page_builder/_index_content.antlers.html'
+                        'input' => 'news_fieldset.yaml.stub',
+                        'output' => 'resources/fieldsets/news.yaml'
                     ],
                     [
                         'type' => 'copy',
@@ -65,17 +65,34 @@ class InstallPreset extends Command
                     ],
                     [
                         'type' => 'copy',
-                        'input' => 'news-fieldset.yaml.stub',
-                        'output' => 'resources/fieldsets/news.yaml'
+                        'input' => 'news.antlers.html.stub',
+                        'output' => 'resources/views/page_builder/_news.antlers.html'
                     ],
                     [
                         'type' => 'copy',
-                        'input' => 'index_content.yaml.stub',
-                        'output' => 'resources/fieldsets/index_content.yaml'
+                        'input' => 'news.md.stub',
+                        'output' => 'content/collections/pages/news.md'
+                    ],
+                    [
+                        'type' => 'copy',
+                        'input' => 'show.antlers.html.stub',
+                        'output' => 'resources/views/news/show.antlers.html'
                     ],
                     [
                         'type' => 'update_page_builder',
-                        'blocks' => ['index_content', 'news']
+                        'block' => [
+                            'name' => 'Index content',
+                            'instructions' => 'Render the currently mounted entries if available.',
+                            'handle' => 'index_content',
+                        ]
+                    ],
+                    [
+                        'type' => 'update_page_builder',
+                        'block' => [
+                            'name' => 'News',
+                            'instructions' => 'List the most recent news.',
+                            'handle' => 'news',
+                        ]
                     ]
                 ]
             ]
@@ -96,17 +113,12 @@ class InstallPreset extends Command
             })->first();
 
             collect($preset['operations'])->each(function ($operation, $key) {
-                $disk = Storage::build([
-                    'driver' => 'local',
-                    'root' => base_path(),
-                ]);
-
                 if ($operation['type'] == 'copy') {
-                    // TODO: Check for existence.
-                    $disk->copy("app/Console/Commands/stubs/presets/{$this->handle}/{$operation['input']}", "{$operation['output']}");
-                    $this->info("Installed: '{$operation['output']}'.");
+                    Storage::disk('default')->copy("app/Console/Commands/stubs/presets/{$this->handle}/{$operation['input']}", "{$operation['output']}");
+                    $this->info("Installed file: '{$operation['output']}'.");
                 } elseif ($operation['type'] == 'update_page_builder') {
-                    // TODO: Update page builder.
+                    updatePageBuilder($operation['block']['name'], $operation['block']['instructions'], $operation['block']['handle']);
+                    $this->info("Installed page builder block: '{$operation['block']['name']}'.");
                 };
             });
 
