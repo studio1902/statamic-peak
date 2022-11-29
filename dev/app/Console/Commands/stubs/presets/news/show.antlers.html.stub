@@ -33,7 +33,7 @@
 <main class="outer-grid" id="content">
     <div class="fluid-container grid md:grid-cols-12 gap-8 lg:-mb-12">
         <header class="md:col-span-8 md:col-start-3">
-            <time class="block text-center">{{ date | iso_format('MMMM Do YYYY') }}</time>
+            {{ partial:typography/time :content="date" class="block text-center" }}
 
             {{ partial:typography/h1 :content="title" class="mt-4 text-center" }}
 

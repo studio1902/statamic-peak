@@ -1,19 +1,19 @@
 {{#
-	@name News
-	@desc The News page builder block.
-    @set page.page_builder.news
+	@name Events
+	@desc The Events page builder block.
+    @set page.page_builder.events
 #}}
 
-<!-- /page_builder/_news.antlers.html -->
+<!-- /page_builder/_events.antlers.html -->
 <section class="fluid-container grid md:grid-cols-12 gap-x-4 gap-y-8">
     {{ title ?= { partial:typography/h1 as="h2" :content="title" class="md:col-span-12" } }}
 
-    {{ collection:news sort="date:desc" limit="3" }}
-        {{ partial:components/news_item class="md:col-span-4" }}
-    {{ /collection:news }}
+    {{ collection:events sort="event_date_start:desc" limit="3" }}
+        {{ partial:components/events_item class="md:col-span-4" }}
+    {{ /collection:events }}
 
     <nav class="md:col-span-12 text-right">
-        {{ partial:components/button label="{trans:strings.news_all}" button_type="inline" link_type="url" url="{mount_url:news}" }}
+        {{ partial:components/button label="{trans:strings.events_all}" button_type="inline" link_type="url" url="{mount_url:events}" }}
     </nav>
 </section>
-<!-- End: /page_builder/_news.antlers.html -->
+<!-- End: /page_builder/_events.antlers.html -->
