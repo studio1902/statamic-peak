@@ -46,6 +46,17 @@ return [
     // Footer
     'on'                                => 'op',
 
+    // Events (Peak preset)
+    'events_all'                        => 'Alle events',
+    'events_date'                       => 'Datum',
+    'events_date_start'                 => 'Startdatum',
+    'events_date_end'                   => 'Einddatatum',
+    'events_more'                       => 'Meer events',
+    'events_when'                       => 'Wanneer',
+    'events_where'                      => 'Waar',
+    'events_organizer'                  => 'Organisator',
+    'events_tickets'                    => 'Tickets',
+
     // Language picker
     'language_open'                     => 'Open taalselector. De huidige taal :current_language',
     'language_close'                    => 'Sluit taalselector',
@@ -59,6 +70,10 @@ return [
     'subnav_close'                      => 'Sluit subnavigatie',
     'subnav_open'                       => 'Open subnavigatie',
     'skip_to_content'                   => 'Doorgaan naar content',
+
+    // News (Peak preset)
+    'news_all'                          => 'Alle berichten',
+    'news_more'                         => 'Meer nieuws',
 
     // Other
     'no_results'                        => 'Er zijn momenteel geen resultaten.',

@@ -79,7 +79,7 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "2. Add this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'events',\n\t'width' => 50\n],\n\n"
+                        'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'events',\n\t'width' => 50\n],\n"
                     ]
                 ]
             ],
@@ -156,7 +156,7 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "2. Add this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'news',\n\t'width' => 50\n],\n\n"
+                        'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'news',\n\t'width' => 50\n],\n"
                     ]
                 ]
             ]
