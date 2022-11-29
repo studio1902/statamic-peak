@@ -117,12 +117,12 @@ class InstallPreset extends Command
                 'root' => base_path(),
             ]);
 
-            collect($preset['operations'])->each(function ($operation, $key) {
+            collect($preset['operations'])->each(function ($operation, $key) use ($disk) {
                 if ($operation['type'] == 'copy') {
                     $disk->copy("app/Console/Commands/stubs/presets/{$this->handle}/{$operation['input']}", "{$operation['output']}");
                     $this->info("Installed file: '{$operation['output']}'.");
                 } elseif ($operation['type'] == 'update_page_builder') {
-                    updatePageBuilder($operation['block']['name'], $operation['block']['instructions'], $operation['block']['handle']);
+                    $this->updatePageBuilder($operation['block']['name'], $operation['block']['instructions'], $operation['block']['handle']);
                     $this->info("Installed page builder block: '{$operation['block']['name']}'.");
                 };
             });
