@@ -46,6 +46,17 @@ return [
     // Footer
     'on'                                => 'on',
 
+    // Events (Peak preset)
+    'events_all'                        => 'All events',
+    'events_date'                       => 'Date',
+    'events_date_start'                 => 'Start date',
+    'events_date_end'                   => 'End date',
+    'events_more'                       => 'More events',
+    'events_when'                       => 'When',
+    'events_where'                      => 'Where',
+    'events_organizer'                  => 'Organizer',
+    'events_tickets'                    => 'Tickets',
+
     // Language picker
     'language_open'                     => 'Open language picker. Current language is :current_language',
     'language_close'                    => 'Close language picker',
@@ -59,6 +70,10 @@ return [
     'subnav_close'                      => 'Close sub navigation',
     'subnav_open'                       => 'Open sub navigation',
     'skip_to_content'                   => 'Skip to content',
+
+    // News (Peak preset)
+    'news_all'                          => 'All news',
+    'news_more'                         => 'More news',
 
     // Other
     'no_results'                        => 'There are currently no posts.',

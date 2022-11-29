@@ -79,11 +79,7 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "1. Add this to your `lang/locale/strings.php` file:\n\n// Events\n'events_all' => 'All events',\n'events_date' => 'Date',\n'events_date_start' => 'Start date',\n'events_date_end' => 'End date',\n'events_more' => 'More events',\n'events_more' => 'More events',\n'events_when' => 'When',\n'events_where' => 'Where',\n'events_organizer' => 'Organizer',\n'events_tickets' => 'Tickets',\n\n"
-                    ],
-                    [
-                        'type' => 'notify',
-                        'content' => "2. Add this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'events',\n\t'width' => 50\n],\n\n"
+                        'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'events',\n\t'width' => 50\n],\n"
                     ]
                 ]
             ],
@@ -160,11 +156,7 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "1. Add this to your `lang/locale/strings.php` file:\n\n// News\n'news_all' => 'All news',\n'news_more' => 'More news',\n\n"
-                    ],
-                    [
-                        'type' => 'notify',
-                        'content' => "2. Add this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'news',\n\t'width' => 50\n],\n\n"
+                        'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'news',\n\t'width' => 50\n],\n"
                     ]
                 ]
             ]

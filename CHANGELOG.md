@@ -1,5 +1,10 @@
 # Changelog
 
+## v7.1 (2022-11-29)
+
+### What's changed
+- Put preset strings in strings file by default. 4f6c1f2e by @robdekort
+
 ## v7.0 (2022-11-29)
 
 ### What's new
