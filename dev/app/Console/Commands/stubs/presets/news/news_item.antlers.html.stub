@@ -1,6 +1,7 @@
 {{#
 	@name News item
 	@desc A news item component.
+	@param class Add optional CSS classes.
 #}}
 
 <!-- /components/_news_item.antlers.html -->

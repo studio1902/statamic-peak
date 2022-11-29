@@ -61,7 +61,7 @@ class InstallPreset extends Command
                     [
                         'type' => 'copy',
                         'input' => 'news_item.antlers.html.stub',
-                        'output' => 'resources/views/components/_news_items.antlers.html'
+                        'output' => 'resources/views/components/_news_item.antlers.html'
                     ],
                     [
                         'type' => 'copy',
