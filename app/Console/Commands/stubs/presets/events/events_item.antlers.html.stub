@@ -11,29 +11,18 @@
 	</figure>
 
 	<div class="flex flex-col gap-y-2">
-		<a href="{{ url }}" class="group p-1 -m-1 focus:outline-none focus-visible:ring-2 ring-primary group">
-			{{ partial:typography/h3 :content="title" class="mb-2 underline decoration-primary decoration-2 underline-offset-2 group-hover:text-primary motion-safe:transition-colors" }}
-		</a>
-
 		{{ if event_date_start != event_date_end }}
-			<table>
-				<tr>
-					<th class="text-left">{{ trans:strings.events_date_start }}:</th>
-					<td>{{ partial:typography/time :content="event_date_start" }}</td>
-				</tr>
-				<tr>
-					<th class="text-left">{{ trans:strings.events_date_end }}:</th>
-					<td>{{ partial:typography/time :content="event_date_end" }}</td>
-				</tr>
-			</table>
+			<time>
+				{{ partial:typography/time as="span" class="inline text-sm" :content="event_date_start" }} -
+				{{ partial:typography/time as="span" class="inline text-sm" :content="event_date_end" }}
+			</time>
 		{{ else }}
-			<table>
-				<tr>
-					<th class="text-left">{{ trans:strings.events_date }}:</th>
-					<td>{{ partial:typography/time :content="event_date_start" }}</td>
-				</tr>
-			</table>
+			{{ partial:typography/time class="inline text-sm" :content="event_date_start" }}
 		{{ /if }}
+
+		<a href="{{ url }}" class="group p-1 -m-1 focus:outline-none focus-visible:ring-2 ring-primary group">
+			{{ partial:typography/h3 :content="title" class="underline decoration-primary decoration-2 underline-offset-2 group-hover:text-primary motion-safe:transition-colors" }}
+		</a>
 
 		{{ partial:typography/p :content="teaser" }}
 	</div>
