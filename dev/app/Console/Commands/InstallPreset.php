@@ -97,21 +97,23 @@ class InstallPreset extends Command
                     [
                         'type' => 'notify',
                         'content' => "
-                            Add this to your string files.
-                            // News
-                            'strings.news_all' => 'All news',
-                            'strings.news_more' => 'More news',
+1. Add this to your string files.
+
+// News
+'news_all'                      => 'All news',
+'news_more'                     => 'More news',
                         "
                     ],
                     [
                         'type' => 'notify',
                         'content' => "
-                            Add this to your cp.php widgets array for a dashboard widget:
-                            [
-                                'type' => 'collection',
-                                'collection' => 'pages',
-                                'width' => 50
-                            ],
+2. Add this to your cp.php widgets array for a dashboard widget:
+
+[
+    'type' => 'collection',
+    'collection' => 'pages',
+    'width' => 50
+],
                         "
                     ]
                 ]
@@ -149,7 +151,7 @@ class InstallPreset extends Command
                 }
 
                 elseif($operation['type'] == 'notify') {
-                    $this->info($operation['content']);
+                    $this->warn($operation['content']);
                 }
             });
 
