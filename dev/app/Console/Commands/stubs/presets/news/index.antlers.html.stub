@@ -12,8 +12,8 @@
 
 {{ section:index_content }}
     <!-- /news/index.antlers.html -->
-    <div class="fluid-container grid md:grid-cols-12 gap-12">
-        {{ partial:typography/h1 as="h2" :content="title" class="md:col-span-12" }}
+    <div class="fluid-container self-start grid md:grid-cols-12 gap-8">
+        {{ partial:typography/h1 :content="title" class="md:col-span-12" }}
         {{ collection:news sort="date:desc" paginate="true" limit="12" as="items" }}
             {{ unless no_results }}
                 {{ items }}

@@ -12,7 +12,7 @@
 
 {{ section:index_content }}
     <!-- /events/index.antlers.html -->
-    <div class="fluid-container grid md:grid-cols-12 gap-12">
+    <div class="fluid-container self-start grid md:grid-cols-12 gap-8">
         {{ partial:typography/h1 as="h2" :content="title" class="md:col-span-12" }}
         {{ collection:events sort="event_date_start:asc" event_date_end:is_after="{ today }" paginate="true" limit="12" as="items" }}
             {{ unless no_results }}
