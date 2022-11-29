@@ -1,0 +1,76 @@
+title: News
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          input_type: text
+          localizable: true
+          listable: true
+          display: Title
+          validate:
+            - required
+      -
+        handle: teaser
+        field: common.text_plain
+        config:
+          display: Teaser
+          validate:
+            - required
+          character_limit: '250'
+      -
+        import: page_builder
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: meta
+        field:
+          type: section
+          instructions: "This entry's meta data."
+          display: Meta
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          generate: true
+          listable: hidden
+          display: Slug
+          validate:
+            - required
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          listable: true
+          validate:
+            - required
+          display: Date
+          mode: single
+          time_enabled: false
+          time_required: false
+          earliest_date: '2021-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+      -
+        handle: image
+        field: figure.image
+        config:
+          mode: grid
+          width: 100
+          listable: true
+          validate:
+            - required
