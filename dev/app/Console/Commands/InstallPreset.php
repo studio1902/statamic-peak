@@ -112,9 +112,14 @@ class InstallPreset extends Command
                 return $preset['handle'] == $this->handle;
             })->first();
 
+            $disk = Storage::build([
+                'driver' => 'local',
+                'root' => base_path(),
+            ]);
+
             collect($preset['operations'])->each(function ($operation, $key) {
                 if ($operation['type'] == 'copy') {
-                    Storage::disk('default')->copy("app/Console/Commands/stubs/presets/{$this->handle}/{$operation['input']}", "{$operation['output']}");
+                    $disk->copy("app/Console/Commands/stubs/presets/{$this->handle}/{$operation['input']}", "{$operation['output']}");
                     $this->info("Installed file: '{$operation['output']}'.");
                 } elseif ($operation['type'] == 'update_page_builder') {
                     updatePageBuilder($operation['block']['name'], $operation['block']['instructions'], $operation['block']['handle']);
