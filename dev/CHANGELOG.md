@@ -1,5 +1,10 @@
 # Changelog
 
+## v7.0 (Unreleased)
+
+### What's removed
+- Remove the Tailwind CSS Aspect Ratio plugin and default to native aspect ratio utilities. 6d6f363c by @robdekort
+
 ## v6.38 (2022-11-28)
 
 ### What's improved
