@@ -20,19 +20,13 @@ sections:
           validate:
             - required
       -
-        handle: introduction
-        field: common.text_basic
+        handle: teaser
+        field: common.text_plain
         config:
-          buttons:
-            - bold
-            - italic
-            - unorderedlist
-            - orderedlist
-            - removeformat
-            - anchor
-          display: Introduction
+          display: Teaser
           validate:
             - required
+          character_limit: '250'
       -
         import: page_builder
   event:

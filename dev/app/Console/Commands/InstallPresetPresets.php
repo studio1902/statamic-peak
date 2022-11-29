@@ -54,7 +54,7 @@ trait InstallPresetPresets {
                     [
                         'type' => 'copy',
                         'input' => 'index.antlers.html.stub',
-                        'output' => 'resources/views/news/index.antlers.html'
+                        'output' => 'resources/views/events/index.antlers.html'
                     ],
                     [
                         'type' => 'copy',
@@ -79,7 +79,7 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "1. Add this to your `lang/locale/strings.php` file:\n\n// News\n'events_all' => 'All events',\n'events_date_start' => 'Start date',\n'events_date_end' => 'End date',\n'events_more' => 'More events',\n"
+                        'content' => "1. Add this to your `lang/locale/strings.php` file:\n\n// Events\n'events_all' => 'All events',\n'events_date' => 'Date',\n'events_date_start' => 'Start date',\n'events_date_end' => 'End date',\n'events_more' => 'More events',\n'events_more' => 'More events',\n'events_when' => 'When',\n'events_where' => 'Where',\n'events_organizer' => 'Organizer',\n'events_tickets' => 'Tickets',"
                     ],
                     [
                         'type' => 'notify',
@@ -164,7 +164,7 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "2. Add this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'pages',\n\t'width' => 50\n],\n"
+                        'content' => "2. Add this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'news',\n\t'width' => 50\n],\n"
                     ]
                 ]
             ]

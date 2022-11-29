@@ -15,7 +15,7 @@
 			{{ partial:typography/h3 :content="title" class="mb-2 underline decoration-primary decoration-2 underline-offset-2 group-hover:text-primary motion-safe:transition-colors" }}
 		</a>
 
-		{{ partial:typography/time :content="date" class="block text-center" }}
+		{{ partial:typography/time :content="date" }}
 
 		{{ partial:typography/p :content="teaser" }}
 	</div>

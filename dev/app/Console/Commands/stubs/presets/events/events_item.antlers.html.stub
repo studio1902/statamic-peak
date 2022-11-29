@@ -15,8 +15,25 @@
 			{{ partial:typography/h3 :content="title" class="mb-2 underline decoration-primary decoration-2 underline-offset-2 group-hover:text-primary motion-safe:transition-colors" }}
 		</a>
 
-		{{ trans:strings.events_date_start }}: {{ partial:typography/time :content="event_date_start" }}
-		{{ trans:strings.events_date_end }}: {{ partial:typography/time :content="event_date_start" }}
+		{{ if event_date_start != event_date_end }}
+			<table>
+				<tr>
+					<th class="text-left">{{ trans:strings.events_date_start }}:</th>
+					<td>{{ partial:typography/time :content="event_date_start" }}</td>
+				</tr>
+				<tr>
+					<th class="text-left">{{ trans:strings.events_date_end }}:</th>
+					<td>{{ partial:typography/time :content="event_date_end" }}</td>
+				</tr>
+			</table>
+		{{ else }}
+			<table>
+				<tr>
+					<th class="text-left">{{ trans:strings.events_date }}:</th>
+					<td>{{ partial:typography/time :content="event_date_start" }}</td>
+				</tr>
+			</table>
+		{{ /if }}
 
 		{{ partial:typography/p :content="teaser" }}
 	</div>
