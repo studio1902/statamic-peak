@@ -11,62 +11,16 @@ use Stringy\StaticStringy as Stringy;
 
 class AddPartial extends Command
 {
-    use RunsInPlease;
+    use RunsInPlease, SharedFunctions;
 
-    /**
-    * The name of the console command.
-    *
-    * @var string
-    */
     protected $name = 'statamic:peak:add-partial';
-
-     /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = "Add a partial with IDE hinting and template paths.";
-
-     /**
-     * The block name.
-     *
-     * @var string
-     */
     protected $partial_name = '';
-
-    /**
-    * The block instructions.
-    *
-    * @var string
-    */
     protected $partial_description = '';
-
-     /**
-     * The block filename.
-     *
-     * @var string
-     */
     protected $filename = '';
-
-    /**
-     * The folder.
-     *
-     * @var string
-     */
     protected $folder = '';
-
-    /**
-     * The type.
-     *
-     * @var string
-     */
     protected $type = '';
 
-     /**
-     * Execute the console command.
-     *
-     * @return bool|null
-     */
     public function handle()
     {
         $this->type = $this->choice(
@@ -92,18 +46,6 @@ class AddPartial extends Command
         }
 
         $this->info("{$this->type} '{$this->filename}' added.");
-    }
-
-    /**
-     * Check if a file doesn't already exist.
-     *
-     * @return bool|null
-     */
-    protected function checkExistence($type, $path)
-    {
-        if (File::exists(base_path($path))) {
-            throw new \Exception("{$type} '{$path}' already exists.");
-        }
     }
 
     /**

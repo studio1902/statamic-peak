@@ -1,0 +1,97 @@
+{{#
+	@name Events show
+	@desc The Events show template.
+#}}
+
+<!-- /events/show.antlers.html -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "{{ title }}",
+        "startDate": "{{ event_date_start format="Y-m-d\TH:i:s" }}",
+        "endDate": "{{ event_date_end format="Y-m-d\TH:i:s" }}",
+        "eventStatus": "https://schema.org/EventScheduled",
+        {{ if event_type.value == 'offline' }}
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {
+                "@type": "Place",
+                "name": "{{ location_name }}",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "{{ location_address }}",
+                    "addressLocality": "{{ location_locality }}",
+                    "addressCountry": "NL"
+                }
+            },
+        {{ elseif event_type.value == 'online' }}
+            "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+            "location": {
+                "@type": "VirtualLocation",
+                "url": "{{ event_url }}"
+            },
+        {{ /if }}
+        "image": "{{ config:app:url }}{{ image }}",
+        "description": "{{ teaser | strip_tags }}",
+        "organizer": {
+            "@type": "Organization",
+            "name": "{{ organizer_name }}",
+            "url": "{{ organizer_url }}"
+        }
+    }
+</script>
+<main class="outer-grid" id="content">
+    <section class="fluid-container grid md:grid-cols-12 gap-y-8 lg:-mb-12">
+        <header class="md:col-span-8 md:col-start-3">
+            {{ partial:typography/h1 :content="title" class="mt-4 text-center" }}
+
+            <figure class="aspect-[3/2] mt-4">
+                {{ partial:components/picture :image="image" sizes="(min-width: 1280px) 1150px, (min-width: 768px) 90vw" aspect_ratio="3/2" lazy="true" cover="true" }}
+            </figure>
+        </header>
+
+        <aside class="size-md p-6 md:p-8 grid md:grid-cols-3 gap-2 md:gap-8 border border-neutral/10 shadow-lg rounded">
+            {{ partial:typography/h3 content="{trans:strings.events_when}" }}
+            <time class="md:col-span-2 mb-4 md:mb-0" lang="{{ locale }}">
+                {{ event_date_start | iso_format('D MMM YYYY') }}{{ event_date_end ?= " - " + { event_date_end | iso_format('D MMM YYYY') } }}
+            </time>
+            {{ partial:typography/h3 content="{trans:strings.events_where}" }}
+            <div class="md:col-span-2 mb-4 md:mb-0">
+                {{ if event_type.value === 'offline' }}
+                    {{ location_name }}<br>
+                    {{ location_address }}<br>
+                    {{ location_locality }}
+                {{ else }}
+                    <a class="underline decoration-2 decoration-primary" href="{{ event_url }}" rel="noopener" target="_blank">Online</a>
+                {{ /if }}
+            </div>
+            {{ partial:typography/h3 content="{trans:strings.events_organizer}" }}
+            <div class="md:col-span-2 mb-4 md:mb-0">
+                <a class="underline decoration-2 decoration-primary" href="{{ organizer_url }}" rel="noopener" target="_blank">{{ organizer_name }}</a>
+            </div>
+            {{ if sign_up_label }}
+                {{ partial:typography/h3 content="{trans:strings.events_tickets}" }}
+                <div class="md:col-span-2">
+                    {{ partial:components/button :label="sign_up_label" link_type :target_blank="sign_up_target_blank" :entry="sign_up_entry" :url="sign_up_url" :email="sign_up_email" :tel="sign_up_tel" :asset="sign_up_asset" :button_type="sign_up_button_type" :attr_title="sign_up_attr_title" :attr_aria="sign_up_attr_aria" }}
+                </div>
+            {{ /if }}
+        </aside>
+    </section>
+
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+
+    {{ collection:events sort="event_date_start:asc" event_date_end:is_after="{ today }" :id:isnt="id" limit="3" as="items" }}
+        {{ unless no_results }}
+            <section class="fluid-container grid md:grid-cols-12 gap-8">
+                {{ partial:typography/h1 as="h2" content="{ trans:strings.events_more }" class="md:col-span-12" }}
+
+                {{ items }}
+                    {{ partial:components/events_item class="md:col-span-4" }}
+                {{ /items }}
+            </section>
+        {{ /unless }}
+    {{ /collection:events }}
+</main>
+<!-- /events/show.antlers.html -->
