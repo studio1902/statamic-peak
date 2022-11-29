@@ -1,5 +1,10 @@
 # Changelog
 
+## v7.2 (2022-11-29)
+
+### What's improved
+- Improved stub preset templates. 667c560a and 6142ee25 by @robdekort
+
 ## v7.1 (2022-11-29)
 
 ### What's changed
