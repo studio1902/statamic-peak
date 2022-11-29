@@ -10,7 +10,7 @@ use Stringy\StaticStringy as Stringy;
 
 class InstallBlock extends Command
 {
-    use RunsInPlease, SharedFunctions;
+    use RunsInPlease, SharedFunctions, InstallBlockBlocks;
 
     protected $name = 'statamic:peak:install-block';
     protected $description = "Install premade blocks into your page builder.";
@@ -23,15 +23,7 @@ class InstallBlock extends Command
     {
         $this->choices = $this->choice(
             'Which blocks do you want to install into your page builder? You can separate multiple answers with a comma',
-            [
-                'Call to action: Show a call to action. [call_to_action]',
-                'Collection: Show collection entries. [collection]',
-                'Columns: Text columns with optional images and buttons. [columns]',
-                'Divider: A visual divider between blocks. [divider]',
-                'Full width image: A full width image with optional text and button(s). [full_width_image]',
-                'Image and text: An image and text side by side. [image_and_text]',
-                'Images grid: A multi row image grid. [images_grid]'
-            ],
+            $this->getBlocks(),
             null, null, true
         );
 
