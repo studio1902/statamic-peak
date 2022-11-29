@@ -1,0 +1,33 @@
+{{#
+	@name News index
+	@desc The News index template.
+#}}
+
+<!-- /news/index.antlers.html -->
+<main class="outer-grid" id="content">
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+</main>
+
+{{ section:index_content }}
+    <!-- /news/index.antlers.html -->
+    <div class="fluid-container grid md:grid-cols-12 gap-12">
+        {{ partial:typography/h1 as="h2" :content="title" class="md:col-span-12" }}
+        {{ collection:news sort="date:desc" paginate="true" limit="12" as="items" }}
+            {{ unless no_results }}
+                {{ items }}
+                    {{ partial:components/news_item class="md:col-span-4" }}
+                {{ /items }}
+            {{ else }}
+                <div class="md:col-span-6">
+                    {{ trans:strings.no_results }}
+                </div>
+            {{ /unless }}
+
+            {{ partial:components/pagination class="md:col-span-12" }}
+        {{ /collection:news }}
+    </div>
+    <!-- End: /news/index.antlers.html -->
+{{ /section:index_content }}
+<!-- End: /news/index.antlers.html -->
