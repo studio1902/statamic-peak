@@ -78,6 +78,11 @@ trait InstallPresetPresets {
                         ]
                     ],
                     [
+                        'type' => 'update_role',
+                        'role' => 'editor',
+                        'permissions' => ['view events entries', 'edit events entries', 'create events entries', 'delete events entries', 'publish events entries', 'reorder events entries', 'edit other authors events entries', 'publish other authors events entries', 'delete other authors events entries']
+                    ],
+                    [
                         'type' => 'notify',
                         'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'events',\n\t'width' => 50\n],\n"
                     ]
@@ -153,6 +158,11 @@ trait InstallPresetPresets {
                             'instructions' => 'List the most recent news.',
                             'handle' => 'news',
                         ]
+                    ],
+                    [
+                        'type' => 'update_role',
+                        'role' => 'editor',
+                        'permissions' => ['view news entries', 'edit news entries', 'create news entries', 'delete news entries', 'publish news entries', 'reorder news entries', 'edit other authors news entries', 'publish other authors news entries', 'delete other authors news entries']
                     ],
                     [
                         'type' => 'notify',
