@@ -1,5 +1,10 @@
 # Changelog
 
+## v7.4 (2022-11-30)
+
+### What's fixed
+- Trash `collection` fieldset that shouldn't be installed by default. 4ea1fa77 by @robdekort
+
 ## v7.3 (2022-11-30)
 
 ### What's new
