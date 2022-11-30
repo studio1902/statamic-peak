@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Statamic\Console\RunsInPlease;
+use Statamic\Support\Arr;
 use Stringy\StaticStringy as Stringy;
+use Symfony\Component\Yaml\Yaml;
 
 class InstallPreset extends Command
 {
@@ -52,6 +54,16 @@ class InstallPreset extends Command
                 elseif ($operation['type'] == 'update_page_builder') {
                     $this->updatePageBuilder($operation['block']['name'], $operation['block']['instructions'], $operation['block']['handle']);
                     $this->info("Installed page builder block: '{$operation['block']['name']}'.");
+                }
+
+                elseif ($operation['type'] == 'update_role') {
+                    $roles = Yaml::parseFile(base_path('resources/users/roles.yaml'));
+                    $existingPermissions = Arr::get($roles, "{$operation['role']}.permissions");
+                    $permissions = array_merge($existingPermissions, $operation['permissions']);
+
+                    Arr::set($roles, 'editor.permissions', $permissions);
+
+                    File::put(base_path('resources/users/roles.yaml'), Yaml::dump($roles, 99, 2));
                 }
 
                 elseif($operation['type'] == 'notify') {

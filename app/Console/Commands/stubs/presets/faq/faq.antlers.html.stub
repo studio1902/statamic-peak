@@ -1,0 +1,39 @@
+{{#
+    @name FAQ
+    @desc The FAQ page builder block.
+    @set page.page_builder.faq
+#}}
+
+<!-- /page_builder/_faq.antlers.html -->
+{{ once }}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {{ stack:questions }}
+                    {{ value }}{{ !last ?= ',' }}
+                {{ /stack:questions }}
+            ]
+        }
+    </script>
+{{ /once }}
+
+<section class="fluid-container grid md:grid-cols-12 gap-8">
+    {{ if block:title || block:text }}
+        <header class="md:col-span-8 md:col-start-3">
+            {{ block:title ?= { partial:typography/h1 as="h2" :content="block:title" class="mb-4" } }}
+            {{ block:text ?= { partial:typography/p :content="block:text" } }}
+        </header>
+    {{ /if }}
+
+    <div
+        x-data="{ expanded: null }"
+        class="md:col-span-8 md:col-start-3 flex flex-col gap-4"
+    >
+        {{ block:questions }}
+            {{ partial:components/question }}
+        {{ /block:questions }}
+    </div>
+</section>
+<!-- End: /page_builder/_faq.antlers.html -->
