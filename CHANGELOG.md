@@ -1,5 +1,10 @@
 # Changelog
 
+## v7.5 (2022-11-30)
+
+### What's new
+- Add `index_content` block to installable blocks. 332b3529 by @robdekort
+
 ## v7.4 (2022-11-30)
 
 ### What's fixed
