@@ -1,0 +1,35 @@
+title: FAQ
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          instructions_position: above
+          listable: hidden
+          visibility: visible
+          always_save: false
+          input_type: text
+          antlers: false
+      -
+        handle: text
+        field: common.text_rich
+        config:
+          buttons:
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - anchor
+          fullscreen: false
+          allow_source: false
+          display: Text
+          validate:
+            - required

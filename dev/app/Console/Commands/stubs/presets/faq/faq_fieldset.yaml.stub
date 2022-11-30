@@ -1,0 +1,33 @@
+title: FAQ
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      display: Title
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+  -
+    handle: text
+    field: common.text_plain
+  -
+    handle: questions
+    field:
+      mode: default
+      create: true
+      collections:
+        - faq
+      display: Questions
+      type: entries
+      icon: entries
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      validate:
+        - required

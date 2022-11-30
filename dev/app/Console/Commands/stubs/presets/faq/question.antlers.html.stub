@@ -1,0 +1,56 @@
+{{#
+    @name Question
+    @desc A single question from the FAQ.
+#}}
+
+<!-- /components/_question.antlers.html -->
+{{ push:questions }}
+    {
+        "@type": "Question",
+        "name": "{{ title }}",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": " {{ text | raw | where('type', 'paragraph') | bard_text | entities }}"
+        }
+    }
+{{ /push:questions }}
+
+<article
+    x-data="{
+        id: {{ count }},
+        hash: '#{{ title | slugify }}'
+    }"
+    role="region"
+    class="flex flex-col rounded-lg bg-white shadow py-3 px-2 md:px-6"
+    id="{{ title | slugify }}"
+>
+    <button
+        @click="
+            expanded !== id
+                ? expanded = id
+                : expanded = null
+            expanded === id
+                ? history.pushState({}, '', hash)
+                : history.pushState({}, '', window.location.pathname)
+        "
+        @keyup.escape.window="expanded = null"
+        x-init="window.location.hash === hash && (expanded = id)"
+        :aria-expanded="expanded === id"
+        class="px-2 w-full flex items-center justify-between rounded text-neutral hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition"
+        x-cloak
+    >
+        {{ partial:typography/h2 :content="title" color="text-current" class="my-2" }}
+        <span x-show="expanded" aria-hidden="true" class="font-bold text-lg ml-4">&minus;</span>
+        <span x-show="!expanded" aria-hidden="true" class="font-bold text-lg ml-4">&plus;</span>
+    </button>
+    <div
+        x-show="expanded === id"
+        x-collapse
+        class="p-2"
+    >
+        {{ partial:typography/prose }}
+            {{ text }}
+        {{ /partial:typography/prose }}
+    </div>
+</article>
+<!-- End: /components/_question.antlers.html -->
