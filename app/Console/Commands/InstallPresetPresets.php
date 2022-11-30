@@ -78,10 +78,64 @@ trait InstallPresetPresets {
                         ]
                     ],
                     [
+                        'type' => 'update_role',
+                        'role' => 'editor',
+                        'permissions' => ['view events entries', 'edit events entries', 'create events entries', 'delete events entries', 'publish events entries', 'reorder events entries', 'edit other authors events entries', 'publish other authors events entries', 'delete other authors events entries']
+                    ],
+                    [
                         'type' => 'notify',
                         'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'events',\n\t'width' => 50\n],\n"
                     ]
                 ]
+            ],
+            [
+                'handle' => 'faq',
+                'name' => 'FAQ',
+                'description' => 'A FAQ collection with a page builder set (including JSON-ld).',
+                'operations' => [
+                    [
+                        'type' => 'copy',
+                        'input' => 'faq_blueprint.yaml.stub',
+                        'output' => 'resources/blueprints/collections/faq/faq.yaml'
+                    ],
+                    [
+                        'type' => 'copy',
+                        'input' => 'faq_collection.yaml.stub',
+                        'output' => 'content/collections/faq.yaml'
+                    ],
+                    [
+                        'type' => 'copy',
+                        'input' => 'faq_fieldset.yaml.stub',
+                        'output' => 'resources/fieldsets/faq.yaml'
+                    ],
+                    [
+                        'type' => 'copy',
+                        'input' => 'faq.antlers.html.stub',
+                        'output' => 'resources/views/page_builder/_faq.antlers.html'
+                    ],
+                    [
+                        'type' => 'copy',
+                        'input' => 'question.antlers.html.stub',
+                        'output' => 'resources/views/components/_question.antlers.html'
+                    ],
+                    [
+                        'type' => 'update_page_builder',
+                        'block' => [
+                            'name' => 'FAQ',
+                            'instructions' => 'List frequently asked questions in an accordion.',
+                            'handle' => 'faq',
+                        ]
+                    ],
+                    [
+                        'type' => 'update_role',
+                        'role' => 'editor',
+                        'permissions' => ['view faq entries', 'edit faq entries', 'create faq entries', 'delete faq entries', 'publish faq entries', 'reorder faq entries', 'edit other authors faq entries', 'publish other authors faq entries', 'delete other authors faq entries']
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'faq',\n\t'width' => 50\n],\n"
+                    ]
+                ],
             ],
             [
                 'handle' => 'news',
@@ -153,6 +207,11 @@ trait InstallPresetPresets {
                             'instructions' => 'List the most recent news.',
                             'handle' => 'news',
                         ]
+                    ],
+                    [
+                        'type' => 'update_role',
+                        'role' => 'editor',
+                        'permissions' => ['view news entries', 'edit news entries', 'create news entries', 'delete news entries', 'publish news entries', 'reorder news entries', 'edit other authors news entries', 'publish other authors news entries', 'delete other authors news entries']
                     ],
                     [
                         'type' => 'notify',

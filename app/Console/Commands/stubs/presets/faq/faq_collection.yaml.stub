@@ -1,0 +1,13 @@
+title: FAQ
+template: default
+layout: layout
+revisions: false
+slugs: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'

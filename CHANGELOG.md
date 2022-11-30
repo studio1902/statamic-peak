@@ -1,5 +1,14 @@
 # Changelog
 
+## v7.3 (2022-11-30)
+
+### What's new
+- Add `FAQ` preset. 0a46bd89 by @robdekort
+- Add `update_role` operation to preset installer and grant all appropriate permissions to `editor` role when installing available presets. 4b975ad5 by @robdekort
+
+### What's improved
+- Make ul > li > p more specific in prose config. b5b16f0f by @robdekort
+
 ## v7.2 (2022-11-29)
 
 ### What's improved

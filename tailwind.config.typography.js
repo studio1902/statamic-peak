@@ -47,7 +47,7 @@ module.exports = {
             '--tw-prose-invert-pre-bg': theme('colors.white'),
             '--tw-prose-invert-th-borders': theme('colors.white'),
             '--tw-prose-invert-td-borders': theme('colors.white'),
-            'ul > li p, ol > li p': {
+            'ul > li > p, ol > li > p': {
               marginTop: '0em !important',
               marginBottom: '0em !important',
             },
