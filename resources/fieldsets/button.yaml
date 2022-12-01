@@ -22,7 +22,6 @@ fields:
       width: 33
       listable: hidden
       instructions_position: above
-      read_only: false
   -
     handle: link_type
     field:
@@ -31,6 +30,7 @@ fields:
         url: URL
         email: E-mail
         tel: Telephone
+        sms: SMS
         asset: Asset
       type: button_group
       localizable: true
@@ -41,6 +41,9 @@ fields:
       width: 66
       if:
         show_controls: 'equals true'
+      instructions_position: above
+      visibility: visible
+      always_save: false
   -
     handle: target_blank
     field:
@@ -48,7 +51,7 @@ fields:
       localizable: true
       width: 33
       listable: false
-      display: 'Open in new window?'
+      display: 'Open in new window'
       replicator_preview: false
       if:
         show_controls: 'equals true'
@@ -114,6 +117,22 @@ fields:
         - 'required_if:{this}.link_type,tel'
       if:
         link_type: tel
+        show_controls: 'equals true'
+  -
+    handle: sms
+    field:
+      placeholder: '+0 (0)12 345678'
+      input_type: tel
+      type: text
+      localizable: true
+      listable: false
+      display: Telephone
+      width: 50
+      replicator_preview: false
+      validate:
+        - 'required_if:{this}.link_type,sms'
+      if:
+        link_type: sms
         show_controls: 'equals true'
   -
     handle: asset

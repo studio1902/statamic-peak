@@ -1,5 +1,13 @@
 # Changelog
 
+## v7.7 (2022-12-01)
+
+### What's new
+- Add SMS option to button fieldset and partial. Great suggestion by @jaygeorge. c72e397c by @robdekort
+
+### What's changed
+- Remove `aspect-ratio` plugin from `package.json`. 1bb353a5 by @robdekort
+
 ## v7.6 (2022-12-01)
 
 ### What's new
