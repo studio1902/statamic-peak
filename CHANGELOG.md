@@ -1,6 +1,6 @@
 # Changelog
 
-## v7.7 (2022-12-01)
+## v7.6 (2022-12-01)
 
 ### What's new
 - Use `index_content` methodology for `peak:add-collection` command. 5411386b by @robdekort
