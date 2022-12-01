@@ -78,7 +78,8 @@ class AddCollection extends Command
             $this->createBlueprint();
             if ($this->index || $this->show) $this->createDirectory("resources/views/{$this->filename}");
             if ($this->index) $this->createIndexTemplate();
-            if ($this->index) $this->setIndexTemplate($this->mount);
+            if ($this->index) $this->setIndexTemplate();
+            if ($this->mount) $this->installAndSetIndexContentBlock();
             if ($this->show) $this->createShowTemplate();
             if ($this->permissions) $this->grantPermissionsToEditor();
         } catch (\Exception $e) {
@@ -225,13 +226,35 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function setIndexTemplate($id)
+    protected function setIndexTemplate()
     {
-        Entry::find($id)
+        Entry::find($this->mount)
             ->set('template', "{$this->filename}/index")
             ->save();
     }
 
+    /**
+     * Install Index Content page builder block and put it on the mount.
+     *
+     * @return null
+     */
+    protected function installAndSetIndexContentBlock()
+    {
+        File::put(base_path("resources/fieldsets/index_content.yaml"), File::get(__DIR__."/stubs/blocks/index_content.yaml.stub"));
+        File::put(base_path("resources/views/page_builder/_index_content.antlers.html"), File::get(__DIR__."/stubs/blocks/index_content.antlers.html.stub"));
+        $this->updatePageBuilder('Index content', 'Render the currently mounted entries if available.', 'index_content');
+
+        $pageBuilder = Entry::find($this->mount)
+            ->get('page_builder');
+        $pageBuilder[] = [
+            'type' => 'index_content',
+            'enabled' => 'true'
+        ];
+
+        Entry::find($this->mount)
+            ->set('page_builder', $pageBuilder)
+            ->save();
+    }
     /**
      * Grant permissions to editor.
      *

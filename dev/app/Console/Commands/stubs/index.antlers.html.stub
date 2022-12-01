@@ -5,6 +5,14 @@
 
 <!-- /{{ filename }}/index.antlers.html -->
 <main class="outer-grid" id="content">
+    {{ page_builder scope="block" }}
+        {{ partial src="page_builder/{type}" }}
+    {{ /page_builder }}
+</main>
+<!-- End: /{{ filename }}/index.antlers.html -->
+
+{{ section:index_content }}
+    <!-- /{{ filename }}/index.antlers.html -->
     <div class="fluid-container grid md:grid-cols-12 gap-12">
         {{ collection:{{ handle }} sort="{{ sort }}" paginate="true" limit="10" as="items" }}
             {{ unless no_results }}
@@ -21,9 +29,5 @@
             {{ partial:components/pagination class="md:col-span-12" }}
         {{ /collection:{{ handle }} }}
     </div>
-
-    {{ page_builder scope="block" }}
-        {{ partial src="page_builder/{type}" }}
-    {{ /page_builder }}
-</main>
-<!-- End: /{{ filename }}/index.antlers.html -->
+    <!-- End: /{{ filename }}/index.antlers.html -->
+{{ /section:index_content }}
