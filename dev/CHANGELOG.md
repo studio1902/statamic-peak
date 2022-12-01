@@ -1,5 +1,13 @@
 # Changelog
 
+## v7.7 (2022-12-01)
+
+### What's new
+- Use `index_content` methodology for `peak:add-collection` command. 5411386b by @robdekort
+
+### What's improved
+- Comments in preset stubs. a0a906a9 by @robdekort
+
 ## v7.5 (2022-11-30)
 
 ### What's new

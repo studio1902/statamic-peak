@@ -9,6 +9,7 @@
         {{ partial src="page_builder/{type}" }}
     {{ /page_builder }}
 </main>
+<!-- End: /events/index.antlers.html -->
 
 {{ section:index_content }}
     <!-- /events/index.antlers.html -->
@@ -30,4 +31,3 @@
     </div>
     <!-- End: /events/index.antlers.html -->
 {{ /section:index_content }}
-<!-- End: /events/index.antlers.html -->
