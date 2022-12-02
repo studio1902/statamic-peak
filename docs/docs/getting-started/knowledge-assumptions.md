@@ -9,3 +9,4 @@ Peak is an opinionated Starter Kit. It uses a few tools you should be familiar w
 
 ## Resources
 - *[statamictutorials.com](https://statamictutorials.com)* is a screencast to learn Statamic.
+- *[Learn Statamic with Jack](https://laracasts.com/series/learn-statamic-with-jack)* is a series by the creator of Statamic.
