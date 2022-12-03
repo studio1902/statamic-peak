@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Fix grammar in `widget_asset_count` string. 036906bc by @robdekort
+
 ## v7.7 (2022-12-01)
 
 ### What's new
