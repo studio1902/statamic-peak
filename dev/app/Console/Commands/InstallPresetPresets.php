@@ -138,6 +138,26 @@ trait InstallPresetPresets {
                 ],
             ],
             [
+                'handle' => 'modal',
+                'name' => 'Modal',
+                'description' => 'A modal that only has to be renderd once but can be used multiple times with different content..',
+                'operations' => [
+                    [
+                        'type' => 'copy',
+                        'input' => 'modal.antlers.html.stub',
+                        'output' => 'resources/views/components/_modal.antlers.html'
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "\nMake sure to `{{ yield:modal }}` in your layout file before closing the `<body>`."
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "\nInvoke by calling:\n\n{{ partial:components/modal label=\"Open modal label\" aria_label=\"Modal aria-label\" }}\n\t{{ slot:content }}\n\t\t{{# Add modal content here. #}}\n\t{{ /slot:content }}\n{{ /partial:components/modal }}.\n"
+                    ]
+                ]
+            ],
+            [
                 'handle' => 'news',
                 'name' => 'News',
                 'description' => 'A dated news collection with index and show templates (including JSON-ld) and a page builder set.',
