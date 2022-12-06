@@ -3,7 +3,7 @@
 ## v7.8 (2022-12-6)
 
 ### What's new
-- In installable modal preset. The modal is only rendered once on the page but gets dynamically gets injected it's contents. 11a2dd99 by @robdekort
+- An installable modal preset. The modal is only rendered once on the page but gets dynamically gets injected it's contents. 11a2dd99 by @robdekort
 
 ### What's improved
 - Fix grammar in `widget_asset_count` string. 036906bc by @robdekort
