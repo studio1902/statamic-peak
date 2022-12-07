@@ -153,7 +153,7 @@ trait InstallPresetPresets {
                     ],
                     [
                         'type' => 'notify',
-                        'content' => "\nInvoke by calling:\n\n{{ partial:components/modal label=\"Open modal label\" aria_label=\"Modal aria-label\" }}\n\t{{ slot:content }}\n\t\t{{# Add modal content here. #}}\n\t{{ /slot:content }}\n{{ /partial:components/modal }}.\n"
+                        'content' => "\nInvoke by calling:\n\n{{ partial:components/modal label_open=\"Open modal label\" label_close=\"Close modal label\" label_aria=\"Modal aria-label\" }}\n\t{{ slot:content }}\n\t\t{{# Add modal content here. #}}\n\t{{ /slot:content }}\n{{ /partial:components/modal }}.\n"
                     ]
                 ]
             ],

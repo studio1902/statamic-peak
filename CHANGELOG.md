@@ -1,14 +1,9 @@
 # Changelog
 
-## v7.9 (2022-12-07)
-
-### What's improved
-- Modal is now responsive and has a close button. dec37ac7 by @robdekort
-
-## v7.8 (2022-12-06)
+## v7.8 (2022-12-07)
 
 ### What's new
-- An installable modal preset. The modal is only rendered once on the page but gets dynamically gets injected it's contents. 11a2dd99 by @robdekort
+- An installable modal preset. The modal is only rendered once on the page but gets dynamically gets injected it's contents. 11a2dd99 and dec37ac7 by @robdekort
 
 ### What's improved
 - Fix grammar in `widget_asset_count` string. 036906bc by @robdekort
