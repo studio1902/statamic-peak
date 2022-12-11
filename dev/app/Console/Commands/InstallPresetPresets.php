@@ -268,6 +268,27 @@ trait InstallPresetPresets {
                 ]
             ],
             [
+                'handle' => 'search',
+                'name' => 'Search',
+                'description' => 'A search form component and a styled search results template.',
+                'operations' => [
+                    [
+                        'type' => 'copy',
+                        'input' => 'search.antlers.html.stub',
+                        'output' => 'resources/views/search.antlers.html'
+                    ],
+                    [
+                        'type' => 'copy',
+                        'input' => 'search_form.antlers.html.stub',
+                        'output' => 'resources/views/components/_search_form.antlers.html'
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "\nTo enable this do the following:\n1. Add `{{ partial:components/search_form }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.\n2. Uncomment the search results route in routes/web.php.\n3. Add fields you want indexed to the index in config/statamic/search.php. The page_builder field is added by default.\n4. Update the search index by running php please search:update --all.\n5. Make sure you add the update command to your deployment script.\n"
+                    ]
+                ]
+            ],
+            [
                 'handle' => 'theme_toggle',
                 'name' => 'Theme toggle',
                 'description' => 'A theme toggle typically used for a Tailwind class based dark mode.',
