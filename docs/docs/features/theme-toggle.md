@@ -1,6 +1,6 @@
-# Dark mode
+# Theme toggle (dark mode)
 
-> You need to manually enable this feature.
+> You need to install the theme toggle preset and manually enable this feature.
 
 In Tailwind CSS you can enable [default dark mode](https://tailwindcss.com/docs/dark-mode) by uncommenting `darkMode: 'media',` in `tailwind.config.js`. This way your website will react to the users OS wide `prefers-color-scheme`.
 
