@@ -62,6 +62,6 @@ Run `php please peak:install-block` to pick a block and:
 * Create a partial with bespoke markup in `resources/views/page_builder/_{file_name}.antlers.html`.
 
 ## Install Preset
-This command installs a presets into Peak. A preset can be anything. By default you can install a `news` and an `events` collection that installs the relevant blueprints, templates, configuration, pages and page builder blocks into your site.
+This command installs a presets into Peak. A preset can be anything. By default you can install a `news` and an `events` collection that installs the relevant blueprints, templates, configuration, pages and page builder blocks into your site. You can also install features like FAQ, Modals, Theme toggle (dark mode), Search, Language picker and Breadcrumbs.
 
 Run `php please peak:install-preset` to pick a set.

@@ -1,6 +1,6 @@
 # Search
 
-> You need to manually enable this feature.
+> You need to install the search preset and manually enable this feature.
 
 Statamic comes with great search functionality out of the box. If you want to use this you have to do some configuration and templating work. Peak comes with basic search support you can easily customize to suit your needs. To enable default search do the following:
 
