@@ -26,8 +26,9 @@ export_paths:
   - config/statamic/users.php
   - lang/
   - public/build
-  - public/assets
+  - public/images
   - public/favicons/.gitkeep
+  - public/files/.gitkeep
   - public/social_images/.gitkeep
   - public/visuals
   - resources/blueprints
