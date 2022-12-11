@@ -7,6 +7,18 @@ trait InstallPresetPresets {
     public function getPresets() {
         $this->presets = collect([
             [
+                'handle' => 'breadcrumbs',
+                'name' => 'Breadcrumbs',
+                'description' => 'A breadcrumbs partial using schema markup.',
+                'operations' => [
+                    [
+                        'type' => 'copy',
+                        'input' => 'breadcrumbs.antlers.html.stub',
+                        'output' => 'resources/views/navigation/_breadcrumbs.antlers.html'
+                    ]
+                ]
+            ],
+            [
                 'handle' => 'events',
                 'name' => 'Events',
                 'description' => 'A dated events collection with index and show templates (including JSON-ld) and a page builder set.',
