@@ -56,7 +56,7 @@ fields:
           fields:
             -
               import: video
-      container: assets
+      container: files
       enable_input_rules: true
       enable_paste_rules: true
       instructions_position: above
@@ -65,3 +65,4 @@ fields:
       previews: true
       antlers: false
       remove_empty_nodes: trim
+      collapse: false

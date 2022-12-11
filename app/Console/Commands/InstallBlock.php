@@ -33,9 +33,6 @@ class InstallBlock extends Command
             $this->instructions = Stringy::between($choice, ': ', ' [');
 
             try {
-                $this->checkExistence('Fieldset', "resources/fieldsets/{$this->filename}.yaml");
-                $this->checkExistence('Partial', "resources/views/page_builder/_{$this->filename}.antlers.html");
-
                 $this->copyStubs();
                 $this->updatePageBuilder($this->block_name, $this->instructions, $this->filename);
             } catch (\Exception $e) {

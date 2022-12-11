@@ -7,7 +7,8 @@ class StarterKitPostInstall
 {
     public $registerCommands = [
         \App\Console\Commands\ClearSite::class,
-        \App\Console\Commands\InstallBlock::class
+        \App\Console\Commands\InstallBlock::class,
+        \App\Console\Commands\InstallPreset::class
     ];
 
     public function handle($console)
@@ -60,6 +61,10 @@ class StarterKitPostInstall
             if ($console->confirm('Do you want to exclude the `storage/form` folder from git?', false)) {
                 app('files')->append(base_path('.gitignore'), "\n/storage/forms");
             }
+        }
+
+        if ($console->confirm('Do you want to install presets?', false)) {
+            $console->call('statamic:peak:install-preset');
         }
 
         if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {

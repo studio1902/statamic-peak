@@ -8,6 +8,7 @@
 
 ### What's changed
 - Move language picker, theme toggle, search and breadcrumbs to optional installable presets. #290 by @robdekort
+- Don't check for file existence when installing blocks to prevent conflicts when installing presets and blocks. 27664ecc by @robdekort
 
 ## v7.8 (2022-12-07)
 

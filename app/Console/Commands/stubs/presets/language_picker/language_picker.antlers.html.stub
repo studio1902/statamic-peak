@@ -1,0 +1,53 @@
+{{#
+    @name Language picker
+    @desc A language picker when you use multisite. To enable this do the following:
+    1. Add `{{ partial:navigation/language_picker }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.
+#}}
+
+<!-- /navigation/_language_picker.antlers.html -->
+<li
+    x-data="{ languagePickerOpen: false }"
+    @keyup.escape.stop.prevent="languagePickerOpen = false"
+    @focusin.window="!$refs.picker.contains($event.target) && (languagePickerOpen = false)"
+    class="relative leading-none"
+    x-cloak
+>
+    <a
+        href="#"
+        @click.prevent="languagePickerOpen = !languagePickerOpen"
+        :aria-label="languagePickerOpen
+            ? '{{ trans:strings.language_close }}'
+            : '{{ trans:strings.language_open :current_language="site:name" }}'"
+        :aria-expanded="languagePickerOpen"
+        class="p-1 -m-1 flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary"
+
+    >
+        {{ site:short_locale }}
+        <svg class="w-2 ml-1 overflow-visible stroke-current text-neutral"
+            :class="{ 'rotate-180': languagePickerOpen }"
+            aria-hidden="true"
+            stroke-width="16"
+            viewBox="0 0 140 140"><path d="M135.625 42.648l-62.533 62.527a4.37 4.37 0 01-6.184 0L4.375 42.648" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        /></svg>
+    </a>
+    <ul
+        x-show="languagePickerOpen"
+        x-ref="picker"
+        class="absolute mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
+        @click.outside="languagePickerOpen = false"
+        x-transition
+    >
+        {{ locales all="true" self="false"  }}
+            <li>
+                <a
+                    href="{{ permalink }}"
+                    aria-label="{{ locale:name }}"
+                    class="uppercase tracking-wide whitespace-nowrap py-2 px-1 -mx-1 block text-xs font-bold hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary"
+                >
+                    {{ locale:short }}
+                </a>
+            </li>
+        {{ /locales }}
+    </ul>
+</li>
+<!-- End: /navigation/_language_picker.antlers.html -->
