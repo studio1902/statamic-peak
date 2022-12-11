@@ -8,7 +8,7 @@ fields:
           handle: images
           field:
             mode: list
-            container: assets
+            container: images
             restrict: false
             allow_uploads: true
             show_filename: true

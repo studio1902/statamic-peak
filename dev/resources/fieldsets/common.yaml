@@ -4,7 +4,7 @@ fields:
     handle: image
     field:
       mode: list
-      container: assets
+      container: images
       restrict: false
       allow_uploads: true
       max_files: 1
@@ -12,6 +12,10 @@ fields:
       localizable: true
       listable: hidden
       display: Image
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      show_filename: true
   -
     handle: entry
     field:
@@ -37,7 +41,7 @@ fields:
       toolbar_mode: fixed
       link_noopener: true
       link_noreferrer: false
-      container: assets
+      container: files
       target_blank: false
       reading_time: false
       fullscreen: true
@@ -56,6 +60,7 @@ fields:
       enable_paste_rules: true
       antlers: false
       remove_empty_nodes: trim
+      collapse: false
   -
     handle: text_basic
     field:
@@ -70,7 +75,7 @@ fields:
       toolbar_mode: fixed
       link_noopener: true
       link_noreferrer: false
-      container: assets
+      container: files
       target_blank: false
       reading_time: false
       fullscreen: true
@@ -89,6 +94,7 @@ fields:
       enable_paste_rules: true
       antlers: false
       remove_empty_nodes: trim
+      collapse: false
   -
     handle: text_plain
     field:
