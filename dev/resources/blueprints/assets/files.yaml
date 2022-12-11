@@ -1,0 +1,4 @@
+sections:
+  main:
+    display: Main
+    fields: {  }

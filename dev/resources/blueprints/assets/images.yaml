@@ -1,4 +1,4 @@
-title: Asset
+title: Image
 sections:
   main:
     display: Main
@@ -7,5 +7,5 @@ sections:
         handle: alt
         field:
           display: 'Alt Text'
-          type: text
+          type: textarea
           instructions: 'Description of the image'

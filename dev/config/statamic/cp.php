@@ -40,7 +40,7 @@ return [
     'widgets' => [
         [
             'type' => 'images_missing_alt',
-            'container' => 'assets',
+            'container' => 'images',
             'filetypes' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'bmp', 'tiff'],
             'limit' => 5,
             'expiry' => 0,

@@ -3,7 +3,7 @@ id: 20f6a148-63b8-47a8-9b0e-d57095d78c21
 blueprint: page
 title: 'Long form content'
 updated_by: fd779fda-9c01-4b82-9fad-6f6cedfe03cb
-updated_at: 1668788163
+updated_at: 1670755082
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
