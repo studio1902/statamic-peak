@@ -168,7 +168,7 @@ trait InstallPresetPresets {
             [
                 'handle' => 'modal',
                 'name' => 'Modal',
-                'description' => 'A modal that only has to be renderd once but can be used multiple times with different content..',
+                'description' => 'A modal that only has to be rendered once but can be used multiple times with different content.',
                 'operations' => [
                     [
                         'type' => 'copy',
