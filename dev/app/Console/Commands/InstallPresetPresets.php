@@ -266,7 +266,23 @@ trait InstallPresetPresets {
                         'content' => "\nAdd this to your `config/statamic/cp.php` widgets array:\n\n[\n\t'type' => 'collection',\n\t'collection' => 'news',\n\t'width' => 50\n],\n"
                     ]
                 ]
-            ]
+            ],
+            [
+                'handle' => 'theme_toggle',
+                'name' => 'Theme toggle',
+                'description' => 'A theme toggle typically used for a Tailwind class based dark mode.',
+                'operations' => [
+                    [
+                        'type' => 'copy',
+                        'input' => 'theme_toggle.antlers.html.stub',
+                        'output' => 'resources/views/components/_theme_toggle.antlers.html'
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "\nTo enable this do the following:\n1. Uncomment `darkMode: 'class'` in `tailwind.config.js`.\n2. Add `{{ partial:components/theme_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main_desktop.antlers.html`. The `section:theme_toggle` is automatically yielded in `resources/views/snippets/_browser_appearance.antlers.html`.\n"
+                    ]
+                ]
+            ],
         ]);
     }
 }
