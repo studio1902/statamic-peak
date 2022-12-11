@@ -150,6 +150,22 @@ trait InstallPresetPresets {
                 ],
             ],
             [
+                'handle' => 'language_picker',
+                'name' => 'Language picker',
+                'description' => 'A language picker for when you use multisite.',
+                'operations' => [
+                    [
+                        'type' => 'copy',
+                        'input' => 'language_picker.antlers.html.stub',
+                        'output' => 'resources/views/navigation/_language_picker.antlers.html'
+                    ],
+                    [
+                        'type' => 'notify',
+                        'content' => "\nAdd `{{ partial:navigation/language_picker }}` as the last list item in the main ul in `resources/views/navigation/_main.antlers.html`.\n"
+                    ]
+                ]
+            ],
+            [
                 'handle' => 'modal',
                 'name' => 'Modal',
                 'description' => 'A modal that only has to be renderd once but can be used multiple times with different content..',
