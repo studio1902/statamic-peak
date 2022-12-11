@@ -1,0 +1,189 @@
+{{#
+    @name Theme toggle
+    @desc The theme toggle component for class based dark mode. To enable this do the following:
+    1. Uncomment `darkMode: 'class'` in `tailwind.config.js`.
+    2. Add `{{ partial:components/theme_toggle }}` as the last list item in the main ul in `resources/views/navigation/_main_desktop.antlers.html`. The `section:theme_toggle` is automatically yielded in `resources/views/snippets/_browser_appearance.antlers.html`.
+#}}
+
+<!-- /components/_theme_toggle.antlers.html -->
+<li x-data="themeToggle" x-bind="root" class="relative" x-cloak>
+    <button
+        x-bind="toggle"
+        class="p-1 -m-1 flex items-center text-neutral dark:text-white hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition-colors"
+    >
+        {{ icon_classes = 'w-4 h-4 stroke-current overflow-visible' }}
+        <div x-show="$store.theme.get() === 'light'">
+            {{ svg:sun class="{icon_classes}" alt="" aria-hidden="true" }}
+        </div>
+        <div x-show="$store.theme.get() === 'dark'">
+            {{ svg:moon class="{icon_classes}" alt="" aria-hidden="true" }}
+        </div>
+        <div x-show="$store.theme.get() === 'system'">
+            {{ svg:sun x-show="preferredColorScheme === 'light'" class="{icon_classes} opacity-50" alt="" aria-hidden="true" }}
+            {{ svg:moon x-show="preferredColorScheme === 'dark'" class="{icon_classes} opacity-50" alt="" aria-hidden="true" }}
+        </div>
+    </button>
+    <div
+        x-bind="panel"
+        x-ref="panel"
+        class="absolute right-0 mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded shadow"
+    >
+        {{ button_classes = 'py-2 px-1 -mx-1 flex items-center space-x-2 hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary motion-safe:transition-colors' }}
+        {{ icon_classes = 'w-4 h-4 stroke-current overflow-visible' }}
+        {{ label_classes = 'text-xs font-bold' }}
+        <button
+            @click="themeLight()"
+            :class="{ 'text-primary': $store.theme.get() === 'light' }"
+            aria-label="{{ trans:strings.theme_toggle_light }}"
+            title="{{ trans:strings.theme_toggle_light }}"
+            class="{{ button_classes }}"
+        >
+            {{ svg:sun class="{icon_classes}" alt="" aria-hidden="true" }}
+            <span class="{{ label_classes }}">{{ trans:strings.theme_toggle_light_short }}</span>
+        </button>
+        <button
+            @click="themeDark()"
+            :class="{ 'text-primary': $store.theme.get() === 'dark' }"
+            aria-label="{{ trans:strings.theme_toggle_dark }}"
+            title="{{ trans:strings.theme_toggle_dark }}"
+            class="{{ button_classes }}"
+        >
+            {{ svg:moon class="{icon_classes}" alt="" aria-hidden="true" }}
+            <span class="{{ label_classes }}">{{ trans:strings.theme_toggle_dark_short }}</span>
+        </button>
+        <button
+            @click="themeSystem()"
+            :class="{ 'text-primary': $store.theme.get() === 'system' }"
+            aria-label="{{ trans:strings.theme_toggle_system }}"
+            title="{{ trans:strings.theme_toggle_system }}"
+            class="{{ button_classes }}"
+        >
+            {{ svg:cog class="{icon_classes}" alt="" aria-hidden="true" }}
+            <span class="{{ label_classes }}">{{ trans:strings.theme_toggle_system_short }}</span>
+        </button>
+    </div>
+
+    {{# Set Antlers variable if there's a regular and dark mode theme color set in browser appearance. #}}
+    {{ if browser_appearance:use_theme_color && browser_appearance:use_theme_color_dark_mode }}
+        {{ theme_color = true }}
+    {{ /if }}
+
+    <script>
+        document.addEventListener('alpine:initializing', () => {
+            Alpine.store('theme', {
+                theme: Alpine.$persist('system').as('theme'),
+                set(value) {
+                    this.theme = value
+                },
+                get() {
+                    return this.theme
+                }
+            })
+
+            Alpine.data('themeToggle', () => {
+                return {
+                    themeToggleOpen: false,
+                    preferredColorScheme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+                    themeColor: {{ theme_color ?? 'false' }},
+                    themeLight: function() {
+                        this.$store.theme.set('light')
+                        this.setLightTheme()
+                    },
+                    themeDark: function() {
+                        this.$store.theme.set('dark')
+                        this.setDarkTheme()
+                    },
+                    themeSystem: function() {
+                        this.$store.theme.set('system')
+                        window.matchMedia('(prefers-color-scheme: light)').matches && this.setLightTheme()
+                        window.matchMedia('(prefers-color-scheme: dark)').matches && this.setDarkTheme()
+                    },
+                    setLightTheme: function() {
+                        document.documentElement.classList.remove('dark')
+                        this.themeColor && document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color }}' )
+                    },
+                    setDarkTheme: function() {
+                        document.documentElement.classList.add('dark')
+                        this.themeColor && document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color_dark_mode ?? browser_appearance:theme_color }}' )
+                    },
+                    root: {
+                        ['x-init']() {
+                            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                                e.matches
+                                    ? (this.preferredColorScheme = 'dark', this.setDarkTheme())
+                                    : (this.preferredColorScheme = 'light', this.setLightTheme())
+                            })
+                        },
+                        ['@keyup.escape.stop.prevent']() {
+                            this.themeToggleOpen = false
+                        },
+                        ['@focusin.window']() {
+                            !this.$refs.panel.contains(this.$event.target) && (this.themeToggleOpen = false)
+                        },
+                    },
+                    toggle: {
+                        ['@click.prevent']() {
+                            this.themeToggleOpen = !this.themeToggleOpen
+                        },
+                        [':aria-label']() {
+                            return this.themeToggleOpen
+                                ? '{{ trans:strings.theme_toggle_toggle_close }}'
+                                : '{{ trans:strings.theme_toggle_toggle_open }}'
+                        },
+                        [':aria-expanded']() {
+                            return this.themeToggleOpen
+                        },
+                        [':aria-controls']() {
+                            return this.$id('dropdown-button')
+                        }
+                    },
+                    panel: {
+                        ['x-show']() {
+                            return this.themeToggleOpen
+                        },
+                        ['@click.outside']() {
+                            this.themeToggleOpen = false
+                        },
+                        [':id']() {
+                            return this.$id('dropdown-button')
+                        },
+                        ['x-transition']() {
+                        }
+                    }
+                }
+            })
+        })
+    </script>
+</li>
+<!-- End: /components/_theme_toggle.antlers.html -->
+
+{{# The script for setting the correct theme on page load. Yielded in `resources/views/snippets/_browser_appearance.antlers.html`. #}}
+{{ section:theme_toggle }}
+    <!-- /components/_theme_toggle.antlers.html -->
+    {{# We can't use Alpine logic here since this has to run before anything else. #}}
+    <script>
+        {{# Set light theme. #}}
+        function setThemeLight() {
+            document.documentElement.classList.remove('dark')
+            {{ if theme_color }}
+                document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color }}' )
+            {{ /if }}
+        }
+
+        {{# Set dark theme. #}}
+        function setThemeDark() {
+            document.documentElement.classList.add('dark')
+            {{ if theme_color }}
+                document.querySelector('meta[name=theme-color]').setAttribute('content', '{{ browser_appearance:theme_color_dark_mode ?? browser_appearance:theme_color }}' )
+            {{ /if }}
+        }
+
+        {{# Set theme on page load. #}}
+        (localStorage.theme === '"dark"' || ((localStorage.theme === '"system"') && window.matchMedia('(prefers-color-scheme: dark)').matches)) ? setThemeDark() : setThemeLight()
+
+        {{# Use preferred color scheme when theme is set to system or on first load. #}}
+        window.matchMedia('(prefers-color-scheme: light)').matches && (!localStorage.theme || localStorage.theme === '"system"') && setThemeLight()
+        window.matchMedia('(prefers-color-scheme: dark)').matches && (!localStorage.theme || localStorage.theme === '"system"') && setThemeDark()
+    </script>
+    <!-- End: /components/_theme_toggle.antlers.html -->
+{{ /section:theme_toggle }}

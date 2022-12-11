@@ -1,5 +1,15 @@
 # Changelog
 
+## v7.9 (2022-12-11)
+
+### What's new
+- Default to two asset containers: images and files. Make the `alt` field a textarea. #289 by @robdekort
+- Add an option to install presets to the post install hook. a00e3c5e by @robdekort
+
+### What's changed
+- Move language picker, theme toggle, search and breadcrumbs to optional installable presets. #290 by @robdekort
+- Don't check for file existence when installing blocks to prevent conflicts when installing presets and blocks. 27664ecc by @robdekort
+
 ## v7.8 (2022-12-07)
 
 ### What's new

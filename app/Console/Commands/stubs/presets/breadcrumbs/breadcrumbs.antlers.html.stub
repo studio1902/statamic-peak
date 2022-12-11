@@ -1,0 +1,44 @@
+{{#
+    @name Breadcrumbs
+    @desc Breadcrumbs display the current page in it's page hierarcy.
+#}}
+
+<!-- /navigation/_breadcrumbs.antlers.html -->
+<nav aria-label="breadcrumb">
+    <ol
+        vocab="https://schema.org/"
+        typeof="BreadcrumbList"
+        class="flex"
+    >
+        {{ nav:breadcrumbs }}
+            <li
+                class="flex"
+                property="itemListElement"
+                typeof="ListItem"
+            >
+                {{ unless last }}
+                    <a
+                        property="item"
+                        typeof="WebPage"
+                        href="{{ url }}"
+                    >
+                        <span property="name">{{ title }}</span>
+                    </a>
+                    <meta property="position" content="{{ count }}">
+                    <span class="px-2 text-neutral" aria-hidden>/</span>
+                {{ else }}
+                    <a
+                        href="{{ url }}"
+                        property="name"
+                        class="text-primary"
+                        aria-current="page"
+                    >
+                        <span property="name">{{ title }}</span>
+                    </a>
+                    <meta property="position" content="{{ count }}">
+                {{ /unless }}
+            </li>
+        {{ /nav:breadcrumbs }}
+    </ol>
+</nav>
+<!-- End: /navigation/_breadcrumbs.antlers.html -->
