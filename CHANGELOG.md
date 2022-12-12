@@ -1,8 +1,13 @@
 # Changelog
 
+## v7.11 (2022-12-12)
+
+### What's improved
+- The privacy statement field in the configuration globals is linked to the `files` asset container. 09d06c83 by @robdekort
+
 ## v7.10 (2022-12-12)
 
-### What's imporved
+### What's improved
 - Use `x-cloak` on sub nav panels instead of full list items in the desktop navigation. 6b401414 by @robdekort
 - Move `x-trap` up so you can tab to close button and add `esc` key listener on mobile navigation. 42c8fe94 by @robdekort
 
