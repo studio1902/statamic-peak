@@ -87,6 +87,7 @@ sections:
           listable: hidden
           display: 'Privacy statement (PDF)'
           width: 50
+          container: files
           if:
             privacy_statement_type: 'equals pdf'
           validate:
