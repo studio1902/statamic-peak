@@ -1,5 +1,3 @@
-# 🇺🇦 [Support Ukraine Now](https://supportukrainenow.org)
-
 <img class="margin-bottom: 1rem;" src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png?v=3" width="220" alt="Statamic Peak Logo" />
 
 # Start out on top!
