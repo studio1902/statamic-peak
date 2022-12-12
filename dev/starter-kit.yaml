@@ -3,7 +3,6 @@ export_paths:
   - .gitignore
   - app/Actions/GenerateSocialImages.php
   - app/Console/Kernel.php
-  - app/Console/Commands
   - app/Http/Controllers/DynamicToken.php
   - app/Http/Middleware/VerifyCsrfToken.php
   - app/Jobs/GenerateSocialImagesJob.php

@@ -1,7 +1,0 @@
-title: '{{ name }}'
-fields:
-  -
-    handle: size
-    field: common.size
-    config:
-      instructions: 'The size in which the {{ name }} should be displayed.'
