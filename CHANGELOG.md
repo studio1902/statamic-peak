@@ -1,5 +1,14 @@
 # Changelog
 
+## v7.10 (2022-12-12)
+
+### What's imporved
+- Use `x-cloak` on sub nav panels instead of full list items in the desktop navigation. 6b401414 by @robdekort
+- Move `x-trap` up so you can tab to close button and add `esc` key listener on mobile navigation. 42c8fe94 by @robdekort
+
+### What's noteworthy
+- All Studio 1902 Twitter references are removed from the default globals and docs. [Follow me on Mastodon](https://mastodon.social/@robdekort). The Twitter account is removed.
+
 ## v7.9 (2022-12-11)
 
 ### What's new
