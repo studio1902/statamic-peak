@@ -8,6 +8,8 @@
     x-data="{ mobileNavOpen: false }"
     class="md:hidden"
     aria-label="{{ trans:strings.main_navigation }}"
+    x-trap.inert.noscroll="mobileNavOpen"
+    @keyup.escape.stop.prevent="mobileNavOpen = false"
     x-cloak
 >
     <button
@@ -25,7 +27,6 @@
     <div
         class="fixed inset-0 z-10 pt-8 px-8 pb-12 flex flex-col justify-end bg-white"
         x-show="mobileNavOpen"
-        x-trap.inert.noscroll="mobileNavOpen"
     >
         <ul class="flex flex-col py-2 space-y-4 overflow-auto">
             {{ nav:main max_depth="2" include_home="true" select="title|url" }}
