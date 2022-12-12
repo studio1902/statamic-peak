@@ -8,7 +8,6 @@ module.exports = {
       ['meta', { property: 'og:description', content: 'Statamic Peak is an opinionated starter kit for all your bespoke Statamic sites.' }],
       ['meta', { property: 'og:image', content: 'https://peak.1902.studio/visuals/statamic-peak-og.png' }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-      ['meta', { name: 'twitter:site', content: 'studio1902' }],
       ['meta', { name: 'twitter:title', content: 'Statamic Peak Docs' }],
       ['meta', { name: 'twitter:description', content: 'Statamic Peak is an opinionated starter kit for all your bespoke Statamic sites.' }],
       ['meta', { name: 'twitter:image', content: 'https://peak.1902.studio/visuals/statamic-peak-twitter.png' }],
