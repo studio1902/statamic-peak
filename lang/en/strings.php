@@ -33,33 +33,8 @@ return [
     'cookie_learn_more'                 => 'Learn more',
     'cookie_reset_consent'              => 'Reset cookie consent',
 
-    // Dark mode
-    'theme_toggle_dark'                 => 'Use dark theme.',
-    'theme_toggle_light'                => 'Use light theme.',
-    'theme_toggle_system'               => 'Use system preference.',
-    'theme_toggle_dark_short'           => 'Dark',
-    'theme_toggle_light_short'          => 'Light',
-    'theme_toggle_system_short'         => 'System',
-    'theme_toggle_toggle_open'          => 'Open dark mode picker.',
-    'theme_toggle_toggle_close'         => 'Close dark mode picker.',
-
     // Footer
     'on'                                => 'on',
-
-    // Events (Peak preset)
-    'events_all'                        => 'All events',
-    'events_date'                       => 'Date',
-    'events_date_start'                 => 'Start date',
-    'events_date_end'                   => 'End date',
-    'events_more'                       => 'More events',
-    'events_when'                       => 'When',
-    'events_where'                      => 'Where',
-    'events_organizer'                  => 'Organizer',
-    'events_tickets'                    => 'Tickets',
-
-    // Language picker
-    'language_open'                     => 'Open language picker. Current language is :current_language',
-    'language_close'                    => 'Close language picker',
 
     // Navigation
     'close'                             => 'Close',
@@ -71,10 +46,6 @@ return [
     'subnav_open'                       => 'Open sub navigation',
     'skip_to_content'                   => 'Skip to content',
 
-    // News (Peak preset)
-    'news_all'                          => 'All news',
-    'news_more'                         => 'More news',
-
     // Other
     'no_results'                        => 'There are currently no posts.',
     'no_script'                         => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
@@ -83,11 +54,6 @@ return [
     'next'                              => 'next',
     'of'                                => 'of',
     'previous'                          => 'previous',
-
-    // Search
-    'search'                            => 'Search',
-    'search_no_results'                 => 'No results found',
-    'search_results_for'                => 'Results for',
 
     // Social images
     'social_images'                     => 'Generated one social image.|Generated :count social images.',

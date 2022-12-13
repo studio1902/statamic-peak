@@ -33,33 +33,8 @@ return [
     'cookie_learn_more'                 => 'Meer informatie',
     'cookie_reset_consent'              => 'Reset cookie-instellingen',
 
-    // Dark mode
-    'theme_toggle_dark'                 => 'Gebruik donker thema.',
-    'theme_toggle_light'                => 'Gebruik licht thema.',
-    'theme_toggle_system'               => 'Gebruik systeemvoorkeur.',
-    'theme_toggle_dark_short'           => 'Donker',
-    'theme_toggle_light_short'          => 'Licht',
-    'theme_toggle_system_short'         => 'Systeem',
-    'theme_toggle_toggle_close'         => 'Sluit donkere-modus-selector.',
-    'theme_toggle_toggle_open'          => 'Open donkere-modus-selector.',
-
     // Footer
     'on'                                => 'op',
-
-    // Events (Peak preset)
-    'events_all'                        => 'Alle events',
-    'events_date'                       => 'Datum',
-    'events_date_start'                 => 'Startdatum',
-    'events_date_end'                   => 'Einddatatum',
-    'events_more'                       => 'Meer events',
-    'events_when'                       => 'Wanneer',
-    'events_where'                      => 'Waar',
-    'events_organizer'                  => 'Organisator',
-    'events_tickets'                    => 'Tickets',
-
-    // Language picker
-    'language_open'                     => 'Open taalselector. De huidige taal :current_language',
-    'language_close'                    => 'Sluit taalselector',
 
     // Navigation
     'close'                             => 'Sluit',
@@ -71,9 +46,6 @@ return [
     'subnav_open'                       => 'Open subnavigatie',
     'skip_to_content'                   => 'Doorgaan naar content',
 
-    // News (Peak preset)
-    'news_all'                          => 'Alle berichten',
-    'news_more'                         => 'Meer nieuws',
 
     // Other
     'no_results'                        => 'Er zijn momenteel geen resultaten.',
@@ -83,11 +55,6 @@ return [
     'next'                              => 'Volgende',
     'of'                                => 'van',
     'previous'                          => 'Vorige',
-
-    // Search
-    'search'                            => 'Zoek...',
-    'search_no_results'                 => 'Geen resultaten gevonden',
-    'search_results_for'                => 'Zoekresultaten voor',
 
     // Social images
     'social_images'                     => 'Generated one social image.|Generated :count social images.',

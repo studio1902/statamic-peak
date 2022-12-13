@@ -30,22 +30,8 @@ return [
     'cookie_learn_more'                 => 'Zjistit více',
     'cookie_reset_consent'              => 'Resetovat cookie souhlas',
 
-    // Dark mode
-    'theme_toggle_dark'                 => 'Použít tmavý režim.',
-    'theme_toggle_light'                => 'Použít světlý režim.',
-    'theme_toggle_system'               => 'Použít systémové preference.',
-    'theme_toggle_dark_short'           => 'Tmavý',
-    'theme_toggle_light_short'          => 'Světlý',
-    'theme_toggle_system_short'         => 'Systém',
-    'theme_toggle_toggle_open'          => 'Otevřít výběr tmavého režimu.',
-    'theme_toggle_toggle_close'         => 'Zavřít výběr tmavého režimu.',
-
     // Footer
     'on'                                => 'on',
-
-    // Language picker
-    'language_open'                     => 'Otevřít výběr jazyka. Aktuální jazyk je :current_language',
-    'language_close'                    => 'Zavřít výběr jazyka',
 
     // Navigation
     'close'                             => 'Zavřít',
@@ -65,11 +51,6 @@ return [
     'next'                              => 'další',
     'of'                                => 'z',
     'previous'                          => 'předchozí',
-
-    // Search
-    'search'                            => 'Vyhledávání',
-    'search_no_results'                 => 'Nenalezeny žádné výsledky',
-    'search_results_for'                => 'Výsledky pro',
 
     // Social images
     'social_images'                     => 'Vygenerován jeden obrázek pro soc. sítě.|Vygenerováno :count obrázků pro soc. sítě.',

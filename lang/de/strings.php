@@ -28,22 +28,8 @@ return [
     'cookie_learn_more'                 => 'Details',
     'cookie_reset_consent'              => 'Cookie-Einstellungen zurücksetzen',
 
-    // Dark mode
-    'theme_toggle_dark'                 => 'Dunkles Design verwenden',
-    'theme_toggle_light'                => 'Helles Design verwenden',
-    'theme_toggle_system'               => 'Systemeinstellungen verwenden.',
-    'theme_toggle_dark_short'           => 'Dunkel',
-    'theme_toggle_light_short'          => 'Hell',
-    'theme_toggle_system_short'         => 'System',
-    'theme_toggle_toggle_open'          => 'Optionen für dunkles Design öffenen',
-    'theme_toggle_toggle_close'         => 'Optionen für dunkles Design schließen',
-
     // Footer
     'on'                                => 'auf',
-
-    // Language picker
-    'language_open'                     => 'Sprachwahl öffnen. Die aktive Sprache ist :current_language',
-    'language_close'                    => 'Sprachwahl schließen',
 
     // Navigation
     'close'                             => 'Schließen',
@@ -63,11 +49,6 @@ return [
     'next'                              => 'weiter',
     'of'                                => 'von',
     'previous'                          => 'zurück',
-
-    // Search
-    'search'                            => 'Suchen',
-    'search_no_results'                 => 'Keine Ergebnisse',
-    'search_results_for'                => 'Ergbnisse für',
 
     // Social images
     'social_images'                     => 'Generated one social image.|Generated :count social images.',
