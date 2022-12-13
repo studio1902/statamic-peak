@@ -18,7 +18,7 @@ class StarterKitPostInstall
         if ($console->confirm('Do you want overwrite your `.env` file with the Peak presets?', true)) {
             $appName = $console->ask('What should be your app name?');
             $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
-            $debugBarEnabled = $console->confirm('Do you want to use the debugbar?', true);
+            $debugBarEnabled = $console->confirm('Do you want to use the debugbar?', false);
             $originalAppUrl = env('APP_URL');
             $originalAppKey = env('APP_KEY');
 
