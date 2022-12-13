@@ -1,5 +1,13 @@
 # Changelog
 
+## v8.0 (2022-12-13)
+
+### What's new
+- The Peak CLI commands are moved to an addon so you can easily update all presets and blocks. #291 by @robdekort
+
+### What's changed
+- Due to this new setup the installer can't optionally run the `clear-install`, `install-block` and `install-preset` commands. The installer now hints you can manually do this.
+
 ## v7.11 (2022-12-12)
 
 ### What's improved
