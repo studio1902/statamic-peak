@@ -1,9 +1,10 @@
+export_as:
+  README.md: README.example.md
 export_paths:
   - .env.example
   - .gitignore
   - app/Actions/GenerateSocialImages.php
   - app/Console/Kernel.php
-  - app/Console/Commands
   - app/Http/Controllers/DynamicToken.php
   - app/Http/Middleware/VerifyCsrfToken.php
   - app/Jobs/GenerateSocialImagesJob.php
@@ -51,5 +52,5 @@ export_paths:
   - tailwind.config.site.js
   - tailwind.config.typography.js
   - vite.config.js
-export_as:
-  README.md: README.example.md
+dependencies:
+  studio1902/statamic-peak-commands: ^1.0
