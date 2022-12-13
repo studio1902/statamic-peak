@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.2 (2022-12-13)
+
+### What's changed
+- Remove preset strings. They should be manually installed from the CLI addon. 5ead678b by @robdekort
+
 ## v8.1 (2022-12-13)
 
 ### What's improved
