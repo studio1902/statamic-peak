@@ -28,8 +28,8 @@ fields:
       options:
         entry: Entry
         url: URL
-        email: E-mail
-        tel: Telephone
+        email: Email
+        tel: Tel
         sms: SMS
         asset: Asset
       type: button_group
@@ -140,7 +140,10 @@ fields:
     config:
       localizable: true
       display: Asset
+      container: files
       width: 50
+      validate:
+        - 'required_if:{this}.link_type,asset'
       if:
         link_type: asset
         show_controls: 'equals true'
