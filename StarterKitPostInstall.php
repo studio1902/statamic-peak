@@ -5,15 +5,15 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class StarterKitPostInstall
 {
-    public $registerCommands = [
-        Studio1902\Peak\Commands\ClearSite::class,
-        Studio1902\Peak\Commands\InstallBlock::class,
-        Studio1902\Peak\Commands\InstallPreset::class
-    ];
+    // public $registerCommands = [
+    //     Studio1902\Peak\Commands\ClearSite::class,
+    //     Studio1902\Peak\Commands\InstallBlock::class,
+    //     Studio1902\Peak\Commands\InstallPreset::class
+    // ];
 
     public function handle($console)
     {
-        $console->call('statamic:peak:clear-site');
+        // $console->call('statamic:peak:clear-site');
 
         if ($console->confirm('Do you want overwrite your `.env` file with the Peak presets?', true)) {
             $appName = $console->ask('What should be your app name?');
@@ -63,13 +63,13 @@ class StarterKitPostInstall
             }
         }
 
-        if ($console->confirm('Do you want to install presets?', false)) {
-            $console->call('statamic:peak:install-preset');
-        }
+        // if ($console->confirm('Do you want to install presets?', false)) {
+        //     $console->call('statamic:peak:install-preset');
+        // }
 
-        if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {
-            $console->call('statamic:peak:install-block');
-        }
+        // if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {
+        //     $console->call('statamic:peak:install-block');
+        // }
 
         if ($console->confirm('Do you want to install npm dependencies?', true)) {
             $process = new Process(['npm', 'i']);
@@ -89,6 +89,6 @@ class StarterKitPostInstall
             $console->info('Thank you!');
         }
 
-        $console->info('Peak is installed. Enjoy the view!');
+        $console->info('<info>[✓]</info> Peak is installed. Run `php please peak:clear-site` to get rid of default content. Run `php please peak:install-preset` and `php please peak:install-block` to install presets and blocks onto your new site. Enjoy the view!');
     }
 }
