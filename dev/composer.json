@@ -15,7 +15,8 @@
         "laravel/framework": "^9.19.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
-        "statamic/cms": "3.3.*"
+        "statamic/cms": "3.3.*",
+        "studio1902/statamic-peak-commands": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
