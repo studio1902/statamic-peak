@@ -6,9 +6,9 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class StarterKitPostInstall
 {
     public $registerCommands = [
-        \App\Console\Commands\ClearSite::class,
-        \App\Console\Commands\InstallBlock::class,
-        \App\Console\Commands\InstallPreset::class
+        \Studio1902\Peak\Commands\ClearSite::class,
+        \Studio1902\Peak\Commands\InstallBlock::class,
+        \Studio1902\Peak\Commands\InstallPreset::class
     ];
 
     public function handle($console)
