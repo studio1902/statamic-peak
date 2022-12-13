@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.1 (2022-12-13)
+
+### What's improved
+- Use files container for downloads in button field. cfc6634c by @robdekort
+
 ## v8.0 (2022-12-13)
 
 ### What's new
