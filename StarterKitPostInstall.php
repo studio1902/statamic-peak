@@ -90,7 +90,12 @@ class StarterKitPostInstall
         }
 
         $console->info('<info>[✓]</info> Peak is installed. Enjoy the view!');
-        $console->warn('Run `php please peak:clear-site` to get rid of default content. Run `php please peak:install-preset` and `php please peak:install-block` to install presets and blocks into your new site.');
+        $console->newline();
+        $console->warn('Run `php please peak:clear-site` to get rid of default content.');
+        $console->newline();
+        $console->warn('Run `php please peak:install-preset` to install premade sets onto your website.');
+        $console->newline();
+        $console->warn('Run `php please peak:install-block` to install premade blocks onto your page builder.');
         $console->newline();
     }
 }
