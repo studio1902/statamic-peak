@@ -15,8 +15,7 @@
         "laravel/framework": "^9.19.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
-        "statamic/cms": "3.3.*",
-        "studio1902/statamic-peak-commands": "dev-main"
+        "statamic/cms": "3.3.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
@@ -73,11 +72,5 @@
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ]
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/robdekort/Sites/statamic-peak-commands"
-        }
-    ]
+    }
 }
