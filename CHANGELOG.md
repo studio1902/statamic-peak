@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.4 (2022-12-14)
+
+### What's improved
+- Use SVG tag instead of inline SVG's for subnav chevrons. ae374d67 by @robdekort
+
 ## v8.3 (2022-12-14)
 
 ### What's fixed
