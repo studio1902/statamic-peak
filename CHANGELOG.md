@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.3 (2022-12-14)
+
+### What's fixed
+- Update editor role with access to the new asset containers. 6349ae94 by @robdekort
+
 ## v8.2 (2022-12-13)
 
 ### What's changed
