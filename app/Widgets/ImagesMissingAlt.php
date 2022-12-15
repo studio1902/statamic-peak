@@ -23,7 +23,7 @@ class ImagesMissingAlt extends Widget
             return Asset::query()
                 ->where('container', $this->config('container', 'assets'))
                 ->whereNull('alt')
-                ->whereIn('extension', $this->config('filetypes', ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'bmp', 'tiff']))
+                ->whereIn('extension', $this->config('filetypes', ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'bmp', 'tiff', 'svg']))
                 ->orderBy('last_modified', 'desc')
                 ->limit(100)
                 ->get()
