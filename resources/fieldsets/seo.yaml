@@ -115,7 +115,7 @@ fields:
     config:
       mode: grid
       container: social_images
-      listable: hidden
+      listable: true
       display: 'Social image'
       instructions: 'This entries OG image. Defaults to global site OG image. The recommended size is 1200px x 630px. The image will be focal cropped to this dimension.'
       instructions_position: below
