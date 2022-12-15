@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.6 (2022-12-15)
+
+### What's improved
+- `Social image` is visible by default in CP listings. c2895c76 by @robdekort
+- Update dependencies (Vite 4). 88d54fd1 by @robdekort
+
 ## v8.5 (2022-12-15)
 
 ### What's improved
