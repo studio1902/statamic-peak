@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.5 (2022-12-15)
+
+### What's improved
+- Add SVG to default filetypes in missing alt widget. 615218fd by @robdekort
+
 ## v8.4 (2022-12-14)
 
 ### What's improved
