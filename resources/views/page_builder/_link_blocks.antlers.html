@@ -6,11 +6,8 @@
 
 <!-- /page_builder/_link_blocks.antlers.html -->
 <section class="fluid-container grid md:grid-cols-12 gap-8">
-    {{ if block:title }}
-        <div class="md:col-start-3 md:col-span-8 text-center">
-            {{ partial:typography/h2 :content="block:title" }}
-        </div>
-    {{ /if }}
+    {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
+
     {{ block:link_blocks }}
         <a
             class="
