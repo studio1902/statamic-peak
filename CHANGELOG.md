@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.7 (2022-12-19)
+
+### What's improved
+- Git track the new asset containers by default. 5143d170 by @robdekort
+
 ## v8.6 (2022-12-15)
 
 ### What's improved
