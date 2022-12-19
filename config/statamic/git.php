@@ -83,9 +83,11 @@ return [
         resource_path('fieldsets'),
         resource_path('forms'),
         resource_path('users'),
+        resource_path('preferences.yaml'),
         storage_path('forms'),
-        public_path('assets'),
+        public_path('images'),
         public_path('favicons'),
+        public_path('files'),
         public_path('social_images'),
     ],
 
