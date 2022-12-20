@@ -1,11 +1,9 @@
 # Changelog
 
-## v8.8 (2022-12-20)
+## v8.7 (2022-12-20)
 
 ### What's new
 - Optionally hide the cookie banner by default when using video embeds so it can only be invoked from pages with embeds. 1bf417c0 by @robdekort
-
-## v8.7 (2022-12-19)
 
 ### What's improved
 - Git track the new asset containers by default. 5143d170 by @robdekort
