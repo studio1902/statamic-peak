@@ -831,11 +831,26 @@ sections:
           icon: toggle
           instructions: "Only load in third party embedded video's from the `video` article set after consent."
           listable: hidden
-          instructions_position: above
+          instructions_position: below
           visibility: visible
           always_save: false
           if:
             use_cookie_banner: 'equals true'
+      -
+        handle: hide_by_default
+        field:
+          default: false
+          display: 'Hide by default'
+          type: toggle
+          icon: toggle
+          instructions: "Hide the cookie banner by default. You can use this when you're only using it for video embeds."
+          listable: hidden
+          instructions_position: below
+          visibility: visible
+          always_save: false
+          if:
+            use_cookie_banner: 'equals true'
+            embeds: 'equals true'
       -
         handle: display_style
         field:

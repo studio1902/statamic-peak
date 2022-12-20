@@ -7,7 +7,7 @@
 <script>
     document.addEventListener('alpine:init', () => {
         Alpine.store('cookieBanner', {
-            consent: Alpine.$persist(null).as('cookieBannerConsent'),
+            consent: Alpine.$persist({{ seo:hide_by_default ? true : null }}).as('cookieBannerConsent'),
             embeds: Alpine.$persist(null).as('cookieBannerEmbeds'),
             setConsent(value) {
                 this.consent = value
