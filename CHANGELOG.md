@@ -1,5 +1,13 @@
 # Changelog
 
+## v8.8 (2022-01-05)
+
+### What's new
+- Danish translations. #292 by @rabol
+
+### What's improved
+- Prevent an exception in live preview by checking if a form is selected in the form page builder block. c3405f41 by @robdekort
+
 ## v8.7 (2022-12-20)
 
 ### What's new
