@@ -8,14 +8,9 @@ fields:
       localizable: true
       listable: hidden
       display: Title
-      validate:
-        - required
   -
     handle: text
     field: common.text_plain
-    config:
-      validate:
-        - required
   -
     handle: form
     field:
