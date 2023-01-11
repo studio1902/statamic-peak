@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.9 (2022-01-11)
+
+### What's changed
+- Rename figure set to image. f5e055d7 by @robdekort
+
 ## v8.8 (2022-01-05)
 
 ### What's new
