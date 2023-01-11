@@ -106,7 +106,7 @@ page_builder:
         attrs:
           id: 5qFxz8Jl
           values:
-            type: figure
+            type: image
             size: xl
             caption: 'Get on top of the Peak.'
             image: a-peak.jpg

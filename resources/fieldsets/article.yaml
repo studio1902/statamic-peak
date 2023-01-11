@@ -36,11 +36,11 @@ fields:
           fields:
             -
               import: buttons
-        figure:
-          display: Figure
+        image:
+          display: Image
           fields:
             -
-              import: figure
+              import: image
         pull_quote:
           display: 'Pull quote'
           fields:
