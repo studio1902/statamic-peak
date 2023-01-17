@@ -48,6 +48,3 @@ Route::statamic('/site.webmanifest', 'manifest/manifest', [
 //         'layout' => null,
 //     ]);
 // });
-
-// The Search route to display search results with `views/search.antlers.html`.
-// Route::statamic('/search', 'search');
