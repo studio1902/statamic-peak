@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.12 (2022-01-17)
+
+### What's improved
+- Remove commented search route. The preset installer will tell you what to do. 70f93440 by @robdekort
+
 ## v8.11 (2022-01-17)
 
 ### What's new
