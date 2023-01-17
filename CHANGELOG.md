@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.10 (2022-01-17)
+
+### What's new
+- Use `font-smoothing: antialiased` by default. 43a8f04e by @robdekort
+
+# Changelog
+
 ## v8.9 (2022-01-11)
 
 ### What's changed
