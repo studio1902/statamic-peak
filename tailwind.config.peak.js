@@ -47,11 +47,6 @@ module.exports = {
           // Safari resize fix.
           minHeight: '0vw',
         },
-        // Set default font smoothing.
-        'html': {
-          fontSmoothing: 'antialiased',
-          '-webkit-font-smoothing': 'antialiased',
-        },
         // Used to hide alpine elements before being rendered.
         '[x-cloak]': {
           display: 'none !important'
