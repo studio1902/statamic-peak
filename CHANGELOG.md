@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.11 (2022-01-17)
+
+### What's new
+- Move font smoothing to an html class. 05850958 by @robdekort
+
 ## v8.10 (2022-01-17)
 
 ### What's new
