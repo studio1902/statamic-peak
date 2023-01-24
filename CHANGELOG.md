@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.13 (2022-01-24)
+
+### What's improved
+- Remove darkMode reference and redundant JIT config line `tailwind.config.js`. 478d3e13 by @robdekort
+
 ## v8.12 (2022-01-17)
 
 ### What's improved
