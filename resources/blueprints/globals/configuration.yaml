@@ -53,7 +53,7 @@ sections:
           display: 'Copyright name'
           type: text
           icon: text
-          instructions: 'Falls back to the applicaton name.'
+          instructions: 'Falls back to the application name.'
           width: 50
           listable: hidden
           instructions_position: above
