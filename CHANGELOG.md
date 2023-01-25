@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.14 (2022-01-25)
+
+### What's fixed
+- Tpyo. #296 by @vannut
+
 ## v8.13 (2022-01-24)
 
 ### What's improved
