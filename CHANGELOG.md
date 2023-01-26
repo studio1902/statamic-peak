@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.15 (2022-01-26)
+
+### What's improved
+- Add extra safety check to fallback description if the first field called `text` in the page builder is a Bard. e40f7ced by @robdekort
+
 ## v8.14 (2022-01-25)
 
 ### What's fixed
