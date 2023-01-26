@@ -12,7 +12,11 @@
         {{ custom_text }}
     {{ elseif fallback == 'page_builder' }}
         {{ if page_builder:0:text }}
-            {{ page_builder:0:text | strip_tags | entities | trim | safe_truncate(157, '...') }}
+            {{ if page_builder:0:text | is_array }}
+                {{ page_builder:0:text | raw | where('type', 'paragraph') | bard_text | strip_tags | entities | trim | safe_truncate(157, '...') }}
+            {{ else }}
+                {{ page_builder:0:text | strip_tags | entities | trim | safe_truncate(157, '...') }}
+            {{ /if }}
         {{ else }}
             {{ page_builder where="type:article" limit="1" }}
                 {{ if article }}
