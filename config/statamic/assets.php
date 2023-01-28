@@ -67,7 +67,7 @@ return [
         */
 
         'presets' => [
-            // 'small' => ['w' => 200, 'h' => 200, 'q' => 75, 'fit' => 'crop'],
+            'replacement' => ['w' => 2500, 'h' => 9000, 'q' => 100, 'fit' => 'contain'],
         ],
 
     ],
