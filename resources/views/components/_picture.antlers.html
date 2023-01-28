@@ -4,6 +4,7 @@
     @param* image An image URL.
     @param* sizes The sizes attribute. Something like `(min-width: 768px) 55vw, 90vw` for example.
     @param aspect_ratio Pass in an aspect ratio to crop the image in a certain way. `16/9` for example or specify a second ratio for larger screens: `1/1 large:1/2`.
+    @param skip_ratio_steps Integer. Skip 1, 2 or 3 ratio steps to force small screens rendering big images to use mobile cropping instead of `large` cropping.
     @param class Add optional CSS classes.
     @param cover Boolean. Whether the image should cover the parent. Uses the focus position.
     @param bg String. Sets a background color for transparent images.
@@ -40,9 +41,9 @@
             [ 'width' => 480, 'ratio' => '{ ratio ?? original_ratio }' ],
             [ 'width' => 640, 'ratio' => '{ ratio ?? original_ratio }' ],
             [ 'width' => 768, 'ratio' => '{ ratio ?? original_ratio }' ],
-            [ 'width' => 1024, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
-            [ 'width' => 1280, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
-            [ 'width' => 1440, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
+            [ 'width' => 1024, 'ratio' => '{ ((skip_ratio_steps != 1 && skip_ratio_steps != 2 && skip_ratio_steps != 3) ?= ratio_large) ?? ratio ?? original_ratio }' ],
+            [ 'width' => 1280, 'ratio' => '{ ((skip_ratio_steps != 2 && skip_ratio_steps != 3) ?= ratio_large) ?? ratio ?? original_ratio }' ],
+            [ 'width' => 1440, 'ratio' => '{ ((skip_ratio_steps != 3) ?= ratio_large) ?? ratio ?? original_ratio }' ],
             [ 'width' => 1536, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ],
             [ 'width' => 1680, 'ratio' => '{ ratio_large ?? ratio ?? original_ratio }' ]
         ] }}
@@ -50,7 +51,12 @@
         <picture>
             {{ if extension == 'svg' || extension == 'gif' }}
                 <img
-                    class="{{ class }}"
+                    {{ if cover }}
+                        class="object-cover w-full h-full {{ class }}"
+                        style="object-position: {{ focus | background_position }}"
+                    {{ else }}
+                        class="{{ class }}"
+                    {{ /if }}
                     src="{{ url }}"
                     alt="{{ alt | ensure_right('.') | entities }}"
                     width="{{ width }}"
