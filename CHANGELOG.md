@@ -1,5 +1,17 @@
 # Changelog
 
+## v8.16 (2022-01-28)
+
+### What's new
+- Support for Statamic 3.4. 434bf9ef by @robdekort
+- Add and use a source preset for the images container. ac8c7d17 by @robdekort
+- Use smart typography on all Bards. b91f06d6 by @robdekort
+- Add option to use `cover="true"` in the picture partial when using SVG's. 6459e394 by @robdekort
+- Add option to use `skip_ratio_steps="1"` (1,2,3) in the picture partial to force big images on large mobile screens to keep using your mobile aspect ratio instead of using the large one. 6459e394 by @robdekort
+
+### What's improved
+- Updated dependencies. 803ada5e by @robdekort
+
 ## v8.15 (2022-01-26)
 
 ### What's improved
