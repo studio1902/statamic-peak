@@ -61,6 +61,8 @@ fields:
       antlers: false
       remove_empty_nodes: trim
       collapse: false
+      smart_typography: true
+      inline: false
   -
     handle: text_basic
     field:
@@ -95,6 +97,8 @@ fields:
       antlers: false
       remove_empty_nodes: trim
       collapse: false
+      smart_typography: true
+      inline: false
   -
     handle: text_plain
     field:
