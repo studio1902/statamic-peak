@@ -2,8 +2,8 @@
 id: 20f6a148-63b8-47a8-9b0e-d57095d78c21
 blueprint: page
 title: 'Long form content'
-updated_by: fd779fda-9c01-4b82-9fad-6f6cedfe03cb
-updated_at: 1670755082
+updated_by: f9af1bbb-3f1a-4ce3-8f7e-eb66cbb69a9a
+updated_at: 1674898078
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -57,10 +57,10 @@ page_builder:
             type: text
             text: 'Mauris diam justo, gravida vitae lacinia in, mattis quis nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce semper nunc in tincidunt viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ullamcorper nisl augue, vel venenatis enim faucibus sit amet. Maecenas cursus magna ut augue mollis finibus. Morbi sed nunc in enim pretium suscipit vitae quis leo. Sed scelerisque mi quis odio mollis lobortis. '
       -
-        type: bullet_list
+        type: bulletList
         content:
           -
-            type: list_item
+            type: listItem
             content:
               -
                 type: paragraph
@@ -69,7 +69,7 @@ page_builder:
                     type: text
                     text: 'Proin condimentum feugiat purus '
           -
-            type: list_item
+            type: listItem
             content:
               -
                 type: paragraph
@@ -78,7 +78,7 @@ page_builder:
                     type: text
                     text: 'Non vehicula massa finibus vitae'
           -
-            type: list_item
+            type: listItem
             content:
               -
                 type: paragraph
@@ -87,7 +87,7 @@ page_builder:
                     type: text
                     text: 'Vivamus pellentesque eleifend '
           -
-            type: list_item
+            type: listItem
             content:
               -
                 type: paragraph
@@ -140,12 +140,12 @@ page_builder:
             type: text
             text: 'Mauris malesuada, eros eu facilisis vehicula, turpis justo feugiat felis, lobortis sagittis nulla ante at mauris. Donec efficitur, arcu vel cursus ornare, urna ex sollicitudin est, ac pellentesque neque lectus vel tortor. '
       -
-        type: ordered_list
+        type: orderedList
         attrs:
           order: 1
         content:
           -
-            type: list_item
+            type: listItem
             content:
               -
                 type: paragraph
@@ -154,7 +154,7 @@ page_builder:
                     type: text
                     text: 'Item one'
           -
-            type: list_item
+            type: listItem
             content:
               -
                 type: paragraph
@@ -163,7 +163,7 @@ page_builder:
                     type: text
                     text: 'Item two'
           -
-            type: list_item
+            type: listItem
             content:
               -
                 type: paragraph
