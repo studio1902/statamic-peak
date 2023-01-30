@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.17 (2022-01-30)
+
+### What's improved
+- Show error notification in form on error. cdf5f198 by @robdekort
+
 ## v8.16 (2022-01-28)
 
 ### What's new
