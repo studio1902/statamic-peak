@@ -1,6 +1,7 @@
 <?php
 return [
     // Contact form
+    'form_error'                        => 'Er zijn problemen met je formulierinput. Probeer het opnieuw.',
     'form_honeypot'                     => 'Fax',
     'form_mail_body_owner'              => 'Er is een formulier verzonden.',
     'form_mail_body_sender'             => 'Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.',

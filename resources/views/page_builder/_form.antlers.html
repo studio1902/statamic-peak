@@ -73,6 +73,9 @@
                                 {{ /slot:attributes }}
                             {{ /partial:components/button }}
                         </div>
+                        <template x-if="error">
+                            {{ partial src="components/notification" type="error" class="md:col-span-12" content="{trans:strings.form_error}" }}
+                        </template>
                         <template x-if="success">
                             {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
                         </template>
