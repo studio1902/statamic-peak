@@ -1,11 +1,16 @@
 # Changelog
 
-## v8.17 (2022-01-30)
+## v8.17 (2023-02-01)
+
+### What's improved
+- Simplify default asset config. 5b4cedab by @robdekort
+
+## v8.17 (2023-01-30)
 
 ### What's improved
 - Show error notification in form on error. cdf5f198 by @robdekort
 
-## v8.16 (2022-01-28)
+## v8.16 (2023-01-28)
 
 ### What's new
 - Support for Statamic 3.4. 434bf9ef by @robdekort
@@ -17,44 +22,44 @@
 ### What's improved
 - Updated dependencies. 803ada5e by @robdekort
 
-## v8.15 (2022-01-26)
+## v8.15 (2023-01-26)
 
 ### What's improved
 - Add extra safety check to fallback description if the first field called `text` in the page builder is a Bard. e40f7ced by @robdekort
 
-## v8.14 (2022-01-25)
+## v8.14 (2023-01-25)
 
 ### What's fixed
 - Tpyo. #296 by @vannut
 
-## v8.13 (2022-01-24)
+## v8.13 (2023-01-24)
 
 ### What's improved
 - Remove darkMode reference and redundant JIT config line `tailwind.config.js`. 478d3e13 by @robdekort
 
-## v8.12 (2022-01-17)
+## v8.12 (2023-01-17)
 
 ### What's improved
 - Remove commented search route. The preset installer will tell you what to do. 70f93440 by @robdekort
 
-## v8.11 (2022-01-17)
+## v8.11 (2023-01-17)
 
 ### What's new
 - Move font smoothing to an html class. 05850958 by @robdekort
 
-## v8.10 (2022-01-17)
+## v8.10 (2023-01-17)
 
 ### What's new
 - Use `font-smoothing: antialiased` by default. 43a8f04e by @robdekort
 
 # Changelog
 
-## v8.9 (2022-01-11)
+## v8.9 (2023-01-11)
 
 ### What's changed
 - Rename figure set to image. f5e055d7 by @robdekort
 
-## v8.8 (2022-01-05)
+## v8.8 (2023-01-05)
 
 ### What's new
 - Danish translations. #292 by @rabol
