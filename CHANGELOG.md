@@ -1,6 +1,6 @@
 # Changelog
 
-## v8.17 (2023-02-01)
+## v8.18 (2023-02-01)
 
 ### What's improved
 - Simplify default asset config. 5b4cedab by @robdekort
