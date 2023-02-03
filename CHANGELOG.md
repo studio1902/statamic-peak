@@ -2,6 +2,11 @@
 
 ## v8.18 (2023-02-01)
 
+### What's fixed
+- Fix an issue with an undefined consent state in the cookie banner. 846df5e5 by @robdekort
+
+## v8.18 (2023-02-01)
+
 ### What's improved
 - Simplify default asset config. 5b4cedab by @robdekort
 
