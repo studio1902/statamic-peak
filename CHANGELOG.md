@@ -1,6 +1,6 @@
 # Changelog
 
-## v8.18 (2023-02-01)
+## v8.19 (2023-02-03)
 
 ### What's fixed
 - Fix an issue with an undefined consent state in the cookie banner. 846df5e5 by @robdekort
