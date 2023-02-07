@@ -20,7 +20,7 @@ sections:
     display: SEO
     fields:
       -
-        import: seo
+        import: statamic-peak-seo::seo
   sidebar:
     display: Sidebar
     fields:
