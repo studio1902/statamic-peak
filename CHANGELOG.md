@@ -1,5 +1,10 @@
 # Changelog
 
+## v9.0 (2023-02-07)
+
+### What's new
+- Move all SEO related stuff to an easily updatable addon. Thank you so much Marco! #298 by @marcorieser
+
 ## v8.19 (2023-02-03)
 
 ### What's fixed
