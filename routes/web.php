@@ -16,9 +16,3 @@ use Illuminate\Support\Facades\Route;
 
 // Dynamic Token route for posting a form with Ajax.
 Route::get('/!/DynamicToken/refresh', [DynamicToken::class, 'getRefresh']);
-
-// The Manifest route to the manifest.json
-Route::statamic('/site.webmanifest', 'manifest/manifest', [
-    'layout' => null,
-    'content_type' => 'application/json'
-]);
