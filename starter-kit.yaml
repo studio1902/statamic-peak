@@ -6,9 +6,7 @@ export_paths:
   - app/Console/Kernel.php
   - app/Http/Controllers/DynamicToken.php
   - app/Http/Middleware/VerifyCsrfToken.php
-  - app/Listeners/GenerateFavicons.php
   - app/Providers/AppServiceProvider.php
-  - app/Providers/EventServiceProvider.php
   - CHANGELOG.md
   - content
   - config/filesystems.php
@@ -50,5 +48,6 @@ export_paths:
   - tailwind.config.typography.js
   - vite.config.js
 dependencies:
+  studio1902/statamic-peak-browser-appearance: ^1.0
   studio1902/statamic-peak-commands: ^1.0
   studio1902/statamic-peak-seo: ^1.0
