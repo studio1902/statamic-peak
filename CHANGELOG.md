@@ -4,6 +4,7 @@
 
 ### What's new
 - Move Browser Appearance related features and a few other tools to two new easily updatable addons. #301 by @marcorieser
+- Use new brand color. 36e2cb1c by @robdekort
 
 ### What's improved
 - Use `fit` is `max` on default asset replacement configuration. daf3fa7a by @robdekort
