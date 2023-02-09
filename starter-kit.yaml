@@ -49,3 +49,4 @@ dependencies:
   studio1902/statamic-peak-browser-appearance: ^1.0
   studio1902/statamic-peak-commands: ^1.0
   studio1902/statamic-peak-seo: ^1.0
+  studio1902/statamic-peak-tools: ^1.0
