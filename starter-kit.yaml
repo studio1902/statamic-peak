@@ -4,7 +4,6 @@ export_paths:
   - .env.example
   - .gitignore
   - app/Console/Kernel.php
-  - app/Http/Controllers/DynamicToken.php
   - app/Http/Middleware/VerifyCsrfToken.php
   - app/Providers/AppServiceProvider.php
   - CHANGELOG.md
@@ -36,7 +35,6 @@ export_paths:
   - resources/svg
   - resources/users/roles.yaml
   - resources/views
-  - routes/web.php
   - CONTRIBUTING.md
   - LICENSE
   - package.json
