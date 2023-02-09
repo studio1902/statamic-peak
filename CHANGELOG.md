@@ -1,5 +1,12 @@
 # Changelog
 
+## v10.0 (unreleased)
+
+### What's improved
+- Use `fit` is `max` on default asset replacement configuration. daf3fa7a by @robdekort
+
+# Changelog
+
 ## v9.0 (2023-02-07)
 
 ### What's new
