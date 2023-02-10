@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.1 (2023-02-10)
+
+### What's new
+- Make default image size bigger. b7c4b129 by @robdekort
+
 ## v10.0 (2023-02-09)
 
 ### What's new
