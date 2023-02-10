@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.2 (2023-02-10)
+
+### What's improved
+- Czech translations. #302 by @kuldas
+
 ## v10.1 (2023-02-10)
 
 ### What's new
