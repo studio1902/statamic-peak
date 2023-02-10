@@ -1,6 +1,7 @@
 <?php
 return [
     // Contact form
+    'form_error'                        => 'Ve vašem formuláři jsou chyby. Opravte je a zkuste to znovu.',
     'form_honeypot'                     => 'Fax',
     'form_mail_body_owner'              => 'Kontaktní formulář byl odeslán.',
     'form_mail_body_sender'             => 'Děkujeme za vaši zprávu. Budeme vás kontaktovat co nejdříve.',
@@ -23,6 +24,9 @@ return [
     'cookie_analytics'                  => 'Analytické',
     'cookie_analytics_explanation'      => 'Third party cookies, not needed if we cared.',
     'cookie_explanation'                => 'Tento web používá cookies, které vyžadují souhlas.',
+    'cookie_embeds'                     => 'Video embeds',
+    'cookie_emdeds_explanation'         => 'Cookie soubory třetích stran používané pro vložená videa, která vás mohou sledovat.',
+    'cookie_embeds_disabled'            => 'Chcete-li zobrazit toto video, přijměte soubory cookie pro vložení videa.',
     'cookie_functional'                 => 'Funkční',
     'cookie_functional_explanation'     => 'Cookies potřebné pro fungování webu. Tyto nelze vypnout.',
     'cookie_ignore'                     => 'Ignorovat',
