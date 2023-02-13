@@ -5,16 +5,8 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class StarterKitPostInstall
 {
-    // public $registerCommands = [
-    //     Studio1902\Peak\Commands\ClearSite::class,
-    //     Studio1902\Peak\Commands\InstallBlock::class,
-    //     Studio1902\Peak\Commands\InstallPreset::class
-    // ];
-
     public function handle($console)
     {
-        // $console->call('statamic:peak:clear-site');
-
         if ($console->confirm('Do you want overwrite your `.env` file with the Peak presets?', true)) {
             $appName = $console->ask('What should be your app name?');
             $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
@@ -63,13 +55,15 @@ class StarterKitPostInstall
             }
         }
 
-        // if ($console->confirm('Do you want to install presets?', false)) {
-        //     $console->call('statamic:peak:install-preset');
-        // }
-
-        // if ($console->confirm('Do you want to install premade blocks into your page builder?', false)) {
-        //     $console->call('statamic:peak:install-block');
-        // }
+        if ($console->confirm('Do you want to composer require spatie/browsershot for generating social images?', true)) {
+            $process = new Process(['composer', 'require', 'spatie/browsershot']);
+            try {
+                $process->mustRun();
+                $console->info('Browsershot installed.');
+            } catch (ProcessFailedException $exception) {
+                $console->info($exception->getMessage());
+            }
+        }
 
         if ($console->confirm('Do you want to install npm dependencies?', true)) {
             $process = new Process(['npm', 'i']);
