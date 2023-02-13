@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.3 (2023-02-13)
+
+### What's new
+- Add option to composer require spatie/browsershot in post install hook. b0b97f45 by @robdekort
+
 ## v10.2 (2023-02-10)
 
 ### What's improved

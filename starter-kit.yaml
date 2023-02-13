@@ -8,6 +8,7 @@ export_paths:
   - app/Providers/AppServiceProvider.php
   - CHANGELOG.md
   - content
+  - CONTRIBUTING.md
   - config/filesystems.php
   - config/statamic/assets.php
   - config/statamic/antlers.php
@@ -35,7 +36,6 @@ export_paths:
   - resources/svg
   - resources/users/roles.yaml
   - resources/views
-  - CONTRIBUTING.md
   - LICENSE
   - package.json
   - package-lock.json
