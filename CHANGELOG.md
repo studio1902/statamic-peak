@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.4 (2023-02-14)
+
+### What's improved
+- Simplify cookie banner protected video logic. 1416d7fd by @robdekort
+
 ## v10.3 (2023-02-13)
 
 ### What's new
