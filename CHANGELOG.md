@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.5 (2023-02-15)
+
+### What's improved
+- Use short locale in typography time partial. 1b1b4024 by @robdekort
+
 ## v10.4 (2023-02-14)
 
 ### What's improved
