@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.6 (2023-02-22)
+
+### What's improved
+- Also run `npm i puppeteer` when opting into social images in the post install hook. 10233eff by @robdekort
+
 ## v10.5 (2023-02-15)
 
 ### What's improved
