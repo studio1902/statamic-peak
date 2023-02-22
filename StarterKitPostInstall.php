@@ -55,21 +55,29 @@ class StarterKitPostInstall
             }
         }
 
-        if ($console->confirm('Do you want to composer require spatie/browsershot for generating social images?', true)) {
-            $process = new Process(['composer', 'require', 'spatie/browsershot']);
-            try {
-                $process->mustRun();
-                $console->info('Browsershot installed.');
-            } catch (ProcessFailedException $exception) {
-                $console->info($exception->getMessage());
-            }
-        }
-
         if ($console->confirm('Do you want to install npm dependencies?', true)) {
             $process = new Process(['npm', 'i']);
             try {
                 $process->mustRun();
                 $console->info('Dependencies installed.');
+            } catch (ProcessFailedException $exception) {
+                $console->info($exception->getMessage());
+            }
+        }
+
+        if ($console->confirm('Do you want to `npm i puppeteer` and `composer require spatie/browsershot` for generating social images?', true)) {
+            $process = new Process(['npm', 'i', 'puppeteer']);
+            try {
+                $process->mustRun();
+                $console->info('Puppeteer installed.');
+            } catch (ProcessFailedException $exception) {
+                $console->info($exception->getMessage());
+            }
+
+            $process = new Process(['composer', 'require', 'spatie/browsershot']);
+            try {
+                $process->mustRun();
+                $console->info('Browsershot installed.');
             } catch (ProcessFailedException $exception) {
                 $console->info($exception->getMessage());
             }
