@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.7 (2023-03-01)
+
+### What's improved
+- Adjust table component HTML structure to be formatable by Antlers formatter. #303 by @marcorieser
+
 ## v10.6 (2023-02-22)
 
 ### What's improved
