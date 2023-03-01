@@ -26,14 +26,11 @@
                         {{ /cells }}
                     </tr>
                 </thead>
-                <tbody>
             {{ /if }}
+            
+            {{ first ?= '<tbody>' }}
 
             {{ if !first && first_row_headers || !first_row_headers }}
-                {{ if first }}
-                    <tbody>
-                {{ /if }}
-
                 <tr>
                     {{ cells }}
                         {{ if first && first_column_headers }}
@@ -43,11 +40,9 @@
                         {{ /if }}
                     {{ /cells }}
                 </tr>
-
-                {{ if last }}
-                    </tbody>
-                {{ /if }}
             {{ /if }}
+            
+            {{ last ?= '</tbody>' }}
         {{ /table }}
     </table>
 
