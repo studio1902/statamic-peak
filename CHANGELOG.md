@@ -1,5 +1,10 @@
 # Changelog
 
+## v10.8 (2023-03-03)
+
+### What's improved
+- Vite refreshes the browser when new Antlers files get created. #304 by @marcorieser
+
 ## v10.7 (2023-03-01)
 
 ### What's improved
