@@ -1,5 +1,10 @@
 # Changelog
 
+## v11.1 (2023-03-09)
+
+### What's improved
+- Move the Statamic conditonal field form helpers to the Statamic Peak Tools addon. b6e8e080 by @robdekort
+
 ## v11.0 (2023-03-09)
 
 ### What's improved
