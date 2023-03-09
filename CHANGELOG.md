@@ -1,5 +1,10 @@
 # Changelog
 
+## v11.0 (2023-03-09)
+
+### What's improved
+- Move the form handler to the Statamic Peak Tools addon. #306 by @robdekort
+
 ## v10.8 (2023-03-03)
 
 ### What's improved
