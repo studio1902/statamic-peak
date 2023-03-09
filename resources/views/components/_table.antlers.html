@@ -27,7 +27,7 @@
                     </tr>
                 </thead>
             {{ /if }}
-            
+
             {{ first ?= '<tbody>' }}
 
             {{ if !first && first_row_headers || !first_row_headers }}
@@ -41,7 +41,7 @@
                     {{ /cells }}
                 </tr>
             {{ /if }}
-            
+
             {{ last ?= '</tbody>' }}
         {{ /table }}
     </table>
