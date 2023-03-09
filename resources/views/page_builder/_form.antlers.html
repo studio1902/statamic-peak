@@ -13,7 +13,7 @@
 
         {{ if form:handle }}
             {{# Create the selected form and reference Alpine data in `sending()`. Prevent form from submitting with POST as we will submit with AJAX. #}}
-            <div x-data="sending" x-cloak>
+            <div x-data="formHandler()" x-cloak>
                 {{ form:create :in="form:handle"
                     id="form-{form:handle}"
                     csrf="false"
@@ -83,56 +83,8 @@
                 {{ /form:create }}
             </div>
 
-            {{# The form script handling validation and submission via AJAX with `fetch()`. #}}
-            <script>
-                document.addEventListener('alpine:initializing', () => {
-                    Alpine.data('sending', () => {
-                        return {
-                            error: false,
-                            errors: [],
-                            sending: false,
-                            success: false,
-                            sendForm: async function() {
-                                this.sending = true
-
-                                // Post the form.
-                                fetch(this.$refs.form.action, {
-                                    headers: {
-                                        'X-Requested-With' : 'XMLHttpRequest',
-                                        'X-CSRF-Token' : await getToken()
-                                    },
-                                    method: 'POST',
-                                    body: new FormData(this.$refs.form)})
-                                .then(res => res.json())
-                                .then(json => {
-                                    if (json['success']) {
-                                        this.errors = []
-                                        this.success = true
-                                        this.error = false
-                                        this.sending = false
-                                        this.$refs.form.reset()
-
-                                        setTimeout(function(){
-                                            this.success = false
-                                        }, 4500)
-                                    }
-                                    if (json['error']) {
-                                        this.sending = false
-                                        this.error = true
-                                        this.success = false
-                                        this.errors = json['error']
-                                    }
-                                })
-                                .catch(err => {
-                                    err.text().then( errorMessage => {
-                                        this.sending = false
-                                    })
-                                })
-                            }
-                        }
-                    })
-                })
-            </script>
+            {{# Call in the Peak Tools Alpine based Form Handler. #}}
+            {{ partial src="statamic-peak-tools::snippets/form_handler" }}
         {{ /if }}
     </div>
 </section>
