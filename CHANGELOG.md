@@ -1,5 +1,10 @@
 # Changelog
 
+## v11.2 (2023-03-13)
+
+### What's fixed
+- Remove some old JS logic from the video partial that doesn't belong anymore. ad935bbf by @robdekort
+
 ## v11.1 (2023-03-09)
 
 ### What's improved
