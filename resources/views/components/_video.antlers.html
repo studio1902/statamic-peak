@@ -12,9 +12,7 @@
 }}
 <div
     {{ if cookie_embeds }}
-        x-data="embeds"
-        x-init="validateConsent()"
-        @embeds.window="validateConsent()"
+        x-data
     {{ /if }}
     class="
         not-prose
