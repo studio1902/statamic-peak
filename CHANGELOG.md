@@ -1,5 +1,10 @@
 # Changelog
 
+## v11.3 (2023-03-14)
+
+### What's new
+- Added an option to enable/disable `SAVE_CACHED_IMAGES` during the installer. d881a20d by @robdekort
+
 ## v11.2 (2023-03-13)
 
 ### What's fixed
