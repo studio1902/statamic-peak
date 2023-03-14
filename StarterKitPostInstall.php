@@ -29,6 +29,11 @@ class StarterKitPostInstall
                 $readme = str_replace('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick', $readme);
             }
 
+            if ($console->confirm('Do you want to enable `SAVE_CACHED_IMAGES` (slower initial page load)?', false)) {
+                $env = str_replace('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true', $env);
+                $readme = str_replace('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true', $readme);
+            }
+
             app('files')->put(base_path('.env'), $env);
             app('files')->put(base_path('README.md'), $readme);
         }
