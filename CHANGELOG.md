@@ -1,5 +1,10 @@
 # Changelog
 
+## v11.4 (2023-03-16)
+
+### What's changed
+- Remove quality setting from default asset preset. 5288bac7 by @robdekort
+
 ## v11.3 (2023-03-14)
 
 ### What's new
