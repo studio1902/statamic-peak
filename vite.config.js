@@ -1,6 +1,7 @@
 import laravel from 'laravel-vite-plugin'
 import { defineConfig, loadEnv } from 'vite'
 
+/** @type {import('vite').UserConfig} */
 export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), '')
     return {
