@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "vite",
     "watch": "vite",
+    "sync": "VITE_BROWSERSYNC=true vite",
     "build": "vite build",
     "production": "vite build"
   },
