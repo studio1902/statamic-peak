@@ -8,6 +8,7 @@ export default defineConfig(({ command, mode }) => {
         plugins: [
             laravel({
                 refresh: true,
+                valetTls: env.APP_URL.startsWith('https://') ? env.APP_URL.replace(/^https?:\/\//, '') : false,
                 input: [
                     'resources/css/site.css',
                     'resources/js/site.js',
