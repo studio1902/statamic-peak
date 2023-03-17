@@ -1,6 +1,7 @@
 import laravel from 'laravel-vite-plugin'
 import { defineConfig, loadEnv } from 'vite'
 import { networkInterfaces } from 'os';
+import VitePluginBrowserSync from 'vite-plugin-browser-sync';
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig(({ command, mode }) => {
@@ -16,7 +17,17 @@ export default defineConfig(({ command, mode }) => {
                     'resources/css/site.css',
                     'resources/js/site.js',
                 ]
-            })
+            }),
+            (() => {
+                if (env.VITE_BROWSERSYNC) {
+                    return VitePluginBrowserSync({
+                        bs: {
+                            proxy: env.APP_URL,
+                            notify: false,
+                        },
+                    });
+                }
+            })(),
         ],
         server: {
             host: env.VITE_BROWSERSYNC ? ip ?? false : false,
