@@ -30,7 +30,7 @@ export default defineConfig(({ command, mode }) => {
             })(),
         ],
         server: {
-            host: env.VITE_BROWSERSYNC ? ip ?? false : false,
+            host: env.VITE_BROWSERSYNC && ip ? ip : false,
             open: env.APP_URL
         }
     }
