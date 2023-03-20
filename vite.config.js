@@ -7,6 +7,7 @@ import VitePluginBrowserSync from 'vite-plugin-browser-sync'
 export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), '')
     const ip = Object.values(networkInterfaces()).flat().find((i) => i.family == 'IPv4' && !i.internal)?.address
+    const useBrowsersync =env.VITE_BROWSERSYNC && ip
 
     return {
         plugins: [
@@ -19,7 +20,7 @@ export default defineConfig(({ command, mode }) => {
                 ]
             }),
             (() => {
-                if (env.VITE_BROWSERSYNC) {
+                if (useBrowsersync) {
                     return VitePluginBrowserSync({
                         bs: {
                             proxy: env.APP_URL,
@@ -30,7 +31,7 @@ export default defineConfig(({ command, mode }) => {
             })(),
         ],
         server: {
-            host: env.VITE_BROWSERSYNC && ip ? ip : false,
+            host: useBrowsersync ? ip : false,
             open: env.APP_URL
         }
     }
