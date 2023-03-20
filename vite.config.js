@@ -7,7 +7,7 @@ import VitePluginBrowserSync from 'vite-plugin-browser-sync'
 export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), '')
     const ip = Object.values(networkInterfaces()).flat().find((i) => i.family == 'IPv4' && !i.internal)?.address
-    const useBrowsersync =env.VITE_BROWSERSYNC && ip
+    const useBrowsersync = env.VITE_BROWSERSYNC && ip
 
     return {
         plugins: [
