@@ -25,6 +25,7 @@ export default defineConfig(({ command, mode }) => {
                         bs: {
                             proxy: env.APP_URL,
                             notify: false,
+                            open: 'external',
                         },
                     })
                 }
