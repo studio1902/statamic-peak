@@ -1,5 +1,10 @@
 # Changelog
 
+## v11.6 (2023-03-23)
+
+### What's improved
+- Remove unnecessary comments in form field partials. #310 by @marcorieser
+
 ## v11.5 (2023-03-18)
 
 ### What's improved
