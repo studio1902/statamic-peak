@@ -102,7 +102,7 @@ if [[ {COMMIT_MESSAGE} =~ "[BOT]" ]]; then
 fi
 
 cd {SITE_DIRECTORY}
-git pull origin main
+git pull origin {BRANCH}
 composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 npm ci
@@ -130,7 +130,7 @@ if [[ $FORGE_DEPLOY_MESSAGE =~ "[BOT]" ]]; then
 fi
 
 cd $FORGE_SITE_PATH
-git pull origin main
+git pull origin $FORGE_SITE_BRANCH
 $FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 npm ci

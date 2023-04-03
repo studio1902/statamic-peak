@@ -1,5 +1,15 @@
 # Changelog
 
+## v11.6 (2023-03-23)
+
+### What's improved
+- Remove unnecessary comments in form field partials. #310 by @marcorieser
+
+## v11.5 (2023-03-18)
+
+### What's improved
+- Use partial tag method. d42f23b5 by @robdekort
+
 ## v11.4 (2023-03-16)
 
 ### What's changed
