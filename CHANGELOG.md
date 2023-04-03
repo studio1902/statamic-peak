@@ -1,5 +1,13 @@
 # Changelog
 
+## v11.7 (2023-04-03)
+
+### What's new
+- Add support for secured sites and Browsersync to Vite. #307 by @marcorieser
+
+### What's improved
+- Use arrow function to preserve context for `this`. #313 by @marcorieser
+
 ## v11.6 (2023-03-23)
 
 ### What's improved
