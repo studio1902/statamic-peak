@@ -11,7 +11,7 @@ window.getToken = async () => {
         .then((data) => {
             return data.csrf_token
         })
-        .catch(function (error) {
+        .catch((error) => {
             this.error = 'Something went wrong. Please try again later.'
         })
 }
