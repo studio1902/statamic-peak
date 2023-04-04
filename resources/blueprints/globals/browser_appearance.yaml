@@ -1,11 +1,37 @@
-sections:
+tabs:
   general:
     display: General
-    fields:
+    sections:
       -
-        import: statamic-peak-browser-appearance::globals_browser_appearance_general
+        display: Universal
+        instructions: 'Configure universal meta tags.'
+        fields:
+          -
+            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_universal'
+      -
+        display: Theme
+        instructions: 'Configure universal theme meta tags.'
+        fields:
+          -
+            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_theme'
+      -
+        display: Apple
+        instructions: 'Configure Apple specific meta tags.'
+        fields:
+          -
+            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_apple'
+      -
+        display: Android
+        instructions: 'Configure Apple specific meta tags.'
+        fields:
+          -
+            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_android'
   favicons:
     display: Favicons
-    fields:
+    sections:
       -
-        import: statamic-peak-browser-appearance::globals_browser_appearance_favicons
+        display: Favicons
+        instructions: 'Configure favicons so they can be automatically generated.'
+        fields:
+          -
+            import: 'statamic-peak-browser-appearance::globals_browser_appearance_favicons'

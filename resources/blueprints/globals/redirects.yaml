@@ -1,6 +1,10 @@
-sections:
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        import: statamic-peak-seo::globals_redirects_redirects
+        display: Redirects
+        instructions: "Redirect URL's only when a 404 error hits."
+        fields:
+          -
+            import: 'statamic-peak-seo::globals_redirects_redirects'
