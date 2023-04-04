@@ -31,31 +31,56 @@ fields:
       validate:
         - required
       sets:
-        buttons:
-          display: Buttons
-          fields:
-            -
-              import: buttons
-        image:
-          display: Image
-          fields:
-            -
-              import: image
-        pull_quote:
-          display: 'Pull quote'
-          fields:
-            -
-              import: pull_quote
-        table:
-          display: Table
-          fields:
-            -
-              import: table
-        video:
-          display: Video
-          fields:
-            -
-              import: video
+        interactive:
+          display: Interactive
+          instructions: 'Interactive sets.'
+          icon: programming-script-code
+          sets:
+            buttons:
+              display: Buttons
+              instructions: 'Add one or multiple buttons.'
+              icon: interface-link-1
+              fields:
+                -
+                  import: buttons
+        text:
+          display: Text
+          instructions: 'Text based sets.'
+          icon: interface-text-formatting-type-cursor
+          sets:
+            pull_quote:
+              display: 'Pull quote'
+              instructions: 'Add a pull quote with an optional author.'
+              icon: interface-text-formatting-quotation
+              fields:
+                -
+                  import: pull_quote
+            table:
+              display: Table
+              instructions: 'Add a data table with headers, rows and columns.'
+              icon: interface-edit-grid-dots
+              fields:
+                -
+                  import: table
+        image_video:
+          display: 'Image & video'
+          instructions: "Sets with images or embeddable video's."
+          icon: image-camera-circle
+          sets:
+            image:
+              display: Image
+              instructions: 'Add a single image with an optional caption.'
+              icon: image-picture-orientation-square
+              fields:
+                -
+                  import: image
+            video:
+              display: Video
+              instructions: 'Add a YouTube or Vimeo video with an optional caption.'
+              icon: computer-webcam-video-square
+              fields:
+                -
+                  import: video
       container: files
       enable_input_rules: true
       enable_paste_rules: true
@@ -68,3 +93,4 @@ fields:
       collapse: false
       smart_typography: true
       inline: false
+      hide_display: false
