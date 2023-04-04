@@ -73,7 +73,6 @@ tabs:
               display: Slug
               validate:
                 - required
-                - 'unique_entry_value:{collection},{id},{site}'
           -
             handle: parent
             field:
