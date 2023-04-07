@@ -39,45 +39,45 @@ fields:
             buttons:
               display: Buttons
               instructions: 'Add one or multiple buttons.'
-              icon: interface-link-1
+              icon: link
               fields:
                 -
                   import: buttons
         text:
           display: Text
           instructions: 'Text based sets.'
-          icon: interface-text-formatting-type-cursor
+          icon: text-formatting-initial-letter
           sets:
             pull_quote:
               display: 'Pull quote'
               instructions: 'Add a pull quote with an optional author.'
-              icon: interface-text-formatting-quotation
+              icon: text-formatting-quotation
               fields:
                 -
                   import: pull_quote
             table:
               display: Table
               instructions: 'Add a data table with headers, rows and columns.'
-              icon: interface-edit-grid-dots
+              icon: layout-grid-dots
               fields:
                 -
                   import: table
         image_video:
           display: 'Image & video'
           instructions: "Sets with images or embeddable video's."
-          icon: image-camera-circle
+          icon: media-image-camera
           sets:
             image:
               display: Image
               instructions: 'Add a single image with an optional caption.'
-              icon: image-picture-orientation-square
+              icon: media-image-picture-orientation
               fields:
                 -
                   import: image
             video:
               display: Video
               instructions: 'Add a YouTube or Vimeo video with an optional caption.'
-              icon: computer-webcam-video-square
+              icon: media-webcam-video
               fields:
                 -
                   import: video

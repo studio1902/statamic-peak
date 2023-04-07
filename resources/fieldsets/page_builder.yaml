@@ -18,26 +18,26 @@ fields:
             form:
               display: Form
               instructions: 'Select and render a form.'
-              icon: mail-chat-bubble-text-square
+              icon: mail-chat-bubble-text
               fields:
                 -
                   import: form
             link_blocks:
               display: 'Link blocks'
               instructions: 'Show linkable blocks with text.'
-              icon: interface-link-1
+              icon: link
               fields:
                 -
                   import: link_blocks
         text:
           display: Text
           instructions: 'Text based blocks.'
-          icon: interface-text-formatting-type-cursor
+          icon: text-formatting-initial-letter
           sets:
             article:
               display: Article
               instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
-              icon: interface-text-formatting-image-bottom
+              icon: text-formatting-image-bottom
               fields:
                 -
                   import: article
