@@ -28,8 +28,6 @@ class AppServiceProvider extends ServiceProvider
         // Statamic::script('app', 'cp');
         // Statamic::style('app', 'cp');
 
-        Section::makeSelectableInForms();
-
         ErrorPage::handle404AsEntry();
     }
 }

@@ -1,40 +1,41 @@
-sections:
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        handle: name
-        field:
-          display: Name
-          type: text
-          validate: required
-          localizable: true
-          width: 50
-      -
-        handle: email
-        field:
-          display: 'Email address'
-          type: text
-          validate: required|email
-          localizable: true
-          width: 50
-      -
-        handle: message_body
-        field:
-          display: Message
-          type: textarea
-          validate: required
-          localizable: true
-      -
-        handle: consent
-        field:
-          inline_label: 'I agree that my submitted data is being collected and stored.'
-          default: false
-          display: Consent
-          type: toggle
-          icon: toggle
-          listable: hidden
-          instructions_position: above
-          read_only: false
-          validate:
-            - accepted
+        fields:
+          -
+            handle: name
+            field:
+              display: Name
+              type: text
+              validate: required
+              localizable: true
+              width: 50
+          -
+            handle: email
+            field:
+              display: 'Email address'
+              type: text
+              validate: required|email
+              localizable: true
+              width: 50
+          -
+            handle: message_body
+            field:
+              display: Message
+              type: textarea
+              validate: required
+              localizable: true
+          -
+            handle: consent
+            field:
+              inline_label: 'I agree that my submitted data is being collected and stored.'
+              default: false
+              display: Consent
+              type: toggle
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              validate:
+                - accepted
