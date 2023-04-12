@@ -73,6 +73,13 @@
                     {{ /sections }}
 
                     <div class="w-full grid md:grid-cols-12 gap-6">
+                        <template x-if="error">
+                            {{ partial src="components/notification" type="error" class="md:col-span-12" content="{trans:strings.form_error}" }}
+                        </template>
+                        <template x-if="success">
+                            {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
+                        </template>
+
                         {{# Pulse button and disable upon sending. #}}
                         <div class="md:col-span-12 flex justify-end">
                             {{ partial:components/button as="button" label="{ trans:strings.form_send }" }}
@@ -81,12 +88,6 @@
                                 {{ /slot:attributes }}
                             {{ /partial:components/button }}
                         </div>
-                        <template x-if="error">
-                            {{ partial src="components/notification" type="error" class="md:col-span-12" content="{trans:strings.form_error}" }}
-                        </template>
-                        <template x-if="success">
-                            {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
-                        </template>
                     </div>
                 {{ /form:create }}
             </div>
