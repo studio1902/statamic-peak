@@ -35,3 +35,9 @@ tabs:
         fields:
           -
             import: 'statamic-peak-browser-appearance::globals_browser_appearance_favicons'
+      -
+        display: Overrides
+        instructions: 'Override specific generated assets with your own.'
+        fields:
+          -
+            import: 'statamic-peak-browser-appearance::globals_browser_appearance_favicons_overrides'
