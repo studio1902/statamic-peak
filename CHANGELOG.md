@@ -4,6 +4,7 @@
 
 ### What's new
 - Statamic v4 support including grouped page builder and article pickers, form section support and refactoring blueprints into floating sections. #314 by @robdekort
+- Add support for morphing live preview edits instead of refreshing the browser. #314 by @jacksleight and @robdekort
 
 ## v11.7 (2023-04-03)
 
