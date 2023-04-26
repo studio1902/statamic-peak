@@ -13,7 +13,7 @@
     x-cloak
 >
     <button
-        @click.prevent="mobileNavOpen = !mobileNavOpen"
+        @click.prevent.stop="mobileNavOpen = !mobileNavOpen"
         class="fixed bottom-0 right-0 z-20 flex items-center justify-center w-16 h-16 mr-8 text-xs font-bold text-white mb-safe rounded bg-primary focus:outline-none focus-visible:ring-2 ring-primary ring-offset-2"
         :aria-label="
         mobileNavOpen
