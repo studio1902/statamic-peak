@@ -16,53 +16,69 @@
                 {{ form:create :in="form:handle"
                     id="form-{form:handle}"
                     csrf="false"
-                    class="flex flex-wrap"
+                    class="flex flex-col gap-8"
                     x-ref="form"
                     @submit.prevent="sendForm()"
                     js="alpine:dynamic_form"
                 }}
-                    <div class="w-full grid md:grid-cols-12 gap-6">
-                        {{# Honeypot spam protection. #}}
-                        <div class="hidden">
-                            <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-yellow-400">*</sup></label>
-                            <input class="form-input w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
-                        </div>
+                    {{# Honeypot spam protection. #}}
+                    <div class="hidden">
+                        <label class="font-bold" for="{{ honeypot }}">{{ trans:strings.form_honeypot }} <sup class="text-yellow-400">*</sup></label>
+                        <input class="form-input w-full" id="{{ honeypot }}" type="text" name="{{ honeypot }}" tabindex="-1" autocomplete="off"/>
+                    </div>
 
-                        {{# Render the default-styled fields. #}}
-                        {{ fields }}
-                            <template x-if="{{ show_field }}">
-                                <div class="{{ input_type == 'hidden' ?= 'hidden' }} flex flex-col space-y-3
-                                    {{ width == '25' ?= 'md:col-span-3' }}
-                                    {{ width == '33' ?= 'md:col-span-4' }}
-                                    {{ width == '50' ?= 'md:col-span-6' }}
-                                    {{ width == '66' ?= 'md:col-span-8' }}
-                                    {{ width == '75' ?= 'md:col-span-9' }}
-                                    {{ width == '100' ?= 'md:col-span-12' }}"
-                                >
-                                    {{ unless type === 'section' }}
+                    {{ sections }}
+                        <fieldset class="w-full grid md:grid-cols-12 gap-6">
+                            {{ if display || instructions }}
+                                <span class="md:col-span-12">
+                                    {{ display ?= { partial:typography/h2 class="mb-2" as="legend" content="{ trans :key="display" }" } }}
+                                    {{ instructions ?= { partial:typography/p content="{ trans :key="instructions" }" } }}
+                                </span>
+                            {{ /if }}
+
+                            {{# Render the default-styled fields. #}}
+                            {{ fields }}
+                                <template x-if="{{ show_field }}">
+                                    <div class="{{ input_type == 'hidden' ?= 'hidden' }} flex flex-col space-y-3
+                                        {{ width == '25' ?= 'md:col-span-3' }}
+                                        {{ width == '33' ?= 'md:col-span-4' }}
+                                        {{ width == '50' ?= 'md:col-span-6' }}
+                                        {{ width == '66' ?= 'md:col-span-8' }}
+                                        {{ width == '75' ?= 'md:col-span-9' }}
+                                        {{ width == '100' ?= 'md:col-span-12' }}"
+                                    >
                                         <label class="font-bold" for="{{ handle }}">
                                             {{ trans :key="display" }}
                                             {{ if validate | contains('required') }}
                                                 <sup class="text-yellow-400">*</sup>
                                             {{ /if }}
                                             {{ if instructions }}
-                                                <p class="font-normal text-sm my-1">{{ trans :key="instructions" }}</p>
+                                                {{ partial:typography/p class="text-sm my-1" content="{ trans :key="instructions" }" }}
                                             {{ /if }}
                                         </label>
-                                    {{ /unless }}
 
-                                    <div class="flex flex-col space-y-2">
-                                        {{ field }}
+                                        <div class="flex flex-col space-y-2">
+                                            {{ field }}
 
-                                        {{# Display error label when there is a validation error with the name field. #}}
-                                        <template x-if="errors.{{ handle }}">
-                                            <span class="text-red-800 text-sm font-bold" id="{{ handle }}" x-text="errors.{{ handle}}"></span>
-                                        </template>
+                                            {{# Display error label when there is a validation error with the name field. #}}
+                                            <template x-if="errors.{{ handle }}">
+                                                <span class="text-red-800 text-sm font-bold" id="{{ handle }}" x-text="errors.{{ handle}}"></span>
+                                            </template>
+                                        </div>
+
                                     </div>
+                                </template>
+                            {{ /fields }}
+                        </fieldset>
+                    {{ /sections }}
 
-                                </div>
-                            </template>
-                        {{ /fields }}
+                    <div class="w-full grid md:grid-cols-12 gap-6">
+                        <template x-if="error">
+                            {{ partial src="components/notification" type="error" class="md:col-span-12" content="{trans:strings.form_error}" }}
+                        </template>
+                        <template x-if="success">
+                            {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
+                        </template>
 
                         {{# Pulse button and disable upon sending. #}}
                         <div class="md:col-span-12 flex justify-end">
@@ -72,12 +88,6 @@
                                 {{ /slot:attributes }}
                             {{ /partial:components/button }}
                         </div>
-                        <template x-if="error">
-                            {{ partial src="components/notification" type="error" class="md:col-span-12" content="{trans:strings.form_error}" }}
-                        </template>
-                        <template x-if="success">
-                            {{ partial src="components/notification" type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
-                        </template>
                     </div>
                 {{ /form:create }}
             </div>

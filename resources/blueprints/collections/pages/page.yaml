@@ -1,53 +1,84 @@
 title: Page
-sections:
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        handle: title
-        field:
-          type: text
-          required: true
-          input_type: text
-          localizable: true
-          listable: true
-          display: Title
-          validate:
-            - required
+        display: General
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              input_type: text
+              localizable: true
+              listable: true
+              display: Title
+              validate:
+                - required
       -
-        import: page_builder
+        display: 'Page builder'
+        instructions: 'Build your page by using various predefined content models.'
+        fields:
+          -
+            import: page_builder
   seo:
     display: SEO
-    fields:
+    sections:
       -
-        import: statamic-peak-seo::seo
+        display: Basic
+        instructions: 'Basic SEO settings.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_basic'
+      -
+        display: Advanced
+        instructions: 'Advanced SEO settings.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_advanced'
+      -
+        display: 'Open Graph'
+        instructions: 'Open Graph meta tags for social sharing.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_open_graph'
+      -
+        display: Sitemap
+        instructions: 'Sitemap configuration.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_sitemap'
+      -
+        display: 'JSON-ld Schema'
+        instructions: 'Custom JSON-ld schema objects.'
+        fields:
+          -
+            import: 'statamic-peak-seo::seo_jsonld'
   sidebar:
     display: Sidebar
-    fields:
+    sections:
       -
-        handle: meta
-        field:
-          type: section
-          instructions: 'This entry''s meta data.'
-          display: Meta
-      -
-        handle: slug
-        field:
-          type: slug
-          required: true
-          localizable: true
-          generate: true
-          listable: hidden
-          display: Slug
-          validate:
-            - required
-            - 'unique_entry_value:{collection},{id},{site}'
-      -
-        handle: parent
-        field:
-          type: entries
-          collections:
-            - pages
-          max_items: 1
-          listable: false
-          localizable: true
+        display: Meta
+        instructions: "This entry's meta data."
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              generate: true
+              listable: hidden
+              display: Slug
+              validate:
+                - required
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

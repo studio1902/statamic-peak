@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Statamic\Fieldtypes\Section;
 use Studio1902\PeakSeo\Handlers\ErrorPage;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,8 +26,6 @@ class AppServiceProvider extends ServiceProvider
     {
         // Statamic::script('app', 'cp');
         // Statamic::style('app', 'cp');
-
-        Section::makeSelectableInForms();
 
         ErrorPage::handle404AsEntry();
     }

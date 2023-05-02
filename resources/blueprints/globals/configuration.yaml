@@ -1,106 +1,97 @@
-sections:
+tabs:
   general:
     display: General
-    fields:
+    sections:
       -
-        handle: error_pages
-        field:
-          type: section
-          listable: hidden
-          display: 'Error pages'
-          instructions: 'Select the error pages.'
+        display: 'System pages'
+        instructions: 'Configure system pages.'
+        fields:
+          -
+            handle: error_404_entry
+            field: common.entry
+            config:
+              display: '404'
+              width: 50
+              instructions: 'Show all content of page whenever an URL does not exist.'
+              collections:
+                - pages
+              validate:
+                - required
       -
-        handle: error_404_entry
-        field: common.entry
-        config:
-          display: '404'
-          width: 50
-          instructions: 'Show all content of page whenever an URL does not exist.'
-          collections:
-            - pages
-          validate:
-            - required
+        display: Copyright
+        instructions: 'Copyright configuration options.'
+        fields:
+          -
+            handle: copyright_name
+            field:
+              input_type: text
+              antlers: false
+              display: 'Copyright name'
+              type: text
+              icon: text
+              instructions: 'Falls back to the application name.'
+              width: 50
+              listable: hidden
+              instructions_position: above
+          -
+            handle: copyright_since
+            field:
+              placeholder: '2020'
+              input_type: number
+              character_limit: 4
+              prepend: ©
+              antlers: false
+              default: '2020'
+              display: 'Copyright since'
+              instructions: 'The website will add ` - current_year ` if they differ.'
+              type: text
+              icon: text
+              width: 50
+              listable: hidden
+              instructions_position: above
+              validate:
+                - required
       -
-        handle: section_copyright
-        field:
-          type: section
-          listable: hidden
-          display: Copyright
-          instructions: 'Copyright configuration options.'
-      -
-        handle: copyright_since
-        field:
-          placeholder: '2020'
-          input_type: number
-          character_limit: 4
-          prepend: ©
-          antlers: false
-          default: '2020'
-          display: 'Copyright since'
-          instructions: 'The website will add ` - current_year ` if they differ.'
-          type: text
-          icon: text
-          width: 50
-          listable: hidden
-          instructions_position: above
-          validate:
-            - required
-      -
-        handle: copyright_name
-        field:
-          input_type: text
-          antlers: false
-          display: 'Copyright name'
-          type: text
-          icon: text
-          instructions: 'Falls back to the application name.'
-          width: 50
-          listable: hidden
-          instructions_position: above
-      -
-        handle: section_privacy
-        field:
-          type: section
-          listable: hidden
-          display: 'Privacy statement'
-          instructions: 'Configure an optional privacy statement.'
-      -
-        handle: privacy_statement_type
-        field:
-          options:
-            none: None
-            entry: Entry
-            pdf: PDF
-          default: none
-          type: button_group
-          instructions: 'This will be used in form consent and in the optional cookie banner.'
-          instructions_position: below
-          listable: false
-          localizable: true
-          display: 'Privacy statement'
-          width: 50
-      -
-        handle: privacy_statement_asset
-        field: common.image
-        config:
-          localizable: true
-          listable: hidden
-          display: 'Privacy statement (PDF)'
-          width: 50
-          container: files
-          if:
-            privacy_statement_type: 'equals pdf'
-          validate:
-            - 'required_if:privacy_statement_type,pdf'
-      -
-        handle: privacy_statement_entry
-        field: common.entry
-        config:
-          localizable: true
-          listable: hidden
-          display: 'Privacy statement (entry)'
-          width: 50
-          if:
-            privacy_statement_type: 'equals entry'
-          validate:
-            - 'required_if:privacy_statement_type,entry'
+        display: 'Privacy statement'
+        instructions: 'Configure an optional privacy statement.'
+        fields:
+          -
+            handle: privacy_statement_type
+            field:
+              options:
+                none: None
+                entry: Entry
+                pdf: PDF
+              default: none
+              type: button_group
+              instructions: 'This will be used in form consent and in the optional cookie banner.'
+              instructions_position: below
+              listable: false
+              localizable: true
+              display: 'Privacy statement'
+              width: 50
+          -
+            handle: privacy_statement_asset
+            field: common.image
+            config:
+              container: files
+              localizable: true
+              listable: hidden
+              display: 'Privacy statement (PDF)'
+              width: 50
+              if:
+                privacy_statement_type: 'equals pdf'
+              validate:
+                - 'required_if:privacy_statement_type,pdf'
+          -
+            handle: privacy_statement_entry
+            field: common.entry
+            config:
+              localizable: true
+              listable: hidden
+              display: 'Privacy statement (entry)'
+              width: 50
+              if:
+                privacy_statement_type: 'equals entry'
+              validate:
+                - 'required_if:privacy_statement_type,entry'
