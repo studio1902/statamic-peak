@@ -64,6 +64,34 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | New User Groups
+    |--------------------------------------------------------------------------
+    |
+    | When registering new users through the user:register_form tag, these
+    | groups will automatically be applied to your newly created users.
+    |
+    */
+
+    'new_user_groups' => [
+        //
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | User Wizard Invitation Email
+    |--------------------------------------------------------------------------
+    |
+    | When creating new users through the wizard in the control panel,
+    | you may choose whether to be able to send an invitation email.
+    | Setting to true will give the user the option. But setting
+    | it to false will disable the invitation option entirely.
+    |
+    */
+
+    'wizard_invitation' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | Password Brokers
     |--------------------------------------------------------------------------
     |
@@ -80,14 +108,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | DB Connection
+    | Database
     |--------------------------------------------------------------------------
     |
-    | Default database connection.
+    | Here you may configure the database connection and its table names.
     |
     */
 
     'database' => config('database.default'),
+
+    'tables' => [
+        'users' => 'users',
+        'role_user' => 'role_user',
+        'group_user' => 'group_user',
+    ],
 
     /*
     |--------------------------------------------------------------------------
