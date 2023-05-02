@@ -6,6 +6,9 @@
 - Statamic v4 support including grouped page builder and article pickers, form section support and refactoring blueprints into floating sections. #314 by @robdekort
 - Add support for morphing live preview edits instead of refreshing the browser. #314 by @jacksleight and @robdekort
 
+### What's improved
+- Update Statamic config files. a6ecc364 by @robdekort
+
 ### What's fixed
 - Stop click events bubbling on up mobile nav toggle. #314 and @robdekort
 
