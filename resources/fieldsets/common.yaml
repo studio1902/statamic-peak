@@ -54,7 +54,6 @@ fields:
       instructions_position: above
       visibility: visible
       always_save: false
-      always_show_set_button: false
       previews: true
       enable_input_rules: true
       enable_paste_rules: true
@@ -90,7 +89,6 @@ fields:
       instructions_position: above
       visibility: visible
       always_save: false
-      always_show_set_button: false
       previews: true
       enable_input_rules: true
       enable_paste_rules: true

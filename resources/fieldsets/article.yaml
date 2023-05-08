@@ -27,7 +27,6 @@ fields:
       listable: hidden
       display: Article
       replicator_preview: false
-      always_show_set_button: true
       validate:
         - required
       sets:
