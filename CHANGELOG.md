@@ -1,6 +1,6 @@
 # Changelog
 
-## v12.0 (unreleased)
+## v12.0 (2023-05-09)
 
 ### What's new
 - Statamic v4 support including grouped page builder and article pickers, form section support and refactoring blueprints into floating sections. #314 by @robdekort
