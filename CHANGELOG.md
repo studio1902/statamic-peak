@@ -9,6 +9,7 @@
 ### What's improved
 - Update Statamic config files. a6ecc364 by @robdekort
 - Remove `always_show_set_button` property from Bard fields. 59b5e2e9 by @flolanger
+- Disable expect navigation root page by default. d43f76da by @robdekort
 
 ### What's fixed
 - Stop click events bubbling on up mobile nav toggle. #314 and @robdekort
