@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.1 (unreleased)
+
+### What's improved
+- Add default title to nav blueprint section. eb4d1587 by @robdekort
+
 ## v12.0 (2023-05-09)
 
 ### What's new
