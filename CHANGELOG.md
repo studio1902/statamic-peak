@@ -1,9 +1,12 @@
 # Changelog
 
-## v12.1 (unreleased)
+## v12.1 (2023-05-11)
 
 ### What's improved
 - Add default title to nav blueprint section. eb4d1587 by @robdekort
+- Explanatory display text for common text fields. f93a6f88 by @robdekort
+- Use partial tag method for image partial. 30136610 by @robdekort
+- Remove redundant section instructions from page blueprint. 348010b3 by @robdekort
 
 ## v12.0 (2023-05-09)
 
