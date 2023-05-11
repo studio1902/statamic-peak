@@ -50,7 +50,7 @@ fields:
       replicator_preview: false
       localizable: true
       listable: hidden
-      display: Text
+      display: 'Text rich'
       instructions_position: above
       visibility: visible
       always_save: false
@@ -62,6 +62,7 @@ fields:
       collapse: false
       smart_typography: true
       inline: false
+      hide_display: false
   -
     handle: text_basic
     field:
@@ -85,7 +86,7 @@ fields:
       replicator_preview: false
       localizable: true
       listable: hidden
-      display: Text
+      display: 'Text basic'
       instructions_position: above
       visibility: visible
       always_save: false
@@ -97,13 +98,18 @@ fields:
       collapse: false
       smart_typography: true
       inline: false
+      hide_display: false
   -
     handle: text_plain
     field:
       type: textarea
       localizable: true
       listable: hidden
-      display: Text
+      display: 'Text plain'
+      instructions_position: above
+      visibility: visible
+      antlers: false
+      hide_display: false
   -
     handle: size
     field:
