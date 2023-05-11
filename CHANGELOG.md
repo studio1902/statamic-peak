@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.2 (2023-05-11)
+
+### What's improved
+- Register multiple Alpine plugins at once. dfdb9015 by @robdekort
+
 ## v12.1 (2023-05-11)
 
 ### What's improved
