@@ -19,8 +19,5 @@ window.getToken = async () => {
 
 // Call Alpine.
 window.Alpine = Alpine
-Alpine.plugin(collapse)
-Alpine.plugin(morph)
-Alpine.plugin(persist)
-Alpine.plugin(focus)
+Alpine.plugin([collapse, focus, morph, persist])
 Alpine.start()
