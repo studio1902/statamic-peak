@@ -1,6 +1,7 @@
 <?php
 return [
     // Contact form
+    'form_error'                        => 'Bei der Eingabe in Ihr Formular sind Fehler aufgetreten. Bitte beheben Sie diese und versuchen Sie es erneut.',
     'form_honeypot'                     => 'Fax',
     'form_mail_body_owner'              => 'Neue Anfrage über Kontaktformular',
     'form_mail_body_sender'             => 'Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden.',
@@ -12,6 +13,8 @@ return [
     'form_mail_title'                   => 'Kontaktformular',
     'form_mail_url'                     => config('app.url'),
     'form_send'                         => 'Senden',
+    'form_subject_received'             => 'Kontaktformular erhalten',
+    'form_subject_sent'                 => 'Kontaktformular gesendet',
     'form_success'                      => 'Vielen Dank für Ihre Nachricht. Wir werden uns in Kürze bei Ihnen melden.',
 
     // Cookie banner
@@ -23,6 +26,10 @@ return [
     'cookie_ads'                        => 'Werbung & Tracking',
     'cookie_ads_explanation'            => 'Marketing-Cookies werden verwendet, um Besuchern auf Webseiten zu folgen und ggf. relevante Werbung anzuzeigen.',
     'cookie_accept'                     => 'Akzeptieren',
+    'cookie_explanation'                => 'Diese Website verwendet Cookies, die Ihre Zustimmung brauchen.',
+    'cookie_embeds'                     => 'Video Einbettungen',
+    'cookie_embeds_explanation'         => 'Cookies von Drittparteien, die für eingebettete Videos verwendet werden.',
+    'cookie_embeds_disabled'            => 'Akzeptieren Sie Videoeinbettungs-Cookies, um dieses Video anzusehen.',
     'cookie_ignore'                     => 'Ignorieren',
     'cookie_explanation'                => 'Diese Website setzt zustimmungspflichtige Cookies ein.',
     'cookie_learn_more'                 => 'Details',
@@ -51,8 +58,8 @@ return [
     'previous'                          => 'zurück',
 
     // Social images
-    'social_images'                     => 'Generated one social image.|Generated :count social images.',
-    'social_images_queue'               => 'Generating one social image in the background.|Generating :count social images in the background.',
+    'social_images'                     => 'Ein social image generiert.|:count social images generiert.',
+    'social_images_queue'               => 'Generiere ein social image im Hintergrund.|Generiere :count social images im Hintergrund.',
 
     // Widgets
     'widget_assets_title'               => 'Bilder ohne Alternativtext in :container',
