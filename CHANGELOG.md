@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.4 (2023-05-18)
+
+### What's improved
+- Disable BrowserSync option for secured sites. #318 by @marcorieser
+
 ## v12.3 (2023-05-12)
 
 ### What's improved
