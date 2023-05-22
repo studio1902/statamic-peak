@@ -43,6 +43,21 @@ return [
 
         /*
         |--------------------------------------------------------------------------
+        | Additional Image Extensions
+        |--------------------------------------------------------------------------
+        |
+        | Define any additional image file extensions you would like Statamic to
+        | process. You should ensure that both your server and the selected
+        | image manipulation driver properly supports these extensions.
+        |
+        */
+
+        'additional_extensions' => [
+            // 'heic',
+        ],
+
+        /*
+        |--------------------------------------------------------------------------
         | Save Cached Images
         |--------------------------------------------------------------------------
         |
@@ -54,6 +69,21 @@ return [
 
         'cache' => env('SAVE_CACHED_IMAGES', true),
         'cache_path' => public_path('img'),
+
+        /*
+        |--------------------------------------------------------------------------
+        | Image Manipulation Defaults
+        |--------------------------------------------------------------------------
+        |
+        | You may define global defaults for all manipulation parameters, such as
+        | quality, format, and sharpness. These can and will be be overwritten
+        | on the tag parameter level as well as the preset level.
+        |
+        */
+
+        'defaults' => [
+            // 'quality' => 50,
+        ],
 
         /*
         |--------------------------------------------------------------------------
@@ -69,6 +99,19 @@ return [
         'presets' => [
             'replacement' => ['w' => 4500, 'fit' => 'max'],
         ],
+
+        /*
+        |--------------------------------------------------------------------------
+        | Generate Image Manipulation Presets on Upload
+        |--------------------------------------------------------------------------
+        |
+        | By default, presets will be automatically generated on upload, ensuring
+        | the cached images are available when they are first used. You may opt
+        | out of this behavior here and have the presets generated on demand.
+        |
+        */
+
+        'generate_presets_on_upload' => true,
 
     ],
 
@@ -127,5 +170,31 @@ return [
     */
 
     'cache_meta' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Focal Point Editor
+    |--------------------------------------------------------------------------
+    |
+    | When editing images in the Control Panel, there is an option to choose
+    | a focal point. When working with third-party image providers such as
+    | Cloudinary it can be useful to disable Statamic's built-in editor.
+    |
+    */
+
+    'focal_point_editor' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enforce Lowercase Filenames
+    |--------------------------------------------------------------------------
+    |
+    | Control whether asset filenames will be converted to lowercase when
+    | uploading and renaming. This can help you avoid file conflicts
+    | when working in case-insensitive filesystem environments.
+    |
+    */
+
+    'lowercase' => true,
 
 ];

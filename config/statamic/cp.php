@@ -83,6 +83,8 @@ return [
 
     'pagination_size' => 50,
 
+    'pagination_size_options' => [10, 25, 50, 100, 500],
+
     /*
     |--------------------------------------------------------------------------
     | Links to Documentation

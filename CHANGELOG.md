@@ -1,5 +1,50 @@
 # Changelog
 
+## v12.4 (2023-05-18)
+
+### What's improved
+- Disable BrowserSync option for secured sites. #318 by @marcorieser
+
+## v12.3 (2023-05-12)
+
+### What's improved
+- Update German translations. #317 by @ymarkus
+
+## v12.2 (2023-05-11)
+
+### What's improved
+- Register multiple Alpine plugins at once. dfdb9015 by @robdekort
+
+## v12.1 (2023-05-11)
+
+### What's improved
+- Add default title to nav blueprint section. eb4d1587 by @robdekort
+- Explanatory display text for common text fields. f93a6f88 by @robdekort
+- Use partial tag method for image partial. 30136610 by @robdekort
+- Remove redundant section instructions from page blueprint. 348010b3 by @robdekort
+
+## v12.0 (2023-05-09)
+
+### What's new
+- Statamic v4 support including grouped page builder and article pickers, form section support and refactoring blueprints into floating sections. #314 by @robdekort
+- Add support for morphing live preview edits instead of refreshing the browser. #314 by @jacksleight and @robdekort
+
+### What's improved
+- Update Statamic config files. a6ecc364 by @robdekort
+- Remove `always_show_set_button` property from Bard fields. 59b5e2e9 by @flolanger
+- Disable expect navigation root page by default. d43f76da by @robdekort
+
+### What's fixed
+- Stop click events bubbling on up mobile nav toggle. #314 and @robdekort
+
+## v11.7 (2023-04-03)
+
+### What's new
+- Add support for secured sites and Browsersync to Vite. #307 by @marcorieser
+
+### What's improved
+- Use arrow function to preserve context for `this`. #313 by @marcorieser
+
 ## v11.6 (2023-03-23)
 
 ### What's improved

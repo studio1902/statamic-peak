@@ -1,0 +1,6 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: General
