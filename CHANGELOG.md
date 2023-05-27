@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.5 (Unreleased)
+
+### What's changed
+- Video component: `youtube_url` becomes `video_url`. db88e2d4 by @robdekort
+
 ## v12.4 (2023-05-18)
 
 ### What's improved
