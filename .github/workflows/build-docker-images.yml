@@ -1,0 +1,42 @@
+name: Build Docker Images
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - .docker-config/spin-up-statamic-base/*
+      - .docker-config/spin-up-statamic-base-dev/*
+  workflow_dispatch:
+jobs:
+  build-php:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php: ["8.0", "8.1"]
+        images: ["spin-up-statamic-base", "spin-up-statamic-base-dev"]
+    name: ${{ matrix.images }} ${{ matrix.php }} images
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        with:
+          install: true
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build .docker-config/nystudio107/${{ matrix.images }}:${{ matrix.php }}-alpine
+        uses: docker/build-push-action@v4
+        with:
+          context: .docker-config/${{ matrix.images }}/php-${{ matrix.php }}-alpine
+          file: .docker-config/${{ matrix.images }}/php-${{ matrix.php }}-alpine/Dockerfile
+          push: false
+          platforms: linux/amd64,linux/arm64
+          tags: nystudio107/${{ matrix.images }}:${{ matrix.php }}-alpine
+          build-args: |
+            PHP_VERSION=${{ matrix.php }}
