@@ -1,7 +1,7 @@
 title: Video
 fields:
   -
-    handle: youtube_url
+    handle: video_url
     field:
       placeholder: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
       input_type: url

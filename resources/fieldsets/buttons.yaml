@@ -14,3 +14,7 @@ fields:
       listable: hidden
       display: Buttons
       replicator_preview: false
+      instructions_position: above
+      visibility: visible
+      fullscreen: false
+      hide_display: false

@@ -35,10 +35,10 @@
                 </a>
             </div>
             <template x-if="$store.cookieBanner.consent && $store.cookieBanner.embeds">
-                <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ youtube_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </template>
         {{ else }}
-            <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ youtube_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {{ /if }}
     </div>
 

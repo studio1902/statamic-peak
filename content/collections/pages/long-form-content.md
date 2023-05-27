@@ -218,7 +218,7 @@ page_builder:
           id: i76LCGmZ
           values:
             type: video
-            youtube_url: 'https://vimeo.com/53018096'
+            video_url: 'https://vimeo.com/53018096'
             size: xl
             caption: 'A video about some mountain peaks.'
       -
