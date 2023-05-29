@@ -1,21 +1,14 @@
 export_as:
   README.md: README.example.md
 export_paths:
-  - .docker-config/nginx
-  - .docker-config/php
   - .env.example
   - .gitignore
-  - example.env
-  - docker-compose.yml
-  - Makefile
   - app/Console/Kernel.php
-  - app/Http/Middleware/TrustProxies.php
   - app/Http/Middleware/VerifyCsrfToken.php
   - app/Providers/AppServiceProvider.php
   - CHANGELOG.md
   - content
   - CONTRIBUTING.md
-  - config/app.php
   - config/filesystems.php
   - config/statamic/assets.php
   - config/statamic/antlers.php
