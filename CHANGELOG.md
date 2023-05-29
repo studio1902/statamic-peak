@@ -1,9 +1,6 @@
 # Changelog
 
-## v12.5 (2023-05-27)
-
-### What's new
-- Docker/Codespaces support. 477e877e by @nystudio107
+## v12.5 (2023-05-29)
 
 ### What's changed
 - Video component: `youtube_url` becomes `video_url`. db88e2d4 by @robdekort
