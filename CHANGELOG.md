@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.6 (2023-05-30)
+
+### What's new
+- Use OKLCH color space with fallback support. 45744810 by @robdekort
+
 ## v12.5 (2023-05-29)
 
 ### What's changed
