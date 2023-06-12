@@ -24,7 +24,7 @@ module.exports = {
             '--tw-prose-bullets': theme('colors.neutral.DEFAULT'),
             '--tw-prose-hr': theme('colors.neutral.DEFAULT'),
             '--tw-prose-quotes': theme('colors.neutral.DEFAULT'),
-            '--tw-prose-quote-borders': theme('colors.primary.DEFAULT'),
+            '--tw-prose-quote-borders': theme('colors.primary.DEFAULT / 1'),
             '--tw-prose-captions': theme('colors.neutral.DEFAULT'),
             '--tw-prose-code': theme('colors.neutral.DEFAULT'),
             '--tw-prose-pre-code': theme('colors.white'),
