@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.6.1 (2023-06-12)
+
+### What's fixed
+- Fix opacity-value missing when referencing theme colors in JS prose config. b11d049b by @robdekort
+
 ## v12.6 (2023-05-30)
 
 ### What's new
