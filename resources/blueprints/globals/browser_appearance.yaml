@@ -14,18 +14,6 @@ tabs:
         fields:
           -
             import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_theme'
-      -
-        display: Apple
-        instructions: 'Configure Apple specific meta tags.'
-        fields:
-          -
-            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_apple'
-      -
-        display: Android
-        instructions: 'Configure Apple specific meta tags.'
-        fields:
-          -
-            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_android'
   favicons:
     display: Favicons
     sections:
