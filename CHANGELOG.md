@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.7 (2023-06-14)
+
+### What's new
+- Update globals for Statamic Peak Browser Appearance v3. 9bc9ed49 by @robdekort
+
 ## v12.6.1 (2023-06-12)
 
 ### What's fixed
