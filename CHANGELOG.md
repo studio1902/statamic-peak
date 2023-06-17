@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.7.1 (2023-06-17)
+
+### What's fixed
+- Fix breakpoint notice color. #323 by @mikemartin
+
 ## v12.7 (2023-06-14)
 
 ### What's new
