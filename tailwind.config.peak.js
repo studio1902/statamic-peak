@@ -58,7 +58,7 @@ module.exports = {
         // Display screen breakpoints in debug environment.
         '.breakpoint:before': {
           display: 'block',
-          color: theme('colors.notice.900'),
+          color: theme('colors.yellow.900'),
           textTransform: 'uppercase',
           content: '"-"',
         },
