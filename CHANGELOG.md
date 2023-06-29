@@ -1,5 +1,10 @@
 # Changelog
 
+## v12.7.2 (2023-06-29)
+
+### What's fixed
+- Update browser appearance dependency. a18bb509 by @robdekort
+
 ## v12.7.1 (2023-06-17)
 
 ### What's fixed
