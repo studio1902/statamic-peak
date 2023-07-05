@@ -1,38 +1,55 @@
----
 name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
----
-
-**Describe the bug**
-A clear and concise description of what the bug is.
-
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
-
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
-
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+description: Fill out a bug report to help us improve Statamic.
+body:
+  - type: textarea
+    attributes:
+      label: Bug description
+      description: What happened? What did you expect to happen? Feel free to drop any screenshots in here.
+      placeholder: I did this thing over here, and saw this error...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: How to reproduce
+      description: List the steps so we're able to recreate this bug. Bonus points if you can provide an example GitHub repo with this bug reproduced.
+      placeholder: Go here, Type this, Click that, Look over there.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Logs
+      description: You can paste any relevant logs here, they'll be automatically rendered in code blocks. You can find your logs in `storage/logs`.
+      render: shell
+  - type: textarea
+    attributes:
+      label: Environment
+      description: |
+        Details about your environment. Versions of Statamic, PHP, Laravel, any addons that are installed, etc.
+        (Go ahead and just paste the output of the `php please support:details` command.)    
+      render: yaml # the format of the command is close to yaml and gets highlighted nicely
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Installation
+      description: How did you install Statamic?
+      options:
+        - Fresh statamic/statamic site via CLI
+        - Starter Kit using via CLI
+        - Existing Laravel app
+        - Other (please explain)
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Antlers Parser
+      description: If using 3.3+, which Antlers Parser are you using?
+      options:
+        - regex (default)
+        - runtime (new)
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Additional details
+      description: Fancy setup? Anything else you need to share?
