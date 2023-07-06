@@ -1,5 +1,14 @@
 # Changelog
 
+## v12.8 (2023-07-06)
+
+### What's new
+- Add form support for spacer field. c703fcc7 by @robdekort
+- Use `sanitize` on SVG's. 1cec5a7c by @robdekort
+
+### What's improved
+- Update dependencies. 3c10b0d1 by @robdekort
+
 ## v12.7.2 (2023-06-29)
 
 ### What's fixed
