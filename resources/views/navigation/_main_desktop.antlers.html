@@ -36,7 +36,7 @@
                     {{ title }}
                     {{ if children }}
                         <div :class="{ 'scale-y-[-1]': subnavOpen }" class="motion-safe:transition-transform">
-                            {{ svg:chevron_down class="w-2 ml-1 overflow-visible stroke-current text-neutral" aria-hidden="true" }}
+                            {{ svg:chevron_down class="w-2 ml-1 overflow-visible stroke-current text-neutral" aria-hidden="true" sanitize="true" }}
                         </div>
                     {{ /if }}
                 </a>
