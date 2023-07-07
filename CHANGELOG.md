@@ -1,5 +1,13 @@
 # Changelog
 
+## v13.0 (2023-07-07)
+
+### What's new
+- Add support for Peak SEO v3.0. ea017746 by @robdekort
+
+### What's improved
+- Some translations for the cookie banner. 2e4b38c9 by @robdekort
+
 ## v12.8 (2023-07-06)
 
 ### What's new
