@@ -16,10 +16,10 @@
         {{ partial:statamic-peak-tools::snippets/live_preview }}
     </head>
     <body class="flex flex-col min-h-screen bg-white selection:bg-primary selection:text-white">
+        {{ stack:seo_body }}
         {{ partial:statamic-peak-tools::snippets/noscript }}
         {{ partial:statamic-peak-tools::navigation/skip_to_content }}
         {{ partial:statamic-peak-tools::components/toolbar }}
-        {{ yield:seo_body }}
 
         {{ partial:layout/header }}
         {{ template_content }}
