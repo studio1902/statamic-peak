@@ -18,7 +18,7 @@ return [
     'form_success'                      => 'Thank you, we received your message and will contact you as soon as possible.',
 
     // Cookie banner
-    'cookie_accept'                     => 'Accept',
+    'cookie_accept'                     => 'Save',
     'cookie_ads'                        => 'Ads & tracking',
     'cookie_ads_explanation'            => 'Third party cookies used for advertisement.',
     'cookie_analytics'                  => 'Analytics',

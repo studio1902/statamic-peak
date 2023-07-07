@@ -18,7 +18,7 @@ return [
     'form_success'                      => 'Bedankt voor je bericht.',
 
     // Cookie banner
-    'cookie_accept'                     => 'Accepteer',
+    'cookie_accept'                     => 'Opslaan',
     'cookie_ads'                        => 'Advertenties & tracking',
     'cookie_ads_explanation'            => 'Third party cookies benodigd voor het retargeten en plaatsen van advertenties.',
     'cookie_analytics'                  => 'Analytics',
