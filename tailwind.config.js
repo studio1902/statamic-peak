@@ -18,6 +18,7 @@ module.exports = {
   ],
   // Configure files to scan for utility classes (JIT).
   content: [
+    './content/**/*.(md|html|yaml)',
     './resources/views/**/*.blade.php',
     './resources/views/**/*.html',
     './resources/js/**/*.js',
