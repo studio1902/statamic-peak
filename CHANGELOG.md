@@ -1,5 +1,10 @@
 # Changelog
 
+## v13.1 (2023-07-13)
+
+### What's new
+- Bump to Peak SEO v4.0. 490965e0 by @robdekort
+
 ## v13.0 (2023-07-07)
 
 ### What's new
