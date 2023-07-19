@@ -37,7 +37,7 @@
                             {{ /if }}
 
                             {{# Render the default-styled fields. #}}
-                            {{ fields }}
+                            {{ fields scope="field" }}
                                 <template x-if="{{ show_field }}">
                                     <div class=
                                         "
@@ -55,18 +55,18 @@
                                     >
                                         {{ unless type == 'spacer' }}
                                             <label class="font-bold" for="{{ handle }}">
-                                                {{ trans :key="display" }}
+                                                {{ trans :key="field:display" }}
                                                 {{ if validate | contains('required') }}
                                                     <sup class="text-yellow-400">*</sup>
                                                 {{ /if }}
-                                                {{ if instructions }}
-                                                    {{ partial:typography/p class="text-sm my-1" content="{ trans :key="instructions" }" }}
+                                                {{ if field:instructions }}
+                                                    {{ partial:typography/p class="my-1 text-sm" content="{ trans :key="field:instructions" }" }}
                                                 {{ /if }}
                                             </label>
                                         {{ /unless }}
 
                                         <div class="flex flex-col space-y-2">
-                                            {{ field }}
+                                            {{ field:field }}
 
                                             {{# Display error label when there is a validation error with the name field. #}}
                                             <template x-if="errors.{{ handle }}">
