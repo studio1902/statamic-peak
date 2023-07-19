@@ -1,5 +1,13 @@
 # Changelog
 
+## v13.2 (2023-07-19)
+
+### What's new
+- Updated dependencies. f51e128a by @robdekort
+
+### What's fixed
+- Scope form field loop to prevent values trickling down. #332 by @klickreflex
+
 ## v13.1 (2023-07-13)
 
 ### What's new
