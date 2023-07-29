@@ -37,7 +37,7 @@ return [
             'driver' => 'file',
             'path' => public_path('static'),
             'lock_hold_length' => 0,
-            'warm_concurrency' => 10
+            'warm_concurrency' => 10,
         ],
 
     ],
@@ -56,7 +56,7 @@ return [
     'exclude' => [
         '/site.webmanifest',
         '/sitemap.xml',
-        '/sitemaps.xml'
+        '/sitemaps.xml',
         // Add sitemaps for multisites here
     ],
 
@@ -81,7 +81,6 @@ return [
 
     ],
 
-
     /*
     |--------------------------------------------------------------------------
     | Ignoring Query Strings
@@ -94,7 +93,6 @@ return [
     */
 
     'ignore_query_strings' => false,
-
 
     /*
     |--------------------------------------------------------------------------

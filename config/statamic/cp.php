@@ -44,19 +44,19 @@ return [
             'filetypes' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'bmp', 'tiff', 'svg'],
             'limit' => 5,
             'expiry' => 0,
-            'width' => 50
+            'width' => 50,
         ],
         [
             'type' => 'collection',
             'collection' => 'pages',
-            'width' => 50
+            'width' => 50,
         ],
         [
             'type' => 'form',
             'form' => 'contact',
             'fields' => ['name', 'email'],
             'limit' => '5',
-            'width' => 100
+            'width' => 100,
         ],
     ],
 
@@ -108,7 +108,7 @@ return [
 
     'support_url' => env('STATAMIC_SUPPORT_URL', 'https://statamic.com/support'),
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | Login Theme
     |--------------------------------------------------------------------------
@@ -135,7 +135,7 @@ return [
 
     'custom_logo_url' => [
         'nav' => env('STATAMIC_CUSTOM_LOGO_NAV_URL', null),
-        'outside' => env('STATAMIC_CUSTOM_LOGO_OUTSIDE_URL', null)
+        'outside' => env('STATAMIC_CUSTOM_LOGO_OUTSIDE_URL', null),
     ],
 
     'custom_favicon_url' => env('STATAMIC_CUSTOM_FAVICON_URL', null),
