@@ -1,5 +1,21 @@
 # Changelog
 
+## v14.0 (2023-08-04)
+
+### What's new
+- Add support for Statamic Peak SEO v5.0. f905135e by @robdekort
+
+### What's improved
+- Update dependecies. 55412650 by @robdekort
+
+## v13.3 (2023-08-01)
+
+### What's improved
+- Ran Shift to Laravel 10 for style improvements. c5ea888 by @robdekort
+
+### What's fixed
+- Adjust CP logo variables in .env.example. #333 by @duncanmcclean
+
 ## v13.2 (2023-07-19)
 
 ### What's new
