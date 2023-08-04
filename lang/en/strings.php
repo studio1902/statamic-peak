@@ -19,7 +19,8 @@ return [
     'form_success' => 'Thank you, we received your message and will contact you as soon as possible.',
 
     // Cookie banner
-    'cookie_accept' => 'Save',
+    'cookie_accept_all' => 'Accept all',
+    'cookie_accept_selected' => 'Accept selected',
     'cookie_ads' => 'Ads & tracking',
     'cookie_ads_explanation' => 'Third party cookies used for advertisement.',
     'cookie_analytics' => 'Analytics',
@@ -30,10 +31,9 @@ return [
     'cookie_embeds_disabled' => 'Accept video embed cookies to view this video.',
     'cookie_functional' => 'Functional',
     'cookie_functional_explanation' => 'First party cookies needed for the website to function. These can\'t be turned off.',
-    'cookie_ignore' => 'Ignore',
     'cookie_title' => 'Cookies 🍪',
     'cookie_learn_more' => 'Learn more',
-    'cookie_reset_consent' => 'Reset cookie consent',
+    'cookie_change_preferences' => 'Change cookie preferences',
 
     // Footer
     'on' => 'on',

@@ -19,7 +19,8 @@ return [
     'form_success' => 'Bedankt voor je bericht.',
 
     // Cookie banner
-    'cookie_accept' => 'Opslaan',
+    'cookie_accept_all' => 'Accepteer alles',
+    'cookie_accept_selected' => 'Accepteer selectie',
     'cookie_ads' => 'Advertenties & tracking',
     'cookie_ads_explanation' => 'Third party cookies benodigd voor het retargeten en plaatsen van advertenties.',
     'cookie_analytics' => 'Analytics',
@@ -30,10 +31,9 @@ return [
     'cookie_embeds_disabled' => 'Accepteer video-embed-cookies om deze video te zien.',
     'cookie_functional' => 'Functioneel',
     'cookie_functional_explanation' => 'First party cookies die essentieel zijn voor het functioneren van deze website. Deze kunnen niet uitgeschakeld worden.',
-    'cookie_ignore' => 'Negeer',
     'cookie_title' => 'Cookies 🍪',
     'cookie_learn_more' => 'Meer informatie',
-    'cookie_reset_consent' => 'Reset cookie-instellingen',
+    'cookie_change_preferences' => 'Wijzig cookie-voorkeuren',
 
     // Footer
     'on' => 'op',
