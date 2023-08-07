@@ -1,5 +1,10 @@
 # Changelog
 
+## v14.1 (2023-08-07)
+
+### What's new
+- Add the option to install missing translation files during the install process. 26f7ba21 by @robdekort
+
 ## v14.0 (2023-08-04)
 
 ### What's new
