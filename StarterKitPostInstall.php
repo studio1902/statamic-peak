@@ -90,6 +90,29 @@ class StarterKitPostInstall
             }
         }
 
+        if ($console->confirm('Do you want to install missing Laravel translation files using the Laravel Lang package?', true)) {
+            $process = new Process(['composer', 'require', 'laravel-lang/common', '--dev']);
+            try {
+                $process->mustRun();
+                $console->info('Laravel Lang installed.');
+            } catch (ProcessFailedException $exception) {
+                $console->info($exception->getMessage());
+            }
+
+            $console->info('Enter the handles of the languages you want to install. Press enter when you\'re done.');
+            do {
+                if ($handle = $console->ask('Handle of language (e.g. "nl")')) {
+                    $process = new Process(['php', 'artisan', 'lang:add', $handle]);
+                    try {
+                        $process->mustRun();
+                        $console->info("Language \"{$handle}\" installed.");
+                    } catch (ProcessFailedException $exception) {
+                        $console->info($exception->getMessage());
+                    }
+                }
+            } while ($handle !== null);
+        }
+
         if ($console->confirm('Would you like to star the Peak repo?', false)) {
             if (PHP_OS_FAMILY == 'Darwin') {
                 exec('open https://github.com/studio1902/statamic-peak');
