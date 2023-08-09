@@ -1,5 +1,12 @@
 # Changelog
 
+## v14.2 (2023-08-09)
+
+### What's improved
+- Updated German translations. #334 by @ymarkus
+
+# Changelog
+
 ## v14.1 (2023-08-07)
 
 ### What's new
