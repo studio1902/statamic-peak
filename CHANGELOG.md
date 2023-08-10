@@ -1,5 +1,10 @@
 # Changelog
 
+## v14.3 (2023-08-10)
+
+### What's improved
+- Fixes blatant copyright theft. #335 by @websmyth
+
 ## v14.2 (2023-08-09)
 
 ### What's improved
