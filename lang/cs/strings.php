@@ -19,21 +19,21 @@ return [
     'form_success' => 'Děkujeme, vaši zprávu jsme obdrželi a budeme vás co nejdříve kontaktovat.',
 
     // Cookie banner
-    'cookie_accept' => 'Souhlas',
+    'cookie_accept_all' => 'Přijmout vše',
+    'cookie_accept_selected' => 'Přijmout vybrané',
     'cookie_ads' => 'Reklamy & sledování',
     'cookie_ads_explanation' => 'Third party cookies absolutely terrible for privacy, but we don\'t give a sh*t.',
     'cookie_analytics' => 'Analytické',
     'cookie_analytics_explanation' => 'Third party cookies, not needed if we cared.',
     'cookie_explanation' => 'Tento web používá cookies, které vyžadují souhlas.',
     'cookie_embeds' => 'Video embeds',
-    'cookie_emdeds_explanation' => 'Cookie soubory třetích stran používané pro vložená videa, která vás mohou sledovat.',
+    'cookie_embeds_explanation' => 'Cookie soubory třetích stran používané pro vložená videa, která vás mohou sledovat.',
     'cookie_embeds_disabled' => 'Chcete-li zobrazit toto video, přijměte soubory cookie pro vložení videa.',
     'cookie_functional' => 'Funkční',
     'cookie_functional_explanation' => 'Cookies potřebné pro fungování webu. Tyto nelze vypnout.',
-    'cookie_ignore' => 'Ignorovat',
     'cookie_title' => 'Cookies 🍪',
     'cookie_learn_more' => 'Zjistit více',
-    'cookie_reset_consent' => 'Resetovat cookie souhlas',
+    'cookie_change_preferences' => 'Změnit cookie preference',
 
     // Footer
     'on' => 'on',
