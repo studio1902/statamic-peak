@@ -1,5 +1,10 @@
 # Changelog
 
+## v14.4 (2023-08-10)
+
+### What's improved
+- Updated Czech translations. #336 by @kuldas
+
 ## v14.3 (2023-08-10)
 
 ### What's improved
