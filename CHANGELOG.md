@@ -1,5 +1,10 @@
 # Changelog
 
+## v14.5 (2023-08-11)
+
+### What's changed
+- Remove Twitter from Social Media Globals. c9aea73a by @robdekort
+
 ## v14.4 (2023-08-10)
 
 ### What's improved
