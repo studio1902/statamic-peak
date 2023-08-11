@@ -148,26 +148,6 @@ tabs:
                           field:
                             type: hidden
                             default: 'https://www.pinterest.com/'
-                    twitter:
-                      display: Twitter
-                      instructions: null
-                      icon: social-twitter
-                      fields:
-                        -
-                          handle: handle
-                          field:
-                            input_type: text
-                            type: text
-                            localizable: true
-                            listable: hidden
-                            prepend: 'https://www.twitter.com/'
-                            display: Handle
-                            validate: required
-                        -
-                          handle: prefix
-                          field:
-                            type: hidden
-                            default: 'https://www.twitter.com/'
                     vimeo:
                       display: Vimeo
                       instructions: null
