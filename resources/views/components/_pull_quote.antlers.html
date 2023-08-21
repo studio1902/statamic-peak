@@ -17,7 +17,7 @@
     "
 >
     <blockquote class="p-0 m-0 text-3xl font-bold leading-snug text-neutral">
-        <span class="text-primary">&OpenCurlyDoubleQuote;</span>{{ quote | nl2br | widont}}<span class="text-primary">&CloseCurlyDoubleQuote;</span>
+        <span class="text-primary">&OpenCurlyDoubleQuote;</span>{{ quote | widont | nl2br }}<span class="text-primary">&CloseCurlyDoubleQuote;</span>
     </blockquote>
     {{ if author }}
         <figcaption class="block mt-4 font-bold text-neutral">
