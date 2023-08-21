@@ -1,5 +1,13 @@
 # Changelog
 
+## v14.6 (2023-08-21)
+
+### What's fixed
+- The order of quote's string modifiers #339 by @wojciechgabrys
+
+### What's changed
+- Use initials instead of gravatar for user icons by default. #337 by @marflow
+
 ## v14.5 (2023-08-11)
 
 ### What's changed
