@@ -1,9 +1,14 @@
 # Changelog
 
+## v15.0 (2023-08-22)
+
+### What's new
+- Update the Statamic Peak SEO addon, which removes Twitter custom OG fields and social images. adb00d61 by @robdekort
+
 ## v14.6 (2023-08-21)
 
 ### What's fixed
-- The order of quote's string modifiers #339 by @wojciechgabrys
+- The order of quote's string modifiers. #339 by @wojciechgabrys
 
 ### What's changed
 - Use initials instead of gravatar for user icons by default. #337 by @marflow
