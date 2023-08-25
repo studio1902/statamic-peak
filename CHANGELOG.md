@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.1 (2023-08-25)
+
+### What's changed
+- Norwegian Bokmål locale renamed from no to nb and updated. #341 by @hgrimelid
+
 ## v15.0 (2023-08-22)
 
 ### What's new
