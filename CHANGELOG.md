@@ -950,7 +950,7 @@
 ## v4.3 (2022-03-21)
 
 ### What's fixed
-- Fix max width collision with the article page builder block. safe26aa9 by @robdekort
+- Fix max width collision with the article page builder block. afe26aa9 by @robdekort
 
 ## v4.2 (2022-03-17)
 
