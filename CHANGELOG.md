@@ -1391,7 +1391,7 @@ Files new/changed:
 ## 3.4.1 (2021-09-15)
 
 ### What's fixed
-- Propertly include `x-trap`.
+- Properly include `x-trap`.
 
 ## 3.4 (2021-09-09)
 
@@ -1795,7 +1795,7 @@ Upgrade to Tailwind 2.2:
 
 ### What's new
 - Add Twitter `Summary Large Image` card support.
-- Propertly enforce `focus-visible` where applicable.
+- Properly enforce `focus-visible` where applicable.
 
 Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.1902.studio).
 
