@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.3 (2023-08-30)
+
+### What's improved
+- Use replicator instead of grid for link blocks. a901248d by @robdekort
+
 ## v15.2 (2023-08-30)
 
 ### What's improved
