@@ -11,32 +11,45 @@ fields:
   -
     handle: link_blocks
     field:
-      fields:
-        -
-          handle: title
-          field:
-            input_type: text
-            type: text
-            localizable: true
-            listable: hidden
-            validate: required
-            display: Title
-        -
-          handle: text
-          field: common.text_plain
-        -
-          handle: section_button
-          field:
-            type: section
-            display: Button
-        -
-          import: button
-      mode: stacked
-      min_rows: 1
-      add_row: 'Add link block'
       reorderable: true
-      type: grid
+      type: replicator
       localizable: true
       listable: hidden
       display: 'Link blocks'
       replicator_preview: false
+      instructions_position: above
+      visibility: visible
+      collapse: accordion
+      previews: true
+      fullscreen: true
+      sets:
+        blocks:
+          display: Blocks
+          instructions: null
+          icon: null
+          sets:
+            block:
+              display: Block
+              instructions: null
+              icon: null
+              fields:
+                -
+                  handle: title
+                  field:
+                    input_type: text
+                    type: text
+                    localizable: true
+                    listable: hidden
+                    validate: required
+                    display: Title
+                -
+                  handle: text
+                  field: common.text_plain
+                -
+                  handle: section_button
+                  field:
+                    type: section
+                    display: Button
+                -
+                  import: button
+      hide_display: true
