@@ -1,5 +1,14 @@
 # Changelog
 
+## v15.4 (2023-08-31)
+
+### What's changed
+- Rename link blocks to cards and update button logic. c23579a7 by @robdekort
+
+### What's improved
+- Cleanup Vite config. #347 by @marcorieser
+- Update dependencies and rebuild assets. 84ee99c0 by @robdekort
+
 ## v15.3 (2023-08-30)
 
 ### What's improved
