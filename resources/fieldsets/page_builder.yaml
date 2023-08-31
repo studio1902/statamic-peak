@@ -22,13 +22,13 @@ fields:
               fields:
                 -
                   import: form
-            link_blocks:
-              display: 'Link blocks'
-              instructions: 'Show linkable blocks with text.'
+            cards:
+              display: 'Cards'
+              instructions: 'Show linkable cards with text.'
               icon: link
               fields:
                 -
-                  import: link_blocks
+                  import: cards
         text:
           display: Text
           instructions: 'Text based blocks.'

@@ -1,4 +1,4 @@
-title: 'Link blocks'
+title: Cards
 fields:
   -
     handle: title
@@ -9,13 +9,13 @@ fields:
       listable: hidden
       display: Title
   -
-    handle: link_blocks
+    handle: cards
     field:
       reorderable: true
       type: replicator
       localizable: true
       listable: hidden
-      display: 'Link blocks'
+      display: Cards
       replicator_preview: false
       instructions_position: above
       visibility: visible
@@ -23,13 +23,13 @@ fields:
       previews: true
       fullscreen: true
       sets:
-        blocks:
-          display: Blocks
+        cards:
+          display: Cards
           instructions: null
           icon: null
           sets:
-            block:
-              display: Block
+            card:
+              display: Card
               instructions: null
               icon: null
               fields:
@@ -46,10 +46,9 @@ fields:
                   handle: text
                   field: common.text_plain
                 -
-                  handle: section_button
-                  field:
-                    type: section
+                  handle: button
+                  field: buttons.buttons
+                  config:
                     display: Button
-                -
-                  import: button
+                    max_rows: 1
       hide_display: true

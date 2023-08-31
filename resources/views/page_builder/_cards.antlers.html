@@ -1,15 +1,15 @@
 {{#
-    @name Link blocks
-    @desc The link blocks page builder block.
-    @set page.page_builder.link_blocks
+    @name Cards
+    @desc The Cards page builder block.
+    @set page.page_builder.cards
 #}}
 
-<!-- /page_builder/_link_blocks.antlers.html -->
+<!-- /page_builder/_cards.antlers.html -->
 <section class="fluid-container grid md:grid-cols-12 gap-8">
     {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
 
-    {{ block:link_blocks }}
-        <a
+    {{ block:cards }}
+        <{{ button ? 'a' : 'article' }}
             class="
                 flex flex-col justify-between items-start p-6 border border-neutral/10 shadow-lg rounded no-underline focus:outline-none focus-visible:ring-2 ring-offset-2 ring-primary
                 {{ switch(
@@ -19,9 +19,11 @@
                     () => void
                 )}}
             "
-            aria-labelledby="{{ title | slugify }}"
-            draggable="false"
-            {{ partial:snippets/button_attributes }}
+                {{ button }}
+                    aria-labelledby="{{ title | slugify }}"
+                    draggable="false"
+                    {{ partial:snippets/button_attributes }}
+                {{ /button }}
         >
             <div class="mb-4">
                 <span id="{{ title | slugify }}">
@@ -31,8 +33,10 @@
                     {{ partial:typography/p class="mb-4" :content="text" }}
                 {{ /if }}
             </div>
-            {{ partial:components/button as="span" faux="true" }}
-        </a>
-    {{ /block:link_blocks }}
+            {{ button }}
+                {{ partial:components/button as="span" faux="true" }}
+            {{ /button }}
+        </{{ button ? 'a' : 'article' }}>
+    {{ /block:cards }}
 </section>
-<!-- End: /page_builder/_link_blocks.antlers.html -->
+<!-- End: /page_builder/_cards.antlers.html -->
