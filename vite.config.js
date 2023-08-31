@@ -4,9 +4,9 @@ import { networkInterfaces } from 'os'
 import VitePluginBrowserSync from 'vite-plugin-browser-sync'
 
 /** @type {import('vite').UserConfig} */
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '')
-    const ip = Object.values(networkInterfaces()).flat().find((i) => i.family == 'IPv4' && !i.internal)?.address
+    const ip = Object.values(networkInterfaces()).flat().find((i) => i.family === 'IPv4' && !i.internal)?.address
     const isSecuredSite = env.APP_URL.startsWith('https://')
     const url = env.APP_URL
     const host = url.replace(/^https?:\/\//, '')
