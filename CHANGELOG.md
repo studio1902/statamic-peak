@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.5 (Unreleased)
+
+### What's new
+- Default to exporting form field display names instead of handles. 75875786 by @robdekort
+
 ## v15.4 (2023-08-31)
 
 ### What's changed
