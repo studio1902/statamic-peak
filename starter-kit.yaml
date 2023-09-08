@@ -14,6 +14,7 @@ export_paths:
   - config/statamic/antlers.php
   - config/statamic/cp.php
   - config/statamic/editions.php
+  - config/statamic/forms.php
   - config/statamic/git.php
   - config/statamic/live_preview.php
   - config/statamic/search.php
