@@ -1,8 +1,9 @@
 # Changelog
 
-## v15.5 (Unreleased)
+## v15.5 (2023-09-09)
 
 ### What's new
+- Use Statamic Peak SEO Addon 7.0 and add new cookie notice fields. b8e36531 by @robdekort
 - Default to exporting form field display names instead of handles. 75875786 by @robdekort
 
 ### What's changed
