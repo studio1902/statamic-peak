@@ -52,3 +52,4 @@ dependencies:
   studio1902/statamic-peak-commands: ^2.0
   studio1902/statamic-peak-seo: ^6.0
   studio1902/statamic-peak-tools: ^3.0
+  laravel/prompts: ^0.1
