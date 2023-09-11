@@ -2,7 +2,7 @@
 
 ## v15.5.1 (2023-09-11)
 
-### What's new
+### What's improved
 - Update Privacy Policy and Cookie Notice field instructions. 7732ac5b by @robdekort
 
 ## v15.5 (2023-09-09)
