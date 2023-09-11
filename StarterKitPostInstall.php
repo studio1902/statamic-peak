@@ -37,17 +37,36 @@ class StarterKitPostInstall
             $originalAppKey = env('APP_KEY');
 
             $env = app('files')->get(base_path('.env.example'));
-            $env = str_replace('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"", $env);
-            $env = str_replace('APP_URL=', "APP_URL=\"{$originalAppUrl}\"", $env);
-            $env = str_replace('APP_KEY=', "APP_KEY=\"{$originalAppKey}\"", $env);
+            $env = str_replace(
+                [
+                    'APP_NAME="Statamic Peak"',
+                    'APP_URL=',
+                    'APP_KEY=',
+                ],
+                [
+                    "APP_NAME=\"{$appName}\"",
+                    "APP_URL=\"{$originalAppUrl}\"",
+                    "APP_KEY=\"{$originalAppKey}\""
+                ],
+                $env
+            );
 
             if (!$debugBarEnabled) {
                 $env = str_replace('DEBUGBAR_ENABLED=true', 'DEBUGBAR_ENABLED=false', $env);
             }
 
             $readme = app('files')->get(base_path('README.md'));
-            $readme = str_replace('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"", $readme);
-            $readme = str_replace('APP_KEY=', "APP_KEY=\"{$originalAppKey}\"", $readme);
+            $readme = str_replace(
+                [
+                    'APP_NAME="Statamic Peak"',
+                    'APP_KEY='
+                ],
+                [
+                    "APP_NAME=\"{$appName}\"",
+                    "APP_KEY=\"{$originalAppKey}\""
+                ],
+                $readme
+            );
 
             if (
                 confirm(
