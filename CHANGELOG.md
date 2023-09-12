@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's changed
+- Default to Mailpit instead of Mailhog in `.env.example`. 32aeeaa5 by @robdekort
+
 ## v15.5.1 (2023-09-11)
 
 ### What's improved
