@@ -6,6 +6,7 @@ use Symfony\Component\Process\Process;
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
+use function Laravel\Prompts\spin;
 use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
@@ -65,7 +66,11 @@ class StarterKitPostInstall
             return;
         }
 
-        $this->runCommand('npm i', fn() => info('Dependencies installed.'));
+        $this->run(
+            command: 'npm i',
+            successMessage: 'npm dependencies installed.',
+            processingMessage: 'Installing npm dependencies...',
+        );
     }
 
     protected function installPuppeteerAndBrowsershot(): void
@@ -84,34 +89,11 @@ class StarterKitPostInstall
             return;
         }
 
-        $this->runCommand('composer require laravel-lang/common --dev', function () {
-            info('Laravel Lang installed.');
+        if (!$this->installLaravelLang()) {
+            return;
+        }
 
-            info('Enter the handles of the languages you want to install. Press enter when you\'re done.');
-
-            $installedLanguages = collect();
-            do {
-                if (
-                    $handle = suggest(
-                        label: 'Handle of language',
-                        options: fn($value) => collect(Locales::available())
-                            ->filter(fn(string $language) => str_contains($language, $value) && !$installedLanguages->contains($language))
-                            ->values()
-                            ->toArray(),
-                        validate: fn(string $value) => match (true) {
-                            $value && !Locales::isAvailable($value) => 'Not supported by Laravel Lang.',
-                            $value && $installedLanguages->contains($value) => 'Already installed.',
-                            default => null,
-                        },
-                    )
-                ) {
-                    $this->runCommand("php artisan lang:add {$handle}", function () use ($handle, $installedLanguages) {
-                        $installedLanguages->push($handle);
-                        info("Language \"{$handle}\" installed.");
-                    });
-                }
-            } while ($handle);
-        });
+        $this->selectLanguagesToInstall();
     }
 
     protected function starPeakRepo(): void
@@ -137,8 +119,7 @@ class StarterKitPostInstall
 
     protected function finish(): void
     {
-        //TODO[mr]: check if <info> is needed for green (11.09.23 mr)
-        info('<info>[✓] Peak is installed. Enjoy the view!</info>');
+        info('[✓] Peak is installed. Enjoy the view!');
         warning('Run `php please peak:clear-site` to get rid of default content.');
         warning('Run `php please peak:install-preset` to install premade sets onto your website.');
         warning('Run `php please peak:install-block` to install premade blocks onto your page builder.');
@@ -216,7 +197,11 @@ class StarterKitPostInstall
 
     protected function initializeGitRepo(): void
     {
-        $this->runCommand('git init', fn() => info('Repo initialised.'));
+        $this->run(
+            command: 'git init',
+            successMessage: 'Repo initialised.',
+            processingMessage: 'Initialising repo...'
+        );
     }
 
     protected function excludeBuildFolderFromGit(): void
@@ -246,25 +231,60 @@ class StarterKitPostInstall
         $this->appendToGitignore('/storage/forms');
     }
 
-    protected function runCommand(string $command, callable $callback): void
+    protected function run(string $command, string $successMessage, string $processingMessage): bool
     {
         $process = new Process(explode(' ', $command));
         try {
-            $process->mustRun();
-            $callback();
+            spin(fn() => $process->mustRun(), $processingMessage);
+
+            info("[✓] {$successMessage}");
+
+            return true;
         } catch (ProcessFailedException $exception) {
             error($exception->getMessage());
+
+            return false;
         }
     }
 
     protected function installPuppeteer(): void
     {
-        $this->runCommand('npm i puppeteer', fn() => info('Puppeteer installed.'));
+        $this->run(
+            command: 'npm i puppeteer',
+            successMessage: 'Puppeteer installed.',
+            processingMessage: 'Installing Puppeteer...',
+        );
     }
 
     protected function installBrowsershot(): void
     {
-        $this->runCommand('composer require spatie/browsershot', fn() => info('Browsershot installed.'));
+        $this->run(
+            command: 'composer require spatie/browsershot',
+            successMessage: 'Browsershot installed.',
+            processingMessage: 'Installing Browsershot...',
+        );
+    }
+
+    protected function installLaravelLang(): bool
+    {
+        return $this->run(
+            command: 'composer require laravel-lang/common --dev',
+            successMessage: 'Laravel Lang installed.',
+            processingMessage: 'Installing Laravel Lang...',
+        );
+    }
+
+    protected function selectLanguagesToInstall(): void
+    {
+        info('Enter the handles of the languages you want to install. Press enter when you\'re done.');
+
+        $installedLanguages = collect();
+
+        do {
+            if (($handle = $this->selectLanguageToInstall($installedLanguages)) && $this->installLanguage($handle)) {
+                $installedLanguages->push($handle);
+            }
+        } while ($handle);
     }
 
     protected function replaceInEnv(string $search, string $replace): void
@@ -280,5 +300,26 @@ class StarterKitPostInstall
     protected function appendToGitignore(string $toIgnore): void
     {
         app('files')->append(base_path('.gitignore'), "\n{$toIgnore}");
+    }
+
+    protected function selectLanguageToInstall(\Illuminate\Support\Collection $installedLanguages): string
+    {
+        return suggest(
+            label: 'Handle of language',
+            options: fn($value) => collect(Locales::available())
+                ->filter(fn(string $language) => str_contains($language, $value) && !$installedLanguages->contains($language))
+                ->values()
+                ->toArray(),
+            validate: fn(string $value) => match (true) {
+                $value && !Locales::isAvailable($value) => 'Not supported by Laravel Lang.',
+                $value && $installedLanguages->contains($value) => 'Already installed.',
+                default => null,
+            },
+        );
+    }
+
+    protected function installLanguage(string $handle): bool
+    {
+        return $this->run("php artisan lang:add {$handle}", "Language \"{$handle}\" installed.", "Installing language \"{$handle}\"...");
     }
 }
