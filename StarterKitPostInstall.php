@@ -57,7 +57,7 @@ class StarterKitPostInstall
         $appName = text(
             label: 'What should be your app name?',
             placeholder: 'Statamic Peak',
-            default: 'Statamic Peak',
+            required: true,
         );
 
         $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
