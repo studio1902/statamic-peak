@@ -133,10 +133,11 @@ class StarterKitPostInstall
 
     protected function setAppName(): void
     {
+        //TODO[mr]: remove default and require (13.09.23 mr)
         $appName = text(
             label: 'What should be your app name?',
             placeholder: 'Statamic Peak',
-            required: true,
+            default: 'Statamic Peak'
         );
 
         $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
