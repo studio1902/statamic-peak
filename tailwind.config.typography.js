@@ -56,9 +56,6 @@ module.exports = {
             },
             ':where(.prose > div > :last-child)': {
               marginBottom: '0 !important',
-            },
-            '.not-prose': {
-              margin: '2rem 0 !important',
             }
           }
         }
