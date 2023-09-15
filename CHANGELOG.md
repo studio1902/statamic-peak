@@ -1,9 +1,11 @@
 # Changelog
 
-## Unreleased
+## v15.6 (2023-09-15)
 
 ### What's changed
 - Default to Mailpit instead of Mailhog in `.env.example`. 32aeeaa5 by @robdekort
+- Don't rely on not prose to add vertical margin. 5d98decb by @robdekort
+- Update dependencies. 1566f2ce by @robdekort
 
 ## v15.5.1 (2023-09-11)
 
