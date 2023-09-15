@@ -18,9 +18,9 @@
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
-    "@csstools/postcss-oklab-function": "^3.0.2",
+    "@csstools/postcss-oklab-function": "^3.0.3",
     "@tailwindcss/forms": "^0.5.6",
-    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "10.4.15",
     "glob-all": "^3.3.1",
     "laravel-vite-plugin": "^0.8.0",
