@@ -45,6 +45,8 @@ fields:
                 -
                   handle: text
                   field: common.text_plain
+                  config:
+                    display: Text
                 -
                   handle: button
                   field: buttons.buttons
