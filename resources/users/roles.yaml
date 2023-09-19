@@ -50,3 +50,8 @@ user_management:
     - 'change passwords'
     - 'assign roles'
     - 'assign user groups'
+form_editor:
+  title: 'Form editor'
+  permissions:
+    - 'configure form fields'
+    - 'configure forms'
