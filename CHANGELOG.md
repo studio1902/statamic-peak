@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.7 (2023-09-19)
+
+### What's new
+- A Form editor role now Core got the ability to edit only form fields. d6d6c644 by @robdekort
+
 ## v15.6 (2023-09-15)
 
 ### What's changed
