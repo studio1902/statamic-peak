@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.7.1 (2023-09-20)
+
+### What's fixed
+- Up default mobile navigation z-index to prevent overlapping with video component. 65d27c12 by @robdekort
+
 ## v15.7 (2023-09-19)
 
 ### What's new
