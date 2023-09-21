@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.7.2 (2023-09-21)
+
+### What's improved
+- Remove redundant button class. fbe928ef by @robdekort
+
 ## v15.7.1 (2023-09-20)
 
 ### What's fixed
