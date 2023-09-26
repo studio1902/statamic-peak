@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.8.0 (2023-09-26)
+
+### What's changed
+- Simplify Vite config. 5709e97e by @robdekort
+
 ## v15.7.2 (2023-09-21)
 
 ### What's improved
