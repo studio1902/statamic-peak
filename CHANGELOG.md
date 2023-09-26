@@ -1,13 +1,15 @@
 # Changelog
 
-<<<<<<< HEAD
-=======
+## v15.8.0 (2023-09-26)
+
+### What's changed
+- Simplify Vite config. 5709e97e by @robdekort
+
 ## v15.7.2 (2023-09-21)
 
 ### What's improved
 - Remove redundant button class. fbe928ef by @robdekort
 
->>>>>>> main
 ## v15.7.1 (2023-09-20)
 
 ### What's fixed
