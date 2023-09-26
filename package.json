@@ -3,7 +3,6 @@
   "scripts": {
     "dev": "vite",
     "watch": "vite",
-    "sync": "VITE_BROWSERSYNC=true vite",
     "build": "vite build",
     "production": "vite build"
   },
@@ -29,7 +28,6 @@
     "postcss-import": "^15.1.0",
     "resolve-url-loader": "^5.0.0",
     "tailwindcss": "^3.3.3",
-    "vite": "^4.4.9",
-    "vite-plugin-browser-sync": "^1.0.6"
+    "vite": "^4.4.9"
   }
 }
