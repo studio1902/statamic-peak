@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.9.0 (2023-09-29)
+
+### What's improved
+- Prevent Tailwind compilation bug by using attribute selectors in the Peak outer grid config. b0bfccbe by @robdekort
+
 ## v15.8.0 (2023-09-26)
 
 ### What's changed
