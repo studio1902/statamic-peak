@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.19.0 (2023-10-09)
+
+### What's changed
+- Remove focus visible polyfill. 49b1e075 by @robdekort
+
 ## v15.9.0 (2023-09-29)
 
 ### What's improved
