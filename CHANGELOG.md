@@ -1918,7 +1918,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.1
 ## 1.21.1 (2021-02-17)
 
 ### What's new
-- Use `inverted="true"` on `resources/views/components/_buttons.antlers.html` or `resources/views/component/_button.antlers.html` to use inverted styled buttons. Usefull on contrasting backgrounds (BYOS: bring your own styling).
+- Use `inverted="true"` on `resources/views/components/_buttons.antlers.html` or `resources/views/component/_button.antlers.html` to use inverted styled buttons. Useful on contrasting backgrounds (BYOS: bring your own styling).
 - Added GitHub to the Social Media blueprint. Thanks [Gal](https://github.com/morpheus7CS).
 
 ## 1.21.0 (2021-02-12)
