@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.11.0 (2023-10-13)
+
+### What's new
+- Add Dutch field translations for the upcoming Statamic release. Use [Statamic Translation Manager](https://github.com/ryanmitchell/statamic-translation-manager) to easily translate fields yourself. Thank you @ryanmitchell for all your work on making Statamic more accessible. 79b53ae9 by @robdekort
+
 ## v15.10.0 (2023-10-09)
 
 ### What's changed
