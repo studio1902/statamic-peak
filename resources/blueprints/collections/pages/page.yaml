@@ -80,3 +80,9 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+              display: Parent
+              instructions_position: above
+              visibility: visible
+              mode: default
+              create: true
+              hide_display: false
