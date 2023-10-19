@@ -21,6 +21,7 @@ module.exports = {
     './resources/views/**/*.blade.php',
     './resources/views/**/*.html',
     './resources/js/**/*.js',
+    './content/**/*.md',
     './vendor/studio1902/**/*.blade.php',
     './vendor/studio1902/**/*.html',
     './vendor/studio1902/**/*.js',
