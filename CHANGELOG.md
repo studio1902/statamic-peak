@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.12.0 (2023-10-19)
+
+### What's new
+- Add Markdown content to the Tailwind content config so the browser refreshes when making CP changes. bb505908 by @robdekort
+
 ## v15.11.0 (2023-10-13)
 
 ### What's new
