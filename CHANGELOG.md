@@ -1,5 +1,11 @@
 # Changelog
 
+## v15.13.0 (2023-10-29)
+
+### What's new
+- Prevent users from deleting entries that have a collection mounted. 3dc40ed1 by @robdekort
+- Updated roles. d4e608d5 by @robdekort
+
 ## v15.12.0 (2023-10-19)
 
 ### What's new
