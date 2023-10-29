@@ -49,6 +49,7 @@ return [
     'skip_to_content' => 'Doorgaan naar content',
 
     // Other
+    'collection_mounted' => 'Je entry :title bevat een collectie en kan niet worden verwijderd.',
     'no_results' => 'Er zijn momenteel geen resultaten.',
     'no_script' => 'Deze website vereist Javascript om sommige onderdelen goed te laten functioneren.',
 

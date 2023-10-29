@@ -49,6 +49,7 @@ return [
     'skip_to_content' => 'Skip to content',
 
     // Other
+    'collection_mounted' => 'Your entry :title has a collection mounted and can\'t be deleted.',
     'no_results' => 'There are currently no posts.',
     'no_script' => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
 

@@ -5,7 +5,9 @@ export_paths:
   - .gitignore
   - app/Console/Kernel.php
   - app/Http/Middleware/VerifyCsrfToken.php
+  - app/Listeners/PreventDeletingMounts.php
   - app/Providers/AppServiceProvider.php
+  - app/Providers/EventServiceProvider.php
   - CHANGELOG.md
   - content
   - CONTRIBUTING.md
