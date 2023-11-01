@@ -44,7 +44,7 @@ class StarterKitPostInstall
 
     protected function overwriteEnvWithPresets(): void
     {
-        if (!confirm(label: 'Do you want overwrite your `.env` file with the Peak presets?', default: true,)) {
+        if (!confirm(label: 'Do you want overwrite your `.env` file with the Peak presets?', default: true)) {
             return;
         }
 
@@ -65,7 +65,7 @@ class StarterKitPostInstall
 
     protected function initializeGitAndConfigureGitignore(): void
     {
-        if (!confirm(label: 'Do you want to init a git repo and configure gitignore?', default: true,)) {
+        if (!confirm(label: 'Do you want to init a git repo and configure gitignore?', default: true)) {
             return;
         }
 
@@ -78,7 +78,7 @@ class StarterKitPostInstall
 
     protected function installNodeDependencies(): void
     {
-        if (!confirm(label: 'Do you want to install npm dependencies?', default: true,)) {
+        if (!confirm(label: 'Do you want to install npm dependencies?', default: true)) {
             return;
         }
 
@@ -91,7 +91,7 @@ class StarterKitPostInstall
 
     protected function installPuppeteerAndBrowsershot(): void
     {
-        if (!confirm(label: 'Do you want to `npm i puppeteer` and `composer require spatie/browsershot` for generating social images?', default: true,)) {
+        if (!confirm(label: 'Do you want to `npm i puppeteer` and `composer require spatie/browsershot` for generating social images?', default: true)) {
             return;
         }
 
@@ -101,7 +101,7 @@ class StarterKitPostInstall
 
     protected function installTranslations(): void
     {
-        if (!confirm(label: 'Do you want to install missing Laravel translation files using the Laravel Lang package?', default: true,)) {
+        if (!confirm(label: 'Do you want to install missing Laravel translation files using the Laravel Lang package?', default: true)) {
             return;
         }
 
@@ -114,7 +114,7 @@ class StarterKitPostInstall
 
     protected function starPeakRepo(): void
     {
-        if (!confirm(label: 'Would you like to star the Peak repo?', default: false,)) {
+        if (!confirm(label: 'Would you like to star the Peak repo?', default: false)) {
             return;
         }
 
@@ -179,7 +179,7 @@ class StarterKitPostInstall
 
     protected function useDebugbar(): void
     {
-        if (confirm(label: 'Do you want to use the debugbar?', default: false,)) {
+        if (confirm(label: 'Do you want to use the debugbar?', default: false)) {
             return;
         }
 
@@ -188,7 +188,7 @@ class StarterKitPostInstall
 
     protected function useImagick(): void
     {
-        if (!confirm(label: 'Do you want use Imagick as an image processor instead of GD?', default: true,)) {
+        if (!confirm(label: 'Do you want use Imagick as an image processor instead of GD?', default: true)) {
             return;
         }
 
@@ -198,7 +198,7 @@ class StarterKitPostInstall
 
     protected function enableSaveCachedImages(): void
     {
-        if (!confirm(label: 'Do you want to enable `SAVE_CACHED_IMAGES` (slower initial page load)?', default: false,)) {
+        if (!confirm(label: 'Do you want to enable `SAVE_CACHED_IMAGES` (slower initial page load)?', default: false)) {
             return;
         }
 
@@ -223,7 +223,7 @@ class StarterKitPostInstall
 
     protected function excludeBuildFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true,)) {
+        if (!confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true)) {
             return;
         }
 
@@ -232,7 +232,7 @@ class StarterKitPostInstall
 
     protected function excludeUsersFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `users` folder from git?', default: false,)) {
+        if (!confirm(label: 'Do you want to exclude the `users` folder from git?', default: false)) {
             return;
         }
 
@@ -241,7 +241,7 @@ class StarterKitPostInstall
 
     protected function excludeFormsFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `storage/form` folder from git?', default: false,)) {
+        if (!confirm(label: 'Do you want to exclude the `storage/form` folder from git?', default: false)) {
             return;
         }
 
