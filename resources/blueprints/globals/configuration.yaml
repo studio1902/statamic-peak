@@ -64,7 +64,7 @@ tabs:
                 pdf: PDF
               default: none
               type: button_group
-              instructions: 'This will be used in form consent and in the optional cookie banner.'
+              instructions: 'Form consent fields will link to this Privacy Policy.'
               instructions_position: below
               listable: false
               localizable: true
@@ -95,3 +95,47 @@ tabs:
                 privacy_statement_type: 'equals entry'
               validate:
                 - 'required_if:privacy_statement_type,entry'
+      -
+        display: 'Cookie notice'
+        instructions: 'Configure an optional cookie notice.'
+        fields:
+          -
+            handle: cookie_notice_type
+            field:
+              options:
+                none: None
+                entry: Entry
+                pdf: PDF
+              default: none
+              type: button_group
+              instructions: 'The Cookie Banner will link to this Cookie Notice.'
+              instructions_position: below
+              listable: false
+              localizable: true
+              display: 'Cookie notice'
+              width: 50
+          -
+            handle: cookie_notice_asset
+            field: common.image
+            config:
+              container: files
+              localizable: true
+              listable: hidden
+              display: 'Cookie notice (PDF)'
+              width: 50
+              if:
+                cookie_notice_type: 'equals pdf'
+              validate:
+                - 'required_if:cookie_notice_type,pdf'
+          -
+            handle: cookie_notice_entry
+            field: common.entry
+            config:
+              localizable: true
+              listable: hidden
+              display: 'Cookie notice (entry)'
+              width: 50
+              if:
+                cookie_notice_type: 'equals entry'
+              validate:
+                - 'required_if:cookie_notice_type,entry'

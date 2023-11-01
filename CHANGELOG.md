@@ -1,8 +1,67 @@
 # Changelog
 
-## v15.5 (Unreleased)
+## v15.13.0 (2023-10-29)
 
 ### What's new
+- Prevent users from deleting entries that have a collection mounted. 3dc40ed1 by @robdekort
+- Updated roles. d4e608d5 by @robdekort
+
+## v15.12.0 (2023-10-19)
+
+### What's new
+- Add Markdown content to the Tailwind content config so the browser refreshes when making CP changes. bb505908 by @robdekort
+
+## v15.11.0 (2023-10-13)
+
+### What's new
+- Add Dutch field translations for the upcoming Statamic release. Use [Statamic Translation Manager](https://github.com/ryanmitchell/statamic-translation-manager) to easily translate fields yourself. Thank you @ryanmitchell for all your work on making Statamic more accessible. 79b53ae9 by @robdekort
+
+## v15.10.0 (2023-10-09)
+
+### What's changed
+- Remove focus visible polyfill. 49b1e075 by @robdekort
+
+## v15.9.0 (2023-09-29)
+
+### What's improved
+- Prevent Tailwind compilation bug by using attribute selectors in the Peak outer grid config. b0bfccbe by @robdekort
+
+## v15.8.0 (2023-09-26)
+
+### What's changed
+- Simplify Vite config. 5709e97e and e29124e9 by @robdekort
+
+## v15.7.2 (2023-09-21)
+
+### What's improved
+- Remove redundant button class. fbe928ef by @robdekort
+
+## v15.7.1 (2023-09-20)
+
+### What's fixed
+- Up default mobile navigation z-index to prevent overlapping with video component. 65d27c12 by @robdekort
+
+## v15.7 (2023-09-19)
+
+### What's new
+- A Form editor role now Core got the ability to edit only form fields. d6d6c644 by @robdekort
+
+## v15.6 (2023-09-15)
+
+### What's changed
+- Default to Mailpit instead of Mailhog in `.env.example`. 32aeeaa5 by @robdekort
+- Don't rely on not prose to add vertical margin. 5d98decb by @robdekort
+- Update dependencies. 1566f2ce by @robdekort
+
+## v15.5.1 (2023-09-11)
+
+### What's improved
+- Update Privacy Policy and Cookie Notice field instructions. 7732ac5b by @robdekort
+
+## v15.5 (2023-09-09)
+
+### What's new
+- Use Statamic Peak SEO Addon 7.0 and add new cookie notice fields. b8e36531 by @robdekort
 - Default to exporting form field display names instead of handles. 75875786 by @robdekort
 
 ### What's changed
@@ -1875,7 +1934,7 @@ Peak now has it's own docs thanks to Robert Guss: [the Peak docs](https://peak.1
 ## 1.21.1 (2021-02-17)
 
 ### What's new
-- Use `inverted="true"` on `resources/views/components/_buttons.antlers.html` or `resources/views/component/_button.antlers.html` to use inverted styled buttons. Usefull on contrasting backgrounds (BYOS: bring your own styling).
+- Use `inverted="true"` on `resources/views/components/_buttons.antlers.html` or `resources/views/component/_button.antlers.html` to use inverted styled buttons. Useful on contrasting backgrounds (BYOS: bring your own styling).
 - Added GitHub to the Social Media blueprint. Thanks [Gal](https://github.com/morpheus7CS).
 
 ## 1.21.0 (2021-02-12)
