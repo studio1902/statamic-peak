@@ -9,6 +9,7 @@ use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\spin;
+use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
@@ -249,7 +250,7 @@ class StarterKitPostInstall
         $this->appendToGitignore('/storage/forms');
     }
 
-    protected function run(string $command, string $successMessage, string $processingMessage, ?string $errorMessage = null): bool
+    protected function run(string $command, string $successMessage, string $processingMessage): bool
     {
         $process = new Process(explode(' ', $command));
         try {
@@ -259,7 +260,7 @@ class StarterKitPostInstall
 
             return true;
         } catch (ProcessFailedException $exception) {
-            error($errorMessage ?? $exception->getMessage());
+            error($exception->getMessage());
 
             return false;
         }
@@ -322,10 +323,14 @@ class StarterKitPostInstall
 
     protected function selectLanguageToInstall(Collection $installedLanguages): string
     {
-        return text(
+        return suggest(
             label: 'Handle of language (submit empty when you\'re done)',
-            placeholder: 'en',
+            options: fn($value) => collect(Locales::raw()->available())
+                ->filter(fn(string $language) => str_contains($language, $value) && !$installedLanguages->contains($language))
+                ->values()
+                ->toArray(),
             validate: fn(string $value) => match (true) {
+                $value && !Locales::isAvailable($value) => 'Not supported by Laravel Lang.',
                 $value && $installedLanguages->contains($value) => "Language \"{$value}\" already installed.",
                 default => null,
             },
@@ -338,8 +343,7 @@ class StarterKitPostInstall
         return $this->run(
             "php artisan lang:add {$handle}",
             "Language \"{$handle}\" installed.",
-            "Installing language \"{$handle}\"...",
-            "Installation of language \"{$handle}\" failed."
+            "Installing language \"{$handle}\"..."
         );
     }
 }
