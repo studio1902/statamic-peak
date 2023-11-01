@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Collection;
 use Laravel\Prompts\Prompt;
-use LaravelLang\Publisher\Facades\Helpers\Locales;
+use LaravelLang\Locales\Facades\Locales;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 use function Laravel\Prompts\confirm;
@@ -106,6 +107,7 @@ class StarterKitPostInstall
         }
 
         if (!$this->installLaravelLang()) {
+            error('Could not install Laravel Lang.');
             return;
         }
 
@@ -284,7 +286,7 @@ class StarterKitPostInstall
 
     protected function installLaravelLang(): bool
     {
-        return $this->run(
+         return $this->run(
             command: 'composer require laravel-lang/common --dev',
             successMessage: 'Laravel Lang installed.',
             processingMessage: 'Installing Laravel Lang...',
@@ -319,11 +321,11 @@ class StarterKitPostInstall
         app('files')->append(base_path('.gitignore'), "\n{$toIgnore}");
     }
 
-    protected function selectLanguageToInstall(\Illuminate\Support\Collection $installedLanguages): string
+    protected function selectLanguageToInstall(Collection $installedLanguages): string
     {
         return suggest(
             label: 'Handle of language',
-            options: fn($value) => collect(Locales::available())
+            options: fn($value) => collect(Locales::raw()->available())
                 ->filter(fn(string $language) => str_contains($language, $value) && !$installedLanguages->contains($language))
                 ->values()
                 ->toArray(),
