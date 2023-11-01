@@ -45,6 +45,8 @@ class StarterKitPostInstall
         $this->enableSaveCachedImages();
 
         $this->writeEnvAndReadme();
+
+        info("[✓] `.env` file overwritten.");
     }
 
     protected function initializeGitAndConfigureGitignore(): void
