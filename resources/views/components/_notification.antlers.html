@@ -11,10 +11,10 @@
     class="
         rounded border p-4
         {{ switch(
-            (type == 'success') => 'bg-green-100 border-green-600',
-            (type == 'notice') => 'bg-yellow-100 border-yellow-600',
-            (type == 'error') => 'bg-red-100 border-red-600',
-            () => 'bg-gray-100 border-gray-600'
+            (type == 'success') => 'bg-green-50 border-green-700',
+            (type == 'notice') => 'bg-yellow-50 border-yellow-700',
+            (type == 'error') => 'bg-red-50 border-red-700',
+            () => 'bg-gray-50 border-gray-700'
         )}}
         {{ class }}
     "
@@ -28,10 +28,10 @@
                 class="
                     h-5 w-5 fill-current motion-safe:transition-colors
                     { switch(
-                        (type == 'success') => 'text-green-800',
-                        (type == 'notice') => 'text-yellow-800',
-                        (type == 'error') => 'text-red-800',
-                        () => 'text-gray-800'
+                        (type == 'success') => 'text-green-700',
+                        (type == 'notice') => 'text-yellow-700',
+                        (type == 'error') => 'text-red-700',
+                        () => 'text-gray-700'
                     )}
                 "
                 sanitize="true"

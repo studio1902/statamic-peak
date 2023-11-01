@@ -9,24 +9,50 @@ tabs:
             field:
               display: Name
               type: text
-              validate: required
+              validate:
+                - required
+                - 'min:2'
               localizable: true
-              width: 50
+              width: 66
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: false
           -
             handle: email
             field:
               display: 'Email address'
               type: text
-              validate: required|email
+              validate:
+                - required
+                - email
               localizable: true
-              width: 50
+              width: 66
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              input_type: text
+              antlers: false
+              hide_display: false
           -
             handle: message_body
             field:
               display: Message
               type: textarea
-              validate: required
+              validate:
+                - required
+                - 'min:5'
               localizable: true
+              instructions_position: above
+              listable: hidden
+              visibility: visible
+              replicator_preview: true
+              antlers: false
+              hide_display: false
           -
             handle: consent
             field:

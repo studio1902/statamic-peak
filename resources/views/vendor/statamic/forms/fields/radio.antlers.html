@@ -1,22 +1,21 @@
 <!-- /vendor/statamic/forms/fields/radio.antlers.html -->
 <fieldset
-    class="flex
-        {{ inline
-            ? 'space-x-4'
-            : 'flex-col space-y-4'
-        }}"
-    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    aria-describedBy="{{ handle }}"
+    x-model="form.{{ handle }}"
+    @change="form.validate('{{ handle }}')"
+    :aria-invalid="form.invalid('{{ handle }}')"
+    class="flex {{ inline ? 'gap-x-4' : 'flex-col gap-y-2' }}"
+    id="{{ handle }}"
+    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
 >
     {{ foreach:options as="value|label" }}
         <label class="inline-flex items-center">
             <input
-                class="mr-2 border-neutral text-primary focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
+                class="mr-2 border-neutral text-primary focus-visible:border-primary focus-visible:ring-inset focus-visible:ring-primary motion-safe:transition"
                 type="radio"
                 name="{{ handle }}"
                 value="{{ value }}"
-                {{ js_attributes }}
                 {{ (old === value) ?= 'checked' }}
+                {{ js_attributes }}
             >
             {{ trans :key="label" }}
         </label>
