@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.14.0 (2023-11-07)
+
+### What's new
+- Use Prompts in Starter Kit Post Install. #348 by @marcorieser
+
 ## v15.13.0 (2023-10-29)
 
 ### What's new
