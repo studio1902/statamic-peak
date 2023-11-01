@@ -1,5 +1,6 @@
 <?php
 
+use Laravel\Prompts\Prompt;
 use LaravelLang\Publisher\Facades\Helpers\Locales;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
@@ -16,9 +17,11 @@ class StarterKitPostInstall
 {
     protected string $env = '';
     protected string $readme = '';
+    protected bool $interactive = true;
 
-    public function handle(): void
+    public function handle($console): void
     {
+        $this->applyInteractivity($console);
         $this->overwriteEnvWithPresets();
         $this->initializeGitAndConfigureGitignore();
         $this->installNodeDependencies();
@@ -26,6 +29,17 @@ class StarterKitPostInstall
         $this->installTranslations();
         $this->starPeakRepo();
         $this->finish();
+    }
+
+    protected function applyInteractivity($console): void
+    {
+        $this->interactive = !$console->option('no-interaction');
+
+        /**
+         * Interactivity should be inherited but seems like there is a bug in Prompts where it stays
+         * without interaction when a command was run before with `--no-interaction` flag.
+         */
+        Prompt::interactive($this->interactive);
     }
 
     protected function overwriteEnvWithPresets(): void
