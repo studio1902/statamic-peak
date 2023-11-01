@@ -9,7 +9,6 @@ use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\spin;
-use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
@@ -250,7 +249,7 @@ class StarterKitPostInstall
         $this->appendToGitignore('/storage/forms');
     }
 
-    protected function run(string $command, string $successMessage, string $processingMessage): bool
+    protected function run(string $command, string $successMessage, string $processingMessage, ?string $errorMessage = null): bool
     {
         $process = new Process(explode(' ', $command));
         try {
@@ -260,7 +259,7 @@ class StarterKitPostInstall
 
             return true;
         } catch (ProcessFailedException $exception) {
-            error($exception->getMessage());
+            error($errorMessage ?? $exception->getMessage());
 
             return false;
         }
@@ -286,7 +285,7 @@ class StarterKitPostInstall
 
     protected function installLaravelLang(): bool
     {
-         return $this->run(
+        return $this->run(
             command: 'composer require laravel-lang/common --dev',
             successMessage: 'Laravel Lang installed.',
             processingMessage: 'Installing Laravel Lang...',
@@ -295,7 +294,7 @@ class StarterKitPostInstall
 
     protected function selectLanguagesToInstall(): void
     {
-        info('Enter the handles of the languages you want to install. Press enter when you\'re done.');
+        info('Enter the handles of the languages you want to install. Leave empty and press enter when you\'re done.');
 
         $installedLanguages = collect();
 
@@ -323,22 +322,24 @@ class StarterKitPostInstall
 
     protected function selectLanguageToInstall(Collection $installedLanguages): string
     {
-        return suggest(
-            label: 'Handle of language',
-            options: fn($value) => collect(Locales::raw()->available())
-                ->filter(fn(string $language) => str_contains($language, $value) && !$installedLanguages->contains($language))
-                ->values()
-                ->toArray(),
+        return text(
+            label: 'Handle of language (submit empty when you\'re done)',
+            placeholder: 'en',
             validate: fn(string $value) => match (true) {
-                $value && !Locales::isAvailable($value) => 'Not supported by Laravel Lang.',
-                $value && $installedLanguages->contains($value) => 'Already installed.',
+                $value && $installedLanguages->contains($value) => "Language \"{$value}\" already installed.",
                 default => null,
             },
+            hint: $installedLanguages->isNotEmpty() ? 'Installed: ' . $installedLanguages->join(', ', ' and ') : '',
         );
     }
 
     protected function installLanguage(string $handle): bool
     {
-        return $this->run("php artisan lang:add {$handle}", "Language \"{$handle}\" installed.", "Installing language \"{$handle}\"...");
+        return $this->run(
+            "php artisan lang:add {$handle}",
+            "Language \"{$handle}\" installed.",
+            "Installing language \"{$handle}\"...",
+            "Installation of language \"{$handle}\" failed."
+        );
     }
 }
