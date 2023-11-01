@@ -101,7 +101,7 @@ class StarterKitPostInstall
 
     protected function installTranslations(): void
     {
-        if (!confirm(label: 'Do you want to install missing Laravel translation files using the Laravel Lang package?', default: true)) {
+        if (!confirm(label: 'Do you want to install missing Laravel translation files using the Laravel Lang package?', default: $this->interactive)) {
             return;
         }
 
@@ -149,11 +149,11 @@ class StarterKitPostInstall
 
     protected function setAppName(): void
     {
-        //TODO[mr]: remove default and require (13.09.23 mr)
         $appName = text(
             label: 'What should be your app name?',
             placeholder: 'Statamic Peak',
-            default: 'Statamic Peak'
+            default: $this->interactive ? '' : 'Statamic Peak',
+            required: true,
         );
 
         $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
