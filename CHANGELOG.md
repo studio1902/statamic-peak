@@ -1,6 +1,11 @@
 # Changelog
 
-## v15.14.0 (2023-11-07)
+## v15.15.0 (2023-11-03)
+
+### What's new
+- Add option to create a (private) repository on Github in Starter Kit Post Install. ae48f16e by @robdekort
+
+## v15.14.0 (2023-11-01)
 
 ### What's new
 - Use Prompts in Starter Kit Post Install. #348 by @marcorieser
