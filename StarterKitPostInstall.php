@@ -74,6 +74,7 @@ class StarterKitPostInstall
         $this->excludeBuildFolderFromGit();
         $this->excludeUsersFolderFromGit();
         $this->excludeFormsFolderFromGit();
+        $this->createGithubRepo();
     }
 
     protected function installNodeDependencies(): void
@@ -219,6 +220,28 @@ class StarterKitPostInstall
             command: 'git init',
             successMessage: 'Repo initialised.',
             processingMessage: 'Initialising repo...'
+        );
+    }
+
+    protected function createGithubRepo(): void
+    {
+        if (!confirm(label: 'Requires Github CLI. Do you want create a repo on Github?', default: false)) {
+            return;
+        }
+
+        $name = text(
+            label: 'What should be your full repository name?',
+            placeholder: 'studio1902/statamic-peak',
+            required: true,
+        );
+
+        $flags = '--source=.';
+        confirm(label: 'Should this be a private repository?', default: true) ?? $flags .= ' --private';
+
+        $this->run(
+            command: "gh repo create $name $flags",
+            successMessage: 'Remove repository created.',
+            processingMessage: 'Creating remote repository...'
         );
     }
 
