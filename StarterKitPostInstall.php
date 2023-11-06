@@ -9,6 +9,7 @@ use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\spin;
+use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
@@ -17,16 +18,20 @@ class StarterKitPostInstall
 {
     protected string $env = '';
     protected string $readme = '';
+    protected string $app = '';
     protected bool $interactive = true;
 
     public function handle($console): void
     {
         $this->applyInteractivity($console);
+        $this->loadFiles();
         $this->overwriteEnvWithPresets();
         $this->initializeGitAndConfigureGitignore();
         $this->installNodeDependencies();
         $this->installPuppeteerAndBrowsershot();
         $this->installTranslations();
+        $this->setTimezone();
+        $this->writeFiles();
         $this->starPeakRepo();
         $this->finish();
     }
@@ -48,8 +53,6 @@ class StarterKitPostInstall
             return;
         }
 
-        $this->loadPresetEnvAndReadme();
-
         $this->setAppName();
         $this->setAppUrl();
         $this->setAppKey();
@@ -57,8 +60,6 @@ class StarterKitPostInstall
         $this->useDebugbar();
         $this->useImagick();
         $this->enableSaveCachedImages();
-
-        $this->writeEnvAndReadme();
 
         info("[✓] `.env` file overwritten.");
     }
@@ -114,6 +115,20 @@ class StarterKitPostInstall
         $this->selectLanguagesToInstall();
     }
 
+    protected function setTimezone(): void
+    {
+        $newTimezone = suggest(
+            label: 'What timezone should your app be in?',
+            options: timezone_identifiers_list(DateTimeZone::ALL, null),
+            placeholder: 'UTC',
+            default: 'UTC'
+        );
+
+        $currentTimezone = config('app.timezone');
+
+        $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
+    }
+
     protected function starPeakRepo(): void
     {
         if (!confirm(label: 'Would you like to star the Peak repo?', default: false)) {
@@ -143,10 +158,11 @@ class StarterKitPostInstall
         warning('Run `php please peak:install-block` to install premade blocks onto your page builder.');
     }
 
-    protected function loadPresetEnvAndReadme(): void
+    protected function loadFiles(): void
     {
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
+        $this->app = app('files')->get(base_path('config/app.php'));
     }
 
     protected function setAppName(): void
@@ -208,10 +224,11 @@ class StarterKitPostInstall
         $this->replaceInReadme('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true');
     }
 
-    protected function writeEnvAndReadme(): void
+    protected function writeFiles(): void
     {
         app('files')->put(base_path('.env'), $this->env);
         app('files')->put(base_path('README.md'), $this->readme);
+        app('files')->put(base_path('config/app.php'), $this->app);
     }
 
     protected function initializeGitRepo(): void
@@ -336,6 +353,11 @@ class StarterKitPostInstall
     protected function replaceInReadme(string $search, string $replace): void
     {
         $this->readme = str_replace($search, $replace, $this->readme);
+    }
+
+    protected function replaceInApp(string $search, string $replace): void
+    {
+        $this->app = str_replace($search, $replace, $this->app);
     }
 
     protected function appendToGitignore(string $toIgnore): void
