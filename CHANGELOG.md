@@ -2,6 +2,11 @@
 
 ## v15.16.1 (2023-11-06)
 
+### What's improved
+- Make the timezone required during Starter Kit Post Install. a2390aad by @robdekort
+
+## v15.16.1 (2023-11-06)
+
 ### What's fixed
 - Fix creating a public repo on GitHub during Starter Kit Post Install. 39f3957a by @robdekort
 
