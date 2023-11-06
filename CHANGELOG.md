@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.16.1 (2023-11-06)
+
+### What's fixed
+- Fix creating a public repo on GitHub during Starter Kit Post Install. 39f3957a by @robdekort
+
 ## v15.16.0 (2023-11-06)
 
 ### What's new
