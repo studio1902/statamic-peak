@@ -253,7 +253,7 @@ class StarterKitPostInstall
         );
 
         $flags = '--source=.';
-        confirm(label: 'Should this be a private repository?', default: true) ?? $flags .= ' --private';
+        confirm(label: 'Should this be a private repository?', default: true) ? $flags .= ' --private' : $flags .= ' --public';
 
         $this->run(
             command: "gh repo create $name $flags",
