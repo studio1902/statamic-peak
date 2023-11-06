@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.16.0 (2023-11-06)
+
+### What's new
+- Add option to set a timezone in Starter Kit Post Install. 468d24ad by @robdekort
+
 ## v15.15.0 (2023-11-03)
 
 ### What's new
