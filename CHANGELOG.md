@@ -1,6 +1,21 @@
 # Changelog
 
-## v15.14.0 (2023-11-07)
+## v15.16.1 (2023-11-06)
+
+### What's fixed
+- Fix creating a public repo on GitHub during Starter Kit Post Install. 39f3957a by @robdekort
+
+## v15.16.0 (2023-11-06)
+
+### What's new
+- Add option to set a timezone in Starter Kit Post Install. 468d24ad by @robdekort
+
+## v15.15.0 (2023-11-03)
+
+### What's new
+- Add option to create a (private) repository on Github in Starter Kit Post Install. ae48f16e by @robdekort
+
+## v15.14.0 (2023-11-01)
 
 ### What's new
 - Use Prompts in Starter Kit Post Install. #348 by @marcorieser
