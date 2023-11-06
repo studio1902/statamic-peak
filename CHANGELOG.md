@@ -1,6 +1,6 @@
 # Changelog
 
-## v15.16.1 (2023-11-06)
+## v15.16.2 (2023-11-06)
 
 ### What's improved
 - Make the timezone required during Starter Kit Post Install. a2390aad by @robdekort
