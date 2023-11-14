@@ -1,5 +1,10 @@
 # Changelog
 
+## v15.17.0 (2023-11-14)
+
+### What's changed
+- Remove redundant options for the Missing Alt Text widget. 4631b9c4 by @robdekort
+
 ## v15.16.2 (2023-11-06)
 
 ### What's improved
