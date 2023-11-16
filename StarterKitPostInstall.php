@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Collection;
 use Laravel\Prompts\Prompt;
-use LaravelLang\Locales\Facades\Locales;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 use function Laravel\Prompts\confirm;
