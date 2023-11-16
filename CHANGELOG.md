@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's changed
+- Remove redundant resetting of Tailwind presets in `tailwind.config.site.js`. 4631b9c4 by @robdekort
+
 ## v15.17.0 (2023-11-14)
 
 ### What's changed
