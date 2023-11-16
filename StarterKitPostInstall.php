@@ -120,7 +120,7 @@ class StarterKitPostInstall
             label: 'What timezone should your app be in?',
             options: timezone_identifiers_list(DateTimeZone::ALL, null),
             placeholder: 'UTC',
-            default: 'UTC',
+            default: $this->interactive ? '' : 'UTC',
             required: true
         );
 
