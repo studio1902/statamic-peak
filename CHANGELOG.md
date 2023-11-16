@@ -1,8 +1,13 @@
 # Changelog
 
-## v15.17.0 (2023-11-14)
+## v15.17.0 (2023-11-16)
+
+### What's improved
+- Add fuzzy search to timezone option in post install script. #357 by @marcorieser
 
 ### What's changed
+- Remove option to enable `SAVE_CACHED_IMAGES` from the post install script. e8e636ef by @robdekort
+- Remove redundant resetting of Tailwind presets in `tailwind.config.site.js`. 4631b9c4 by @robdekort
 - Remove redundant options for the Missing Alt Text widget. 4631b9c4 by @robdekort
 
 ## v15.16.2 (2023-11-06)

@@ -2,14 +2,14 @@
 
 use Illuminate\Support\Collection;
 use Laravel\Prompts\Prompt;
-use LaravelLang\Locales\Facades\Locales;
+use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
+use function Laravel\Prompts\search;
 use function Laravel\Prompts\spin;
-use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
@@ -59,7 +59,6 @@ class StarterKitPostInstall
 
         $this->useDebugbar();
         $this->useImagick();
-        $this->enableSaveCachedImages();
 
         info("[✓] `.env` file overwritten.");
     }
@@ -117,13 +116,26 @@ class StarterKitPostInstall
 
     protected function setTimezone(): void
     {
-        $newTimezone = suggest(
+        if (!$this->interactive) {
+            return;
+        }
+
+        $newTimezone = search(
             label: 'What timezone should your app be in?',
-            options: timezone_identifiers_list(DateTimeZone::ALL, null),
+            options: function (string $value) {
+                if (!$value) {
+                    return timezone_identifiers_list(DateTimeZone::ALL, null);
+                }
+
+                return collect(timezone_identifiers_list(DateTimeZone::ALL, null))
+                    ->filter(fn(string $item) => Str::contains($item, $value, true))
+                    ->values()
+                    ->all();
+            },
             placeholder: 'UTC',
-            default: 'UTC',
-            required: true
+            required: true,
         );
+
 
         $currentTimezone = config('app.timezone');
 
@@ -175,7 +187,7 @@ class StarterKitPostInstall
             required: true,
         );
 
-        $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
+        $appName = preg_replace('/([\'|\"#])/m', '', $appName);
 
         $this->replaceInEnv('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
         $this->replaceInReadme('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
@@ -213,16 +225,6 @@ class StarterKitPostInstall
 
         $this->replaceInEnv('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
         $this->replaceInReadme('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
-    }
-
-    protected function enableSaveCachedImages(): void
-    {
-        if (!confirm(label: 'Do you want to enable `SAVE_CACHED_IMAGES` (slower initial page load)?', default: false)) {
-            return;
-        }
-
-        $this->replaceInEnv('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true');
-        $this->replaceInReadme('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true');
     }
 
     protected function writeFiles(): void
