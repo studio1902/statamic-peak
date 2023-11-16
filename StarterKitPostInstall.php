@@ -10,7 +10,6 @@ use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\search;
 use function Laravel\Prompts\spin;
-use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
@@ -60,7 +59,6 @@ class StarterKitPostInstall
 
         $this->useDebugbar();
         $this->useImagick();
-        $this->enableSaveCachedImages();
 
         info("[✓] `.env` file overwritten.");
     }
@@ -227,16 +225,6 @@ class StarterKitPostInstall
 
         $this->replaceInEnv('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
         $this->replaceInReadme('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
-    }
-
-    protected function enableSaveCachedImages(): void
-    {
-        if (!confirm(label: 'Do you want to enable `SAVE_CACHED_IMAGES` (slower initial page load)?', default: false)) {
-            return;
-        }
-
-        $this->replaceInEnv('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true');
-        $this->replaceInReadme('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true');
     }
 
     protected function writeFiles(): void
