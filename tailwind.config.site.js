@@ -11,7 +11,6 @@ const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  presets: [],
   theme: {
     // Here we define the default colors available. If you want to include
     // all default Tailwind colors you should extend the colors instead.
