@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Collection;
 use Laravel\Prompts\Prompt;
+use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
+use function Laravel\Prompts\search;
 use function Laravel\Prompts\spin;
 use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
@@ -116,13 +118,26 @@ class StarterKitPostInstall
 
     protected function setTimezone(): void
     {
-        $newTimezone = suggest(
+        if (!$this->interactive) {
+            return;
+        }
+
+        $newTimezone = search(
             label: 'What timezone should your app be in?',
-            options: timezone_identifiers_list(DateTimeZone::ALL, null),
+            options: function (string $value) {
+                if (!$value) {
+                    return timezone_identifiers_list(DateTimeZone::ALL, null);
+                }
+
+                return collect(timezone_identifiers_list(DateTimeZone::ALL, null))
+                    ->filter(fn(string $item) => Str::contains($item, $value, true))
+                    ->values()
+                    ->all();
+            },
             placeholder: 'UTC',
-            default: $this->interactive ? '' : 'UTC',
-            required: true
+            required: true,
         );
+
 
         $currentTimezone = config('app.timezone');
 
