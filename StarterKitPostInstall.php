@@ -175,7 +175,7 @@ class StarterKitPostInstall
             required: true,
         );
 
-        $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
+        $appName = preg_replace('/([\'|\"#])/m', '', $appName);
 
         $this->replaceInEnv('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
         $this->replaceInReadme('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
