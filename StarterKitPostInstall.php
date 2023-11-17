@@ -2,12 +2,13 @@
 
 use Illuminate\Support\Collection;
 use Laravel\Prompts\Prompt;
-use LaravelLang\Locales\Facades\Locales;
+use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
+use function Laravel\Prompts\search;
 use function Laravel\Prompts\spin;
 use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
@@ -18,16 +19,20 @@ class StarterKitPostInstall
 {
     protected string $env = '';
     protected string $readme = '';
+    protected string $app = '';
     protected bool $interactive = true;
 
     public function handle($console): void
     {
         $this->applyInteractivity($console);
+        $this->loadFiles();
         $this->overwriteEnvWithPresets();
         $this->initializeGitAndConfigureGitignore();
         $this->installNodeDependencies();
         $this->installPuppeteerAndBrowsershot();
         $this->installTranslations();
+        $this->setTimezone();
+        $this->writeFiles();
         $this->starPeakRepo();
         $this->finish();
     }
@@ -49,17 +54,12 @@ class StarterKitPostInstall
             return;
         }
 
-        $this->loadPresetEnvAndReadme();
-
         $this->setAppName();
         $this->setAppUrl();
         $this->setAppKey();
 
         $this->useDebugbar();
         $this->useImagick();
-        $this->enableSaveCachedImages();
-
-        $this->writeEnvAndReadme();
 
         info("[✓] `.env` file overwritten.");
     }
@@ -75,6 +75,7 @@ class StarterKitPostInstall
         $this->excludeBuildFolderFromGit();
         $this->excludeUsersFolderFromGit();
         $this->excludeFormsFolderFromGit();
+        $this->createGithubRepo();
     }
 
     protected function installNodeDependencies(): void
@@ -114,6 +115,34 @@ class StarterKitPostInstall
         $this->selectLanguagesToInstall();
     }
 
+    protected function setTimezone(): void
+    {
+        if (!$this->interactive) {
+            return;
+        }
+
+        $newTimezone = search(
+            label: 'What timezone should your app be in?',
+            options: function (string $value) {
+                if (!$value) {
+                    return timezone_identifiers_list(DateTimeZone::ALL, null);
+                }
+
+                return collect(timezone_identifiers_list(DateTimeZone::ALL, null))
+                    ->filter(fn(string $item) => Str::contains($item, $value, true))
+                    ->values()
+                    ->all();
+            },
+            placeholder: 'UTC',
+            required: true,
+        );
+
+
+        $currentTimezone = config('app.timezone');
+
+        $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
+    }
+
     protected function starPeakRepo(): void
     {
         if (!confirm(label: 'Would you like to star the Peak repo?', default: false)) {
@@ -143,10 +172,11 @@ class StarterKitPostInstall
         warning('Run `php please peak:install-block` to install premade blocks onto your page builder.');
     }
 
-    protected function loadPresetEnvAndReadme(): void
+    protected function loadFiles(): void
     {
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
+        $this->app = app('files')->get(base_path('config/app.php'));
     }
 
     protected function setAppName(): void
@@ -158,7 +188,7 @@ class StarterKitPostInstall
             required: true,
         );
 
-        $appName = preg_replace('/([\'|\"|#])/m', '', $appName);
+        $appName = preg_replace('/([\'|\"#])/m', '', $appName);
 
         $this->replaceInEnv('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
         $this->replaceInReadme('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
@@ -198,20 +228,11 @@ class StarterKitPostInstall
         $this->replaceInReadme('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
     }
 
-    protected function enableSaveCachedImages(): void
-    {
-        if (!confirm(label: 'Do you want to enable `SAVE_CACHED_IMAGES` (slower initial page load)?', default: false)) {
-            return;
-        }
-
-        $this->replaceInEnv('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true');
-        $this->replaceInReadme('SAVE_CACHED_IMAGES=false', 'SAVE_CACHED_IMAGES=true');
-    }
-
-    protected function writeEnvAndReadme(): void
+    protected function writeFiles(): void
     {
         app('files')->put(base_path('.env'), $this->env);
         app('files')->put(base_path('README.md'), $this->readme);
+        app('files')->put(base_path('config/app.php'), $this->app);
     }
 
     protected function initializeGitRepo(): void
@@ -220,6 +241,28 @@ class StarterKitPostInstall
             command: 'git init',
             successMessage: 'Repo initialised.',
             processingMessage: 'Initialising repo...'
+        );
+    }
+
+    protected function createGithubRepo(): void
+    {
+        if (!confirm(label: 'Requires Github CLI. Do you want create a repo on Github?', default: false)) {
+            return;
+        }
+
+        $name = text(
+            label: 'What should be your full repository name?',
+            placeholder: 'studio1902/statamic-peak',
+            required: true,
+        );
+
+        $flags = '--source=.';
+        confirm(label: 'Should this be a private repository?', default: true) ? $flags .= ' --private' : $flags .= ' --public';
+
+        $this->run(
+            command: "gh repo create $name $flags",
+            successMessage: 'Remove repository created.',
+            processingMessage: 'Creating remote repository...'
         );
     }
 
@@ -314,6 +357,11 @@ class StarterKitPostInstall
     protected function replaceInReadme(string $search, string $replace): void
     {
         $this->readme = str_replace($search, $replace, $this->readme);
+    }
+
+    protected function replaceInApp(string $search, string $replace): void
+    {
+        $this->app = str_replace($search, $replace, $this->app);
     }
 
     protected function appendToGitignore(string $toIgnore): void

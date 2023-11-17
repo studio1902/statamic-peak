@@ -1,5 +1,40 @@
 # Changelog
 
+## v15.17.0 (2023-11-16)
+
+### What's improved
+- Add fuzzy search to timezone option in post install script. #357 by @marcorieser
+
+### What's changed
+- Remove option to enable `SAVE_CACHED_IMAGES` from the post install script. e8e636ef by @robdekort
+- Remove redundant resetting of Tailwind presets in `tailwind.config.site.js`. 4631b9c4 by @robdekort
+- Remove redundant options for the Missing Alt Text widget. 4631b9c4 by @robdekort
+
+## v15.16.2 (2023-11-06)
+
+### What's improved
+- Make the timezone required during Starter Kit Post Install. a2390aad by @robdekort
+
+## v15.16.1 (2023-11-06)
+
+### What's fixed
+- Fix creating a public repo on GitHub during Starter Kit Post Install. 39f3957a by @robdekort
+
+## v15.16.0 (2023-11-06)
+
+### What's new
+- Add option to set a timezone in Starter Kit Post Install. 468d24ad by @robdekort
+
+## v15.15.0 (2023-11-03)
+
+### What's new
+- Add option to create a (private) repository on Github in Starter Kit Post Install. ae48f16e by @robdekort
+
+## v15.14.0 (2023-11-01)
+
+### What's new
+- Use Prompts in Starter Kit Post Install. #348 by @marcorieser
+
 ## v15.13.0 (2023-10-29)
 
 ### What's new
