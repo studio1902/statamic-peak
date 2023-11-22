@@ -113,6 +113,18 @@ return [
 
         'generate_presets_on_upload' => true,
 
+        /*
+        |--------------------------------------------------------------------------
+        | Append Original Filename
+        |--------------------------------------------------------------------------
+        |
+        | Append the original filename to Glide generated URLs.
+        | This helps with Search Engine Optimization.
+        |
+        */
+
+        'append_original_filename' => true,
+
     ],
 
     /*
