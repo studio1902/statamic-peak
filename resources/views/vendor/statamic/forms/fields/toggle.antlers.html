@@ -1,17 +1,20 @@
 <!-- /vendor/statamic/forms/fields/toggle.antlers.html -->
 <label
+    x-model="form.{{ handle }}"
+    @change="form.validate('{{ handle }}')"
+    :aria-invalid="form.invalid('{{ handle }}')"
     class="inline-flex items-center"
-    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    aria-describedBy="{{ handle }}"
+    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
 >
     <input type="hidden" name="{{ handle }}" value="0">
     <input
-        class="mr-2 inline-flex rounded border-neutral text-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition"
+        class="mr-2 inline-flex rounded border-neutral text-primary focus-visible:ring-2 focus-visible:ring-primary motion-safe:transition"
         type="checkbox"
         name="{{ handle }}"
         value="1"
-        {{ js_attributes }}
+        id="{{ handle }}"
         {{ (!old && default) ?= 'checked' }}
+        {{ js_attributes }}
     >
     {{ if inline_label }}
         <span>

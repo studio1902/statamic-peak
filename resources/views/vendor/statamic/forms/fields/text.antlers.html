@@ -1,15 +1,18 @@
 <!-- /vendor/statamic/forms/fields/text.antlers.html -->
 <input
-    class="w-full rounded border-neutral focus-visible:border-primary focus-visible:ring focus-visible:ring-primary motion-safe:transition caret-primary"
-    :class="{ 'border-red-600 focus-visible:border-red-600': errors.{{ handle }} }"
+    x-model="form.{{ handle }}"
+    @change="form.validate('{{ handle }}')"
+    :aria-invalid="form.invalid('{{ handle }}')"
+    :class="{ 'border-red-600 focus-visible:border-red-600': form.invalid('{{ handle }}') }"
+    class="w-full rounded border-neutral focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary motion-safe:transition caret-primary"
     id="{{ handle }}"
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}"
-    placeholder="{{ placeholder }}"
-    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    aria-describedBy="{{ handle }}"
-    {{ if character_limit }}maxlength="{{ character_limit }}"{{ /if }}
+    {{ placeholder ?= 'placeholder="{placeholder}"' }}
+    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ character_limit ?= 'maxlength="{character_limit}"' }}
     {{ old ?= 'value="{old}"' }}
     {{ js_attributes }}
 />
+{{ test }}
 <!-- End: /vendor/statamic/forms/fields/text.antlers.html -->

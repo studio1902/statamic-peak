@@ -4,7 +4,6 @@ export_paths:
   - .env.example
   - .gitignore
   - app/Console/Kernel.php
-  - app/Http/Middleware/VerifyCsrfToken.php
   - app/Listeners/PreventDeletingMounts.php
   - app/Providers/AppServiceProvider.php
   - app/Providers/EventServiceProvider.php
@@ -54,4 +53,4 @@ dependencies:
   studio1902/statamic-peak-browser-appearance: ^3.0
   studio1902/statamic-peak-commands: ^2.0
   studio1902/statamic-peak-seo: ^7.0
-  studio1902/statamic-peak-tools: ^3.0
+  studio1902/statamic-peak-tools: ^4.0

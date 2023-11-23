@@ -13,7 +13,8 @@
     "@alpinejs/focus": "^3.13.0",
     "@alpinejs/morph": "^3.13.0",
     "@alpinejs/persist": "^3.13.0",
-    "alpinejs": "^3.13.0"
+    "alpinejs": "^3.13.0",
+    "laravel-precognition-alpine": "^0.5.2"
   },
   "devDependencies": {
     "@csstools/postcss-oklab-function": "^3.0.5",
