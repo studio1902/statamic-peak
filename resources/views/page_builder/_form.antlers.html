@@ -17,11 +17,11 @@
                 <div
                     x-data="{
                         success: false,
-                        form: $form('post', $refs.form.getAttribute('action'), {
-                            {{ fields }}
-                                {{ handle}}: ''{{ !last ?= ',' }}
-                            {{ /fields }}
-                        }),
+                        form: $form(
+                            'post',
+                            $refs.form.getAttribute('action'),
+                            JSON.parse($refs.form.getAttribute('x-data'))
+                        ),
                         submit() {
                             this.form.submit()
                                 .then(response => {
