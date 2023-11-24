@@ -296,6 +296,7 @@ class StarterKitPostInstall
     protected function run(string $command, string $successMessage, string $processingMessage): bool
     {
         $process = new Process(explode(' ', $command));
+        $process->setTimeout(120);
         try {
             spin(fn() => $process->mustRun(), $processingMessage);
 

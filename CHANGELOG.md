@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's new
+- Add assets config option to append original filename. 13f15ca3 by @robdekort
+
 ## v15.17.0 (2023-11-16)
 
 ### What's improved
