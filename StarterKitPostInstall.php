@@ -17,9 +17,13 @@ use function Laravel\Prompts\warning;
 
 class StarterKitPostInstall
 {
+    public $registerCommands = [
+        \App\Console\Commands\ListLangLocales::class,
+    ];
     protected string $env = '';
     protected string $readme = '';
     protected string $app = '';
+    protected Collection $availableLanguages;
     protected bool $interactive = true;
 
     public function handle($console): void
@@ -46,6 +50,13 @@ class StarterKitPostInstall
          * without interaction when a command was run before with `--no-interaction` flag.
          */
         Prompt::interactive($this->interactive);
+    }
+
+    protected function loadFiles(): void
+    {
+        $this->env = app('files')->get(base_path('.env.example'));
+        $this->readme = app('files')->get(base_path('README.md'));
+        $this->app = app('files')->get(base_path('config/app.php'));
     }
 
     protected function overwriteEnvWithPresets(): void
@@ -107,7 +118,7 @@ class StarterKitPostInstall
             return;
         }
 
-        if (!$this->installLaravelLang()) {
+        if (!$this->installLaravelLang() || !$this->collectAvailableLanguages()) {
             error('Could not install Laravel Lang.');
             return;
         }
@@ -143,6 +154,13 @@ class StarterKitPostInstall
         $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
     }
 
+    protected function writeFiles(): void
+    {
+        app('files')->put(base_path('.env'), $this->env);
+        app('files')->put(base_path('README.md'), $this->readme);
+        app('files')->put(base_path('config/app.php'), $this->app);
+    }
+
     protected function starPeakRepo(): void
     {
         if (!confirm(label: 'Would you like to star the Peak repo?', default: false)) {
@@ -170,13 +188,6 @@ class StarterKitPostInstall
         warning('Run `php please peak:clear-site` to get rid of default content.');
         warning('Run `php please peak:install-preset` to install premade sets onto your website.');
         warning('Run `php please peak:install-block` to install premade blocks onto your page builder.');
-    }
-
-    protected function loadFiles(): void
-    {
-        $this->env = app('files')->get(base_path('.env.example'));
-        $this->readme = app('files')->get(base_path('README.md'));
-        $this->app = app('files')->get(base_path('config/app.php'));
     }
 
     protected function setAppName(): void
@@ -228,41 +239,12 @@ class StarterKitPostInstall
         $this->replaceInReadme('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
     }
 
-    protected function writeFiles(): void
-    {
-        app('files')->put(base_path('.env'), $this->env);
-        app('files')->put(base_path('README.md'), $this->readme);
-        app('files')->put(base_path('config/app.php'), $this->app);
-    }
-
     protected function initializeGitRepo(): void
     {
         $this->run(
             command: 'git init',
             successMessage: 'Repo initialised.',
             processingMessage: 'Initialising repo...'
-        );
-    }
-
-    protected function createGithubRepo(): void
-    {
-        if (!confirm(label: 'Requires Github CLI. Do you want create a repo on Github?', default: false)) {
-            return;
-        }
-
-        $name = text(
-            label: 'What should be your full repository name?',
-            placeholder: 'studio1902/statamic-peak',
-            required: true,
-        );
-
-        $flags = '--source=.';
-        confirm(label: 'Should this be a private repository?', default: true) ? $flags .= ' --private' : $flags .= ' --public';
-
-        $this->run(
-            command: "gh repo create $name $flags",
-            successMessage: 'Remove repository created.',
-            processingMessage: 'Creating remote repository...'
         );
     }
 
@@ -291,6 +273,28 @@ class StarterKitPostInstall
         }
 
         $this->appendToGitignore('/storage/forms');
+    }
+
+    protected function createGithubRepo(): void
+    {
+        if (!confirm(label: 'Requires Github CLI. Do you want create a repo on Github?', default: false)) {
+            return;
+        }
+
+        $name = text(
+            label: 'What should be your full repository name?',
+            placeholder: 'studio1902/statamic-peak',
+            required: true,
+        );
+
+        $flags = '--source=.';
+        confirm(label: 'Should this be a private repository?', default: true) ? $flags .= ' --private' : $flags .= ' --public';
+
+        $this->run(
+            command: "gh repo create $name $flags",
+            successMessage: 'Remove repository created.',
+            processingMessage: 'Creating remote repository...'
+        );
     }
 
     protected function run(string $command, string $successMessage, string $processingMessage): bool
@@ -337,6 +341,20 @@ class StarterKitPostInstall
         );
     }
 
+    protected function collectAvailableLanguages(): bool
+    {
+        $command = 'php artisan statamic:peak:list-lang-locales';
+        $process = new Process(explode(' ', $command));
+
+        try {
+            $process->mustRun();
+            $this->availableLanguages = collect(json_decode($process->getOutput(), true, 512, JSON_THROW_ON_ERROR));
+            return true;
+        } catch (Exception) {
+            return false;
+        }
+    }
+
     protected function selectLanguagesToInstall(): void
     {
         info('Enter the handles of the languages you want to install. Leave empty and press enter when you\'re done.');
@@ -350,6 +368,11 @@ class StarterKitPostInstall
         } while ($handle);
     }
 
+    protected function replaceInApp(string $search, string $replace): void
+    {
+        $this->app = str_replace($search, $replace, $this->app);
+    }
+
     protected function replaceInEnv(string $search, string $replace): void
     {
         $this->env = str_replace($search, $replace, $this->env);
@@ -358,11 +381,6 @@ class StarterKitPostInstall
     protected function replaceInReadme(string $search, string $replace): void
     {
         $this->readme = str_replace($search, $replace, $this->readme);
-    }
-
-    protected function replaceInApp(string $search, string $replace): void
-    {
-        $this->app = str_replace($search, $replace, $this->app);
     }
 
     protected function appendToGitignore(string $toIgnore): void
@@ -374,12 +392,12 @@ class StarterKitPostInstall
     {
         return suggest(
             label: 'Handle of language (submit empty when you\'re done)',
-            options: fn($value) => collect(Locales::raw()->available())
+            options: fn($value) => $this->availableLanguages
                 ->filter(fn(string $language) => str_contains($language, $value) && !$installedLanguages->contains($language))
                 ->values()
                 ->toArray(),
             validate: fn(string $value) => match (true) {
-                $value && !Locales::isAvailable($value) => 'Not supported by Laravel Lang.',
+                $value && !$this->availableLanguages->contains($value) => 'Not supported by Laravel Lang.',
                 $value && $installedLanguages->contains($value) => "Language \"{$value}\" already installed.",
                 default => null,
             },
