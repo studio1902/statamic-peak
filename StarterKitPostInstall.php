@@ -18,7 +18,7 @@ use function Laravel\Prompts\warning;
 class StarterKitPostInstall
 {
     public $registerCommands = [
-        \App\Console\Commands\ListLangLocales::class,
+        \App\Console\Commands\CollectAvailableLangLocales::class,
     ];
 
     protected string $env = '';
@@ -349,7 +349,7 @@ class StarterKitPostInstall
 
     protected function collectAvailableLanguages(): bool
     {
-        $command = 'php artisan statamic:peak:list-lang-locales';
+        $command = 'php artisan statamic:peak:collect-available-lang-locales';
         $process = new Process(explode(' ', $command));
 
         try {

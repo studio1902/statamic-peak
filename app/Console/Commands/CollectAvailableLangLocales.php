@@ -6,11 +6,11 @@ use Illuminate\Console\Command;
 use LaravelLang\Locales\Facades\Locales;
 use Statamic\Console\RunsInPlease;
 
-class ListLangLocales extends Command
+class CollectAvailableLangLocales extends Command
 {
     use RunsInPlease;
 
-    protected $signature = 'statamic:peak:list-lang-locales';
+    protected $signature = 'statamic:peak:collect-available-lang-locales';
 
     public function handle()
     {
