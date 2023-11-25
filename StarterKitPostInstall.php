@@ -427,6 +427,8 @@ class StarterKitPostInstall
             'driver' => 'local',
             'root' => app_path(),
         ])->deleteDirectory('Console/Commands/PostInstall');
+
+        usleep(500000);
     }
 
     protected function replaceInEnv(string $search, string $replace): void
