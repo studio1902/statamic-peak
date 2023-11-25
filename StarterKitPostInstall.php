@@ -426,7 +426,7 @@ class StarterKitPostInstall
         Storage::build([
             'driver' => 'local',
             'root' => app_path(),
-        ])->deleteDirectory('Console/Commands');
+        ])->deleteDirectory('Console/Commands/PostInstall');
     }
 
     protected function replaceInEnv(string $search, string $replace): void
