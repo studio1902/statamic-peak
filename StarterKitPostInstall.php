@@ -102,8 +102,8 @@ class StarterKitPostInstall
 
         $this->run(
             command: 'npm i',
-            successMessage: 'npm dependencies installed.',
             processingMessage: 'Installing npm dependencies...',
+            successMessage: 'npm dependencies installed.',
         );
     }
 
@@ -268,8 +268,8 @@ class StarterKitPostInstall
     {
         $this->run(
             command: 'git init',
-            successMessage: 'Repo initialised.',
-            processingMessage: 'Initialising repo...'
+            processingMessage: 'Initialising repo...',
+            successMessage: 'Repo initialised.'
         );
     }
 
@@ -317,12 +317,12 @@ class StarterKitPostInstall
 
         $this->run(
             command: "gh repo create $name $flags",
-            successMessage: 'Remove repository created.',
-            processingMessage: 'Creating remote repository...'
+            processingMessage: 'Creating remote repository...',
+            successMessage: 'Remove repository created.'
         );
     }
 
-    protected function run(string $command, string $successMessage, string $processingMessage): bool
+    protected function run(string $command, string $processingMessage = '', string $successMessage = '', ?string $errorMessage = null): bool
     {
         $process = new Process(explode(' ', $command));
         $process->setTimeout(120);
@@ -336,7 +336,7 @@ class StarterKitPostInstall
 
             return true;
         } catch (ProcessFailedException $exception) {
-            error($exception->getMessage());
+            error($errorMessage ?? $exception->getMessage());
 
             return false;
         }
@@ -346,8 +346,8 @@ class StarterKitPostInstall
     {
         $this->run(
             command: 'npm i puppeteer',
-            successMessage: 'Puppeteer installed.',
             processingMessage: 'Installing Puppeteer...',
+            successMessage: 'Puppeteer installed.',
         );
     }
 
@@ -355,8 +355,8 @@ class StarterKitPostInstall
     {
         $this->run(
             command: 'composer require spatie/browsershot',
-            successMessage: 'Browsershot installed.',
             processingMessage: 'Installing Browsershot...',
+            successMessage: 'Browsershot installed.',
         );
     }
 
@@ -364,8 +364,8 @@ class StarterKitPostInstall
     {
         return $this->run(
             command: 'composer require laravel-lang/common --dev',
-            successMessage: 'Laravel Lang installed.',
             processingMessage: 'Installing Laravel Lang...',
+            successMessage: 'Laravel Lang installed.',
         );
     }
 
@@ -465,9 +465,10 @@ class StarterKitPostInstall
     protected function installLanguage(string $handle): bool
     {
         return $this->run(
-            "php artisan lang:add {$handle}",
-            "Language \"{$handle}\" installed.",
-            "Installing language \"{$handle}\"..."
+            command: "php artisan lang:add {$handle}",
+            processingMessage: "Installing language \"{$handle}\"...",
+            successMessage: "Language \"{$handle}\" installed.",
+            errorMessage: "Installation of language \"{$handle}\" failed."
         );
     }
 }
