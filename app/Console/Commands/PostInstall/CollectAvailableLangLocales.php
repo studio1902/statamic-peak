@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\PostInstall;
 
 use Illuminate\Console\Command;
 use LaravelLang\Locales\Facades\Locales;

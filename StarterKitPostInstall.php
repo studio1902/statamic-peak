@@ -1,6 +1,9 @@
 <?php
 
+use App\Console\Commands\PostInstall\CollectAvailableLangLocales;
+use Facades\Statamic\Console\Processes\Composer;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Prompts\Prompt;
 use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -18,7 +21,7 @@ use function Laravel\Prompts\warning;
 class StarterKitPostInstall
 {
     public $registerCommands = [
-        \App\Console\Commands\CollectAvailableLangLocales::class,
+        CollectAvailableLangLocales::class,
     ];
 
     protected string $env = '';
@@ -38,6 +41,7 @@ class StarterKitPostInstall
         $this->installTranslations();
         $this->setTimezone();
         $this->writeFiles();
+        $this->cleanUp();
         $this->starPeakRepo();
         $this->finish();
     }
@@ -165,6 +169,21 @@ class StarterKitPostInstall
         app('files')->put(base_path('.env'), $this->env);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
+    }
+
+    protected function cleanUp(): void
+    {
+        $this->withSpinner(
+            fn() => $this->cleanUpComposerPackages(),
+            'Cleaning up composer packages...',
+            'Composer packages cleaned up.'
+        );
+
+        $this->withSpinner(
+            fn() => $this->removePostInstallCommands(),
+            'Removing post install commands...',
+            'Post install commands removed.'
+        );
     }
 
     protected function starPeakRepo(): void
@@ -307,10 +326,13 @@ class StarterKitPostInstall
     {
         $process = new Process(explode(' ', $command));
         $process->setTimeout(120);
-        try {
-            spin(fn() => $process->mustRun(), $processingMessage);
 
-            info("[✓] {$successMessage}");
+        try {
+            $this->withSpinner(
+                fn() => $process->mustRun(),
+                $processingMessage,
+                $successMessage
+            );
 
             return true;
         } catch (ProcessFailedException $exception) {
@@ -379,6 +401,34 @@ class StarterKitPostInstall
         $this->app = str_replace($search, $replace, $this->app);
     }
 
+    protected function withSpinner(callable $callback, string $processingMessage = '', string $successMessage = ''): void
+    {
+        spin($callback, $processingMessage);
+
+        if ($successMessage) {
+            info("[✓] $successMessage");
+        }
+    }
+
+    protected function cleanUpComposerPackages(): void
+    {
+        if ($packages = []) {
+            Composer::removeMultiple($packages);
+        }
+
+        if ($devPackages = ['laravel-lang/common']) {
+            Composer::removeMultipleDev($devPackages);
+        }
+    }
+
+    protected function removePostInstallCommands(): void
+    {
+        Storage::build([
+            'driver' => 'local',
+            'root' => app_path(),
+        ])->deleteDirectory('Console/Commands');
+    }
+
     protected function replaceInEnv(string $search, string $replace): void
     {
         $this->env = str_replace($search, $replace, $this->env);
@@ -399,9 +449,10 @@ class StarterKitPostInstall
         return suggest(
             label: 'Handle of language (submit empty when you\'re done)',
             options: fn($value) => $this->availableLanguages
-                ->filter(fn(string $language) => str_contains($language, $value) && !$installedLanguages->contains($language))
+                ->filter(fn(string $language) => Str::contains($language, $value, true) && !$installedLanguages->contains($language))
                 ->values()
                 ->toArray(),
+            placeholder: 'en',
             validate: fn(string $value) => match (true) {
                 $value && !$this->availableLanguages->contains($value) => 'Not supported by Laravel Lang.',
                 $value && $installedLanguages->contains($value) => "Language \"{$value}\" already installed.",
