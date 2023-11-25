@@ -20,6 +20,7 @@ class StarterKitPostInstall
     public $registerCommands = [
         \App\Console\Commands\ListLangLocales::class,
     ];
+
     protected string $env = '';
     protected string $readme = '';
     protected string $app = '';
@@ -118,8 +119,13 @@ class StarterKitPostInstall
             return;
         }
 
-        if (!$this->installLaravelLang() || !$this->collectAvailableLanguages()) {
+        if (!$this->installLaravelLang()) {
             error('Could not install Laravel Lang.');
+            return;
+        }
+
+        if (!$this->collectAvailableLanguages()) {
+            error('Could not collect available languages.');
             return;
         }
 
