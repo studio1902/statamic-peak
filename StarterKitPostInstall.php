@@ -41,7 +41,7 @@ class StarterKitPostInstall
         $this->installPuppeteerAndBrowsershot();
         $this->installTranslations();
         $this->setTimezone();
-        $this->runPeakCommands();
+        $this->runPeakClearSite();
         $this->writeFiles();
         $this->cleanUp();
         $this->starPeakRepo();
@@ -166,6 +166,19 @@ class StarterKitPostInstall
         $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
     }
 
+    protected function runPeakClearSite(): void
+    {
+        if (!$this->interactive || !Process::isTtySupported()) {
+            return;
+        }
+
+        $this->run(
+            command: 'php artisan statamic:peak:clear-site',
+            tty: true,
+            spinner: false,
+        );
+    }
+
     protected function writeFiles(): void
     {
         app('files')->put(base_path('.env'), $this->env);
@@ -212,7 +225,6 @@ class StarterKitPostInstall
     protected function finish(): void
     {
         info('[✓] Peak is installed. Enjoy the view!');
-        warning('Run `php please peak:clear-site` to get rid of default content.');
         warning('Run `php please peak:install-preset` to install premade sets onto your website.');
         warning('Run `php please peak:install-block` to install premade blocks onto your page builder.');
     }
@@ -329,17 +341,26 @@ class StarterKitPostInstall
         );
     }
 
-    protected function run(string $command, string $processingMessage = '', string $successMessage = '', ?string $errorMessage = null): bool
+    protected function run(string $command, string $processingMessage = '', string $successMessage = '', ?string $errorMessage = null, bool $tty = false, bool $spinner = true, int $timeout = 120): bool
     {
         $process = new Process(explode(' ', $command));
-        $process->setTimeout(120);
+        $process->setTimeout($timeout);
+
+        if ($tty) {
+            $process->setTty(true);
+        }
 
         try {
-            $this->withSpinner(
-                fn() => $process->mustRun(),
-                $processingMessage,
-                $successMessage
-            );
+            $spinner ?
+                $this->withSpinner(
+                    fn() => $process->mustRun(),
+                    $processingMessage,
+                    $successMessage
+                ) :
+                $this->withoutSpinner(
+                    fn() => $process->mustRun(),
+                    $successMessage
+                );
 
             return true;
         } catch (ProcessFailedException $exception) {
@@ -453,6 +474,15 @@ class StarterKitPostInstall
         app('files')->append(base_path('.gitignore'), "\n{$toIgnore}");
     }
 
+    protected function withoutSpinner(callable $callback, string $successMessage = ''): void
+    {
+        $callback();
+
+        if ($successMessage) {
+            info("[✓] $successMessage");
+        }
+    }
+
     protected function selectLanguageToInstall(Collection $installedLanguages): string
     {
         return suggest(
@@ -479,14 +509,5 @@ class StarterKitPostInstall
             successMessage: "Language \"{$handle}\" installed.",
             errorMessage: "Installation of language \"{$handle}\" failed."
         );
-    }
-
-    protected function runPeakCommands()
-    {
-        $process = new Process(['php', 'artisan', 'statamic:peak:add-block']);
-        $process->setTimeout(120);
-        $process->setPty(true);
-        $process->setTty(true);
-        $process->mustRun();
     }
 }
