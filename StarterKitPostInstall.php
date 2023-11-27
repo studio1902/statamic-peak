@@ -247,6 +247,7 @@ class StarterKitPostInstall
     protected function createGithubRepo(): void
     {
         if (!app(ExecutableFinder::class)->find('gh')) {
+            warning('Test');
             return;
         }
 
