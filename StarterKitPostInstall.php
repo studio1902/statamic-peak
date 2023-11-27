@@ -247,7 +247,7 @@ class StarterKitPostInstall
     protected function createGithubRepo(): void
     {
         if (!app(ExecutableFinder::class)->find('gh')) {
-            warning('Test');
+            info('If you install GitHub CLI, next time this installer will be able to set up a remote repository.');
             return;
         }
 
