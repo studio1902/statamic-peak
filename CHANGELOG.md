@@ -4,6 +4,10 @@
 
 ### What's new
 - Add assets config option to append original filename. 13f15ca3 by @robdekort
+- Check for GitHub CLI in Install script #360. by @marcorieser
+- Suggest installable languages based on Laravel Lang. #355 by @marcorierser
+- Option to clear peak content from install script #362 by @marcorieser
+- Add `focus: true` to assets alt textarea. f8ada4fb by @robdekort
 
 ## v15.17.0 (2023-11-16)
 
