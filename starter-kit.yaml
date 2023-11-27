@@ -4,6 +4,7 @@ export_paths:
   - .env.example
   - .gitignore
   - app/Console/Kernel.php
+  - app/Console/Commands/PostInstall/CollectAvailableLangLocales.php
   - app/Http/Middleware/VerifyCsrfToken.php
   - app/Listeners/PreventDeletingMounts.php
   - app/Providers/AppServiceProvider.php
