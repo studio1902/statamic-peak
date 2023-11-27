@@ -14,32 +14,7 @@
         {{ if form:handle }}
             {{ form:create :in="form:handle" js="alpine:dynamic_form" attr:x-ref="form" }}
                 {{# Use Laravel Precognition for live validation and submission. #}}
-                <div
-                    x-data="{
-                        success: false,
-                        form: $form(
-                            'post',
-                            $refs.form.getAttribute('action'),
-                            JSON.parse($refs.form.getAttribute('x-data'))
-                        ),
-                        submit() {
-                            this.form.submit()
-                                .then(response => {
-                                    this.form.reset()
-                                    this.$refs.form.reset()
-                                    this.success = true
-                                    setTimeout(() => {
-                                        this.success = false
-                                    }, 4500)
-                                })
-                                .then($refs.form.scrollIntoView())
-                                .catch(error => {
-                                    $focus.focus(document.querySelector('#summary').querySelector('a'))
-                                })
-                        }
-                    }"
-                    class="flex flex-col gap-8"
-                >
+                <div x-data="formHandler()" class="flex flex-col gap-8" x-cloak>
                     {{# Error notifications. #}}
                     <template x-if="form.hasErrors">
                         <div id="summary" role="group" class="rounded border p-4 bg-red-50 border-red-700">
@@ -136,8 +111,8 @@
                 </div>
             {{ /form:create }}
 
-            {{# Statamic conditional logic helpers. #}}
-            <script src="/vendor/statamic/frontend/js/helpers.js"></script>
+            {{# Call in the Peak Tools Alpine Based Precognition Form Handler. #}}
+            {{ partial:statamic-peak-tools::snippets/form_handler }}
         {{ /if }}
     </div>
 </section>
