@@ -41,6 +41,7 @@ class StarterKitPostInstall
         $this->installPuppeteerAndBrowsershot();
         $this->installTranslations();
         $this->setTimezone();
+        $this->runPeakCommands();
         $this->writeFiles();
         $this->cleanUp();
         $this->starPeakRepo();
@@ -478,5 +479,14 @@ class StarterKitPostInstall
             successMessage: "Language \"{$handle}\" installed.",
             errorMessage: "Installation of language \"{$handle}\" failed."
         );
+    }
+
+    protected function runPeakCommands()
+    {
+        $process = new Process(['php', 'artisan', 'statamic:peak:add-block']);
+        $process->setTimeout(120);
+        $process->setPty(true);
+        $process->setTty(true);
+        $process->mustRun();
     }
 }
