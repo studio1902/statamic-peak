@@ -25,6 +25,7 @@ class StarterKitPostInstall
     {
         $this->applyInteractivity($console);
         $this->loadFiles();
+        $this->runPeakCommands();
         $this->overwriteEnvWithPresets();
         $this->initializeGitAndConfigureGitignore();
         $this->installNodeDependencies();
@@ -390,5 +391,14 @@ class StarterKitPostInstall
             "Installing language \"{$handle}\"...",
             "Installation of language \"{$handle}\" failed."
         );
+    }
+
+    protected function runPeakCommands(): void
+    {
+        $process = new Process(['php', 'artisan', 'statamic:peak:add-block']);
+        $process->setTimeout(120);
+        $process->setPty(true);
+        $process->setTty(true);
+        $process->mustRun();
     }
 }
