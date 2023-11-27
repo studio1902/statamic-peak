@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Laravel\Prompts\Prompt;
 use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Process\Process;
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
@@ -302,7 +303,12 @@ class StarterKitPostInstall
 
     protected function createGithubRepo(): void
     {
-        if (!confirm(label: 'Requires Github CLI. Do you want create a repo on Github?', default: false)) {
+        if (!app(ExecutableFinder::class)->find('gh')) {
+            info('If you install GitHub CLI, next time this installer will be able to set up a remote repository.');
+            return;
+        }
+
+        if (!confirm(label: 'Do you want create a repo on Github?', default: false)) {
             return;
         }
 
