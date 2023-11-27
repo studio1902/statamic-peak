@@ -48,6 +48,26 @@ class StarterKitPostInstall
         Prompt::interactive($this->interactive);
     }
 
+    protected function loadFiles(): void
+    {
+        $this->env = app('files')->get(base_path('.env.example'));
+        $this->readme = app('files')->get(base_path('README.md'));
+        $this->app = app('files')->get(base_path('config/app.php'));
+    }
+
+    protected function runPeakCommands(): void
+    {
+        if (!$this->interactive) {
+            return;
+        }
+
+        $process = new Process(['php', 'artisan', 'statamic:peak:add-block']);
+        $process->setTimeout(120);
+        $process->setPty(true);
+        $process->setTty(true);
+        $process->mustRun();
+    }
+
     protected function overwriteEnvWithPresets(): void
     {
         if (!confirm(label: 'Do you want overwrite your `.env` file with the Peak presets?', default: true)) {
@@ -143,6 +163,13 @@ class StarterKitPostInstall
         $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
     }
 
+    protected function writeFiles(): void
+    {
+        app('files')->put(base_path('.env'), $this->env);
+        app('files')->put(base_path('README.md'), $this->readme);
+        app('files')->put(base_path('config/app.php'), $this->app);
+    }
+
     protected function starPeakRepo(): void
     {
         if (!confirm(label: 'Would you like to star the Peak repo?', default: false)) {
@@ -170,13 +197,6 @@ class StarterKitPostInstall
         warning('Run `php please peak:clear-site` to get rid of default content.');
         warning('Run `php please peak:install-preset` to install premade sets onto your website.');
         warning('Run `php please peak:install-block` to install premade blocks onto your page builder.');
-    }
-
-    protected function loadFiles(): void
-    {
-        $this->env = app('files')->get(base_path('.env.example'));
-        $this->readme = app('files')->get(base_path('README.md'));
-        $this->app = app('files')->get(base_path('config/app.php'));
     }
 
     protected function setAppName(): void
@@ -228,41 +248,12 @@ class StarterKitPostInstall
         $this->replaceInReadme('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
     }
 
-    protected function writeFiles(): void
-    {
-        app('files')->put(base_path('.env'), $this->env);
-        app('files')->put(base_path('README.md'), $this->readme);
-        app('files')->put(base_path('config/app.php'), $this->app);
-    }
-
     protected function initializeGitRepo(): void
     {
         $this->run(
             command: 'git init',
             successMessage: 'Repo initialised.',
             processingMessage: 'Initialising repo...'
-        );
-    }
-
-    protected function createGithubRepo(): void
-    {
-        if (!confirm(label: 'Requires Github CLI. Do you want create a repo on Github?', default: false)) {
-            return;
-        }
-
-        $name = text(
-            label: 'What should be your full repository name?',
-            placeholder: 'studio1902/statamic-peak',
-            required: true,
-        );
-
-        $flags = '--source=.';
-        confirm(label: 'Should this be a private repository?', default: true) ? $flags .= ' --private' : $flags .= ' --public';
-
-        $this->run(
-            command: "gh repo create $name $flags",
-            successMessage: 'Remove repository created.',
-            processingMessage: 'Creating remote repository...'
         );
     }
 
@@ -291,6 +282,28 @@ class StarterKitPostInstall
         }
 
         $this->appendToGitignore('/storage/forms');
+    }
+
+    protected function createGithubRepo(): void
+    {
+        if (!confirm(label: 'Requires Github CLI. Do you want create a repo on Github?', default: false)) {
+            return;
+        }
+
+        $name = text(
+            label: 'What should be your full repository name?',
+            placeholder: 'studio1902/statamic-peak',
+            required: true,
+        );
+
+        $flags = '--source=.';
+        confirm(label: 'Should this be a private repository?', default: true) ? $flags .= ' --private' : $flags .= ' --public';
+
+        $this->run(
+            command: "gh repo create $name $flags",
+            successMessage: 'Remove repository created.',
+            processingMessage: 'Creating remote repository...'
+        );
     }
 
     protected function run(string $command, string $successMessage, string $processingMessage, ?string $errorMessage = null): bool
@@ -350,6 +363,11 @@ class StarterKitPostInstall
         } while ($handle);
     }
 
+    protected function replaceInApp(string $search, string $replace): void
+    {
+        $this->app = str_replace($search, $replace, $this->app);
+    }
+
     protected function replaceInEnv(string $search, string $replace): void
     {
         $this->env = str_replace($search, $replace, $this->env);
@@ -358,11 +376,6 @@ class StarterKitPostInstall
     protected function replaceInReadme(string $search, string $replace): void
     {
         $this->readme = str_replace($search, $replace, $this->readme);
-    }
-
-    protected function replaceInApp(string $search, string $replace): void
-    {
-        $this->app = str_replace($search, $replace, $this->app);
     }
 
     protected function appendToGitignore(string $toIgnore): void
@@ -391,14 +404,5 @@ class StarterKitPostInstall
             "Installing language \"{$handle}\"...",
             "Installation of language \"{$handle}\" failed."
         );
-    }
-
-    protected function runPeakCommands(): void
-    {
-        $process = new Process(['php', 'artisan', 'statamic:peak:add-block']);
-        $process->setTimeout(120);
-        $process->setPty(true);
-        $process->setTty(true);
-        $process->mustRun();
     }
 }
