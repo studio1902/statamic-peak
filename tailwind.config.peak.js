@@ -103,6 +103,33 @@ module.exports = {
       })
     }),
 
+    // Stack utilities.
+    plugin(function({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          stack: (value) => ({
+            '--stack-space': value,
+            '> *:not(.no-space-y, .no-space-b) + *:not(.no-space-y, .no-space-t)': {
+              marginBlockStart: 'var(--stack-space, 4rem)'
+            },
+          }),
+        },
+        { values: theme('spacing') }
+      )
+    }),
+
+    // Stack gap utilities.
+    plugin(function({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'stack-space': (value) => ({
+            '--stack-space': value,
+          }),
+        },
+        { values: theme('spacing') }
+      )
+    }),
+
     // Render screen names in the breakpoint display.
     plugin(function({ addBase, theme}) {
       const breakpoints = Object.entries(theme('screens'))
@@ -136,61 +163,15 @@ module.exports = {
           paddingLeft: `calc(env(safe-area-inset-left, 0rem) + ${theme('padding.8')})`,
           paddingRight: `calc(env(safe-area-inset-right, 0rem) + ${theme('padding.8')})`,
         },
-        // The outer grid where all block builder blocks are a child of. Spreads out all blocks
-        // vertically with a uniform space between them.
-        '.outer-grid': {
-          width: '100%',
-          display: 'grid',
-          rowGap: theme('spacing.12'),
-          paddingTop: theme('spacing.12'),
-          paddingBottom: theme('spacing.12'),
-          // If the last child of the outer grid is full width (e.g. when it has a full width
-          // colored background), give it negative margin bottom to get it flush to your
-          // sites footer.
-          '&>*:last-child:is([class~="w-full"])': {
-            marginBottom: `-${theme('spacing.12')}`,
-          },
-        },
-        '@media screen(md)': {
-          // Larger vertical spacing between blocks on larger screens.
-          '.outer-grid': {
-            rowGap: theme('spacing.16'),
-            paddingTop: theme('spacing.16'),
-            paddingBottom: theme('spacing.16'),
-            '&>*:last-child:is([class~="w-full"])': {
-              marginBottom: `-${theme('spacing.16')}`,
-            },
-          },
-        },
         '@media screen(lg)': {
-          // Larger horizontal padding on larger screens.
           '.fluid-container': {
             // Use safe-area-inset together with default padding for Apple devices with a notch.
             paddingLeft: `calc(env(safe-area-inset-left, 0rem) + ${theme('padding.12')})`,
             paddingRight: `calc(env(safe-area-inset-right, 0rem) + ${theme('padding.12')})`,
           },
-          // Larger vertical spacing between blocks on larger screens.
-          '.outer-grid': {
-            rowGap: theme('spacing.24'),
-            paddingTop: theme('spacing.24'),
-            paddingBottom: theme('spacing.24'),
-            '&>*:last-child:is([class~="w-full"])': {
-              marginBottom: `-${theme('spacing.24')}`,
-            },
-          },
         },
       }
       addComponents(components)
-    }),
-
-    plugin(function({ addUtilities, theme, variants }) {
-      const newUtilities = {
-        // Fill icons that have a fill defined within their paths. For example coming from an asset container.
-        '.fill-current-cascade *': {
-          fill: 'currentColor',
-        },
-      }
-      addUtilities(newUtilities)
     }),
   ]
 }
