@@ -1,5 +1,9 @@
 <!-- /vendor/statamic/forms/fields/assets.antlers.html -->
 <input
+    x-model="form.{{ handle }}"
+    @change="form.validate('{{ handle }}')"
+    :aria-invalid="form.invalid('{{ handle }}')"
+    class="w-full file:py-2 file:mr-4 file:px-4 file:border-2 file:border-solid file:border-primary file:bg-white file:text-primary file:text-xs file:uppercase file:tracking-widest file:font-bold file:rounded border-neutral focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary motion-safe:transition"
     type="file"
     {{ if max_files === 1 }}
         name="{{ handle }}"
@@ -7,9 +11,7 @@
         name="{{ handle }}[]"
         multiple
     {{ /if }}
-    :aria-invalid="errors.hasOwnProperty('{{ handle }}')"
-    aria-describedBy="{{ handle }}"
+    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
     {{ js_attributes }}
-    class="w-full file:py-2 file:mr-4 file:px-4 file:border-2 file:border-solid file:border-primary file:bg-white file:text-primary file:text-xs file:uppercase file:tracking-widest file:font-bold file:rounded border-neutral focus:outline-none focus-visible:ring focus-visible:ring-primary motion-safe:transition"
 >
 <!-- End: /vendor/statamic/forms/fields/assets.antlers.html -->

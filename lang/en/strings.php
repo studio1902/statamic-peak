@@ -2,7 +2,7 @@
 
 return [
     // Contact form
-    'form_error' => 'There are errors with your form input. Please fix them and try again.',
+    'form_error' => 'There are problems with your form input:',
     'form_honeypot' => 'Fax',
     'form_mail_body_owner' => 'A contact form has been sent.',
     'form_mail_body_sender' => 'Thanks for your message. We will contact you as soon as possible.',
