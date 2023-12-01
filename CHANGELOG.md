@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.0.1 (2023-12-01)
+
+### What's new
+- Install Statamic Peak Commands v3.0.0 by default. 24064c63 by @robdekort
+
 ## v16.0.0 (2023-12-01)
 
 ### What's new
