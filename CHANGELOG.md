@@ -1,5 +1,11 @@
 # Changelog
 
+## v16.0.0 (2023-12-01)
+
+### What's new
+- Laravel Precognition support and improved accessibility in Forms. Requires Statamic Peak Tools v4.0.0. #359 by @robdekort and @ryanmitchell
+- Add stack utilities in favour of outer-grid #363 by @robdekort
+
 ## v15.18.0 (2023-11-30)
 
 ### What's new
