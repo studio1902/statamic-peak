@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.1.0 (2023-12-01)
+
+### What's improved
+- More DRY form fields. #364 by @andreasschantl
+
 ## v16.0.1 (2023-12-01)
 
 ### What's new
