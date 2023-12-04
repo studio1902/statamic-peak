@@ -12,7 +12,7 @@
 
         {{# Render form and use Alpine based Statamic conditional logic. #}}
         {{ if form:handle }}
-            {{ form:create :in="form:handle" js="alpine:dynamic_form" attr:x-ref="form" }}
+            {{ form:create :in="form:handle" js="alpine:form" attr:x-ref="form" }}
                 {{# Use Laravel Precognition for live validation and submission. #}}
                 <div x-data="formHandler()" class="flex flex-col gap-8" x-cloak>
                     {{# Error notifications. #}}
