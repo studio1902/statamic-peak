@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.1.1 (2023-12-04)
+
+### What's improved
+- Rename JS form driver handle. ab20f3cc by @robdekort
+
 ## v16.1.0 (2023-12-01)
 
 ### What's improved
