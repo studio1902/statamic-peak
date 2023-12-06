@@ -9,7 +9,6 @@
     name="{{ handle }}{{ multiple ?= "[]" }}"
     {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
     {{ multiple ?= "multiple" }}
-    {{ js_attributes }}
 >
     {{ unless multiple }}
         <option value>{{ trans key="Please select..." }}</option>
