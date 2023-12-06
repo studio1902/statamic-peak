@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.1.2 (2023-12-06)
+
+### What's fixed
+- Issues with checkboxes, radio buttons and asset fields not submitting and working properly. c0bbd263 by @robdekort
+
 ## v16.1.1 (2023-12-04)
 
 ### What's improved
