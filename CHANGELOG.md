@@ -1,9 +1,14 @@
 # Changelog
 
+## v16.1.3 (2023-12-07)
+
+### What's fixed
+- Only show error summary after submitting a form. This will automatically be fixed when you update to Statamic Peak Tools 4.0.3. 8d02c2e2 by @robdekort
+
 ## v16.1.2 (2023-12-06)
 
 ### What's fixed
-- Issues with checkboxes, radio buttons and asset fields not submitting and working properly. c0bbd263 by @robdekort
+- Issues with checkboxes, radio buttons and asset fields not submitting and working properly. This will automatically be fixed when you update to Statamic Peak Tools 4.0.2. c0bbd263 by @robdekort
 
 ## v16.1.1 (2023-12-04)
 
