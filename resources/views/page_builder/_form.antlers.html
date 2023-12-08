@@ -16,7 +16,7 @@
                 {{# Use Laravel Precognition for live validation and submission. #}}
                 <div x-data="formHandler()" class="flex flex-col gap-8" x-cloak>
                     {{# Error notifications. #}}
-                    <template x-if="form.hasErrors">
+                    <template x-if="form.hasErrors && submitted">
                         <div id="summary" role="group" class="rounded border p-4 bg-red-50 border-red-700">
                             <h3 class="mb-2 leading-5 font-bold text-red-700">{{ trans:strings.form_error }}</h3>
                             <ul class="list-disc list-inside marker:text-red-700">
