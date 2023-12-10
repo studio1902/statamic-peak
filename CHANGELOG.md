@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.2.0 (2023-12-10)
+
+### What's new
+- Use Video field for video embeds. f39567e3 by @robdekort
+
 ## v16.1.3 (2023-12-07)
 
 ### What's fixed
