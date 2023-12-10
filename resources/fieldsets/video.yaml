@@ -1,23 +1,23 @@
 title: Video
 fields:
   -
-    handle: video_url
-    field:
-      placeholder: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-      input_type: url
-      type: text
-      localizable: true
-      width: 50
-      listable: hidden
-      display: 'Video'
-      instructions: "YouTube or Vimeo URL."
-      instructions_position: below
-  -
     handle: size
     field: common.size
     config:
       localizable: true
-      width: 50
+      width: 100
+  -
+    handle: video_url
+    field:
+      type: video
+      display: Video
+      icon: video
+      instructions: 'YouTube or Vimeo URL.'
+      listable: hidden
+      instructions_position: below
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
   -
     handle: caption
     field:
