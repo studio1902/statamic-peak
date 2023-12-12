@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.3.0 (2023-12-12)
+
+### What's improved
+- Button attributes moved the Statamic Peak Tools Addon. References in your templates will automatically be updated when you update to Statamic Peak Tools 4.1.0. 8d02c2e2 by @robdekort
+
 ## v16.2.0 (2023-12-10)
 
 ### What's new
