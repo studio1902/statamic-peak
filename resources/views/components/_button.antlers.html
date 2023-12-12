@@ -29,7 +29,7 @@
             {{ /if }}
             {{ class }}
         "
-        {{ !faux ?= { partial:snippets/button_attributes } }}
+        {{ !faux ?= { partial:statamic-peak-tools::snippets/button_attributes } }}
     >
         {{ link_type == 'email' ? { label | obfuscate_email } : label }}
     </{{ as or 'a' }}>
