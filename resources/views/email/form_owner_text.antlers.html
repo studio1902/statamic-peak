@@ -7,14 +7,14 @@
 
 -
 {{ fields }}
-{{ if handle !== 'consent' }}
+{{ if {config['visibility']} !== 'hidden' }}
 {{ trans :key="display" :locale="locale" }}:
 {{ if (value | is_array) }}
 {{ value }}
-{{ value }}
+{{ value:label ?? value }}
 {{ /value }}
 {{ else }}
-{{ value }}
+{{ value:label ?? value }}
 {{ /if }}
 {{ /if }}
 {{ /fields }}
