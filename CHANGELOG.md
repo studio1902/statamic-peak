@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.5.0 (2023-12-13)
+
+### What's improved
+- Form email improvements. #370 by @AndreasSchantl
+
 ## v16.4.0 (2023-12-13)
 
 ### What's improved
