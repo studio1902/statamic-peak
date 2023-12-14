@@ -73,18 +73,18 @@
                                                 {{ /if }}
 
                                                 {{ if field:instructions && instructions_position === 'above' }}
-                                                    {{ partial:typography/p class="font-normal text-sm" content="{ trans :key="field:instructions" }" }}
+                                                    {{ partial:typography/p class="mt-1 font-normal text-sm" content="{ trans :key="field:instructions" }" }}
                                                 {{ /if }}
                                             </label>
+                                        {{ /unless }}
+
+                                        <div class="mt-2 flex flex-col gap-y-2">
+                                            {{ field:field }}
 
                                             {{# Inline error. #}}
                                             <template x-if="form.invalid('{{ handle }}')">
                                                 <span class="mt-1 text-red-700 text-sm font-bold" x-text="form.errors.{{ handle }}"></span>
                                             </template>
-                                        {{ /unless }}
-
-                                        <div class="mt-2 flex flex-col gap-y-2">
-                                            {{ field:field }}
 
                                             {{ if field:instructions && instructions_position === 'below' }}
                                                 <p id="{{ field:handle }}-instructions">
