@@ -140,7 +140,7 @@ class StarterKitPostInstall
 
     protected function setTimezone(): void
     {
-        if (!$this->interactive) {
+        if (!$this->interactive || DIRECTORY_SEPARATOR === '\\') {
             return;
         }
 
