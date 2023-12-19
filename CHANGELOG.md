@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.6.0 (2023-12-19)
+
+### What's new
+- Skip Laravel Search Prompts on Windows (non WSL). 75824123 by @robdekort
+
 ## v16.5.0 (2023-12-13)
 
 ### What's improved
