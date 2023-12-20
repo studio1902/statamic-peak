@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.7.0 (2023-12-20)
+
+### What's new
+- Update to Vite 5. a80bd774 by @robdekort
+
 ## v16.6.0 (2023-12-19)
 
 ### What's new
