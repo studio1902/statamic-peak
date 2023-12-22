@@ -1,5 +1,10 @@
 # Changelog
 
+## v16.8.0 (2023-12-22)
+
+### What's new
+- Recompile assets for Statamic Peak Tools 4.2.0. 579dcebc by @robdekort
+
 ## v16.7.0 (2023-12-20)
 
 ### What's new
