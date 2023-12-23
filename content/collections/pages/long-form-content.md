@@ -108,7 +108,7 @@ page_builder:
           values:
             type: image
             size: xl
-            caption: 'Get on top of the Peak.'
+            caption: 'Get to the top of the Peak.'
             image: a-peak.jpg
       -
         type: paragraph
