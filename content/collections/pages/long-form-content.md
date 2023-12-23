@@ -48,7 +48,7 @@ page_builder:
           values:
             type: pull_quote
             size: lg
-            quote: 'Maecenas imperdiet mauris non posuere dignissim. Duis tempus molestie efficitur. '
+            quote: 'Maecenas imperdiet mauris non posuere dignissim. Duis tempus molestie efficitur.'
             author: 'Studio 1902'
       -
         type: paragraph
