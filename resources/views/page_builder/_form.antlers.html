@@ -5,8 +5,8 @@
 #}}
 
 <!-- /page_builder/_form.antlers.html -->
-<section class="fluid-container grid md:grid-cols-12 gap-8">
-    <div class="md:col-start-3 md:col-span-8">
+<section class="fluid-grid">
+    <div class="md:col-start-[col-3-start] md:col-end-[col-10-end]">
         {{ block:title ?= { partial:typography/h1 as="h2" class="mb-8" :content="block:title" } }}
         {{ block:text ?= { partial:typography/p :content="block:text" } }}
 

@@ -71,7 +71,7 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function({ addBase, theme }) {
+    plugin(function({ addBase, addComponents, addUtilities, theme }) {
       addBase({
         // Default color transition on links unless user prefers reduced motion.
         '@media (prefers-reduced-motion: no-preference)': {
@@ -92,21 +92,13 @@ module.exports = {
           backgroundColor: theme('colors.primary.DEFAULT'),
           color: theme('colors.white')
         },
+      }),
+      // Custom components for this particular site.
+      addComponents({
+      }),
+      // Custom utilities for this particular site.
+      addUtilities({
       })
-    }),
-
-    // Custom components for this particular site.
-    plugin(function({ addComponents, theme }) {
-      const components = {
-      }
-      addComponents(components)
-    }),
-
-    // Custom utilities for this particular site.
-    plugin(function({ addUtilities, theme, variants }) {
-      const newUtilities = {
-      }
-      addUtilities(newUtilities)
     }),
   ]
 }
