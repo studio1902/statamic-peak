@@ -70,7 +70,7 @@ module.exports = {
           '--side-width': 'minmax(0, 1fr)',
           display: 'grid',
           columnGap: 'var(--col-gap)',
-          gridTemplateColumns: '[full-start] var(--side-width) [content-start] repeat(12, [col] var(--col-width)) [content-end] var(--side-width) [full-end]',
+          gridTemplateColumns: '[full-start] var(--side-width) [content-start col-1] var(--col-width) [col-2] var(--col-width) [col-3] var(--col-width) [col-4] var(--col-width) [col-5] var(--col-width) [col-6] var(--col-width) [col-7] var(--col-width) [col-8] var(--col-width) [col-9] var(--col-width) [col-10] var(--col-width) [col-11] var(--col-width) [col-12] var(--col-width) [content-end] var(--side-width) [full-end]',
           '> *': {
               gridColumn: 'content'
           }
@@ -86,24 +86,24 @@ module.exports = {
         },
         '@media screen(md)': {
           '.span-md': {
-            gridColumn: 'col 3 / span 8'
+            gridColumn: 'col-3 / span 8'
           },
           '.span-lg': {
-            gridColumn: 'col 2 / span 10'
+            gridColumn: 'col-2 / span 10'
           },
           '.span-xl': {
-            gridColumn: 'col 1 / span 12'
+            gridColumn: 'col-1 / span 12'
           }
         },
         '@media screen(lg)': {
           '.span-md': {
-            gridColumn: 'col 4 / span 6'
+            gridColumn: 'col-4 / span 6'
           },
           '.span-lg': {
-            gridColumn: 'col 3 / span 8'
+            gridColumn: 'col-3 / span 8'
           },
           '.span-xl': {
-            gridColumn: 'col 2 / span 10'
+            gridColumn: 'col-2 / span 10'
           }
         }
       }),
