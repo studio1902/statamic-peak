@@ -78,20 +78,33 @@ module.exports = {
       }),
       // Add fluid grid utilities.
       addUtilities({
-        '.span-content': {
+        '.span-content, .span-md, .span-lg, .span-xl': {
           gridColumn: 'content'
         },
         '.span-full': {
           gridColumn: 'full'
         },
-        '.span-md': {
-          gridColumn: 'col 4 / span 6'
+        '@media screen(md)': {
+          '.span-md': {
+            gridColumn: 'col 3 / span 8'
+          },
+          '.span-lg': {
+            gridColumn: 'col 2 / span 10'
+          },
+          '.span-xl': {
+            gridColumn: 'col 1 / span 12'
+          }
         },
-        '.span-lg': {
-          gridColumn: 'col 3 / span 8'
-        },
-        '.span-xl': {
-          gridColumn: 'col 2 / span 10'
+        '@media screen(lg)': {
+          '.span-md': {
+            gridColumn: 'col 4 / span 6'
+          },
+          '.span-lg': {
+            gridColumn: 'col 3 / span 8'
+          },
+          '.span-xl': {
+            gridColumn: 'col 2 / span 10'
+          }
         }
       }),
       // Stack utilities.
