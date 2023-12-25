@@ -1,5 +1,11 @@
 # Changelog
 
+## v16.8.1 (2023-12-25)
+
+### What's fixed
+- Fix grammar on caption. #372 by @jaygeorge
+- Trim a trailing space from long form content pull quote. #371 by @jaygeorge
+
 ## v16.8.0 (2023-12-22)
 
 ### What's new
