@@ -71,9 +71,6 @@ module.exports = {
           display: 'grid',
           columnGap: 'var(--col-gap)',
           gridTemplateColumns: '[full-start] var(--side-width) [content-start col-1] var(--col-width) [col-2] var(--col-width) [col-3] var(--col-width) [col-4] var(--col-width) [col-5] var(--col-width) [col-6] var(--col-width) [col-7] var(--col-width) [col-8] var(--col-width) [col-9] var(--col-width) [col-10] var(--col-width) [col-11] var(--col-width) [col-12] var(--col-width) [content-end] var(--side-width) [full-end]',
-          '> *:not(.absolute, .fixed, .sticky)': {
-              gridColumn: 'content'
-          }
         }
       }),
       // Add fluid grid utilities.
