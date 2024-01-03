@@ -70,7 +70,7 @@ tabs:
     sections:
       -
         display: Environments
-        instructions: 'When to render tracker tags and the cookie banner.'
+        instructions: 'When to render tracker tags and the consent banner.'
         fields:
           -
             import: 'statamic-peak-seo::globals_seo_trackers_environments'
@@ -87,8 +87,8 @@ tabs:
           -
             import: 'statamic-peak-seo::globals_seo_trackers_analytics'
       -
-        display: 'Consent and Cookie Banner'
-        instructions: 'Configure Google trackers and scripts and optionally inject them after cookie consent.'
+        display: 'Consent banner'
+        instructions: 'Configure Google trackers and scripts and optionally inject them after consent.'
         fields:
           -
             import: 'statamic-peak-seo::globals_seo_trackers_consent'
