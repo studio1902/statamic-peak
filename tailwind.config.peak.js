@@ -63,10 +63,11 @@ module.exports = {
       // Fluid grid components.
       addComponents({
         '.fluid-grid': {
+          '--col-gap': 'clamp(1rem, 3vw, 4rem)',
+          '--content-max-width': theme('screens.xl'),
+          '--col-width': `calc((min(calc(100% - var(--padding-left) - var(--padding-right) - 2 * var(--col-gap)), var(--content-max-width)) - 11 * var(--col-gap)) / 12)`,
           '--padding-left': 'clamp(calc(env(safe-area-inset-left, 0rem) + 1rem), 2vw, calc(env(safe-area-inset-left, 0rem) + 2rem))',
           '--padding-right': 'clamp(calc(env(safe-area-inset-right, 0rem) + 1rem), 2vw, calc(env(safe-area-inset-right, 0rem) + 2rem))',
-          '--col-gap': 'clamp(1rem, 3vw, 4rem)',
-          '--col-width': `calc((min(calc(100% - var(--padding-left) - var(--padding-right) - 2 * var(--col-gap)), ${theme('screens.xl')}) - 11 * var(--col-gap)) / 12)`,
           '--side-width': 'minmax(0, 1fr)',
           display: 'grid',
           columnGap: 'var(--col-gap)',
