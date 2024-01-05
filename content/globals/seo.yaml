@@ -19,4 +19,4 @@ data:
   use_plausible: false
   use_cloudflare_web_analytics: false
   tracker_type: none
-  use_cookie_banner: false
+  use_consent_banner: false
