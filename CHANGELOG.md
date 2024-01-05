@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.0.0 (2024-01-05)
+
+### What's new
+- Fluid grid. #373 by @robdekort and @marcorieser
+- Rewritten Consent banner support. #374 by @robdekort and @marcorieser
+
 ## v16.8.1 (2023-12-25)
 
 ### What's fixed
