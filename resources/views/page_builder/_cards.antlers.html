@@ -5,38 +5,40 @@
 #}}
 
 <!-- /page_builder/_cards.antlers.html -->
-<section class="fluid-container grid md:grid-cols-12 gap-8">
-    {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
+<section class="fluid-grid">
+    <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
+        {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
 
-    {{ block:cards }}
-        <{{ button ? 'a' : 'article' }}
-            class="
-                flex flex-col justify-between items-start p-6 border border-neutral/10 shadow-lg rounded no-underline focus:outline-none focus-visible:ring-2 ring-offset-2 ring-primary
-                {{ switch(
-                    (total_results === 1) => 'md:col-span-8 md:col-start-3',
-                    (total_results === 2) => 'md:col-span-6',
-                    (total_results > 2) => 'md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0',
-                    () => void
-                )}}
-            "
+        {{ block:cards }}
+            <{{ button ? 'a' : 'article' }}
+                class="
+                    flex flex-col justify-between items-start p-6 border border-neutral/10 shadow-lg rounded no-underline focus:outline-none focus-visible:ring-2 ring-offset-2 ring-primary
+                    {{ switch(
+                        (total_results === 1) => 'md:col-span-8 md:col-start-3',
+                        (total_results === 2) => 'md:col-span-6',
+                        (total_results > 2) => 'md:col-span-8 md:col-start-3 lg:col-span-4 lg:col-start-0',
+                        () => void
+                    )}}
+                "
+                    {{ button }}
+                        aria-labelledby="{{ title | slugify }}"
+                        draggable="false"
+                        {{ partial:statamic-peak-tools::snippets/button_attributes }}
+                    {{ /button }}
+            >
+                <div class="mb-4">
+                    <span id="{{ title | slugify }}">
+                        {{ partial:typography/h3 class="mb-2" color="text-neutral" :content="title" }}
+                    </span>
+                    {{ if text }}
+                        {{ partial:typography/p class="mb-4" :content="text" }}
+                    {{ /if }}
+                </div>
                 {{ button }}
-                    aria-labelledby="{{ title | slugify }}"
-                    draggable="false"
-                    {{ partial:statamic-peak-tools::snippets/button_attributes }}
+                    {{ partial:components/button as="span" faux="true" }}
                 {{ /button }}
-        >
-            <div class="mb-4">
-                <span id="{{ title | slugify }}">
-                    {{ partial:typography/h3 class="mb-2" color="text-neutral" :content="title" }}
-                </span>
-                {{ if text }}
-                    {{ partial:typography/p class="mb-4" :content="text" }}
-                {{ /if }}
-            </div>
-            {{ button }}
-                {{ partial:components/button as="span" faux="true" }}
-            {{ /button }}
-        </{{ button ? 'a' : 'article' }}>
-    {{ /block:cards }}
+            </{{ button ? 'a' : 'article' }}>
+        {{ /block:cards }}
+    </div>
 </section>
 <!-- End: /page_builder/_cards.antlers.html -->
