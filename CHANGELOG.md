@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.1.0 (2024-01-18)
+
+### What's new
+- Make cards more accessible. 8111c7a0 by @robdekort
+
 ## v17.0.0 (2024-01-05)
 
 ### What's new
