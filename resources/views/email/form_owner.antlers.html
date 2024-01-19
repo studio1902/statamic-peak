@@ -52,7 +52,7 @@
                                                                             <tr>
                                                                                 <td style='vertical-align:top; font-family:"Source Code Pro", monospace; padding:11px; border-bottom:#e3e3da 1px solid; font-size:14px' valign="top">
                                                                                     <strong>{{ trans :key="display" :locale="site:locale" }}:</strong><br>
-                                                                                    <pre style="font-family:inherit; margin:0">{{ if (value | is_array) }}<ul>{{ value }}<li>{{ value:label ?? value }}</li>{{ /value }}</ul>{{ else }}{{ value:label ?? value }}{{ /if }}</pre>
+                                                                                    <pre style="white-space:pre-line;font-family:inherit; margin:0">{{ if (value | is_array) }}<ul>{{ value }}<li>{{ value:label ?? value }}</li>{{ /value }}</ul>{{ else }}{{ value:label ?? value }}{{ /if }}</pre>
                                                                                 </td>
                                                                             </tr>
                                                                         {{ /if }}
