@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.1.1 (2024-01-19)
+
+### What's new
+- Add back `white-space:pre-line` to form emails. Reverted from #370. 6eaa4e9c by @robdekort
+
 ## v17.1.0 (2024-01-18)
 
 ### What's new
