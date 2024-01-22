@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.2.0 (2024-01-22)
+
+### What's new
+- Update dependencies and recompile assets. 786324ef by @robdekort
+
 ## v17.1.1 (2024-01-19)
 
 ### What's new
