@@ -1,5 +1,5 @@
 name: Bug report
-description: Fill out a bug report to help me improve Peak. Please make sure this is an actual issue with my software. Going through these issues demands a lot of my time.
+description: Fill out a bug report to help me improve Peak. *Please make sure this is an actual issue with my software.* Going through these issues demands a lot of my time.
 body:
   - type: textarea
     attributes:
