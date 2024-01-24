@@ -1,5 +1,5 @@
 name: Bug report
-description: Fill out a bug report to help us improve Statamic.
+description: Fill out a bug report to help improve Peak. Please make sure this is an actual issue with this software. Going through these issues demands a lot of time.
 body:
   - type: textarea
     attributes:
@@ -29,26 +29,6 @@ body:
       render: yaml # the format of the command is close to yaml and gets highlighted nicely
     validations:
       required: true
-  - type: dropdown
-    attributes:
-      label: Installation
-      description: How did you install Statamic?
-      options:
-        - Fresh statamic/statamic site via CLI
-        - Starter Kit using via CLI
-        - Existing Laravel app
-        - Other (please explain)
-    validations:
-      required: true
-  - type: dropdown
-    attributes:
-      label: Antlers Parser
-      description: If using 3.3+, which Antlers Parser are you using?
-      options:
-        - regex (default)
-        - runtime (new)
-    validations:
-      required: false
   - type: textarea
     attributes:
       label: Additional details
