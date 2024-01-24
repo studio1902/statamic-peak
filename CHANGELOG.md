@@ -3,6 +3,7 @@
 ## v17.3.0 (2024-01-24)
 
 ### What's new
+- Add exempt from alt toggle to images blueprint used in Statamic Peak Tools 4.4.0. c541255f by @robdekort
 - A prompt in the post install hook to set a locale for the default site. 966ee827 by @robdekort
 - Use local PNG logo as email header. 93fb197b by @robdekort
 
