@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.3.0 (2024-01-24)
+
+### What's new
+- A prompt in the post install hook to set a locale for the default site. 966ee827 by @robdekort
+- Use local PNG logo as email header. 93fb197b by @robdekort
+
 ## v17.2.0 (2024-01-22)
 
 ### What's new
