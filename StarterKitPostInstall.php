@@ -28,6 +28,7 @@ class StarterKitPostInstall
     protected string $env = '';
     protected string $readme = '';
     protected string $app = '';
+    protected string $sites = '';
     protected Collection $availableLanguages;
     protected bool $interactive = true;
 
@@ -40,6 +41,7 @@ class StarterKitPostInstall
         $this->installNodeDependencies();
         $this->installPuppeteerAndBrowsershot();
         $this->installTranslations();
+        $this->setLocale();
         $this->setTimezone();
         $this->runPeakClearSite();
         $this->writeFiles();
@@ -64,6 +66,7 @@ class StarterKitPostInstall
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
         $this->app = app('files')->get(base_path('config/app.php'));
+        $this->sites = app('files')->get(base_path('config/statamic/sites.php'));
     }
 
     protected function overwriteEnvWithPresets(): void
@@ -111,7 +114,7 @@ class StarterKitPostInstall
 
     protected function installPuppeteerAndBrowsershot(): void
     {
-        if (!confirm(label: 'Do you want to `npm i puppeteer` and `composer require spatie/browsershot` for generating social images?', default: true)) {
+        if (!confirm(label: 'Do you want to install Puppeteer and Browsershot for generating social images?', default: true)) {
             return;
         }
 
@@ -121,7 +124,7 @@ class StarterKitPostInstall
 
     protected function installTranslations(): void
     {
-        if (!confirm(label: 'Do you want to install missing Laravel translation files using the Laravel Lang package?', default: $this->interactive)) {
+        if (!confirm(label: 'Do you want to install missing Laravel translation files?', default: $this->interactive)) {
             return;
         }
 
@@ -166,6 +169,18 @@ class StarterKitPostInstall
         $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
     }
 
+    protected function setLocale(): void
+    {
+        $locale = text(
+            label: 'What should be the default site locale?',
+            placeholder: 'en_US',
+            default: $this->interactive ? '' : 'en_US',
+            required: true,
+        );
+
+        $this->replaceInSites("'locale' => 'en_US'", "'locale' => '$locale'");
+    }
+
     protected function runPeakClearSite(): void
     {
         if (!$this->interactive || !Process::isTtySupported()) {
@@ -184,6 +199,7 @@ class StarterKitPostInstall
         app('files')->put(base_path('.env'), $this->env);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
+        app('files')->put(base_path('config/statamic/sites.php'), $this->sites);
     }
 
     protected function cleanUp(): void
@@ -427,6 +443,11 @@ class StarterKitPostInstall
     protected function replaceInApp(string $search, string $replace): void
     {
         $this->app = str_replace($search, $replace, $this->app);
+    }
+
+    protected function replaceInSites(string $search, string $replace): void
+    {
+        $this->sites = str_replace($search, $replace, $this->sites);
     }
 
     protected function withSpinner(callable $callback, string $processingMessage = '', string $successMessage = ''): void
