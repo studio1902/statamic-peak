@@ -8,7 +8,7 @@ return [
     'form_mail_closing' => 'Med venlig hilsens',
     'form_mail_from' => config('app.name'),
     'form_mail_greeting' => 'Kære',
-    'form_mail_logo' => 'https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png',
+    'form_mail_logo' => config('app.url') . '/visuals/statamic-peak-logo.png',
     'form_mail_submitted' => 'Sendt',
     'form_mail_title' => 'Kontaktformular',
     'form_mail_url' => config('app.url'),
