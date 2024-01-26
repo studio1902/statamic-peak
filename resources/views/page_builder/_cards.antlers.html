@@ -5,7 +5,7 @@
 #}}
 
 <!-- /page_builder/_cards.antlers.html -->
-<section class="fluid-grid">
+{{ partial:page_builder/block }}
     <div class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
         {{ block:title ?= { partial:typography/h2 :content="block:title" class="md:col-start-3 md:col-span-8 text-center" } }}
 
@@ -43,5 +43,5 @@
             </article>
         {{ /block:cards }}
     </div>
-</section>
+{{ /partial:page_builder/block }}
 <!-- End: /page_builder/_cards.antlers.html -->

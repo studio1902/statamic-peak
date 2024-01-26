@@ -5,11 +5,11 @@
 #}}
 
 <!-- /page_builder/_article.antlers.html -->
-<section class="fluid-grid">
+{{ partial:page_builder/block }}
     {{ partial:typography/prose as="article" class="contents" }}
         {{ article }}
             {{ partial src="components/{type}" }}
         {{ /article }}
     {{ /partial:typography/prose }}
-</section>
+{{ /partial:page_builder/block }}
 <!-- End: /page_builder/_article.antlers.html -->
