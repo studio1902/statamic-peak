@@ -1,5 +1,11 @@
 # Changelog
 
+## v17.4.0 (2024-01-26)
+
+### What's new
+- Extract block wrapper to partial. e5d86683 by @robdekort
+- Lower default prose line height. c31e3a70 by @robdekort
+
 ## v17.3.0 (2024-01-24)
 
 ### What's new
