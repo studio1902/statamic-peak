@@ -47,9 +47,11 @@ module.exports = {
             '--tw-prose-invert-pre-bg': theme('colors.white'),
             '--tw-prose-invert-th-borders': theme('colors.white'),
             '--tw-prose-invert-td-borders': theme('colors.white'),
+            lineHeight: '1.5em',
             'ul > li > p, ol > li > p': {
               marginTop: '0em !important',
               marginBottom: '0em !important',
+              lineHeight: '1.5em'
             },
             ':where(.prose > div > :first-child)': {
               marginTop: '0 !important',
@@ -57,6 +59,21 @@ module.exports = {
             ':where(.prose > div > :last-child)': {
               marginBottom: '0 !important',
             }
+          }
+        },
+        lg: {
+          css: {
+            lineHeight: '1.5em',
+          }
+        },
+        xl: {
+          css: {
+            lineHeight: '1.5em',
+          }
+        },
+        '2xl': {
+          css: {
+            lineHeight: '1.5em',
           }
         }
       }),
