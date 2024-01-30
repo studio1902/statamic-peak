@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.4.1 (2024-01-30)
+
+### What's new
+- Fix form layout on small screens. f7e59296 by @robdekort
+
 ## v17.4.0 (2024-01-26)
 
 ### What's new
