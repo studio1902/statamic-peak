@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.5.0 (2024-02-03)
+
+### What's improved
+- Set stack space property only on direct children when using stacks so you can nest stacks without conflicts. 0a48a9fe by @robdekort
+
 ## v17.4.1 (2024-01-30)
 
 ### What's new
