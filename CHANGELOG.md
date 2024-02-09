@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.5.1 (2024-02-09)
+
+### What's improved
+- Add x-model attribute to honeypot field. 603fde18 by @robdekort
+
 ## v17.5.0 (2024-02-03)
 
 ### What's improved
