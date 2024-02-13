@@ -128,6 +128,11 @@ module.exports = {
         },
         { values: theme('spacing') }
       ),
+      addUtilities({
+          '*:is(.stack-collapse) + *:is(.stack-collapse)': {
+              '--stack-space': 0,
+          },
+      }),
       // Render screen names in the breakpoint display.
       addBase(Object.entries(theme('screens'))
         .filter(value => typeof value[1] == 'string')
