@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.6.0 (2024-02-13)
+
+### What's new
+- Add `stack-collapse` utility to collapse space between stack items with this class. 28f96ffb by @robdekort
+
 ## v17.5.1 (2024-02-09)
 
 ### What's improved
