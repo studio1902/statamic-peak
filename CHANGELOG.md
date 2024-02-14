@@ -3,7 +3,7 @@
 ## v17.7.0 (2024-02-14)
 
 ### What's improved
-- The `stack-space-*` utilities can now override parent stack space without having to explicitely specify breakpoints. fb815578 by @aerni
+- The `stack-space-*` utilities can now override parent stack space without having to explicitly specify breakpoints. fb815578 by @aerni
 
 ## v17.6.0 (2024-02-13)
 
