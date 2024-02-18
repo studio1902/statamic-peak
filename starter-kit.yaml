@@ -53,6 +53,6 @@ export_paths:
 dependencies:
   laravel/framework: ^10.16
   studio1902/statamic-peak-browser-appearance: ^3.0
-  studio1902/statamic-peak-commands: ^5.0
+  studio1902/statamic-peak-commands: ^6.0
   studio1902/statamic-peak-seo: ^8.0
   studio1902/statamic-peak-tools: ^4.0

@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.8.0 (2024-02-18)
+
+### What's new
+- Use paid Statamic Peak Commands addon going forward.
+
 ## v17.7.0 (2024-02-14)
 
 ### What's improved
