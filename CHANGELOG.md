@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.9.0 (2024-02-19)
+
+### What's new
+- A prompt to enter your Statamic license key during install. 29203d22 by @robdekort
+
 ## v17.8.0 (2024-02-18)
 
 ### What's new
