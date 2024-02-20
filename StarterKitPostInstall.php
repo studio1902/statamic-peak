@@ -242,8 +242,8 @@ class StarterKitPostInstall
     protected function finish(): void
     {
         info('[✓] Peak is installed. Enjoy the view!');
-        warning('Run `php please peak:install-preset` to install premade sets onto your website.');
-        warning('Run `php please peak:install-block` to install premade blocks onto your page builder.');
+        info("Run `php please peak:install-preset` to install premade sets onto your website.\nRun `php please peak:install-block` to install premade blocks onto your page builder.");
+        warning("You need a valid license to use these commands.\nBuy one here: https://statamic.com/addons/studio1902/peak-commands");
     }
 
     protected function setAppName(): void
