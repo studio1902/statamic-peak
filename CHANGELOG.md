@@ -1,5 +1,10 @@
 # Changelog
 
+## v17.9.1 (2024-02-20)
+
+### What's improved
+- Add license information to the starter kit post install information. 9b61ad8b by @robdekort
+
 ## v17.9.0 (2024-02-19)
 
 ### What's new
