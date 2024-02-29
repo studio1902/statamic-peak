@@ -88,8 +88,19 @@ module.exports = {
             fontFamily: theme('fontFamily.sans'),
             // fontFamily: theme('fontFamily.serif'),
         },
+        'a, button': {
+            '&:focus': {
+              outline: '2px solid transparent',
+              outlineOffset: '2px'
+            },
+            '&:focus-visible': {
+              outlineWidth: 2,
+              outlineColor: "theme(colors.primary.DEFAULT / 1)",
+              outlineOffset: '2px'
+            }
+        },
         'mark': {
-          backgroundColor: theme('colors.primary.DEFAULT'),
+          backgroundColor: "theme('colors.primary.DEFAULT / 1')",
           color: theme('colors.white')
         },
       }),
