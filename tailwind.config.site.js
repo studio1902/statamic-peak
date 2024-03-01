@@ -88,16 +88,28 @@ module.exports = {
             fontFamily: theme('fontFamily.sans'),
             // fontFamily: theme('fontFamily.serif'),
         },
-        'a, button': {
-            '&:focus': {
-              outline: '2px solid transparent',
-              outlineOffset: '2px'
-            },
-            '&:focus-visible': {
-              outlineWidth: 2,
-              outlineColor: "theme(colors.primary.DEFAULT / 1)",
-              outlineOffset: '2px'
-            }
+        ':root': {
+          '--focus-outline-width': '2px',
+          '--focus-outline-offset': '3px',
+          '--focus-outline-color': 'currentColor',
+          '--focus-outline-style': 'dotted',
+        },
+        ':focus': {
+          outline: '2px solid transparent',
+          outlineOffset: '2px'
+        },
+        ':focus-visible': {
+          outlineWidth: 'var(--focus-outline-width)',
+          outlineOffset: 'var(--focus-outline-offset)',
+          outlineColor: 'var(--focus-outline-color)',
+          outlineStyle: 'var(--focus-outline-style)',
+        },
+        'input:focus-visible, textarea:focus-visible, select:focus-visible': {
+          boxShadow: 'none !important',
+          outlineWidth: 'var(--focus-outline-width) !important',
+          outlineOffset: 'var(--focus-outline-offset) !important',
+          outlineColor: 'var(--focus-outline-color) !important',
+          outlineStyle: 'var(--focus-outline-style) !important',
         },
         'mark': {
           backgroundColor: "theme('colors.primary.DEFAULT / 1')",
