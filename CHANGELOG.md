@@ -1,5 +1,14 @@
 # Changelog
 
+## v18.0.0 (2024-03-01)
+
+### What's new
+- Use focus outlines instead of rings and set a default #384 by @robdekort
+- Use extendable reusable consent gate partial #386 by @robdekort
+
+### What's improved
+- Danish translations. #385 by @martinduefrandsen
+
 ## v17.9.1 (2024-02-20)
 
 ### What's improved
