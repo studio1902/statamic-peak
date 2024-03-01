@@ -13,18 +13,18 @@
     <{{ as or 'a' }}
         {{ slot:attributes }}
         class="
-            font-bold focus:outline-none focus-visible:ring focus-visible:ring-offset-2
+            font-bold rounded
             {{ if button_type === 'inline' }}
                 underline decoration-2 motion-safe:transition
                 {{ inverted
-                    ? 'text-white decoration-white focus-visible:ring-white'
-                    : 'text-neutral decoration-primary focus-visible:ring-primary'
+                    ? 'text-white decoration-white focus-visible:outline-white'
+                    : 'text-neutral decoration-primary'
                 }}
             {{ else }}
                 inline-flex items-center py-3 px-4 rounded leading-none no-underline select-none whitespace-nowrap motion-safe:transition
                 {{ inverted
-                    ? 'bg-white text-primary focus-visible:ring-white'
-                    : 'bg-primary text-white focus-visible:ring-primary'
+                    ? 'bg-white text-primary focus-visible:outline-white'
+                    : 'bg-primary text-white'
                 }}
             {{ /if }}
             {{ class }}

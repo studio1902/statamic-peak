@@ -2,7 +2,7 @@
 <input
     @change="form.{{ handle }} = Object.values($event.target.files)"
     :aria-invalid="form.invalid('{{ handle }}')"
-    class="w-full file:py-2 file:mr-4 file:px-4 file:border-2 file:border-solid file:border-primary file:bg-white file:text-primary file:text-xs file:uppercase file:tracking-widest file:font-bold file:rounded border-neutral focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary motion-safe:transition"
+    class="w-full file:py-2 file:mr-4 file:px-4 file:border-2 file:border-solid file:border-primary file:bg-white file:text-primary file:text-xs file:uppercase file:tracking-widest file:font-bold file:rounded border-neutral focus:border-primary motion-safe:transition"
     type="file"
     {{ if max_files === 1 }}
         name="{{ handle }}"

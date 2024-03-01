@@ -22,7 +22,7 @@
                             <ul class="list-disc list-inside marker:text-red-700">
                                 <template x-for="(error, index) in form.errors">
                                     <li>
-                                        <a :href="`#${index}`" @click.prevent="$focus.focus(document.querySelector(`#${index}`))" x-text="error" class="p-1 -m-1 rounded focus:outline-none focus-visible:ring-2 ring-red-700 text-red-700 underline"></a>
+                                        <a :href="`#${index}`" @click.prevent="$focus.focus(document.querySelector(`#${index}`))" x-text="error" class="underline text-red-700 focus-visible:outline-red-700"></a>
                                     </li>
                                 </template>
                             </ul>
