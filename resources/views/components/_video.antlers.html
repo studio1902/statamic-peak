@@ -5,43 +5,11 @@
 #}}
 
 <!-- /components/_video.antlers.html -->
-{{ consent_embeds =
-    (environment == 'local' && seo:trackers_local && seo:embeds) or
-    (environment == 'staging' && seo:trackers_staging && seo:embeds) or
-    (environment == 'production' && seo:trackers_production && seo:embeds)
-}}
-<div
-    {{ if consent_embeds }}
-        x-data
-    {{ /if }}
-    class="
-        not-prose my-8
-        {{ switch(
-            (size == 'md') => 'span-md',
-            (size == 'lg') => 'span-lg',
-            (size == 'xl') => 'span-xl',
-            () => 'span-md'
-        )}}
-    "
->
-    <div class="relative aspect-video">
-        {{ if consent_embeds }}
-            <div
-                x-show="!$store.consentBanner.getConsent() || !$store.consentBanner.getConsentValue('embeds')"
-                class="absolute z-10 inset-0 p-6 flex justify-center items-center bg-neutral/10 text-neutral/80"
-            >
-                <a @click.prevent="$store.consentBanner.revokeConsent()" href="#" class="p-1 -m-1 underline focus:outline-none focus-visible:ring-2 ring-primary">
-                    {{ trans:strings.consent_embeds_disabled }}
-                </a>
-            </div>
-            <template x-if="$store.consentBanner.getConsent() && $store.consentBanner.getConsentValue('embeds')">
-                <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </template>
-        {{ else }}
-            <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        {{ /if }}
-    </div>
+{{ partial:components/consent_gate class="not-prose my-8 { switch((size == 'md') => 'span-md', (size == 'lg') => 'span-lg', (size == 'xl') => 'span-xl', () => 'span-md')}" }}
+    <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    {{ partial:typography/caption }}
-</div>
+    {{ slot:append }}
+        {{ partial:typography/caption }}
+    {{ /slot:append }}
+{{ /partial:components/consent_gate }}
 <!-- End: /components/_video.antlers.html -->
