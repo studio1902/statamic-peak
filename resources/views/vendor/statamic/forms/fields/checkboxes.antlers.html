@@ -10,7 +10,7 @@
             <input
                 x-model="form.{{ handle }}"
                 @change="form.validate('{{ handle }}')"
-                class="mr-2 rounded border-neutral text-primary focus-visible:ring-2 focus-visible:ring-primary motion-safe:transition"
+                class="mr-2 rounded border-neutral text-primary focus:border-primary"
                 type="checkbox"
                 name="{{ handle }}[]"
                 value="{{ value }}"

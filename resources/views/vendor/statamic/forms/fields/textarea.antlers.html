@@ -3,8 +3,11 @@
     x-model="form.{{ handle }}"
     @change="form.validate('{{ handle }}')"
     :aria-invalid="form.invalid('{{ handle }}')"
-    :class="{ 'border-red-600 focus-visible:border-red-600': form.invalid('{{ handle }}') }"
-    class="w-full h-32 rounded border-neutral focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary motion-safe:transition caret-primary"
+    :class="{
+        'border-red-600 focus:border-red-600 !outline-red-600/50': form.invalid('{{ handle }}'),
+        'border-neutral focus:border-primary': !form.invalid('{{ handle }}')
+    }"
+    class="w-full h-32 rounded caret-primary"
     id="{{ handle }}"
     name="{{ handle }}"
     rows="5"
