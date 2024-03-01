@@ -3,9 +3,9 @@
 return [
     // Contact form
     'form_honeypot' => 'Fax',
-    'form_mail_body_owner' => 'Der er sendt en kontaktformular.',
+    'form_mail_body_owner' => 'Der er sendt en besked.',
     'form_mail_body_sender' => 'Tak for din besked. Vi kontakter dig hurtigst muligt.',
-    'form_mail_closing' => 'Med venlig hilsens',
+    'form_mail_closing' => 'Med venlig hilsen',
     'form_mail_from' => config('app.name'),
     'form_mail_greeting' => 'Kære',
     'form_mail_logo' => config('app.url') . '/visuals/statamic-peak-logo.png',
@@ -13,8 +13,8 @@ return [
     'form_mail_title' => 'Kontaktformular',
     'form_mail_url' => config('app.url'),
     'form_send' => 'Send besked',
-    'form_subject_received' => 'Kontaktformular modtaget',
-    'form_subject_sent' => 'Kontaktformular sendt',
+    'form_subject_received' => 'Besked modtaget',
+    'form_subject_sent' => 'Besked sendt',
     'form_success' => 'Tak, vi har modtaget din besked og kontakter dig hurtigst muligt.',
 
     // Cookie banner
@@ -35,7 +35,7 @@ return [
     'consent_reset_consent' => 'Nulstil cookie-samtykke',
 
     // Footer
-    'on' => 'Aktiv',
+    'on' => 'på',
 
     // Navigation
     'close' => 'Luk',
@@ -57,13 +57,13 @@ return [
     'previous' => 'forrige',
 
     // Social images
-    'social_images' => 'Genereret ét socialt billede.|Genereret: tæl sociale billeder.',
-    'social_images_queue' => 'Generering af ét socialt billede i baggrunden.|Generering :count sociale billeder i baggrunden.',
+    'social_images' => 'Genereret ét socialt billede.|Genereret :count sociale billeder.',
+    'social_images_queue' => 'Generering af ét socialt billede i baggrunden.|Generering af :count sociale billeder i baggrunden.',
 
     // Widgets
-    'widget_assets_title' => 'Aktiver uden Alt Text i :container',
-    'widget_assets_edit' => 'Rediger dette aktiv',
+    'widget_assets_title' => 'Billeder uden alt-tekst i :container',
+    'widget_assets_edit' => 'Rediger dette billede',
     'widget_assets_explanation' => 'Det er vigtigt at tilføje alt-tekst, der beskriver dine billeder. Dette hjælper brugere, der er afhængige af hjælpeteknologi.',
     'widget_assets_count' => '{0}Du har :amount billeder, der kræver opmærksomhed.|{1}Du har :amount billeder, der kræver opmærksomhed.|[2,*]Du har mindst :amount billeder, der kræver opmærksomhed.',
-    'widget_assets_done' => 'Alle aktiver har en alternativ tekst.',
+    'widget_assets_done' => 'Alle billeder har en alt-tekst.',
 ];
