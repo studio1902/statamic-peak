@@ -93,23 +93,30 @@ module.exports = {
           '--focus-outline-offset': '3px',
           '--focus-outline-color': 'currentColor',
           '--focus-outline-style': 'dotted',
+          '--focus-form-outline-width': '3px',
+          '--focus-form-outline-offset': '0',
+          '--focus-form-outline-color': "theme('colors.primary.DEFAULT / .5')",
+          '--focus-form-outline-style': 'solid',
         },
         ':focus': {
+          outlineWidth: 'var(--focus-outline-width, 2px)',
+          outlineOffset: 'var(--focus-outline-offset, 3px)',
+          outlineColor: 'var(--focus-outline-color, currentColor)',
+          outlineStyle: 'var(--focus-outline-style, dotted)',
+        },
+        '*:focus:not(:focus-visible)': {
           outline: '2px solid transparent',
-          outlineOffset: '2px'
+          outlineOffset: '2px',
         },
-        ':focus-visible': {
-          outlineWidth: 'var(--focus-outline-width)',
-          outlineOffset: 'var(--focus-outline-offset)',
-          outlineColor: 'var(--focus-outline-color)',
-          outlineStyle: 'var(--focus-outline-style)',
+        '*:focus:not(:focus-visible) > .focus-nested': {
+          outline: 'none !important'
         },
-        'input:focus-visible, textarea:focus-visible, select:focus-visible': {
-          boxShadow: 'none !important',
-          outlineWidth: 'var(--focus-outline-width) !important',
-          outlineOffset: 'var(--focus-outline-offset) !important',
-          outlineColor: 'var(--focus-outline-color) !important',
-          outlineStyle: 'var(--focus-outline-style) !important',
+        'input:not([type="button"]):focus, textarea:focus, select:focus': {
+          boxShadow: 'none',
+          outlineWidth: 'var(--focus-form-outline-width, 3px)',
+          outlineOffset: 'var(--focus-form-outline-offset, 0)',
+          outlineColor: 'var(--focus-form-outline-color, currentColor)',
+          outlineStyle: 'var(--focus-form-outline-style, solid)',
         },
         'mark': {
           backgroundColor: "theme('colors.primary.DEFAULT / 1')",
