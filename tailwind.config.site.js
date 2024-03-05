@@ -108,9 +108,6 @@ module.exports = {
           outline: '2px solid transparent',
           outlineOffset: '2px',
         },
-        '*:focus:not(:focus-visible) > .focus-nested': {
-          outline: 'none !important'
-        },
         'input:not([type="button"]):focus, textarea:focus, select:focus': {
           boxShadow: 'none',
           outlineWidth: 'var(--focus-form-outline-width, 3px)',
