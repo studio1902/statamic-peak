@@ -1,9 +1,15 @@
 # Changelog
 
+## v18.0.1 (2024-03-05)
+
+### What's improved
+- Remove unused CSS line regarding focus. b97f2bfe by @robdekort
+- Use focus instead of focus visible in consent gate. d1954a1d by @robdekort
+
 ## v18.0.0 (2024-03-01)
 
 ### What's new
-- Use focus outlines instead of rings and set a default #384 by @robdekort
+- Use focus outlines instead of rings and set a default #384 by @robdekort and @klickreflex
 - Use extendable reusable consent gate partial #386 by @robdekort
 
 ### What's improved
