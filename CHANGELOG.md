@@ -1,5 +1,13 @@
 # Changelog
 
+## v18.1.0 (2024-03-09)
+
+### What's new
+- Option to pass in `aspect_ratio` and `explainer` to consent gate. 7184a402 by @robdekort
+
+### What's changed
+- Removed `SAVE_CACHED_IMAGES` environmental variable. 9982f2aa by @robdekort
+
 ## v18.0.1 (2024-03-05)
 
 ### What's improved
