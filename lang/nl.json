@@ -28,6 +28,7 @@
     "Add redirect": "Voeg redirect toe",
     "Add script fragment": "Voeg scriptfragment toe",
     "Add the full script URL.": "Voeg de volledige script-url toe.",
+    "Add the name of the event you want to be fired on click. These events only fire on a production environment. Allowed: `A-Z`, `a-z`, `0-9`, `-`, `_`.": "Voer de naam in van het event dat getriggered moet worden als iemand op de knop klikt. Deze events triggeren alleen op een productie-omgeving. Toegestaan: `A-Z`, `a-z`, `0-9`, `-`, `_`.",
     "Advanced": "Geavanceerd",
     "Advanced SEO settings.": "Geavanceerd SEO instellingen",
     "Alt texts are important for users who depend on assistive technology.": "Alt-teksten zijn belangrijk voor gebruikers die afhankelijk zijn van toegankelijkheidssoftware.",
@@ -295,6 +296,7 @@
     "This image doesn't need an alt text.": "Deze afbeelding heeft geen alt-tekst nodig.",
     "This will be used in form consent and in the optional consent banner.": "Dit wordt gebruikt in de toestemming die verleend moet worden bij een formulier en in de optionele consentbanner.",
     "Titel": "Titel",
+    "Tracker event": "Tracker event",
     "Tracker type": "Trackertype",
     "Trackers": "Trackers",
     "Tracking ID": "Tracking-ID",
@@ -330,6 +332,7 @@
     "https:\/\/www.youtube.com\/": "https:\/\/www.youtube.com\/",
     "https:\/\/www.youtube.com\/watch?v=dQw4w9WgXcQ": "https:\/\/www.youtube.com\/watch?v=dQw4w9WgXcQ",
     "info@site.com": "info@site.com",
+    "my-custom-event": "mijn-custom-event",
     "|": "|",
     "~": "~",
     "\u00a9": "\u00a9"
