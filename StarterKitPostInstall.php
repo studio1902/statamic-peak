@@ -324,14 +324,14 @@ class StarterKitPostInstall
             scroll: 10
         );
 
+        if ($localMailer === 'mailpit') {
+            return;
+        }
+
         if ($localMailer === 'helo' || $localMailer === 'herd') {
             $this->replaceInEnv('MAIL_HOST=localhost', "MAIL_HOST=127.0.0.1");
             $this->replaceInEnv('MAIL_PORT=1025', "MAIL_PORT=2525");
             $this->replaceInEnv('MAIL_USERNAME=null', 'MAIL_USERNAME="${APP_NAME}"');
-        }
-
-        if ($localMailer === 'mailpit') {
-            return;
         }
 
         if ($localMailer === 'mailhog') {
