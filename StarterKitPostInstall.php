@@ -13,6 +13,7 @@ use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
 use function Laravel\Prompts\search;
+use function Laravel\Prompts\select;
 use function Laravel\Prompts\spin;
 use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
@@ -82,6 +83,7 @@ class StarterKitPostInstall
 
         $this->useDebugbar();
         $this->useImagick();
+        $this->setLocalMailer();
 
         info("[✓] `.env` file overwritten.");
     }
@@ -305,6 +307,42 @@ class StarterKitPostInstall
 
         $this->replaceInEnv('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
         $this->replaceInReadme('#IMAGE_MANIPULATION_DRIVER=imagick', 'IMAGE_MANIPULATION_DRIVER=imagick');
+    }
+
+    protected function setLocalMailer(): void
+    {
+        $localMailer = select(
+            label: 'Which local mailer do you use?',
+            options: [
+                'helo' => 'Helo',
+                'herd' => 'Herd Pro',
+                'log' => 'Log',
+                'mailpit' => 'Mailpit',
+                'mailtrap' => 'Mailtrap',
+            ],
+            default: 'mailpit',
+            scroll: 10
+        );
+
+        if ($localMailer === 'helo' || $localMailer === 'herd') {
+            $this->replaceInEnv('MAIL_HOST=localhost', "MAIL_HOST=127.0.0.1");
+            $this->replaceInEnv('MAIL_PORT=1025', "MAIL_PORT=2525");
+            $this->replaceInEnv('MAIL_USERNAME=null', 'MAIL_USERNAME="${APP_NAME}"');
+        }
+
+        if ($localMailer === 'mailpit') {
+            return;
+        }
+
+        if ($localMailer === 'mailhog') {
+            $this->replaceInEnv('MAIL_HOST=localhost', "MAIL_HOST=127.0.0.1");
+            $this->replaceInEnv('MAIL_PORT=1025', "MAIL_PORT=8025");
+        }
+
+        if ($localMailer === 'log') {
+            $this->replaceInEnv('MAIL_MAILER=smtp', "MAIL_MAILER=log");
+            echo "log";
+        }
     }
 
     protected function initializeGitRepo(): void
