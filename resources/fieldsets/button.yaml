@@ -196,7 +196,7 @@ fields:
       listable: false
       placeholder: my-custom-event
       display: 'Tracker event'
-      instructions: "Add the name of the event you want to be fired on click. This only works if you've setup Fathom or GA/'GTM. These events only fire on a production environment. Allowed' => `A-Z`, `a-z`, `0-9`, `-`, `_`."
+      instructions: "Add the name of the event you want to be fired on click. These events only fire on a production environment. Allowed: `A-Z`, `a-z`, `0-9`, `-`, `_`."
       validate:
         - 'regex:/[A-Za-z0-9_\-]+$/'
       instructions_position: below
