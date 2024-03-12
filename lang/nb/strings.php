@@ -21,7 +21,8 @@ return [
     // Cookie banner
     'consent_accept_all' => 'Aksepter alle',
     'consent_accept_selected' => 'Aksepter valgte',
-    'consent_ads' => 'Reklame og sporing',
+    'consent_reject_all' => 'Reject all',
+	'consent_ads' => 'Reklame og sporing',
     'consent_ads_explanation' => 'Tredjepartsinformasjonskapsler, trengs ikke.',
     'consent_analytics' => 'Analyser',
     'consent_analytics_explanation' => 'Tredjepartsinformasjonskapsler, trengs ikke.',

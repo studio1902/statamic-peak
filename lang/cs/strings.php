@@ -21,7 +21,8 @@ return [
     // Cookie banner
     'consent_accept_all' => 'Přijmout vše',
     'consent_accept_selected' => 'Přijmout vybrané',
-    'consent_ads' => 'Reklamy & sledování',
+    'consent_reject_all' => 'Reject all',
+	'consent_ads' => 'Reklamy & sledování',
     'consent_ads_explanation' => 'Third party cookies absolutely terrible for privacy, but we don\'t give a sh*t.',
     'consent_analytics' => 'Analytické',
     'consent_analytics_explanation' => 'Third party cookies, not needed if we cared.',

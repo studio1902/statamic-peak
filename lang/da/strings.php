@@ -19,7 +19,8 @@ return [
 
     // Cookie banner
     'consent_accept' => 'Acceptere',
-    'consent_ads' => 'Annoncer og sporing',
+    'consent_reject_all' => 'Reject all',
+	'consent_ads' => 'Annoncer og sporing',
     'consent_ads_explanation' => 'Tredjepartscookies brugt til reklame.',
     'consent_analytics' => 'Analyser',
     'consent_analytics_explanation' => 'Tredjepartscookies brugt til analyser.',

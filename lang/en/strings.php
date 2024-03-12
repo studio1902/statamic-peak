@@ -21,7 +21,8 @@ return [
     // Consent banner
     'consent_accept_all' => 'Accept all',
     'consent_accept_selected' => 'Accept selected',
-    'consent_ads' => 'Ads & tracking',
+    'consent_reject_all' => 'Reject all',
+	'consent_ads' => 'Ads & tracking',
     'consent_ads_explanation' => 'Storage (like third party cookies) used for advertisement.',
     'consent_ad_user_data' => 'User data',
     'consent_ad_user_data_explanation' => 'Send user data related to advertising to Google.',
