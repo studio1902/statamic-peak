@@ -1,5 +1,10 @@
 # Changelog
 
+## v18.2.2 (2024-03-12)
+
+### What's improved
+- Add `Reject all` to string files to for the new `Reject all` button in the consent banner. eabe148b by @robdekort
+
 ## v18.2.1 (2024-03-12)
 
 ### What's improved
