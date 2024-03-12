@@ -1,5 +1,10 @@
 # Changelog
 
+## v18.3.0 (2024-03-12)
+
+### What's new
+- Add an option to configure various local mailers in the post install script. c4f81fb8 by @robdekort
+
 ## v18.2.2 (2024-03-12)
 
 ### What's improved
