@@ -187,3 +187,24 @@ fields:
       replicator_preview: false
       if:
         show_controls: 'equals true'
+  -
+    handle: tracker_event
+    field:
+      input_type: text
+      type: text
+      localizable: true
+      listable: false
+      placeholder: my-custom-event
+      display: 'Tracker event'
+      instructions: "Add the name of the event you want to be fired on click. This only works if you've setup Fathom or GA/'GTM. These events only fire on a production environment. Allowed' => `A-Z`, `a-z`, `0-9`, `-`, `_`."
+      validate:
+        - 'regex:/[A-Za-z0-9_\-]+$/'
+      instructions_position: below
+      width: 50
+      replicator_preview: false
+      visibility: visible
+      antlers: false
+      hide_display: false
+      if:
+        show_controls: 'equals true'
+        label: 'custom tracker_events'
