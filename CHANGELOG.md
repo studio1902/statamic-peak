@@ -1,5 +1,10 @@
 # Changelog
 
+## v18.2.0 (2024-03-12)
+
+### What's new
+- A `tracker_event` in the button fieldset to fire custom events using GTAG, GTM or Fathom. An update and an update script in the Tools addon will automatically add this to existing sites. 3351ac62 by @robdekort
+
 ## v18.1.0 (2024-03-09)
 
 ### What's new
