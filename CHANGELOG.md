@@ -1,5 +1,10 @@
 # Changelog
 
+## v18.2.1 (2024-03-12)
+
+### What's improved
+- Update Dutch translations. 23a5be8e by @robdekort
+
 ## v18.2.0 (2024-03-12)
 
 ### What's new
