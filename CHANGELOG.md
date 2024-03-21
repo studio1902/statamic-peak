@@ -1,5 +1,11 @@
 # Changelog
 
+## v18.4.0 (2024-03-21)
+
+### What's new
+- Updated Dutch translations. 80c45e9e by @robdekort
+- Recompiled assets for new Consent Banner options. a54622a8 by @robdekort
+
 ## v18.3.0 (2024-03-12)
 
 ### What's new
