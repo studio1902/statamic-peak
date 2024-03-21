@@ -39,6 +39,7 @@ return [
     'consent_title' => 'Consent',
     'consent_learn_more' => 'Learn more',
     'consent_change_preferences' => 'Change consent preferences',
+    'consent_more_info' => 'More information',
 
     // Footer
     'on' => 'on',
