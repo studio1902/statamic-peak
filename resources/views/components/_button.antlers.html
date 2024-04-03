@@ -17,21 +17,23 @@
             {{ if button_type === 'inline' }}
                 underline decoration-2 motion-safe:transition
                 {{ inverted
-                    ? 'text-white decoration-white focus-visible:outline-white'
-                    : 'text-neutral decoration-primary'
+                    ? 'text-white decoration-white focus:outline-white'
+                    : 'text-neutral decoration-primary focus:outline-primary'
                 }}
             {{ else }}
-                inline-flex items-center py-3 px-4 rounded leading-none no-underline select-none whitespace-nowrap motion-safe:transition
+                max-w-full inline-flex items-center py-3 px-4 rounded leading-none no-underline select-none whitespace-nowrap motion-safe:transition
                 {{ inverted
-                    ? 'bg-white text-primary focus-visible:outline-white'
-                    : 'bg-primary text-white'
+                    ? 'bg-white text-primary focus:outline-white'
+                    : 'bg-primary text-white focus:outline-primary'
                 }}
             {{ /if }}
             {{ class }}
         "
         {{ !faux ?= { partial:statamic-peak-tools::snippets/button_attributes } }}
     >
-        {{ link_type == 'email' ? { label | obfuscate_email } : label }}
+        <span class="text-ellipsis overflow-x-clip">
+            {{ link_type == 'email' ? { label | obfuscate_email } : label }}
+        </span>
     </{{ as or 'a' }}>
 {{ /if }}
 <!-- End: /components/_button.antlers.html -->
