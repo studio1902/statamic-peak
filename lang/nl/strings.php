@@ -10,7 +10,7 @@ return [
     'consent_ads_explanation' => 'Third party cookies benodigd voor het retargeten en plaatsen van advertenties.',
     'consent_analytics' => 'Analytics',
     'consent_analytics_explanation' => 'Third party cookies die nodig zijn voor het meten van geanomiseerde bezoekersstatistieken.',
-    'consent_change_preferences' => 'Wijzig cookie-voorkeuren',
+    'consent_change_preferences' => 'Manage toestemmingen',
     'consent_embeds' => 'Video embeds',
     'consent_embeds_disabled' => 'Accepteer video-embed-cookies om deze video te zien.',
     'consent_embeds_explanation' => 'Third party cookies die nodig zijn om embedded video\'s te tonen. Deze kunnen je gedrag mogelijk tracken.',

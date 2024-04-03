@@ -38,7 +38,7 @@ return [
     'consent_functional_explanation' => 'First party cookies needed for the website to function. These can\'t be turned off.',
     'consent_title' => 'Consent',
     'consent_learn_more' => 'Learn more',
-    'consent_change_preferences' => 'Change consent preferences',
+    'consent_change_preferences' => 'Manage consent',
     'consent_more_info' => 'More information',
 
     // Footer
