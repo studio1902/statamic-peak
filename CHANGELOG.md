@@ -1,5 +1,13 @@
 # Changelog
 
+## v18.5.0 (2024-04-03)
+
+### What's improved
+- Use aria-current="page" on navs. 5bb50ac5 by @robdekort
+- More resillient buttons on small screens and improved outline color. 89949a69 by @robdekort
+- Vertical align table cells to the top. 6ba2b218 by @robdekort
+- Change wording for consent reset link. 56f11c00 by @robdekort
+
 ## v18.4.0 (2024-03-21)
 
 ### What's new
