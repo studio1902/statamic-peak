@@ -50,6 +50,7 @@
                         {{ else }}
                             href="{{ url }}"
                         {{ /if }}
+                        {{ is_current ?= 'aria-current="page"' }}
                     >
                         <span>{{ title }}</span>
                         {{ if children }}
@@ -69,7 +70,9 @@
                                 <li class="{{ first ?= 'mt-2' }}">
                                     <a
                                         class="block py-2 whitespace-nowrap font-bold hover:text-primary {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}"
-                                        href="{{ url }}">
+                                        href="{{ url }}"
+                                        {{ is_current ?= 'aria-current="page"' }}
+                                    >
                                         {{ title }}
                                     </a>
                                 </li>
