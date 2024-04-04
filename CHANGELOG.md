@@ -1,5 +1,10 @@
 # Changelog
 
+## v18.6.0 (2024-04-04)
+
+### What's improved
+- Auto open the mobile sub navigation when the current page is a child. d40d401d by @robdekort
+
 ## v18.5.0 (2024-04-03)
 
 ### What's improved
