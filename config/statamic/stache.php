@@ -68,6 +68,11 @@ return [
             'directory' => base_path('content/globals'),
         ],
 
+        'global-variables' => [
+            'class' => Stores\GlobalVariablesStore::class,
+            'directory' => base_path('content/globals'),
+        ],
+
         'asset-containers' => [
             'class' => Stores\AssetContainersStore::class,
             'directory' => base_path('content/assets'),
@@ -80,6 +85,11 @@ return [
         'users' => [
             'class' => Stores\UsersStore::class,
             'directory' => base_path('users'),
+        ],
+
+        'form-submissions' => [
+            'class' => Stores\SubmissionsStore::class,
+            'directory' => storage_path('forms'),
         ],
 
     ],

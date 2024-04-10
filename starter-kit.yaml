@@ -14,7 +14,6 @@ export_paths:
   - CONTRIBUTING.md
   - config/filesystems.php
   - config/statamic/assets.php
-  - config/statamic/antlers.php
   - config/statamic/cp.php
   - config/statamic/editions.php
   - config/statamic/forms.php
