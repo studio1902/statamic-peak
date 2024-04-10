@@ -54,7 +54,7 @@
 
                         {{ if children }}
                             <div :class="{ 'scale-y-[-1]': subnavOpen }" class="motion-safe:transition-transform">
-                                {{ svg:chevron_down class="w-2 ml-1 overflow-visible stroke-current text-neutral" aria-hidden="true" sanitize="true" }}
+                                {{ svg:chevron_down attr:class="w-2 ml-1 overflow-visible stroke-current text-neutral" attr:aria-hidden="true" }}
                             </div>
                         {{ /if }}
                     </a>
