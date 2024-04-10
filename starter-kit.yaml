@@ -3,12 +3,9 @@ export_as:
 export_paths:
   - .env.example
   - .gitignore
-  - app/Console/Kernel.php
   - app/Console/Commands/PostInstall/CollectAvailableLangLocales.php
-  - app/Http/Middleware/VerifyCsrfToken.php
   - app/Listeners/PreventDeletingMounts.php
   - app/Providers/AppServiceProvider.php
-  - app/Providers/EventServiceProvider.php
   - CHANGELOG.md
   - content
   - CONTRIBUTING.md
@@ -40,6 +37,7 @@ export_paths:
   - resources/svg
   - resources/users/roles.yaml
   - resources/views
+  - routes/console.php
   - LICENSE
   - package.json
   - package-lock.json
@@ -50,8 +48,8 @@ export_paths:
   - tailwind.config.typography.js
   - vite.config.js
 dependencies:
-  laravel/framework: ^10.16
-  studio1902/statamic-peak-browser-appearance: ^3.0
-  studio1902/statamic-peak-commands: ^7.0
-  studio1902/statamic-peak-seo: ^8.0
-  studio1902/statamic-peak-tools: ^5.0
+  laravel/framework: ^11.3
+  studio1902/statamic-peak-browser-appearance: '*'
+  studio1902/statamic-peak-commands: '*'
+  studio1902/statamic-peak-seo: '*'
+  studio1902/statamic-peak-tools: '*'

@@ -12,7 +12,7 @@ class CollectAvailableLangLocales extends Command
 
     protected $signature = 'statamic:peak:collect-available-lang-locales';
 
-    public function handle()
+    public function handle(): void
     {
         echo json_encode(Locales::raw()->available(), JSON_THROW_ON_ERROR);
     }

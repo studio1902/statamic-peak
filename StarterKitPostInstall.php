@@ -9,6 +9,7 @@ use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Process\Process;
+
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
@@ -19,7 +20,6 @@ use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
-
 class StarterKitPostInstall
 {
     public $registerCommands = [
@@ -27,10 +27,15 @@ class StarterKitPostInstall
     ];
 
     protected string $env = '';
+
     protected string $readme = '';
+
     protected string $app = '';
+
     protected string $sites = '';
+
     protected Collection $availableLanguages;
+
     protected bool $interactive = true;
 
     public function handle($console): void
@@ -53,7 +58,7 @@ class StarterKitPostInstall
 
     protected function applyInteractivity($console): void
     {
-        $this->interactive = !$console->option('no-interaction');
+        $this->interactive = ! $console->option('no-interaction');
 
         /**
          * Interactivity should be inherited but seems like there is a bug in Prompts where it stays
@@ -72,7 +77,7 @@ class StarterKitPostInstall
 
     protected function overwriteEnvWithPresets(): void
     {
-        if (!confirm(label: 'Do you want overwrite your `.env` file with the Peak presets?', default: true)) {
+        if (! confirm(label: 'Do you want overwrite your `.env` file with the Peak presets?', default: true)) {
             return;
         }
 
@@ -85,12 +90,12 @@ class StarterKitPostInstall
         $this->useImagick();
         $this->setLocalMailer();
 
-        info("[✓] `.env` file overwritten.");
+        info('[✓] `.env` file overwritten.');
     }
 
     protected function initializeGitAndConfigureGitignore(): void
     {
-        if (!confirm(label: 'Do you want to init a git repo and configure gitignore?', default: true)) {
+        if (! confirm(label: 'Do you want to init a git repo and configure gitignore?', default: true)) {
             return;
         }
 
@@ -104,7 +109,7 @@ class StarterKitPostInstall
 
     protected function installNodeDependencies(): void
     {
-        if (!confirm(label: 'Do you want to install npm dependencies?', default: true)) {
+        if (! confirm(label: 'Do you want to install npm dependencies?', default: true)) {
             return;
         }
 
@@ -117,7 +122,7 @@ class StarterKitPostInstall
 
     protected function installPuppeteerAndBrowsershot(): void
     {
-        if (!confirm(label: 'Do you want to install Puppeteer and Browsershot for generating social images?', default: true)) {
+        if (! confirm(label: 'Do you want to install Puppeteer and Browsershot for generating social images?', default: true)) {
             return;
         }
 
@@ -127,17 +132,19 @@ class StarterKitPostInstall
 
     protected function installTranslations(): void
     {
-        if (!confirm(label: 'Do you want to install missing Laravel translation files?', default: $this->interactive)) {
+        if (! confirm(label: 'Do you want to install missing Laravel translation files?', default: $this->interactive)) {
             return;
         }
 
-        if (!$this->installLaravelLang()) {
+        if (! $this->installLaravelLang()) {
             error('Could not install Laravel Lang.');
+
             return;
         }
 
-        if (!$this->collectAvailableLanguages()) {
+        if (! $this->collectAvailableLanguages()) {
             error('Could not collect available languages.');
+
             return;
         }
 
@@ -146,26 +153,25 @@ class StarterKitPostInstall
 
     protected function setTimezone(): void
     {
-        if (!$this->interactive || DIRECTORY_SEPARATOR === '\\') {
+        if (! $this->interactive || DIRECTORY_SEPARATOR === '\\') {
             return;
         }
 
         $newTimezone = search(
             label: 'What timezone should your app be in?',
             options: function (string $value) {
-                if (!$value) {
+                if (! $value) {
                     return timezone_identifiers_list(DateTimeZone::ALL, null);
                 }
 
                 return collect(timezone_identifiers_list(DateTimeZone::ALL, null))
-                    ->filter(fn(string $item) => Str::contains($item, $value, true))
+                    ->filter(fn (string $item) => Str::contains($item, $value, true))
                     ->values()
                     ->all();
             },
             placeholder: 'UTC',
             required: true,
         );
-
 
         $currentTimezone = config('app.timezone');
 
@@ -186,7 +192,7 @@ class StarterKitPostInstall
 
     protected function runPeakClearSite(): void
     {
-        if (!$this->interactive || !Process::isTtySupported()) {
+        if (! $this->interactive || ! Process::isTtySupported()) {
             return;
         }
 
@@ -208,13 +214,13 @@ class StarterKitPostInstall
     protected function cleanUp(): void
     {
         $this->withSpinner(
-            fn() => $this->cleanUpComposerPackages(),
+            fn () => $this->cleanUpComposerPackages(),
             'Cleaning up composer packages...',
             'Composer packages cleaned up.'
         );
 
         $this->withSpinner(
-            fn() => $this->removePostInstallCommands(),
+            fn () => $this->removePostInstallCommands(),
             'Removing post install commands...',
             'Post install commands removed.'
         );
@@ -222,7 +228,7 @@ class StarterKitPostInstall
 
     protected function starPeakRepo(): void
     {
-        if (!confirm(label: 'Would you like to star the Peak repo?', default: false)) {
+        if (! confirm(label: 'Would you like to star the Peak repo?', default: false)) {
             return;
         }
 
@@ -301,7 +307,7 @@ class StarterKitPostInstall
 
     protected function useImagick(): void
     {
-        if (!confirm(label: 'Do you want use Imagick as an image processor instead of GD?', default: true)) {
+        if (! confirm(label: 'Do you want use Imagick as an image processor instead of GD?', default: true)) {
             return;
         }
 
@@ -329,19 +335,19 @@ class StarterKitPostInstall
         }
 
         if ($localMailer === 'helo' || $localMailer === 'herd') {
-            $this->replaceInEnv('MAIL_HOST=localhost', "MAIL_HOST=127.0.0.1");
-            $this->replaceInEnv('MAIL_PORT=1025', "MAIL_PORT=2525");
+            $this->replaceInEnv('MAIL_HOST=localhost', 'MAIL_HOST=127.0.0.1');
+            $this->replaceInEnv('MAIL_PORT=1025', 'MAIL_PORT=2525');
             $this->replaceInEnv('MAIL_USERNAME=null', 'MAIL_USERNAME="${APP_NAME}"');
         }
 
         if ($localMailer === 'mailhog') {
-            $this->replaceInEnv('MAIL_HOST=localhost', "MAIL_HOST=127.0.0.1");
-            $this->replaceInEnv('MAIL_PORT=1025', "MAIL_PORT=8025");
+            $this->replaceInEnv('MAIL_HOST=localhost', 'MAIL_HOST=127.0.0.1');
+            $this->replaceInEnv('MAIL_PORT=1025', 'MAIL_PORT=8025');
         }
 
         if ($localMailer === 'log') {
-            $this->replaceInEnv('MAIL_MAILER=smtp', "MAIL_MAILER=log");
-            echo "log";
+            $this->replaceInEnv('MAIL_MAILER=smtp', 'MAIL_MAILER=log');
+            echo 'log';
         }
     }
 
@@ -356,7 +362,7 @@ class StarterKitPostInstall
 
     protected function excludeBuildFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true)) {
+        if (! confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true)) {
             return;
         }
 
@@ -365,7 +371,7 @@ class StarterKitPostInstall
 
     protected function excludeUsersFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `users` folder from git?', default: false)) {
+        if (! confirm(label: 'Do you want to exclude the `users` folder from git?', default: false)) {
             return;
         }
 
@@ -374,7 +380,7 @@ class StarterKitPostInstall
 
     protected function excludeFormsFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `storage/form` folder from git?', default: false)) {
+        if (! confirm(label: 'Do you want to exclude the `storage/form` folder from git?', default: false)) {
             return;
         }
 
@@ -383,12 +389,13 @@ class StarterKitPostInstall
 
     protected function createGithubRepo(): void
     {
-        if (!app(ExecutableFinder::class)->find('gh')) {
+        if (! app(ExecutableFinder::class)->find('gh')) {
             info('If you install GitHub CLI, next time this installer will be able to set up a remote repository.');
+
             return;
         }
 
-        if (!confirm(label: 'Do you want create a repo on Github?', default: false)) {
+        if (! confirm(label: 'Do you want create a repo on Github?', default: false)) {
             return;
         }
 
@@ -420,12 +427,12 @@ class StarterKitPostInstall
         try {
             $spinner ?
                 $this->withSpinner(
-                    fn() => $process->mustRun(),
+                    fn () => $process->mustRun(),
                     $processingMessage,
                     $successMessage
                 ) :
                 $this->withoutSpinner(
-                    fn() => $process->mustRun(),
+                    fn () => $process->mustRun(),
                     $successMessage
                 );
 
@@ -472,6 +479,7 @@ class StarterKitPostInstall
         try {
             $process->mustRun();
             $this->availableLanguages = collect(json_decode($process->getOutput(), true, 512, JSON_THROW_ON_ERROR));
+
             return true;
         } catch (Exception) {
             return false;
@@ -559,17 +567,17 @@ class StarterKitPostInstall
     {
         return suggest(
             label: 'Handle of language (submit empty when you\'re done)',
-            options: fn($value) => $this->availableLanguages
-                ->filter(fn(string $language) => Str::contains($language, $value, true) && !$installedLanguages->contains($language))
+            options: fn ($value) => $this->availableLanguages
+                ->filter(fn (string $language) => Str::contains($language, $value, true) && ! $installedLanguages->contains($language))
                 ->values()
                 ->toArray(),
             placeholder: 'en',
-            validate: fn(string $value) => match (true) {
-                $value && !$this->availableLanguages->contains($value) => 'Not supported by Laravel Lang.',
+            validate: fn (string $value) => match (true) {
+                $value && ! $this->availableLanguages->contains($value) => 'Not supported by Laravel Lang.',
                 $value && $installedLanguages->contains($value) => "Language \"{$value}\" already installed.",
                 default => null,
             },
-            hint: $installedLanguages->isNotEmpty() ? 'Installed: ' . $installedLanguages->join(', ', ' and ') : '',
+            hint: $installedLanguages->isNotEmpty() ? 'Installed: '.$installedLanguages->join(', ', ' and ') : '',
         );
     }
 
