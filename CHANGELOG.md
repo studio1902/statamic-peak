@@ -1,5 +1,10 @@
 # Changelog
 
+## v18.7.0 (2024-04-19)
+
+### What's improved
+- Install `spatie/image` when installing `Browsershot` in the post install script. 4d44b600 by @robdekort
+
 ## v18.6.0 (2024-04-04)
 
 ### What's improved
