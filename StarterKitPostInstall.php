@@ -453,6 +453,12 @@ class StarterKitPostInstall
             processingMessage: 'Installing Browsershot...',
             successMessage: 'Browsershot installed.',
         );
+
+        $this->run(
+            command: 'composer require spatie/image',
+            processingMessage: 'Installing Image...',
+            successMessage: 'Image installed.',
+        );
     }
 
     protected function installLaravelLang(): bool
