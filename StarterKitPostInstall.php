@@ -176,6 +176,7 @@ class StarterKitPostInstall
         $currentTimezone = config('app.timezone');
 
         $this->replaceInEnv("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
+        $this->replaceInReadme("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
     }
 
     protected function setLocale(): void
