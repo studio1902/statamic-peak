@@ -28,6 +28,7 @@ export_paths:
   - public/files/.gitkeep
   - public/social_images/.gitkeep
   - public/visuals
+  - resources/sites.yaml
   - resources/blueprints
   - resources/css/custom.css
   - resources/css/site.css
