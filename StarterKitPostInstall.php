@@ -72,7 +72,7 @@ class StarterKitPostInstall
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
         $this->app = app('files')->get(base_path('config/app.php'));
-        $this->sites = app('files')->get(base_path('config/statamic/sites.php'));
+        $this->sites = app('files')->get(base_path('resources/sites.yaml'));
     }
 
     protected function overwriteEnvWithPresets(): void
@@ -175,7 +175,7 @@ class StarterKitPostInstall
 
         $currentTimezone = config('app.timezone');
 
-        $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
+        $this->replaceInEnv("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
     }
 
     protected function setLocale(): void
@@ -187,7 +187,7 @@ class StarterKitPostInstall
             required: true,
         );
 
-        $this->replaceInSites("'locale' => 'en_US'", "'locale' => '$locale'");
+        $this->replaceInSites("locale: en_US", "locale: $locale");
     }
 
     protected function runPeakClearSite(): void
@@ -505,14 +505,24 @@ class StarterKitPostInstall
         } while ($handle);
     }
 
-    protected function replaceInApp(string $search, string $replace): void
-    {
-        $this->app = str_replace($search, $replace, $this->app);
-    }
-
     protected function replaceInSites(string $search, string $replace): void
     {
         $this->sites = str_replace($search, $replace, $this->sites);
+    }
+
+    protected function replaceInEnv(string $search, string $replace): void
+    {
+        $this->env = str_replace($search, $replace, $this->env);
+    }
+
+    protected function replaceInReadme(string $search, string $replace): void
+    {
+        $this->readme = str_replace($search, $replace, $this->readme);
+    }
+
+    protected function appendToGitignore(string $toIgnore): void
+    {
+        app('files')->append(base_path('.gitignore'), "\n{$toIgnore}");
     }
 
     protected function withSpinner(callable $callback, string $processingMessage = '', string $successMessage = ''): void
@@ -543,21 +553,6 @@ class StarterKitPostInstall
         ])->deleteDirectory('Console/Commands/PostInstall');
 
         usleep(500000);
-    }
-
-    protected function replaceInEnv(string $search, string $replace): void
-    {
-        $this->env = str_replace($search, $replace, $this->env);
-    }
-
-    protected function replaceInReadme(string $search, string $replace): void
-    {
-        $this->readme = str_replace($search, $replace, $this->readme);
-    }
-
-    protected function appendToGitignore(string $toIgnore): void
-    {
-        app('files')->append(base_path('.gitignore'), "\n{$toIgnore}");
     }
 
     protected function withoutSpinner(callable $callback, string $successMessage = ''): void
