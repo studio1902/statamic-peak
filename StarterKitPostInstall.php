@@ -209,7 +209,7 @@ class StarterKitPostInstall
         app('files')->put(base_path('.env'), $this->env);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
-        app('files')->put(base_path('config/statamic/sites.php'), $this->sites);
+        app('files')->put(base_path('resources/sites.yaml'), $this->sites);
     }
 
     protected function cleanUp(): void
