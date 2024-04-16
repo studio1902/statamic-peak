@@ -21,6 +21,7 @@ return [
     'consent_more_info' => 'Meer informatie',
     'consent_reject_all' => 'Weiger alles',
     'consent_title' => 'Cookies 🍪',
+    'external_link' => '(externe link)',
     'form_error' => 'Er zijn problemen met je formulierinput. Probeer het opnieuw.',
     'form_honeypot' => 'Fax',
     'form_mail_body_owner' => 'Er is een formulier verzonden.',

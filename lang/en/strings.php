@@ -56,6 +56,7 @@ return [
 
     // Other
     'collection_mounted' => 'Your entry :title has a collection mounted and can\'t be deleted.',
+    'external_link' => '(external link)',
     'no_results' => 'There are currently no posts.',
     'no_script' => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
 
