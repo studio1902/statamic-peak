@@ -9,6 +9,7 @@ use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Process\Process;
+use Symfony\Component\Yaml\Yaml;
 
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
@@ -104,6 +105,7 @@ class StarterKitPostInstall
         $this->excludeBuildFolderFromGit();
         $this->excludeUsersFolderFromGit();
         $this->excludeFormsFolderFromGit();
+        $this->setupComposerUpdateWorkflow();
         $this->createGithubRepo();
     }
 
@@ -388,10 +390,67 @@ class StarterKitPostInstall
         $this->appendToGitignore('/storage/forms');
     }
 
+    protected function setupComposerUpdateWorkflow(): void
+    {
+        if (! confirm(label: 'Do you want to add a GitHub workflow that does PR\'s with updates?', default: true)) {
+            return;
+        }
+
+        $cron = select(
+            label: 'How often do you want this workflow to automatically run?',
+            options: [
+                '0 2 * * 1' => 'Every week',
+                '0 2 1 * *' => 'Every month',
+                '0 2 1 */3 *' => 'Every three months',
+                '0 2 31 2 *' => 'Never, I\'ll trigger it manually',
+            ],
+            default: '0 2 1 */3 *',
+        );
+
+        $workflow = [
+            'name' => 'Composer Update',
+            'on' => [
+                'schedule' => [
+                    0 => [
+                        'cron' => "$cron",
+                    ],
+                ],
+                'workflow_dispatch' => NULL,
+            ],
+            'jobs' => [
+                'composer_update_job' => [
+                    'runs-on' => 'ubuntu-latest',
+                    'name' => 'composer update',
+                    'steps' => [
+                        0 => [
+                            'name' => 'Checkout',
+                            'uses' => 'actions/checkout@v3',
+                        ],
+                        1 => [
+                            'name' => 'composer update action',
+                            'uses' => 'kawax/composer-update-action@master',
+                            'env' => [
+                            'GITHUB_TOKEN' => '${{ secrets.GITHUB_TOKEN }}',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $disk = Storage::build([
+            'driver' => 'local',
+            'root' => base_path(),
+        ]);
+
+        $disk->makeDirectory('.github/workflows');
+        $disk->put('.github/workflows/composer_update.yaml', Yaml::dump($workflow, 99, 2));
+    }
+
     protected function createGithubRepo(): void
     {
         if (! app(ExecutableFinder::class)->find('gh')) {
-            info('If you install GitHub CLI, next time this installer will be able to set up a remote repository.');
+            info('If you install the GitHub CLI, next time this installer will be able to set up a remote repository.');
 
             return;
         }
