@@ -50,7 +50,7 @@ export_paths:
   - vite.config.js
 dependencies:
   laravel/framework: ^11.3
-  studio1902/statamic-peak-browser-appearance: '*'
-  studio1902/statamic-peak-commands: '*'
-  studio1902/statamic-peak-seo: '*'
-  studio1902/statamic-peak-tools: '*'
+  studio1902/statamic-peak-browser-appearance: ^3.4
+  studio1902/statamic-peak-commands: ^8.0
+  studio1902/statamic-peak-seo: ^8.11
+  studio1902/statamic-peak-tools: ^6.0
