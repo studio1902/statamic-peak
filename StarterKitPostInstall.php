@@ -402,21 +402,27 @@ class StarterKitPostInstall
                 '0 2 * * 1' => 'Every week',
                 '0 2 1 * *' => 'Every month',
                 '0 2 1 */3 *' => 'Every three months',
-                '0 0 31 2 *' => 'Never, I\'ll trigger it manually',
+                false => 'Never, I\'ll trigger it manually',
             ],
             default: '0 2 1 */3 *',
         );
 
+        $cron
+         ? $on = [
+            'schedule' => [
+                0 => [
+                    'cron' => "$cron",
+                ],
+            ],
+            'workflow_dispatch' => NULL,
+        ]
+        : $on = [
+            'workflow_dispatch' => NULL,
+        ];
+
         $workflow = [
             'name' => 'Composer Update',
-            'on' => [
-                'schedule' => [
-                    0 => [
-                        'cron' => "$cron",
-                    ],
-                ],
-                'workflow_dispatch' => NULL,
-            ],
+            'on' => $on,
             'jobs' => [
                 'composer_update_job' => [
                     'runs-on' => 'ubuntu-latest',
