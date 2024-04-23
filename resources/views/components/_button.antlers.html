@@ -36,7 +36,7 @@
 
         {{ if target_blank }}
             <span class="sr-only">{{ trans:strings.external_link }}</span>
-            {{ svg:external class="ml-1 w-3 h-3 fill-current" }}
+            {{ svg:external attr:class="ml-1 w-3 h-3 fill-current" attr:aria-hidden="true" attr:alt="" }}
         {{ /if }}
     </{{ as or 'a' }}>
 {{ /if }}
