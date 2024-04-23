@@ -402,7 +402,7 @@ class StarterKitPostInstall
                 '0 2 * * 1' => 'Every week',
                 '0 2 1 * *' => 'Every month',
                 '0 2 1 */3 *' => 'Every three months',
-                '0 2 31 2 *' => 'Never, I\'ll trigger it manually',
+                '0 0 31 2 *' => 'Never, I\'ll trigger it manually',
             ],
             default: '0 2 1 */3 *',
         );
