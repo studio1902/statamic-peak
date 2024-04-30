@@ -52,5 +52,5 @@ dependencies:
   laravel/framework: ^11.3
   studio1902/statamic-peak-browser-appearance: ^3.4
   studio1902/statamic-peak-commands: ^8.0
-  studio1902/statamic-peak-seo: ^8.11
+  studio1902/statamic-peak-seo: ^8.0
   studio1902/statamic-peak-tools: ^6.0
