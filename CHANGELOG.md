@@ -1,11 +1,10 @@
 # Changelog
 
 ## v19.0.0 (2024-05-09)
+
+### What's New
 - Statamic v5 and Laravel 11 support including: updated config files, prefix SVG tag attributes, update post install script to support Statamic v5,
 add a composer auto update workflow option to the post install script, add an external link icon to buttons, make button partial more readable and improve Ploi deploy script.
-
-### What's improved
-- Install `spatie/image` when installing `Browsershot` in the post install script. 4d44b600 by @robdekort
 
 ## v18.7.0 (2024-04-19)
 
