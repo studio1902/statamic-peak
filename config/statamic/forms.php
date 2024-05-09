@@ -48,6 +48,25 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Exporters
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define all the available form submission exporters.
+    | You may customize the options within each exporter's array.
+    |
+    */
+
+    'exporters' => [
+        'csv' => [
+            'class' => Statamic\Forms\Exporters\CsvExporter::class,
+        ],
+        'json' => [
+            'class' => Statamic\Forms\Exporters\JsonExporter::class,
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | CSV Export Delimiter
     |--------------------------------------------------------------------------
     |
@@ -56,7 +75,6 @@ return [
     */
 
     'csv_delimiter' => ',',
-
 
     /*
     |--------------------------------------------------------------------------

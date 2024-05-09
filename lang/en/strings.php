@@ -9,7 +9,7 @@ return [
     'form_mail_closing' => 'Kind regards',
     'form_mail_from' => config('app.name'),
     'form_mail_greeting' => 'Dear',
-    'form_mail_logo' => config('app.url') . '/visuals/statamic-peak-logo.png',
+    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
     'form_mail_submitted' => 'Submitted',
     'form_mail_title' => 'Contact form',
     'form_mail_url' => config('app.url'),
@@ -22,7 +22,7 @@ return [
     'consent_accept_all' => 'Accept all',
     'consent_accept_selected' => 'Accept selected',
     'consent_reject_all' => 'Reject all',
-	'consent_ads' => 'Ads & tracking',
+    'consent_ads' => 'Ads & tracking',
     'consent_ads_explanation' => 'Storage (like third party cookies) used for advertisement.',
     'consent_ad_user_data' => 'User data',
     'consent_ad_user_data_explanation' => 'Send user data related to advertising to Google.',
@@ -56,6 +56,7 @@ return [
 
     // Other
     'collection_mounted' => 'Your entry :title has a collection mounted and can\'t be deleted.',
+    'external_link' => '(external link)',
     'no_results' => 'There are currently no posts.',
     'no_script' => 'This website requires Javascript for some parts to function properly. Your experience may vary.',
 

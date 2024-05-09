@@ -21,7 +21,7 @@
         {{ if social_media:social_media }}
             <div class="flex space-x-2">
                 {{ social_media:social_media }}
-                    <a class="text-neutral" href="{{ prefix }}{{ handle }}" rel="noopener{{ type == 'mastodon' ?= ' me' }}" aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}" target="_blank">{{ svg :src="type" class="w-3 h-3 overflow-visible fill-current" alt="" aria-hidden="true" sanitize="true" }}</a>
+                    <a class="text-neutral" href="{{ prefix }}{{ handle }}" rel="noopener{{ type == 'mastodon' ?= ' me' }}" aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}" target="_blank">{{ svg :src="type" attr:class="w-3 h-3 overflow-visible fill-current" attr:alt="" attr:aria-hidden="true" }}</a>
                 {{ /social_media:social_media }}
             </div>
         {{ /if }}

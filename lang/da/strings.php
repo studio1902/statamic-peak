@@ -8,7 +8,7 @@ return [
     'form_mail_closing' => 'Med venlig hilsen',
     'form_mail_from' => config('app.name'),
     'form_mail_greeting' => 'Kære',
-    'form_mail_logo' => config('app.url') . '/visuals/statamic-peak-logo.png',
+    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
     'form_mail_submitted' => 'Sendt',
     'form_mail_title' => 'Kontaktformular',
     'form_mail_url' => config('app.url'),
@@ -20,7 +20,7 @@ return [
     // Cookie banner
     'consent_accept' => 'Acceptere',
     'consent_reject_all' => 'Reject all',
-	'consent_ads' => 'Annoncer og sporing',
+    'consent_ads' => 'Annoncer og sporing',
     'consent_ads_explanation' => 'Tredjepartscookies brugt til reklame.',
     'consent_analytics' => 'Analyser',
     'consent_analytics_explanation' => 'Tredjepartscookies brugt til analyser.',

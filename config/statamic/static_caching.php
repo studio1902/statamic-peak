@@ -54,10 +54,14 @@ return [
     */
 
     'exclude' => [
-        '/site.webmanifest',
-        '/sitemap.xml',
-        '/sitemaps.xml',
-        // Add sitemaps for multisites here
+
+        'class' => null,
+
+        'urls' => [
+            '/site.webmanifest',
+            '/sitemap.xml',
+            '/sitemaps.xml',
+        ],
     ],
 
     /*

@@ -23,9 +23,9 @@
         <div class="shrink-0">
             {{ svg
                 :src="type"
-                alt=""
-                aria-hidden="true"
-                class="
+                attr:alt=""
+                attr:aria-hidden="true"
+                attr:class="
                     h-5 w-5 fill-current motion-safe:transition-colors
                     { switch(
                         (type == 'success') => 'text-green-700',
@@ -34,7 +34,6 @@
                         () => 'text-gray-700'
                     )}
                 "
-                sanitize="true"
             }}
         </div>
         <div class="ml-3">

@@ -2,8 +2,8 @@
 
 namespace App\Listeners;
 
-use Statamic\Facades\Collection;
 use Statamic\Events\EntryDeleting;
+use Statamic\Facades\Collection;
 
 class PreventDeletingMounts
 {

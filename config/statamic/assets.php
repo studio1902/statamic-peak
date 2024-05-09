@@ -113,18 +113,6 @@ return [
 
         'generate_presets_on_upload' => true,
 
-        /*
-        |--------------------------------------------------------------------------
-        | Append Original Filename
-        |--------------------------------------------------------------------------
-        |
-        | Append the original filename to Glide generated URLs.
-        | This helps with Search Engine Optimization.
-        |
-        */
-
-        'append_original_filename' => true,
-
     ],
 
     /*
@@ -208,5 +196,30 @@ return [
     */
 
     'lowercase' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Additional Uploadable Extensions
+    |--------------------------------------------------------------------------
+    |
+    | Statamic will only allow uploads of certain approved file extensions.
+    | If you need to allow more file extensions, you may add them here.
+    |
+    */
+
+    'additional_uploadable_extensions' => [],
+
+    /*
+    |--------------------------------------------------------------------------
+    | SVG Sanitization
+    |--------------------------------------------------------------------------
+    |
+    | Statamic will automatically sanitize SVG files when uploaded to avoid
+    | potential security issues. However, if you have a valid reason for
+    | disabling this, and you trust your users, you may do so here.
+    |
+    */
+
+    'svg_sanitization_on_upload' => true,
 
 ];

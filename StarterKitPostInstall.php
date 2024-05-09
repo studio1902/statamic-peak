@@ -9,6 +9,8 @@ use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Process\Process;
+use Symfony\Component\Yaml\Yaml;
+
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
@@ -19,7 +21,6 @@ use function Laravel\Prompts\suggest;
 use function Laravel\Prompts\text;
 use function Laravel\Prompts\warning;
 
-
 class StarterKitPostInstall
 {
     public $registerCommands = [
@@ -27,10 +28,15 @@ class StarterKitPostInstall
     ];
 
     protected string $env = '';
+
     protected string $readme = '';
+
     protected string $app = '';
+
     protected string $sites = '';
+
     protected Collection $availableLanguages;
+
     protected bool $interactive = true;
 
     public function handle($console): void
@@ -53,7 +59,7 @@ class StarterKitPostInstall
 
     protected function applyInteractivity($console): void
     {
-        $this->interactive = !$console->option('no-interaction');
+        $this->interactive = ! $console->option('no-interaction');
 
         /**
          * Interactivity should be inherited but seems like there is a bug in Prompts where it stays
@@ -67,12 +73,12 @@ class StarterKitPostInstall
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
         $this->app = app('files')->get(base_path('config/app.php'));
-        $this->sites = app('files')->get(base_path('config/statamic/sites.php'));
+        $this->sites = app('files')->get(base_path('resources/sites.yaml'));
     }
 
     protected function overwriteEnvWithPresets(): void
     {
-        if (!confirm(label: 'Do you want overwrite your `.env` file with the Peak presets?', default: true)) {
+        if (! confirm(label: 'Do you want overwrite your `.env` file with the Peak presets?', default: true)) {
             return;
         }
 
@@ -85,12 +91,12 @@ class StarterKitPostInstall
         $this->useImagick();
         $this->setLocalMailer();
 
-        info("[✓] `.env` file overwritten.");
+        info('[✓] `.env` file overwritten.');
     }
 
     protected function initializeGitAndConfigureGitignore(): void
     {
-        if (!confirm(label: 'Do you want to init a git repo and configure gitignore?', default: true)) {
+        if (! confirm(label: 'Do you want to init a git repo and configure gitignore?', default: true)) {
             return;
         }
 
@@ -99,12 +105,13 @@ class StarterKitPostInstall
         $this->excludeBuildFolderFromGit();
         $this->excludeUsersFolderFromGit();
         $this->excludeFormsFolderFromGit();
+        $this->setupComposerUpdateWorkflow();
         $this->createGithubRepo();
     }
 
     protected function installNodeDependencies(): void
     {
-        if (!confirm(label: 'Do you want to install npm dependencies?', default: true)) {
+        if (! confirm(label: 'Do you want to install npm dependencies?', default: true)) {
             return;
         }
 
@@ -117,7 +124,7 @@ class StarterKitPostInstall
 
     protected function installPuppeteerAndBrowsershot(): void
     {
-        if (!confirm(label: 'Do you want to install Puppeteer and Browsershot for generating social images?', default: true)) {
+        if (! confirm(label: 'Do you want to install Puppeteer and Browsershot for generating social images?', default: true)) {
             return;
         }
 
@@ -127,17 +134,19 @@ class StarterKitPostInstall
 
     protected function installTranslations(): void
     {
-        if (!confirm(label: 'Do you want to install missing Laravel translation files?', default: $this->interactive)) {
+        if (! confirm(label: 'Do you want to install missing Laravel translation files?', default: $this->interactive)) {
             return;
         }
 
-        if (!$this->installLaravelLang()) {
+        if (! $this->installLaravelLang()) {
             error('Could not install Laravel Lang.');
+
             return;
         }
 
-        if (!$this->collectAvailableLanguages()) {
+        if (! $this->collectAvailableLanguages()) {
             error('Could not collect available languages.');
+
             return;
         }
 
@@ -146,19 +155,19 @@ class StarterKitPostInstall
 
     protected function setTimezone(): void
     {
-        if (!$this->interactive || DIRECTORY_SEPARATOR === '\\') {
+        if (! $this->interactive || DIRECTORY_SEPARATOR === '\\') {
             return;
         }
 
         $newTimezone = search(
             label: 'What timezone should your app be in?',
             options: function (string $value) {
-                if (!$value) {
+                if (! $value) {
                     return timezone_identifiers_list(DateTimeZone::ALL, null);
                 }
 
                 return collect(timezone_identifiers_list(DateTimeZone::ALL, null))
-                    ->filter(fn(string $item) => Str::contains($item, $value, true))
+                    ->filter(fn (string $item) => Str::contains($item, $value, true))
                     ->values()
                     ->all();
             },
@@ -166,10 +175,10 @@ class StarterKitPostInstall
             required: true,
         );
 
-
         $currentTimezone = config('app.timezone');
 
-        $this->replaceInApp("'timezone' => '{$currentTimezone}'", "'timezone' => '{$newTimezone}'");
+        $this->replaceInEnv("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
+        $this->replaceInReadme("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
     }
 
     protected function setLocale(): void
@@ -181,12 +190,12 @@ class StarterKitPostInstall
             required: true,
         );
 
-        $this->replaceInSites("'locale' => 'en_US'", "'locale' => '$locale'");
+        $this->replaceInSites("locale: en_US", "locale: $locale");
     }
 
     protected function runPeakClearSite(): void
     {
-        if (!$this->interactive || !Process::isTtySupported()) {
+        if (! $this->interactive || ! Process::isTtySupported()) {
             return;
         }
 
@@ -202,19 +211,19 @@ class StarterKitPostInstall
         app('files')->put(base_path('.env'), $this->env);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
-        app('files')->put(base_path('config/statamic/sites.php'), $this->sites);
+        app('files')->put(base_path('resources/sites.yaml'), $this->sites);
     }
 
     protected function cleanUp(): void
     {
         $this->withSpinner(
-            fn() => $this->cleanUpComposerPackages(),
+            fn () => $this->cleanUpComposerPackages(),
             'Cleaning up composer packages...',
             'Composer packages cleaned up.'
         );
 
         $this->withSpinner(
-            fn() => $this->removePostInstallCommands(),
+            fn () => $this->removePostInstallCommands(),
             'Removing post install commands...',
             'Post install commands removed.'
         );
@@ -222,7 +231,7 @@ class StarterKitPostInstall
 
     protected function starPeakRepo(): void
     {
-        if (!confirm(label: 'Would you like to star the Peak repo?', default: false)) {
+        if (! confirm(label: 'Would you like to star the Peak repo?', default: false)) {
             return;
         }
 
@@ -301,7 +310,7 @@ class StarterKitPostInstall
 
     protected function useImagick(): void
     {
-        if (!confirm(label: 'Do you want use Imagick as an image processor instead of GD?', default: true)) {
+        if (! confirm(label: 'Do you want use Imagick as an image processor instead of GD?', default: true)) {
             return;
         }
 
@@ -329,19 +338,19 @@ class StarterKitPostInstall
         }
 
         if ($localMailer === 'helo' || $localMailer === 'herd') {
-            $this->replaceInEnv('MAIL_HOST=localhost', "MAIL_HOST=127.0.0.1");
-            $this->replaceInEnv('MAIL_PORT=1025', "MAIL_PORT=2525");
+            $this->replaceInEnv('MAIL_HOST=localhost', 'MAIL_HOST=127.0.0.1');
+            $this->replaceInEnv('MAIL_PORT=1025', 'MAIL_PORT=2525');
             $this->replaceInEnv('MAIL_USERNAME=null', 'MAIL_USERNAME="${APP_NAME}"');
         }
 
         if ($localMailer === 'mailhog') {
-            $this->replaceInEnv('MAIL_HOST=localhost', "MAIL_HOST=127.0.0.1");
-            $this->replaceInEnv('MAIL_PORT=1025', "MAIL_PORT=8025");
+            $this->replaceInEnv('MAIL_HOST=localhost', 'MAIL_HOST=127.0.0.1');
+            $this->replaceInEnv('MAIL_PORT=1025', 'MAIL_PORT=8025');
         }
 
         if ($localMailer === 'log') {
-            $this->replaceInEnv('MAIL_MAILER=smtp', "MAIL_MAILER=log");
-            echo "log";
+            $this->replaceInEnv('MAIL_MAILER=smtp', 'MAIL_MAILER=log');
+            echo 'log';
         }
     }
 
@@ -356,7 +365,7 @@ class StarterKitPostInstall
 
     protected function excludeBuildFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true)) {
+        if (! confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true)) {
             return;
         }
 
@@ -365,7 +374,7 @@ class StarterKitPostInstall
 
     protected function excludeUsersFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `users` folder from git?', default: false)) {
+        if (! confirm(label: 'Do you want to exclude the `users` folder from git?', default: false)) {
             return;
         }
 
@@ -374,21 +383,85 @@ class StarterKitPostInstall
 
     protected function excludeFormsFolderFromGit(): void
     {
-        if (!confirm(label: 'Do you want to exclude the `storage/form` folder from git?', default: false)) {
+        if (! confirm(label: 'Do you want to exclude the `storage/form` folder from git?', default: false)) {
             return;
         }
 
         $this->appendToGitignore('/storage/forms');
     }
 
-    protected function createGithubRepo(): void
+    protected function setupComposerUpdateWorkflow(): void
     {
-        if (!app(ExecutableFinder::class)->find('gh')) {
-            info('If you install GitHub CLI, next time this installer will be able to set up a remote repository.');
+        if (! confirm(label: 'Do you want to add a GitHub workflow that does PR\'s with updates?', default: true)) {
             return;
         }
 
-        if (!confirm(label: 'Do you want create a repo on Github?', default: false)) {
+        $cron = select(
+            label: 'How often do you want this workflow to automatically run?',
+            options: [
+                '0 2 * * 1' => 'Every week',
+                '0 2 1 * *' => 'Every month',
+                '0 2 1 */3 *' => 'Every three months',
+                false => 'Never, I\'ll trigger it manually',
+            ],
+            default: '0 2 1 */3 *',
+        );
+
+        $cron
+         ? $on = [
+            'schedule' => [
+                0 => [
+                    'cron' => "$cron",
+                ],
+            ],
+            'workflow_dispatch' => NULL,
+        ]
+        : $on = [
+            'workflow_dispatch' => NULL,
+        ];
+
+        $workflow = [
+            'name' => 'Composer Update',
+            'on' => $on,
+            'jobs' => [
+                'composer_update_job' => [
+                    'runs-on' => 'ubuntu-latest',
+                    'name' => 'composer update',
+                    'steps' => [
+                        0 => [
+                            'name' => 'Checkout',
+                            'uses' => 'actions/checkout@v3',
+                        ],
+                        1 => [
+                            'name' => 'composer update action',
+                            'uses' => 'kawax/composer-update-action@master',
+                            'env' => [
+                            'GITHUB_TOKEN' => '${{ secrets.GITHUB_TOKEN }}',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $disk = Storage::build([
+            'driver' => 'local',
+            'root' => base_path(),
+        ]);
+
+        $disk->makeDirectory('.github/workflows');
+        $disk->put('.github/workflows/composer_update.yaml', Yaml::dump($workflow, 99, 2));
+    }
+
+    protected function createGithubRepo(): void
+    {
+        if (! app(ExecutableFinder::class)->find('gh')) {
+            info('If you install the GitHub CLI, next time this installer will be able to set up a remote repository.');
+
+            return;
+        }
+
+        if (! confirm(label: 'Do you want create a repo on Github?', default: false)) {
             return;
         }
 
@@ -420,12 +493,12 @@ class StarterKitPostInstall
         try {
             $spinner ?
                 $this->withSpinner(
-                    fn() => $process->mustRun(),
+                    fn () => $process->mustRun(),
                     $processingMessage,
                     $successMessage
                 ) :
                 $this->withoutSpinner(
-                    fn() => $process->mustRun(),
+                    fn () => $process->mustRun(),
                     $successMessage
                 );
 
@@ -478,6 +551,7 @@ class StarterKitPostInstall
         try {
             $process->mustRun();
             $this->availableLanguages = collect(json_decode($process->getOutput(), true, 512, JSON_THROW_ON_ERROR));
+
             return true;
         } catch (Exception) {
             return false;
@@ -497,14 +571,24 @@ class StarterKitPostInstall
         } while ($handle);
     }
 
-    protected function replaceInApp(string $search, string $replace): void
-    {
-        $this->app = str_replace($search, $replace, $this->app);
-    }
-
     protected function replaceInSites(string $search, string $replace): void
     {
         $this->sites = str_replace($search, $replace, $this->sites);
+    }
+
+    protected function replaceInEnv(string $search, string $replace): void
+    {
+        $this->env = str_replace($search, $replace, $this->env);
+    }
+
+    protected function replaceInReadme(string $search, string $replace): void
+    {
+        $this->readme = str_replace($search, $replace, $this->readme);
+    }
+
+    protected function appendToGitignore(string $toIgnore): void
+    {
+        app('files')->append(base_path('.gitignore'), "\n{$toIgnore}");
     }
 
     protected function withSpinner(callable $callback, string $processingMessage = '', string $successMessage = ''): void
@@ -537,21 +621,6 @@ class StarterKitPostInstall
         usleep(500000);
     }
 
-    protected function replaceInEnv(string $search, string $replace): void
-    {
-        $this->env = str_replace($search, $replace, $this->env);
-    }
-
-    protected function replaceInReadme(string $search, string $replace): void
-    {
-        $this->readme = str_replace($search, $replace, $this->readme);
-    }
-
-    protected function appendToGitignore(string $toIgnore): void
-    {
-        app('files')->append(base_path('.gitignore'), "\n{$toIgnore}");
-    }
-
     protected function withoutSpinner(callable $callback, string $successMessage = ''): void
     {
         $callback();
@@ -565,17 +634,17 @@ class StarterKitPostInstall
     {
         return suggest(
             label: 'Handle of language (submit empty when you\'re done)',
-            options: fn($value) => $this->availableLanguages
-                ->filter(fn(string $language) => Str::contains($language, $value, true) && !$installedLanguages->contains($language))
+            options: fn ($value) => $this->availableLanguages
+                ->filter(fn (string $language) => Str::contains($language, $value, true) && ! $installedLanguages->contains($language))
                 ->values()
                 ->toArray(),
             placeholder: 'en',
-            validate: fn(string $value) => match (true) {
-                $value && !$this->availableLanguages->contains($value) => 'Not supported by Laravel Lang.',
+            validate: fn (string $value) => match (true) {
+                $value && ! $this->availableLanguages->contains($value) => 'Not supported by Laravel Lang.',
                 $value && $installedLanguages->contains($value) => "Language \"{$value}\" already installed.",
                 default => null,
             },
-            hint: $installedLanguages->isNotEmpty() ? 'Installed: ' . $installedLanguages->join(', ', ' and ') : '',
+            hint: $installedLanguages->isNotEmpty() ? 'Installed: '.$installedLanguages->join(', ', ' and ') : '',
         );
     }
 
