@@ -3,7 +3,7 @@
 ## v19.0.0 (2024-05-09)
 
 ### What's New
-- Statamic v5 and Laravel 11 support including: updated config files, prefix SVG tag attributes, updated post install script to support Statamic v5, a new composer auto update workflow option in the post install script, an external link icon for buttons, a more readable button partial and an improve Ploi deploy script.
+- Statamic v5 and Laravel 11 support including: updated config files, prefix SVG tag attributes, updated post install script to support Statamic v5, a new composer auto update workflow option in the post install script, an external link icon for buttons, a more readable button partial and an improve Ploi deploy script. #389 by @robdekort
 
 ## v18.7.0 (2024-04-19)
 
