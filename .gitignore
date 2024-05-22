@@ -2,6 +2,7 @@
 /public/hot
 /public/storage
 /public/vendor/statamic
+/public/vendor/statamic-peak-tools
 /public/img/
 /public/static/
 /storage/*.key
