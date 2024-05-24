@@ -101,7 +101,7 @@
                     {{# Submit button, disabled on processing. #}}
                     <div class="w-full flex justify-end">
                         <div class="md:col-span-12 flex justify-end">
-                            {{ partial:components/button as="button" label="{ trans:strings.form_send }" }}
+                            {{ partial:components/button as="button" button_type="button" label="{ trans:strings.form_send }" }}
                                 {{ slot:attributes }}
                                     @click.prevent="submit" :disabled="form.processing" :class="{ 'opacity-25 cursor-default': form.processing }"
                                 {{ /slot:attributes }}
