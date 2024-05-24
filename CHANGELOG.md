@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.1.1 (2024-05-24)
+
+### What's fixed
+- Set explicit form button type. 7b00972e by @robdekort
+
 ## v19.1.0 (2024-05-22)
 
 ### What's new
