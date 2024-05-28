@@ -12,6 +12,7 @@
     name="{{ handle }}{{ multiple ?= "[]" }}"
     {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
     {{ multiple ?= "multiple" }}
+    {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
 >
     {{ unless multiple }}
         <option value>{{ trans key="Please select..." }}</option>
