@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.2.0 (2024-05-28)
+
+### What's new
+- Use autocomplete values on relevant form fields. 3ec1c58f by @robdekort
+
 ## v19.1.1 (2024-05-24)
 
 ### What's fixed
