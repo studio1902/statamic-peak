@@ -6,3 +6,4 @@ allow_renaming: true
 allow_moving: true
 create_folders: true
 source_preset: replacement
+order: 1
