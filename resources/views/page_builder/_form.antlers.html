@@ -72,7 +72,7 @@
                                                     <sup class="text-red-700">*</sup>
                                                 {{ /if }}
 
-                                                {{ if field:instructions && instructions_position === 'above' }}
+                                                {{ if field:instructions && instructions_position != 'below' }}
                                                     {{ partial:typography/p class="mt-1 font-normal text-sm" content="{ trans :key="field:instructions" }" }}
                                                 {{ /if }}
                                             </label>
