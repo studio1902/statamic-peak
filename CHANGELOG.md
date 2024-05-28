@@ -1,5 +1,13 @@
 # Changelog
 
+## v19.3.0 (2024-05-28)
+
+### What's new
+- Prepare for orderable asset containers. b3210a64 by @robdekort
+
+### What's improved
+- More robust form field instruction positioning. #390 by @prikkprikkprikk
+
 ## v19.2.0 (2024-05-28)
 
 ### What's new
