@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.3.1 (2024-05-29)
+
+### What's improved
+- Add labels to replicator add set buttons. 6b316ba7 by @robdekort
+
 ## v19.3.0 (2024-05-28)
 
 ### What's new
