@@ -3,10 +3,8 @@ fields:
   -
     handle: title
     field:
-      input_type: text
       type: text
       localizable: true
-      listable: hidden
       display: Title
   -
     handle: cards
@@ -14,32 +12,23 @@ fields:
       reorderable: true
       type: replicator
       localizable: true
-      listable: hidden
       display: Cards
       replicator_preview: false
-      instructions_position: above
-      visibility: visible
       collapse: accordion
-      previews: true
-      fullscreen: true
+      hide_display: true
+      button_label: 'Add card'
       sets:
         cards:
           display: Cards
-          instructions: null
-          icon: null
           sets:
             card:
               display: Card
-              instructions: null
-              icon: null
               fields:
                 -
                   handle: title
                   field:
-                    input_type: text
                     type: text
                     localizable: true
-                    listable: hidden
                     validate: required
                     display: Title
                 -
@@ -53,4 +42,3 @@ fields:
                   config:
                     display: Button
                     max_rows: 1
-      hide_display: true

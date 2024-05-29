@@ -9,6 +9,7 @@ fields:
       collapse: true
       listable: false
       display: 'Page builder'
+      button_label: 'Add block'
       sets:
         interactive:
           display: Interactive
@@ -23,7 +24,7 @@ fields:
                 -
                   import: form
             cards:
-              display: 'Cards'
+              display: Cards
               instructions: 'Show linkable cards with text.'
               icon: link
               fields:
@@ -41,6 +42,3 @@ fields:
               fields:
                 -
                   import: article
-      instructions_position: above
-      visibility: visible
-      previews: true

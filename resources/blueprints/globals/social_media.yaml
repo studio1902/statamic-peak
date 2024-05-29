@@ -9,24 +9,23 @@ tabs:
           -
             handle: social_media
             field:
+              type: replicator
+              localizable: true
+              display: 'Social media'
+              button_label: 'Add account'
               sets:
                 main:
                   display: Main
-                  instructions: null
-                  icon: null
                   sets:
                     email:
                       display: Email
-                      instructions: null
                       icon: social-mail-send-email-message
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             display: Email
                             validate: required
                         -
@@ -36,16 +35,13 @@ tabs:
                             default: 'mailto:'
                     facebook:
                       display: Facebook
-                      instructions: null
                       icon: social-facebook
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             prepend: 'https://www.facebook.com/'
                             display: Handle
                             validate: required
@@ -56,16 +52,13 @@ tabs:
                             default: 'https://www.facebook.com/'
                     github:
                       display: GitHub
-                      instructions: null
                       icon: social-github
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             prepend: 'https://www.github.com/'
                             display: Handle
                             validate: required
@@ -76,16 +69,13 @@ tabs:
                             default: 'https://www.github.com/'
                     instagram:
                       display: Instagram
-                      instructions: null
                       icon: social-instagram
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             prepend: 'https://www.instagram.com/'
                             display: Handle
                             validate: required
@@ -96,16 +86,13 @@ tabs:
                             default: 'https://www.instagram.com/'
                     linkedin:
                       display: LinkedIn
-                      instructions: null
                       icon: social-linkedin
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             prepend: 'https://www.linkedin.com/'
                             display: Handle
                             validate: required
@@ -116,30 +103,24 @@ tabs:
                             default: 'https://www.linkedin.com/'
                     mastodon:
                       display: Mastodon
-                      instructions: null
                       icon: social-mastodon
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             display: URL
                             validate: required
                     pinterest:
                       display: Pinterest
-                      instructions: null
                       icon: social-pinterest
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             prepend: 'https://www.pinterest.com/'
                             display: URL
                             validate: required
@@ -150,16 +131,13 @@ tabs:
                             default: 'https://www.pinterest.com/'
                     vimeo:
                       display: Vimeo
-                      instructions: null
                       icon: social-vimeo
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             prepend: 'https://www.vimeo.com/'
                             display: Handle
                             validate: required
@@ -170,16 +148,13 @@ tabs:
                             default: 'https://www.vimeo.com/'
                     youtube:
                       display: YouTube
-                      instructions: null
                       icon: social-youtube
                       fields:
                         -
                           handle: handle
                           field:
-                            input_type: text
                             type: text
                             localizable: true
-                            listable: hidden
                             prepend: 'https://www.youtube.com/'
                             display: Handle
                             validate: required
@@ -188,12 +163,3 @@ tabs:
                           field:
                             type: hidden
                             default: 'https://www.youtube.com/'
-              type: replicator
-              listable: hidden
-              localizable: true
-              display: 'Social media'
-              instructions_position: above
-              visibility: visible
-              collapse: false
-              previews: true
-              hide_display: false
