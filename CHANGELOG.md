@@ -1,5 +1,13 @@
 # Changelog
 
+## v19.3.2 (2024-06-05)
+
+### What's fixed
+- Fix precognition validation for toggle field. b5e2c056 by @robdekort
+
+### What's changed
+- Updated dependencies and recompile assets. 8477a937 by @robdekort
+
 ## v19.3.1 (2024-05-29)
 
 ### What's improved
