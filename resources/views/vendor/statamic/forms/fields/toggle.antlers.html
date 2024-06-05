@@ -1,13 +1,13 @@
 <!-- /vendor/statamic/forms/fields/toggle.antlers.html -->
 <label
-    x-model="form.{{ handle }}"
-    @change="form.validate('{{ handle }}')"
-    :aria-invalid="form.invalid('{{ handle }}')"
     class="inline-flex items-center"
+    :aria-invalid="form.invalid('{{ handle }}')"
     {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
 >
     <input type="hidden" name="{{ handle }}" value="0">
     <input
+        x-model="form.{{ handle }}"
+        @change="form.validate('{{ handle }}')"
         class="mr-2 inline-flex rounded border-neutral focus:border-primary text-primary"
         type="checkbox"
         name="{{ handle }}"
