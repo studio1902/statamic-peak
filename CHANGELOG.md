@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Improve Forge deploy script. 4dd93599 by @DanielDarrenJones
+
 ## v19.3.2 (2024-06-05)
 
 ### What's fixed
