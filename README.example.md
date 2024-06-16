@@ -157,9 +157,11 @@ echo "🚀 Application deployed!"
 ## Deploy script Forge
 
 ```bash
-if [[ $FORGE_DEPLOY_MESSAGE =~ "[BOT]" ]]; then
-    echo "Automatically committed on production. Nothing to deploy."
-    exit 0
+if [[ $FORGE_QUICK_DEPLOY == 1 ]]; then
+    if [[ $FORGE_DEPLOY_MESSAGE =~ "[BOT]" ]]; then
+        echo "Automatically committed on production. Nothing to deploy."
+        exit 0
+    fi
 fi
 
 cd $FORGE_SITE_PATH
