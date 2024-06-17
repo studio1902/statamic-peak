@@ -1,9 +1,11 @@
 # Changelog
 
-## Unreleased
+## v19.3.3 (2024-06-17)
 
 ### What's improved
 - Improve Forge deploy script. 4dd93599 by @DanielDarrenJones
+- Post install improvements. e055d73a 1e29020f by @robdekort
+- Update dependencies. 66fee7ae by @robdekort
 
 ## v19.3.2 (2024-06-05)
 
