@@ -516,6 +516,7 @@ class StarterKitPostInstall
             command: 'npm i puppeteer',
             processingMessage: 'Installing Puppeteer...',
             successMessage: 'Puppeteer installed.',
+            timeout: 240,
         );
     }
 
