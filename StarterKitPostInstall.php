@@ -186,7 +186,7 @@ class StarterKitPostInstall
         $locale = text(
             label: 'What should be the default site locale?',
             placeholder: 'en_US',
-            default: $this->interactive ? '' : 'en_US',
+            default: 'en_US',
             required: true,
         );
 
