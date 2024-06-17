@@ -49,7 +49,6 @@ export_paths:
   - tailwind.config.typography.js
   - vite.config.js
 dependencies:
-  laravel/framework: ^11.3
   studio1902/statamic-peak-browser-appearance: ^3.4
   studio1902/statamic-peak-commands: ^8.0
   studio1902/statamic-peak-seo: ^8.0
