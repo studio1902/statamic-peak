@@ -19,7 +19,6 @@ export_paths:
   - config/statamic/search.php
   - config/statamic/stache.php
   - config/statamic/static_caching.php
-  - config/statamic/users.php
   - lang/
   - public/robots.txt
   - public/build
