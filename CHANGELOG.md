@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.3.4 (2024-06-20)
+
+### What's changed
+- Remove `users.php` from the starter kit. c4f827a3 by @robdekort
+
 ## v19.3.3 (2024-06-17)
 
 ### What's improved
