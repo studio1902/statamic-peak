@@ -477,7 +477,7 @@ class StarterKitPostInstall
         $this->run(
             command: "gh repo create $name $flags",
             processingMessage: 'Creating remote repository...',
-            successMessage: 'Remove repository created.'
+            successMessage: 'Remote repository created.'
         );
     }
 
