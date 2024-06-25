@@ -17,7 +17,6 @@ export_paths:
   - config/statamic/git.php
   - config/statamic/live_preview.php
   - config/statamic/search.php
-  - config/statamic/stache.php
   - config/statamic/static_caching.php
   - lang/
   - public/robots.txt
