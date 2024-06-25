@@ -1,5 +1,14 @@
 # Changelog
 
+## v19.3.5 (2024-06-25)
+
+### What's changed
+- Stache watcher defaults to auto. b0857de9 by @robdekort
+- Remove redundant config files. 699c82c9 by @robdekort
+
+### What's fixed
+- Tpyo in the post install hook. 7dfce349 by @robdekort
+
 ## v19.3.4 (2024-06-20)
 
 ### What's changed
