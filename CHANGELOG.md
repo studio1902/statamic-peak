@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.4.0 (2024-06-26)
+
+### What's new
+- Prevent non super users from editing super users. 5e56b252 by @jasonvarga
+
 ## v19.3.5 (2024-06-25)
 
 ### What's changed
