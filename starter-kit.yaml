@@ -5,6 +5,7 @@ export_paths:
   - .gitignore
   - app/Console/Commands/PostInstall/CollectAvailableLangLocales.php
   - app/Listeners/PreventDeletingMounts.php
+  - app/Policies/CustomUserPolicy.php
   - app/Providers/AppServiceProvider.php
   - CHANGELOG.md
   - content
