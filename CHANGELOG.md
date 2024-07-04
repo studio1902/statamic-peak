@@ -1,5 +1,11 @@
 # Changelog
 
+## v19.4.1 (2024-07-04)
+
+### What's improved
+- Merge Statamic changes into `cp.php`. 7a01163f by @robdekort
+- Remove unused `order` property from asset containers. c94e0e66 by @robdekort
+
 ## v19.4.0 (2024-06-26)
 
 ### What's new
