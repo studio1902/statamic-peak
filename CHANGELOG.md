@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.5.0 (2024-07-11)
+
+### What's new
+- Reorder asset containers in `preferences.yaml`. 2f10b533 by @robdekort
+
 ## v19.4.1 (2024-07-04)
 
 ### What's improved
