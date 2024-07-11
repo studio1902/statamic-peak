@@ -34,6 +34,7 @@ export_paths:
   - resources/fieldsets
   - resources/forms
   - resources/js/site.js
+  - resources/preferences.yaml
   - resources/svg
   - resources/users/roles.yaml
   - resources/views
