@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.5.1 (2024-07-11)
+
+### What's improved
+- Replace remaining `space-*` utilities with `gap-*`. 77001eac by @robdekort
+
 ## v19.5.0 (2024-07-11)
 
 ### What's new
