@@ -25,7 +25,7 @@
         x-show="mobileNavOpen"
         x-transition.origin.bottom.right
     >
-        <ul class="flex flex-col py-2 space-y-4 overflow-auto">
+        <ul class="flex flex-col py-2 gap-y-4 overflow-auto">
             {{ nav:main max_depth="2" include_home="true" select="title|url" }}
                 <li
                     {{ if children }}
@@ -36,7 +36,7 @@
                 >
                     <a
                         class="
-                            w-full py-2 flex items-center space-x-1 text-lg font-bold hover:text-primary
+                            w-full py-2 flex items-center gap-x-1 text-lg font-bold hover:text-primary
                             {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}
                         "
                         {{ if children }}
@@ -63,7 +63,7 @@
                         <ul
                             x-show="subnavOpen"
                             x-ref="subnav"
-                            class="flex flex-col items-stretch space-y-2"
+                            class="flex flex-col items-stretch gap-y-2"
                             x-collapse
                         >
                             {{ children }}
