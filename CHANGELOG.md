@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.7.0 (2024-08-07)
+
+### What's new
+- Sync config files with Statamic. 07518ad4 by @robdekort
+
 ## v19.6.0 (2024-08-07)
 
 ### What's new
