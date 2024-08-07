@@ -1,6 +1,11 @@
 # Changelog
 
-## v19.5.1 (2024-07-11)
+## v19.6.0 (2024-08-07)
+
+### What's new
+- Use Rollup chunking. f9d97008 by @robdekort
+
+## v19.5.1 (2024-08-05)
 
 ### What's improved
 - Replace remaining `space-*` utilities with `gap-*`. 77001eac by @robdekort
