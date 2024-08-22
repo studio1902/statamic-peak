@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.7.1 (2024-08-22)
+
+### What's improved
+- Add back `assets` filesystem so users who install Peak after installing Statamic don't get an error. 8bb30f4b by @robdekort
+
 ## v19.7.0 (2024-08-07)
 
 ### What's new
