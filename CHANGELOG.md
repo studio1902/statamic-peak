@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.7.2 (2024-08-25)
+
+### What's improved
+- Set `prose-sm` default line height. 287cd4c9 by @robdekort
+
 ## v19.7.1 (2024-08-22)
 
 ### What's improved
