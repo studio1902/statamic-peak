@@ -61,6 +61,11 @@ module.exports = {
             }
           }
         },
+        sm: {
+          css: {
+            lineHeight: '1.5em',
+          }
+        },
         lg: {
           css: {
             lineHeight: '1.5em',
