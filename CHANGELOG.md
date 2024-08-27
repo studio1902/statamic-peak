@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.8.0 (2024-08-27)
+
+### What's new
+- Add a files fieldtype partial for forms. 6f2e7429 by @robdekort
+
 ## v19.7.2 (2024-08-25)
 
 ### What's improved
