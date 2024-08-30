@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.9.0 (2024-08-27)
+
+### What's new
+- German CP translation strings. #397 by @carstenjaksch
+
 ## v19.8.0 (2024-08-27)
 
 ### What's new

@@ -1,5 +1,3 @@
-export_as:
-  README.md: README.example.md
 export_paths:
   - .env.example
   - .gitignore
@@ -48,6 +46,8 @@ export_paths:
   - tailwind.config.site.js
   - tailwind.config.typography.js
   - vite.config.js
+export_as:
+  README.md: README.example.md
 dependencies:
   studio1902/statamic-peak-browser-appearance: ^3.4
   studio1902/statamic-peak-commands: ^8.0
