@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.9.1 (2024-09-10)
+
+### What's improved
+- Show asterisk for `accepted` validation as well. 84f4127e by @robdekort
+
 ## v19.9.0 (2024-08-27)
 
 ### What's new
