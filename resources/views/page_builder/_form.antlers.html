@@ -68,7 +68,7 @@
                                         {{ unless type == 'spacer' }}
                                             <label class="font-bold" for="{{ handle }}">
                                                 {{ trans :key="field:display" }}
-                                                {{ if validate | contains('required') }}
+                                                {{ if validate | contains('required') || validate | contains('accepted') }}
                                                     <sup class="text-red-700">*</sup>
                                                 {{ /if }}
 
