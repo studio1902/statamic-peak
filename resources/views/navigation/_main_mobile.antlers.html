@@ -27,62 +27,64 @@
     >
         <ul class="flex flex-col py-2 gap-y-4 overflow-auto">
             {{ nav:main max_depth="2" include_home="true" select="title|url" }}
-                <li
-                    {{ if children }}
-                        x-data="{ subnavOpen: $root.querySelector('[aria-current=page]') ? true : false }"
-                        @focusin.window="!$refs.subnav.contains($event.target) && (subnavOpen = false)"
-                    {{ /if }}
-                    class="leading-none"
-                >
-                    <a
-                        class="
-                            w-full py-2 flex items-center gap-x-1 text-lg font-bold hover:text-primary
-                            {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}
-                        "
+                {{ unless no_results }}
+                    <li
                         {{ if children }}
-                            href="#"
-                            @click.prevent="subnavOpen = !subnavOpen"
-                            @click.outside="subnavOpen = false"
-                            :aria-label="subnavOpen ? '{{ trans:strings.subnav_close }}' : '{{ trans:strings.subnav_open }}'"
-                            :aria-expanded="subnavOpen"
-                        {{ else }}
-                            href="{{ url }}"
+                            x-data="{ subnavOpen: $root.querySelector('[aria-current=page]') ? true : false }"
+                            @focusin.window="!$refs.subnav.contains($event.target) && (subnavOpen = false)"
                         {{ /if }}
-                        {{ is_current ?= 'aria-current="page"' }}
+                        class="leading-none"
                     >
-                        <span>{{ title }}</span>
+                        <a
+                            class="
+                                w-full py-2 flex items-center gap-x-1 text-lg font-bold hover:text-primary
+                                {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}
+                            "
+                            {{ if children }}
+                                href="#"
+                                @click.prevent="subnavOpen = !subnavOpen"
+                                @click.outside="subnavOpen = false"
+                                :aria-label="subnavOpen ? '{{ trans:strings.subnav_close }}' : '{{ trans:strings.subnav_open }}'"
+                                :aria-expanded="subnavOpen"
+                            {{ else }}
+                                href="{{ url }}"
+                            {{ /if }}
+                            {{ is_current ?= 'aria-current="page"' }}
+                        >
+                            <span>{{ title }}</span>
+
+                            {{ if children }}
+                                <div :class="{ 'scale-y-[-1]': subnavOpen }" class="motion-safe:transition-transform">
+                                    {{ svg:chevron_down attr:class="w-2 ml-1 overflow-visible stroke-current text-neutral" attr:aria-hidden="true" }}
+                                </div>
+                            {{ /if }}
+                        </a>
 
                         {{ if children }}
-                            <div :class="{ 'scale-y-[-1]': subnavOpen }" class="motion-safe:transition-transform">
-                                {{ svg:chevron_down attr:class="w-2 ml-1 overflow-visible stroke-current text-neutral" attr:aria-hidden="true" }}
-                            </div>
+                            <ul
+                                x-show="subnavOpen"
+                                x-ref="subnav"
+                                class="flex flex-col items-stretch gap-y-2"
+                                x-collapse
+                            >
+                                {{ children }}
+                                    <li class="{{ first ?= 'mt-2' }}">
+                                        <a
+                                            class="
+                                                block py-2 whitespace-nowrap font-bold hover:text-primary
+                                                {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}
+                                            "
+                                            href="{{ url }}"
+                                            {{ is_current ?= 'aria-current="page"' }}
+                                        >
+                                            {{ title }}
+                                        </a>
+                                    </li>
+                                {{ /children }}
+                            </ul>
                         {{ /if }}
-                    </a>
-
-                    {{ if children }}
-                        <ul
-                            x-show="subnavOpen"
-                            x-ref="subnav"
-                            class="flex flex-col items-stretch gap-y-2"
-                            x-collapse
-                        >
-                            {{ children }}
-                                <li class="{{ first ?= 'mt-2' }}">
-                                    <a
-                                        class="
-                                            block py-2 whitespace-nowrap font-bold hover:text-primary
-                                            {{ is_current || is_parent ? 'text-primary' : 'text-neutral' }}
-                                        "
-                                        href="{{ url }}"
-                                        {{ is_current ?= 'aria-current="page"' }}
-                                    >
-                                        {{ title }}
-                                    </a>
-                                </li>
-                            {{ /children }}
-                        </ul>
-                    {{ /if }}
-                </li>
+                    </li>
+                {{ /unless }}
             {{ /nav:main }}
         </ul>
     </div>
