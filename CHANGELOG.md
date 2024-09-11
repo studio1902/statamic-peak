@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.10.0 (2024-09-11)
+
+### What's new
+- The Commands Addon is now an optional Starter Kit Module during install. ea830b55 by @robdekort
+
 ## v19.9.2 (2024-09-11)
 
 ### What's improved
