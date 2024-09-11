@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.9.2 (2024-09-11)
+
+### What's improved
+- Only loop nav items when they're available. 63a6163a by @robdekort
+
 ## v19.9.1 (2024-09-10)
 
 ### What's improved
