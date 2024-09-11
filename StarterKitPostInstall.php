@@ -195,7 +195,7 @@ class StarterKitPostInstall
 
     protected function runPeakClearSite(): void
     {
-        if (! $this->interactive || ! Process::isTtySupported()) {
+        if (! $this->interactive || ! Process::isTtySupported() || ! Composer::isInstalled('studio1902/statamic-peak-commands')) {
             return;
         }
 
@@ -253,7 +253,15 @@ class StarterKitPostInstall
     protected function finish(): void
     {
         info('[✓] Peak is installed. Enjoy the view!');
-        info("Run `php please peak:install-preset` to install premade sets onto your website.\nRun `php please peak:install-block` to install premade blocks onto your page builder.");
+
+        if (! Composer::isInstalled('studio1902/statamic-peak-commands')) {
+            info("Consider buying the Peak Commands addon containing a set of CLI commands to make tedious and recurring tasks a lot easier.");
+            warning("Read more here: https://peak.1902.studio/getting-started/commands.html#add-collection");
+
+            return;
+        }
+
+        info("Thank you for install the Peak Commands addon.\n* Run `php please peak:install-preset` to install premade sets onto your website.\n* Run `php please peak:install-block` to install premade blocks onto your page builder.\n* Learn about more commands here: https://peak.1902.studio/getting-started/commands.html");
         warning("You need a valid license to use these commands.\nBuy one here: https://statamic.com/addons/studio1902/peak-commands");
     }
 
@@ -329,7 +337,7 @@ class StarterKitPostInstall
                 'mailpit' => 'Mailpit',
                 'mailtrap' => 'Mailtrap',
             ],
-            default: 'mailpit',
+            default: 'herd',
             scroll: 10
         );
 
