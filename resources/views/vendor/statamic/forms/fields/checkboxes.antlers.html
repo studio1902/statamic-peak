@@ -6,17 +6,19 @@
     {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
 >
     {{ foreach:options as="value|label" }}
-        <label class="inline-flex items-center">
+        <label class="inline-flex items-baseline">
             <input
                 x-model="form.{{ handle }}"
                 @change="form.validate('{{ handle }}')"
-                class="mr-2 rounded border-neutral text-primary focus:border-primary"
+                class="mr-2 relative top-[0.15em] rounded border-neutral text-primary focus:border-primary"
                 type="checkbox"
                 name="{{ handle }}[]"
                 value="{{ value }}"
                 {{ (old | in_array(value)) ?= 'checked' }}
             >
-            {{ trans :key="label" }}
+            <span>
+                {{ trans :key="label" }}
+            </span>
         </label>
     {{ /foreach:options }}
 </div>
