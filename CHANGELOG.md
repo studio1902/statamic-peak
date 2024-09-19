@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.10.1 (2024-09-19)
+
+### What's improved
+- Improve toggle/radio/checkbox label alignment. 2ab23d0f by @robdekort
+
 ## v19.10.0 (2024-09-11)
 
 ### What's new
