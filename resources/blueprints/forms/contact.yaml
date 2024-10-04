@@ -14,13 +14,6 @@ tabs:
                 - 'min:2'
               localizable: true
               width: 66
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              input_type: text
-              antlers: false
-              hide_display: false
           -
             handle: email
             field:
@@ -31,13 +24,6 @@ tabs:
                 - email
               localizable: true
               width: 66
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              input_type: text
-              antlers: false
-              hide_display: false
           -
             handle: message_body
             field:
@@ -47,21 +33,12 @@ tabs:
                 - required
                 - 'min:5'
               localizable: true
-              instructions_position: above
-              listable: hidden
-              visibility: visible
-              replicator_preview: true
-              antlers: false
-              hide_display: false
           -
             handle: consent
             field:
               inline_label: 'I agree that my submitted data is being collected and stored.'
-              default: false
               display: Consent
               type: toggle
-              icon: toggle
-              listable: hidden
-              instructions_position: above
               validate:
                 - accepted
+              visibility: hidden
