@@ -3,17 +3,17 @@ tabs:
     display: 'Page meta'
     sections:
       -
-        display: Title
-        instructions: 'Website and page titles.'
-        fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_page_titles'
-      -
         display: Environments
         instructions: 'When to noindex and nofollow by default.'
         fields:
           -
             import: 'statamic-peak-seo::globals_seo_page_environments'
+      -
+        display: Title
+        instructions: 'Website and page titles.'
+        fields:
+          -
+            import: 'statamic-peak-seo::globals_seo_page_titles'
       -
         display: Descriptions
         instructions: "Set fallback data per collection to use as meta, OG and Twitter descriptions when users don't fill in those fields."
