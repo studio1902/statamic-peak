@@ -1,5 +1,12 @@
 # Changelog
 
+## v19.10.2 (2024-10-04)
+
+### What's improved
+- Hide consent toggle from publish forms and emails. bd7e2805 by @robdekort
+- Reorder SEO globals. da38a92f by @robdekort
+- Update Dutch translations. efe305c3 by @robdekort
+
 ## v19.10.1 (2024-09-19)
 
 ### What's improved

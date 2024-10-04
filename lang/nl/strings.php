@@ -5,7 +5,6 @@ return [
     'collection_mounted' => 'Je entry :title bevat een collectie en kan niet worden verwijderd.',
     'consent_accept_all' => 'Accepteer alles',
     'consent_accept_selected' => 'Accepteer selectie',
-    'consent_reject_all' => 'Reject all',
     'consent_ads' => 'Advertenties & tracking',
     'consent_ads_explanation' => 'Third party cookies benodigd voor het retargeten en plaatsen van advertenties.',
     'consent_analytics' => 'Analytics',
