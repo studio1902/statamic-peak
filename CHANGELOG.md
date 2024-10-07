@@ -1,5 +1,13 @@
 # Changelog
 
+## v19.11.0 (2024-10-07)
+
+### What's new
+- Use Stacks to space Article/Bard sets. f43ac6a7 by @robdekort
+
+### What's changed
+- Sync config files with Laravel and Statamic. 34fc8da4 by @robdekort
+
 ## v19.10.2 (2024-10-04)
 
 ### What's improved
