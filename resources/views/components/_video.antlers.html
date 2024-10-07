@@ -5,7 +5,7 @@
 #}}
 
 <!-- /components/_video.antlers.html -->
-{{ partial:components/consent_gate class="not-prose my-8 { switch((size == 'md') => 'span-md', (size == 'lg') => 'span-lg', (size == 'xl') => 'span-xl', () => 'span-md')}" }}
+{{ partial:components/consent_gate class="not-prose { switch((size == 'md') => 'span-md', (size == 'lg') => 'span-lg', (size == 'xl') => 'span-xl', () => 'span-md')}" }}
     <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     {{ slot:append }}
