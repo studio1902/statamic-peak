@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Storage;
 use Laravel\Prompts\Prompt;
 use Statamic\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
-use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Yaml\Yaml;
 
@@ -44,7 +43,10 @@ class StarterKitPostInstall
         $this->applyInteractivity($console);
         $this->loadFiles();
         $this->overwriteEnvWithPresets();
-        $this->initializeGitAndConfigureGitignore();
+        $this->excludeBuildFolderFromGit();
+        $this->excludeUsersFolderFromGit();
+        $this->excludeFormsFolderFromGit();
+        $this->setupComposerUpdateWorkflow();
         $this->installNodeDependencies();
         $this->installPuppeteerAndBrowsershot();
         $this->installTranslations();
@@ -92,21 +94,6 @@ class StarterKitPostInstall
         $this->setLocalMailer();
 
         info('[✓] `.env` file overwritten.');
-    }
-
-    protected function initializeGitAndConfigureGitignore(): void
-    {
-        if (! confirm(label: 'Do you want to init a git repo and configure gitignore?', default: true)) {
-            return;
-        }
-
-        $this->initializeGitRepo();
-
-        $this->excludeBuildFolderFromGit();
-        $this->excludeUsersFolderFromGit();
-        $this->excludeFormsFolderFromGit();
-        $this->setupComposerUpdateWorkflow();
-        $this->createGithubRepo();
     }
 
     protected function installNodeDependencies(): void
@@ -362,15 +349,6 @@ class StarterKitPostInstall
         }
     }
 
-    protected function initializeGitRepo(): void
-    {
-        $this->run(
-            command: 'git init',
-            processingMessage: 'Initialising repo...',
-            successMessage: 'Repo initialised.'
-        );
-    }
-
     protected function excludeBuildFolderFromGit(): void
     {
         if (! confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true)) {
@@ -459,34 +437,6 @@ class StarterKitPostInstall
 
         $disk->makeDirectory('.github/workflows');
         $disk->put('.github/workflows/composer_update.yaml', Yaml::dump($workflow, 99, 2));
-    }
-
-    protected function createGithubRepo(): void
-    {
-        if (! app(ExecutableFinder::class)->find('gh')) {
-            info('If you install the GitHub CLI, next time this installer will be able to set up a remote repository.');
-
-            return;
-        }
-
-        if (! confirm(label: 'Do you want create a repo on Github?', default: false)) {
-            return;
-        }
-
-        $name = text(
-            label: 'What should be your full repository name?',
-            placeholder: 'studio1902/statamic-peak',
-            required: true,
-        );
-
-        $flags = '--source=.';
-        confirm(label: 'Should this be a private repository?', default: true) ? $flags .= ' --private' : $flags .= ' --public';
-
-        $this->run(
-            command: "gh repo create $name $flags",
-            processingMessage: 'Creating remote repository...',
-            successMessage: 'Remote repository created.'
-        );
     }
 
     protected function run(string $command, string $processingMessage = '', string $successMessage = '', ?string $errorMessage = null, bool $tty = false, bool $spinner = true, int $timeout = 120): bool
