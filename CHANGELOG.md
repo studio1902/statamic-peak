@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.11.1 (2024-10-15)
+
+### What's fixed
+- Only use stacks in Article (Bard with sets). abb8f7e1 by @robdekort
+
 ## v19.11.0 (2024-10-07)
 
 ### What's new
