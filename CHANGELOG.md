@@ -1,5 +1,13 @@
 # Changelog
 
+## v19.12.0 (2024-10-15)
+
+### What's new
+- Remove the Git and Github integration from the post install as the Statamic CLI handles this now. df6ee387 by @robdekort
+- Don't default to Statamic Pro as the Statamic CLI handles this now. 3da1a638 by @robdekort
+
+Update the Statamic CLI using `composer global update statamic/cli`.
+
 ## v19.11.1 (2024-10-15)
 
 ### What's fixed
