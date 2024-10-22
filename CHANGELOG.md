@@ -1,5 +1,12 @@
 # Changelog
 
+## v19.13.0 (2024-10-22)
+
+### What's changed
+- Remove commented cache schedule from `routes/console.php` as Statamic handles this automatically now when you run a Laravel cron. ac10c46d by @robdekort
+- Remove `z-behind` utility as we can use arbitrary variants in Tailwind: `z-[-1]`. 51237ce8 by @robdekort
+- Update dependencies and recompile assets.
+
 ## v19.12.0 (2024-10-15)
 
 ### What's new
