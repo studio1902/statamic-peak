@@ -36,7 +36,6 @@ export_paths:
   - resources/svg
   - resources/users/roles.yaml
   - resources/views
-  - routes/console.php
   - LICENSE
   - package.json
   - package-lock.json
