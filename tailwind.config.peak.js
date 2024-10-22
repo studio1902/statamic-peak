@@ -28,10 +28,6 @@ module.exports = {
         'safe': 'calc(env(safe-area-inset-bottom, 0rem) + 2rem)',
         'fluid-grid-gap': 'var(--col-gap)'
       },
-      zIndex: {
-        // Z-index stuff behind it's parent.
-        'behind': '-1',
-      },
     },
   },
   plugins: [
