@@ -29,6 +29,7 @@ return [
     'form_mail_from' => 'Statamic Peak Development',
     'form_mail_greeting' => 'Beste',
     'form_mail_logo' => 'http://statamic-peak.test/visuals/statamic-peak-logo.png',
+    'form_required' => 'Verplicht',
     'form_mail_submitted' => 'Verzonden',
     'form_mail_title' => 'Contactformulier',
     'form_mail_url' => 'http://statamic-peak.test',

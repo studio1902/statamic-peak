@@ -54,7 +54,7 @@
                             {{ fields scope="field" }}
                                 <template x-if="{{ show_field }}">
                                     <div class="
-                                        flex flex-col
+                                        flex flex-col stack-1
                                         {{ input_type == 'hidden' ?= 'hidden' }}
                                         {{ switch(
                                             (width == '25') => 'md:col-span-3',
@@ -69,16 +69,18 @@
                                             <label class="font-bold" for="{{ handle }}">
                                                 {{ trans :key="field:display" }}
                                                 {{ if validate | contains('required') || validate | contains('accepted') }}
-                                                    <sup class="text-red-700">*</sup>
-                                                {{ /if }}
-
-                                                {{ if field:instructions && instructions_position != 'below' }}
-                                                    {{ partial:typography/p class="mt-1 font-normal text-sm" content="{ trans :key="field:instructions" }" }}
+                                                    <sup aria-label="{{ trans:strings.form_required }}" class="text-red-700">*</sup>
                                                 {{ /if }}
                                             </label>
+
+                                            {{ if field:instructions && instructions_position != 'below' }}
+                                                <span id="{{ field:handle }}-instructions" class="text-sm">
+                                                    {{ trans :key="field:instructions" }}
+                                                </span>
+                                            {{ /if }}
                                         {{ /unless }}
 
-                                        <div class="mt-2 flex flex-col gap-y-2">
+                                        <div class="stack-space-2 flex flex-col stack-2">
                                             {{ field:field }}
 
                                             {{# Inline error. #}}
@@ -87,9 +89,9 @@
                                             </template>
 
                                             {{ if field:instructions && instructions_position === 'below' }}
-                                                <p id="{{ field:handle }}-instructions">
-                                                    {{ partial:typography/p as="span" class="text-sm" content="{ trans :key="field:instructions" }" }}
-                                                </p>
+                                                <span id="{{ field:handle }}-instructions" class="text-sm">
+                                                    {{ trans :key="field:instructions" }}
+                                                </span>
                                             {{ /if }}
                                         </div>
                                     </div>

@@ -12,7 +12,7 @@
     name="{{ handle }}"
     rows="5"
     {{ placeholder ?= 'placeholder="{placeholder}"' }}
-    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
     {{ character_limit ?= 'maxlength="{character_limit}"' }}
     {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
 >{{ old }}</textarea>

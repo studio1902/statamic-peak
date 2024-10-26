@@ -3,7 +3,7 @@
     :aria-invalid="form.invalid('{{ handle }}')"
     class="flex {{ inline ? 'gap-x-4' : 'flex-col gap-y-2' }}"
     id="{{ handle }}"
-    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
 >
     {{ foreach:options as="value|label" }}
         <label class="inline-flex items-baseline">

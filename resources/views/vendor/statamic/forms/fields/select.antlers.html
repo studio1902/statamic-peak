@@ -10,7 +10,7 @@
     class="w-full rounded"
     id="{{ handle }}"
     name="{{ handle }}{{ multiple ?= "[]" }}"
-    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
     {{ multiple ?= "multiple" }}
     {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
 >

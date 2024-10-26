@@ -12,7 +12,7 @@
     name="{{ handle }}"
     type="{{ input_type ?? 'text' }}"
     {{ placeholder ?= 'placeholder="{placeholder}"' }}
-    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
     {{ character_limit ?= 'maxlength="{character_limit}"' }}
     {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
     {{ old ?= 'value="{old}"' }}

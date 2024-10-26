@@ -2,7 +2,7 @@
 <label
     class="inline-flex items-baseline"
     :aria-invalid="form.invalid('{{ handle }}')"
-    {{ instructions_position == 'below' ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
 >
     <input type="hidden" name="{{ handle }}" value="0">
     <input
