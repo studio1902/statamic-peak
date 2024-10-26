@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.14.0 (2024-10-26)
+
+### What's improved
+- Improve form a11y by also adding describedBy when instructions are positioned below and by giving the required asterisk an aria-label. eb6987b4 by @robdekort
+
 ## v19.13.0 (2024-10-22)
 
 ### What's changed
