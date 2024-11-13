@@ -136,7 +136,7 @@ fi
 
 cd {SITE_DIRECTORY}
 git pull origin {BRANCH}
-composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+{SITE_COMPOSER} install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 npm ci
 npm run build
