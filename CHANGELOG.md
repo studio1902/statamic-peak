@@ -1,5 +1,11 @@
 # Changelog
 
+## v19.15.0 (2024-11-13)
+
+### What's changed
+- Move appropriate translatable strings from kit to addon. 0be196e4 by @robdekort
+- Update packages and rebuild assets. bd9753bc by @robdekort
+
 ## v19.14.0 (2024-10-26)
 
 ### What's improved
