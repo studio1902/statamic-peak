@@ -58,10 +58,6 @@ return [
     'search_no_results' => 'Fann ingen resultat',
     'search_results_for' => 'Resultat for',
 
-    // Social images
-    'social_images' => 'Genererte eit bilete for sosiale medium.|Genererte :count bilete for sosiale medium.',
-    'social_images_queue' => 'Genererte eit bilete for sosiale medium i bakgrunnen.|Genererte :count bilete for sosiale medium i bakgrunnen.',
-
     // Other
     'vacancy_visit' => 'Sjå stillingsannonse',
 ];
