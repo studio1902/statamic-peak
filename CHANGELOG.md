@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.15.1 (2024-11-14)
+
+### What's improved
+- Updating Ploi's deploy script using `{SITE_COMPOSER}`. #403 by @vannut
+
 ## v19.15.0 (2024-11-13)
 
 ### What's changed
