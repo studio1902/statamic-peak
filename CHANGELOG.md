@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.16.0 (2024-11-19)
+
+### What's improved
+- Prevent more companies from stealing our content. a82cf1c0 by @robdekort
+
 ## v19.15.1 (2024-11-14)
 
 ### What's improved
