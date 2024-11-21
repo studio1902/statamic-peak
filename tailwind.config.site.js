@@ -10,7 +10,7 @@ import colors from 'tailwindcss/colors'
 import defaultTheme from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
 
-module.exports = {
+export default {
   theme: {
     // Here we define the default colors available. If you want to include
     // all default Tailwind colors you should extend the colors instead.

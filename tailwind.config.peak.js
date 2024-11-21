@@ -8,7 +8,7 @@
 import plugin from 'tailwindcss/plugin'
 import colors from 'tailwindcss/colors'
 
-module.exports = {
+export default {
   theme: {
     extend: {
       colors: {

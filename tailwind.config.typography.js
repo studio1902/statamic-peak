@@ -6,7 +6,7 @@
 // More info: https://tailwindcss.com/docs/typography-plugin.
 //
 
-module.exports = {
+export default {
   theme: {
     extend: {
       typography: (theme) => ({
