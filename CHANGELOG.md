@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.17.2 (2024-11-21)
+
+### What's improved
+- Export default in all config files. ece5e3d1 by @robdekort
+
 ## v19.17.1 (2024-11-21)
 
 ### What's improved
