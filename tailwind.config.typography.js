@@ -6,9 +6,6 @@
 // More info: https://tailwindcss.com/docs/typography-plugin.
 //
 
-const colors = require('tailwindcss/colors')
-const plugin = require('tailwindcss/plugin')
-
 module.exports = {
   theme: {
     extend: {

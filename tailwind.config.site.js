@@ -6,9 +6,9 @@
 // adding and extending to Tailwinds default utility classes.
 //
 
-const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
-const colors = require('tailwindcss/colors')
+import colors from 'tailwindcss/colors'
+import defaultTheme from 'tailwindcss/defaultTheme'
+import plugin from 'tailwindcss/plugin'
 
 module.exports = {
   theme: {

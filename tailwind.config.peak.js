@@ -5,8 +5,8 @@
 // Here we define base styles, components and utilities used by Peak.
 //
 
-const plugin = require('tailwindcss/plugin')
-const colors = require('tailwindcss/colors')
+import plugin from 'tailwindcss/plugin'
+import colors from 'tailwindcss/colors'
 
 module.exports = {
   theme: {
