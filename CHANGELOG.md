@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.17.0 (2024-11-21)
+
+### What's improved
+- Use ESM syntax for Tailwind imports. 881e3414 by @robdekort
+
 ## v19.16.0 (2024-11-19)
 
 ### What's improved
