@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.17.1 (2024-11-21)
+
+### What's improved
+- Use ESM syntax in main Tailwind config file as well. 67795cd3 by @robdekort
+
 ## v19.17.0 (2024-11-21)
 
 ### What's improved
