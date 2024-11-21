@@ -7,14 +7,19 @@
 // classes. Various aspects of the config are split inmultiple files.
 //
 
+import defaultConfig from 'tailwindcss/defaultConfig';
+import typographyConfig from './tailwind.config.typography.js';
+import peakConfig from './tailwind.config.peak.js';
+import siteConfig from './tailwind.config.site.js';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   // The various configurable Tailwind configuration files.
   presets: [
-    require('tailwindcss/defaultConfig'),
-    require('./tailwind.config.typography.js'),
-    require('./tailwind.config.peak.js'),
-    require('./tailwind.config.site.js'),
+    defaultConfig,
+    typographyConfig,
+    peakConfig,
+    siteConfig
   ],
   // Configure files to scan for utility classes (JIT).
   content: [
