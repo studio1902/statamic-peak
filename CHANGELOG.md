@@ -1,5 +1,10 @@
 # Changelog
 
+## v19.17.3 (2024-11-22)
+
+### What's fixed
+- Dutch dynamic form strings. a904b1fe by @robdekort
+
 ## v19.17.2 (2024-11-21)
 
 ### What's improved
