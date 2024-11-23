@@ -1,0 +1,64 @@
+@plugin "@tailwindcss/typography";
+
+@layer utilities {
+    .prose {
+        --tw-prose-body: var(--color-neutral);
+        --tw-prose-headings: var(--color-neutral);
+        --tw-prose-lead: var(--color-neutral);
+        --tw-prose-links: var(--color-neutral);
+        --tw-prose-bold: var(--color-neutral);
+        --tw-prose-counters: var(--color-neutral);
+        --tw-prose-bullets: var(--color-neutral);
+        --tw-prose-hr: var(--color-neutral);
+        --tw-prose-quotes: var(--color-neutral);
+        --tw-prose-quote-borders: var(--color-primary);
+        --tw-prose-captions: var(--color-neutral);
+
+        --tw-prose-code: var(--color-neutral);
+        --tw-prose-pre-code: var(--color-white);
+        --tw-prose-pre-bg: var(--color-neutral);
+        --tw-prose-th-borders: var(--color-neutral);
+        --tw-prose-td-borders: var(--color-neutral);
+
+        --tw-prose-invert-body: var(--color-white);
+        --tw-prose-invert-headings: var(--color-white);
+        --tw-prose-invert-lead: var(--color-white);
+        --tw-prose-invert-links: var(--color-white);
+        --tw-prose-invert-bold: var(--color-white);
+        --tw-prose-invert-counters: var(--color-white);
+        --tw-prose-invert-bullets: var(--color-white);
+        --tw-prose-invert-hr: var(--color-white);
+        --tw-prose-invert-quotes: var(--color-white);
+        --tw-prose-invert-quote-borders: var(--color-white);
+        --tw-prose-invert-captions: var(--color-white);
+        --tw-prose-invert-code: var(--color-white);
+        --tw-prose-invert-pre-code: var(--color-neutral);
+        --tw-prose-invert-pre-bg: var(--color-white);
+        --tw-prose-invert-th-borders: var(--color-white);
+        --tw-prose-invert-td-borders: var(--color-white);
+
+        line-height: 1.5em;
+
+        ul > li > p,
+        ol > li > p {
+            margin-top: 0em !important;
+            margin-bottom: 0em !important;
+            line-height: 1.5em;
+        }
+
+        :where(.prose > div > :first-child) {
+            margin-top: 0 !important;
+        }
+
+        :where(.prose > div > :last-child) {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .prose-sm,
+    .prose-lg,
+    .prose-xl,
+    .prose-2xl {
+        line-height: 1.5em;
+    }
+}

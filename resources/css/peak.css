@@ -1,0 +1,181 @@
+@source "../../vendor/studio1902/**/*.blade.php";
+@source "../../vendor/studio1902/**/*.html";
+@source "../../vendor/studio1902/**/*.js";
+
+@config './tailwind.peak.js';
+
+@plugin "@tailwindcss/forms";
+
+@theme {
+    --color-black: #000;
+    --color-white: #fff;
+
+    --color-current: currentColor;
+    --color-transparent: transparent;
+
+    --color-gray-50: var(--color-slate-50);
+    --color-gray-100: var(--color-slate-100);
+    --color-gray-200: var(--color-slate-200);
+    --color-gray-300: var(--color-slate-300);
+    --color-gray-400: var(--color-slate-400);
+    --color-gray-500: var(--color-slate-500);
+    --color-gray-600: var(--color-slate-600);
+    --color-gray-700: var(--color-slate-700);
+    --color-gray-800: var(--color-slate-800);
+    --color-gray-900: var(--color-slate-900);
+    --color-gray-950: var(--color-slate-950);
+
+    /* Spacing */
+    --spacing-safe: calc(env(safe-area-inset-bottom, 0rem) + 2rem);
+    --spacing-fluid-grid-gap: 0;
+
+    /* Transitions */
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-transition-duration: 300ms;
+}
+
+@layer base {
+    /* Used to hide alpine elements before being rendered. */
+    [x-cloak] {
+        display: none !important;
+    }
+
+    /* Display screen breakpoints in debug environment. */
+    .breakpoint:before {
+        display: block;
+        color: var(--color-yellow-900);
+        text-transform: uppercase;
+        content: "-";
+    }
+
+    /* Default color transition on links unless user prefers reduced motion. */
+    @media (prefers-reduced-motion: no-preference) {
+        a {
+            transition: color 0.3s ease-in-out;
+        }
+    }
+
+    :root {
+        /* Fluid typography from 1 rem to 1.2 rem with fallback to 16px. */
+        font-size: 100%;
+        font-size: clamp(1rem, 1.6vw, 1.2rem);
+        /* Safari resize fix. */
+        min-height: 0vw;
+        --focus-outline-width: 2px;
+        --focus-outline-offset: 3px;
+        --focus-outline-color: currentColor;
+        --focus-outline-style: dotted;
+        --focus-form-outline-width: 3px;
+        --focus-form-outline-offset: 0;
+        --focus-form-outline-color: theme(--color-primary / 50%);
+        --focus-form-outline-style: solid;
+    }
+
+    :focus {
+        outline-width: var(--focus-outline-width, 2px);
+        outline-offset: var(--focus-outline-offset, 3px);
+        outline-color: var(--focus-outline-color, currentColor);
+        outline-style: var(--focus-outline-style, dotted);
+    }
+
+    *:focus:not(:focus-visible) {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    input:not([type="button"]):focus,
+    textarea:focus,
+    select:focus {
+        box-shadow: none;
+        outline-width: var(--focus-form-outline-width, 3px);
+        outline-offset: var(--focus-form-outline-offset, 0);
+        outline-color: var(--focus-form-outline-color, currentColor);
+        outline-style: var(--focus-form-outline-style, solid);
+    }
+
+    mark {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    [class*="stack-"][class*="stack-space-"] {
+        & > * {
+            --stack-item-space: initial;
+        }
+    }
+}
+
+@layer components {
+    /* Fluid grid for horizontal layout. */
+    .fluid-grid {
+        --col-gap: clamp(1rem, 3vw, 4rem);
+        --spacing-fluid-grid-gap: var(--col-gap); /* redefining this here as CSS doesn't inherit CSS variables */
+        --content-max-width: var(--breakpoint-xl);
+        --col-width: calc((min(calc(100% - var(--padding-left) - var(--padding-right) - 2 * var(--col-gap)), var(--content-max-width)) - 11 * var(--col-gap)) / 12);
+        --padding-left: clamp(calc(env(safe-area-inset-left, 0rem) + 1rem), 2vw, calc(env(safe-area-inset-left, 0rem) + 2rem));
+        --padding-right: clamp(calc(env(safe-area-inset-right, 0rem) + 1rem), 2vw, calc(env(safe-area-inset-right, 0rem) + 2rem));
+        --side-width: minmax(0, 1fr);
+        display: grid;
+        column-gap: var(--col-gap);
+        grid-template-columns: [full-start] var(--side-width) [content-start col-1] var(--col-width) [col-2] var(--col-width) [col-3] var(--col-width) [col-4] var(--col-width) [col-5] var(--col-width) [col-6] var(--col-width) [col-7] var(--col-width) [col-8] var(--col-width) [col-9] var(--col-width) [col-10] var(--col-width) [col-11] var(--col-width) [col-12] var(--col-width) [content-end] var(--side-width) [full-end];
+    }
+
+    /* Span utilities for fluid grid. */
+    .span-full {
+        grid-column: full;
+    }
+
+    .span-content {
+        grid-column: content;
+    }
+
+    .span-md {
+        grid-column: content;
+
+        @media (min-width: theme(--breakpoint-md)) {
+            grid-column: col-3 / span 8;
+        }
+
+        @media (min-width: theme(--breakpoint-lg)) {
+            grid-column: col-4 / span 6;
+        }
+    }
+
+    .span-lg {
+        grid-column: content;
+
+        @media (min-width: theme(--breakpoint-md)) {
+            grid-column: col-2 / span 10;
+        }
+
+        @media (min-width: theme(--breakpoint-lg)) {
+            grid-column: col-3 / span 8;
+        }
+    }
+
+    .span-xl {
+        grid-column: content;
+
+        @media (min-width: theme(--breakpoint-md)) {
+            grid-column: col-1 / span 12;
+        }
+
+        @media (min-width: theme(--breakpoint-lg)) {
+            grid-column: col-2 / span 10;
+        }
+    }
+}
+
+@layer utilities {
+    /* Stack utilities for vertical spacing. */
+    .stack-space-inherit {
+        --stack-item-space: initial;
+        &:is([class*="stack-"][class*="stack-space-"] > *) {
+            --stack-item-space: initial;
+        }
+    }
+
+    *:is(.stack-space-collapse) + *:is(.stack-space-collapse) {
+        --stack-item-space: 0;
+    }
+}

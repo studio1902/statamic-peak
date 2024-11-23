@@ -15,7 +15,7 @@
             inline-flex items-baseline gap-0.5 font-bold motion-safe:transition
             {{ switch(
                 (button_type === 'inline') => 'underline decoration-2 motion-safe:transition',
-                (button_type === 'button') => 'max-w-full py-3 px-4 rounded leading-none no-underline select-none whitespace-nowrap',
+                (button_type === 'button') => 'max-w-full py-3 px-4 rounded-sm leading-none no-underline select-none whitespace-nowrap',
             )}}
             {{ switch(
                 (button_type === 'inline' && !inverted) => 'text-neutral decoration-primary focus:outline-primary',

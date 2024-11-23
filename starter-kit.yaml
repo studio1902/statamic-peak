@@ -27,8 +27,10 @@ export_paths:
   - public/visuals
   - resources/sites.yaml
   - resources/blueprints
-  - resources/css/custom.css
+  - resources/css/peak.css
   - resources/css/site.css
+  - resources/css/tailwind.peak.js
+  - resources/css/typography.css
   - resources/fieldsets
   - resources/forms
   - resources/js/site.js
@@ -40,10 +42,6 @@ export_paths:
   - package.json
   - package-lock.json
   - postcss.config.js
-  - tailwind.config.js
-  - tailwind.config.peak.js
-  - tailwind.config.site.js
-  - tailwind.config.typography.js
   - vite.config.js
 export_as:
   README.md: README.example.md
