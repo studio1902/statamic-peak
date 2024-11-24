@@ -1,6 +1,4 @@
-@source "../../vendor/studio1902/**/*.blade.php";
-@source "../../vendor/studio1902/**/*.html";
-@source "../../vendor/studio1902/**/*.js";
+@source "../../vendor/studio1902/";
 
 @config './tailwind.peak.js';
 
