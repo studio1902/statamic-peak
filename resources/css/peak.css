@@ -38,6 +38,11 @@
         display: none !important;
     }
 
+    /* Better UX. */
+    button {
+        cursor: pointer;
+    }
+
     /* Display screen breakpoints in debug environment. */
     .breakpoint:before {
         display: block;
