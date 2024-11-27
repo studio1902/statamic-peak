@@ -28,7 +28,6 @@ export_paths:
   - resources/sites.yaml
   - resources/blueprints
   - resources/css/custom.css
-  - resources/css/site.css
   - resources/fieldsets
   - resources/forms
   - resources/js/site.js
@@ -37,13 +36,6 @@ export_paths:
   - resources/users/roles.yaml
   - resources/views
   - LICENSE
-  - package.json
-  - package-lock.json
-  - postcss.config.js
-  - tailwind.config.js
-  - tailwind.config.peak.js
-  - tailwind.config.site.js
-  - tailwind.config.typography.js
   - vite.config.js
 export_as:
   README.md: README.example.md
@@ -57,3 +49,29 @@ modules:
     default: true
     dependencies:
       studio1902/statamic-peak-commands: ^8.0
+  tailwind:
+    prompt: 'Which Tailwind version do you want to install?'
+    default: v3
+    skip_option: false
+    options:
+      v3:
+        label: 'Tailwind v3'
+        export_paths:
+          - package.json
+          - package-lock.json
+          - postcss.config.js
+          - resources/css/site.css
+          - tailwind.config.js
+          - tailwind.config.peak.js
+          - tailwind.config.site.js
+          - tailwind.config.typography.js
+      v4:
+        label: 'Tailwind v4 Beta'
+        export_as:
+          package.json: package.tailwindv4.json
+          package-lock.json: package-lock.tailwindv4.json
+          postcss.config.js: postcss.config.tailwindv4.js
+          resources/css/peak.css: resources/css/peak.tailwindv4.css
+          resources/css/site.css: resources/css/site.tailwindv4.css
+          resources/css/typography.css: resources/css/typography.tailwindv4.css
+          resources/css/tailwind.peak.js: resources/css/tailwindv4.peak.js

@@ -203,6 +203,11 @@ class StarterKitPostInstall
 
     protected function cleanUp(): void
     {
+        // Delete tailwind.config.js from default Statamic install if Tailwind v4 was selected
+        if (app('files')->exists(resource_path('css/typography.css')) && app('files')->exists(base_path('tailwind.config.js'))) {
+            app('files')->delete(base_path('tailwind.config.js'));
+        }
+
         $this->withSpinner(
             fn () => $this->cleanUpComposerPackages(),
             'Cleaning up composer packages...',
