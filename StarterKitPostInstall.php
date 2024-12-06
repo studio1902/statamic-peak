@@ -203,6 +203,8 @@ class StarterKitPostInstall
 
     protected function cleanUp(): void
     {
+        app('files')->exists(base_path('tailwind.config.js')) && app('files')->delete(base_path('tailwind.config.js'));
+
         $this->withSpinner(
             fn () => $this->cleanUpComposerPackages(),
             'Cleaning up composer packages...',
