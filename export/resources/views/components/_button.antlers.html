@@ -1,0 +1,43 @@
+{{#
+    @name Button attributes
+    @desc A single button component. Faux is used when a button is displayed inside a link (for example in link blocks).
+    @param* label The caption label.
+    @param as The wrapping element. Defaults to `a`.
+    @param button_type `Inline` if the button needs to be rendered as an inline button.
+    @param faux Boolean. For faux button wrapped in an actual button/anchor.
+    @param inverted Boolean. When the button needs inverted styles.
+#}}
+
+<!-- /components/_button.antlers.html -->
+{{ if label }}
+    <{{ as or 'a' }}
+        class="
+            inline-flex items-baseline gap-0.5 font-bold motion-safe:transition
+            {{ switch(
+                (button_type === 'inline') => 'underline decoration-2 motion-safe:transition',
+                (button_type === 'button') => 'max-w-full py-3 px-4 rounded-sm leading-none no-underline select-none whitespace-nowrap',
+            )}}
+            {{ switch(
+                (button_type === 'inline' && !inverted) => 'text-neutral decoration-primary focus:outline-primary',
+                (button_type === 'button' && !inverted) => 'bg-primary text-white focus:outline-primary',
+            )}}
+            {{ switch(
+                (button_type === 'inline' && inverted) => 'text-white decoration-white focus:outline-white',
+                (button_type === 'button' && inverted) => 'bg-white text-primary focus:outline-white',
+            )}}
+            {{ class }}
+        "
+        {{ slot:attributes }}
+        {{ !faux ?= { partial:statamic-peak-tools::snippets/button_attributes } }}
+    >
+        <span class="text-ellipsis overflow-x-clip">
+            {{ link_type == 'email' ? { label | obfuscate_email } : label }}
+        </span>
+
+        {{ if target_blank }}
+            <span class="sr-only">{{ trans:strings.external_link }}</span>
+            {{ svg:external attr:class="ml-1 w-3 h-3 fill-current" attr:aria-hidden="true" attr:alt="" }}
+        {{ /if }}
+    </{{ as or 'a' }}>
+{{ /if }}
+<!-- End: /components/_button.antlers.html -->

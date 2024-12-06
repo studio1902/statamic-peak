@@ -1,0 +1,77 @@
+{{#
+    @name Main desktop navigation
+    @desc The sites main desktop navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity.
+#}}
+
+<!-- /navigation/_main_desktop.antlers.html -->
+<nav class="hidden md:block" aria-label="{{ trans:strings.main_navigation }}">
+    <ul class="flex items-center gap-x-8">
+        {{ nav:main max_depth="2" include_home="true" select="title|url" }}
+            {{ unless no_results }}
+                <li
+                    {{ if children }}
+                        x-data="{ subnavOpen: false }"
+                        @keyup.escape.stop.prevent="subnavOpen = false"
+                        @focusin.window="!$refs.subnav.contains($event.target) && (subnavOpen = false)"
+                    {{ /if }}
+                    class="relative leading-none"
+                >
+                    <a
+                        class="
+                            flex items-center font-bold text-sm hover:text-primary
+                            {{ is_current || is_parent
+                                ? 'text-primary'
+                                : 'text-neutral' }}
+                        "
+                        {{ if children }}
+                            href="#"
+                            @click.prevent="subnavOpen = !subnavOpen"
+                            :aria-label="subnavOpen
+                                ? '{{ trans:strings.subnav_close }}'
+                                : '{{ trans:strings.subnav_open }}'"
+                            :aria-expanded="subnavOpen"
+                        {{ else }}
+                            href="{{ url }}"
+                        {{ /if }}
+                        {{ is_current ?= 'aria-current="page"' }}
+                    >
+                        {{ title }}
+                        {{ if children }}
+                            <div :class="{ 'scale-y-[-1]': subnavOpen }" class="motion-safe:transition-transform">
+                                {{ svg:chevron_down attr:class="w-2 ml-1 overflow-visible stroke-current text-neutral" attr:aria-hidden="true" }}
+                            </div>
+                        {{ /if }}
+                    </a>
+                    {{ if children }}
+                        <ul
+                            x-show="subnavOpen"
+                            x-ref="subnav"
+                            class="absolute right-0 mt-2 -ml-3 py-2 px-3 bg-white border border-neutral/10 rounded-sm shadow-sm"
+                            @click.outside="subnavOpen = false"
+                            x-transition
+                            x-cloak
+                        >
+                            {{ children }}
+                                <li class="">
+                                    <a
+                                        class="
+                                            whitespace-nowrap py-2 block text-xs font-bold hover:text-primary
+                                            {{ is_current || is_parent
+                                                ? 'text-primary'
+                                                : 'text-neutral' }}
+                                        "
+                                        href="{{ url }}"
+                                        {{ is_current ?= 'aria-current="page"' }}
+                                    >
+                                        {{ title }}
+                                    </a>
+                                </li>
+                            {{ /children }}
+                        </ul>
+                    {{ /if }}
+                </li>
+            {{ /unless }}
+        {{ /nav:main }}
+    </ul>
+</nav>
+<!-- End: /navigation/_main_desktop.antlers.html -->

@@ -1,0 +1,25 @@
+<!-- /vendor/statamic/forms/fields/checkboxes.antlers.html -->
+<div
+    :aria-invalid="form.invalid('{{ handle }}')"
+    class="flex {{ inline ? 'gap-x-4' : 'flex-col gap-y-2' }}"
+    id="{{ handle }}"
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
+>
+    {{ foreach:options as="value|label" }}
+        <label class="inline-flex items-baseline">
+            <input
+                x-model="form.{{ handle }}"
+                @change="form.validate('{{ handle }}')"
+                class="mr-2 relative top-[0.15em] rounded-sm border-neutral text-primary focus:border-primary"
+                type="checkbox"
+                name="{{ handle }}[]"
+                value="{{ value }}"
+                {{ (old | in_array(value)) ?= 'checked' }}
+            >
+            <span>
+                {{ trans :key="label" }}
+            </span>
+        </label>
+    {{ /foreach:options }}
+</div>
+<!-- End: /vendor/statamic/forms/fields/checkboxes.antlers.html -->

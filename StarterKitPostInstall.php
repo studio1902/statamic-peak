@@ -48,7 +48,6 @@ class StarterKitPostInstall
         $this->excludeFormsFolderFromGit();
         $this->setupComposerUpdateWorkflow();
         $this->installNodeDependencies();
-        $this->installPuppeteerAndBrowsershot();
         $this->installTranslations();
         $this->setLocale();
         $this->setTimezone();
@@ -107,6 +106,8 @@ class StarterKitPostInstall
             processingMessage: 'Installing npm dependencies...',
             successMessage: 'npm dependencies installed.',
         );
+
+        $this->installPuppeteerAndBrowsershot();
     }
 
     protected function installPuppeteerAndBrowsershot(): void
@@ -195,7 +196,10 @@ class StarterKitPostInstall
 
     protected function writeFiles(): void
     {
+        $changelog = app('files')->get(__DIR__.'/CHANGELOG.md');
+
         app('files')->put(base_path('.env'), $this->env);
+        app('files')->put(base_path('CHANGELOG.md'), $changelog);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
         app('files')->put(base_path('resources/sites.yaml'), $this->sites);
@@ -203,6 +207,8 @@ class StarterKitPostInstall
 
     protected function cleanUp(): void
     {
+        app('files')->exists(base_path('tailwind.config.js')) && app('files')->delete(base_path('tailwind.config.js'));
+
         $this->withSpinner(
             fn () => $this->cleanUpComposerPackages(),
             'Cleaning up composer packages...',

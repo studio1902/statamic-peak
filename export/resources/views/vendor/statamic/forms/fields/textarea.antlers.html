@@ -1,0 +1,19 @@
+<!-- /vendor/statamic/forms/fields/textarea.antlers.html -->
+<textarea
+    x-model="form.{{ handle }}"
+    @change="form.validate('{{ handle }}')"
+    :aria-invalid="form.invalid('{{ handle }}')"
+    :class="{
+        'border-red-600 focus:border-red-600 outline-red-600/50!': form.invalid('{{ handle }}'),
+        'border-neutral focus:border-primary': !form.invalid('{{ handle }}')
+    }"
+    class="w-full h-32 rounded-sm caret-primary"
+    id="{{ handle }}"
+    name="{{ handle }}"
+    rows="5"
+    {{ placeholder ?= 'placeholder="{placeholder}"' }}
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ character_limit ?= 'maxlength="{character_limit}"' }}
+    {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
+>{{ old }}</textarea>
+<!-- End: /vendor/statamic/forms/fields/textarea.antlers.html -->

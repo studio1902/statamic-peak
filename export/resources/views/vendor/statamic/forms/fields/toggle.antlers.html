@@ -1,0 +1,31 @@
+<!-- /vendor/statamic/forms/fields/toggle.antlers.html -->
+<label
+    class="inline-flex items-baseline"
+    :aria-invalid="form.invalid('{{ handle }}')"
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
+>
+    <input type="hidden" name="{{ handle }}" value="0">
+    <input
+        x-model="form.{{ handle }}"
+        @change="form.validate('{{ handle }}')"
+        class="mr-2 relative top-[0.15em] inline-flex rounded-sm border-neutral focus:border-primary text-primary"
+        type="checkbox"
+        name="{{ handle }}"
+        value="1"
+        id="{{ handle }}"
+        {{ (!old && default) ?= 'checked' }}
+    >
+    {{ if inline_label }}
+        <span>
+            {{ trans :key="inline_label" }}
+            {{ if handle === 'consent' }}
+                {{ if configuration:privacy_statement_type == 'entry' }}
+                    <a class="underline hover:text-primary" href="{{ configuration:privacy_statement_entry:url }}">{{ trans:strings.consent_learn_more }}</a>
+                {{ elseif configuration:privacy_statement_type == 'pdf' }}
+                    <a class="underline hover:text-primary" href="{{ configuration:privacy_statement_asset }}" target="_blank">{{ trans:strings.consent_learn_more }}</a>
+                {{ /if }}
+            {{ /if }}
+        </span>
+    {{ /if }}
+</label>
+<!-- End: /vendor/statamic/forms/fields/toggle.antlers.html -->

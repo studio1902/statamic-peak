@@ -1,0 +1,53 @@
+{
+  "_@alpinejs-DyDTs_Or.js": {
+    "file": "assets/@alpinejs-DyDTs_Or.js",
+    "name": "@alpinejs"
+  },
+  "_alpinejs-Cc4Y7bfZ.js": {
+    "file": "assets/alpinejs-Cc4Y7bfZ.js",
+    "name": "alpinejs"
+  },
+  "_axios-CYRnxaT6.js": {
+    "file": "assets/axios-CYRnxaT6.js",
+    "name": "axios"
+  },
+  "_laravel-precognition-COensSyT.js": {
+    "file": "assets/laravel-precognition-COensSyT.js",
+    "name": "laravel-precognition",
+    "imports": [
+      "_axios-CYRnxaT6.js",
+      "_lodash-es-BeZXkzNc.js"
+    ]
+  },
+  "_laravel-precognition-alpine-nbTCMliC.js": {
+    "file": "assets/laravel-precognition-alpine-nbTCMliC.js",
+    "name": "laravel-precognition-alpine",
+    "imports": [
+      "_laravel-precognition-COensSyT.js",
+      "_lodash-es-BeZXkzNc.js"
+    ]
+  },
+  "_lodash-es-BeZXkzNc.js": {
+    "file": "assets/lodash-es-BeZXkzNc.js",
+    "name": "lodash-es"
+  },
+  "resources/css/site.css": {
+    "file": "assets/site-BDELhTRg.css",
+    "src": "resources/css/site.css",
+    "isEntry": true
+  },
+  "resources/js/site.js": {
+    "file": "assets/site-AJ92xt5q.js",
+    "name": "site",
+    "src": "resources/js/site.js",
+    "isEntry": true,
+    "imports": [
+      "_alpinejs-Cc4Y7bfZ.js",
+      "_@alpinejs-DyDTs_Or.js",
+      "_laravel-precognition-alpine-nbTCMliC.js",
+      "_laravel-precognition-COensSyT.js",
+      "_axios-CYRnxaT6.js",
+      "_lodash-es-BeZXkzNc.js"
+    ]
+  }
+}

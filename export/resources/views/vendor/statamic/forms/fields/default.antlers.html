@@ -1,0 +1,20 @@
+<!-- /vendor/statamic/forms/fields/default.antlers.html -->
+<input
+    x-model="form.{{ handle }}"
+    @change="form.validate('{{ handle }}')"
+    :aria-invalid="form.invalid('{{ handle }}')"
+    :class="{
+        'border-red-600 focus:border-red-600 outline-red-600/50!': form.invalid('{{ handle }}'),
+        'border-neutral focus:border-primary': !form.invalid('{{ handle }}')
+    }"
+    class="w-full rounded-sm caret-primary"
+    id="{{ handle }}"
+    name="{{ handle }}"
+    type="{{ input_type ?? 'text' }}"
+    {{ placeholder ?= 'placeholder="{placeholder}"' }}
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
+    {{ character_limit ?= 'maxlength="{character_limit}"' }}
+    {{ autocomplete ?= 'autocomplete="{autocomplete}"' }}
+    {{ old ?= 'value="{old}"' }}
+/>
+<!-- End: /vendor/statamic/forms/fields/default.antlers.html -->
