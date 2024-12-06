@@ -1,6 +1,6 @@
 @source "../../vendor/studio1902/";
 
-@config './tailwind.peak.js';
+@config '../js/tailwind.peak.js';
 
 @plugin "@tailwindcss/forms";
 

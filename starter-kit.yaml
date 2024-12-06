@@ -5,9 +5,7 @@ export_paths:
   - app/Listeners/PreventDeletingMounts.php
   - app/Policies/CustomUserPolicy.php
   - app/Providers/AppServiceProvider.php
-  - CHANGELOG.md
   - content
-  - CONTRIBUTING.md
   - config/filesystems.php
   - config/statamic/assets.php
   - config/statamic/cp.php
@@ -29,16 +27,15 @@ export_paths:
   - resources/blueprints
   - resources/css/peak.css
   - resources/css/site.css
-  - resources/css/tailwind.peak.js
   - resources/css/typography.css
   - resources/fieldsets
   - resources/forms
   - resources/js/site.js
+  - resources/js/tailwind.peak.js
   - resources/preferences.yaml
   - resources/svg
   - resources/users/roles.yaml
   - resources/views
-  - LICENSE
   - package.json
   - package-lock.json
   - postcss.config.js
