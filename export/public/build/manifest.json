@@ -3,8 +3,8 @@
     "file": "assets/@alpinejs-DyDTs_Or.js",
     "name": "@alpinejs"
   },
-  "_alpinejs-CLvO5GJR.js": {
-    "file": "assets/alpinejs-CLvO5GJR.js",
+  "_alpinejs-Cc4Y7bfZ.js": {
+    "file": "assets/alpinejs-Cc4Y7bfZ.js",
     "name": "alpinejs"
   },
   "_axios-CYRnxaT6.js": {
@@ -32,17 +32,17 @@
     "name": "lodash-es"
   },
   "resources/css/site.css": {
-    "file": "assets/site-DauXbKEn.css",
+    "file": "assets/site-BDELhTRg.css",
     "src": "resources/css/site.css",
     "isEntry": true
   },
   "resources/js/site.js": {
-    "file": "assets/site-UdxS10B6.js",
+    "file": "assets/site-AJ92xt5q.js",
     "name": "site",
     "src": "resources/js/site.js",
     "isEntry": true,
     "imports": [
-      "_alpinejs-CLvO5GJR.js",
+      "_alpinejs-Cc4Y7bfZ.js",
       "_@alpinejs-DyDTs_Or.js",
       "_laravel-precognition-alpine-nbTCMliC.js",
       "_laravel-precognition-COensSyT.js",
