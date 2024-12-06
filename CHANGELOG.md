@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.0.0 (2024-12-06)
+
+### What's new
+- Tailwind v4.0, Vite v6 and use new Statamic Starter Kit package structure. #404 by @andjsch and @robdekort
+
 ## v19.17.3 (2024-11-22)
 
 ### What's fixed
