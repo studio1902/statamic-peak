@@ -1,5 +1,11 @@
 # Changelog
 
+## v20.0.1 (2024-12-18)
+
+### What's changed
+- Update dependencies. 272e70c4 by @robdekort
+- Remove unused CSS file. 8e2e2c6aby @robdekort
+
 ## v20.0.0 (2024-12-06)
 
 ### What's new
