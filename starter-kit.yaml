@@ -38,7 +38,6 @@ export_paths:
   - resources/views
   - package.json
   - package-lock.json
-  - postcss.config.js
   - vite.config.js
 export_as:
   README.md: README.example.md

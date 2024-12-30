@@ -5,8 +5,5 @@
             "name": "Statamic Peak",
             "description": "Statamic Peak starter kit"
         }
-    },
-    "require": {
-        "statamic/cms": "^5.43"
     }
 }
