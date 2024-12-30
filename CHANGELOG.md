@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.1.1 (2024-12-30)
+
+### What's improved
+- Cleanup PostCSS in post install hook. #411 by @andjsch
+
 ## v20.1.0 (2024-12-30)
 
 ### What's new
