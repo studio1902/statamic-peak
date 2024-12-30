@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.1.0 (2024-12-30)
+
+### What's new
+- Use Vite for compiling and remove the PostCSS dependency. ac341d0d by @robdekort and @andjsch
+
 ## v20.0.1 (2024-12-18)
 
 ### What's changed
