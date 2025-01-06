@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.2.0 (2025-01-06)
+
+### What's new
+- Enhance consent gate embed accept link. #413 by @carstenjaksch
+
 ## v20.1.2 (2025-01-06)
 
 ### What's fixed
@@ -19,7 +24,7 @@
 
 ### What's changed
 - Update dependencies. 272e70c4 by @robdekort
-- Remove unused CSS file. 8e2e2c6aby @robdekort
+- Remove unused CSS file. 8e2e2c6a by @robdekort
 
 ## v20.0.0 (2024-12-06)
 
