@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.1.2 (2025-01-06)
+
+### What's fixed
+- Tpyo in Dutch translation file. #412 by @mrk-j
+
 ## v20.1.1 (2024-12-30)
 
 ### What's improved
