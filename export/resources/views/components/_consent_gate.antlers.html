@@ -2,7 +2,8 @@
     @name Consent gate
     @desc An extendable consent gate.
     @param aspect_ratio Aspect ratio class. Defaults to `aspect-video`.
-    @param explainer The text explaining why consent is required. Defaults to `trans:strings.consent_embeds_disabled`.
+    @param explainer_accept The text explaining that embeds will be accepted. Displayed when the consent banner is visible. Defaults to `trans:strings.consent_embeds_accept`.
+    @param explainer_open The text explaining that the consent banner will be opened. Displayed when the consent banner is hidden. Defaults to `trans:strings.consent_embeds_open`.
 #}}
 
 <!-- /components/_consent_gate.antlers.html -->
@@ -23,8 +24,9 @@
                 x-show="!$store.consentBanner.getConsent() || !$store.consentBanner.getConsentValue('embeds')"
                 class="absolute z-10 inset-0 p-6 flex justify-center items-center bg-neutral/10 text-neutral/80"
             >
-                <a @click.prevent="$store.consentBanner.revokeConsent()" href="#" class="underline">
-                    {{ explainer ?? { trans:strings.consent_embeds_disabled } }}
+                <a @click.prevent="!$store.consentBanner.getConsent() ? $store.consentBanner.accept('embeds') : $store.consentBanner.revokeConsent()" href="#" class="underline">
+                    <span x-show="!$store.consentBanner.getConsent()">{{ explainer_accept ?? { trans:strings.consent_embeds_accept } }}</span>
+                    <span x-show="$store.consentBanner.getConsent()">{{ explainer_open ?? { trans:strings.consent_embeds_open } }}</span>
                 </a>
             </div>
             <template x-if="$store.consentBanner.getConsent() && $store.consentBanner.getConsentValue('embeds')">
