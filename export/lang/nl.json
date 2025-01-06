@@ -123,7 +123,7 @@
     "Embed Services": "Embeddiensten",
     "Embeds": "Embeds",
     "Enable Social Image generation. **Important**: you need to have Puppeteer and Browsershot installed.": "Schakel het genereren van social images in. **Belangrijk**: je moet Puppeteer en Browsershot ge\u00efnstalleerd hebben.",
-    "Enable if you want Peak to generate favicons. **Important**: you need to have the PHP Imagick module installed.": "Schakel het genereren van favicons in. **Belangirjk**: je moet de PHP Imagick-module hebben ge\u00efnstalleerd.",
+    "Enable if you want Peak to generate favicons. **Important**: you need to have the PHP Imagick module installed.": "Schakel het genereren van favicons in. **Belangrijk**: je moet de PHP Imagick-module hebben ge\u00efnstalleerd.",
     "Enable if you want to specify a specific theme color for dark mode.": "Schakel in als je een specifieke themakleur voor donkere modus wilt configureren.",
     "Enable if you want to specify theme colors for various browsers.": "Schakel in als je specifieke themakleuren voor verschillende browsers wilt configureren.",
     "Enable the Peak Sitemap.": "Schakel de Peak sitemap in.",
