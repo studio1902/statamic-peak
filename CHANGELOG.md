@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.3.0 (2025-01-07)
+
+### What's new
+-  Use pixels as breakpoint values to prevent fluid typography scaling our breakpoints on larger screens. 4885f4ae by @robdekort
+
 ## v20.2.0 (2025-01-06)
 
 ### What's new
