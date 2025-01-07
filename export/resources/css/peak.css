@@ -32,6 +32,13 @@
     /* Transitions */
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 300ms;
+
+    /* Use pixels to prevent fluid typography scaling our breakpoints on larger screens. */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
 }
 
 @layer base {
