@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.4.1 (2025-01-16)
+
+### What's changed
+- Revert Tailwind Typography `prose-invert` configuration. d8cd3ba2 by @robdekort
+
 ## v20.4.0 (2025-01-16)
 
 ### What's new
