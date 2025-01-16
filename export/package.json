@@ -15,14 +15,14 @@
         "@alpinejs/morph": "^3.14.8",
         "@alpinejs/persist": "^3.14.8",
         "alpinejs": "^3.14.8",
-        "laravel-precognition-alpine": "^0.5.14"
+        "laravel-precognition-alpine": "^0.6.0"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.5.9",
-        "@tailwindcss/typography": "^0.5.15",
-        "@tailwindcss/vite": "^4.0.0-beta.8",
+        "@tailwindcss/forms": "^0.5.10",
+        "@tailwindcss/typography": "^0.5.16",
+        "@tailwindcss/vite": "^4.0.0-beta.9",
         "laravel-vite-plugin": "^1.1.1",
-        "tailwindcss": "^4.0.0-beta.8",
-        "vite": "^6.0.6"
+        "tailwindcss": "^4.0.0-beta.9",
+        "vite": "^6.0.7"
     }
 }
