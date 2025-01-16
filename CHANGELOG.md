@@ -1,5 +1,13 @@
 # Changelog
 
+## v20.4.0 (2025-01-16)
+
+### What's new
+- Generate stack utilities in CSS. b702ef19 by @robdekort
+
+### What's fixed
+- Tailwind Typography `prose-invert` configuration. 2672e516 by @robdekort
+
 ## v20.3.0 (2025-01-07)
 
 ### What's new
