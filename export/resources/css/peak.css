@@ -178,8 +178,26 @@
     }
 }
 
+/* Stack utilities */
+@utility stack-* {
+    > * {
+        --stack-space: calc(var(--spacing) * --value(number));
+    }
+
+    > *:not(.no-space-y, .no-space-b) + *:not(.no-space-y, .no-space-t) {
+        margin-block-start: var(--stack-item-space, var(--stack-space, 4rem))
+    }
+}
+
+@utility stack-space-* {
+    --stack-item-space: calc(var(--spacing) * --value(number));
+
+    &:is([class*="stack-"][class*="stack-space-"] > *) {
+        --stack-item-space: calc(var(--spacing) * --value(number));
+    }
+}
+
 @layer utilities {
-    /* Stack utilities for vertical spacing. */
     .stack-space-inherit {
         --stack-item-space: initial;
         &:is([class*="stack-"][class*="stack-space-"] > *) {
