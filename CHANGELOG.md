@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.5.0 (2025-01-21)
+
+### What's changed
+- Refactor to support multiple skip (to content) links coming from the Tools addon. #416 by @andjsch
+
 ## v20.4.1 (2025-01-16)
 
 ### What's changed
