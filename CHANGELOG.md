@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.5.1 (2025-01-21)
+
+### What's improved
+- Recompile frontend assets. f8f01d25 by @robdekort
+
 ## v20.5.0 (2025-01-21)
 
 ### What's changed
