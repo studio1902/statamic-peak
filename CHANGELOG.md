@@ -1,5 +1,11 @@
 # Changelog
 
+## v20.6.0 (2025-01-23)
+
+### What's improved
+- Use Tailwind v4 production build. df078308 by @robdekort
+- Refresh on *.md changes. 2d78470a by @robdekort
+
 ## v20.5.1 (2025-01-21)
 
 ### What's improved
