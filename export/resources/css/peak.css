@@ -1,5 +1,6 @@
 @source "../../resources/views/**/*";
 @source "../../resources/js/**/*";
+@source "../../content/**/*.md";
 @source "../../vendor/studio1902/**/*";
 
 @config '../js/tailwind.peak.js';
