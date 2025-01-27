@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.6.1 (2025-01-27)
+
+### What's improved
+- Improve accessibility for social icaons. #418 by @ELowry
+
 ## v20.6.0 (2025-01-23)
 
 ### What's improved
