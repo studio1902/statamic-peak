@@ -24,6 +24,10 @@ return [
     'consent_reject_all' => 'Reject all',
     'consent_ads' => 'Werbung & Tracking',
     'consent_ads_explanation' => 'Marketing-Cookies werden verwendet, um Besuchern auf Webseiten zu folgen und ggf. relevante Werbung anzuzeigen.',
+    'consent_ad_user_data' => 'Nutzerdaten',
+    'consent_ad_user_data_explanation' => 'Übermittlung von werbebezogenen Nutzerdaten an Google.',
+    'consent_ad_personalization' => 'Personalisierung von Anzeigen',
+    'consent_ad_personalization_explanation' => 'Personalisierte Werbung erhalten.',
     'consent_analytics' => 'Analyse',
     'consent_analytics_explanation' => 'Analyse-Cookies helfen Webseiten-Besitzern zu verstehen, wie Besucher mit Webseiten interagieren, indem Informationen anonym gesammelt und gemeldet werden.',
     'consent_explanation' => 'Diese Website verwendet Cookies, die Ihre Zustimmung brauchen.',
@@ -36,6 +40,7 @@ return [
     'consent_title' => 'Cookies 🍪',
     'consent_learn_more' => 'Details',
     'consent_change_preferences' => 'Cookie-Einstellungen bearbeiten',
+    'consent_more_info' => 'Mehr Information',
 
     // Footer
     'on' => 'auf',
