@@ -1,9 +1,14 @@
 # Changelog
 
+## v20.6.2 (2025-02-03)
+
+### What's improved
+- German localization. #419 by @carstenjaksch
+
 ## v20.6.1 (2025-01-27)
 
 ### What's improved
-- Improve accessibility for social icaons. #418 by @ELowry
+- Improve accessibility for social icons. #418 by @ELowry
 
 ## v20.6.0 (2025-01-23)
 
