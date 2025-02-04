@@ -45,6 +45,7 @@ return [
     // Other
     'dark_mode_on' => 'Slå på mørk modus',
     'dark_mode_off' => 'Slå av mørk modus',
+    'home' => 'Homepage',
     'no_results' => 'Det er ingen innlegg for augneblinken.',
     'no_script' => 'Denne nettstaden treng Javascript for at alle deler skal fungere korrekt. Opplevinga di kan variere om du ikkje brukar Javascript.',
 

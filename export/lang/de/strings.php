@@ -56,6 +56,7 @@ return [
     'skip_to_content' => 'Zum Inhalt springen',
 
     // Other
+    'home' => 'Homepage',
     'no_results' => 'Momentan sind keine Einträge vorhanden.',
     'no_script' => 'Diese Website funktioniert am besten, wenn JavaScript aktiviert ist.',
 

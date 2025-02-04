@@ -51,6 +51,7 @@ return [
     'skip_to_content' => 'Přejít na obsah',
 
     // Other
+    'home' => 'Homepage',
     'no_results' => 'Momentálně zde nejsou žádné příspěvky',
     'no_script' => 'Tato webová stránka vyžaduje pro správnou funkci některých částí Javascript. Váš uživatelský požitek se může lišit.',
 

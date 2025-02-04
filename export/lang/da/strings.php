@@ -50,6 +50,7 @@ return [
     'skip_to_content' => 'Gå til indhold',
 
     // Other
+    'home' => 'Homepage',
     'no_results' => 'Der er i øjeblikket ingen indlæg.',
     'no_script' => 'Denne hjemmeside kræver Javascript for at nogle dele kan fungere korrekt. Din oplevelse kan variere.',
 

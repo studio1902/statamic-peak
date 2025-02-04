@@ -38,6 +38,7 @@ return [
     'form_subject_received' => 'Contactformulier ontvangen',
     'form_subject_sent' => 'Contactformulier verzonden',
     'form_success' => 'Bedankt voor je bericht.',
+    'home' => 'Startpagina',
     'main_navigation' => 'Hoofdnavigatie',
     'menu' => 'Menu',
     'nav_close' => 'Sluit navigatie',

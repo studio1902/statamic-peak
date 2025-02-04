@@ -51,6 +51,7 @@ return [
     'skip_to_content' => 'Gå direkte til innhold',
 
     // Other
+    'home' => 'Homepage',
     'no_results' => 'Det er ingen innlegg for øyeblikket.',
     'no_script' => 'Dette nettstedet trenger Javascript for at alle deler skal fungere korrekt. Opplevelsen kan variere om du ikke bruker Javascript.',
 
