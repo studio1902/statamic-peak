@@ -5,7 +5,7 @@
 
 <!-- /navigation/_main_desktop.antlers.html -->
 <nav class="hidden md:block" aria-label="{{ trans:strings.main_navigation_desktop }}">
-    <ul class="flex items-center gap-x-8">
+    <ul class="flex flex-wrap items-center gap-x-8">
         {{ nav:main max_depth="2" include_home="true" select="title|url" }}
             {{ unless no_results }}
                 <li
