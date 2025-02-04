@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.7.1 (2025-02-04)
+
+### What's improved
+- German consent banner translations. #420 by @porstendorfer
+
 ## v20.7.0 (2025-02-04)
 
 ### What's new
