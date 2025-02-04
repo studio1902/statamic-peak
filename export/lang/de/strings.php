@@ -21,7 +21,7 @@ return [
     // Cookie banner
     'consent_accept_all' => 'Alle akzeptieren',
     'consent_accept_selected' => 'Ausgewählte akzeptieren',
-    'consent_reject_all' => 'Reject all',
+    'consent_reject_all' => 'Alle ablehnen',
     'consent_ads' => 'Werbung & Tracking',
     'consent_ads_explanation' => 'Marketing-Cookies werden verwendet, um Besuchern auf Webseiten zu folgen und ggf. relevante Werbung anzuzeigen.',
     'consent_ad_user_data' => 'Nutzerdaten',
