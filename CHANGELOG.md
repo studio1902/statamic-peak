@@ -1,5 +1,15 @@
 # Changelog
 
+## v20.7.0 (2025-02-04)
+
+### What's new
+- Add `stack:head` to layout file for an [improvement in the Tools addon](https://github.com/studio1902/statamic-peak-tools/releases/tag/v7.0.0). d6806ef2 by @dave-smyth and @robdekort
+
+### What's improved
+- Logo a11y. d07bf1b6 by @dave-smyth and @robdekort
+- Navigation aria-labels. d9d0ed2b by @dave-smyth and @robdekort
+- Wrap nav items to improve the experience when using text-zoom. 7c67d549 by @dave-smyth and @robdekort
+
 ## v20.6.2 (2025-02-03)
 
 ### What's improved

@@ -44,7 +44,7 @@ export_as:
 dependencies:
   studio1902/statamic-peak-browser-appearance: ^3.4
   studio1902/statamic-peak-seo: ^8.0
-  studio1902/statamic-peak-tools: ^6.0
+  studio1902/statamic-peak-tools: ^7.0
 modules:
   commands:
     prompt: 'Would you like to install the paid Peak Commands addon?'
