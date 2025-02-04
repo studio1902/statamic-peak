@@ -42,7 +42,8 @@ return [
 
     // Navigation
     'close' => 'Lukk',
-    'main_navigation' => 'Hovedmeny',
+    'main_navigation_desktop' => 'Hovedmeny desktop',
+    'main_navigation_mobile' => 'Hovedmeny mobile',
     'menu' => 'Meny',
     'nav_close' => 'Lukk meny',
     'nav_open' => 'Åpne meny',

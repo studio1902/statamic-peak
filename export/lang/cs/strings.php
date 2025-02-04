@@ -42,7 +42,8 @@ return [
 
     // Navigation
     'close' => 'Zavřít',
-    'main_navigation' => 'Hlavní navigace',
+    'main_navigation_desktop' => 'Hlavní navigace desktop',
+    'main_navigation_mobile' => 'Hlavní navigace mobile',
     'menu' => 'Menu',
     'nav_close' => 'Zavřít navigaci',
     'nav_open' => 'Otevřít navigaci',

@@ -48,7 +48,8 @@ return [
 
     // Navigation
     'close' => 'Close',
-    'main_navigation' => 'Main navigation',
+    'main_navigation_desktop' => 'Main navigation desktop',
+    'main_navigation_mobile' => 'Main navigation mobile',
     'menu' => 'Menu',
     'nav_close' => 'Close navigation',
     'nav_open' => 'Open navigation',
