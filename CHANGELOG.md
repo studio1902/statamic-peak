@@ -1,8 +1,8 @@
 # Changelog
 
-## v20.7.2 (2025-02-05)
+## v20.8.0 (2025-02-05)
 
-### What's improved
+### What's new
 - Add `field-sizing: content` to textarea. 303824eb by @robdekort
 
 ## v20.7.1 (2025-02-04)
