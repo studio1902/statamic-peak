@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.8.1 (2025-02-06)
+
+### What's new
+- Fix Tailwind prose/invert configuration. 9fdc1991 by @robdekort
+
 ## v20.8.0 (2025-02-05)
 
 ### What's new
