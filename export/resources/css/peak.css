@@ -96,14 +96,16 @@
         outline-offset: 2px;
     }
 
-    input:not([type="button"]):focus,
-    textarea:focus,
-    select:focus {
-        box-shadow: none;
-        outline-width: var(--focus-form-outline-width, 3px);
-        outline-offset: var(--focus-form-outline-offset, 0);
-        outline-color: var(--focus-form-outline-color, currentColor);
-        outline-style: var(--focus-form-outline-style, solid);
+    input:not([type="button"]),
+    textarea,
+    select {
+        &:focus {
+            box-shadow: none;
+            outline-width: var(--focus-form-outline-width, 3px);
+            outline-offset: var(--focus-form-outline-offset, 0);
+            outline-color: var(--focus-form-outline-color, currentColor);
+            outline-style: var(--focus-form-outline-style, solid);
+        }
     }
 
     mark {
