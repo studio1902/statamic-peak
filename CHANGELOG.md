@@ -1,6 +1,6 @@
 # Changelog
 
-## v20.8.2 (2025-02-10)
+## v20.8.3 (2025-02-10)
 
 ### What's fixed
 - Focus styles for textarea. #421 by @andjsch
