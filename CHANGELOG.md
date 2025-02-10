@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.8.2 (2025-02-10)
+
+### What's improved
+- Re-use notification partial for form error handling. 9b2eee6d by @robdekort
+
 ## v20.8.1 (2025-02-06)
 
 ### What's new
