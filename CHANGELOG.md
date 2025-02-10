@@ -2,6 +2,11 @@
 
 ## v20.8.2 (2025-02-10)
 
+### What's fixed
+- Focus styles for textarea. #421 by @andjsch
+
+## v20.8.2 (2025-02-10)
+
 ### What's improved
 - Re-use notification partial for form error handling. 9b2eee6d by @robdekort
 
