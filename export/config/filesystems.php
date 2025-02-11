@@ -34,6 +34,7 @@ return [
             'root' => storage_path('app/private'),
             'serve' => true,
             'throw' => false,
+            'report' => false,
         ],
 
         'public' => [
@@ -42,6 +43,7 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
+            'report' => false,
         ],
 
         'assets' => [
@@ -50,6 +52,7 @@ return [
             'url' => '/assets',
             'visibility' => 'public',
             'throw' => false,
+            'report' => false,
         ],
 
         'images' => [
@@ -57,6 +60,8 @@ return [
             'root' => public_path('images'),
             'url' => '/images',
             'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
         ],
 
         'favicons' => [
@@ -64,6 +69,8 @@ return [
             'root' => public_path('favicons'),
             'url' => '/favicons',
             'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
         ],
 
         'files' => [
@@ -71,6 +78,8 @@ return [
             'root' => public_path('files'),
             'url' => '/files',
             'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
         ],
 
         'social_images' => [
@@ -78,6 +87,8 @@ return [
             'root' => public_path('social_images'),
             'url' => '/social_images',
             'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
         ],
     ],
 
