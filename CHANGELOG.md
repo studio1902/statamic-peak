@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.8.4 (2025-02-11)
+
+### What's fixed
+- Sync config with `statamic/statamic`. 708ea0d6 by @robdekort
+
 ## v20.8.3 (2025-02-10)
 
 ### What's fixed
