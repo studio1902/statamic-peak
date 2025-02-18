@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.8.5 (2025-02-18)
+
+### What's improved
+- Buttons wrap better on small screens. #422 by @elowry
+
 ## v20.8.4 (2025-02-11)
 
 ### What's fixed
