@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.9.2 (2025-03-04)
+
+### What's improved
+- Improve wording on post install hook. f4db6d36 by @robdekort
+
 ## v20.9.1 (2025-03-04)
 
 ### What's improved
