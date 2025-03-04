@@ -55,6 +55,7 @@ class StarterKitPostInstall
         $this->writeFiles();
         $this->cleanUp();
         $this->starPeakRepo();
+        $this->stopFascism();
         $this->finish();
     }
 
@@ -239,6 +240,33 @@ class StarterKitPostInstall
 
         if (PHP_OS_FAMILY === 'Linux') {
             exec('xdg-open https://github.com/studio1902/statamic-peak');
+        }
+
+        info('Thank you!');
+    }
+
+    protected function stopFascism(): void
+    {
+        if (! confirm(
+                label: 'What are you doing to stop fascism?',
+                default: false,
+                yes: 'Tell me more',
+                no: 'Ignore'
+            )
+        ) {
+            return;
+        }
+
+        if (PHP_OS_FAMILY === 'Darwin') {
+            exec('open https://peak.1902.studio/stop-fascism.html');
+        }
+
+        if (PHP_OS_FAMILY === 'Windows') {
+            exec('start https://peak.1902.studio/stop-fascism.html');
+        }
+
+        if (PHP_OS_FAMILY === 'Linux') {
+            exec('xdg-open https://peak.1902.studio/stop-fascism.html');
         }
 
         info('Thank you!');
