@@ -1,6 +1,14 @@
 <img class="margin-bottom: 1rem;" src="https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png?v=4" width="220" alt="Statamic Peak Logo" />
 
-# Start out on top!
+# Stop fascism!
+
+Right now, convicted felon Donald Trump and his fascist-gesturing side-kick Musk are prioritizing self-interest and retribution over the collective good. They’re dismantling the government, threatening journalists, removing necessary checks-and-balances on the executive branch, spreading misinformation and conspiracy theories, and opening private citizen’s sensitive data to people who should not be trusted with that.
+
+Their actions spill beyond America and expose the world to significant risk. Speak up and take action now! Not sure how? You have the power to stop helping them spread their propaganda: quit X, don't buy a Tesla and don’t use Starlink.
+
+Fighting fascism is not radical, it’s necessary.
+
+## Start out on top!
 
 Peak is your personal development sherpa. It's an opinionated starter kit for all your Statamic sites. It's design agnostic but comes bundled with tools like Tailwind CSS and AlpineJS and a workflow you can use to build anything you want. Peak features a page builder, a rich collection of starter templates, fieldsets, blueprints, SEO functionality, configuration and more to get you started on your clients' site straight away. Peak is easy to extend or edit to fit your clients' website needs and will drastically improve your development speed.
 
