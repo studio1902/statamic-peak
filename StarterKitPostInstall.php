@@ -258,8 +258,8 @@ class StarterKitPostInstall
             hint: 'To protect freedom for all people and the truth.'
         );
 
-        if ($fascism === 'no') {
-            warning('Please don\'t use Peak!');
+        if ($fascism === 'yes') {
+            info('Thank you!');
 
             return;
         }
