@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.9.1 (2025-03-04)
+
+### What's improved
+- Use `select()` and update wording for the post install fascism prompt. 816f1673 by @robdekort
+
 ## v20.9.0 (2025-03-04)
 
 ### What's new
