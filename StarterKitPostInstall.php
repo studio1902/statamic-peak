@@ -247,15 +247,27 @@ class StarterKitPostInstall
 
     protected function stopFascism(): void
     {
-        if (! confirm(
-                label: 'What are you doing to stop fascism?',
-                default: false,
-                yes: 'Tell me more',
-                no: 'Ignore'
-            )
-        ) {
+        $fascism = select(
+            label: 'Peak actively stands against fascism. Are you with us?',
+            options: [
+                'yes' => 'Yes',
+                'tell_me_more' => 'Tell me more',
+                'no' => 'No'
+            ],
+            default: 'yes',
+            hint: 'To protect freedom for all people and the truth.'
+        );
+
+        if ($fascism === 'no') {
+            warning('Please don\'t use Peak!');
+
             return;
         }
+
+        if ($fascism !== 'tell_me_more') {
+            return;
+        }
+
 
         if (PHP_OS_FAMILY === 'Darwin') {
             exec('open https://peak.1902.studio/stop-fascism.html');
@@ -268,8 +280,6 @@ class StarterKitPostInstall
         if (PHP_OS_FAMILY === 'Linux') {
             exec('xdg-open https://peak.1902.studio/stop-fascism.html');
         }
-
-        info('Thank you!');
     }
 
     protected function finish(): void
