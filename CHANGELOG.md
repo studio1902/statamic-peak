@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.9.0 (2025-03-04)
+
+### What's new
+- Stop fascism. 254e484f by @robdekort
+
 ## v20.8.5 (2025-02-18)
 
 ### What's improved
