@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.9.3 (2025-03-10)
+
+### What's fixed
+- Env logic in post install script. 0b017be5 by @robdekort
+
 ## v20.9.2 (2025-03-04)
 
 ### What's improved
