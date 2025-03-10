@@ -49,8 +49,6 @@ class StarterKitPostInstall
         $this->setupComposerUpdateWorkflow();
         $this->installNodeDependencies();
         $this->installTranslations();
-        $this->setLocale();
-        $this->setTimezone();
         $this->runPeakClearSite();
         $this->writeFiles();
         $this->cleanUp();
@@ -88,10 +86,12 @@ class StarterKitPostInstall
         $this->setLicenseKey();
         $this->setAppUrl();
         $this->setAppKey();
-
+        $this->setLocale();
+        $this->setTimezone();
         $this->useDebugbar();
         $this->useImagick();
         $this->setLocalMailer();
+        $this->writeEnv();
 
         info('[✓] `.env` file overwritten.');
     }
@@ -195,11 +195,15 @@ class StarterKitPostInstall
         );
     }
 
+    protected function writeEnv(): void
+    {
+        app('files')->put(base_path('.env'), $this->env);
+    }
+
     protected function writeFiles(): void
     {
         $changelog = app('files')->get(__DIR__.'/CHANGELOG.md');
 
-        app('files')->put(base_path('.env'), $this->env);
         app('files')->put(base_path('CHANGELOG.md'), $changelog);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
