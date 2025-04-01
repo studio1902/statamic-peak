@@ -10,19 +10,19 @@
     "author": "Studio 1902",
     "license": "MIT",
     "dependencies": {
-        "@alpinejs/collapse": "^3.14.8",
-        "@alpinejs/focus": "^3.14.8",
-        "@alpinejs/morph": "^3.14.8",
-        "@alpinejs/persist": "^3.14.8",
-        "alpinejs": "^3.14.8",
-        "laravel-precognition-alpine": "^0.6.1"
+        "@alpinejs/collapse": "^3.14.9",
+        "@alpinejs/focus": "^3.14.9",
+        "@alpinejs/morph": "^3.14.9",
+        "@alpinejs/persist": "^3.14.9",
+        "alpinejs": "^3.14.9",
+        "laravel-precognition-alpine": "^0.7.2"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.16",
-        "@tailwindcss/vite": "^4.0.3",
+        "@tailwindcss/vite": "^4.1.0",
         "laravel-vite-plugin": "^1.2.0",
-        "tailwindcss": "^4.0.3",
-        "vite": "^6.0.11"
+        "tailwindcss": "^4.1.0",
+        "vite": "^6.2.4"
     }
 }
