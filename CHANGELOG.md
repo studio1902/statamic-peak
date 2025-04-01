@@ -1,6 +1,6 @@
 # Changelog
 
-## v20.4.0 (2025-04-01)
+## v20.10.0 (2025-04-01)
 
 ### What's new
 - Use Tailwind v4.1 and Alpine v3.14.9. a73ce676 by @robdekort
