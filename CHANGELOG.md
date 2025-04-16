@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.10.1 (2025-04-01)
+
+### What's improved
+- Update Dutch and English consent banner strings. d00071c2 by @robdekort and @steveparks
+
 ## v20.10.0 (2025-04-01)
 
 ### What's new
