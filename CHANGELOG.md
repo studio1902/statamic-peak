@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.10.2 (2025-04-22)
+
+### What's improved
+- Sync statamic/statamic config into `config/live_preview.php`. b1fe33b7 by @robdekort
+
 ## v20.10.1 (2025-04-01)
 
 ### What's improved
