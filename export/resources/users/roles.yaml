@@ -34,8 +34,8 @@ editor:
     - 'view contact form submissions'
     - 'delete contact form submissions'
     - 'access default site'
-marketeer:
-  title: Marketeer
+marketer:
+  title: Marketer
   permissions:
     - 'access cp'
     - 'edit redirects globals'
