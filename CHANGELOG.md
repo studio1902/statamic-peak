@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.10.3 (2025-04-23)
+
+### What's improved
+- Rename `marketeer` role to `marketer`. c5b3827f by @robdekort
+
 ## v20.10.2 (2025-04-22)
 
 ### What's improved
