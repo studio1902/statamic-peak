@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.11.0 (2025-05-06)
+
+### What's new
+- Install v9 of the Commands Addon on new installations. 0c49cccc by @robdekort
+
 ## v20.10.3 (2025-04-23)
 
 ### What's improved
