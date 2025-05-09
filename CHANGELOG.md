@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.11.1 (2025-05-09)
+
+### What's improved
+- Forge deploy script to prevent errors on deployment #430 by @klickreflex
+
 ## v20.11.0 (2025-05-06)
 
 ### What's new
