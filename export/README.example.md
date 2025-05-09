@@ -172,8 +172,10 @@ $FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader --n
 npm ci
 npm run build
 
+# Prevents multiple deployments from restarting PHP-FPM simultaneously
+touch /tmp/fpmlock 2>/dev/null || true
 ( flock -w 10 9 || exit 1
-    echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9>/tmp/fpmlock
+    echo 'Restarting FPM...'; sudo -S service $FORGE_PHP_FPM reload ) 9</tmp/fpmlock
 
 $FORGE_PHP artisan cache:clear
 $FORGE_PHP artisan config:cache
