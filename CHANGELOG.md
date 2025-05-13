@@ -1,5 +1,11 @@
 # Changelog
 
+## v20.11.2 (2025-05-13)
+
+### What's improved
+- Use color-mix and custom property for form config in peak.css. 97d17aa2 by @robdekort
+- Update dependencies and recompile assets. 255aa39e by @robdekort
+
 ## v20.11.1 (2025-05-09)
 
 ### What's improved
