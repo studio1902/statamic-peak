@@ -80,7 +80,7 @@
         --focus-outline-style: dotted;
         --focus-form-outline-width: 3px;
         --focus-form-outline-offset: 0;
-        --focus-form-outline-color: theme(--color-primary / 50%);
+        --focus-form-outline-color: color-mix(in oklab, var(--color-primary)50%, transparent);
         --focus-form-outline-style: solid;
     }
 
