@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.11.3 (2025-05-29)
+
+### What's improved
+- Updated German translations. #431 by @eugene-karuna
+
 ## v20.11.2 (2025-05-13)
 
 ### What's improved
