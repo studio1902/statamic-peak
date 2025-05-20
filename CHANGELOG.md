@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### What's improved
+- Update path in IDE helper in default layout. #432 by @jelleroorda
+
 ## v20.11.3 (2025-05-29)
 
 ### What's improved
