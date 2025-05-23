@@ -1,9 +1,10 @@
 # Changelog
 
-## Unreleased
+## v20.11.4 (2025-05-29)
 
 ### What's improved
 - Update path in IDE helper in default layout. #432 by @jelleroorda
+- Sync config changes from `statamic/statamic`. 5a02f2d1 by @robdekort
 
 ## v20.11.3 (2025-05-29)
 
