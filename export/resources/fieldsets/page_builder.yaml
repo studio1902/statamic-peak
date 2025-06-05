@@ -11,6 +11,18 @@ fields:
       display: 'Page builder'
       button_label: 'Add block'
       sets:
+        image_and_text:
+          display: 'Image and text'
+          instructions: 'Image and text based blocks.'
+          icon: text-formatting-initial-letter
+          sets:
+            article:
+              display: Article
+              instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
+              icon: text-formatting-image-bottom
+              fields:
+                -
+                  import: article
         interactive:
           display: Interactive
           instructions: 'Interactive blocks.'
@@ -30,15 +42,3 @@ fields:
               fields:
                 -
                   import: cards
-        text:
-          display: Text
-          instructions: 'Text based blocks.'
-          icon: text-formatting-initial-letter
-          sets:
-            article:
-              display: Article
-              instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
-              icon: text-formatting-image-bottom
-              fields:
-                -
-                  import: article
