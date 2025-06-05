@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.11.5 (2025-06-30)
+
+### What's improved
+- Use `ul` for cards block. b330ec11 by @robdekort
+
 ## v20.11.4 (2025-05-29)
 
 ### What's improved
