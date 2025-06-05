@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.11.6 (2025-06-30)
+
+### What's changed
+- Default to an image and text folder in the page builder. c1ced913 by @robdekort
+
 ## v20.11.5 (2025-06-30)
 
 ### What's improved
