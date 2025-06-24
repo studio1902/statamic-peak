@@ -62,7 +62,7 @@ fields:
                 -
                   import: table
         image_video:
-          display: 'Image & video'
+          display: 'Image and video'
           instructions: "Sets with images or embeddable video's."
           icon: media-image-camera
           sets:
