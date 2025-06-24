@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.11.7 (2025-06-24)
+
+### What's improved
+- Remove ampersand from article set group. 2f6056be by @robdekort
+
 ## v20.11.6 (2025-05-30)
 
 ### What's changed
