@@ -88,7 +88,7 @@ fields:
       always_save: false
       previews: true
       antlers: false
-      remove_empty_nodes: trim
+      remove_empty_nodes: true
       collapse: false
       smart_typography: true
       inline: false

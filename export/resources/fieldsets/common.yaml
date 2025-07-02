@@ -58,7 +58,7 @@ fields:
       enable_input_rules: true
       enable_paste_rules: true
       antlers: false
-      remove_empty_nodes: trim
+      remove_empty_nodes: true
       collapse: false
       smart_typography: true
       inline: false
@@ -94,7 +94,7 @@ fields:
       enable_input_rules: true
       enable_paste_rules: true
       antlers: false
-      remove_empty_nodes: trim
+      remove_empty_nodes: true
       collapse: false
       smart_typography: true
       inline: false
