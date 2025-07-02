@@ -1,5 +1,11 @@
 # Changelog
 
+## v20.11.8 (2025-07-02)
+
+### What's improved
+- Remove empty nodes in Bards by default. 3b74ea23 by @robdekort
+- Remove echo in post install. 8815e6f9 by @robdekort
+
 ## v20.11.7 (2025-06-24)
 
 ### What's improved
