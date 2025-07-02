@@ -394,7 +394,6 @@ class StarterKitPostInstall
 
         if ($localMailer === 'log') {
             $this->replaceInEnv('MAIL_MAILER=smtp', 'MAIL_MAILER=log');
-            echo 'log';
         }
     }
 
