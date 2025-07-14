@@ -2,7 +2,7 @@
 
 ## v20.12.0 (2025-07-14)
 
-### What's improved
+### What's new
 - Vite 7. 8d748289 by @robdekort
 
 ## v20.11.8 (2025-07-02)
