@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.12.0 (2025-07-14)
+
+### What's improved
+- Vite 7. 8d748289 by @robdekort
+
 ## v20.11.8 (2025-07-02)
 
 ### What's improved
@@ -802,8 +807,6 @@ Update the Statamic CLI using `composer global update statamic/cli`.
 ### What's improved
 - Updated German translations. #334 by @ymarkus
 
-# Changelog
-
 ## v14.1 (2023-08-07)
 
 ### What's new
@@ -1014,8 +1017,6 @@ Update the Statamic CLI using `composer global update statamic/cli`.
 ### What's improved
 - Use `fit` is `max` on default asset replacement configuration. daf3fa7a by @robdekort
 
-# Changelog
-
 ## v9.0 (2023-02-07)
 
 ### What's new
@@ -1077,8 +1078,6 @@ Update the Statamic CLI using `composer global update statamic/cli`.
 
 ### What's new
 - Use `font-smoothing: antialiased` by default. 43a8f04e by @robdekort
-
-# Changelog
 
 ## v8.9 (2023-01-11)
 
