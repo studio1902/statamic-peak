@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.13.0 (2025-07-17)
+
+### What's new
+- Recompile assets for Statamic Peak Tools v7.3.2. ab377695 by @robdekort
+
 ## v20.12.0 (2025-07-14)
 
 ### What's new
