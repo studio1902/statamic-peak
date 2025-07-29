@@ -30,10 +30,22 @@
                         {{ /partial:components/notification }}
                     </template>
 
-                    {{# Success notifications. #}}
                     <template x-if="success">
-                        {{ partial:components/notification type="success" class="md:col-span-12" content="{trans:strings.form_success}" }}
+                        {{ partial:components/notification type="success" content="{trans:strings.form_success}" }}
                     </template>
+
+                    {{# Polite live notifications for screen readers only. #}}
+                    <ul aria-live="polite" class="sr-only">
+                        <template x-if="success">
+                            <li>{{ trans:strings.form_success }}</li>
+                        </template>
+
+                        <template x-if="form.errors && !submitted">
+                            <template x-for="error in form.errors">
+                                <li x-text="error"></li>
+                            </template>
+                        </template>
+                    </ul>
 
                     {{# Honeypot spam protection. #}}
                     <div class="hidden">
