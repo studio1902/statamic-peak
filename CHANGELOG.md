@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.14.0 (2025-07-29)
+
+### What's new
+- Add aria-live polite notifications to forms. 967ed463 by @robdekort
+
 ## v20.13.0 (2025-07-17)
 
 ### What's new
