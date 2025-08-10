@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.14.2 (2025-08-10)
+
+### What's fixed
+- Temporarily remove cleanUpComposerPackages from post install script to prevent an installation error. efc05069 by @robdekort
+
 ## v20.14.1 (2025-08-05)
 
 ### What's improved
