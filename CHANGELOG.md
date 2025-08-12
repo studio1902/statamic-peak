@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.14.3 (2025-08-12)
+
+### What's improved
+- Fully remove composer cleanup logic from post install script. #440 by @marcorieser
+
 ## v20.14.2 (2025-08-10)
 
 ### What's fixed
