@@ -1,4 +1,5 @@
 export_paths:
+  - README.md
   - .env.example
   - .gitignore
   - app/Console/Commands/PostInstall/CollectAvailableLangLocales.php
@@ -39,15 +40,13 @@ export_paths:
   - package.json
   - package-lock.json
   - vite.config.js
-export_as:
-  README.md: README.example.md
 dependencies:
-  studio1902/statamic-peak-browser-appearance: ^3.4
-  studio1902/statamic-peak-seo: ^8.0
-  studio1902/statamic-peak-tools: ^7.0
+  studio1902/statamic-peak-browser-appearance: dev-statamic-6
+  studio1902/statamic-peak-seo: dev-statamic-6
+  studio1902/statamic-peak-tools: dev-statamic-6
 modules:
   commands:
     prompt: 'Would you like to install the paid Peak Commands addon?'
     default: true
     dependencies:
-      studio1902/statamic-peak-commands: ^9.0
+      studio1902/statamic-peak-commands: dev-statamic-6
