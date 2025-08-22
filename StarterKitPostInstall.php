@@ -87,7 +87,6 @@ class StarterKitPostInstall
         $this->setAppUrl();
         $this->setAppKey();
         $this->setLocale();
-        $this->setTimezone();
         $this->useDebugbar();
         $this->useImagick();
         $this->setLocalMailer();
@@ -140,34 +139,6 @@ class StarterKitPostInstall
         }
 
         $this->selectLanguagesToInstall();
-    }
-
-    protected function setTimezone(): void
-    {
-        if (! $this->interactive || DIRECTORY_SEPARATOR === '\\') {
-            return;
-        }
-
-        $newTimezone = search(
-            label: 'What timezone should your app be in?',
-            options: function (string $value) {
-                if (! $value) {
-                    return timezone_identifiers_list(DateTimeZone::ALL, null);
-                }
-
-                return collect(timezone_identifiers_list(DateTimeZone::ALL, null))
-                    ->filter(fn (string $item) => Str::contains($item, $value, true))
-                    ->values()
-                    ->all();
-            },
-            placeholder: 'UTC',
-            required: true,
-        );
-
-        $currentTimezone = config('app.timezone');
-
-        $this->replaceInEnv("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
-        $this->replaceInReadme("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
     }
 
     protected function setLocale(): void
