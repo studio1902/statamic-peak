@@ -64,7 +64,7 @@
                             {{ /if }}
 
                             {{# Render the default-styled fields. #}}
-                            {{ fields scope="field" }}
+                            {{ %form:fields scope="field" }}
                                 <template x-if="{{ show_field }}">
                                     <div class="
                                         flex flex-col stack-1
@@ -109,7 +109,7 @@
                                         </div>
                                     </div>
                                 </template>
-                            {{ /fields }}
+                            {{ /%form:fields }}
                         </fieldset>
                     {{ /sections }}
 
