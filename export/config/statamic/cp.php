@@ -1,5 +1,7 @@
 <?php
 
+use Statamic\CP\Color;
+
 return [
 
     /*
@@ -14,6 +16,18 @@ return [
     'enabled' => env('CP_ENABLED', true),
 
     'route' => env('CP_ROUTE', 'cp'),
+
+    'theme' => [
+        'primary' => Color::Blue[600],
+        'grays' => Color::Slate,
+        'body-bg' => Color::Slate[100],
+        'content-border' => Color::Slate[200],
+        'progress-bar' => Color::Purple[400],
+        'switch-bg' => Color::Green[600],
+        'dark-switch-bg' => Color::Green[600],
+        'ui-accent' => Color::Blue[600],
+        'dark-ui-accent' => Color::Blue[600],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -120,18 +134,6 @@ return [
     */
 
     'support_url' => env('STATAMIC_SUPPORT_URL', 'https://statamic.com/support'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Login Theme
-    |--------------------------------------------------------------------------
-    |
-    | Optionally spice up the login and other outside-the-control-panel
-    | screens. You may choose between "rad" or "business" themes.
-    |
-    */
-
-    'theme' => env('STATAMIC_THEME', 'rad'),
 
     /*
     |--------------------------------------------------------------------------
