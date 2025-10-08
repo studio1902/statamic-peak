@@ -82,6 +82,15 @@ return [
             'report' => false,
         ],
 
+        'page_builder' => [
+            'driver' => 'local',
+            'root' => public_path('page_builder'),
+            'url' => '/page_builder',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         'social_images' => [
             'driver' => 'local',
             'root' => public_path('social_images'),

@@ -222,4 +222,20 @@ return [
 
     'svg_sanitization_on_upload' => true,
 
+     /*
+    |--------------------------------------------------------------------------
+    | Replicator and Bard Set Preview Images
+    |--------------------------------------------------------------------------
+    |
+    | Replicator and Bard sets may have preview images to give users a visual
+    | representation of the content within. Here you may specify the asset
+    | container and folder where these preview images are to be stored.
+    |
+    */
+
+    'set_preview_images' => [
+        'container' => 'page_builder',
+        'folder' => null,
+    ],
+
 ];

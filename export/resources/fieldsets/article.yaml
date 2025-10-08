@@ -14,21 +14,18 @@ fields:
         - quote
         - removeformat
         - anchor
-      save_html: false
-      toolbar_mode: fixed
-      link_noopener: false
-      link_noreferrer: false
-      target_blank: false
       reading_time: true
-      fullscreen: true
       allow_source: true
       type: bard
       localizable: true
-      listable: hidden
       display: Article
       replicator_preview: false
       validate:
         - required
+      container: files
+      always_save: false
+      remove_empty_nodes: true
+      smart_typography: true
       sets:
         interactive:
           display: Interactive
@@ -39,6 +36,7 @@ fields:
               display: Buttons
               instructions: 'Add one or multiple buttons.'
               icon: link
+              image: buttons.jpeg
               fields:
                 -
                   import: buttons
@@ -51,13 +49,15 @@ fields:
               display: 'Pull quote'
               instructions: 'Add a pull quote with an optional author.'
               icon: text-formatting-quotation
+              image: pull-quote.jpeg
               fields:
                 -
                   import: pull_quote
             table:
               display: Table
               instructions: 'Add a data table with headers, rows and columns.'
-              icon: layout-grid-dots
+              icon: add-table
+              image: table.jpeg
               fields:
                 -
                   import: table
@@ -69,27 +69,16 @@ fields:
             image:
               display: Image
               instructions: 'Add a single image with an optional caption.'
-              icon: media-image-picture-orientation
+              icon: hero-image-above-text
+              image: image.jpeg
               fields:
                 -
                   import: image
             video:
               display: Video
               instructions: 'Add a YouTube or Vimeo video with an optional caption.'
-              icon: media-webcam-video
+              icon: movie-video-clip
+              image: video.jpeg
               fields:
                 -
                   import: video
-      container: files
-      enable_input_rules: true
-      enable_paste_rules: true
-      instructions_position: above
-      visibility: visible
-      always_save: false
-      previews: true
-      antlers: false
-      remove_empty_nodes: true
-      collapse: false
-      smart_typography: true
-      inline: false
-      hide_display: false

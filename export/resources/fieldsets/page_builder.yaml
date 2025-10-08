@@ -20,6 +20,7 @@ fields:
               display: Article
               instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
               icon: text-formatting-image-bottom
+              image: article.jpeg
               fields:
                 -
                   import: article
@@ -32,6 +33,7 @@ fields:
               display: Form
               instructions: 'Select and render a form.'
               icon: mail-chat-bubble-text
+              image: form.jpeg
               fields:
                 -
                   import: form
@@ -39,6 +41,7 @@ fields:
               display: Cards
               instructions: 'Show linkable cards with text.'
               icon: link
+              image: cards.jpeg
               fields:
                 -
                   import: cards
