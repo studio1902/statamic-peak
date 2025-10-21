@@ -103,6 +103,7 @@ return [
         public_path('images'),
         public_path('favicons'),
         public_path('files'),
+        public_path('page_builder'),
         public_path('social_images'),
     ],
 
