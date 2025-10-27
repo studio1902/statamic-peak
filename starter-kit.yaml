@@ -16,6 +16,8 @@ export_paths:
   - config/statamic/live_preview.php
   - config/statamic/search.php
   - config/statamic/static_caching.php
+  - config/statamic/users.php
+  - config/statamic/webauthn.php
   - lang/
   - public/robots.txt
   - public/build
