@@ -1,5 +1,10 @@
 # Changelog
 
+## v20.14.4 (2025-11-04)
+
+### What's fixed
+- Fix commands in installation instructions. #446 by @andjsch
+
 ## v20.14.3 (2025-08-12)
 
 ### What's improved
