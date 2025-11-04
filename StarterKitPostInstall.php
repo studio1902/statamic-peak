@@ -291,7 +291,7 @@ class StarterKitPostInstall
             return;
         }
 
-        info("Thank you for install the Peak Commands addon.\n* Run `php please peak:install-preset` to install premade sets onto your website.\n* Run `php please peak:install-block` to install premade blocks onto your page builder.\n* Learn about more commands here: https://peak.1902.studio/getting-started/commands.html");
+        info("Thank you for install the Peak Commands addon.\n* Run `php please peak:install:preset` to install premade sets onto your website.\n* Run `php please peak:install:block` to install premade blocks onto your page builder.\n* Learn about more commands here: https://peak.1902.studio/getting-started/commands.html");
         warning("You need a valid license to use these commands.\nBuy one here: https://statamic.com/addons/studio1902/peak-commands");
     }
 
