@@ -20,6 +20,7 @@ return [
     'theme' => [
         'primary' => Color::Blue[600],
         'grays' => Color::Slate,
+        'dark-grays' => Color::Zinc,
         'success' => Color::Green[400],
         'danger' => Color::Red[600],
         'body-bg' => Color::White,
