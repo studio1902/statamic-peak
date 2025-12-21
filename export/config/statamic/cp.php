@@ -17,27 +17,6 @@ return [
 
     'route' => env('CP_ROUTE', 'cp'),
 
-    'theme' => [
-        'primary' => Color::Blue[600],
-        'grays' => Color::Slate,
-        'dark-grays' => Color::Zinc,
-        'success' => Color::Green[400],
-        'danger' => Color::Red[600],
-        'body-bg' => Color::White,
-        'body-border' => Color::Transparent,
-        'dark-body-bg' => Color::Zinc[900],
-        'dark-body-border' => Color::Zinc[950],
-        'content-bg' => Color::Slate[50],
-        'content-border' => Color::Zinc[200],
-        'dark-content-bg' => Color::Zinc[900],
-        'dark-content-border' => Color::Zinc[950],
-        'progress-bar' => Color::Volt,
-        'ui-accent' => Color::Blue[600],
-        'dark-ui-accent' => Color::Blue[600],
-        'switch-bg' => Color::Green[600],
-        'dark-switch-bg' => Color::Green[600],
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | Authentication
