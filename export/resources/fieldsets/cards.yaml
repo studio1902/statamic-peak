@@ -23,6 +23,7 @@ fields:
           sets:
             card:
               display: Card
+              image: null
               fields:
                 -
                   handle: title
@@ -41,4 +42,4 @@ fields:
                   field: buttons.buttons
                   config:
                     display: Button
-                    max_rows: 1
+                    max_sets: 1

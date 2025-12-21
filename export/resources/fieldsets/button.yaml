@@ -18,6 +18,7 @@ fields:
       mode: toggle
       display: 'Show controls'
       type: revealer
+      replicator_preview: false
       icon: revealer
       width: 33
       listable: hidden
@@ -38,23 +39,11 @@ fields:
       listable: false
       display: 'Link type'
       replicator_preview: false
-      width: 66
       if:
         show_controls: 'equals true'
       instructions_position: above
       visibility: visible
       always_save: false
-  -
-    handle: target_blank
-    field:
-      type: toggle
-      localizable: true
-      width: 33
-      listable: false
-      display: 'Open in new window'
-      replicator_preview: false
-      if:
-        show_controls: 'equals true'
   -
     handle: entry
     field:
@@ -158,6 +147,18 @@ fields:
       default: button
       listable: false
       display: 'Button type'
+      replicator_preview: false
+      width: 50
+      if:
+        show_controls: 'equals true'
+  -
+    handle: target_blank
+    field:
+      type: toggle
+      localizable: true
+      width: 50
+      listable: false
+      display: 'Open in new window'
       replicator_preview: false
       if:
         show_controls: 'equals true'

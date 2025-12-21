@@ -3,18 +3,20 @@ fields:
   -
     handle: buttons
     field:
-      fields:
-        -
-          import: button
-      mode: stacked
-      add_row: 'Add button'
-      reorderable: true
-      type: grid
-      localizable: true
-      listable: hidden
-      display: Buttons
-      replicator_preview: false
-      instructions_position: above
-      visibility: visible
+      collapse: accordion
       fullscreen: false
-      hide_display: false
+      replicator_preview: false
+      button_label: 'Add button'
+      type: replicator
+      display: Buttons
+      actions: false
+      sets:
+        button:
+          display: Button
+          sets:
+            button:
+              display: Button
+              image: null
+              fields:
+                -
+                  import: button

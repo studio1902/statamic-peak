@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: Home
-updated_by: ceaa75bd-bc37-4a8b-b0f2-b7af70e58b0e
-updated_at: 1693487994
+updated_by: a99e8a21-e22f-4cce-952c-fa814934906a
+updated_at: 1766320586
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -60,12 +60,14 @@ page_builder:
         enabled: true
         button:
           -
-            id: llz6sh4t
+            id: mjfpm5hn
             label: 'Send a form'
             link_type: entry
             target_blank: false
             entry: 5c526dbf-9dd7-4c52-98d8-54e00ebddfb6
             button_type: inline
+            type: button
+            enabled: true
       -
         id: lly5mxh7
         title: 'Long form content'
@@ -79,12 +81,14 @@ page_builder:
         enabled: true
         button:
           -
-            id: llz6svox
+            id: mjfpmvyk
             label: 'Read an article'
             link_type: entry
             target_blank: false
             entry: 20f6a148-63b8-47a8-9b0e-d57095d78c21
             button_type: inline
+            type: button
+            enabled: true
       -
         id: lly5nvk4
         title: 'Way more features'
@@ -98,10 +102,12 @@ page_builder:
         enabled: true
         button:
           -
-            id: llz6t5ao
+            id: mjfpnhej
             label: 'Read the docs'
             link_type: url
             target_blank: true
             url: 'https://peak.1902.studio'
             button_type: inline
+            type: button
+            enabled: true
 ---
