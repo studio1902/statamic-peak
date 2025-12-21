@@ -19,7 +19,8 @@ tabs:
                   sets:
                     email:
                       display: Email
-                      icon: social-mail-send-email-message
+                      icon: mail
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -35,7 +36,8 @@ tabs:
                             default: 'mailto:'
                     facebook:
                       display: Facebook
-                      icon: social-facebook
+                      icon: social-facebook-logo
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -52,7 +54,8 @@ tabs:
                             default: 'https://www.facebook.com/'
                     github:
                       display: GitHub
-                      icon: social-github
+                      icon: social-github-logo
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -69,7 +72,8 @@ tabs:
                             default: 'https://www.github.com/'
                     instagram:
                       display: Instagram
-                      icon: social-instagram
+                      icon: social-instagram-logo
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -86,7 +90,8 @@ tabs:
                             default: 'https://www.instagram.com/'
                     linkedin:
                       display: LinkedIn
-                      icon: social-linkedin
+                      icon: social-linkedin-logo
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -103,7 +108,8 @@ tabs:
                             default: 'https://www.linkedin.com/'
                     mastodon:
                       display: Mastodon
-                      icon: social-mastodon
+                      icon: social-mastodon-logo
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -114,7 +120,8 @@ tabs:
                             validate: required
                     pinterest:
                       display: Pinterest
-                      icon: social-pinterest
+                      icon: social-pinterest-logo
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -131,7 +138,8 @@ tabs:
                             default: 'https://www.pinterest.com/'
                     vimeo:
                       display: Vimeo
-                      icon: social-vimeo
+                      icon: social-vimeo-logo-1
+                      image: null
                       fields:
                         -
                           handle: handle
@@ -148,7 +156,8 @@ tabs:
                             default: 'https://www.vimeo.com/'
                     youtube:
                       display: YouTube
-                      icon: social-youtube
+                      icon: social-youtube-logo
+                      image: null
                       fields:
                         -
                           handle: handle
