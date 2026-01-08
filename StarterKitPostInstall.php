@@ -13,7 +13,6 @@ use Symfony\Component\Yaml\Yaml;
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\error;
 use function Laravel\Prompts\info;
-use function Laravel\Prompts\search;
 use function Laravel\Prompts\select;
 use function Laravel\Prompts\spin;
 use function Laravel\Prompts\suggest;
@@ -26,11 +25,13 @@ class StarterKitPostInstall
         CollectAvailableLangLocales::class,
     ];
 
+    protected string $app = '';
+
+    protected string $contact = '';
+
     protected string $env = '';
 
     protected string $readme = '';
-
-    protected string $app = '';
 
     protected string $sites = '';
 
@@ -73,6 +74,7 @@ class StarterKitPostInstall
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
         $this->app = app('files')->get(base_path('config/app.php'));
+        $this->contact = app('files')->get(base_path('resources/forms/contact.yaml'));
         $this->sites = app('files')->get(base_path('resources/sites.yaml'));
     }
 
@@ -87,6 +89,7 @@ class StarterKitPostInstall
         $this->setAppUrl();
         $this->setAppKey();
         $this->setLocale();
+        $this->setMailFromAddress();
         $this->useDebugbar();
         $this->useImagick();
         $this->setLocalMailer();
@@ -153,6 +156,17 @@ class StarterKitPostInstall
         $this->replaceInSites("locale: en_US", "locale: $locale");
     }
 
+    protected function setMailFromAddress(): void
+    {
+        $email = text(
+            label: 'What email should be the mail from address?',
+            placeholder: 'hello@example.com',
+            required: true,
+        );
+
+        $this->replaceInEnv('MAIL_FROM_ADDRESS="hello@example.com"', "MAIL_FROM_ADDRESS=\"{$email}\"");
+    }
+
     protected function runPeakClearSite(): void
     {
         if (! $this->interactive || ! Process::isTtySupported() || ! Composer::isInstalled('studio1902/statamic-peak-commands')) {
@@ -178,6 +192,7 @@ class StarterKitPostInstall
         app('files')->put(base_path('CHANGELOG.md'), $changelog);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
+        app('files')->put(base_path('resources/forms/contact.yaml'), $this->contact);
         app('files')->put(base_path('resources/sites.yaml'), $this->sites);
     }
 
@@ -546,6 +561,11 @@ class StarterKitPostInstall
     protected function replaceInSites(string $search, string $replace): void
     {
         $this->sites = str_replace($search, $replace, $this->sites);
+    }
+
+    protected function replaceInContact(string $search, string $replace): void
+    {
+        $this->contact = str_replace($search, $replace, $this->contact);
     }
 
     protected function replaceInEnv(string $search, string $replace): void
