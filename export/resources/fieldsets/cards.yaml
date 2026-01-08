@@ -5,7 +5,7 @@ fields:
     field:
       type: text
       localizable: true
-      display: Title
+      display: Heading
   -
     handle: cards
     field:
@@ -31,7 +31,7 @@ fields:
                     type: text
                     localizable: true
                     validate: required
-                    display: Title
+                    display: Heading
                 -
                   handle: text
                   field: common.text_plain
