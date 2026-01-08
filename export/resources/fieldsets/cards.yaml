@@ -1,7 +1,7 @@
 title: Cards
 fields:
   -
-    handle: title
+    handle: heading
     field:
       type: text
       localizable: true
@@ -26,7 +26,7 @@ fields:
               image: null
               fields:
                 -
-                  handle: title
+                  handle: heading
                   field:
                     type: text
                     localizable: true

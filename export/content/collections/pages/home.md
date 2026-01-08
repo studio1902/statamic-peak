@@ -43,13 +43,13 @@ page_builder:
     enabled: true
   -
     id: eFlcYHyl
-    title: Features
+    heading: Features
     type: cards
     enabled: true
     cards:
       -
         id: lly5m22j
-        title: 'Check out a form'
+        heading: 'Check out a form'
         text: "Peak renders forms and mail templates dynamically so you can add as many forms as you'd like, just by creating them in the CP. Peak ships with a default basic contact form you can edit."
         label: 'Send a form'
         link_type: entry
@@ -70,7 +70,7 @@ page_builder:
             enabled: true
       -
         id: lly5mxh7
-        title: 'Long form content'
+        heading: 'Long form content'
         text: 'For long form content you can use the Article content block. This is a Bard fieldtypeopen in new window with multiple sets of fields that are regularly used in longer articles.'
         label: 'Read an article'
         link_type: entry
@@ -91,7 +91,7 @@ page_builder:
             enabled: true
       -
         id: lly5nvk4
-        title: 'Way more features'
+        heading: 'Way more features'
         text: 'Professional SEO, social image generation, responsive assets, appearance globals, favicons generation, search templates, dark mode support with toggle, pagination template, search and additional bottles of oxygen.'
         label: 'Climb the docs'
         link_type: url
