@@ -27,6 +27,7 @@ export_paths:
   - public/visuals
   - resources/sites.yaml
   - resources/blueprints
+  - resources/css/buttons.css
   - resources/css/peak.css
   - resources/css/site.css
   - resources/css/typography.css
