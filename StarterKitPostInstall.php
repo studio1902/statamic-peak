@@ -161,7 +161,7 @@ class StarterKitPostInstall
         $email = text(
             label: 'What email should be the mail from address?',
             placeholder: 'hello@example.com',
-            required: true,
+            default: 'hello@example.com',
         );
 
         $this->replaceInEnv('MAIL_FROM_ADDRESS="hello@example.com"', "MAIL_FROM_ADDRESS=\"{$email}\"");
