@@ -27,6 +27,8 @@ class StarterKitPostInstall
 
     protected string $app = '';
 
+    protected string $system = '';
+
     protected string $contact = '';
 
     protected string $env = '';
@@ -74,6 +76,7 @@ class StarterKitPostInstall
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
         $this->app = app('files')->get(base_path('config/app.php'));
+        $this->system = app('files')->get(base_path('config/system.php'));
         $this->contact = app('files')->get(base_path('resources/forms/contact.yaml'));
         $this->sites = app('files')->get(base_path('resources/sites.yaml'));
     }
@@ -89,6 +92,7 @@ class StarterKitPostInstall
         $this->setAppUrl();
         $this->setAppKey();
         $this->setLocale();
+        $this->setDisplayTimezone();
         $this->setMailFromAddress();
         $this->useDebugbar();
         $this->useImagick();
@@ -144,6 +148,34 @@ class StarterKitPostInstall
         $this->selectLanguagesToInstall();
     }
 
+    protected function setDisplayTimezone(): void
+    {
+        if (! $this->interactive || DIRECTORY_SEPARATOR === '\\') {
+            return;
+        }
+
+        $newDisplayTimezone = search(
+            label: 'What timezone should your app be displayed in?',
+            options: function (string $value) {
+                if (! $value) {
+                    return timezone_identifiers_list(DateTimeZone::ALL, null);
+                }
+
+                return collect(timezone_identifiers_list(DateTimeZone::ALL, null))
+                    ->filter(fn (string $item) => Str::contains($item, $value, true))
+                    ->values()
+                    ->all();
+            },
+            placeholder: 'UTC',
+            required: true,
+        );
+
+        $currentDisplayTimezone = config('app.display_timezone');
+
+        $this->replaceInSystem("display_timezone=\"$currentDisplayTimezone\"", "display_timezone=\"$newDisplayTimezone\"");
+    }
+
+
     protected function setLocale(): void
     {
         $locale = text(
@@ -192,6 +224,7 @@ class StarterKitPostInstall
         app('files')->put(base_path('CHANGELOG.md'), $changelog);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
+        app('files')->put(base_path('config/system.php'), $this->system);
         app('files')->put(base_path('resources/forms/contact.yaml'), $this->contact);
         app('files')->put(base_path('resources/sites.yaml'), $this->sites);
     }
@@ -571,6 +604,11 @@ class StarterKitPostInstall
     protected function replaceInEnv(string $search, string $replace): void
     {
         $this->env = str_replace($search, $replace, $this->env);
+    }
+
+    protected function replaceInSystem(string $search, string $replace): void
+    {
+        $this->system = str_replace($search, $replace, $this->system);
     }
 
     protected function replaceInReadme(string $search, string $replace): void
