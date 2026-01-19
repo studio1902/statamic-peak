@@ -14,7 +14,7 @@ fields:
         image_and_text:
           display: 'Image and text'
           instructions: 'Image and text based blocks.'
-          icon: text-formatting-initial-letter
+          icon: hero-image-above-text
           sets:
             article:
               display: Article
