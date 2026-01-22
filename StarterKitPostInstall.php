@@ -170,7 +170,7 @@ class StarterKitPostInstall
             required: true,
         );
 
-        $currentDisplayTimezone = config('app.display_timezone');
+        $currentDisplayTimezone = config('statamic.system.display_timezone');
 
         $this->replaceInSystem("display_timezone=\"$currentDisplayTimezone\"", "display_timezone=\"$newDisplayTimezone\"");
     }
