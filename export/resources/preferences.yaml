@@ -30,6 +30,7 @@ theme:
     switch-bg: 'oklch(0.627 0.194 149.214)'
     content-bg: 'oklch(0.984 0.003 247.858)'
     progress-bar: 'oklch(93.86% 0.2018 122.24)'
+    ui-accent-bg: 'oklch(0.546 0.245 262.881)'
     dark-gray-50: 'oklch(0.985 0 0)'
     dark-gray-100: 'oklch(0.967 0.001 286.375)'
     dark-gray-150: 'oklch(0.956 0.0022 286.32)'
