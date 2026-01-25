@@ -22,7 +22,7 @@ export_paths:
   - public/images
   - public/favicons/.gitkeep
   - public/files/.gitkeep
-  - public/page_builder/.gitkeep
+  - public/page_builder
   - public/social_images/.gitkeep
   - public/visuals
   - resources/sites.yaml
