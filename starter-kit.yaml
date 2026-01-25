@@ -43,12 +43,12 @@ export_paths:
   - package-lock.json
   - vite.config.js
 dependencies:
-  studio1902/statamic-peak-browser-appearance: dev-statamic-6
-  studio1902/statamic-peak-seo: dev-statamic-6
-  studio1902/statamic-peak-tools: dev-statamic-6
+  studio1902/statamic-peak-browser-appearance: ^4.0
+  studio1902/statamic-peak-seo: ^10.0
+  studio1902/statamic-peak-tools: ^8.0
 modules:
   commands:
     prompt: 'Would you like to install the paid Peak Commands addon?'
     default: true
     dependencies:
-      studio1902/statamic-peak-commands: dev-statamic-6
+      studio1902/statamic-peak-commands: ^10.0
