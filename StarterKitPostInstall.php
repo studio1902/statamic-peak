@@ -76,7 +76,7 @@ class StarterKitPostInstall
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
         $this->app = app('files')->get(base_path('config/app.php'));
-        $this->system = app('files')->get(base_path('config/system.php'));
+        $this->system = app('files')->get(base_path('config/statamic/system.php'));
         $this->contact = app('files')->get(base_path('resources/forms/contact.yaml'));
         $this->sites = app('files')->get(base_path('resources/sites.yaml'));
     }
@@ -224,7 +224,7 @@ class StarterKitPostInstall
         app('files')->put(base_path('CHANGELOG.md'), $changelog);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
-        app('files')->put(base_path('config/system.php'), $this->system);
+        app('files')->put(base_path('config/statamic/system.php'), $this->system);
         app('files')->put(base_path('resources/forms/contact.yaml'), $this->contact);
         app('files')->put(base_path('resources/sites.yaml'), $this->sites);
     }
