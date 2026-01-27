@@ -198,6 +198,9 @@ class StarterKitPostInstall
         );
 
         $this->replaceInEnv('MAIL_FROM_ADDRESS="hello@example.com"', "MAIL_FROM_ADDRESS=\"{$email}\"");
+        $this->replaceInReadme('MAIL_FROM_ADDRESS="hello@example.com"', "MAIL_FROM_ADDRESS=\"{$email}\"");
+        $this->replaceInContact('to: info@site.com', "to: {$email}.com");
+        $this->replaceInContact('reply_to: info@site.com', "reply_to: {$email}.com");
     }
 
     protected function runPeakClearSite(): void
