@@ -4,6 +4,7 @@
 
 ### What's new
 - Replace picture partial with picture tag. 1d4323c2, d1d754f by @porstendorfer and @robdekort
+- Make form emails configurable from the CP. 7dd90728 by @andjsch
 - Set a default Peak theme for the CP. 6becac1e by @andjsch and @robdekort
 - Extract page builder class and add `flush` classes. 86ef3079 by @robdekort
 - Turn `span-full` and `span-content` into utilities. 97f663b9 by @robdekort
