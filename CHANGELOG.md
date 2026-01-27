@@ -10,6 +10,7 @@
 - Turn `span-full` and `span-content` into utilities. 97f663b9 by @robdekort
 - Extract button styling to a component. dbd73c02 by @robdekort
 - Support frontend forms group fieldtype. 640c803e by @robdekort
+- Use native Statamic Live Preview Hot Reloading. 9929792d by @robdekort
 - Restructure globals for v6. d8eddc71 by @robdekort
 - Remove timezone option in post install. 2cd5b46d by @robdekort
 - Add display timezone option in post install. ddc18c89 by @robdekort
