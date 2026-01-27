@@ -13,7 +13,7 @@
 - Remove timezone option in post install. 2cd5b46d by @robdekort
 - Add display timezone option in post install. ddc18c89 by @robdekort
 - Use replicator for buttons instead of grid. 1e6ab135 by @robdekort
-- Add prompt to set mail from address in post install. 96b45b81 by @robdekort
+- Add prompt to set mail from address in post install. 96b45b81, 7042478f and 5be2635b by @robdekort
 - Remove business option from .env. 069bc3d3 by @robdekort
 - Add replicator/bard preview images and asset container. 1709580d, 8f2bd834 by @robdekort
 - Replace `searchables` `all` with `content`. 0031f8c5 by @robdekort
