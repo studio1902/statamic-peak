@@ -24,7 +24,7 @@
 - Remove redundant `as` parameter from `article`. a200d0d2 by @robdekort
 - Update page builder icon. f244a609 by @robdekort
 - Update button fieldset layout. 81a136e2 by @robdekort
-- Sync configs with `laravel/laravel. cb4c8771 by @robdekort
+- Sync configs with `laravel/laravel`. cb4c8771 by @robdekort
 
 ## v20.14.4 (2025-11-04)
 
