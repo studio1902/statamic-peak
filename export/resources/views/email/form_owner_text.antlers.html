@@ -3,21 +3,7 @@
     @desc This is the text email template that goes to the owner of the site when a form has been submitted.
 #}}
 
-{{ trans:strings.form_mail_body_owner }} ({{ trans:strings.form_mail_title }})
-
--
-{{ fields }}
-{{ if {config['visibility']} !== 'hidden' }}
-{{ trans :key="display" :locale="locale" }}:
-{{ if (value | is_array) }}
-{{ value }}
-{{ value:label ?? value }}
-{{ /value }}
-{{ else }}
-{{ value:label ?? value }}
-{{ /if }}
-{{ /if }}
-{{ /fields }}
--
-{{ trans:strings.form_mail_submitted }} {{ now | timezone | format('r') }}
-{{ trans:strings.form_mail_from }}
+{{ partial:email/form_text
+    :text="form_config:content_owner:email_text"
+    :show_submitted="form_config:content_owner:show_submitted_data"
+/}}

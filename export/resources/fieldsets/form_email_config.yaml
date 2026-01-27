@@ -1,0 +1,17 @@
+title: 'E-Mail Content Configuration'
+fields:
+  -
+    handle: show_submitted_data
+    field:
+      type: toggle
+      display: 'Show submitted'
+      instructions: 'Whether to list the submitted data in the email.'
+      default: true
+  -
+    handle: email_text
+    field: common.text_basic
+    config:
+      display: 'E-Mail text'
+      antlers: true
+      instructions: 'This text will be shown within the email. Feel free to use any handles from the form to show submitted data.'
+      inline: false

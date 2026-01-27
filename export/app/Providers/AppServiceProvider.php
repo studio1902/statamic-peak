@@ -7,6 +7,7 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Statamic\Facades\Form;
 use Statamic\Policies\UserPolicy;
 use Studio1902\PeakSeo\Handlers\ErrorPage;
 
@@ -47,5 +48,31 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+
+        Form::appendConfigFields('*', __('Custom form sender text'), [
+            'content_sender' => [
+                'full_width_setting' => true,
+                'type' => 'group',
+                'display' => '',
+                'fullscreen' => false,
+                'border' => false,
+                'fields' => [
+                    ['import' => 'form_email_config']
+                ]
+            ],
+        ]);
+
+        Form::appendConfigFields('*', __('Custom form owner text'), [
+            'content_owner' => [
+                'full_width_setting' => true,
+                'type' => 'group',
+                'display' => '',
+                'fullscreen' => false,
+                'border' => false,
+                'fields' => [
+                    ['import' => 'form_email_config']
+                ]
+            ],
+        ]);
     }
 }

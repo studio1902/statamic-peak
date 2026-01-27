@@ -1,3 +1,32 @@
+content_sender:
+  show_submitted_data: false
+  email_text:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_greeting }} {{ first_name or name }},'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_body_sender }}'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_closing }},'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_from }}'
+content_owner:
+  show_submitted_data: true
 title: Contact
 honeypot: fax
 email:
