@@ -3,24 +3,16 @@ fields:
   -
     handle: image
     field:
-      mode: list
       container: images
-      restrict: false
-      allow_uploads: true
       max_files: 1
       type: assets
       localizable: true
-      listable: hidden
       display: Image
-      instructions_position: above
-      visibility: visible
       always_save: false
-      show_filename: true
   -
     handle: entry
     field:
       max_items: 1
-      mode: default
       type: entries
       localizable: true
       listable: false
@@ -37,32 +29,17 @@ fields:
         - orderedlist
         - removeformat
         - anchor
-      save_html: false
-      toolbar_mode: fixed
       link_noopener: true
-      link_noreferrer: false
       container: files
-      target_blank: false
-      reading_time: false
-      fullscreen: true
+      fullscreen: false
       allow_source: true
       type: bard
       replicator_preview: false
       localizable: true
-      listable: hidden
       display: 'Text rich'
-      instructions_position: above
-      visibility: visible
       always_save: false
-      previews: true
-      enable_input_rules: true
-      enable_paste_rules: true
-      antlers: false
       remove_empty_nodes: true
-      collapse: false
       smart_typography: true
-      inline: false
-      hide_display: false
   -
     handle: text_basic
     field:
@@ -73,43 +50,23 @@ fields:
         - orderedlist
         - removeformat
         - anchor
-      save_html: false
-      toolbar_mode: fixed
       link_noopener: true
-      link_noreferrer: false
       container: files
-      target_blank: false
-      reading_time: false
-      fullscreen: true
+      fullscreen: false
       allow_source: true
       type: bard
       replicator_preview: false
       localizable: true
-      listable: hidden
       display: 'Text basic'
-      instructions_position: above
-      visibility: visible
       always_save: false
-      previews: true
-      enable_input_rules: true
-      enable_paste_rules: true
-      antlers: false
       remove_empty_nodes: true
-      collapse: false
       smart_typography: true
-      inline: false
-      hide_display: false
   -
     handle: text_plain
     field:
       type: textarea
       localizable: true
-      listable: hidden
       display: 'Text plain'
-      instructions_position: above
-      visibility: visible
-      antlers: false
-      hide_display: false
   -
     handle: size
     field:
@@ -120,5 +77,4 @@ fields:
       type: button_group
       localizable: true
       default: md
-      listable: hidden
       display: Size

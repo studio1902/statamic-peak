@@ -241,6 +241,7 @@ page_builder:
                 link_type: url
                 url: 'https://www.youtube.com/watch?v=o-YBDTqX_ZU'
                 button_type: button
+                type: button
               -
                 id: kuVHCd6j
                 label: 'Dolor sit amet'
@@ -248,6 +249,7 @@ page_builder:
                 link_type: entry
                 entry: home
                 button_type: button
+                type: button
     type: article
     enabled: true
 ---

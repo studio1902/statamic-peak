@@ -7,7 +7,7 @@
 <!-- /page_builder/_form.antlers.html -->
 {{ partial:page_builder/block }}
     <div class="span-content md:col-start-[col-3] md:col-span-8">
-        {{ block:title ?= { partial:typography/h1 as="h2" class="mb-8" :content="block:title" } }}
+        {{ block:heading ?= { partial:typography/h1 as="h2" class="mb-8" :content="block:heading" } }}
         {{ block:text ?= { partial:typography/p :content="block:text" } }}
 
         {{# Render form and use Alpine based Statamic conditional logic. #}}
@@ -64,7 +64,7 @@
                             {{ /if }}
 
                             {{# Render the default-styled fields. #}}
-                            {{ fields scope="field" }}
+                            {{ %form:fields scope="field" }}
                                 <template x-if="{{ show_field }}">
                                     <div class="
                                         flex flex-col stack-1
@@ -109,7 +109,7 @@
                                         </div>
                                     </div>
                                 </template>
-                            {{ /fields }}
+                            {{ /%form:fields }}
                         </fieldset>
                     {{ /sections }}
 

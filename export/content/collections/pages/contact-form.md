@@ -12,7 +12,7 @@ sitemap_priority: 0.5
 page_builder:
   -
     id: QGsYdcyd
-    title: 'A contact form'
+    heading: 'A contact form'
     text: 'Both the receiver and the owner of the website will receive a styled e-mail. Forms are dynamic, work with conditional logic and use Laravel Precognition for validation and submission.'
     form: contact
     type: form

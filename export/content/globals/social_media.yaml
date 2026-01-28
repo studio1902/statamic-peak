@@ -1,9 +1,1 @@
 title: 'Social media'
-data:
-  social_media:
-    -
-      id: trJdEAn4
-      handle: studio1902
-      prefix: 'https://www.github.com/'
-      type: github
-      enabled: true

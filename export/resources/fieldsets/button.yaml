@@ -18,6 +18,7 @@ fields:
       mode: toggle
       display: 'Show controls'
       type: revealer
+      replicator_preview: false
       icon: revealer
       width: 33
       listable: hidden
@@ -38,23 +39,12 @@ fields:
       listable: false
       display: 'Link type'
       replicator_preview: false
-      width: 66
+      width: 100
       if:
         show_controls: 'equals true'
       instructions_position: above
       visibility: visible
       always_save: false
-  -
-    handle: target_blank
-    field:
-      type: toggle
-      localizable: true
-      width: 33
-      listable: false
-      display: 'Open in new window'
-      replicator_preview: false
-      if:
-        show_controls: 'equals true'
   -
     handle: entry
     field:
@@ -62,7 +52,7 @@ fields:
       mode: default
       type: entries
       localizable: true
-      width: 50
+      width: 100
       listable: false
       display: Entry
       replicator_preview: false
@@ -80,7 +70,7 @@ fields:
       localizable: true
       listable: false
       display: URL
-      width: 50
+      width: 100
       validate:
         - 'required_if:{this}.link_type,url'
       if:
@@ -95,7 +85,7 @@ fields:
       localizable: true
       listable: false
       display: E-mail
-      width: 50
+      width: 100
       replicator_preview: false
       validate:
         - 'required_if:{this}.link_type,email'
@@ -111,7 +101,7 @@ fields:
       localizable: true
       listable: false
       display: Telephone
-      width: 50
+      width: 100
       replicator_preview: false
       validate:
         - 'required_if:{this}.link_type,tel'
@@ -127,7 +117,7 @@ fields:
       localizable: true
       listable: false
       display: Telephone
-      width: 50
+      width: 100
       replicator_preview: false
       validate:
         - 'required_if:{this}.link_type,sms'
@@ -141,7 +131,7 @@ fields:
       localizable: true
       display: Asset
       container: files
-      width: 50
+      width: 100
       validate:
         - 'required_if:{this}.link_type,asset'
       if:
@@ -158,6 +148,18 @@ fields:
       default: button
       listable: false
       display: 'Button type'
+      replicator_preview: false
+      width: 50
+      if:
+        show_controls: 'equals true'
+  -
+    handle: target_blank
+    field:
+      type: toggle
+      localizable: true
+      width: 50
+      listable: false
+      display: 'Open in new window'
       replicator_preview: false
       if:
         show_controls: 'equals true'

@@ -26,11 +26,15 @@ class StarterKitPostInstall
         CollectAvailableLangLocales::class,
     ];
 
+    protected string $app = '';
+
+    protected string $system = '';
+
+    protected string $contact = '';
+
     protected string $env = '';
 
     protected string $readme = '';
-
-    protected string $app = '';
 
     protected string $sites = '';
 
@@ -73,6 +77,8 @@ class StarterKitPostInstall
         $this->env = app('files')->get(base_path('.env.example'));
         $this->readme = app('files')->get(base_path('README.md'));
         $this->app = app('files')->get(base_path('config/app.php'));
+        $this->system = app('files')->get(base_path('config/statamic/system.php'));
+        $this->contact = app('files')->get(base_path('resources/forms/contact.yaml'));
         $this->sites = app('files')->get(base_path('resources/sites.yaml'));
     }
 
@@ -87,7 +93,8 @@ class StarterKitPostInstall
         $this->setAppUrl();
         $this->setAppKey();
         $this->setLocale();
-        $this->setTimezone();
+        $this->setDisplayTimezone();
+        $this->setMailFromAddress();
         $this->useDebugbar();
         $this->useImagick();
         $this->setLocalMailer();
@@ -142,14 +149,14 @@ class StarterKitPostInstall
         $this->selectLanguagesToInstall();
     }
 
-    protected function setTimezone(): void
+    protected function setDisplayTimezone(): void
     {
         if (! $this->interactive || DIRECTORY_SEPARATOR === '\\') {
             return;
         }
 
-        $newTimezone = search(
-            label: 'What timezone should your app be in?',
+        $newDisplayTimezone = search(
+            label: 'What timezone should your app be displayed in?',
             options: function (string $value) {
                 if (! $value) {
                     return timezone_identifiers_list(DateTimeZone::ALL, null);
@@ -164,11 +171,11 @@ class StarterKitPostInstall
             required: true,
         );
 
-        $currentTimezone = config('app.timezone');
+        $currentDisplayTimezone = config('statamic.system.display_timezone');
 
-        $this->replaceInEnv("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
-        $this->replaceInReadme("APP_TIMEZONE=\"$currentTimezone\"", "APP_TIMEZONE=\"$newTimezone\"");
+        $this->replaceInSystem("display_timezone=\"$currentDisplayTimezone\"", "display_timezone=\"$newDisplayTimezone\"");
     }
+
 
     protected function setLocale(): void
     {
@@ -180,6 +187,20 @@ class StarterKitPostInstall
         );
 
         $this->replaceInSites("locale: en_US", "locale: $locale");
+    }
+
+    protected function setMailFromAddress(): void
+    {
+        $email = text(
+            label: 'What email should be the mail from address?',
+            placeholder: 'hello@example.com',
+            default: 'hello@example.com',
+        );
+
+        $this->replaceInEnv('MAIL_FROM_ADDRESS="hello@example.com"', "MAIL_FROM_ADDRESS=\"{$email}\"");
+        $this->replaceInReadme('MAIL_FROM_ADDRESS=', "MAIL_FROM_ADDRESS=\"{$email}\"");
+        $this->replaceInContact('to: info@site.com', "to: {$email}.com");
+        $this->replaceInContact('reply_to: info@site.com', "reply_to: {$email}.com");
     }
 
     protected function runPeakClearSite(): void
@@ -207,6 +228,8 @@ class StarterKitPostInstall
         app('files')->put(base_path('CHANGELOG.md'), $changelog);
         app('files')->put(base_path('README.md'), $this->readme);
         app('files')->put(base_path('config/app.php'), $this->app);
+        app('files')->put(base_path('config/statamic/system.php'), $this->system);
+        app('files')->put(base_path('resources/forms/contact.yaml'), $this->contact);
         app('files')->put(base_path('resources/sites.yaml'), $this->sites);
     }
 
@@ -577,9 +600,19 @@ class StarterKitPostInstall
         $this->sites = str_replace($search, $replace, $this->sites);
     }
 
+    protected function replaceInContact(string $search, string $replace): void
+    {
+        $this->contact = str_replace($search, $replace, $this->contact);
+    }
+
     protected function replaceInEnv(string $search, string $replace): void
     {
         $this->env = str_replace($search, $replace, $this->env);
+    }
+
+    protected function replaceInSystem(string $search, string $replace): void
+    {
+        $this->system = str_replace($search, $replace, $this->system);
     }
 
     protected function replaceInReadme(string $search, string $replace): void

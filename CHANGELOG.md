@@ -1,5 +1,32 @@
 # Changelog
 
+## v21.0.0 (2026-01-28)
+
+### What's new
+- Replace picture partial with picture tag. 1d4323c2, d1d754f by @porstendorfer and @robdekort
+- Make form emails configurable from the CP. 7dd90728 by @andjsch
+- Set a default Peak theme for the CP. 6becac1e by @andjsch and @robdekort
+- Extract page builder class and add `flush` classes. 86ef3079 by @robdekort
+- Turn `span-full` and `span-content` into utilities. 97f663b9 by @robdekort
+- Extract button styling to a component. dbd73c02 by @robdekort
+- Support frontend forms group fieldtype. 640c803e by @robdekort
+- Use native Statamic Live Preview Hot Reloading. 9929792d by @robdekort
+- Restructure globals for v6. d8eddc71 by @robdekort
+- Remove timezone option in post install. 2cd5b46d by @robdekort
+- Add display timezone option in post install. ddc18c89 by @robdekort
+- Use replicator for buttons instead of grid. 1e6ab135 by @robdekort
+- Add prompt to set mail from address in post install. 96b45b81, 7042478f and 5be2635b by @robdekort
+- Remove business option from .env. 069bc3d3 by @robdekort
+- Add replicator/bard preview images and asset container. 1709580d, 8f2bd834 by @robdekort
+- Replace `searchables` `all` with `content`. 0031f8c5 by @robdekort
+- Fullscreen `false` for common bard fields. c1a67bda by @robdekort
+- Default white labeling to app name. 1be09696 by @robdekort
+- Use "Heading" as display name instead of "Title". edf57a6e by @robdekort
+- Remove redundant `as` parameter from `article`. a200d0d2 by @robdekort
+- Update page builder icon. f244a609 by @robdekort
+- Update button fieldset layout. 81a136e2 by @robdekort
+- Sync configs with `laravel/laravel`. cb4c8771 by @robdekort
+
 ## v20.14.4 (2025-11-04)
 
 ### What's fixed

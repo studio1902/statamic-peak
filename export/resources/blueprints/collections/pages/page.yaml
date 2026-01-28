@@ -66,23 +66,8 @@ tabs:
             field:
               type: slug
               localizable: true
+              validate:
+                - required
               generate: true
               listable: hidden
               display: Slug
-              validate:
-                - required
-          -
-            handle: parent
-            field:
-              type: entries
-              collections:
-                - pages
-              max_items: 1
-              listable: false
-              localizable: true
-              display: Parent
-              instructions_position: above
-              visibility: visible
-              mode: default
-              create: true
-              hide_display: false

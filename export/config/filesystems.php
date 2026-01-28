@@ -40,7 +40,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,
@@ -77,6 +77,15 @@ return [
             'driver' => 'local',
             'root' => public_path('files'),
             'url' => '/files',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
+        'page_builder' => [
+            'driver' => 'local',
+            'root' => public_path('page_builder'),
+            'url' => '/page_builder',
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

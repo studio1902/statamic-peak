@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./buttons.css";
 @import "./peak.css";
 @import "./typography.css";
 

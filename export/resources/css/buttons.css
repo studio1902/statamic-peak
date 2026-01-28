@@ -1,0 +1,27 @@
+@layer components {
+    .button {
+        @apply inline-flex items-center justify-center gap-2 max-w-full py-3 px-4 bg-primary rounded select-none text-white motion-safe:transition disabled:cursor-not-allowed disabled:opacity-50 focus:outline-primary;
+
+        span {
+            @apply min-w-fit text-center uppercase font-bold leading-none no-underline motion-safe:transition;
+        }
+
+        /* Small variant */
+        /* &[class*='--small'] {
+
+        } */
+
+        /* Themed variant */
+        /* [data-theme~='primary'] & {
+
+        } */
+    }
+
+    .button-inline {
+        @apply inline-flex items-center gap-1 text-neutral hover:text-primary motion-safe:transition;
+
+        span {
+            @apply min-w-fit font-bold text-current underline decoration-primary focus:outline-primary;
+        }
+    }
+}

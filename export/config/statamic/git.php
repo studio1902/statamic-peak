@@ -93,6 +93,7 @@ return [
     'paths' => [
         base_path('content'),
         base_path('users'),
+        resource_path('addons'),
         resource_path('blueprints'),
         resource_path('fieldsets'),
         resource_path('forms'),
@@ -103,6 +104,7 @@ return [
         public_path('images'),
         public_path('favicons'),
         public_path('files'),
+        public_path('page_builder'),
         public_path('social_images'),
     ],
 

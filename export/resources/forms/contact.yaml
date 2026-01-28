@@ -1,16 +1,45 @@
+content_sender:
+  show_submitted_data: false
+  email_text:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_greeting }} {{ first_name or name }},'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_body_sender }}'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_closing }},'
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: '{{ trans:strings.form_mail_from }}'
+content_owner:
+  show_submitted_data: true
 title: Contact
 honeypot: fax
 email:
   -
+    id: iwArpANx
     to: info@site.com
-    from: info@site.com
     reply_to: '{{ email }}'
     subject: '{{ trans:strings.form_subject_received }}'
     html: email/form_owner
     text: email/form_owner_text
   -
+    id: p0bMnaXJ
     to: '{{ email }}'
-    from: info@site.com
     reply_to: info@site.com
     subject: '{{ trans:strings.form_subject_sent }}'
     html: email/form_sender

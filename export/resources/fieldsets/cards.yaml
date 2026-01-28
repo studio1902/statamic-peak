@@ -1,11 +1,11 @@
 title: Cards
 fields:
   -
-    handle: title
+    handle: heading
     field:
       type: text
       localizable: true
-      display: Title
+      display: Heading
   -
     handle: cards
     field:
@@ -23,14 +23,15 @@ fields:
           sets:
             card:
               display: Card
+              image: null
               fields:
                 -
-                  handle: title
+                  handle: heading
                   field:
                     type: text
                     localizable: true
                     validate: required
-                    display: Title
+                    display: Heading
                 -
                   handle: text
                   field: common.text_plain
@@ -41,4 +42,4 @@ fields:
                   field: buttons.buttons
                   config:
                     display: Button
-                    max_rows: 1
+                    max_sets: 1

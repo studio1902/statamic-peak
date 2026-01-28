@@ -1,5 +1,7 @@
 <?php
 
+use Statamic\CP\Color;
+
 return [
 
     /*
@@ -123,18 +125,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Login Theme
-    |--------------------------------------------------------------------------
-    |
-    | Optionally spice up the login and other outside-the-control-panel
-    | screens. You may choose between "rad" or "business" themes.
-    |
-    */
-
-    'theme' => env('STATAMIC_THEME', 'rad'),
-
-    /*
-    |--------------------------------------------------------------------------
     | White Labeling
     |--------------------------------------------------------------------------
     |
@@ -150,6 +140,8 @@ return [
         'nav' => env('STATAMIC_CUSTOM_LOGO_NAV_URL', null),
         'outside' => env('STATAMIC_CUSTOM_LOGO_OUTSIDE_URL', null),
     ],
+
+    'custom_logo_text' => env('APP_NAME', 'Statamic'),
 
     'custom_favicon_url' => env('STATAMIC_CUSTOM_FAVICON_URL', null),
 

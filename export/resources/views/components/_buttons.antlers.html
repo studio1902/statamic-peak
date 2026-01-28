@@ -1,7 +1,6 @@
 {{#
     @name Buttons
     @desc Multiple buttons component calling in `resources/views/components/_button.antlers.html`.
-    @param inverted Boolean. When the buttons needs inverted styles.
     @set page.article.buttons
 #}}
 
@@ -18,7 +17,7 @@
         {{# The styling when called from any other partial or template. #}}
         <div class="flex flex-wrap gap-3 {{ class }}">
             {{ buttons }}
-                {{ partial:components/button :inverted="inverted" class="" }}
+                {{ partial:components/button class="" }}
             {{ /buttons }}
         </div>
     {{ /if }}
