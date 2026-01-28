@@ -1,6 +1,6 @@
 # Changelog
 
-## v21.0.0 (Unreleased)
+## v21.0.0 (2026-01-28)
 
 ### What's new
 - Replace picture partial with picture tag. 1d4323c2, d1d754f by @porstendorfer and @robdekort
