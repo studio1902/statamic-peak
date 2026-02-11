@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.0.1 (2026-02-11)
+
+### What's changed
+- Don't add app key to readme during install. ebae5881 by @robdekort
+
 ## v21.0.0 (2026-01-28)
 
 ### What's new
