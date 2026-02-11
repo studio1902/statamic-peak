@@ -357,7 +357,6 @@ class StarterKitPostInstall
         $appKey = env('APP_KEY');
 
         $this->replaceInEnv('APP_KEY=', "APP_KEY=\"{$appKey}\"");
-        $this->replaceInReadme('APP_KEY=', "APP_KEY=\"{$appKey}\"");
     }
 
     protected function useDebugbar(): void
