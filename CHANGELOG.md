@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.0.2 (2026-02-14)
+
+### What's fixed
+- Fix email replacement bug in post install hook. 45f765be by @robdekort
+
 ## v21.0.1 (2026-02-11)
 
 ### What's changed
