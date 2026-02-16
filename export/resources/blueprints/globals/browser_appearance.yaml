@@ -7,13 +7,13 @@ tabs:
         instructions: 'Configure universal meta tags.'
         fields:
           -
-            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_universal'
+            import: 'statamic-peak-tools::globals_browser_appearance_general_universal'
       -
         display: Theme
         instructions: 'Configure universal theme meta tags.'
         fields:
           -
-            import: 'statamic-peak-browser-appearance::globals_browser_appearance_general_theme'
+            import: 'statamic-peak-tools::globals_browser_appearance_general_theme'
   favicons:
     display: Favicons
     sections:
@@ -22,10 +22,10 @@ tabs:
         instructions: 'Configure favicons so they can be automatically generated.'
         fields:
           -
-            import: 'statamic-peak-browser-appearance::globals_browser_appearance_favicons'
+            import: 'statamic-peak-tools::globals_browser_appearance_favicons'
       -
         display: Overrides
         instructions: 'Override specific generated assets with your own.'
         fields:
           -
-            import: 'statamic-peak-browser-appearance::globals_browser_appearance_favicons_overrides'
+            import: 'statamic-peak-tools::globals_browser_appearance_favicons_overrides'
