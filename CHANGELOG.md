@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.1.0 (2026-02-16)
+
+### What's new
+- Merge the Browser Appearance addon into the Tools addon. Existing sites will migrate automatically by updating the Tools addon. 2d96cf5c by @robdekort
+
 ## v21.0.2 (2026-02-14)
 
 ### What's fixed
