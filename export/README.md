@@ -144,7 +144,7 @@ npm run build
 {SITE_PHP} artisan cache:clear
 {SITE_PHP} artisan config:cache
 {SITE_PHP} artisan route:cache
-{SITE_PHP} artisan statamic:stache:warm
+{SITE_PHP} artisan statamic:stache:refresh
 {SITE_PHP} artisan queue:restart
 {SITE_PHP} artisan statamic:search:update --all
 {SITE_PHP} artisan statamic:static:clear
@@ -178,7 +178,7 @@ touch /tmp/fpmlock 2>/dev/null || true
 $FORGE_PHP artisan cache:clear
 $FORGE_PHP artisan config:cache
 $FORGE_PHP artisan route:cache
-$FORGE_PHP artisan statamic:stache:warm
+$FORGE_PHP artisan statamic:stache:refresh
 $FORGE_PHP artisan queue:restart
 $FORGE_PHP artisan statamic:search:update --all
 $FORGE_PHP artisan statamic:static:clear

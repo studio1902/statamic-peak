@@ -415,11 +415,11 @@ class StarterKitPostInstall
 
     protected function excludeBuildFolderFromGit(): void
     {
-        if (! confirm(label: 'Do you want to exclude the `public/build` folder from git?', default: true)) {
+        if (! confirm(label: 'Do you want to exclude the `public/_build` folder from git?', default: true)) {
             return;
         }
 
-        $this->appendToGitignore('/public/build/');
+        $this->appendToGitignore('/public/_build/');
     }
 
     protected function excludeUsersFolderFromGit(): void
