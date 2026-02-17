@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.2.1 (2026-02-17)
+
+### What's fixed
+- Use proper `::selection` and `::target-text` selectors. 576f1b80 by @robdekort
+
 ## v21.2.0 (2026-02-17)
 
 ### What's new
