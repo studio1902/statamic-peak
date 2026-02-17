@@ -43,4 +43,12 @@
         /* font-family: var(--font-serif); */
         /* font-family: var(--font-mono); */
     }
+
+    body {
+        & *::selection,
+        & *::target-text {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+    }
 }

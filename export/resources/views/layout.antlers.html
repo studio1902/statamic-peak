@@ -10,12 +10,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-        {{ vite src="resources/css/site.css|resources/js/site.js" }}
+        {{ vite src="resources/css/site.css|resources/js/site.js" directory="_build" }}
         {{ partial:statamic-peak-seo::snippets/seo }}
         {{ partial:statamic-peak-tools::snippets/browser_appearance }}
         {{ stack:head }}
     </head>
-    <body class="flex flex-col min-h-screen bg-white selection:bg-primary selection:text-white">
+    <body class="flex flex-col min-h-screen bg-white">
         {{ stack:seo_body }}
         {{ partial:statamic-peak-tools::snippets/noscript }}
         {{ partial:statamic-peak-tools::navigation/skip_links }}
