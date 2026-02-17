@@ -1,5 +1,14 @@
 # Changelog
 
+## v21.2.0 (2026-02-17)
+
+### What's new
+- Use `_build` as a build folder to prevent collisions. 87c85880 by @robdekort
+- Move `::selection` styling to CSS and add `::target-text` styling. 4f4074cc by @robdekort
+
+### What's improved
+- Updated dependencies. a807410f by @robdekort
+
 ## v21.1.0 (2026-02-16)
 
 ### What's new
