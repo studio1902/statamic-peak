@@ -44,11 +44,9 @@
         /* font-family: var(--font-mono); */
     }
 
-    body {
-        & *::selection,
-        & *::target-text {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-        }
-    }
+   ::selection,
+   ::target-text {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+   }
 }
