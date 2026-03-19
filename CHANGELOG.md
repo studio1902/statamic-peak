@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.3.0 (2026-03-19)
+
+### What's new
+- Add STATAMIC_TWO_FACTOR_ENABLED to .env and README. bf9be528 by @robdekort
+
 ## v21.2.1 (2026-02-17)
 
 ### What's fixed
