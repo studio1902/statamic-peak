@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.3.1 (2026-03-30)
+
+### What's new
+- Upgrade statamic-peak-seo dependency to version 11.0. #457 by @andjsch
+
 ## v21.3.0 (2026-03-19)
 
 ### What's new
