@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.3.2 (2026-03-31)
+
+### What's improved
+- Update dependencies. 43c3d81f by @robdekort
+
 ## v21.3.1 (2026-03-30)
 
 ### What's new
