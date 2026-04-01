@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.3.3 (2026-04-01)
+
+### What's fixed
+- A typo in the Dutch translation for meta description. #458 by @wgriffioen
+
 ## v21.3.2 (2026-03-31)
 
 ### What's improved
