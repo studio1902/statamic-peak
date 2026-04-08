@@ -1,5 +1,14 @@
 # Changelog
 
+## v21.4.0 (2026-04-08)
+
+### What's new
+- Laravel 13 and update dependencies. 0f09a155 by @robdekort
+
+### What's improved
+- Update buttons.css. d4bba305 by @andjsch
+- Update bootFormConfig logic. ffc0800e by @andjsch
+
 ## v21.3.3 (2026-04-01)
 
 ### What's fixed
