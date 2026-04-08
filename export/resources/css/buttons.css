@@ -12,7 +12,7 @@
         } */
 
         /* Themed variant */
-        /* [data-theme~='primary'] & {
+        /* &[data-theme~='primary'] {
 
         } */
     }
