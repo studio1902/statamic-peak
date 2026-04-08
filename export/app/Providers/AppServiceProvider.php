@@ -41,6 +41,8 @@ class AppServiceProvider extends ServiceProvider
         ErrorPage::handle404AsEntry();
 
         $this->bootRoute();
+
+        $this->bootFormConfig();
     }
 
     public function bootRoute(): void
@@ -48,7 +50,10 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+    }
 
+    public function bootFormConfig(): void
+    {
         Form::appendConfigFields('*', __('Custom form sender text'), [
             'content_sender' => [
                 'full_width_setting' => true,
@@ -57,8 +62,8 @@ class AppServiceProvider extends ServiceProvider
                 'fullscreen' => false,
                 'border' => false,
                 'fields' => [
-                    ['import' => 'form_email_config']
-                ]
+                    ['import' => 'form_email_config'],
+                ],
             ],
         ]);
 
@@ -70,8 +75,8 @@ class AppServiceProvider extends ServiceProvider
                 'fullscreen' => false,
                 'border' => false,
                 'fields' => [
-                    ['import' => 'form_email_config']
-                ]
+                    ['import' => 'form_email_config'],
+                ],
             ],
         ]);
     }
