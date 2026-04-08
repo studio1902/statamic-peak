@@ -1,1 +1,0 @@
-import{t as e}from"./alpinejs-jjI2tq0V.js";import{i as t,n,r,t as i}from"./@alpinejs-BR0fZ_YF.js";import{t as a}from"./laravel-precognition-alpine-ebqmS4bV.js";window.Alpine=e,e.plugin([t,r,n,i,a]),e.start();

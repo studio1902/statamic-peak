@@ -211,6 +211,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Additional Filename Character Replacements
+    |--------------------------------------------------------------------------
+    |
+    | When uploading files, certain characters in filenames will be replaced
+    | to ensure a safe filename. You may configure additional replacements.
+    | These are in addition to the native ones. They are not overridable.
+    |
+    */
+
+    'additional_filename_replacements' => [],
+
+    /*
+    |--------------------------------------------------------------------------
     | SVG Sanitization
     |--------------------------------------------------------------------------
     |
@@ -222,7 +235,7 @@ return [
 
     'svg_sanitization_on_upload' => true,
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | Replicator and Bard Set Preview Images
     |--------------------------------------------------------------------------

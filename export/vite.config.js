@@ -27,6 +27,9 @@ export default defineConfig(({ command, mode }) => {
             })
         ],
         server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
             open: env.APP_URL
         }
     }

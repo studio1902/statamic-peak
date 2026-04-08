@@ -1,7 +1,5 @@
 <?php
 
-use Statamic\CP\Color;
-
 return [
 
     /*
