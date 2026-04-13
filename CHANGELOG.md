@@ -7,6 +7,7 @@
 
 ### What's fixed
 - Allow editors to manage folders. ac925a1a by @andjsch
+- Update CP config. 4be5e706 by @andjsch
 
 ## v21.4.0 (2026-04-08)
 
