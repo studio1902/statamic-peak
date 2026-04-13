@@ -1,5 +1,13 @@
 # Changelog
 
+## v21.5.0 (2026-04-13)
+
+### What's new
+- Update content and globals required by Statamic Peak SEO v11.2.0. An update script handles this for existing sites. 4a749a5c by @jivedig
+
+### What's fixed
+- Allow editors to manage folders. ac925a1a by @andjsch
+
 ## v21.4.0 (2026-04-08)
 
 ### What's new
