@@ -3,12 +3,6 @@ tabs:
     display: 'Page meta'
     sections:
       -
-        display: Environments
-        instructions: 'When to noindex and nofollow by default.'
-        fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_page_environments'
-      -
         display: Title
         instructions: 'Website and page titles.'
         fields:
@@ -26,6 +20,27 @@ tabs:
         fields:
           -
             import: 'statamic-peak-seo::globals_seo_page_hreflang'
+  indexing:
+    display: Indexing
+    sections:
+      -
+        display: Environments
+        instructions: 'When to noindex and nofollow by default.'
+        fields:
+          -
+            import: 'statamic-peak-seo::globals_seo_page_environments'
+      -
+        display: Collections
+        instructions: 'Set default indexing behavior per collection. Individual entries can override. Defaults to "Index" if not configured.'
+        fields:
+          -
+            import: 'statamic-peak-seo::globals_seo_indexing_collections'
+      -
+        display: Taxonomies
+        instructions: 'Set default indexing behavior per taxonomy. Individual terms can override. Defaults to "Index" if not configured.'
+        fields:
+          -
+            import: 'statamic-peak-seo::globals_seo_indexing_taxonomies'
   json-ld:
     display: JSON-ld
     sections:

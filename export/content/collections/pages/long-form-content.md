@@ -4,7 +4,7 @@ blueprint: page
 title: 'Long form content'
 updated_by: f9af1bbb-3f1a-4ce3-8f7e-eb66cbb69a9a
 updated_at: 1674898078
-seo_noindex: false
+seo_noindex: inherit
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly

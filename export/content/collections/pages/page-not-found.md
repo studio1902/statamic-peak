@@ -21,7 +21,7 @@ page_builder:
             text: 'The page you requested is not available (anymore).'
     type: article
     enabled: true
-seo_noindex: true
+seo_noindex: noindex
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly

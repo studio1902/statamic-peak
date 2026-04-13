@@ -4,7 +4,7 @@ blueprint: page
 title: 'Contact form'
 updated_by: ceaa75bd-bc37-4a8b-b0f2-b7af70e58b0e
 updated_at: 1698695250
-seo_noindex: false
+seo_noindex: inherit
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly

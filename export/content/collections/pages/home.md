@@ -4,7 +4,7 @@ blueprint: page
 title: Home
 updated_by: a99e8a21-e22f-4cce-952c-fa814934906a
 updated_at: 1766320586
-seo_noindex: false
+seo_noindex: inherit
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
