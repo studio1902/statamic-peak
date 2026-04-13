@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.5.1 (2026-04-13)
+
+### What's changed
+- Revert: Update CP config. 6978b81f by @andjsch
+
 ## v21.5.0 (2026-04-13)
 
 ### What's new
