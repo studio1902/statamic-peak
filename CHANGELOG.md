@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.5.3 (2026-06-03)
+
+### What's changed
+- Remove post install license key prompt as the Statamic installer handles this now. d87a94f9 by @robdekort
+
 ## v21.5.2 (2026-05-08)
 
 ### What's changed
