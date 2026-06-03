@@ -89,9 +89,9 @@ class StarterKitPostInstall
         }
 
         $this->setAppName();
-        $this->setLicenseKey();
         $this->setAppUrl();
         $this->setAppKey();
+        $this->setLicenseKey();
         $this->setLocale();
         $this->setDisplayTimezone();
         $this->setMailFromAddress();
@@ -331,18 +331,6 @@ class StarterKitPostInstall
         $this->replaceInReadme('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
     }
 
-    protected function setLicenseKey(): void
-    {
-        $licenseKey = text(
-            label: 'Enter your Statamic License key',
-            hint: 'Leave empty to skip',
-            default: $this->interactive ? '' : 'Statamic Peak',
-            required: false,
-        );
-
-        $this->replaceInEnv('STATAMIC_LICENSE_KEY=', "STATAMIC_LICENSE_KEY=\"{$licenseKey}\"");
-    }
-
     protected function setAppUrl(): void
     {
         $appUrl = env('APP_URL');
@@ -355,6 +343,13 @@ class StarterKitPostInstall
         $appKey = env('APP_KEY');
 
         $this->replaceInEnv('APP_KEY=', "APP_KEY=\"{$appKey}\"");
+    }
+
+    protected function setLicenseKey(): void
+    {
+        $statamicLicenseKey = env('STATAMIC_LICENSE_KEY');
+
+        $this->replaceInEnv('STATAMIC_LICENSE_KEY=', "STATAMIC_LICENSE_KEY=\"{$statamicLicenseKey}\"");
     }
 
     protected function useDebugbar(): void
