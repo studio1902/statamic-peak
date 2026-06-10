@@ -17,7 +17,6 @@ export_paths:
   - config/statamic/search.php
   - config/statamic/static_caching.php
   - lang/
-  - public/robots.txt
   - public/_build
   - public/images
   - public/favicons/.gitkeep

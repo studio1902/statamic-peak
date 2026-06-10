@@ -6,20 +6,17 @@ tabs:
         display: Title
         instructions: 'Website and page titles.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_page_titles'
+          - import: 'statamic-peak-seo::globals_seo_page_titles'
       -
         display: Descriptions
         instructions: "Set fallback data per collection to use as meta, OG and Twitter descriptions when users don't fill in those fields."
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_page_descriptions'
+          - import: 'statamic-peak-seo::globals_seo_page_descriptions'
       -
         display: Hreflang
         instructions: 'Set for which sites in your multisite a hreflang tag should be generated.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_page_hreflang'
+          - import: 'statamic-peak-seo::globals_seo_page_hreflang'
   indexing:
     display: Indexing
     sections:
@@ -27,20 +24,17 @@ tabs:
         display: Environments
         instructions: 'When to noindex and nofollow by default.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_page_environments'
+          - import: 'statamic-peak-seo::globals_seo_page_environments'
       -
         display: Collections
         instructions: 'Set default indexing behavior per collection. Individual entries can override. Defaults to "Index" if not configured.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_indexing_collections'
+          - import: 'statamic-peak-seo::globals_seo_indexing_collections'
       -
         display: Taxonomies
         instructions: 'Set default indexing behavior per taxonomy. Individual terms can override. Defaults to "Index" if not configured.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_indexing_taxonomies'
+          - import: 'statamic-peak-seo::globals_seo_indexing_taxonomies'
   json-ld:
     display: JSON-ld
     sections:
@@ -48,14 +42,12 @@ tabs:
         display: 'Knowledge Graph Data'
         instructions: 'JSON-ld Schema'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_json-ld_knowledge_graph'
+          - import: 'statamic-peak-seo::globals_seo_json-ld_knowledge_graph'
       -
         display: Breadcrumbs
         instructions: 'JSON-ld Breadcrumbs'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_json-ld_breadcrumbs'
+          - import: 'statamic-peak-seo::globals_seo_json-ld_breadcrumbs'
   social:
     display: 'Social Sharing'
     sections:
@@ -63,14 +55,12 @@ tabs:
         display: 'Generate Social Images'
         instructions: 'Automatically generate Social Images'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_social_generate_social_images'
+          - import: 'statamic-peak-seo::globals_seo_social_generate_social_images'
       -
         display: Defaults
         instructions: 'Default settings for Social Sharing.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_social_defaults'
+          - import: 'statamic-peak-seo::globals_seo_social_defaults'
   sitemap:
     display: Sitemap
     sections:
@@ -78,8 +68,15 @@ tabs:
         display: Sitemap
         instructions: 'Configure the sitemap.xml.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_sitemap'
+          - import: 'statamic-peak-seo::globals_seo_sitemap'
+  robots:
+    display: Robots
+    sections:
+      -
+        display: Robots
+        instructions: 'Configure the robots.txt'
+        fields:
+          - import: 'statamic-peak-seo::globals_seo_robots'
   trackers:
     display: Trackers
     sections:
@@ -87,23 +84,19 @@ tabs:
         display: Environments
         instructions: 'When to render tracker tags and the consent banner.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_trackers_environments'
+          - import: 'statamic-peak-seo::globals_seo_trackers_environments'
       -
         display: 'Site verifications'
         instructions: 'Configure site verifications.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_trackers_site_verifications'
+          - import: 'statamic-peak-seo::globals_seo_trackers_site_verifications'
       -
         display: Analytics
         instructions: 'Configure various Analytics Services.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_trackers_analytics'
+          - import: 'statamic-peak-seo::globals_seo_trackers_analytics'
       -
         display: 'Consent banner'
         instructions: 'Configure Google trackers and scripts and optionally inject them after consent.'
         fields:
-          -
-            import: 'statamic-peak-seo::globals_seo_trackers_consent'
+          - import: 'statamic-peak-seo::globals_seo_trackers_consent'
