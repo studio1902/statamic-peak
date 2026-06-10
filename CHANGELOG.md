@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.6.0 (2026-06-10)
+
+### What's new
+- A global SEO option to edit your `robots.txt` content. An update script handles this for exisiting sites. e6ca65da by @robdekort
+
 ## v21.5.3 (2026-06-03)
 
 ### What's changed
