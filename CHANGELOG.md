@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.6.1 (2026-06-11)
+
+### What's improved
+- Remove unused package. bdf4d659 by @andjsch
+
 ## v21.6.0 (2026-06-10)
 
 ### What's new
