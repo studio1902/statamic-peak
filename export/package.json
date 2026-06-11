@@ -23,8 +23,7 @@
         "@tailwindcss/vite": "^4.2.2",
         "laravel-vite-plugin": "^3.0.1",
         "tailwindcss": "^4.2.2",
-        "vite": "^8.0.7",
-        "concurrently": "^9.2.1"
+        "vite": "^8.0.7"
     },
     "$schema": "https://www.schemastore.org/package.json"
 }
