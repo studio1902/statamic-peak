@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.6.2 (2026-06-12)
+
+### What's improved
+- Sync git config with statamic/statamic. 72e72ca7 by @robdekort
+
 ## v21.6.1 (2026-06-11)
 
 ### What's improved
