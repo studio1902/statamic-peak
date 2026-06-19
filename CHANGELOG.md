@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.6.3 (2026-06-19)
+
+### What's improved
+- Simplify deploy script. 3738916a by @robdekort
+
 ## v21.6.2 (2026-06-12)
 
 ### What's improved
