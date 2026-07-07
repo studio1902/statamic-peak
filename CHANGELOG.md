@@ -1,6 +1,6 @@
 # Changelog
 
-## v21.6.5 (2026-07-04)
+## v21.6.4 (2026-07-04)
 
 ### What's fixed
 - Exclude robots.txt from static caching. 3738916a by @robdekort
