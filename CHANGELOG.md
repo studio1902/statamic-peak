@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.6.5 (2026-07-04)
+
+### What's fixed
+- Exclude robots.txt from static caching. 3738916a by @robdekort
+
 ## v21.6.3 (2026-06-19)
 
 ### What's improved
