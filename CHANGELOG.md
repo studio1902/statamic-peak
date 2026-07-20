@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.7.0 (2026-07-20)
+
+### What's new
+- Remove theming fieldset from browser appearance global. An update in the Tools addon will take care of this on existing sites. 33e7de4c by @robdekort
+
 ## v21.6.4 (2026-07-04)
 
 ### What's fixed
