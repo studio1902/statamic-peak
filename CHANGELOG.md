@@ -1,5 +1,11 @@
 # Changelog
 
+## v21.8.0 (2026-07-29)
+
+### What's new
+- Disable elevated sessions locally. 0bb2c0d4 by @robdekort
+- Raise user activation expiry time from 1 to 24 hours. 1a544445 by @robdekort
+
 ## v21.7.0 (2026-07-20)
 
 ### What's new
