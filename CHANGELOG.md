@@ -14,7 +14,7 @@
 ## v21.6.4 (2026-07-04)
 
 ### What's fixed
-- Exclude robots.txt from static caching. 3738916a by @robdekort
+- Exclude robots.txt from static caching. An update script in the SEO addon will take care of this on existing sites. 3738916a by @robdekort
 
 ## v21.6.3 (2026-06-19)
 
