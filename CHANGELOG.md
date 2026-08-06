@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.8.1 (2026-08-06)
+
+### What's improved
+- Sync config with statamic/statamic. 1aacafc4 by @robdekort
+
 ## v21.8.0 (2026-07-29)
 
 ### What's new
