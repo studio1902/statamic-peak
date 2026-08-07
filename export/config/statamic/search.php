@@ -81,20 +81,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Search Defaults
-    |--------------------------------------------------------------------------
-    |
-    | Here you can specify default configuration to be applied to all indexes
-    | regardless of the driver. You can override these per driver or per index.
-    |
-    */
-
-    'defaults' => [
-        'fields' => ['title'],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Indexing Queue
     |--------------------------------------------------------------------------
     |
