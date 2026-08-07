@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.8.2 (2026-08-07)
+
+### What's improved
+- Remove duplicate config key in search.php added in v21.8.1. 74ccca6a by @robdekort
+
 ## v21.8.1 (2026-08-06)
 
 ### What's improved
