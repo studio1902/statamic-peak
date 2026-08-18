@@ -1,5 +1,10 @@
 # Changelog
 
+## v21.8.3 (2026-08-18)
+
+### What's fixed
+- Editors can now see page builder preview images, but the asset container is hidden in the CP nav. d23bd621 by @robdekort
+
 ## v21.8.2 (2026-08-07)
 
 ### What's improved
