@@ -34,8 +34,21 @@ editor:
     - 'edit social_images folders'
     - 'edit social_images assets'
     - 'delete social_images assets'
+    - 'view page_builder assets'
     - 'view contact form submissions'
     - 'delete contact form submissions'
+  preferences:
+    nav:
+      content:
+        'content::assets':
+          action: '@modify'
+          reorder:
+            - 'content::assets::images'
+            - 'content::assets::files'
+            - 'content::assets::social_images'
+            - 'content::assets::favicons'
+          children:
+            'content::assets::page_builder': '@hide'
 marketer:
   title: Marketer
   permissions:
