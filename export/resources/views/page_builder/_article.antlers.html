@@ -6,10 +6,10 @@
 
 <!-- /page_builder/_article.antlers.html -->
 {{ partial:page_builder/block }}
-    {{ partial:typography/prose class="contents stack-8" }}
+    <article class="contents prose stack-8">
         {{ article }}
             {{ partial src="components/{type}" }}
         {{ /article }}
-    {{ /partial:typography/prose }}
+    </article>
 {{ /partial:page_builder/block }}
 <!-- End: /page_builder/_article.antlers.html -->
