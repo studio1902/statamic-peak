@@ -15,9 +15,9 @@
     --color-neutral-950: var(--color-slate-950);
 
     /* Add custom fonts in fonts.css and add the family to the stack you want to use. */
-    /* --font-sans: Gaultier, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
-    /* --font-serif: Lavigne, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; */
-    /* --font-mono: Anonymous, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
+    /* --font-sans: Awesome, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+    /* --font-serif: Awesome, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; */
+    /* --font-mono: Awesome, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
 
     --font-weight-*: initial;
     /* --font-weight-hairline: 100; */

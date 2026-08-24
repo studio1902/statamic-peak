@@ -1,18 +1,33 @@
 @layer base {
     /* Make sure to preload the most common fonts by putting this in your layout. */
-    /* <link rel="preload" href="{{ vite:asset src="resources/fonts/GT-Standard-L-Standard-Regular.woff2" directory="_build" }}" as="font" type="font/woff2" crossorigin> */
+    /* <link rel="preload" href="{{ vite:asset src="resources/fonts/awesome-regular.woff2" directory="_build" }}" as="font" type="font/woff2" crossorigin> */
 
      /* @font-face {
-        font-family: 'GT-Standard-L';
-        src: url('/resources/fonts/GT-Standard-L-Standard-Regular.woff2') format('woff2');
+        font-family: 'Awesome';
+        src: url('/resources/fonts/awesome-regular.woff2') format('woff2');
         font-weight: 400;
         font-display: swap;
     } */
 
     /* @font-face {
-        font-family: 'GT-Standard-L';
-        src: url('/resources/fonts/GT-Standard-L-Standard-Regular-Oblique.woff2') format('woff2');
+        font-family: 'Awesome';
+        src: url('/resources/fonts/awesome-regular-italic.woff2') format('woff2');
         font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    } */
+
+    /* @font-face {
+        font-family: 'Awesome';
+        src: url('/resources/fonts/awesome-bold.woff2') format('woff2');
+        font-weight: 700;
+        font-display: swap;
+    } */
+
+    /* @font-face {
+        font-family: 'Awesome';
+        src: url('/resources/fonts/awesome-bold-italic.woff2') format('woff2');
+        font-weight: 700;
         font-style: italic;
         font-display: swap;
     } */
