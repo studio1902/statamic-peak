@@ -1,5 +1,11 @@
 # Changelog
 
+## v22.0.0 (2026-08-25)
+
+### What's new
+- Tailwind Typography is replaced with a vanilla CSS version that is easier to customize. [Docs on typography](https://peak.1902.studio/features/typography.html#prose-content). #461 by @robdekort and @andjsch
+- The CSS setup is more open to the use of vanilla CSS with components and utilities. [Docs on components and utilities](https://peak.1902.studio/getting-started/tailwind-css.html#tailwind-css-configuration). #461 by @robdekort and @andjsch
+
 ## v21.8.3 (2026-08-18)
 
 ### What's fixed
