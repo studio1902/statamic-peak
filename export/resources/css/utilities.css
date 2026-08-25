@@ -1,0 +1,24 @@
+@utility grid-cols-fluid {
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(
+            min(var(--min-column-width, 350px), 100%),
+            1fr
+        )
+    );
+}
+
+@utility text-box-trim-start {
+    text-box-trim: trim-start;
+    text-box-edge: cap alphabetic;
+}
+
+@utility text-box-trim-end {
+    text-box-trim: trim-end;
+    text-box-edge: cap alphabetic;
+}
+
+@utility text-box-trim-both {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+}

@@ -46,6 +46,6 @@
         {{ /table }}
     </table>
 
-    {{ partial:typography/caption }}
+    {{ caption ?= { caption | wrap('span.caption')} }}
 </div>
 <!-- End: /components/_table.antlers.html -->

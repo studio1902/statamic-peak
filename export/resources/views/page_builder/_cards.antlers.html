@@ -8,7 +8,7 @@
 {{ partial:page_builder/block class="gap-y-8" }}
     {{ if block:heading }}
         <header class="span-content grid md:grid-cols-12 gap-fluid-grid-gap">
-            {{ partial:typography/h2 :content="block:heading" class="md:col-start-3 md:col-span-8 text-center" }}
+            <h2 class="md:col-start-3 md:col-span-8 text-center">{{ block:heading }}</h2>
         </header>
     {{ /if }}
 
@@ -29,16 +29,16 @@
                     {{ if button }}
                         {{ button }}
                             <a class="group " {{ partial:statamic-peak-tools::snippets/button_attributes }} aria-hidden="true" tabindex="-1">
-                                {{ partial:typography/h3 color="group-hover:underline" :content="heading" }}
+                                <h3 class="group-hover:underline">{{ heading }}</h3>
                             </a>
                         {{ /button }}
-                        {{ partial:typography/h3 class="sr-only" :content="heading" }}
+                        <h3 class="sr-only">{{ heading }}</h3>
                     {{ else }}
-                        {{ partial:typography/h3 :content="heading" }}
+                        <h3>{{ heading }}</h3>
                     {{ /if }}
 
                     {{ if text }}
-                        {{ partial:typography/p :content="text" }}
+                        <p>{{ text }}</p>
                     {{ /if }}
                 </div>
 

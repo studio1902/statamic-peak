@@ -1,67 +1,316 @@
-@plugin "@tailwindcss/typography";
+@theme {
+    --body-color: var(--color-neutral);
+    --headings-color: var(--color-neutral);
 
-@utility prose {
-    --tw-prose-body: var(--color-neutral);
-    --tw-prose-headings: var(--color-neutral);
-    --tw-prose-lead: var(--color-neutral);
-    --tw-prose-links: var(--color-neutral);
-    --tw-prose-bold: var(--color-neutral);
-    --tw-prose-counters: var(--color-neutral);
-    --tw-prose-bullets: var(--color-neutral);
-    --tw-prose-hr: var(--color-neutral);
-    --tw-prose-quotes: var(--color-neutral);
-    --tw-prose-quote-borders: var(--color-primary);
-    --tw-prose-captions: var(--color-neutral);
-    --tw-prose-code: var(--color-neutral);
-    --tw-prose-pre-code: var(--color-white);
-    --tw-prose-pre-bg: var(--color-neutral);
-    --tw-prose-th-borders: var(--color-neutral);
-    --tw-prose-td-borders: var(--color-neutral);
+    --prose-base: var(--color-neutral);
+    --prose-headings: var(--color-neutral);
+    --prose-links: var(--color-neutral);
+    --prose-links-hover: var(--color-primary);
+    --prose-link-decoration: var(--color-primary);
+    --prose-bold: var(--color-neutral);
+    --prose-counters: var(--color-neutral);
+    --prose-bullets: var(--color-neutral);
+    --prose-hr: var(--color-neutral);
+    --prose-quotes: var(--color-neutral);
+    --prose-quote-borders: var(--color-primary);
+
+    --prose-invert-base: var(--color-white);
+    --prose-invert-headings: var(--color-white);
+    --prose-invert-links: var(--color-white);
+    --prose-invert-links-hover: var(--color-white);
+    --prose-invert-link-decoration: var(--color-white);
+    --prose-invert-bold: var(--color-white);
+    --prose-invert-counters: var(--color-white);
+    --prose-invert-bullets: var(--color-white);
+    --prose-invert-hr: var(--color-white);
+    --prose-invert-quotes: var(--color-white);
+    --prose-invert-quote-borders: var(--color-white);
+
+    --typography-sm: var(--text-sm);
+    --typography-base: var(--text-base);
+    --typography-h1: var(--text-3xl);
+    --typography-h2: var(--text-2xl);
+    --typography-h3: var(--text-xl);
+    --typography-h4: var(--text-lg);
+    --typography-h5: var(--text-lg);
+    --typography-h6: var(--text-lg);
+
+    --prose-sm-modifier: .875;
+    --prose-lg-modifier: 1.125;
+    --prose-xl-modifier: 1.25;
+}
+
+@layer base {
+    body {
+        color: var(--body-color);
+        font-size: var(--typography-base);
+        font-family: var(--font-sans, 'system-ui');
+        font-size-adjust: from-font;
+    }
+
+    ::selection,
+    ::target-text {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+   }
+
+    :is(h1, h2, h3, h4, h5, h6) {
+        line-height: var(--leading-tight, 1.25);
+        color: var(--headings-color);
+        font-weight: var(--font-weight-bold);
+        text-wrap: balance;
+    }
+
+    h1, .heading-size-1 {
+        font-size: var(--typography-h1);
+    }
+
+    h2, .heading-size-2 {
+        font-size: var(--typography-h2);
+    }
+
+    h3, .heading-size-3 {
+        font-size: var(--typography-h3);
+    }
+
+    h4, .heading-size-4 {
+        font-size: var(--typography-h4);
+    }
+
+    h5, .heading-size-5 {
+        font-size: var(--typography-h5);
+    }
+
+    h6, .heading-size-6 {
+        font-size: var(--typography-h6);
+    }
+
+    small {
+        font-size: var(--typography-sm);
+    }
+
+    .prose {
+        :not(.not-prose, .not-prose *) {
+            color: var(--prose-base);
+
+            > * + * {
+                margin-block-start: 1em;
+            }
+
+            :is(h1, h2, h3, h4, h5, h6):not(:first-child) {
+                margin-block-start: 1em;
+            }
+
+            :is(h1, h2, h3, h4, h5, h6) {
+                margin-block-end: .5em;
+
+                color: var(--prose-headings);
+            }
+
+            a {
+                color: var(--prose-links);
+                text-decoration: underline;
+                text-decoration-thickness: 2px;
+                text-decoration-color: var(--prose-link-decoration);
+
+                &:hover {
+                    color: var(--prose-links-hover);
+                }
+            }
+
+            ul, ol {
+                padding-inline-start: 1.625em;
+                margin-block: 1.5em;
+
+                li {
+                    padding-inline-start: .375em;
+                    margin-block: .5em;
+                }
+            }
+
+            ul {
+                list-style-type: disc;
+
+                li::marker {
+                    color: var(--prose-bullets);
+                }
+            }
+
+            ol {
+                list-style-type: decimal;
+
+                li::marker {
+                    color: var(--prose-counters);
+                }
+            }
+
+            hr {
+                border-top: 2px solid var(--prose-hr);
+                margin-block: 3em;
+            }
+
+            blockquote {
+                margin-block-start: 1.5em;
+                padding-inline-start: 1em;
+
+                border-inline-start-width: 0.25rem;
+                border-inline-start-color: var(--prose-quote-borders);
+
+                color: var(--prose-quotes);
+                font-style: italic;
+            }
+
+            strong {
+                color: var(--prose-bold);
+            }
+        }
+    }
 }
 
 @utility prose-invert {
-    --tw-prose-invert-body: var(--color-white);
-    --tw-prose-invert-headings: var(--color-white);
-    --tw-prose-invert-lead: var(--color-white);
-    --tw-prose-invert-links: var(--color-white);
-    --tw-prose-invert-bold: var(--color-white);
-    --tw-prose-invert-counters: var(--color-white);
-    --tw-prose-invert-bullets: var(--color-white);
-    --tw-prose-invert-hr: var(--color-white);
-    --tw-prose-invert-quotes: var(--color-white);
-    --tw-prose-invert-quote-borders: var(--color-white);
-    --tw-prose-invert-captions: var(--color-white);
-    --tw-prose-invert-code: var(--color-white);
-    --tw-prose-invert-pre-code: var(--color-white);
-    --tw-prose-invert-pre-bg: var(--color-white);
-    --tw-prose-invert-th-borders: var(--color-white);
-    --tw-prose-invert-td-borders: var(--color-white);
-}
+    :not(.not-prose, .not-prose *) {
+        color: var(--prose-invert-base);
 
-@layer utilities {
-    .prose {
-        line-height: 1.5em;
-
-        ul > li > p,
-        ol > li > p {
-            margin-top: 0em !important;
-            margin-bottom: 0em !important;
-            line-height: 1.5em;
+        :is(h1, h2, h3, h4, h5, h6) {
+            color: var(--prose-invert-headings);
         }
 
-        :where(.prose > div > :first-child) {
-            margin-top: 0 !important;
+        a {
+            color: var(--prose-invert-links);
+            text-decoration-color: var(--prose-invert-link-decoration);
+
+            &:hover {
+                color: var(--prose-invert-links-hover);
+            }
         }
 
-        :where(.prose > div > :last-child) {
-            margin-bottom: 0 !important;
+
+        ul {
+            li::marker {
+                color: var(--prose-invert-bullets);
+            }
+        }
+
+        ol {
+            li::marker {
+                color: var(--prose-invert-counters);
+            }
+        }
+
+        hr {
+            border-top: 2px solid var(--prose-invert-hr);
+        }
+
+        blockquote {
+            border-inline-start-color: var(--prose-invert-quote-borders);
+
+            color: var(--prose-invert-quotes);
+        }
+
+        strong {
+            color: var(--prose-invert-bold);
         }
     }
+}
 
-    .prose-sm,
-    .prose-lg,
-    .prose-xl,
-    .prose-2xl {
-        line-height: 1.5em;
+@utility prose-sm {
+    :not(.not-prose, .not-prose *) {
+        font-size: calc(var(--typography-base) * var(--prose-sm-modifier));
+
+        h1 {
+            font-size: calc(var(--typography-h1) * var(--prose-sm-modifier));
+        }
+
+        h2 {
+            font-size: calc(var(--typography-h2) * var(--prose-sm-modifier));
+        }
+
+        h3 {
+            font-size: calc(var(--typography-h3) * var(--prose-sm-modifier));
+        }
+
+        h4 {
+            font-size: calc(var(--typography-h4) * var(--prose-sm-modifier));
+        }
+
+        h5 {
+            font-size: calc(var(--typography-h5) * var(--prose-sm-modifier));
+        }
+
+        h6 {
+            font-size: calc(var(--typography-h6) * var(--prose-sm-modifier));
+        }
+
+        small {
+            font-size: calc(var(--typography-sm) * var(--prose-sm-modifier));
+        }
+    }
+}
+
+@utility prose-lg {
+    :not(.not-prose, .not-prose *) {
+        font-size: calc(var(--typography-base) * var(--prose-lg-modifier));
+
+        h1 {
+            font-size: calc(var(--typography-h1) * var(--prose-lg-modifier));
+        }
+
+        h2 {
+            font-size: calc(var(--typography-h2) * var(--prose-lg-modifier));
+        }
+
+        h3 {
+            font-size: calc(var(--typography-h3) * var(--prose-lg-modifier));
+        }
+
+        h4 {
+            font-size: calc(var(--typography-h4) * var(--prose-lg-modifier));
+        }
+
+        h5 {
+            font-size: calc(var(--typography-h5) * var(--prose-lg-modifier));
+        }
+
+        h6 {
+            font-size: calc(var(--typography-h6) * var(--prose-lg-modifier));
+        }
+
+        small {
+            font-size: calc(var(--typography-sm) * var(--prose-lg-modifier));
+        }
+    }
+}
+
+@utility prose-xl {
+    :not(.not-prose, .not-prose *) {
+        font-size: calc(var(--typography-base) * var(--prose-xl-modifier));
+
+        h1 {
+            font-size: calc(var(--typography-h1) * var(--prose-xl-modifier));
+        }
+
+        h2 {
+            font-size: calc(var(--typography-h2) * var(--prose-xl-modifier));
+        }
+
+        h3 {
+            font-size: calc(var(--typography-h3) * var(--prose-xl-modifier));
+        }
+
+        h4 {
+            font-size: calc(var(--typography-h4) * var(--prose-xl-modifier));
+        }
+
+        h5 {
+            font-size: calc(var(--typography-h5) * var(--prose-xl-modifier));
+        }
+
+        h6 {
+            font-size: calc(var(--typography-h6) * var(--prose-xl-modifier));
+        }
+
+        small {
+            font-size: calc(var(--typography-sm) * var(--prose-xl-modifier));
+        }
     }
 }

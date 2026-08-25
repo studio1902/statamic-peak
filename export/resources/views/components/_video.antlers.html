@@ -9,7 +9,7 @@
     <iframe class="absolute top-0 left-0 w-full h-full" width="100%" src="{{ video_url | embed_url }}" height="auto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     {{ slot:append }}
-        {{ partial:typography/caption }}
+        {{ caption ?= { caption | wrap('span.caption')} }}
     {{ /slot:append }}
 {{ /partial:components/consent_gate }}
 <!-- End: /components/_video.antlers.html -->

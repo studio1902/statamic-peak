@@ -1,0 +1,6 @@
+.caption {
+    display: block;
+    margin-top: --spacing(2);
+
+    font-size: var(--text-sm);
+}

@@ -7,8 +7,12 @@
 <!-- /page_builder/_form.antlers.html -->
 {{ partial:page_builder/block }}
     <div class="span-content md:col-start-[col-3] md:col-span-8">
-        {{ block:heading ?= { partial:typography/h1 as="h2" class="mb-8" :content="block:heading" } }}
-        {{ block:text ?= { partial:typography/p :content="block:text" } }}
+        {{ if block:heading }}
+            <h2 class="mb-8">{{ block:heading }}</h2>
+        {{ /if }}
+        {{ if block:text }}
+            <p>{{ block:text }}</p>
+        {{ /if }}
 
         {{# Render form and use Alpine based Statamic conditional logic. #}}
         {{ if form:handle }}
@@ -57,9 +61,13 @@
                     {{ sections }}
                         <fieldset class="w-full grid md:grid-cols-12 gap-6">
                             {{ if display || instructions }}
-                                <span class="md:col-span-12">
-                                    {{ display ?= { partial:typography/h2 class="mb-2" as="legend" content="{ trans :key="display" }" } }}
-                                    {{ instructions ?= { partial:typography/p content="{ trans :key="instructions" }" } }}
+                                <span class="md:col-span-12 stack-2">
+                                    {{ if display }}
+                                        <legend class="heading-size-2">{{ trans :key="display" }}</legend>
+                                    {{ /if }}
+                                    {{ if instructions }}
+                                        <p>{{ trans :key="instructions" }}</p>
+                                    {{ /if }}
                                 </span>
                             {{ /if }}
 
