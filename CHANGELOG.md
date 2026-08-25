@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.0.1 (2026-08-25)
+
+### What's improved
+- Trash the now redundant typography partials. 42279c38 by @robdekort
+
 ## v22.0.0 (2026-08-25)
 
 ### What's new
