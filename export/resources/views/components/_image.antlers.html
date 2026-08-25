@@ -31,8 +31,6 @@
         "
     }}
 
-    <figcaption class="caption">
-        {{ caption }}
-    </figcaption>
+    {{ caption ?= { caption | wrap('figcaption.caption')} }}
 </figure>
 <!-- End: /components/_image.antlers.html -->
