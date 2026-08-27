@@ -329,6 +329,7 @@ class StarterKitPostInstall
 
         $this->replaceInEnv('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
         $this->replaceInReadme('APP_NAME="Statamic Peak"', "APP_NAME=\"{$appName}\"");
+        $this->replaceInReadme('site.ext', $appName);
     }
 
     protected function setAppUrl(): void
