@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.1.0 (2026-08-27)
+
+### What's new
+- Replace site.ext in README with app name. #462 by @andjsch
+
 ## v22.0.1 (2026-08-25)
 
 ### What's improved
