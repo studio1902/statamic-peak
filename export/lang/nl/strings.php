@@ -13,7 +13,7 @@ return [
     'consent_ad_personalization' => 'Gepersonaliseerde advertenties',
     'consent_ad_personalization_explanation' => 'Ontvang gepersonaliseerde advertenties.',
     'consent_analytics' => 'Analytics',
-    'consent_analytics_explanation' => 'Opslag (zoals third-party cookies) benodigd voro het meten van bezoekersstatistieken.',
+    'consent_analytics_explanation' => 'Opslag (zoals third-party cookies) benodigd voor het meten van bezoekersstatistieken.',
     'consent_explanation' => 'Deze site gebruikt services van derden waar we je toestemming voor nodig hebben.',
     'consent_embeds' => 'Embeds',
     'consent_embeds_explanation' => 'Third party cookies die nodig zijn om embeds te tonen. Deze kunnen je gedrag mogelijk tracken.',
