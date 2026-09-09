@@ -1,5 +1,14 @@
 # Changelog
 
+## v22.1.1 (2026-09-09)
+
+### What's fixed
+- Prose selector issue. #464 by @marcorieser and @andjsch
+- Typo in the dutch analytics consent explanation. #463 by @lwekuiper
+
+### What's changed
+- Sync config with `statamic/statamic`. 667ee619 by @robdekort
+
 ## v22.1.0 (2026-08-27)
 
 ### What's new
