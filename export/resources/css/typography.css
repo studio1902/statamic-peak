@@ -90,7 +90,7 @@
     }
 
     .prose {
-        :not(.not-prose, .not-prose *) {
+        > :not(.not-prose) {
             color: var(--prose-base);
 
             > * + * {

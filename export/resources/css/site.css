@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "fonts";
+@import "./fonts.css";
 @import "./components/buttons.css" layer(components);
 @import "./components/caption.css" layer(components);
 @import "./peak.css" ;
