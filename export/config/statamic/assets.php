@@ -146,6 +146,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Control Panel Video Thumbnails
+    |--------------------------------------------------------------------------
+    |
+    | When enabled, Statamic will generate thumbnails for videos when FFmpeg
+    | is available. Generated thumbnails are displayed in the Control Panel.
+    | Without FFmpeg, videos fall back to a filetype icon.
+    |
+    */
+
+    'video_thumbnails' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | File Previews with Google Docs
     |--------------------------------------------------------------------------
     |
@@ -234,6 +247,22 @@ return [
     */
 
     'svg_sanitization_on_upload' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | FFmpeg
+    |--------------------------------------------------------------------------
+    |
+    | Statamic uses FFmpeg to extract thumbnails from videos to be shown in the
+    | Control Panel. You may adjust the binary location and cache path here.
+    | The configured binary must exist and be executable.
+    |
+    */
+
+    'ffmpeg' => [
+        'binary' => null,
+        'cache_path' => storage_path('statamic/glide/ffmpeg'),
+    ],
 
     /*
     |--------------------------------------------------------------------------

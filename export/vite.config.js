@@ -28,7 +28,10 @@ export default defineConfig(({ command, mode }) => {
         ],
         server: {
         watch: {
-            ignored: ['**/storage/framework/views/**'],
+            ignored: [
+                '**/storage/framework/views/**',
+                '**/storage/statamic/**',
+            ],
         },
             open: env.APP_URL
         }
