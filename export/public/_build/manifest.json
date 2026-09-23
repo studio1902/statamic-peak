@@ -1,10 +1,10 @@
 {
-  "_@alpinejs-BWS_85tW.js": {
-    "file": "assets/@alpinejs-BWS_85tW.js",
+  "_@alpinejs-BdiCSv_c.js": {
+    "file": "assets/@alpinejs-BdiCSv_c.js",
     "name": "@alpinejs"
   },
-  "_alpinejs-DwhdkKpW.js": {
-    "file": "assets/alpinejs-DwhdkKpW.js",
+  "_alpinejs-CHZQYZeV.js": {
+    "file": "assets/alpinejs-CHZQYZeV.js",
     "name": "alpinejs"
   },
   "_es-toolkit-CaAMjed2.js": {
@@ -27,7 +27,7 @@
     ]
   },
   "resources/css/site.css": {
-    "file": "assets/site-qNCkki7Q.css",
+    "file": "assets/site-Dh338Yyo.css",
     "name": "site",
     "names": [
       "site.css"
@@ -36,13 +36,13 @@
     "isEntry": true
   },
   "resources/js/site.js": {
-    "file": "assets/site-DKkFYCCQ.js",
+    "file": "assets/site-Dcswqy1A.js",
     "name": "site",
     "src": "resources/js/site.js",
     "isEntry": true,
     "imports": [
-      "_alpinejs-DwhdkKpW.js",
-      "_@alpinejs-BWS_85tW.js",
+      "_alpinejs-CHZQYZeV.js",
+      "_@alpinejs-BdiCSv_c.js",
       "_laravel-precognition-alpine-DdbXv0rw.js"
     ]
   }
