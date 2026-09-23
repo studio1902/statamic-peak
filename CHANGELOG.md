@@ -1,5 +1,13 @@
 # Changelog
 
+## v22.2.0 (2026-09-23)
+
+### What's new
+- Default to `hybrid` image caching. dc213119 by @robdekort
+
+### What's change
+- Updated dependencies and recompiled assets. dc213119 by @robdekort
+
 ## v22.1.1 (2026-09-09)
 
 ### What's fixed
