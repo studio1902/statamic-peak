@@ -1,5 +1,11 @@
 # Changelog
 
+## v22.2.1 (2026-19-29)
+
+### What's improved
+- Improve typography prose selectors to support more use cases. c9cec3eb by @robdekort
+- Sync config with `statamic/statamic`. ceb93c81 by @robdekort
+
 ## v22.2.0 (2026-09-23)
 
 ### What's new
