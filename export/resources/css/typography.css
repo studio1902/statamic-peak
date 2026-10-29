@@ -90,21 +90,20 @@
     }
 
     .prose {
+        * + *:not(.not-prose, .not-prose *) {
+            margin-block-start: 1em;
+        }
+
         > :not(.not-prose) {
             color: var(--prose-base);
 
-            > * + * {
-                margin-block-start: 1em;
-            }
-
-            :is(h1, h2, h3, h4, h5, h6):not(:first-child) {
-                margin-block-start: 1em;
-            }
-
             :is(h1, h2, h3, h4, h5, h6) {
                 margin-block-end: .5em;
-
                 color: var(--prose-headings);
+
+                &:not(:first-child) {
+                    margin-block-start: 1em;
+                }
             }
 
             a {
