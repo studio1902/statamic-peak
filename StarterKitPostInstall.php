@@ -57,7 +57,6 @@ class StarterKitPostInstall
         $this->writeFiles();
         $this->cleanUp();
         $this->starPeakRepo();
-        $this->stopFascism();
         $this->finish();
     }
 
@@ -263,42 +262,6 @@ class StarterKitPostInstall
         }
 
         info('Thank you!');
-    }
-
-    protected function stopFascism(): void
-    {
-        $fascism = select(
-            label: 'Peak actively stands against fascism. Are you with us?',
-            options: [
-                'yes' => 'Yes',
-                'tell_me_more' => 'Tell me more',
-                'no' => 'No',
-            ],
-            default: 'yes',
-            hint: 'To protect freedom for all people and the truth.'
-        );
-
-        if ($fascism === 'yes') {
-            info('Thank you!');
-
-            return;
-        }
-
-        if ($fascism !== 'tell_me_more') {
-            return;
-        }
-
-        if (PHP_OS_FAMILY === 'Darwin') {
-            exec('open https://peak.1902.studio/stop-fascism.html');
-        }
-
-        if (PHP_OS_FAMILY === 'Windows') {
-            exec('start https://peak.1902.studio/stop-fascism.html');
-        }
-
-        if (PHP_OS_FAMILY === 'Linux') {
-            exec('xdg-open https://peak.1902.studio/stop-fascism.html');
-        }
     }
 
     protected function finish(): void
