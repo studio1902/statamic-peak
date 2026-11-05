@@ -1,6 +1,11 @@
 # Changelog
 
-## v22.2.1 (2026-19-29)
+## v22.2.2 (2026-10-05)
+
+### What's changed
+- Removed activism in post install for now. d19683db by @robdekort
+
+## v22.2.1 (2026-09-29)
 
 ### What's improved
 - Improve typography prose selectors to support more use cases. c9cec3eb by @robdekort
