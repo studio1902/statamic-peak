@@ -35,7 +35,7 @@ return [
         |--------------------------------------------------------------------------
         |
         | The driver that will be used under the hood for image manipulation.
-        | Supported: "gd" or "imagick" (if installed on your server)
+        | Supported: "gd", "imagick" or a class name of a custom driver.
         |
         */
 
@@ -43,23 +43,9 @@ return [
 
         /*
         |--------------------------------------------------------------------------
-        | Additional Image Extensions
-        |--------------------------------------------------------------------------
-        |
-        | Define any additional image file extensions you would like Statamic to
-        | process. You should ensure that both your server and the selected
-        | image manipulation driver properly supports these extensions.
-        |
-        */
-
-        'additional_extensions' => [
-            // 'heic',
-        ],
-
-        /*
-        |--------------------------------------------------------------------------
         | Save Cached Images
         |--------------------------------------------------------------------------
+        |
         | This controls how manipulated images are cached and served.
         |
         | false  - Images are generated on each HTTP request via Glide routes.
@@ -82,7 +68,7 @@ return [
         |--------------------------------------------------------------------------
         |
         | You may define global defaults for all manipulation parameters, such as
-        | quality, format, and sharpness. These can and will be be overwritten
+        | quality, format, and sharpness. These can and will be overwritten
         | on the tag parameter level as well as the preset level.
         |
         */
@@ -93,17 +79,32 @@ return [
 
         /*
         |--------------------------------------------------------------------------
+        | Crop Quality
+        |--------------------------------------------------------------------------
+        |
+        | The quality used when saving images cropped in the control panel. The
+        | user may override this per crop. When null, the quality defined in
+        | the "defaults" above will be used, otherwise it falls back to 90.
+        |
+        */
+
+        'crop_quality' => null,
+
+        /*
+        |--------------------------------------------------------------------------
         | Image Manipulation Presets
         |--------------------------------------------------------------------------
         |
         | Rather than specifying your manipulation params in your templates with
         | the glide tag, you may define them here and reference their handles.
-        | They will also be automatically generated when you upload assets.
+        | They may also be automatically generated when you upload assets.
+        | Containers can be configured to warm these caches on upload.
         |
         */
 
         'presets' => [
             'replacement' => ['w' => 4500, 'fit' => 'max'],
+            // 'small' => ['w' => 200, 'h' => 200, 'q' => 75, 'fit' => 'crop'],
         ],
 
         /*
@@ -127,7 +128,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Enabling this will make Glide automatically crop assets at their focal
-    | point (at at the center if no focal point is defined). Otherwise,
+    | point (which is the center if no focal point is defined). Otherwise,
     | you will need to manually add any crop related parameters.
     |
     */
@@ -202,6 +203,25 @@ return [
     */
 
     'focal_point_editor' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Crop Aspect Ratios
+    |--------------------------------------------------------------------------
+    |
+    | Configure the aspect ratio presets available in the Control Panel image
+    | crop editor. Each entry may be a "W:H" string (e.g. "16:9") or an array
+    | with a custom label and ratio: ['label' => 'Wide', 'ratio' => '16:9'].
+    |
+    */
+
+    'crop_aspect_ratios' => [
+        '16:9',
+        '4:3',
+        '3:2',
+        '2:1',
+        '1:1',
+    ],
 
     /*
     |--------------------------------------------------------------------------
