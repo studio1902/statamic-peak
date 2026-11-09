@@ -53,25 +53,25 @@ return [
     */
 
     'widgets' => [
-            [
-                'type' => 'images_missing_alt',
-                'container' => 'images',
-                'limit' => 5,
-                'width' => 50,
-            ],
-            [
-                'type' => 'collection',
-                'collection' => 'pages',
-                'width' => 50,
-            ],
-            [
-                'type' => 'form',
-                'form' => 'contact',
-                'fields' => ['name', 'email'],
-                'limit' => '5',
-                'width' => 100,
-            ],
+        [
+            'type' => 'images_missing_alt',
+            'container' => 'images',
+            'limit' => 5,
+            'width' => 50,
         ],
+        [
+            'type' => 'collection',
+            'collection' => 'pages',
+            'width' => 50,
+        ],
+        [
+            'type' => 'form',
+            'form' => 'contact',
+            'fields' => ['name', 'email'],
+            'limit' => '5',
+            'width' => 100,
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
