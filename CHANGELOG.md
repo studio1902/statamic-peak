@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.2.3 (2026-11-10)
+
+### What's changed
+- Sync config with `statamic/statamic`. 11fc4ff1 by @robdekort
+
 ## v22.2.2 (2026-10-05)
 
 ### What's changed
