@@ -44,6 +44,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | After Saving
+    |--------------------------------------------------------------------------
+    |
+    | What happens after saving an entry or term, until a user picks another
+    | option in the save button dropdown. Supported: "listing",
+    | "continue_editing", "create_another".
+    |
+    */
+
+    'after_save' => 'continue_editing',
+
+    /*
+    |--------------------------------------------------------------------------
     | Dashboard Widgets
     |--------------------------------------------------------------------------
     |
@@ -75,28 +88,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Date Format
-    |--------------------------------------------------------------------------
-    |
-    | When a date is encountered throughout the Control Panel, it will be
-    | rendered in the following format. Any PHP date variables are permitted.
-    |
-    */
-
-    'date_format' => 'Y-m-d',
-
-    /*
-    |--------------------------------------------------------------------------
     | Pagination
     |--------------------------------------------------------------------------
     |
-    | The numbers of items to show on each paginated page.
+    | Here you may define the default pagination size as well as the options
+    | the user can select on any paginated listing in the Control Panel.
     |
     */
 
     'pagination_size' => 50,
 
     'pagination_size_options' => [10, 25, 50, 100, 500],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Select All Limit
+    |--------------------------------------------------------------------------
+    |
+    | The maximum number of matching results that can be selected across pages
+    | via "Select all". Raise this if your server can handle larger bulk
+    | actions, or set it to null for no limit.
+    |
+    */
+
+    'select_all_limit' => 1000,
 
     /*
     |--------------------------------------------------------------------------
@@ -114,8 +129,7 @@ return [
     | Support Link
     |--------------------------------------------------------------------------
     |
-    | Set the location of the support link in the "Useful Links" header
-    | dropdown. Use 'false' to remove it entirely.
+    | Set the location of the support link in the header.
     |
     */
 
@@ -170,4 +184,5 @@ return [
     'thumbnail_presets' => [
         // 'medium' => 800,
     ],
+
 ];
