@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.3.0 (2026-11-13)
+
+### What's new
+- Remove `:8000` from `APP_URL`. c089a010 by @robdekort
+
 ## v22.2.3 (2026-11-10)
 
 ### What's changed
