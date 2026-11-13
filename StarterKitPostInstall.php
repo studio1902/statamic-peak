@@ -297,7 +297,7 @@ class StarterKitPostInstall
 
     protected function setAppUrl(): void
     {
-        $appUrl = env('APP_URL');
+        $appUrl = str_replace(':8000', '', env('APP_URL'));
 
         $this->replaceInEnv('APP_URL=', "APP_URL=\"{$appUrl}\"");
     }
