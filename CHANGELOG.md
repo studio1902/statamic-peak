@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.4.0 (2026-11-20)
+
+### What's new
+- Spanish translation. #466 by @pedroflores199
+
 ## v22.3.0 (2026-11-13)
 
 ### What's new
