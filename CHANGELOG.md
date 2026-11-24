@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.5.0 (2026-11-24)
+
+### What's new
+- Default to two-factor authentication on production. def0545b by @robdekort
+
 ## v22.4.0 (2026-11-20)
 
 ### What's new
