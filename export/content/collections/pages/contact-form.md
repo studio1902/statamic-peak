@@ -3,7 +3,7 @@ id: 5c526dbf-9dd7-4c52-98d8-54e00ebddfb6
 blueprint: page
 title: 'Contact form'
 updated_by: ceaa75bd-bc37-4a8b-b0f2-b7af70e58b0e
-updated_at: 1698695250
+updated_at: 1795691257
 seo_noindex: inherit
 seo_nofollow: false
 seo_canonical_type: entry

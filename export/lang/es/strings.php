@@ -1,22 +1,8 @@
 <?php
 
 return [
-    // Contact form
+    // Forms
     'form_error' => 'Hay problemas con los datos del formulario:',
-    'form_honeypot' => 'Fax',
-    'form_mail_body_owner' => 'Se ha enviado un formulario de contacto.',
-    'form_mail_body_sender' => 'Gracias por tu mensaje. Nos pondremos en contacto contigo lo antes posible.',
-    'form_mail_closing' => 'Un saludo',
-    'form_mail_from' => config('app.name'),
-    'form_mail_greeting' => 'Hola',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
-    'form_mail_submitted' => 'Enviado el',
-    'form_mail_title' => 'Formulario de contacto',
-    'form_mail_url' => config('app.url'),
-    'form_send' => 'Enviar mensaje',
-    'form_subject_received' => 'Formulario de contacto recibido',
-    'form_subject_sent' => 'Formulario de contacto enviado',
-    'form_success' => 'Gracias, hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.',
     'form_required' => 'Obligatorio',
 
     // Consent banner

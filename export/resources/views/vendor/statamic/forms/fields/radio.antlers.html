@@ -17,7 +17,7 @@
                 {{ (old === value) ?= 'checked' }}
             >
             <span>
-                {{ trans :key="label" }}
+                {{ label | trans }}
             </span>
         </label>
     {{ /foreach:options }}

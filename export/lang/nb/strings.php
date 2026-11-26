@@ -1,22 +1,10 @@
 <?php
 
 return [
-    // Contact form
+    // Forms
     'form_error' => 'Det er feil med skjemaet ditt. Reparer dem og prøv igjen.',
-    'form_honeypot' => 'Faks',
-    'form_mail_body_owner' => 'Kontaktskjema er sendt.',
-    'form_mail_body_sender' => 'Takk for melding. Du hører fra oss snart.',
-    'form_mail_closing' => 'Vennlig hilsen',
-    'form_mail_from' => config('app.name'),
-    'form_mail_greeting' => 'Kjære',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
-    'form_mail_submitted' => 'Levert',
-    'form_mail_title' => 'Kontaktskjema',
-    'form_mail_url' => config('app.url'),
-    'form_send' => 'Send melding',
-    'form_subject_received' => 'Skjema mottatt',
-    'form_subject_sent' => 'Skjema sendt',
-    'form_success' => 'Tusen takk, vi har mottatt meldingen din og kontakter deg så snart som mulig.',
+    'form_required' => 'Obligatorisk felt',
+
 
     // Cookie banner
     'consent_accept_all' => 'Aksepter alle',

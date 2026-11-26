@@ -17,7 +17,7 @@
     >
     {{ if inline_label }}
         <span>
-            {{ trans :key="inline_label" }}
+            {{ inline_label | trans }}
             {{ if handle === 'consent' }}
                 {{ if configuration:privacy_statement_type == 'entry' }}
                     <a class="underline hover:text-primary" href="{{ configuration:privacy_statement_entry:url }}">{{ trans:strings.consent_learn_more }}</a>

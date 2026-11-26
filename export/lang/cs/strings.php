@@ -1,22 +1,9 @@
 <?php
 
 return [
-    // Contact form
+    // Forms
     'form_error' => 'Ve vašem formuláři jsou chyby. Opravte je a zkuste to znovu.',
-    'form_honeypot' => 'Fax',
-    'form_mail_body_owner' => 'Kontaktní formulář byl odeslán.',
-    'form_mail_body_sender' => 'Děkujeme za vaši zprávu. Budeme vás kontaktovat co nejdříve.',
-    'form_mail_closing' => 'S přátelským pozdravem',
-    'form_mail_from' => config('app.name'),
-    'form_mail_greeting' => 'Vážený',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
-    'form_mail_submitted' => 'Odesláno',
-    'form_mail_title' => 'Kontaktní formulář',
-    'form_mail_url' => config('app.url'),
-    'form_send' => 'Poslat zprávu',
-    'form_subject_received' => 'Kontaktní formulář přijat',
-    'form_subject_sent' => 'Kontaktní formulář odeslán',
-    'form_success' => 'Děkujeme, vaši zprávu jsme obdrželi a budeme vás co nejdříve kontaktovat.',
+    'form_required' => 'Povinné pole',
 
     // Cookie banner
     'consent_accept_all' => 'Přijmout vše',

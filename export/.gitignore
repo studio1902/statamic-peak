@@ -10,8 +10,8 @@
 /vendor
 .env
 .env.backup
+.idea
 /.phpunit.cache
-.antlers.json
 Homestead.json
 Homestead.yaml
 npm-debug.log
