@@ -1,0 +1,34 @@
+<div>
+    <fieldset
+        :aria-invalid="form.invalid('{{ handle }}')"
+        style="--scale-steps: repeat({{ scale_values | count }}, minmax(0, 1fr))"
+        class="border border-neutral divide-x aria-[invalid=true]:border-red-600 h-10.5 rounded-sm grid grid-cols-(--scale-steps) overflow-hidden"
+        id="{{ handle }}"
+        {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
+    >
+        {{ foreach:scale_values }}
+            {{ middle_index = "{{ total_results | subtract:1 | divide:2 | floor }}" }}
+
+            <label class="has-checked:bg-neutral-200 has-focus-visible:bg-primary/25 inline-flex items-center justify-center relative">
+                <input
+                    id="{{ id }}-{{ scale_value }}-option"
+                    x-model="form.{{ handle }}"
+                    @change="form.validate('{{ handle }}')"
+                    type="radio"
+                    class="opacity-0 absolute"
+                    name="{{ handle }}"
+                    value="{{ value }}"
+                    {{ (old === value) ?= 'checked' }}
+                >
+                {{ value | trans }}
+            </label>
+        {{ /foreach:scale_values }}
+    </fieldset>
+    {{ if low_label && high_label }}
+        <div class="flex justify-between mt-1 text-xs">
+            <span>{{ low_label }}</span>
+            {{ if middle_label }}<span>{{ middle_label }}</span>{{ /if }}
+            <span>{{ high_label }}</span>
+        </div>
+    {{ /if }}
+</div>

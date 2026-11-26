@@ -1,21 +1,9 @@
 <?php
 
 return [
-    // Contact form
-    'form_honeypot' => 'Fax',
-    'form_mail_body_owner' => 'Der er sendt en besked.',
-    'form_mail_body_sender' => 'Tak for din besked. Vi kontakter dig hurtigst muligt.',
-    'form_mail_closing' => 'Med venlig hilsen',
-    'form_mail_from' => config('app.name'),
-    'form_mail_greeting' => 'Kære',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
-    'form_mail_submitted' => 'Sendt',
-    'form_mail_title' => 'Kontaktformular',
-    'form_mail_url' => config('app.url'),
-    'form_send' => 'Send besked',
-    'form_subject_received' => 'Besked modtaget',
-    'form_subject_sent' => 'Besked sendt',
-    'form_success' => 'Tak, vi har modtaget din besked og kontakter dig hurtigst muligt.',
+    // Forms
+    'form_error' => 'Der er problemer med dine indtastninger i formularen:',
+    'form_required' => 'Obligatorisk felt',
 
     // Cookie banner
     'consent_accept' => 'Acceptere',

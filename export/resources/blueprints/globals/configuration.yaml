@@ -24,15 +24,11 @@ tabs:
           -
             handle: copyright_name
             field:
-              input_type: text
-              antlers: false
               display: 'Copyright name'
               type: text
               icon: text
               instructions: 'Falls back to the application name.'
               width: 50
-              listable: hidden
-              instructions_position: above
           -
             handle: copyright_since
             field:
@@ -40,17 +36,24 @@ tabs:
               input_type: number
               character_limit: 4
               prepend: ©
-              antlers: false
               default: '2020'
               display: 'Copyright since'
               instructions: 'The website will add ` - current_year ` if they differ.'
               type: text
               icon: text
               width: 50
-              listable: hidden
-              instructions_position: above
               validate:
                 - required
+          -
+            handle: form_mail_logo
+            field:
+              container: images
+              max_files: 1
+              type: assets
+              display: 'Form Mail Logo'
+              instructions: 'The logo used for email submissions.'
+              width: 50
+              mode: grid
       -
         display: 'Privacy statement'
         instructions: 'Configure an optional privacy statement.'
@@ -76,8 +79,8 @@ tabs:
             config:
               container: files
               localizable: true
-              listable: hidden
               display: 'Privacy statement (PDF)'
+              listable: hidden
               width: 50
               if:
                 privacy_statement_type: 'equals pdf'
@@ -120,8 +123,8 @@ tabs:
             config:
               container: files
               localizable: true
-              listable: hidden
               display: 'Cookie notice (PDF)'
+              listable: hidden
               width: 50
               if:
                 cookie_notice_type: 'equals pdf'

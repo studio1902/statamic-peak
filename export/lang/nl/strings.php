@@ -1,8 +1,11 @@
 <?php
 
 return [
-    'close' => 'Sluit',
-    'collection_mounted' => 'Je entry :title bevat een collectie en kan niet worden verwijderd.',
+    // Forms
+    'form_error' => 'Er zijn problemen met je formulierinput. Probeer het opnieuw.',
+    'form_required' => 'Verplicht',
+
+    // Consent banner
     'consent_accept_all' => 'Accepteer alles',
     'consent_accept_selected' => 'Accepteer selectie',
     'consent_reject_all' => 'Weiger alles',
@@ -23,38 +26,32 @@ return [
     'consent_functional_explanation' => 'First party opslag (zoals cookies) die essentieel zijn voor het functioneren van deze website. Deze kunnen niet uitgeschakeld worden.',
     'consent_title' => 'Toestemming',
     'consent_learn_more' => 'Meer informatie',
-    'consent_more_info' => 'Meer informatie',
     'consent_change_preferences' => 'Manage toestemmingen',
-    'external_link' => '(externe link)',
-    'form_error' => 'Er zijn problemen met je formulierinput. Probeer het opnieuw.',
-    'form_honeypot' => 'Fax',
-    'form_mail_body_owner' => 'Er is een formulier verzonden.',
-    'form_mail_body_sender' => 'Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op.',
-    'form_mail_closing' => 'Vriendelijke groeten',
-    'form_mail_from' => config('app.name'),
-    'form_mail_greeting' => 'Beste',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
-    'form_required' => 'Verplicht',
-    'form_mail_submitted' => 'Verzonden',
-    'form_mail_title' => 'Contactformulier',
-    'form_mail_url' => config('app.url'),
-    'form_send' => 'Verstuur',
-    'form_subject_received' => 'Contactformulier ontvangen',
-    'form_subject_sent' => 'Contactformulier verzonden',
-    'form_success' => 'Bedankt voor je bericht.',
-    'home' => 'Startpagina',
+    'consent_more_info' => 'Meer informatie',
+
+    // Footer
+    'on' => 'op',
+
+    // Navigation
+    'close' => 'Sluit',
     'main_navigation_desktop' => 'Hoofdnavigatie desktop',
     'main_navigation_mobile' => 'Hoofdnavigatie mobile',
     'menu' => 'Menu',
     'nav_close' => 'Sluit navigatie',
     'nav_open' => 'Open navigatie',
-    'next' => 'Volgende',
-    'no_results' => 'Er zijn momenteel geen resultaten.',
-    'no_script' => 'Deze website vereist Javascript om sommige onderdelen goed te laten functioneren.',
-    'of' => 'van',
-    'on' => 'op',
-    'previous' => 'Vorige',
-    'skip_to_content' => 'Doorgaan naar content',
     'subnav_close' => 'Sluit subnavigatie',
     'subnav_open' => 'Open subnavigatie',
+    'skip_to_content' => 'Doorgaan naar content',
+
+    // Other
+    'collection_mounted' => 'Je entry :title bevat een collectie en kan niet worden verwijderd.',
+    'external_link' => '(externe link)',
+    'home' => 'Startpagina',
+    'no_results' => 'Er zijn momenteel geen resultaten.',
+    'no_script' => 'Deze website vereist Javascript om sommige onderdelen goed te laten functioneren.',
+
+    // Pagination
+    'next' => 'Volgende',
+    'of' => 'van',
+    'previous' => 'Vorige',
 ];

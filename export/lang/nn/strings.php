@@ -1,19 +1,9 @@
 <?php
 
 return [
-    // Contact form
-    'form_honeypot' => 'Faks',
-    'form_mail_body_owner' => 'Kontaktskjema er sendt.',
-    'form_mail_body_sender' => 'Takk for melding. Du høyrer snart frå oss.',
-    'form_mail_closing' => 'Vennleg helsing',
-    'form_mail_from' => config('app.name'),
-    'form_mail_greeting' => 'Kjære',
-    'form_mail_logo' => config('app.url').'/visuals/statamic-peak-logo.png',
-    'form_mail_submitted' => 'Levert',
-    'form_mail_title' => 'Kontaktskjema',
-    'form_mail_url' => config('app.url'),
-    'form_send' => 'Send melding',
-    'form_success' => 'Tusen takk, vi har motteke meldinga di og kontaktar deg så snart som råd.',
+    // Forms
+    'form_error' => 'Bei der Eingabe in Ihr Formular sind Fehler aufgetreten. Bitte beheben Sie diese und versuchen Sie es erneut.',
+    'form_required' => 'Pflichtfeld',
 
     // Cookie banner
     'consent_title' => 'Informasjonskapslar 🍪',

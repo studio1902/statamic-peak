@@ -1,5 +1,13 @@
 # Changelog
 
+## v22.6.0 (2026-11-26)
+
+### What's new
+- Support for Forms 2. Added new fieldtypes support: currency, dictionary, opinion_scale, ranking, time
+- Moved form-rendering into its own reusable component
+
+Info: If you want to use the new PeakEmail form connector make sure you add a new asset field 'form_mail_logo' to your configuration global. It will be used for the email views that have been moved to the peak-tools package. You can safely remove the old views.
+
 ## v22.5.0 (2026-11-24)
 
 ### What's new

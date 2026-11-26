@@ -1,46 +1,79 @@
-content_sender:
-  show_submitted_data: false
-  email_text:
-    -
-      type: paragraph
-      content:
-        -
-          type: text
-          text: '{{ trans:strings.form_mail_greeting }} {{ first_name or name }},'
-    -
-      type: paragraph
-      content:
-        -
-          type: text
-          text: '{{ trans:strings.form_mail_body_sender }}'
-    -
-      type: paragraph
-      content:
-        -
-          type: text
-          text: '{{ trans:strings.form_mail_closing }},'
-    -
-      type: paragraph
-      content:
-        -
-          type: text
-          text: '{{ trans:strings.form_mail_from }}'
-content_owner:
-  show_submitted_data: true
+honeypot_behavior: ignore
+success_message: 'Contact form sent'
 title: Contact
+fields:
+  pages:
+    -
+      id: main
+      show_previous_button: false
+      sections:
+        -
+          fields:
+            -
+              handle: name
+              field:
+                display: Name
+                type: short_answer
+                validate:
+                  - required
+                  - 'min:2'
+                localizable: true
+                width: 66
+            -
+              handle: email
+              field:
+                display: 'Email address'
+                type: email
+                validate:
+                  - required
+                localizable: true
+                width: 66
+            -
+              handle: message_body
+              field:
+                display: Message
+                type: long_answer
+                validate:
+                  - required
+                  - 'min:5'
+                localizable: true
+            -
+              handle: consent
+              field:
+                inline_label: 'I agree that my submitted data is being collected and stored.'
+                display: Consent
+                type: toggle
+                validate:
+                  - accepted
+                visibility: hidden
 honeypot: fax
-email:
-  -
-    id: iwArpANx
-    to: info@site.com
-    reply_to: '{{ email }}'
-    subject: '{{ trans:strings.form_subject_received }}'
-    html: email/form_owner
-    text: email/form_owner_text
-  -
-    id: p0bMnaXJ
-    to: '{{ email }}'
-    reply_to: info@site.com
-    subject: '{{ trans:strings.form_subject_sent }}'
-    html: email/form_sender
-    text: email/form_sender_text
+connections:
+  peak_email:
+    -
+      id: iwArpANx
+      to:
+        - info@site.com
+      reply_to:
+        - 'field:email'
+      subject: 'Contact form received'
+      body: 'A contact form has been sent.'
+      show_submitted_data: true
+      html: 'peak-tools-email::form'
+      text: 'peak-tools-email::form_text'
+    -
+      id: p0bMnaXJ
+      to:
+        - 'field:email'
+      reply_to:
+        - 'field:email'
+      subject: 'Contact form sent'
+      body: |-
+        ### Dear {{ first\_name or name }},
+
+        Thanks for your message. We will contact you as soon as possible.
+
+        Kind regards,\
+        {{ config:app:name }}
+      show_submitted_data: false
+      html: 'peak-tools-email::form'
+      text: 'peak-tools-email::form_text'
