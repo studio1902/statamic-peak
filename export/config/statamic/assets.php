@@ -305,4 +305,19 @@ return [
         'folder' => null,
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Image Choice Form Field Container
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify which asset container should be used for
+    | the image choice form field.
+    |
+    */
+
+    'image_choice_images' => [
+        'container' => 'images',
+        'folder' => null,
+    ],
+
 ];
