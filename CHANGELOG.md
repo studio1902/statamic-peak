@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.6.1 (2026-11-27)
+
+### What's improved
+- Support image choice field. 5b203bbf by @robdekort
+
 ## v22.6.0 (2026-11-26)
 
 ### What's new
