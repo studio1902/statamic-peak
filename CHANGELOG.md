@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.6.2 (2026-11-27)
+
+### What's improved
+- Add image choice asset container config option. e021ab93 by @robdekort
+
 ## v22.6.1 (2026-11-27)
 
 ### What's improved
