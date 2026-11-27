@@ -1,5 +1,10 @@
 # Changelog
 
+## v22.6.3 (2026-11-27)
+
+### What's improved
+- Sync config with `statamic/statamic`. c8eda2bd by @robdekort
+
 ## v22.6.2 (2026-11-27)
 
 ### What's improved
