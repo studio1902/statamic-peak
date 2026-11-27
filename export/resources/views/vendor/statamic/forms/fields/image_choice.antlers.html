@@ -1,0 +1,36 @@
+<fieldset
+    :aria-invalid="form.invalid('{{ handle }}')"
+    style="--columns: repeat({{ columns }}, minmax(0, 1fr))"
+    class="grid grid-cols-(--columns) gap-4 outline-primary"
+    id="{{ handle }}"
+    {{ instructions ?= 'aria-describedBy="{handle}-instructions"' }}
+>
+    {{ options }}
+        <label class="cursor-pointer">
+            <input
+                id="{{ id }}-{{ key | slugify }}-option"
+                type="{{ multiple ? 'checkbox' : 'radio' }}"
+                name="{{ multiple ? '{name}[]' : name }}"
+                value="{{ key }}"
+                class="peer sr-only"
+                {{ if js_driver }}{{ js_attributes }}{{ /if }}
+                {{ if multiple }}
+                    {{ if value|in_array:key }}checked{{ /if }}
+                {{ else }}
+                    {{ if value == key }}checked{{ /if }}
+                {{ /if }}
+                {{ if validate|contains:required && (! multiple || options|count == 1) }}required{{ /if }}
+                {{ if instructions }}
+                    aria-describedby="{{ id }}-instructions"
+                {{ /if }}
+            >
+            <div class="stack-1 p-1 rounded-lg border peer-checked:shadow-lg peer-checked:border-primary peer-focus:outline-4 peer-focus:outline-primary/50">
+                <figure class="aspect-(--aspect-ratio)" style="--aspect-ratio: {{ aspect_ratio }}">
+                    {{ picture :image="image" class="w-full" cover="true" sizes="300px" class="rounded" }}
+                </figure>
+
+                <p class="pb-1 px-2 text-center">{{ label ?? key }}</p>
+            </div>
+        </label>
+    {{ /options }}
+</fieldset>

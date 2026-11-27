@@ -15,7 +15,7 @@
                     x-model="form.{{ handle }}"
                     @change="form.validate('{{ handle }}')"
                     type="radio"
-                    class="opacity-0 absolute"
+                    class="sr-only"
                     name="{{ handle }}"
                     value="{{ value }}"
                     {{ (old === value) ?= 'checked' }}
